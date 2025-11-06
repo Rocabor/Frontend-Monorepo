@@ -48,7 +48,7 @@ img {
 .cont-seman {
   width: 18rem;
   height: 8.18rem;
-  margin-block: 0.5rem;
+  margin-block: calc(0.5rem);
 }
 
 h1 {
