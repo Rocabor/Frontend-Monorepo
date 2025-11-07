@@ -15,7 +15,7 @@ This is a solution to the [Blog preview card challenge on Frontend Mentor](https
 
 ## 🔗 Links
 
-[Blog preview card solution](https://katherineoelsner.com/)
+[Blog preview card solution](https://rocabor.github.io/Blog_preview_card_solution_with_HTML_CSS/)
 
 
 
