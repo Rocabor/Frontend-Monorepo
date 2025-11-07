@@ -76,10 +76,6 @@ body {
   transform: scale(0.97);
 }
 
-.tittle:focus {
-  color: var(--yellow);
-}
-
 .descp {
   font: var(--text-preset-2);
 }
