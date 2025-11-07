@@ -8,6 +8,7 @@
   --text-preset-3: normal 500 0.875rem/1.5 "Figtree", sans-serif;
   --text-preset-4: normal 800 0.875rem/1.5 "Figtree", sans-serif;
   --box-shadow-default: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.9);
+  --primary-blue: hsl(228, 45%, 44%);
 }
 
 * {
@@ -44,7 +45,8 @@ body {
   width: 90%;
   max-width: 21rem;
   height: 12.5rem;
-  height: auto;
+  object-fit: cover;
+  /* height: auto; */
   border-radius: 0.625rem;
   display: block;
 }
@@ -53,7 +55,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-inline: 1.5rem;
+  margin-inline: clamp(1rem, 2vw, 2rem);
 }
 
 .catg {
@@ -88,9 +90,11 @@ body {
 
 .autor {
   display: flex;
-  width: calc(100% - 3rem);
+  width: 100%;
+  padding: 0 1.5rem;
   align-items: center;
   gap: 0.7rem;
+  box-sizing: border-box;
 }
 
 .img-avat {
@@ -108,5 +112,5 @@ body {
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--primary-blue);
 }
