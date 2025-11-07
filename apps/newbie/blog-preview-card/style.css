@@ -44,9 +44,8 @@ body {
 .img-art {
   width: 90%;
   max-width: 21rem;
-  height: 12.5rem;
   object-fit: cover;
-  /* height: auto; */
+  height: auto;
   border-radius: 0.625rem;
   display: block;
 }
@@ -61,7 +60,7 @@ body {
 .catg {
   font: var(--text-preset-4);
   background-color: var(--yellow);
-  padding-inline: 0.75rem;
+  padding-inline: calc(0.5rem + 1vw);
   padding-block: 0.25rem;
   width: fit-content;
   border-radius: 4px;
