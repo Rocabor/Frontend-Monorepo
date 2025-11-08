@@ -14,7 +14,7 @@ This is a solution to the [Social links profile challenge on Frontend Mentor](ht
 
 ## 🔗 Links
 
-[Blog preview card solution](https://rocabor.github.io/Blog_preview_card_solution_with_HTML_CSS/)
+[Blog preview card solution](https://rocabor.github.io/Social_link_profile_with_HTML_CSS/)
 
 
 
