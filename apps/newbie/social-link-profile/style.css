@@ -1,0 +1,142 @@
+:root {
+  --grey-900: #141414;
+  --grey-800: #1f1f1f;
+  --grey-700: #333333;
+  --green: #c4f82a;
+  --white: #ffffff;
+  --text-preset-1: normal 700 24px/1.5 "Inter", sans-serif;
+  --text-preset-2: normal 400 14px/1.5 "Inter", sans-serif;
+  --text-preset-2-bold: normal 700 14px/1.5 "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--grey-900);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 0.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 20.4rem;
+  height: 36.2rem;
+  background-color: var(--grey-800);
+  border-radius: 0.75rem;
+}
+
+.prof-pic {
+  width: calc(100% - 3rem);
+  margin: auto;
+  margin-block: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.prof-pic img {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+}
+
+.nm-lc {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 3rem);
+  margin: auto;
+  margin-block: 0 1.5rem;
+  height: 61px;
+  gap: 0.25rem;
+}
+
+.nm {
+  height: 2.25rem;
+  text-align: center;
+  font: var(--text-preset-1);
+  color: var(--white);
+}
+
+.lc {
+  height: 1.3rem;
+  color: var(--green);
+  font: var(--text-preset-2-bold);
+  text-align: center;
+}
+
+.bio {
+  margin-inline: 1.5rem;
+  margin-block: 0 1.5rem;
+  height: 1.3rem;
+  font: var(--text-preset-2);
+  color: var(--white);
+  text-align: center;
+}
+
+.link {
+  margin-inline: 1.5rem;
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.link button {
+  background-color: var(--grey-700);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font: var(--text-preset-2-bold);
+  border: none;
+}
+
+.link button:hover {
+  background-color: var(--green);
+  color: var(--grey-700);
+  cursor: pointer;
+}
+
+.attribution {
+  color: var(--white);
+  font: var(--text-preset-2);
+}
+
+.attribution a {
+  color: var(--green);
+}
+
+@media (min-width: 760px) {
+  .card {
+    width: 24rem;
+    height: 38.2rem;
+  }
+
+  .prof-pic {
+    width: calc(100% - 5rem);
+    margin: 2.5rem auto 1.5rem;
+  }
+
+  .nm-lc {
+    width: calc(100% - 5rem);
+    margin: 0 auto;
+  }
+
+  .bio {
+    width: calc(100% - 5rem);
+    margin: 1.5rem auto;
+  }
+
+  .link {
+    width: calc(100% - 5rem);
+    margin: 0 auto 2.5rem;
+  }
+}
