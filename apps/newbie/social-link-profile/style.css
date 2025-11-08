@@ -54,8 +54,8 @@ body {
   width: calc(100% - 3rem);
   margin: auto;
   margin-block: 0 1.5rem;
-  height: 61px;
   gap: 0.25rem;
+  padding-block: 0.5rem;
 }
 
 .nm {
@@ -87,19 +87,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   gap: 1rem;
 }
 
-.link button {
+.link a {
   background-color: var(--grey-700);
   padding: 0.75rem;
   border-radius: 0.5rem;
   color: var(--white);
   font: var(--text-preset-2-bold);
   border: none;
+  text-decoration: none;
 }
 
-.link button:hover {
+.link a:hover {
   background-color: var(--green);
   color: var(--grey-700);
   cursor: pointer;
@@ -114,7 +116,7 @@ body {
   color: var(--green);
 }
 
-@media (min-width: 760px) {
+@media (min-width: 47.5em) {
   .card {
     width: 24rem;
     height: 38.2rem;
