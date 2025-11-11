@@ -4,6 +4,10 @@
 
 This is a solution to the [Blog preview card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
+## Challenge level 
+![Static Badge](https://img.shields.io/badge/NEWBIE-%23ffffff?style=for-the-badge&label=1&labelColor=%2306B6D4&color=%23ffffff)
+![Static Badge](https://img.shields.io/badge/html5-%23E34F26?style=for-the-badge&logo=html5&logoColor=%23000000)
+![Static Badge](https://img.shields.io/badge/css3-%23ffffff?style=for-the-badge&logo=css&logoColor=%23663399)
 
 
 ## Screenshots
@@ -11,12 +15,9 @@ This is a solution to the [Blog preview card challenge on Frontend Mentor](https
 ![App Screenshot](https://snipboard.io/WNXesY.jpg)
 
 
-
-
 ## 🔗 Links
 
 [Blog preview card solution](https://rocabor.github.io/Blog_preview_card_solution_with_HTML_CSS/)
-
 
 
 ## Built with
