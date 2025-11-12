@@ -50,7 +50,7 @@ picture img {
   height: 25.5rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 2rem;
 }
 
@@ -131,8 +131,9 @@ h1 {
   }
 
   .content {
-    /* display: flex; */
-    /* flex-direction: column; */
+    /* display: flex;
+    flex-direction: column; */
     height: 28.5rem;
+    gap: 2rem;
   }
 }
