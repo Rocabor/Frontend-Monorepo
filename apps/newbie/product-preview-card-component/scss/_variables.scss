@@ -1,0 +1,58 @@
+// Colors
+$black: #1c232b;
+$grey: #6c7289;
+$cream: #f2eae2;
+$white: #ffffff;
+$green-500: #3d8168;
+$green-700: #1a4032;
+
+// layout breakpoints
+$breakpoint-movil: 375px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1440px;
+
+//  Typography
+@mixin text-preset-1 {
+  font-family: "fraunces", serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-2 {
+  font-family: "montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-3 {
+  font-family: "montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-4 {
+  font-family: "montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.3125rem;
+}
+
+@mixin text-preset-5 {
+  font-family: "montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+
+
+
+

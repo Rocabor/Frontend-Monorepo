@@ -24,9 +24,11 @@
 body {
   background-color: var(--cream);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  gap: 10px;
 }
 
 .card-component {
@@ -117,6 +119,15 @@ h1 {
   color: var(--white);
 }
 
+.attribution {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.attribution a {
+  font: var(--text-preset-4-bold);
+  color: var(--green-500);
+}
+
 @media (min-width: 37.5rem) {
   .card-component {
     /* display: flex; */
@@ -136,5 +147,9 @@ h1 {
     flex-direction: column; */
     height: 28.5rem;
     gap: 2rem;
+  }
+  .attribution {
+    font-size: 1.1rem;
+    text-align: center;
   }
 }

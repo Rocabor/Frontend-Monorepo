@@ -1,0 +1,115 @@
+@import "variables";
+@import "reset";
+@import "screen";
+@import "footer";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $cream;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 62.5rem;
+  gap: 10px;
+
+  .card-component {
+    width: 350px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    // border: 2px solid;
+    @include card-component;
+
+    picture img {
+      width: 350px;
+      height: 342px;
+      border-radius: 8px 8px 0 0;
+      display: block;
+      @include picture;
+    }
+
+    .content {
+      width: 350px;
+      height: 408px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 32px;
+      background-color: $white;
+      box-sizing: border-box;
+      border-radius: 0 0 8px 8px;
+      @include content;
+
+      .title {
+        display: flex;
+        flex-direction: column;
+        height: 214px;
+        gap: 24px;
+        @include title;
+
+        .catg {
+          @include text-preset-4;
+          color: $grey;
+        }
+
+        h1 {
+          @include text-preset-1;
+          color: $black;
+        }
+
+        .desc {
+          @include text-preset-3;
+          color: $grey;
+        }
+      }
+
+      .price {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: 16px;
+        // height: 102rem;
+
+        .pact {
+          @include text-preset-1;
+          color: $green-500;
+        }
+
+        .pant {
+          @include text-preset-5;
+          color: $grey;
+          text-decoration: line-through;
+        }
+      }
+
+      .btn {
+        display: flex;
+        height: 50px;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding-inline: 2rem;
+        padding-block: 1rem;
+        background-color: $green-500;
+
+        .add {
+          @include text-preset-2;
+          color: $white;
+        }
+      }
+
+      .btn:hover {
+        background-color: $green-700;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @include footer;
+}

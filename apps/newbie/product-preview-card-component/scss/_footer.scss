@@ -1,0 +1,10 @@
+@mixin footer {
+  .attribution {
+    font-size: 15px;
+
+    a {
+      @include text-preset-5;
+      color: $green-700;
+    }
+  }
+}
