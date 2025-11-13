@@ -17,7 +17,7 @@ This is a solution to the [Product preview card component challenge on Frontend 
 ![App Screenshot](https://snipboard.io/pQcf2I.jpg)  
 
 
-## 🔗 🌎​ Live Demo Link
+## 🔗 🌎​ Live site URL
 
 [Product preview card component solution](https://rocabor.github.io/Rocabor-Product_preview_card_component/)
 
