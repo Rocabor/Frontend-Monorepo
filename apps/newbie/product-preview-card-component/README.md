@@ -4,13 +4,18 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 ## Challenge level 
 ![Static Badge](https://img.shields.io/badge/NEWBIE-%23ffffff?style=for-the-badge&label=1&labelColor=%2306B6D4&color=%23ffffff)
-![Static Badge](https://img.shields.io/badge/html5-%23E34F26?style=for-the-badge&logo=html5&logoColor=%23000000)
-![Static Badge](https://img.shields.io/badge/css3-%23ffffff?style=for-the-badge&logo=css&logoColor=%23663399)
+![Static Badge](https://img.shields.io/badge/html5-%23E34F26?style=for-the-badge&logo=html5&logoColor=%23ffffff)
+![Static Badge](https://img.shields.io/badge/css-%23663399?style=for-the-badge&logo=css)
+![Static Badge](https://img.shields.io/badge/sass-%23CC6699?style=for-the-badge&logo=sass&logoColor=%23ffffff)
+
+
 
 
 ## Screenshots
 
-![App Screenshot](https://snipboard.io/WNXesY.jpg)
+
+![App Screenshot](https://snipboard.io/3Igd8B.jpg)
+![App Screenshot](https://snipboard.io/pQcf2I.jpg)  
 
 
 ## 🔗 Links
@@ -23,6 +28,7 @@ This is a solution to the [Product preview card component challenge on Frontend 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Sass
 
 
 ### Useful resources
