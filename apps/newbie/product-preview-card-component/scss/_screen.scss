@@ -1,34 +1,32 @@
 // Layout styles for larger screens
 
 @mixin card-component {
-  @media (min-width: 600px) {
+  @media (min-width: $breakpoint-desktop) {
     width: 37.5rem;
     height: 28.5rem;
     flex-direction: row;
   }
 }
 @mixin picture {
-  @media (min-width: 600px) {
+  @media (min-width: $breakpoint-desktop) {
     width: 300px;
     height: 456px;
-    align-items: center;
     border-radius: 8px 0 0 8px;
   }
 }
 
 @mixin content {
-  @media (min-width: 600px) {
+  @media (min-width: $breakpoint-desktop) {
     width: 300px;
     height: 456px;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     border-radius: 0 8px 8px 0;
   }
 }
 
 @mixin title {
-  @media (min-width: 600px) {
+  @media (min-width: $breakpoint-desktop) {
     height: 248px;
   }
 }

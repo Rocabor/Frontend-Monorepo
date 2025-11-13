@@ -22,7 +22,6 @@ body {
     height: 750px;
     display: flex;
     flex-direction: column;
-    // border: 2px solid;
     @include card-component;
 
     picture img {
@@ -71,9 +70,7 @@ body {
       .price {
         display: flex;
         align-items: center;
-        justify-content: left;
         gap: 16px;
-        // height: 102rem;
 
         .pact {
           @include text-preset-1;

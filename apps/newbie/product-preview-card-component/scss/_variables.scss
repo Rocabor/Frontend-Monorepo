@@ -7,9 +7,7 @@ $green-500: #3d8168;
 $green-700: #1a4032;
 
 // layout breakpoints
-$breakpoint-movil: 375px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1440px;
+$breakpoint-desktop:600px;
 
 //  Typography
 @mixin text-preset-1 {
