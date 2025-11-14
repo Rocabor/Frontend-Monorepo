@@ -13,7 +13,7 @@ This is a solution to the [Product preview card component challenge on Frontend 
 ## 📸​ Screenshots
 
 
-![App Screenshot](https://snipboard.io/3Igd8B.jpg)
+![App Screenshot](https://snipboard.io/pYF9si.jpg)
 ![App Screenshot](https://snipboard.io/EpORDr.jpg)  
 
 
