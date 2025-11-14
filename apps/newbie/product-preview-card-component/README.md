@@ -14,7 +14,7 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 
 ![App Screenshot](https://snipboard.io/3Igd8B.jpg)
-![App Screenshot](https://snipboard.io/pQcf2I.jpg)  
+![App Screenshot](https://snipboard.io/EpORDr.jpg)  
 
 
 ## 🔗 🌎​ Live site URL
