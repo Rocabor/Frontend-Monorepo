@@ -19,7 +19,7 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 ## 🔗 🌎​ Live site URL
 
-[Product preview card component solution](https://rocabor.github.io/Rocabor-Product_preview_card_component/)
+[Product preview card component solution](https://rocabor.github.io/5.-Product_preview_card_component/)
 
 
 ## 🛠️ Built with
