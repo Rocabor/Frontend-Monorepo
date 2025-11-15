@@ -15,7 +15,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ## 🔗 Links
 
-[QR code component solution](https://rocabor.github.io/QR_code_component_solution_with_HTML_CSS/)
+[QR code component solution](https://rocabor.github.io/1.-QR_code_component/)
 
 
 ## Built with
