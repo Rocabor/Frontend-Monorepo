@@ -36,8 +36,8 @@ Users should be able to:
 
 ### 🌎 Links
 
-- Solution URL: [Repository URL](https://your-solution-url.com)
-- Live Site URL: [Testimonials grid section solution](https://your-live-site-url.com)
+- Solution URL: [Repository URL](https://github.com/Rocabor/7.-Testimonials-grid-section/tree/main)
+- Live Site URL: [Testimonials grid section solution](https://rocabor.github.io/7.-Testimonials-grid-section/)
 
 ## My process
 
