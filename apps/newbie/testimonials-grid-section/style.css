@@ -57,7 +57,7 @@ body {
   gap: 1rem;
   border-radius: 0.5rem;
   padding: 2rem;
-  filter: drop-shadow(2.5rem 3.75rem 3.125rem rgba(72, 85, 106, 0.2474));
+  filter: drop-shadow(40px 60px 20px rgba(72, 85, 106, 0.2474));
 }
 
 .bg-pattern-quotation {
