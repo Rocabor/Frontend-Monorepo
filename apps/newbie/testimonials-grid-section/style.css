@@ -117,18 +117,18 @@ body {
 .testimonial-1 {
   background-color: var(--Purple-500);
 }
-.testimonial-1 h3,
-.testimonial-2 h3 {
+.testimonial-1 p,
+.testimonial-2 p {
   font: var(--text-1);
   color: var(--White);
 }
 
-.testimonial-3 h3,
-.testimonial-5 h3 {
+.testimonial-3 p,
+.testimonial-5 p {
   font: var(--text-1);
   color: var(--Grey-500);
 }
-.testimonial-4 h3 {
+.testimonial-4 p {
   font: var(--text-1);
   color: var(--Grey-200);
 }
