@@ -45,15 +45,8 @@ body {
 }
 
 .visually-hidden {
-  position: absolute; /* Remove from visual flow */
-  width: 1px; /* Shrink to minimal size */
-  height: 1px;
-  padding: 0;
-  margin: -1px; /* Hide off-screen */
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* Prevent line breaks */
-  border: 0;
+  position: absolute; 
+  clip: rect(0, 0, 0, 0);  
 }
 
 /* ////////////////////// MOVIL FIRST ////////////////////// */
