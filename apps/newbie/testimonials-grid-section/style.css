@@ -37,7 +37,7 @@ body {
   background-color:var(--White);
 }
 
-.content {
+.testimonials {
   display: flex;
   flex-direction: column;
   width: 19.0625rem;
@@ -46,11 +46,11 @@ body {
 
 /* ////////////////////// MOVIL FIRST ////////////////////// */
 
-.section-1,
-.section-2,
-.section-3,
-.section-4,
-.section-5 {
+.testimonial-1,
+.testimonial-2,
+.testimonial-3,
+.testimonial-4,
+.testimonial-5 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -125,55 +125,55 @@ body {
   color: var(--White);
 }
 
-.section-1 {
+.testimonial-1 {
   background-color: var(--Purple-500);
 }
-.section-1 h1 {
+.testimonial-1 h2 {
   font: var(--text-1);
   color: var(--White);
 }
-.section-2 h2 {
+.testimonial-2 h2 {
   font: var(--text-1);
   color: var(--White);
 }
-.section-3 h2,
-.section-5 h2 {
+.testimonial-3 h2,
+.testimonial-5 h2 {
   font: var(--text-1);
   color: var(--Grey-500);
 }
-.section-4 h2 {
+.testimonial-4 h2 {
   font: var(--text-1);
   color: var(--Grey-200);
 }
 
-.section-1,
-.section-2,
-.section-3,
-.section-4,
-.section-5 blockquote {
+.testimonial-1,
+.testimonial-2,
+.testimonial-3,
+.testimonial-4,
+.testimonial-5 blockquote {
   font: var(--text-3);
 }
 
-.section-1 blockquote {
+.testimonial-1 blockquote {
   color: var(--Purple-50);
 }
-.section-2,
-.section-4 blockquote {
+.testimonial-2,
+.testimonial-4 blockquote {
   color: var(--Grey-100);
 }
-.section-3,
-.section-5 blockquote {
+.testimonial-3,
+.testimonial-5 blockquote {
   color: var(--Grey-400);
 }
 
-.section-2 {
+.testimonial-2 {
   background-color: var(--Grey-500);
 }
-.section-3,
-.section-5 {
+.testimonial-3,
+.testimonial-5 {
   background-color: var(--White);
 }
-.section-4 {
+.testimonial-4 {
   background-color: var(--Dark-blue);
 }
 
@@ -190,7 +190,7 @@ body {
 /* /////////////////// GRID TABLET 765px //////////////////// */
 
 @media (min-width: 47.8125rem) {
-  .content {
+  .testimonials {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(2, auto);
@@ -206,16 +206,16 @@ body {
     z-index: -1;
   }
 
-  .section-1 {
+  .testimonial-1 {
     grid-column: 1/3;
   }
-  .section-2,
-  .section-3 {
+  .testimonial-2,
+  .testimonial-3 {
     width: 19.2188rem;
   }
 
-  .section-4,
-  .section-5 {
+  .testimonial-4,
+  .testimonial-5 {
     grid-column: 1/3;
   }
 }
@@ -223,34 +223,34 @@ body {
 /* ///////////////////// GRID DESKTOP 1440px ///////////////////// */
 
 @media (min-width: 90rem) {
-  .content {
+  .testimonials {
     display: grid;   
   }
 
-  .section-1 {
+  .testimonial-1 {
     grid-column: 1/3;
     width: 33.75rem;
     margin-bottom: -0.5rem;
   }
 
-  .section-2 {
+  .testimonial-2 {
     grid-column: 3/4;
     width: 15.9375rem;
     margin-bottom: -8px;
   }
 
-  .section-5 {
+  .testimonial-5 {
     grid-column: 4/5;
     grid-row: 1/3;
     width: 15.9375rem;
   }
 
-  .section-3 {
+  .testimonial-3 {
     grid-row: 2/3;
     width: 15.9375rem;
   }
 
-  .section-4 {
-    grid-column: 2/4;g
+  .testimonial-4 {
+    grid-column: 2/4;
   }
 }
