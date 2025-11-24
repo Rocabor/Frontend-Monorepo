@@ -244,6 +244,15 @@ header {
   color: var(--white);
 }
 
+.attribution {
+  margin-block-start: 40px;
+  font: var(--text-3);
+  color: var(--white);
+}
+.attribution a {
+  color: var(--cyan-300);
+}
+
 /* TABLET  */
 
 @media (min-width: 768px) {
