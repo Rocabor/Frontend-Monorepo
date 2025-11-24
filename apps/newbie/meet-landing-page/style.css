@@ -245,7 +245,7 @@ header {
 }
 
 .attribution {
-  margin-block-start: 40px;
+  margin-block-start: 25px;
   font: var(--text-3);
   color: var(--white);
 }
