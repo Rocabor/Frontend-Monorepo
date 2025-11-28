@@ -33,7 +33,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: clamp(20.438rem, calc(3.679rem + 71.501vw), 38rem);
+  width: 327px;
+  height: 538px;
   gap: 2rem;
   padding-bottom: 16px;
   border-radius: 10px;
@@ -45,13 +46,15 @@ body {
 
 .container .bitmap {
   width: 100%;
+  height: 200px;
   border-radius: 10px 10px 0 0;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  width: clamp(16.688rem, calc(14.063rem + 11.196vw), 19.438rem);
+  width: 267px;
+  height: 288px;
   gap: 3rem;
 }
 
