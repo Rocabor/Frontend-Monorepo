@@ -44,6 +44,11 @@ body {
   position: relative;
 }
 
+.div-img {
+  width: 100%;
+  height: 200px;
+}
+
 .container .bitmap {
   width: 100%;
   height: 200px;
@@ -120,8 +125,6 @@ body {
   fill: var(--grey-500);
 }
 
-
-
 /* SHARE TOAST */
 
 .menu-share {
@@ -132,32 +135,22 @@ body {
   padding: 16px 32px;
   justify-content: space-between;
   background-color: var(--grey-900);
-
   position: absolute;
   bottom: 0;
-  
 }
 
-.frame-1 {
-  display: flex;
-  align-items: center;
-  width: 267px;
-  height: 32px;
-  justify-content: space-between;
-}
-
-.frame-1 p {
-  text-transform: uppercase;
-  font: var(--txt-3);
-  color: var(--grey-400);
-  letter-spacing: 2px;
-}
-
-.frame-2{
+.frame {
   display: flex;
   gap: 24px;
   width: 171px;
   height: 20px;
+}
+
+.frame p {
+  text-transform: uppercase;
+  font: var(--txt-3);
+  color: var(--grey-400);
+  letter-spacing: 2px;
 }
 
 #menu {
@@ -166,13 +159,71 @@ body {
   align-items: center;
 }
 
-#menu img{
+#menu img {
   width: 20px;
   display: block;
 }
 
+/* TABLET LAYOUT */
 
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 608px;
+    height: 346px;
+    padding-bottom: 0;
+    position: relative;
+  }
 
+  .div-img {
+    width: 229px;
+    height: 346px;
+    overflow: hidden;
+  }
 
+  .container .bitmap {
+    width: 279px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+  }
 
+  .content {
+    margin: 41px 36px 41px 0;
+    width: 311px;
+    height: 264px;
+    gap: 24px;
+  }
 
+  .button-group {
+    gap: 104px;
+  }
+
+  /* SHARE TOAST */
+
+  .menu-share {
+    width: 248px;
+    height: 55px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 16px 32px;
+    justify-content: center;
+    background-color: var(--grey-900);
+    position: absolute;
+    left: 430px;
+    bottom: 105px;
+  }
+
+  .menu-share::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 11.5px solid var(--grey-900);
+    top: 55px;
+    left: 110px;
+  }
+}
