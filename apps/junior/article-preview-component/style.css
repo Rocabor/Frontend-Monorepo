@@ -15,7 +15,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid; */
 }
 
 body {
@@ -33,47 +32,46 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 327px;
-  height: 538px;
+  width: 20.4375rem;
+  height: 33.625rem;
   gap: 2rem;
-  padding-bottom: 16px;
-  border-radius: 10px;
+  padding-bottom: 1rem;
+  border-radius: 0.625rem;
   background-color: var(--white);
-  box-shadow: 0 40px 40px rgba(201, 213, 225, 0.5034);
-
+  box-shadow: 0 2.5rem 2.5rem rgba(201, 213, 225, 0.5034);
   position: relative;
 }
 
 .div-img {
   width: 100%;
-  height: 200px;
+  height: 12.5rem;
 }
 
 .container .bitmap {
   width: 100%;
-  height: 200px;
-  border-radius: 10px 10px 0 0;
+  height: 12.5rem;
+  border-radius: 0.625rem 0.625rem 0 0;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  width: 267px;
-  height: 288px;
+  width: 16.6875rem;
+  height: 18rem;
   gap: 3rem;
 }
 
 .text-block h1 {
   font: var(--txt-1b);
   color: var(--grey-900);
-  letter-spacing: 0.25px;
+  letter-spacing: 0.0156rem;
 }
 
 .text-block p {
-  margin-block-start: 24px;
+  margin-block-start: 1.5rem;
   font: var(--txt-2m);
   color: var(--grey-500);
-  letter-spacing: 0.12px;
+  letter-spacing: 0.0075rem;
 }
 
 .button-group {
@@ -85,7 +83,7 @@ body {
 .profile {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .profile .avatar {
@@ -95,7 +93,7 @@ body {
 }
 
 .nm-date {
-  width: 114px;
+  width: 7.125rem;
 }
 
 .nm-date h2 {
@@ -109,8 +107,8 @@ body {
 }
 
 #btn-share {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   background-color: var(--grey-200);
   border: none;
@@ -128,11 +126,11 @@ body {
 /* SHARE TOAST */
 
 .menu-share {
-  width: 327px;
-  height: 78px;
+  width: 20.4375rem;
+  height: 4.875rem;
   align-items: center;
-  border-radius: 0 0 10px 10px;
-  padding: 16px 32px;
+  border-radius: 0 0 0.625rem 0.625rem;
+  padding: 1rem 2rem;
   justify-content: space-between;
   background-color: var(--grey-900);
   position: absolute;
@@ -141,78 +139,77 @@ body {
 
 .frame {
   display: flex;
-  gap: 24px;
-  width: 171px;
-  height: 20px;
+  gap: 1.5rem;
+  width: 10.6875rem;
+  height: 1.25rem;
 }
 
 .frame p {
   text-transform: uppercase;
   font: var(--txt-3);
   color: var(--grey-400);
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
 }
 
 #menu {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
   align-items: center;
 }
 
 #menu img {
-  width: 20px;
+  width: 1.25rem;
   display: block;
 }
 
 /* TABLET LAYOUT */
 
-@media (min-width: 768px) {
+@media (min-width: 47.5rem) {
   .container {
-    display: flex;
     flex-direction: row;
     align-items: center;
-    width: 608px;
-    height: 346px;
+    width: 38rem;
+    height: 21.625rem;
     padding-bottom: 0;
-    position: relative;
   }
 
   .div-img {
-    width: 229px;
-    height: 346px;
+    width: 14.3125rem;
+    height: 21.625rem;
     overflow: hidden;
   }
 
   .container .bitmap {
-    width: 279px;
+    width: 17.4375rem;
     height: 100%;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 0 0 0.625rem;
   }
 
   .content {
-    margin: 41px 36px 41px 0;
-    width: 311px;
-    height: 264px;
-    gap: 24px;
-  }
-
-  .button-group {
-    gap: 104px;
+    margin: 2.5625rem 2.25rem 2.5625rem 0;
+    width: 19.4375rem;
+    height: 16.5rem;
+    gap: 1.5rem;
   }
 
   /* SHARE TOAST */
 
+  .button-group {
+    gap: 6.5rem;
+  }
+
   .menu-share {
-    width: 248px;
-    height: 55px;
+    width: 15.5rem;
+    height: 3.4375rem;
     align-items: center;
-    border-radius: 10px;
-    padding: 16px 32px;
+    border-radius: 0.625rem;
+    padding: 1rem 2rem;
     justify-content: center;
     background-color: var(--grey-900);
     position: absolute;
-    left: 430px;
-    bottom: 105px;
+    left: 26.875rem;
+    bottom: 6.5625rem;
+    filter: drop-shadow(0 0.5rem 0.1875rem rgba(201, 213, 225, 0.6));
   }
 
   .menu-share::after {
@@ -220,10 +217,59 @@ body {
     position: absolute;
     width: 0;
     height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 11.5px solid var(--grey-900);
-    top: 55px;
-    left: 110px;
+    border-left: 0.75rem solid transparent;
+    border-right: 0.75rem solid transparent;
+    border-top: 0.7188rem solid var(--grey-900);
+    top: 3.4375rem;
+    left: 6.875rem;
   }
+}
+
+/* DESKTOP LAYOUT */
+
+@media (min-width: 87.5rem) {
+  .container {
+    width: 45.625rem;
+    height: 17.5rem;
+    gap: 2.5rem;
+  }
+
+  .div-img {
+    width: 17.8125rem;
+    height: 17.5rem;
+    overflow: hidden;
+  }
+
+  .container .bitmap {
+    width: 21.875rem;
+  }
+
+  .content {
+    margin: 1.875rem 2.5rem 1.875rem 0;
+    width: 22.8125rem;
+    height: 13.75rem;
+  }
+
+  /* SHARE TOAST */
+
+  .button-group {
+    gap: 10rem;
+  }
+
+  .menu-share {
+    left: 34.5625rem;
+    bottom: 5.9375rem;
+  }
+}
+
+/* SECCION FOOTER */
+
+.attribution {
+  margin-block-start: 0.625rem;
+  font: var(--txt-2b);
+  font-size: clamp(0.69rem, calc(0.619rem + 0.293vw), 0.88rem);
+  color: var(--grey-500);
+}
+.attribution a {
+  color: var(--grey-900);
 }
