@@ -106,7 +106,7 @@ body {
   color: var(--grey-400);
 }
 
-#btn-share {
+.btn-share {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -151,13 +151,13 @@ body {
   letter-spacing: 0.125rem;
 }
 
-#menu {
+.menu {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
-#menu img {
+.menu img {
   width: 1.25rem;
   display: block;
 }
@@ -264,12 +264,16 @@ body {
 
 /* SECCION FOOTER */
 
-.attribution {
+.attribution-list {
+  display: flex;
   margin-block-start: 0.625rem;
   font: var(--txt-2b);
   font-size: clamp(0.69rem, calc(0.619rem + 0.293vw), 0.88rem);
   color: var(--grey-500);
+  list-style: none;
+  gap: .3125rem;
+
 }
-.attribution a {
+.attribution-list a {
   color: var(--grey-900);
 }
