@@ -1,0 +1,23 @@
+:root{
+  /* COLORS */
+  --white:#ffffff;
+  --grey:#949494;
+  --blue-800:#242742;
+  --blue-700:#36384d;
+  --red:#ff6155;
+  --gradient-4:linear-gradient(to right,#ff6a3a,#ff527b);
+
+  /* TYPOGRAPHY */
+  --tx-1:normal 700 56px/1 'roboto',sans-serif;
+  --tx-1M:normal 700 40px/1 'roboto',sans-serif;
+  --tx-2:normal 700 16px/1.5 'roboto',sans-serif;
+  --tx-2:normal 400 16px/1.5 'roboto',sans-serif;
+  --tx-3:normal 700 12px/1.5 'roboto',sans-serif;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+}
