@@ -12,20 +12,56 @@
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <main class="main">
+
+      <picture>
+        <source media="(min-width:1400px)" srcset="assets/images/illustration-sign-up-desktop.svg" />
+        <source media="(min-width:760px)" srcset="assets/images/illustration-sign-up-tablet.svg" />               
+        <img src="assets/images/illustration-sign-up-mobile.svg" alt="" />
+      </picture>
+
+      <section class="container">
+        <div class="cont-title">
+          <h1>Stay updated!</h1>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+          <ul class="cont-list">
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+        </div>
+
+        <div class="cont-form">
+          <form action="" class="form">
+            <div class="form">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" placeholder="email@company.com"/>
+              <!-- <span aria-live="polite" id="email-error"></span> -->
+            </div>
+          </form>
+
+          <button class="btn">Subscribe to monthly newsletter</button>
+        </div>
+      </section>
+    </main>
+
+
+
+
     <!-- Sign-up form start -->
 
-    Stay updated! Join 60,000+ product managers receiving monthly updates on: Product discovery and building what matters Measuring to ensure updates are a success And much more! Email address
-    email@company.com Subscribe to monthly newsletter
+    
 
     <!-- Sign-up form end -->
 
     <!-- Success message start -->
-
+<p hidden>
     Thanks for subscribing! A confirmation email has been sent to ash@loremcompany.com. Please open it and click the button inside to confirm your subscription. Dismiss message
+    </p>
 
     <!-- Success message end -->
   </body>
