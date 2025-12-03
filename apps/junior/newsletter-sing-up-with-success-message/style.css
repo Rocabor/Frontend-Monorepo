@@ -112,7 +112,7 @@ li::before {
   justify-content: space-between;
 }
 
-span {
+.message-error {
   font: var(--tx-3);
   color: var(--red);
 }
@@ -130,9 +130,11 @@ input {
 
 /* Clase CSS que define el estilo de error */
 .input-error {
-  background-color: var(--red-100); 
-  border-color: var(--red); 
-  
+  height: 56px;
+  background-color: var(--red-100);
+  border-color: var(--red);
+  font: var(--tx-2r);
+  color: var(--red);
 }
 
 input::placeholder {
@@ -155,22 +157,20 @@ input::placeholder {
 /* MOBIL FIRST // MAIN PAGE-SUCCESS */
 
 .container-success {
-  width: 375px;
-  height: 623px;
+  width: 20.4375rem;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  justify-content: space-between;
   background-color: var(--white);
+  gap: 14.9375rem;
 }
 
 .message {
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 32px;
-  width: 327px;
+  gap: 2rem;
 }
 
 .message h2 {
@@ -180,6 +180,11 @@ input::placeholder {
 
 .message p {
   font: var(--tx-2r);
+  color: var(--blue-800);
+}
+
+.e-user {
+  font: var(--tx-2b);
   color: var(--blue-800);
 }
 
