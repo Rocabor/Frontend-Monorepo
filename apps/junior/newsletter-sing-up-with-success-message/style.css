@@ -12,7 +12,7 @@
   --tx-1M: normal 700 2.5rem/1 "Roboto", sans-serif;
   --tx-2b: normal 700 1rem/1.5 "Roboto", sans-serif;
   --tx-2r: normal 400 1rem/1.5 "Roboto", sans-serif;
-  --tx-3: normal 700 .75rem/1.5 "Roboto", sans-serif;
+  --tx-3: normal 700 0.75rem/1.5 "Roboto", sans-serif;
 }
 
 * {
@@ -22,24 +22,35 @@
   /* border: 1px solid; */
 }
 
-body {  
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center; */
   min-height: 100vh;
+  /* background-color: var(--blue-700); */
 }
 
-.main {
-  width: 23.4375rem;
+/* MOBIL FIRST // MAIN PAGE */
+
+.main-page {
+  /* width: 23.4375rem; */
+  width: 100vw;
+  min-height: 49.875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 2.5rem;
+  background-color: var(--white);
+}
+
+picture img{
+  width: 100vw;
 }
 
 .container {
   width: 20.4375rem;
+  width: calc(100vw - 48px);
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -64,7 +75,7 @@ body {
 .cont-list {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .cont-list li {
@@ -92,10 +103,20 @@ li::before {
 .form {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
-.form label{
+.label{
+  display: flex;
+  justify-content: space-between;
+}
+
+.label .error{
+  font: var(--tx-3);
+  color: var(--red);
+}
+
+.form label {
   font: var(--tx-3);
   color: var(--blue-800);
 }
@@ -103,19 +124,69 @@ li::before {
 input {
   padding-inline: 1.5rem;
   padding-block: 1.15rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
-input::placeholder{
+input::placeholder {
   font: var(--tx-2r);
   color: var(--grey);
 }
 
 .btn {
+  width: 100%;
   padding-inline: 2.8125rem;
-  padding-block: .9rem;
+  padding-block: 0.9rem;
   background-color: var(--blue-800);
   font: var(--tx-2b);
   color: var(--white);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-block-start: 24px;
 }
+
+/* MOBIL FIRST // MAIN PAGE-SUCCESS */
+
+.container-success{
+  width: 375px;
+  height: 623px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  background-color: var(--white);
+}
+
+.message{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 32px;
+  width: 327px;
+}
+
+.message h2{
+  font: var(--tx-1M);
+  color: var(--blue-800);
+}
+
+.message p{
+  font: var(--tx-2r);
+  color: var(--blue-800);
+}
+
+.btn-2{
+  padding-inline: 6.1612rem;
+  padding-block: .9rem;
+
+}
+
+
+
+
+
+
+
+
+
+

@@ -10,16 +10,18 @@
     <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 
     <link rel="stylesheet" href="style.css" />
+
     <script defer src="script.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <main class="main">
+    <!-- MOBIL FIRST // MAIN PAGE  -->
 
+    <main class="main-page">
       <picture>
         <source media="(min-width:1400px)" srcset="assets/images/illustration-sign-up-desktop.svg" />
-        <source media="(min-width:760px)" srcset="assets/images/illustration-sign-up-tablet.svg" />               
+        <source media="(min-width:760px)" srcset="assets/images/illustration-sign-up-tablet.svg" />
         <img src="assets/images/illustration-sign-up-mobile.svg" alt="" />
       </picture>
 
@@ -35,34 +37,32 @@
           </ul>
         </div>
 
-        <div class="cont-form">
-          <form action="" class="form">
-            <div class="form">
+        <form action="" class="" id="cont-form" novalidate>
+          <div class="form">
+            <div class="label">
               <label for="email">Email address</label>
-              <input id="email" name="email" type="email" placeholder="email@company.com"/>
-              <!-- <span aria-live="polite" id="email-error"></span> -->
+              <label for="email" class="error"></label>
             </div>
-          </form>
 
-          <button class="btn">Subscribe to monthly newsletter</button>
-        </div>
+            <input id="email" name="email" type="email" required placeholder="@example.com" autocomplete="on" />
+            <!-- <span aria-live="polite" id="email-error"></span> -->
+          </div>
+
+          <button id="subscribe" class="btn btn-1" type="submit">Subscribe to monthly newsletter</button>
+        </form>
       </section>
     </main>
 
+    <!-- MOBIL FIRST // MAIN PAGE-SUCCESS -->
 
+    <section class="container-success" style="display: none">
+      <div class="message">
+        <img src="assets/images/icon-success.svg" alt="" />
+        <h2>Thanks for subscribing!</h2>
+        <p>A confirmation email has been sent to ash@loremcompany.com. Please open it and click the button inside to confirm your subscription.</p>
+      </div>
 
-
-    <!-- Sign-up form start -->
-
-    
-
-    <!-- Sign-up form end -->
-
-    <!-- Success message start -->
-<p hidden>
-    Thanks for subscribing! A confirmation email has been sent to ash@loremcompany.com. Please open it and click the button inside to confirm your subscription. Dismiss message
-    </p>
-
-    <!-- Success message end -->
+      <button id="dissmiss" class="btn btn-2">Dismiss message</button>
+    </section>
   </body>
 </html>
