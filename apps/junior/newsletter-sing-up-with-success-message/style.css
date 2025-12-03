@@ -5,6 +5,7 @@
   --blue-800: #242742;
   --blue-700: #36384d;
   --red: #ff6155;
+  --red-100: #ffe7e6;
   --gradient-4: linear-gradient(to right, #ff6a3a, #ff527b);
 
   /* TYPOGRAPHY */
@@ -44,13 +45,13 @@ body {
   background-color: var(--white);
 }
 
-picture img{
+picture img {
   width: 100vw;
 }
 
 .container {
-  width: 20.4375rem;
-  width: calc(100vw - 48px);
+  /* width: 20.4375rem; */
+  width: calc(100vw - calc(0vw + 48px));
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -106,12 +107,12 @@ li::before {
   gap: 0.5rem;
 }
 
-.label{
+.label {
   display: flex;
   justify-content: space-between;
 }
 
-.label .error{
+span {
   font: var(--tx-3);
   color: var(--red);
 }
@@ -125,6 +126,13 @@ input {
   padding-inline: 1.5rem;
   padding-block: 1.15rem;
   border-radius: 0.5rem;
+}
+
+/* Clase CSS que define el estilo de error */
+.input-error {
+  background-color: var(--red-100); 
+  border-color: var(--red); 
+  
 }
 
 input::placeholder {
@@ -146,7 +154,7 @@ input::placeholder {
 
 /* MOBIL FIRST // MAIN PAGE-SUCCESS */
 
-.container-success{
+.container-success {
   width: 375px;
   height: 623px;
   display: flex;
@@ -157,7 +165,7 @@ input::placeholder {
   background-color: var(--white);
 }
 
-.message{
+.message {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -165,28 +173,17 @@ input::placeholder {
   width: 327px;
 }
 
-.message h2{
+.message h2 {
   font: var(--tx-1M);
   color: var(--blue-800);
 }
 
-.message p{
+.message p {
   font: var(--tx-2r);
   color: var(--blue-800);
 }
 
-.btn-2{
+.btn-2 {
   padding-inline: 6.1612rem;
-  padding-block: .9rem;
-
+  padding-block: 0.9rem;
 }
-
-
-
-
-
-
-
-
-
-
