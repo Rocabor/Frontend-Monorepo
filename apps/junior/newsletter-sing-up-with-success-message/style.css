@@ -20,72 +20,59 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* border: 1px solid; */
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: flex-start;
   min-height: 100vh;
-  /* background-color: var(--blue-700); */
 }
 
 /* MOBIL FIRST // MAIN PAGE */
 
 .main-page {
-  /* width: 23.4375rem; */
   width: 100vw;
-  min-height: 49.875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
   background-color: var(--white);
 }
-
 picture img {
   width: 100vw;
 }
-
 .container {
-  /* width: 20.4375rem; */
-  width: calc(100vw - calc(0vw + 48px));
+  width: 20.4375rem;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 }
-
 .cont-title {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-
 .cont-title h1 {
   font: var(--tx-1M);
   color: var(--blue-800);
 }
-
 .cont-title p {
   font: var(--tx-2r);
   color: var(--blue-800);
 }
-
 .cont-list {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-
 .cont-list li {
   list-style: none;
   display: flex;
   font: var(--tx-2r);
   color: var(--blue-800);
 }
-
 li::before {
   content: "";
   display: inline-block;
@@ -94,50 +81,38 @@ li::before {
   width: 1.3125rem;
   padding-left: 1rem;
 }
-
 .cont-form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-
 .form {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-
 .label {
   display: flex;
   justify-content: space-between;
 }
-
 .message-error {
   font: var(--tx-3);
   color: var(--red);
 }
-
 .form label {
   font: var(--tx-3);
   color: var(--blue-800);
 }
-
-form input:focus{
-  border-color: #51a8ff;
-}
-
 input {
   padding-inline: 1.5rem;
   padding-block: 1.15rem;
   border-radius: 0.5rem;
 }
-
 .highlight-effect {
-  background-color: #51a8ff; /* Fondo limón claro */
+  background-color: #51a8ff;
   opacity: 0.3;
   transition: opacity 0.2s ease-in-out;
 }
-
 /* Clase CSS que define el estilo de error */
 .input-error {
   height: 56px;
@@ -146,12 +121,10 @@ input {
   font: var(--tx-2r);
   color: var(--red);
 }
-
 input::placeholder {
   font: var(--tx-2r);
   color: var(--grey);
 }
-
 .btn {
   width: 100%;
   padding-inline: 2.8125rem;
@@ -162,15 +135,13 @@ input::placeholder {
   border-radius: 0.5rem;
   cursor: pointer;
   margin-block-start: 24px;
-  /* transition: opacity 0.2s; */
 }
-
-form button:hover,form button:active {
+form button:hover,
+form button:active {
   background: var(--gradient-4);
-  border: none;
-  box-shadow: 0px 0px 20px rgba(255, 98, 97, 0.9) ;
+  border-color: var(--red);
+  box-shadow: 0px 0px 20px rgba(255, 98, 97, 0.9);
 }
-
 
 /* MOBIL FIRST // MAIN PAGE-SUCCESS */
 
@@ -183,37 +154,101 @@ form button:hover,form button:active {
   background-color: var(--white);
   gap: 14.9375rem;
 }
-
 .message {
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 2rem;
 }
-
 .message h2 {
   font: var(--tx-1M);
   color: var(--blue-800);
 }
-
 .message p {
   font: var(--tx-2r);
   color: var(--blue-800);
 }
-
 .e-user {
   font: var(--tx-2b);
   color: var(--blue-800);
 }
-
 .btn-2 {
   padding-inline: 6.1612rem;
   padding-block: 0.9rem;
 }
-
-.btn-2:hover,.btn-2:active {
+.btn-2:hover,
+.btn-2:active {
   background: var(--gradient-4);
-  border: none;
-  box-shadow: 0px 0px 20px rgba(255, 98, 97, 0.9) ;
+  border-color: var(--red);
+  box-shadow: 0px 0px 20px rgba(255, 98, 97, 0.9);
 }
 
+/* MAIN PAGE // TABLET */
+
+@media (min-width: 760px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--blue-700);
+  }
+  .main-page {
+    width: clamp(608px, calc(256.5px + 46.25vw), 904px);
+    height: clamp(641px, calc(1159.438px - 37.031vw), 878px);
+    padding: 2.5rem;
+    gap: 2.5rem;
+    background-color: var(--white);
+    border-radius: 2.25rem;
+  }
+  picture img {
+    width: 33rem;
+  }
+  .container {
+    width: 100%;
+    gap: 24px;
+  }
+  .cont-title h1 {
+    font: var(--tx-1);
+  }
+  .form {
+    gap: 0;
+  }
+
+  /* MAIN PAGE-SUCCESS // TABLET */
+
+  .container-success {
+    width: 504px;
+    height: 520px;
+    border-radius: 36px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    gap: 32px;
+    padding: 64px;
+  }
+  .message {
+    width: 23.5rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* MAIN PAGE // DESKTOP */
+
+@media (min-width: 1400px) {
+  .main-page {
+    flex-direction: row;
+    padding: 2rem;
+    gap: 4rem;
+  }
+  picture img {
+    width: 25rem;
+  }
+  .container {
+    justify-content: space-between;
+    height: 28.125rem;
+    gap: 2rem;
+  }
+}

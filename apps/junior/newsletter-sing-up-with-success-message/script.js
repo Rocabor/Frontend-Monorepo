@@ -11,7 +11,7 @@ form.addEventListener("submit", function (event) {
   const email = input.value;
 
   if (email === "") {
-    
+    messError.innerHTML = `Email required`;
     input.classList.add("highlight-effect");
     setTimeout(function () {
       input.classList.remove("highlight-effect");
