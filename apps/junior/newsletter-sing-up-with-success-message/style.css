@@ -128,6 +128,14 @@ input {
   border-radius: 0.5rem;
 }
 
+ .highlight-effect {
+    background-color: #51a8ff; /* Fondo limón claro */
+     opacity: 0.3;
+  transition: opacity 0.2s ease-in-out;
+    
+  }
+
+
 /* Clase CSS que define el estilo de error */
 .input-error {
   height: 56px;
@@ -142,7 +150,7 @@ input::placeholder {
   color: var(--grey);
 }
 
-.btn {
+.btn{
   width: 100%;
   padding-inline: 2.8125rem;
   padding-block: 0.9rem;
@@ -152,6 +160,10 @@ input::placeholder {
   border-radius: 0.5rem;
   cursor: pointer;
   margin-block-start: 24px;
+}
+
+.btn-1:hover{
+  /* background-color: var(--gradient-4); */
 }
 
 /* MOBIL FIRST // MAIN PAGE-SUCCESS */
