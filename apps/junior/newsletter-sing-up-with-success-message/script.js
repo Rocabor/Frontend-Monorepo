@@ -1,16 +1,17 @@
 const form = document.getElementById("form-email");
+const main = document.getElementById("main-page");
+const success = document.getElementById("container-success");
+const eUser = document.getElementById("e-user");
+const messError = document.getElementById("message-error");
+const input = document.getElementById("email");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const messError = document.getElementById("message-error");
-  const input = document.getElementById("email");
   const email = input.value;
-  const main = document.getElementById("main-page");
-  const success = document.getElementById("container-success");
-  const eUser = document.getElementById("e-user");
 
   if (email === "") {
+    
     input.classList.add("highlight-effect");
     setTimeout(function () {
       input.classList.remove("highlight-effect");
@@ -32,18 +33,14 @@ form.addEventListener("submit", function (event) {
       main.style.display = "none";
       success.style.display = "flex";
       eUser.textContent = email;
+      input.classList.remove("input-error");
+      messError.innerHTML = "";
     }
   }
-
-  // Limpiar el estilo de error si el usuario vuelve a hacer clic para corregir
-  input.addEventListener("focus", function () {
-    this.classList.remove("input-error");
-    messError.style.display = "none";
-  });
 });
 
 function dissmiss() {
-  document.getElementById("container-success").style.display = "none";
-  document.getElementById("main-page").style.display = "flex";
-  document.getElementById("form-email").reset();
+  success.style.display = "none";
+  main.style.display = "flex";
+  form.reset();
 }

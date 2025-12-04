@@ -122,19 +122,21 @@ li::before {
   color: var(--blue-800);
 }
 
+form input:focus{
+  border-color: #51a8ff;
+}
+
 input {
   padding-inline: 1.5rem;
   padding-block: 1.15rem;
   border-radius: 0.5rem;
 }
 
- .highlight-effect {
-    background-color: #51a8ff; /* Fondo limón claro */
-     opacity: 0.3;
+.highlight-effect {
+  background-color: #51a8ff; /* Fondo limón claro */
+  opacity: 0.3;
   transition: opacity 0.2s ease-in-out;
-    
-  }
-
+}
 
 /* Clase CSS que define el estilo de error */
 .input-error {
@@ -150,7 +152,7 @@ input::placeholder {
   color: var(--grey);
 }
 
-.btn{
+.btn {
   width: 100%;
   padding-inline: 2.8125rem;
   padding-block: 0.9rem;
@@ -160,11 +162,15 @@ input::placeholder {
   border-radius: 0.5rem;
   cursor: pointer;
   margin-block-start: 24px;
+  /* transition: opacity 0.2s; */
 }
 
-.btn-1:hover{
-  /* background-color: var(--gradient-4); */
+form button:hover,form button:active {
+  background: var(--gradient-4);
+  border: none;
+  box-shadow: 0px 0px 20px rgba(255, 98, 97, 0.9) ;
 }
+
 
 /* MOBIL FIRST // MAIN PAGE-SUCCESS */
 
@@ -204,3 +210,10 @@ input::placeholder {
   padding-inline: 6.1612rem;
   padding-block: 0.9rem;
 }
+
+.btn-2:hover,.btn-2:active {
+  background: var(--gradient-4);
+  border: none;
+  box-shadow: 0px 0px 20px rgba(255, 98, 97, 0.9) ;
+}
+
