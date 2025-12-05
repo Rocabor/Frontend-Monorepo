@@ -239,13 +239,22 @@ form button:active {
     padding: 2rem;
     gap: 4rem;
   }
-  picture img {
-    width: 25rem;
+  picture {
+    order: 2;       
   }
+
+   picture img {    
+    width: 25rem;    
+    /* height: 593px; */
+  }
+
+  
   .container {
-    justify-content: space-between;
+   order: 1;
+    /* justify-content: space-between; */
     height: 28.125rem;
     gap: 2rem;
+    
   }
 }
 
