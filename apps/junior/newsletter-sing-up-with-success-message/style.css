@@ -108,6 +108,7 @@ input {
   padding-inline: 1.5rem;
   padding-block: 1.15rem;
   border-radius: 0.5rem;
+  border: 1px solid var(--grey);
 }
 .highlight-effect {
   background-color: #51a8ff;
