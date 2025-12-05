@@ -151,6 +151,7 @@ form button:active {
   /* width: 20.4375rem; */
   width: 100vw;
   height: 100vh;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
