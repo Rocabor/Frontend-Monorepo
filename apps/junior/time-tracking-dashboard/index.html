@@ -20,7 +20,7 @@
     <main class="main">
       <!-- SECCION USER -->
 
-      <div class="cont-user">
+      <aside class="cont-user">
         <div class="cont-perfil">
           <div class="perfil">
             <figure class="user-info">
@@ -32,191 +32,116 @@
             </figure>
           </div>
 
-          <div class="time-selector">
-            <p class="time">Daily</p>
-            <p class="time">Weekly</p>
-            <p class="time">Monthly</p>
-          </div>
+          <nav>
+            <ul id="time-selector" class="timeframe-selector">
+              <li class="time" data-opcion="daily">Daily</li>
+              <li class="time" data-opcion="weekly">Weekly</li>
+              <li class="time" data-opcion="monthly">Monthly</li>
+            </ul>
+          </nav>
         </div>
-      </div>
+      </aside>
 
       <!-- SECCION ACTIVITY -->
 
-      <div class="cont-work">
-        <!-- <img class="icon" src="images/icon-work.svg" alt="" /> -->
+      <article class="cont-work">
         <div class="cont-stats">
           <div class="stats">
-            <div class="activity-header">
-              <p class="activity">Work</p>
+            <header class="activity-header">
+              <h2 class="activity">Work</h2>
               <img src="images/icon-ellipsis.svg" alt="" />
-            </div>
+            </header>
             <div class="actibity-stats">
-              <p class="hr-act">5hrs</p>
-              <p class="hr-prev">Previous - 7hrs</p>
+              <p class="hr-act"></p>
+              <p class="hr-prev"></p>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="cont-play">
-        <!-- <img class="icon" src="images/icon-play.svg" alt="" /> -->
+      <article class="cont-play">
         <div class="cont-stats">
           <div class="stats">
-            <div class="activity-header">
-              <p class="activity">Play</p>
+            <header class="activity-header">
+              <h2 class="activity">Play</h2>
               <img src="images/icon-ellipsis.svg" alt="" />
-            </div>
+            </header>
             <div class="actibity-stats">
-              <p class="hr-act">1hr</p>
-              <p class="hr-prev">Previous - 2hrs</p>
+              <p class="hr-act"></p>
+              <p class="hr-prev"></p>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="cont-study">
-        <!-- <img class="icon" src="images/icon-study.svg" alt="" /> -->
+      <article class="cont-study">
         <div class="cont-stats">
           <div class="stats">
-            <div class="activity-header">
-              <p class="activity">Study</p>
+            <header class="activity-header">
+              <h2 class="activity">Study</h2>
               <img src="images/icon-ellipsis.svg" alt="" />
-            </div>
+            </header>
             <div class="actibity-stats">
-              <p class="hr-act">0hrs</p>
-              <p class="hr-prev">Previous - 1hr</p>
+              <p class="hr-act"></p>
+              <p class="hr-prev"></p>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="cont-exer">
-        <!-- <img class="icon" src="images/icon-exercise.svg" alt="" /> -->
+      <article class="cont-exer">
         <div class="cont-stats">
           <div class="stats">
-            <div class="activity-header">
-              <p class="activity">Exercise</p>
+            <header class="activity-header">
+              <h2 class="activity">Exercise</h2>
               <img src="images/icon-ellipsis.svg" alt="" />
-            </div>
+            </header>
             <div class="actibity-stats">
-              <p class="hr-act">1hr</p>
-              <p class="hr-prev">Previous - 1hr</p>
+              <p class="hr-act" data-id="4"></p>
+              <p class="hr-prev"></p>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="cont-social">
-        <!-- <img class="icon" src="images/icon-social.svg" alt="" /> -->
+      <article class="cont-social">
         <div class="cont-stats">
           <div class="stats">
-            <div class="activity-header">
-              <p class="activity">Social</p>
+            <header class="activity-header">
+              <h2 class="activity">Social</h2>
               <img src="images/icon-ellipsis.svg" alt="" />
-            </div>
+            </header>
             <div class="actibity-stats">
-              <p class="hr-act">1hr</p>
-              <p class="hr-prev">Previous - 3hrs</p>
+              <p class="hr-act"></p>
+              <p class="hr-prev"></p>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="cont-self">
-        <!-- <img class="icon" src="images/icon-self-care.svg" alt="" /> -->
+      <article class="cont-self">
         <div class="cont-stats">
           <div class="stats">
-            <div class="activity-header">
-              <p class="activity">Self Care</p>
+            <header class="activity-header">
+              <h2 class="activity">Self Care</h2>
               <img src="images/icon-ellipsis.svg" alt="" />
-            </div>
+            </header>
             <div class="actibity-stats">
-              <p class="hr-act">0hrs</p>
-              <p class="hr-prev">Previous - 1hr</p>
+              <p class="hr-act"></p>
+              <p class="hr-prev"></p>
             </div>
           </div>
         </div>
-      </div>
+      </article>
     </main>
 
-    <p hidden>
-      Work 5hrs
-      <!-- daily -->
-      Previous - 7hrs
-      <!-- daily -->
-      32hrs
-      <!-- weekly -->
-      Previous - 36hrs
-      <!-- weekly -->
-      103hrs
-      <!-- monthly -->
-      Previous - 128hrs
-      <!-- monthly -->
-
-      Play 1hr
-      <!-- daily -->
-      Previous - 2hrs
-      <!-- daily -->
-      10hrs
-      <!-- weekly -->
-      Previous - 8hrs
-      <!-- weekly -->
-      23hrs
-      <!-- monthly -->
-      Previous - 29hrs
-      <!-- monthly -->
-
-      Study 0hrs
-      <!-- daily -->
-      Previous - 1hr
-      <!-- daily -->
-      4hrs
-      <!-- weekly -->
-      Previous - 7hrs
-      <!-- weekly -->
-      13hrs
-      <!-- monthly -->
-      Previous - 19hrs
-      <!-- monthly -->
-
-      Exercise 1hr
-      <!-- daily -->
-      Previous - 1hr
-      <!-- daily -->
-      4hrs
-      <!-- weekly -->
-      Previous - 5hrs
-      <!-- weekly -->
-      11hrs
-      <!-- monthly -->
-      Previous - 18hrs
-      <!-- monthly -->
-
-      Social 1hr
-      <!-- daily -->
-      Previous - 3hrs
-      <!-- daily -->
-      5hrs
-      <!-- weekly -->
-      Previous - 10hrs
-      <!-- weekly -->
-      21hrs
-      <!-- monthly -->
-      Previous - 23hrs
-      <!-- monthly -->
-
-      Self Care 0hrs
-      <!-- daily -->
-      Previous - 1hr
-      <!-- daily -->
-      2hrs
-      <!-- weekly -->
-      Previous - 2hrs
-      <!-- weekly -->
-      7hrs
-      <!-- monthly -->
-      Previous - 11hrs
-      <!-- monthly -->
-    </p>
+    <footer class="footer-cta">
+      <nav aria-label="Attribution links">
+        <ul class="attribution-list">
+          <li>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a></li>
+          <li>Coded by <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer">Roberto Borges</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
