@@ -254,7 +254,7 @@ h1 {
   }
   .cont-stats {
     width: 11.75rem;
-    height: 11.25rem;
+    height: 180px;
   }
   .stats {
     height: 8.0625rem;
@@ -318,7 +318,7 @@ h1 {
 
   .cont-stats {
     width: 15.9375rem;
-    height: 12.4f375rem;
+    height: 12.4375rem;
   }
   .timeframe-selector {
     flex-direction: column;
