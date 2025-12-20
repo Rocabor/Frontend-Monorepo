@@ -1,0 +1,362 @@
+:root {
+  /* Colors Primary */
+  --Green-200: hsl(173, 61%, 77%);
+  --Green-400: hsl(172, 67%, 45%);
+  --Green-750: hsl(183, 79%, 24%);
+  --Green-800: hsl(183, 85%, 21%);
+  --Green-900: hsl(183, 100%, 15%);
+  --Orange-400: hsl(13, 70%, 60%);
+
+  /* Colors Neutral */
+  --Grey-50: hsl(189, 47%, 97%);
+  --Grey-200: hsl(185, 41%, 84%);
+  --Grey-300: hsl(184, 19%, 68%);
+  --Grey-400: hsl(184, 14%, 56%);
+  --Grey-500: hsl(186, 14%, 43%);
+  --Grey-550: hsl(180, 18%, 40%);
+  --Grey-600: hsl(180, 25%, 32%);
+  --White: hsl(0, 100%, 100%);
+  --Black: hsl(0, 0%, 0%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "space mono", sans-serif;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+body {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--Grey-200);
+}
+
+.splitter {
+  margin-block: 50px;
+  text-align: center;
+}
+
+/* -------------------------MAIN CONTAINER--------------------- */
+.main-cont {
+  width: 375px;
+  padding: 32px 24px;
+  border-radius: 25px 25px 0 0;
+  background-color: var(--White);
+}
+/* ---------------------------FORMULARIO---------------------- */
+
+.content-cont {
+  width: 327px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+/* -------------------------SECCION 1--------------------- */
+
+label {
+  color: var(--Grey-500);
+}
+
+.bill-cont {
+  width: 311px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.bill-cont > * {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cash,
+.people {
+  width: 100%;
+  height: 48px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--Grey-50);
+  font-size: 24px;
+  line-height: 36px;
+  text-align: right;
+}
+
+.cash::placeholder,
+.people::placeholder {
+  color: var(--Green-900);
+}
+
+.cash:focus,
+.people:focus {
+  border-color: var(--Green-400);
+}
+
+.bill-amount,
+.people-input {
+  position: relative;
+}
+
+.bill-amount::before {
+  content: "";
+  position: absolute;
+  background-image: url(images/icon-dollar.svg);
+  left: 16px;
+  top: 15px;
+  width: 9.84px;
+  height: 15.46px;
+}
+
+.people-input::before {
+  content: "";
+  position: absolute;
+  background-image: url(images/icon-person.svg);
+  left: 16px;
+  top: 16px;
+  width: 13px;
+  height: 16px;
+}
+
+.tip-selec-cont > .tip-opt-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tip-opt-cont > .tip-row {
+  display: flex;
+  gap: 16px;
+}
+
+.tip-row > * {
+  width: 147px;
+  height: 48px;
+  padding: 8px 16px;
+  background-color: var(--Green-900);
+  color: var(--White);
+  font-size: 24px;
+  line-height: 36px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tip-btn:hover {
+  background-color: var(--Green-400);
+  border: none;
+}
+.tip-btn:active {
+  background-color: var(--Green-200);
+  border: none;
+}
+
+.custom {
+  background-color: var(--Grey-50);
+  font-size: 24px;
+  line-height: 36px;
+  padding: 8px;
+  text-align: center;
+  color: var(--Grey-550);
+  border: 2px solid transparent;
+  outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.custom:focus {
+  border-color: var(--Green-400);
+}
+
+/* -------------------------SECCION 2--------------------- */
+
+.result-container {
+  width: 100%;
+  padding: 24px;
+  border-radius: 15px;
+  background-color: var(--Green-900);
+}
+
+.result-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.results-datails {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tip-amout-row,
+.total-amount-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tip-amout,
+.total {
+  line-height: 24px;
+  color: var(--White);
+}
+
+.person {
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--Grey-400);
+}
+
+output {
+  font-size: 32px;
+  color: var(--Green-400);
+}
+
+.reset {
+  height: 48px;
+  border-radius: 5px;
+  background-color: var(--Green-750);
+  border: none;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--Green-800);
+  padding: 8px 32px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.reset:hover {
+  background-color: var(--Green-400);
+  border: none;
+}
+.reset:active {
+  background-color: var(--Green-200);
+  border: none;
+}
+
+/* ----------------- TABLET MODE--------------------- */
+
+@media (min-width: 760px) {
+  .main-cont {
+    width: 608px;
+    padding: 48px 80px;
+    border-radius: 25px;
+  }
+
+  .content-cont {
+    width: 457px;
+    gap: 40px;
+  }
+  .bill-cont {
+    width: 457px;
+    gap: 24px;
+  }
+
+  .tip-selec-cont > .tip-opt-cont {
+    display: grid;
+    grid-template-columns: repeat(3, 141.67px);
+    grid-template-rows: repeat(2, 48px);
+  }
+
+  .tip-opt-cont > .tip-row {
+    display: grid;
+  }
+
+  .tip-row > * {
+    width: 141.67px;
+  }
+
+  /* -------------------------SECCION 2--------------------- */
+
+  .result-container {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: center;
+  }
+  .result-content {
+    width: 362px;
+    gap: 16px;
+  }
+
+  .tip-amout-row,
+  .total-amount-row {
+    align-items: center;
+  }
+  .results-datails {
+    gap: 8px;
+  }
+
+  output {
+    font-size: 48px;
+    line-height: 71px;
+  }
+}
+
+/* ----------------- DESKTOP MODE--------------------- */
+
+@media (min-width: 1400px) {
+  .main-cont {
+    width: 920px;
+    padding: 32px;
+    justify-content: center;
+  }
+  .content-cont {
+    width: 840px;
+    height: 417px;
+    gap: 48px;
+    flex-direction: row;
+  }
+
+  .bill-cont {
+    width: 379px;
+    gap: 40px;
+  }
+
+  .tip-selec-cont > .tip-opt-cont {
+    display: grid;
+    grid-template-columns: repeat(3, 116px);
+    grid-template-rows: repeat(2, 48px);
+  }
+
+  .tip-opt-cont > .tip-row {
+    display: grid;
+  }
+
+  .tip-row > * {
+    width: 116px;
+  }
+
+  /* -------------------------SECCION 2--------------------- */
+
+  .result-container {
+    width: 100%;
+    height: 417px;
+    padding: 32px;
+  }
+
+  .result-content {
+    width: 333px;
+    gap: 128px;
+  }
+
+  .results-datails {
+    gap: 24px;
+  }
+
+  .tip-amout-row,
+  .total-amount-row {
+    gap: 96px;
+  }
+}
