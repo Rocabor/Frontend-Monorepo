@@ -34,14 +34,14 @@ Users should be able to:
 
 ### 📸 Screenshot
 
-![]()
+![](https://snipboard.io/fyT1Vg.jpg)
 
 
 
 ### 🌎 Links
 
-- Solution URL: [Repository URL]()
-- Live Site URL: [Tip calculator app solution]()
+- Solution URL: [Repository URL](https://github.com/Rocabor/12.-Tip_calculator_app)
+- Live Site URL: [Tip calculator app solution](https://rocabor.github.io/12.-Tip_calculator_app/)
 
 
 
