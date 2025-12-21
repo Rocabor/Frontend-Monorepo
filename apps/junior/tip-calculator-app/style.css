@@ -94,7 +94,7 @@ label {
 
 .cash::placeholder,
 .people::placeholder {
-  color: var(--Green-900);
+  color: var(--Grey-300);
 }
 
 .cash:focus,
@@ -149,11 +149,11 @@ label {
 }
 
 .tip-btn:hover {
-  background-color: var(--Green-400);
+  background-color: var(--Green-200);
   border: none;
 }
-.tip-btn:active {
-  background-color: var(--Green-200);
+.active-tip {
+  background-color: var(--Green-400);
   border: none;
 }
 
@@ -167,6 +167,7 @@ label {
   text-align: center;
   color: var(--Grey-550);
   border: 0.125rem solid transparent;
+  border-radius: 5px;
   outline: none;
 }
 
@@ -178,7 +179,9 @@ input::-webkit-inner-spin-button {
 .custom:focus {
   border-color: var(--Green-400);
 }
-
+.custom:focus::placeholder {
+  color: transparent;
+}
 /* Validación de Errores */
 .label-wrapper {
   display: flex;
@@ -251,13 +254,14 @@ output {
 }
 
 .reset:hover {
-  background-color: var(--Green-400);
-  border: none;
-}
-.reset:active {
   background-color: var(--Green-200);
   border: none;
 }
+.active {
+  background-color: var(--Green-400);
+  border: none;
+}
+
 
 /* ----------------- TABLET MODE--------------------- */
 
@@ -336,13 +340,10 @@ output {
   /* -------------------------SECCION 2--------------------- */
 
   .result-container {
-    width: 100%;
-    height: 26.0625rem;
     padding: 2rem;
   }
 
   .result-content {
-    width: 20.8125rem;
     gap: 8rem;
   }
 

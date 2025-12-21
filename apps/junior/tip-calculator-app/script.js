@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     billValue = 0;
     tipPercentage = 0;
     peopleValue = 0;
+    resetButton.classList.remove("active");
 
     // Limpiar UI
     tipButtons.forEach((b) => b.classList.remove("active-tip"));
