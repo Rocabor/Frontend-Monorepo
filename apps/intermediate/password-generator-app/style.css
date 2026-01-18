@@ -1,0 +1,56 @@
+:root {
+  /* Variable collection - colors */
+  --colors-white: hsl(0, 0%, 100%);
+  --colors-black: hsl(0, 0%, 0%);
+  --colors-grey-200: hsl(252, 11%, 91%);
+  --colors-grey-600: hsl(251, 9%, 53%);
+  --colors-grey-700: hsl(248, 5%, 34%);
+  --colors-grey-800: hsl(247, 11%, 15%);
+  --colors-grey-850: hsl(248, 15%, 11%);
+  --colors-grey-900: hsl(248, 17%, 9%);
+  --colors-grey-950: hsl(255, 22%, 4%);
+  --colors-yellow-300: hsl(42, 91%, 68%);
+  --colors-orange-400: hsl(13, 95%, 66%);
+  --colors-red-500: hsl(0, 91%, 63%);
+  --colors-green-200: hsl(127, 100%, 82%);
+  --gradient: linear-gradient(90deg, #14131b 0%, #08070b 100%);
+
+  /* Variable collection - spacing */
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-700: 56px;
+  --spacing-1000: 80px;
+  --spacing-1300: 104px;
+  --spacing-1600: 128px;
+  --spacing-2000: 160px;
+  --spacing-2200: 176px;
+  --spacing-2300: 184px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "JetBrains Mono", sans-serif;
+  font-weight: 700;
+}
+
+.TextPreset1 {
+  font-size: 32px;
+  line-height: 42px;
+}
+.TextPreset2 {
+  font-size: 24px;
+  line-height: 32px;
+}
+.TextPreset3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+.TextPreset4 {
+  font-size: 16px;
+  line-height: 20px;
+}
