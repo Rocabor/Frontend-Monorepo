@@ -1,35 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-  <script defer src="script.js"></script>
-  
-  <title>Frontend Mentor | Password generator app</title>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />
+    <script defer src="script.js"></script>
 
-  Password Generator
+    <title>Frontend Mentor | Password generator app</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="generator-title TextPreset4">Password Generator</h1>
 
-  P4$5W0rD!
+      <section class="generator-card">
+        <!-- SECCIÓN: Visualización del Resultado -->
+        <div class="display-container">
+          <div class="password-display">
+            <output class="password-text TextPreset2" id="password-output" aria-live="polite">P4$5W0rD!</output>
+            <div class="copy-text">
+              <span id="copied-message" class="copy-color TextPreset3" style="display: none">COPIED</span>
+              <button id="copy-btn" class="copy-btn" type="button" aria-label="Copy password to clipboard">
+                <img src="starter-code/assets/images/icon-copy.svg" alt="" aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+        </div>
 
-  Character Length
+        <!-- SECCIÓN: Configuración y Formulario -->
+        <div class="settings-container">
+          <form class="generator-form" id="password-form">
+            <!-- Control: Longitud de Caracteres -->
+            <div class="length-setting">
+              <div class="length-header">
+                <label for="character-length-slider" class="length-label TextPreset4">Character Length</label>
+                <output class="length-number TextPreset2" id="character-length-value">10</output>
+              </div>
+              <div class="slider-wrapper">
+                <input
+                  type="range"
+                  id="character-length-slider"
+                  class="range-input"
+                  min="0"
+                  max="20"
+                  value="10"
+                  aria-label="Seleccionar longitud de caracteres"
+                  aria-describedby="character-length-value"
+                />
+              </div>
+            </div>
 
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
+            <!-- Control: Opciones de Complejidad -->
+            <fieldset class="options-fieldset">
+              <div class="options-list">
+                <div class="checkbox-group">
+                  <input type="checkbox" id="uppercase" class="checkbox-input" />
+                  <label for="uppercase" class="checkbox-label">Include Uppercase Letters</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="lowercase" class="checkbox-input" />
+                  <label for="lowercase" class="checkbox-label">Include Lowercase Letters</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="numbers" class="checkbox-input" />
+                  <label for="numbers" class="checkbox-label">Include Numbers</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="symbols" class="checkbox-input" />
+                  <label for="symbols" class="checkbox-label">Include Symbols</label>
+                </div>
+              </div>
+            </fieldset>
 
-  Strength
+            <!-- SECCIÓN: Indicador de Fortaleza -->
+            <div class="generator-controls-bottom">
+              <div class="strength-content">
+                <span class="strength-label TextPreset4">STRENGTH</span>
 
-  Generate
+                <div class="strength-cont">
+                  <span id="strength-text" class="strength-rating-text TextPreset4">MEDIUM</span>
 
-  <p class="TextPreset1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In placeat ad facere a natus quas maxime quasi autem? Quis molestiae modi sint recusandae voluptas repellat!</p>
+                  <div class="strength-bars" id="strength-bars" role="meter" aria-valuemin="0" aria-valuemax="4" aria-valuenow="3" aria-valuetext="Strength: MEDIUM">
+                    <div class="bar active"></div>
+                    <div class="bar active"></div>
+                    <div class="bar active"></div>
+                    <div class="bar"></div>
+                  </div>
+                </div>
+              </div>
 
-</body>
+              <!-- SECCIÓN: Botón de Acción -->
+              <div class="action-container">
+                <button id="btn-generate" type="submit" class="generate-btn">
+                  <span class="btn-text TextPreset3">GENERATE</span>
+                  <span class="btn-icon" aria-hidden="true">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z" /></svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
