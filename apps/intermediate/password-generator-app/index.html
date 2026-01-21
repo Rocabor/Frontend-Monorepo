@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+  <head>   
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -13,16 +13,25 @@
     <title>Frontend Mentor | Password generator app</title>
   </head>
   <body>
+    <!-- ============================================= -->
+    <!--  CONTENIDO PRINCIPAL -->
+    <!-- ============================================= -->
     <main class="main">
       <h1 class="generator-title TextPreset4">Password Generator</h1>
 
+      <!-- ============================================= -->
+      <!--  TARJETA DEL GENERADOR -->
+      <!-- ============================================= -->
       <section class="generator-card">
-        <!-- SECCIÓN: Visualización del Resultado -->
+        
+        <!-- ============================================= -->
+        <!--  SECCIÓN: VISUALIZACIÓN DE RESULTADO -->
+        <!-- ============================================= -->
         <div class="display-container">
           <div class="password-display">
             <output class="password-text TextPreset2" id="password-output" aria-live="polite">P4$5W0rD!</output>
             <div class="copy-text">
-              <span id="copied-message" class="copy-color TextPreset3" style="display: none">COPIED</span>
+              <span id="copied-message" class="copy-color TextPreset3" style="display: none" role="status">COPIED</span>
               <button id="copy-btn" class="copy-btn" type="button" aria-label="Copy password to clipboard">
                 <img src="starter-code/assets/images/icon-copy.svg" alt="" aria-hidden="true" />
               </button>
@@ -30,31 +39,30 @@
           </div>
         </div>
 
-        <!-- SECCIÓN: Configuración y Formulario -->
+        <!-- ============================================= -->
+        <!--  SECCIÓN: CONFIGURACIÓN Y FORMULARIO -->
+        <!-- ============================================= -->
         <div class="settings-container">
           <form class="generator-form" id="password-form">
-            <!-- Control: Longitud de Caracteres -->
+            
+            <!-- ============================================= -->
+            <!--  CONTROL: LONGITUD DE CARACTERES -->
+            <!-- ============================================= -->
             <div class="length-setting">
               <div class="length-header">
                 <label for="character-length-slider" class="length-label TextPreset4">Character Length</label>
-                <output class="length-number TextPreset2" id="character-length-value">10</output>
+                <output class="length-number TextPreset2" id="character-length-value" for="character-length-slider"></output>
               </div>
               <div class="slider-wrapper">
-                <input
-                  type="range"
-                  id="character-length-slider"
-                  class="range-input"
-                  min="0"
-                  max="20"
-                  value="10"
-                  aria-label="Seleccionar longitud de caracteres"
-                  aria-describedby="character-length-value"
-                />
+                <input type="range" id="character-length-slider" class="range-input" min="1" max="20" value="10" />
               </div>
             </div>
 
-            <!-- Control: Opciones de Complejidad -->
+            <!-- ============================================= -->
+            <!--  CONTROL: OPCIONES DE COMPLEJIDAD -->
+            <!-- ============================================= -->
             <fieldset class="options-fieldset">
+              <legend class="sr-only" style="display: none">Password Settings</legend>
               <div class="options-list">
                 <div class="checkbox-group">
                   <input type="checkbox" id="uppercase" class="checkbox-input" />
@@ -75,15 +83,17 @@
               </div>
             </fieldset>
 
-            <!-- SECCIÓN: Indicador de Fortaleza -->
+            <!-- ============================================= -->
+            <!--  SECCIÓN: INDICADOR DE FORTALEZA -->
+            <!-- ============================================= -->
             <div class="generator-controls-bottom">
               <div class="strength-content">
                 <span class="strength-label TextPreset4">STRENGTH</span>
 
                 <div class="strength-cont">
-                  <span id="strength-text" class="strength-rating-text TextPreset4">MEDIUM</span>
+                  <span id="strength-text" class="strength-rating-text TextPreset4"></span>
 
-                  <div class="strength-bars" id="strength-bars" role="meter" aria-valuemin="0" aria-valuemax="4" aria-valuenow="3" aria-valuetext="Strength: MEDIUM">
+                  <div class="strength-bars" id="strength-bars" role="meter" aria-label="Password Strength" aria-valuemin="0" aria-valuemax="4" aria-valuenow="3">
                     <div class="bar active"></div>
                     <div class="bar active"></div>
                     <div class="bar active"></div>
@@ -92,19 +102,35 @@
                 </div>
               </div>
 
-              <!-- SECCIÓN: Botón de Acción -->
-              <div class="action-container">
-                <button id="btn-generate" type="submit" class="generate-btn">
-                  <span class="btn-text TextPreset3">GENERATE</span>
-                  <span class="btn-icon" aria-hidden="true">
-                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z" /></svg>
-                  </span>
-                </button>
-              </div>
+              <!-- ============================================= -->
+              <!--  BOTÓN DE ACCIÓN PRINCIPAL -->
+              <!-- ============================================= -->
+              <button id="btn-generate" type="submit" class="generate-btn">
+                <span class="btn-text TextPreset3">GENERATE</span>
+                <span class="btn-icon" aria-hidden="true">
+                  <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z" /></svg>
+                </span>
+              </button>
             </div>
           </form>
         </div>
       </section>
+
+      <!-- ============================================= -->
+      <!--  SECCIÓN: FOOTER -->
+      <!-- ============================================= -->
+      <footer id="typing-footer">
+        <div class="footer-container">
+          <nav aria-label="Attribution links">
+            <ul class="attribution-list">
+              <li>Challenge by <a href="https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh" target="_blank" rel="noopener noreferrer">Frontend Mentor</a></li>
+              <li>
+                Coded by <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer">© <span class="year">2026 </span>Roberto Borges</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
     </main>
   </body>
 </html>

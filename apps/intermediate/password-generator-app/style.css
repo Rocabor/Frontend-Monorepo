@@ -1,3 +1,6 @@
+/* ============================================= */
+/*  VARIABLES GLOBALES */
+/* ============================================= */
 :root {
   /* colors */
   --colors-white: hsl(0, 0%, 100%);
@@ -28,6 +31,10 @@
   --spacing-2200: 176px;
   --spacing-2300: 184px;
 }
+
+/* ============================================= */
+/*  RESET Y ESTILOS BASE */
+/* ============================================= */
 * {
   margin: 0;
   padding: 0;
@@ -45,24 +52,33 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
-/* ESTILOS DE TEXTO */
+
+/* ============================================= */
+/*  PRESETS DE TEXTO */
+/* ============================================= */
 .TextPreset1 {
   font-size: 32px;
   line-height: 42px;
 }
+
 .TextPreset2 {
   font-size: 24px;
   line-height: 32px;
 }
+
 .TextPreset3 {
   font-size: 18px;
   line-height: 24px;
 }
+
 .TextPreset4 {
   font-size: 16px;
   line-height: 20px;
 }
 
+/* ============================================= */
+/*  LAYOUT PRINCIPAL */
+/* ============================================= */
 .main {
   width: min(100%, 343px);
   min-height: 539px;
@@ -83,7 +99,9 @@ body {
   gap: var(--spacing-200);
 }
 
-/* SECCIÓN: Visualización del Resultado */
+/* ============================================= */
+/*  SECCIÓN: VISUALIZACIÓN DE RESULTADO */
+/* ============================================= */
 .display-container {
   padding: 16px;
   background-color: var(--colors-grey-800);
@@ -95,14 +113,21 @@ body {
   justify-content: space-between;
 }
 
-/* .password-text {
+.password-text {
   color: var(--colors-grey-700);
-} */
-
-.password-text.empty {
-  color: var(--colors-grey-700);
+  font-size: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
+.password-text.active {
+  color: var(--colors-white);
+}
+
+/* ============================================= */
+/*  BOTÓN DE COPIAR */
+/* ============================================= */
 .copy-text {
   display: flex;
   align-items: center;
@@ -133,12 +158,13 @@ body {
   height: 100%;
 }
 
-/* Cambio a Blanco al pasar el mouse */
 .copy-btn img:active {
   filter: brightness(0) invert(1);
 }
 
-/* SECCIÓN: Configuración y Formulario */
+/* ============================================= */
+/*  SECCIÓN: CONFIGURACIÓN Y FORMULARIO */
+/* ============================================= */
 .settings-container {
   min-height: 423px;
   padding: var(--spacing-200);
@@ -151,13 +177,16 @@ body {
   gap: var(--spacing-400);
 }
 
-/* Control: Longitud de Caracteres */
+/* ============================================= */
+/*  CONTROL: LONGITUD DE CARACTERES */
+/* ============================================= */
 .length-setting {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-100);
   min-height: 68px;
 }
+
 .length-header {
   display: flex;
   justify-content: space-between;
@@ -169,6 +198,9 @@ body {
   color: var(--colors-green-200);
 }
 
+/* ============================================= */
+/*  SLIDER DE RANGO */
+/* ============================================= */
 .range-input {
   -webkit-appearance: none;
   appearance: none;
@@ -177,29 +209,38 @@ body {
   outline: none;
   background-color: transparent;
   cursor: pointer;
-
-  /* Gradiente para la parte izquierda (recorrido) */
-  background-image: linear-gradient(var(--colors-green-200), var(--colors-green-200)), var(--gradient);
+  background-image: 
+    linear-gradient(var(--colors-green-200), var(--colors-green-200)), 
+    var(--gradient);
   background-repeat: no-repeat;
-  background-size:
-    46% 100%,
+  background-size: 
+    0% 100%, 
     100% 100%;
+  background-position: 
+    0 0, 
+    0 0;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .range-input::-webkit-slider-thumb {
   -webkit-appearance: none;
+  appearance: none;
   width: 28px;
   height: 28px;
   border-radius: 50%;
   background: var(--colors-grey-200);
   cursor: pointer;
 }
+
 .range-input::-webkit-slider-thumb:active {
-  background-color: transparent;
+  background-color: var(--colors-black);
   border: 2px solid var(--colors-green-200);
 }
 
-/* Control: Opciones de Complejidad */
+/* ============================================= */
+/*  CONTROL: OPCIONES DE COMPLEJIDAD */
+/* ============================================= */
 .options-fieldset {
   width: 280px;
   min-height: 131px;
@@ -234,13 +275,11 @@ body {
   border-color: var(--colors-green-200);
 }
 
-/* Estilo cuando está marcado */
 .checkbox-input:checked {
   background-color: var(--colors-green-200);
   border-color: var(--colors-green-200);
 }
 
-/* Para mostrar la "palomita" o check al marcar */
 .checkbox-input:checked::before {
   content: "";
   width: 11px;
@@ -250,7 +289,9 @@ body {
   background-position: center;
 }
 
-/* SECCIÓN: Indicador de Fortaleza */
+/* ============================================= */
+/*  SECCIÓN: INDICADOR DE FORTALEZA */
+/* ============================================= */
 .generator-controls-bottom {
   display: flex;
   flex-direction: column;
@@ -281,6 +322,9 @@ body {
   gap: var(--spacing-100);
 }
 
+/* ============================================= */
+/*  BARRAS DE FORTALEZA */
+/* ============================================= */
 .bar {
   display: flex;
   width: 10px;
@@ -313,7 +357,9 @@ body {
   border-color: var(--colors-green-200);
 }
 
-/* SECCIÓN: Botón de Acción */
+/* ============================================= */
+/*  BOTÓN DE ACCIÓN PRINCIPAL */
+/* ============================================= */
 .action-container {
   display: flex;
   min-height: 56px;
@@ -349,4 +395,23 @@ body {
 
 .generate-btn:active .btn-icon svg path {
   fill: var(--colors-green-200);
+}
+
+/* ============================================= */
+/*  SECCIÓN: FOOTER */
+/* ============================================= */
+.attribution-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block-start: 0px;
+  font-size: 14px;
+  color: var(--colors-grey-200);
+  list-style: none;
+  gap: 5px;
+}
+
+.attribution-list a {
+  color: var(--colors-green-200);
+  text-decoration: none;
 }
