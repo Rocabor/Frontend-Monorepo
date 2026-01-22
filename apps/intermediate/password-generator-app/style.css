@@ -209,15 +209,13 @@ body {
   outline: none;
   background-color: transparent;
   cursor: pointer;
-  background-image: 
-    linear-gradient(var(--colors-green-200), var(--colors-green-200)), 
-    var(--gradient);
+  background-image: linear-gradient(var(--colors-green-200), var(--colors-green-200)), var(--gradient);
   background-repeat: no-repeat;
-  background-size: 
-    0% 100%, 
+  background-size:
+    0% 100%,
     100% 100%;
-  background-position: 
-    0 0, 
+  background-position:
+    0 0,
     0 0;
   touch-action: none;
   -webkit-tap-highlight-color: transparent;
@@ -416,3 +414,79 @@ body {
   text-decoration: none;
 }
 
+/* ============================================= */
+/*  MEDIA QUERY: DESKTOP */
+/* ============================================= */
+@media (min-width: 1400px) {
+  .main {
+    width: min(100%, 540px);
+    min-height: 696px;
+    gap: var(--spacing-400);
+  }
+
+  .generator-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .length-label,
+  .checkbox-label,
+  .strength-label,
+  .btn-text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .generator-card {
+    min-height: 632px;
+    gap: var(--spacing-300);
+  }
+
+  .display-container {
+    padding: var(--spacing-200) var(--spacing-400);
+  }
+
+  .password-text {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .copy-btn {
+    width: 21px;
+    height: 24px;
+  }
+
+  .settings-container {
+    min-height: 528px;
+    padding: var(--spacing-300) var(--spacing-400);
+  }
+
+  .generator-form {
+    gap: var(--spacing-400);
+    min-height: 463px;
+  }
+
+  .length-setting {
+    min-height: 86px;
+    gap: var(--spacing-200);
+  }
+
+  .options-list {
+    width: max(100%, 315px);
+    min-height: 144px;
+  }
+
+  .generator-controls-bottom {
+    gap: var(--spacing-400);
+    min-height: 169px;
+  }
+
+  .strength-content {
+    padding: var(--spacing-300) var(--spacing-400);
+  }
+
+  .generate-btn {
+    padding: var(--spacing-300) var(--spacing-2200);
+    min-height: 65px;
+  }
+}
