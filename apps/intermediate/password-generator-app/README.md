@@ -40,8 +40,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Repository URL](https://your-solution-url.com)
-- Live Site URL: [Password generator app solution](https://your-live-site-url.com)
+- Solution URL: [Repository URL](https://github.com/Rocabor/14.-Password-generator-app?tab=readme-ov-file)
+- Live Site URL: [Password generator app solution](https://rocabor.github.io/14.-Password-generator-app/)
 
 ## My process
 
