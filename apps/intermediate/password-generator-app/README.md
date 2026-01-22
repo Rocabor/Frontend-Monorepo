@@ -1,8 +1,8 @@
 # Frontend Mentor - Password generator app solution
 
-This is a solution to the [Password generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Password generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Table of contents
+## Table of contents 📋
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
@@ -16,11 +16,14 @@ This is a solution to the [Password generator app challenge on Frontend Mentor](
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
-### The challenge
+### The challenge   
+
+![Static Badge](https://img.shields.io/badge/intermediate-%23fff?style=for-the-badge&label=3&labelColor=fbbf24)
+![Static Badge](https://img.shields.io/badge/html5-%23E34F26?style=for-the-badge&logo=html5&logoColor=%23ffffff)
+![Static Badge](https://img.shields.io/badge/css-%23663399?style=for-the-badge&logo=css)
+![Static Badge](https://img.shields.io/badge/javascript-%23F7DF1E?style=for-the-badge&logo=javascript&logoColor=%23000)
 
 Users should be able to:
 
@@ -30,22 +33,15 @@ Users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-### Screenshot
+### Screenshot  
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](https://snipboard.io/t1hwQZ.jpg)
+![](https://snipboard.io/GcWdv9.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repository URL](https://your-solution-url.com)
+- Live Site URL: [Password generator app solution](https://your-live-site-url.com)
 
 ## My process
 
@@ -56,29 +52,64 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Vanilla JavaScript
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+During this project, I delved deeper into several important web development concepts:
 
-To see how you can add code snippets, see below:
+**Accessibility and ARIA:** I implemented ARIA attributes to improve the accessibility of the strength bars component.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="strength-bars" role="meter" aria-valuemin="0" aria-valuemax="4">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
 ```
+**Advanced CSS:** I created a custom slider with dynamic gradients and accessible hover/focus states.
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.range-input {
+  -webkit-appearance: none;
+  background: linear-gradient(
+    to right,
+    var(--neon-green) 0%,
+    var(--neon-green) 50%,
+    var(--very-dark-grey) 50%,
+    var(--very-dark-grey) 100%
+  );
+  background-size: var(--percentage, 50%) 100%;
+  background-repeat: no-repeat;
+}
+
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: var(--almost-white);
+  border: 2px solid var(--almost-white);
+  transition: all 0.2s ease;
+}
+
+.range-input::-webkit-slider-thumb:hover {
+  background-color: var(--very-dark-grey);
+  border-color: var(--neon-green);
 }
 ```
+**Password strength calculation:** I developed a scoring system that evaluates multiple factors to determine the strength of a password.
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+function calculateStrength(password) {
+  let score = 0;
+  const length = password.length;
+
+  if (length >= 12) score += 2;
+  else if (length >= 8) score += 1;
+
+  if (/[A-Z]/.test(password)) score += 1;
+  if (/[a-z]/.test(password)) score += 1;
+  if (/[0-9]/.test(password)) score += 1;
+  if (/[^A-Za-z0-9]/.test(password)) score += 1;
+
+  return score;
 }
 ```
 
@@ -88,27 +119,35 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- [React](https://reactjs.org/) - JS library to restructure the project into components
+- [Next.js](https://nextjs.org/) - React framework for better performance and SSR
+- [TypeScript](https://www.typescriptlang.org/) - For static typing and improved maintainability
+- [Tailwind CSS](https://tailwindcss.com/) - For more consistent and faster styles
+- [Framer Motion](https://www.framer.com/motion/) - For more advanced animations
+- [Jest](https://jestjs.io/) - For unit testing of JavaScript code
+- [Cypress](https://www.cypress.io/) - For end-to-end testing of the application
+- [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) - For background statistics processing
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [MDN Web Docs](https://developer.mozilla.org/es/) - A very comprehensive resource with tutorials, explanations, and references for HTML, CSS, and JavaScript. I found it very useful for completing this challenge and will continue to use it.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [W3Schools](https://www.w3schools.com/) - Another great resource for learning to program, and I used it to complete this challenge. I recommend it to anyone still learning this concept.
 
-## Author
+- [Web Dev](https://web.dev/) - Guidance to build modern web experiences that work on any browser.
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- [Javascript Info](https://javascript.info/) - From the basics to advanced topics with simple, but detailed explanations.
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- [ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/) Recommended ARIA Implementation Patterns.
+
+- [CSS-Tricks](https://css-tricks.com/) - For advanced CSS techniques and responsive design.
+
+- [Frontend Mentor Community](https://www.frontendmentor.io/community) - For helpful discussions and sharing of your work.
+
+## ​​Author
+
+- Frontend Mentor - 👨‍💻[@ Rocabor](https://www.frontendmentor.io/profile/Rocabor)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills. I'm also grateful to all the developers who share their knowledge online through tutorials, documentation, and educational resources that enable others to learn and grow in this industry.
