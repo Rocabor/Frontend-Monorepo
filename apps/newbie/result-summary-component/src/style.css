@@ -1,4 +1,44 @@
 @import "tailwindcss";
+@import "./typography.css";
+
+
+@layer base {
+  body{
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+}
+
+
+@theme {
+
+  /* Fuente */
+  --font-hanken: "Hanken Grotesk", sans-serif;
+
+  /* Colores personalizados */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  
+  --color-yellow-50: #fffbf4;
+  --color-yellow-400: #ffb21e;
+  
+  --color-red-50: #fff6f6;
+  --color-red-400: #ff5555;
+  
+  --color-green-50: #f2fcf9;
+  --color-green-500: #00bb8f;
+  
+  --color-blue-50: #f3f4fd;
+  --color-blue-800: #1125d6;
+  
+  --color-navy-50: #ecf2ff;
+  --color-navy-200: #cac9ff;
+  --color-navy-950: #303b59;
+
+  /* Degradados (Gradients) */
+  --background-image-gradient-1: linear-gradient(180deg, #4d21c9 0%, rgba(37, 33, 201, 0) 100%);
+  --background-image-gradient-2: linear-gradient(180deg, #7755ff 0%, #2f2ce9 100%);
+}
 
 
 
