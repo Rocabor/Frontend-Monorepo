@@ -1,70 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Results summary component</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 
-  <link href="./src/style.css" rel="stylesheet">
+    <title>Frontend Mentor | Results summary component</title>
 
- 
+    <link href="./src/style.css" rel="stylesheet" />
   </head>
-  <body >
-
-    <main class="w-full h-screen bg-white">
+  <body>
+    <main class="w-full bg-white">
       <section class="flex flex-col gap-6">
-        
         <div class="flex justify-center items-center min-h-[356px] bg-gradient-2 rounded-b-[32px]">
-
           <div class="flex flex-col items-center gap-6 text-center w-[260px] h-[292px]">
             <p class="text-preset-5-bold text-navy-200">Your Result</p>
             <div>
               <div class="flex items-center justify-center w-[140px] h-[140px] rounded-full bg-gradient-1">
-
-                <p class="text-preset-2">76<span class="text-preset-6-bold text-navy-200 block">of 100</span></p>
+                <p class="text-preset-2">
+                  76<span class="text-preset-6-bold text-navy-200 opacity-50 block">of 100</span>
+                </p>
               </div>
             </div>
             <div class="flex flex-col gap-2">
               <p class="text-preset-4">Great</p>
-              <p class="text-preset-6-medium text-navy-200">You scored higher than 65% of the people who have taken these tests.</p>
+              <p class="text-preset-6-bold text-navy-200">
+                You scored higher than 65% of the people who have taken these tests.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-6 w-[315px] min-h-[399px] mx-auto">
+          
+          <div class="text-preset-5-bold text-navy-950">Summary</div>
+
+          <div class="flex flex-col gap-4 min-h-[272px]">
+            <!-- REACTION -->
+            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-red-50">
+              <div class="flex justify-between text-red-400 w-[283px] h-[21px]">
+                <div class="flex gap-4 text-preset-6-medium">
+                  <img src="assets/images/icon-reaction.svg" alt="" />Reaction
+                </div>
+
+                <div class="text-preset-6-bold text-navy-950">80 <span class="opacity-50">/ 100</span></div>
+              </div>
             </div>
 
+            <!-- MEMORY -->
+            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-yellow-50">
+              <div class="flex justify-between text-yellow-400 w-[283px] h-[21px]">
+                <div class="flex gap-4 text-preset-6-medium">
+                  <img src="assets/images/icon-memory.svg" alt="" />Memory
+                </div>
 
+                <div class="text-preset-6-bold text-navy-950">92 <span class="opacity-50">/ 100</span></div>
+              </div>
+            </div>
+
+            <!-- VERBAL -->
+            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-green-50">
+              <div class="flex justify-between text-green-500 w-[283px] h-[21px]">
+                <div class="flex gap-4 text-preset-6-medium">
+                  <img src="assets/images/icon-verbal.svg" alt="" />Verbal
+                </div>
+
+                <div class="text-preset-6-bold text-navy-950">61 <span class="opacity-50">/ 100</span></div>
+              </div>
+            </div>
+
+            <!-- VISUAL -->
+            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-blue-50">
+              <div class="flex justify-between text-blue-800 w-[283px] h-[21px]">
+                <div class="flex gap-4 text-preset-6-medium">
+                  <img src="assets/images/icon-visual.svg" alt="" />Visual
+                </div>
+
+                <div class="text-preset-6-bold text-navy-950">73 <span class="opacity-50">/ 100</span></div>
+              </div>
+            </div>
           </div>
+
+          <button class="h-[56px] rounded-[128px] bg-navy-950 text-preset-5-bold">Continue</button>
         </div>
       </section>
     </main>
-
-   
-  
-  
- 
   </body>
 </html>
-
-<div hidden>
-  
-  Your Result
-  76
-  of 100
-
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
-
-  Reaction
-  80 / 100
-
-  Memory
-  92 / 100
-
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue</div>
