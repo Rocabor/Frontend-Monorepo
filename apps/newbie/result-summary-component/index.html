@@ -9,13 +9,13 @@
 
     <link href="./src/style.css" rel="stylesheet" />
   </head>
-  <body>
-    <main class="w-full bg-white flex items-center justify-center" role="main">
-      <section class="flex flex-col gap-6 md:flex-row w-[686px] items-center">
+  <body class="md:flex md:items-center">
+    <main class="w-full flex items-center justify-center" role="main">
+      <section class="flex flex-col w-full gap-6 bg-white shadow-shadow md:flex-row md:w-[686px] md:items-center md:rounded-4xl md:gap-0 xl:w-[738px]">
         <!-- Resultado - Sección con ARIA landmark -->
-        <article class="flex justify-center items-center min-h-[356px] bg-gradient-2 rounded-b-[32px] md:w-[338px] h-[512px] rounded-t-[32px] " aria-labelledby="result-title">
+        <article class="flex justify-center items-center w-full h-[356px] bg-gradient-2 rounded-b-[32px] md:w-[338px] md:h-[512px] md:rounded-t-[32px] " aria-labelledby="result-title">
 
-          <div class="flex flex-col items-center gap-6 text-center w-[260px] h-[292px] md:w-[200px] h-[422px] gap-8">
+          <div class="flex flex-col items-center gap-6 text-center w-[260px] h-[292px] md:w-[200px] md:h-[422px] xl:w-[260px]">
             <h1 id="result-title" class="text-preset-5-bold text-navy-200 md:text-preset-4">Your Result</h1>
             <div>
               <div class="flex items-center justify-center size-[140px] rounded-full bg-gradient-1 md:size-[200px]" role="status" aria-live="polite" aria-label="Score: 76 out of 100">
@@ -34,14 +34,14 @@
         </article>
 
         <!-- Resumen - Sección con estructura semántica -->
-        <section class="flex flex-col gap-6 w-[315px] h-[399px] mx-auto md:w-[269px] h-[423px] gap-8" aria-labelledby="summary-title">
+        <section class="flex flex-col gap-6 w-[315px] h-[399px] mx-auto md:gap-8 md:w-[269px] md:h-[423px] xl:w-[288px]" aria-labelledby="summary-title">
           <h2 id="summary-title" class="text-preset-5-bold text-navy-950 md:text-preset-4">Summary</h2>
 
           <!-- Lista de resultados por categoría -->
-          <div class="flex flex-col gap-4 min-h-[272px]" role="list">
+          <div class="flex flex-col gap-4 h-[272px]" role="list">
             <!-- REACTION -->
-            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-red-50" role="listitem">
-              <div class="flex justify-between text-red-400 w-[283px] h-[21px]">
+            <div class="flex items-center justify-center h-[56px] rounded-xl bg-red-50" role="listitem">
+              <div class="flex justify-between text-red-400 w-[283px] h-[21px] md:w-[235px] h-[23px]">
                 <div class="flex gap-4 text-preset-6- md:text-preset-5-medium">
                   <img src="assets/images/icon-reaction.svg" alt="Lightning bolt icon representing Reaction score" aria-hidden="true" />
                   <span>Reaction</span>
@@ -54,8 +54,8 @@
             </div>
 
             <!-- MEMORY -->
-            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-yellow-50" role="listitem">
-              <div class="flex justify-between text-yellow-400 w-[283px] h-[21px]">
+            <div class="flex items-center justify-center h-[56px] rounded-xl bg-yellow-50" role="listitem">
+              <div class="flex justify-between text-yellow-400 w-[283px] h-[21px] md:w-[235px] h-[23px]">
                 <div class="flex gap-4 text-preset-6-medium md:text-preset-5-medium">
                   <img src="assets/images/icon-memory.svg" alt="Brain icon representing Memory score" aria-hidden="true" />
                   <span>Memory</span>
@@ -68,8 +68,8 @@
             </div>
 
             <!-- VERBAL -->
-            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-green-50" role="listitem">
-              <div class="flex justify-between text-green-500 w-[283px] h-[21px]">
+            <div class="flex items-center justify-center h-[56px] rounded-xl bg-green-50" role="listitem">
+              <div class="flex justify-between text-green-500 w-[283px] h-[21px] md:w-[235px] h-[23px]">
                 <div class="flex gap-4 text-preset-6-medium md:text-preset-5-medium">
                   <img src="assets/images/icon-verbal.svg" alt="Chat bubble icon representing Verbal score" aria-hidden="true" />
                   <span>Verbal</span>
@@ -82,8 +82,8 @@
             </div>
 
             <!-- VISUAL -->
-            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-blue-50" role="listitem">
-              <div class="flex justify-between text-blue-800 w-[283px] h-[21px]">
+            <div class="flex items-center justify-center h-[56px] rounded-xl bg-blue-50" role="listitem">
+              <div class="flex justify-between text-blue-800 w-[283px] h-[21px] md:w-[235px] h-[23px]">
                 <div class="flex gap-4 text-preset-6-medium md:text-preset-5-medium">
                   <img src="assets/images/icon-visual.svg" alt="Eye icon representing Visual score" aria-hidden="true" />
                   <span>Visual</span>

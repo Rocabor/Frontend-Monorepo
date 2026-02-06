@@ -4,11 +4,9 @@
 
 @layer base {
   body{  
+    background-color: var(--color-blue-50);
     color: var(--color-white);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    min-height: 100vh;   
   }
 }
 
@@ -41,6 +39,8 @@
   /* Degradados (Gradients) */
   --background-image-gradient-1: linear-gradient(180deg, #4d21c9 0%, rgba(37, 33, 201, 0) 100%);
   --background-image-gradient-2: linear-gradient(180deg, #7755ff 0%, #2f2ce9 100%);
+
+  --shadow-shadow:0 30px 60px rgba(61, 108, 236, 0.15);
 }
 
 
