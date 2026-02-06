@@ -10,79 +10,95 @@
     <link href="./src/style.css" rel="stylesheet" />
   </head>
   <body>
-    <main class="w-full bg-white">
-      <section class="flex flex-col gap-6">
-        <div class="flex justify-center items-center min-h-[356px] bg-gradient-2 rounded-b-[32px]">
-          <div class="flex flex-col items-center gap-6 text-center w-[260px] h-[292px]">
-            <p class="text-preset-5-bold text-navy-200">Your Result</p>
+    <main class="w-full bg-white flex items-center justify-center" role="main">
+      <section class="flex flex-col gap-6 md:flex-row w-[686px] items-center">
+        <!-- Resultado - Sección con ARIA landmark -->
+        <article class="flex justify-center items-center min-h-[356px] bg-gradient-2 rounded-b-[32px] md:w-[338px] h-[512px] rounded-t-[32px] " aria-labelledby="result-title">
+
+          <div class="flex flex-col items-center gap-6 text-center w-[260px] h-[292px] md:w-[200px] h-[422px] gap-8">
+            <h1 id="result-title" class="text-preset-5-bold text-navy-200 md:text-preset-4">Your Result</h1>
             <div>
-              <div class="flex items-center justify-center w-[140px] h-[140px] rounded-full bg-gradient-1">
-                <p class="text-preset-2">
-                  76<span class="text-preset-6-bold text-navy-200 opacity-50 block">of 100</span>
+              <div class="flex items-center justify-center size-[140px] rounded-full bg-gradient-1 md:size-[200px]" role="status" aria-live="polite" aria-label="Score: 76 out of 100">
+                <p class="text-preset-2 md:text-preset-1">
+                  <span aria-hidden="true">76</span>
+                  <span class="sr-only">76</span>
+                  <span class="text-preset-6-bold text-navy-200 opacity-50 block md:text-preset-5-bold" aria-hidden="true">of 100</span>
                 </p>
               </div>
             </div>
-            <div class="flex flex-col gap-2">
-              <p class="text-preset-4">Great</p>
-              <p class="text-preset-6-bold text-navy-200">
-                You scored higher than 65% of the people who have taken these tests.
-              </p>
+            <div class="flex flex-col gap-2 md:gap-4">
+              <h2 class="text-preset-4 md:text-preset-3">Great</h2>
+              <p class="text-preset-6-bold text-navy-200 md:text-preset-5-medium">You scored higher than 65% of the people who have taken these tests.</p>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="flex flex-col gap-6 w-[315px] min-h-[399px] mx-auto">
-          
-          <div class="text-preset-5-bold text-navy-950">Summary</div>
+        <!-- Resumen - Sección con estructura semántica -->
+        <section class="flex flex-col gap-6 w-[315px] h-[399px] mx-auto md:w-[269px] h-[423px] gap-8" aria-labelledby="summary-title">
+          <h2 id="summary-title" class="text-preset-5-bold text-navy-950 md:text-preset-4">Summary</h2>
 
-          <div class="flex flex-col gap-4 min-h-[272px]">
+          <!-- Lista de resultados por categoría -->
+          <div class="flex flex-col gap-4 min-h-[272px]" role="list">
             <!-- REACTION -->
-            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-red-50">
+            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-red-50" role="listitem">
               <div class="flex justify-between text-red-400 w-[283px] h-[21px]">
-                <div class="flex gap-4 text-preset-6-medium">
-                  <img src="assets/images/icon-reaction.svg" alt="" />Reaction
+                <div class="flex gap-4 text-preset-6- md:text-preset-5-medium">
+                  <img src="assets/images/icon-reaction.svg" alt="Lightning bolt icon representing Reaction score" aria-hidden="true" />
+                  <span>Reaction</span>
                 </div>
-
-                <div class="text-preset-6-bold text-navy-950">80 <span class="opacity-50">/ 100</span></div>
+                <div class="text-preset-6-bold text-navy-950 md:text-preset-5-bold">
+                  <span aria-label="Reaction score: 80 out of 100">80</span>
+                  <span class="opacity-50" aria-hidden="true">/ 100</span>
+                </div>
               </div>
             </div>
 
             <!-- MEMORY -->
-            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-yellow-50">
+            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-yellow-50" role="listitem">
               <div class="flex justify-between text-yellow-400 w-[283px] h-[21px]">
-                <div class="flex gap-4 text-preset-6-medium">
-                  <img src="assets/images/icon-memory.svg" alt="" />Memory
+                <div class="flex gap-4 text-preset-6-medium md:text-preset-5-medium">
+                  <img src="assets/images/icon-memory.svg" alt="Brain icon representing Memory score" aria-hidden="true" />
+                  <span>Memory</span>
                 </div>
-
-                <div class="text-preset-6-bold text-navy-950">92 <span class="opacity-50">/ 100</span></div>
+                <div class="text-preset-6-bold text-navy-950 md:text-preset-5-bold">
+                  <span aria-label="Memory score: 92 out of 100">92</span>
+                  <span class="opacity-50" aria-hidden="true">/ 100</span>
+                </div>
               </div>
             </div>
 
             <!-- VERBAL -->
-            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-green-50">
+            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-green-50" role="listitem">
               <div class="flex justify-between text-green-500 w-[283px] h-[21px]">
-                <div class="flex gap-4 text-preset-6-medium">
-                  <img src="assets/images/icon-verbal.svg" alt="" />Verbal
+                <div class="flex gap-4 text-preset-6-medium md:text-preset-5-medium">
+                  <img src="assets/images/icon-verbal.svg" alt="Chat bubble icon representing Verbal score" aria-hidden="true" />
+                  <span>Verbal</span>
                 </div>
-
-                <div class="text-preset-6-bold text-navy-950">61 <span class="opacity-50">/ 100</span></div>
+                <div class="text-preset-6-bold text-navy-950 md:text-preset-5-bold">
+                  <span aria-label="Verbal score: 61 out of 100">61</span>
+                  <span class="opacity-50" aria-hidden="true">/ 100</span>
+                </div>
               </div>
             </div>
 
             <!-- VISUAL -->
-            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-blue-50">
+            <div class="flex items-center justify-center min-h-[56px] rounded-xl bg-blue-50" role="listitem">
               <div class="flex justify-between text-blue-800 w-[283px] h-[21px]">
-                <div class="flex gap-4 text-preset-6-medium">
-                  <img src="assets/images/icon-visual.svg" alt="" />Visual
+                <div class="flex gap-4 text-preset-6-medium md:text-preset-5-medium">
+                  <img src="assets/images/icon-visual.svg" alt="Eye icon representing Visual score" aria-hidden="true" />
+                  <span>Visual</span>
                 </div>
-
-                <div class="text-preset-6-bold text-navy-950">73 <span class="opacity-50">/ 100</span></div>
+                <div class="text-preset-6-bold text-navy-950 md:text-preset-5-bold">
+                  <span aria-label="Visual score: 73 out of 100">73</span>
+                  <span class="opacity-50" aria-hidden="true">/ 100</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <button class="h-[56px] rounded-[128px] bg-navy-950 text-preset-5-bold">Continue</button>
-        </div>
+          <!-- Botón con etiqueta ARIA para acción clara -->
+          <button class="h-[56px] rounded-[128px] bg-navy-950 active:bg-gradient-2 border-none text-preset-5-bold" aria-label="Continue to see detailed results">Continue</button>
+        </section>
       </section>
     </main>
   </body>

@@ -5,6 +5,10 @@
 @layer base {
   body{  
     color: var(--color-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
