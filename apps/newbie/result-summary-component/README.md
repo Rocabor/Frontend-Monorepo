@@ -16,11 +16,15 @@ This is a solution to the [Results summary component challenge on Frontend Mento
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
 ### The challenge
+
+![Static Badge](https://img.shields.io/badge/NEWBIE-%23ffffff?style=for-the-badge&label=1&labelColor=%2306B6D4&color=%23ffffff)
+![Static Badge](https://img.shields.io/badge/html5-%23E34F26?style=for-the-badge&logo=html5&logoColor=%23ffffff)
+![Static Badge](https://img.shields.io/badge/tailwind%20css-%2306B6D4?style=for-the-badge&logo=tailwindcss&logoColor=%23fff)
+![Static Badge](https://img.shields.io/badge/javascript-%23F7DF1E?style=for-the-badge&logo=javascript&logoColor=%23000)
 
 Users should be able to:
 
@@ -30,20 +34,17 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://snipboard.io/6ZNc3C.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+ [![Static Badge](https://img.shields.io/badge/Github-%23fff?style=for-the-badge&logo=github&logoColor=%23fff&labelColor=%23000)](https://github.com/Rocabor/Results-Summary-Component)
+
+[![Static Badge](https://img.shields.io/badge/Live%20Site%20URL-%23303b59?style=for-the-badge&logo=vitepress&logoColor=%23fff&labelColor=%23303b59)
+](https://rocabor.github.io/Results-Summary-Component/)
+
+
 
 ## My process
 
@@ -52,61 +53,80 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Tailwind CSS for styling
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+In this project, I learned how to create a fully responsive component with dynamic content loading:
 
-To see how you can add code snippets, see below:
+**Accessibility improvements:**
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div role="status" aria-live="polite" aria-label="Score: 76 out of 100">
+  <p class="text-preset-2 md:text-preset-1">
+    <span id="average-score" aria-hidden="true">76</span>
+    <span id="average-score-sr" class="sr-only">76</span>
+  </p>
+</div>
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
+**Responsive design with Tailwind:**
+
+```html
+<section class="flex flex-col w-full gap-6 bg-white shadow-shadow md:flex-row md:w-[686px] md:items-center md:rounded-4xl md:gap-0 xl:w-[738px]">
 ```
+
+**Dynamic content loading with JavaScript:**
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+async function loadData() {
+  try {
+    const response = await fetch('./data.json');
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    console.error('Error loading data:', error);
+    return null;
+  }
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+**Dynamic category generation::**
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```js
+data.forEach(item => {
+  const categoryElement = document.createElement('div');
+  categoryElement.className = `flex items-center justify-center h-[56px] rounded-xl ${style.bgColor}`;
+  categoryElement.setAttribute('role', 'listitem');  
+});
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- Areas I want to continue focusing on in future projects:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+    - Advanced accessibility patterns for complex components
+    - Performance optimization for JavaScript-heavy applications
+    - Advanced Tailwind CSS techniques and custom configurations
+    - State management for more complex interactive components
+    - Testing methodologies for dynamic content
+
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [MDN Web Docs](https://developer.mozilla.org/es/) - A very comprehensive resource with tutorials, explanations, and references for HTML, CSS, and JavaScript. I found it very useful for completing this challenge and will continue to use it.
+- [W3Schools](https://www.w3schools.com/) - Another great resource for learning to program, and I used it to complete this challenge. I recommend it to anyone still learning this concept.
+- [Web Dev](https://web.dev/) - Guidance to build modern web experiences that work on any browser.
+- [Javascript Info](https://javascript.info/) - From the basics to advanced topics with simple, but detailed explanations.
+- [ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/) Recommended ARIA Implementation Patterns.
+- [CSS-Tricks](https://css-tricks.com/) - For advanced CSS techniques and responsive design.
+- [Frontend Mentor Community](https://www.frontendmentor.io/community) - For helpful discussions and sharing of your work.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+## ​​Author
 
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - 👨‍💻[@ Rocabor](https://www.frontendmentor.io/profile/Rocabor)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills. I'm also grateful to all the developers who share their knowledge online through tutorials, documentation, and educational resources that enable others to learn and grow in this industry.
