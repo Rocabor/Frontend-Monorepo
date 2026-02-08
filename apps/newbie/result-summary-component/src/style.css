@@ -4,7 +4,7 @@
 
 @layer base {
   body{  
-    background-color: var(--color-blue-50);
+    background-color: var(--color-navy-50);
     color: var(--color-white);
     min-height: 100vh;   
   }
