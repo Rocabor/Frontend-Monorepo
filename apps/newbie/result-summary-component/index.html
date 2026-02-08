@@ -8,11 +8,19 @@
     <title>Frontend Mentor | Results summary component</title>
 
     <link href="./src/style.css" rel="stylesheet" />
+    <script type="module" src="src/script.js"></script>
   </head>
-  <body class="md:flex md:items-center">
+  <body class="flex flex-col items-center gap-2 md:justify-center">
+    
+    <!-- ============================================= -->
+    <!--  SECCIÓN: CONTENIDO PRINCIPAL -->
+    <!-- ============================================= -->
     <main class="w-full flex items-center justify-center" role="main">
       <section class="flex flex-col w-full gap-6 bg-white shadow-shadow md:flex-row md:w-[686px] md:items-center md:rounded-4xl md:gap-0 xl:w-[738px]">
-        <!-- Resultado - Sección con ARIA landmark -->
+        
+        <!-- ============================================= -->
+        <!--  COMPONENTE: PUNTAJE GENERAL (RESULTADO) -->
+        <!-- ============================================= -->
         <article class="flex justify-center items-center w-full h-[356px] bg-gradient-2 rounded-b-[32px] md:w-[338px] md:h-[512px] md:rounded-t-[32px] " aria-labelledby="result-title">
 
           <div class="flex flex-col items-center gap-6 text-center w-[260px] h-[292px] md:w-[200px] md:h-[422px] xl:w-[260px]">
@@ -33,13 +41,14 @@
           </div>
         </article>
 
-        <!-- Resumen - Sección con estructura semántica -->
+        <!-- ============================================= -->
+        <!--  COMPONENTE: DESGLOSE DE CATEGORÍAS (RESUMEN) -->
+        <!-- ============================================= -->
         <section class="flex flex-col gap-6 w-[315px] h-[399px] mx-auto md:gap-8 md:w-[269px] md:h-[423px] xl:w-[288px]" aria-labelledby="summary-title">
           <h2 id="summary-title" class="text-preset-5-bold text-navy-950 md:text-preset-4">Summary</h2>
 
-          <!-- Lista de resultados por categoría -->
           <div class="flex flex-col gap-4 h-[272px]" role="list">
-            <!-- REACTION -->
+            <!-- CATEGORÍA: REACTION -->
             <div class="flex items-center justify-center h-[56px] rounded-xl bg-red-50" role="listitem">
               <div class="flex justify-between text-red-400 w-[283px] h-[21px] md:w-[235px] h-[23px]">
                 <div class="flex gap-4 text-preset-6- md:text-preset-5-medium">
@@ -53,7 +62,7 @@
               </div>
             </div>
 
-            <!-- MEMORY -->
+            <!-- CATEGORÍA: MEMORY -->
             <div class="flex items-center justify-center h-[56px] rounded-xl bg-yellow-50" role="listitem">
               <div class="flex justify-between text-yellow-400 w-[283px] h-[21px] md:w-[235px] h-[23px]">
                 <div class="flex gap-4 text-preset-6-medium md:text-preset-5-medium">
@@ -67,7 +76,7 @@
               </div>
             </div>
 
-            <!-- VERBAL -->
+            <!-- CATEGORÍA: VERBAL -->
             <div class="flex items-center justify-center h-[56px] rounded-xl bg-green-50" role="listitem">
               <div class="flex justify-between text-green-500 w-[283px] h-[21px] md:w-[235px] h-[23px]">
                 <div class="flex gap-4 text-preset-6-medium md:text-preset-5-medium">
@@ -81,7 +90,7 @@
               </div>
             </div>
 
-            <!-- VISUAL -->
+            <!-- CATEGORÍA: VISUAL -->
             <div class="flex items-center justify-center h-[56px] rounded-xl bg-blue-50" role="listitem">
               <div class="flex justify-between text-blue-800 w-[283px] h-[21px] md:w-[235px] h-[23px]">
                 <div class="flex gap-4 text-preset-6-medium md:text-preset-5-medium">
@@ -96,10 +105,25 @@
             </div>
           </div>
 
-          <!-- Botón con etiqueta ARIA para acción clara -->
           <button class="h-[56px] rounded-[128px] bg-navy-950 active:bg-gradient-2 border-none text-preset-5-bold" aria-label="Continue to see detailed results">Continue</button>
         </section>
       </section>
     </main>
+
+    <!-- ============================================= -->
+    <!--  SECCIÓN: PIE DE PÁGINA (FOOTER) -->
+    <!-- ============================================= -->
+    <footer id="typing-footer">
+      <div class="footer-container">
+        <nav class="text-black text-preset-6-medium" aria-label="Attribution links">
+          <ul class="attribution-list text-center">
+            <li>Challenge by <a href="https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV" target="_blank" rel="noopener noreferrer" class="text-green-500 font-bold ">Frontend Mentor</a></li>
+            <li>
+              Coded by <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer" class="text-blue-800 font-bold ">© <span class="year">2026 </span>Roberto Borges</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
