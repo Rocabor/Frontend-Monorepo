@@ -1,1 +1,22 @@
 @import "tailwindcss";
+@import "./typography.css";
+
+
+@layer base {
+  body {
+    font-family: 'Red Hat Display', sans-serif;    
+  }
+}
+
+
+@theme{
+  --color-white: #ffffff;
+  --color-black: #000000;  
+  --color-blue-50: #f7f9ff;
+  --color-blue-100: #e0e8ff;
+  --color-blue-150: #d6e1ff;
+  --color-blue-700: #382ae1;
+  --color-blue-950: #1f2e55;
+  --color-purple-500: #766cf1;
+  --color-gray-600: #717fa6;
+}

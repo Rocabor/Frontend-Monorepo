@@ -41,8 +41,13 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+ [![Static Badge](https://img.shields.io/badge/Github-%23000?style=for-the-badge&logo=github&labelColor=%23000)
+](https://github.com/Rocabor/Order-summary-component)
+
+[![Static Badge](https://img.shields.io/badge/Live%20Site%20URL-%23303b59?style=for-the-badge&logo=vitepress&logoColor=%23fff&labelColor=%23303b59)
+](https://rocabor.github.io/Order-summary-component/)
+
+
 
 ## My process
 
