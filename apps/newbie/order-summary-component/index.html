@@ -1,41 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-  <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/style.css" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
 
-  
-  <title>Frontend Mentor | Order summary card</title>
+    <title>Frontend Mentor | Order summary card</title>
+  </head>
+  <body>
 
+    <main class="flex flex-col w-[327px] h-[567px] rounded-[20px] shadow-card-primary bg-white overflow-hidden">
 
-</head>
-<body>
+      <div class="flex flex-col justify-center items-center gap-8 h-[541px]">
 
-  <main class="flex flex-col w-[327px] h-[567px] rounded-[20px] shadow-card-primary "></main>
+        <img src="images/illustration-hero.svg" alt="" class="h-[160px]" />
 
-  
+        <div class="flex flex-col items-center w-[279px] h-[349px]">
 
-  <div hidden>Order Summary
+          <div class="flex flex-col gap-4 items-center w-[263px] h-[121px]">
 
-  You can now listen to millions of songs, audiobooks, and podcasts on any 
-  device anywhere you like!
+            <h1 class="text-preset-2 text-blue-950">Order Summary</h1>
 
-  Annual Plan
-  $59.99/year
+            <p class="text-preset-4 font-medium text-gray-600 text-center">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+            
+          </div>
+        </div>
+      </div>
+    </main>
 
-  Change
-
-  Proceed to Payment
-  Cancel Order</div>
-  
- 
-</body>
+    <div hidden>Annual Plan $59.99/year Change Proceed to Payment Cancel Order</div>
+  </body>
 </html>
