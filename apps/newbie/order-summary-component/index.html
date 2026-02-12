@@ -6,7 +6,7 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="/src/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,46 +16,46 @@
   </head>
   <body>
 
-    <main class="flex flex-col w-[327px] h-[567px] rounded-[20px] shadow-card-primary bg-white overflow-hidden">
+    <main class="flex flex-col w-[327px] h-[567px] md:w-[450px] md:h-[697px] rounded-[20px] shadow-card-primary bg-white overflow-hidden" >
 
-      <div class="flex flex-col justify-center items-center gap-8 h-[541px]">
+      <div class="flex flex-col items-center gap-8 md:gap-12 h-[541px] md:h-[654px]">
 
-        <img src="images/illustration-hero.svg" alt="" class="h-[160px]" />
+        <img src="images/illustration-hero.svg" alt="" class="h-[160px] md:h-[220px]" />
 
-        <div class="flex flex-col gap-6 items-center w-[279px] h-[349px]">
+        <div class="flex flex-col gap-6 md:gap-8 items-center w-[279px] h-[349px] md:w-[354px] md:h-[386px] ">
 
-          <div class="flex flex-col gap-4 items-center w-[263px] h-[121px]">
+          <div class="flex flex-col gap-4 items-center w-[263px] h-[121px] md:w-[354px] md:h-[132px]">
 
-            <h1 class="text-preset-2 text-blue-950">Order Summary</h1>
+            <h1 class="text-preset-2 text-blue-950 md:text-preset-1" >Order Summary</h1>
 
-            <p class="text-preset-4 font-medium text-gray-600 text-center">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+            <p class="text-preset-4 font-medium text-gray-600 text-center md:text-preset-3">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
             
           </div>
 
-          <div class="w-full h-[81px] p-4 rounded-[11px] bg-blue-50">
+          <div class="w-full h-[81px] md:h-[98px] p-4 md:p-6 md:-mt-4 rounded-[11px] bg-blue-50">
 
             <div class="flex justify-between items-center">
 
-              <div class="flex gap-4">
+              <div class="flex gap-4 w-[153px] h-[50px] md:w-[181px] md:h-[52px]">
 
                 <div>
                   <img src="images/icon-music.svg" alt="">
                 </div>
 
                 <div>
-                  <h2 class="flex flex-col text-preset-4 font-black text-blue-950">Annual Plan <span class="text-preset-4 font-medium text-gray-600">$59.99/year</span></h2>
+                  <h2 class="flex flex-col text-preset-4 md:text-preset-3 font-black text-blue-950">Annual Plan <span class="text-preset-4 md:text-preset-3 font-medium text-gray-600">$59.99/year</span></h2>
                 </div>
               </div>
 
-              <p class="text-preset-4 font-bold text-blue-700 active:text-purple-500 cursor-pointer">Change</p>
+              <p class="text-preset-4 md:text-preset-3 font-bold text-blue-700 active:text-purple-500 cursor-pointer">Change</p>
             </div>
           </div>
 
-          <div class="flex flex-col gap-6 w-full h-[99px]">
+          <div class="flex flex-col gap-6 md:gap-8 w-full h-[99px] md:h-[108px]">
 
-            <button class="w-full h-[50px] rounded-[11px] bg-blue-700 active:bg-purple-500 text-preset-4 font-black text-white cursor-pointer">Proceed to Payment</button>
+            <button class="w-full h-[50px] rounded-[11px] bg-blue-700 active:bg-purple-500 text-preset-4 md:text-preset-3 font-black text-white cursor-pointer shadow-button">Proceed to Payment</button>
 
-            <p class="text-preset-4 font-black text-gray-600 active:text-blue-950 text-center cursor-pointer">Cancel Order</p>
+            <p class="text-preset-4 font-black md:text-preset-3 text-gray-600 active:text-blue-950 text-center cursor-pointer">Cancel Order</p>
           </div>
         </div>
       </div>
