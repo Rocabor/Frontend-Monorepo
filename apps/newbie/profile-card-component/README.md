@@ -32,9 +32,15 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 ### Links
 
-[![Static Badge](https://img.shields.io/badge/Repository-%23000?style=for-the-badge&logo=github&logoSize=auto)]()
-[![Static Badge](https://img.shields.io/badge/Live_site-%23000?style=for-the-badge&logo=githubpages&logoSize=auto)
-]()
+[![Static Badge](https://img.shields.io/badge/Repository-%23fff?style=flat&logo=github&logoSize=auto&labelColor=%23000)]()
+[![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)]()
+
+
+
+
+
+
+
 
 
 
