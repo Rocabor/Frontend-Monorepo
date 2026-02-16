@@ -2,7 +2,26 @@
 
 @layer base {
   body {
+    min-height: 100vh;
     font-family: "Kumbh Sans", sans-serif;
+    background: 
+    url(/images/bg-pattern-top.svg),
+    url(/images/bg-pattern-bottom.svg);
+    
+   
+    background-position: 
+    -420px -350px, 
+    170px 340px;
+   
+    
+    background-size: 
+    622px 621px, 
+    622px 621px;
+    
+    
+    background-color: var(--colors-blue-600);
+    background-repeat: no-repeat;
+
   }
 }
 
@@ -13,13 +32,13 @@
   --colors-blue-600: #19a1ae;
   --colors-navy-950: #2e3349;
 
-  --gradient: (180deg, rgba(9, 137, 180, 0) 0%, #53ffee 100%);
+  --gradient: linear-gradient(180deg, rgba(9, 137, 180, 0) 0%, #53ffee 100%);
 }
 
 @utility text-preset-1-bold {
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.25; 
+  line-height: 1.25;
 }
 
 @utility text-preset-1-regular {
