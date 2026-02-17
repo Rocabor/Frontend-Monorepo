@@ -16,44 +16,46 @@
   </head>
 
   <body>
-    <!-- PROFILE CARD -->
-    <div class="flex flex-col justify-end min-w-[326px] min-h-[374px] py-6 rounded-[15px] bg-white bg-[url(/images/bg-pattern-card.svg)] bg-size-[auto_144px] bg-no-repeat">
-      <!-- PROFILE INFO -->
-      <div class="flex-stack gap-4 min-h-[254px]">
-        <img class="size-24 rounded-full border-5 border-white" src="images/image-victor.jpg" alt="" />
+    <main>
+      <article class="flex flex-col justify-end min-w-[326px] md:min-w-[350px] min-h-[374px] py-6 rounded-[15px] bg-white bg-[url(/images/bg-pattern-card.svg)] bg-size-[auto_144px] bg-no-repeat">
 
-        <!-- USER INFO -->
-        <div class="flex flex-col gap-6 w-full min-h-[142px]">
-          <div class="flex flex-col gap-2 items-center min-w-[133px] min-h-[49px]">
-            <div class="flex gap-2 min-h[23px]">
-              <h1 class="text-preset-1-bold text-navy-950">Victor Crest</h1>
-              <span class="text-preset-1-regular text-gray-500">26</span>
+        <!-- PROFILE INFO -->
+        <div class="flex-stack gap-4 min-h-[254px]">
+          <img class="size-24 rounded-full border-5 border-white" src="images/image-victor.jpg" alt="Victor Crest profile picture" />
+
+          <!-- USER INFO -->
+          <div class="flex flex-col gap-6 w-full min-h-[142px]">
+            <div class="flex flex-col gap-2 items-center min-w-[133px] min-h-[49px]">
+              <div class="flex gap-2 min-h[23px]">
+                <h2 class="text-preset-1-bold text-navy-950">Victor Crest</h2>
+                <span class="text-preset-1-regular text-gray-500">26</span>
+              </div>
+
+              <p class="text-preset-2 text-gray-500">London</p>
             </div>
 
-            <p class="text-preset-2 text-gray-500">London</p>
-          </div>
+            <!-- STATS CONT -->
+            <div class="border-t w-full min-h-[69px] pt-6 border-gray-100">
+              <ul class="min-w-[252px] min-h-[44px] flex justify-center gap-14" role="list">
+                <li class="flex flex-col items-center gap-2">
+                  <p class="text-preset-1-bold text-navy-950">80K</p>
+                  <span class="text-preset-3 text-gray-500">Followers</span>
+                </li>
 
-          <!-- STATS CONT -->
-          <div class="border-t w-full min-h-[69px] pt-6 border-gray-100">
-            <div class="min-w-[252px] min-h-[44px] flex justify-center gap-14">
-              <div class="flex flex-col items-center gap-2">
-                <p class="text-preset-1-bold text-navy-950">80K</p>
-                <span class="text-preset-3 text-gray-500">Followers</span>
-              </div>
+                <li class="flex flex-col items-center gap-2">
+                  <p class="text-preset-1-bold text-navy-950">803K</p>
+                  <span class="text-preset-3 text-gray-500">Likes</span>
+                </li>
 
-              <div class="flex flex-col items-center gap-2">
-                <p class="text-preset-1-bold text-navy-950">803K</p>
-                <span class="text-preset-3 text-gray-500">Likes</span>
-              </div>
-
-              <div class="flex flex-col items-center gap-2">
-                <p class="text-preset-1-bold text-navy-950">1.4K</p>
-                <span class="text-preset-3 text-gray-500">Photos</span>
-              </div>
+                <li class="flex flex-col items-center gap-2">
+                  <p class="text-preset-1-bold text-navy-950">1.4K</p>
+                  <span class="text-preset-3 text-gray-500">Photos</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </main>
   </body>
 </html>

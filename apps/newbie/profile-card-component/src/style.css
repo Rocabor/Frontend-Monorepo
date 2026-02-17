@@ -4,15 +4,13 @@
   body {
     min-height: 100vh;
     font-family: "Kumbh Sans", sans-serif;
-    background: 
-    url(/images/bg-pattern-top.svg),
-    url(/images/bg-pattern-bottom.svg);     
-    background-position: 
-    -25rem -21.875rem, 
-    10.625rem 22.5rem;    
-    background-size: 
-    38.875rem 38.8125rem, 
-    38.875rem 38.8125rem;   
+    background: url(/images/bg-pattern-top.svg), url(/images/bg-pattern-bottom.svg);
+    background-position:
+      right 45vw bottom 60vh,
+      left 45vw top 48vh;
+    background-size:
+      38.875rem 38.8125rem,
+      38.875rem 38.8125rem;
     background-color: var(--color-blue-600);
     background-repeat: no-repeat;
     display: flex;
@@ -20,8 +18,19 @@
     align-items: center;
     justify-content: center;
 
-  
-
+    @variant md {
+      background-position:
+        right 48vw bottom 40vh,
+        left 52vw top 50vh;
+      background-size:
+        61.125rem 61rem,
+        61.125rem 61rem;
+    }
+    @variant xl {
+      background-position:
+        right 51vw bottom 38vh,
+        left 49vw top 50vh;
+    }
   }
 }
 
@@ -54,14 +63,14 @@
 }
 
 @utility text-preset-2 {
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25;
 }
 
 @utility text-preset-3 {
-  font-size: .625rem;
+  font-size: 0.625rem;
   font-weight: 400;
   line-height: 1.25;
-  letter-spacing: .0938rem;
+  letter-spacing: 0.0938rem;
 }
