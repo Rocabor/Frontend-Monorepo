@@ -5,5 +5,5 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-  base:'/huddle-landing-page-with-single-introductory-section/'
+  base:'/huddle-landing-page-with-single-introductory-section/',
 })
