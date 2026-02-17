@@ -8,27 +8,35 @@
     url(/images/bg-pattern-top.svg),
     url(/images/bg-pattern-bottom.svg);     
     background-position: 
-    -420px -350px, 
-    170px 340px;    
+    -400px -350px, 
+    170px 350px;    
     background-size: 
     622px 621px, 
     622px 621px;   
-    background-color: var(--colors-blue-600);
+    background-color: var(--color-blue-600);
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
+  
+
+  }
+}
+
+@layer components {
+  .flex-stack {
+    @apply flex flex-col justify-center items-center;
   }
 }
 
 @theme {
-  --colors-gray-100: #e8e9ec;
-  --colors-gray-500: #6b7082;
-  --colors-blue-400: #41cbd3;
-  --colors-blue-600: #19a1ae;
-  --colors-navy-950: #2e3349;
+  --color-gray-100: #e8e9ec;
+  --color-gray-500: #6b7082;
+  --color-blue-400: #41cbd3;
+  --color-blue-600: #19a1ae;
+  --color-navy-950: #2e3349;
 
   --gradient: linear-gradient(180deg, rgba(9, 137, 180, 0) 0%, #53ffee 100%);
 }
