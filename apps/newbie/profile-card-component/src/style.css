@@ -48,6 +48,7 @@
   --color-navy-950: #2e3349;
 
   --gradient: linear-gradient(180deg, rgba(9, 137, 180, 0) 0%, #53ffee 100%);
+  --shadow-card: 0 50px 100px rgba(8, 70, 94, 0.25);
 }
 
 @utility text-preset-1-bold {
