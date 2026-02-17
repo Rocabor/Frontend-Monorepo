@@ -6,21 +6,19 @@
     font-family: "Kumbh Sans", sans-serif;
     background: 
     url(/images/bg-pattern-top.svg),
-    url(/images/bg-pattern-bottom.svg);
-    
-   
+    url(/images/bg-pattern-bottom.svg);     
     background-position: 
     -420px -350px, 
-    170px 340px;
-   
-    
+    170px 340px;    
     background-size: 
     622px 621px, 
-    622px 621px;
-    
-    
+    622px 621px;   
     background-color: var(--colors-blue-600);
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
   }
 }
