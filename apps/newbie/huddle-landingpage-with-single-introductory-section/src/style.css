@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@plugin "@iconify/tailwind4";
+
+@layer base{
+  body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('/images/bg-mobile.svg');
+    background-color: var(--color-purple-700);
+    background-repeat: no-repeat;
+  }
+}
+
 @theme {  
   --color-white: #ffffff;
   --color-black: #000000;
