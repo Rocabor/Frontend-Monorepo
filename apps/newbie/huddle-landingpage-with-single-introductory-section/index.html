@@ -17,17 +17,17 @@
 
 
   </head>
-  <body class="flex flex-col items-center relative min-h-dvh bg-purple-700 bg-[url('/images/bg-mobile.svg')] bg-no-repeat pt-10">
+  <body class="flex flex-col gap-15.5 items-center min-h-dvh bg-purple-700 bg-[url('/images/bg-mobile.svg')] bg-no-repeat px-9 py-10">
 
 
      
-    <div class="flex flex-col gap-16 w-[304px] ">
+    <div class="flex flex-col gap-16">
 
-      <img class="w-[120px] h-[19px]" src="images/logo.svg" alt="">
+      <img  class="w-[120px] h-auto " src="images/logo.svg" alt="Huddle Logo">
 
       <div class="flex flex-col gap-14 ">
 
-        <img class="h-[215px]" src="images/illustration-mockups.svg" alt="">
+        <img class="h-[215px] object-contain " src="images/illustration-mockups.svg" alt="">
 
         <div class=" flex flex-col items-center gap-8 h-[276px]">
 
@@ -38,23 +38,22 @@
             <p class="text-preset-5 text-white text-center">Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion. </p>
           </div>
 
-          <button type="button" class="text-preset-6 text-purple-700 bg-white w-[200px] h-10 rounded-[20px]">Register</button>
+          <button type="button" class="text-preset-6 text-purple-700 bg-white hover:bg-pink-400 hover:text-white w-[200px] h-10 rounded-[20px] shadow-buttom">Register</button>
         </div>
       </div>
     </div>
 
-    <!-- Cálculo medida relativa: (131 / 375) * 100 = 34.93% //  (732 / 800) * 100 = 91.5% -->
-    <div class=" absolute flex gap-4 left-[34.93%] top-[91.5%]">
+    <div class="flex gap-4 ">
 
-      <div class="border-white border w-[27.14px] h-7 rounded-full flex justify-center items-center">
-        <span class="icon-[eva--facebook-fill] size-4.5 text-white" ></span>
-      </div>
-      <div class="border-white border w-[27.14px] h-7 rounded-full flex justify-center items-center">
-        <span class="icon-[ri--twitter-fill] size-3.5 text-white"></span>
-      </div>
-      <div class="border-white border w-[27.14px] h-7 rounded-full flex justify-center items-center">
-        <span class="icon-[akar-icons--instagram-fill] size-3.5 text-white" ></span> 
-      </div>
+      <a href="https://wwww.facebook.com/" aria-label="facebook" class="border-white hover:border-pink-400 border w-[27.14px] h-7 rounded-full flex justify-center items-center">
+        <span class="icon-[eva--facebook-fill] size-4.5 text-white  hover:text-pink-400" ></span>
+      </a>
+      <a href="https://x.com/" aria-label="twitter" class="border-white hover:border-pink-400 border w-[27.14px] h-7 rounded-full flex justify-center items-center">
+        <span class="icon-[ri--twitter-fill] size-3.5 text-white hover:text-pink-400"></span>
+      </a>
+      <a href="https://www.instagram.com/" aria-label="instagram" class="border-white hover:border-pink-400 border w-[27.14px] h-7 rounded-full flex justify-center items-center">
+        <span class="icon-[akar-icons--instagram-fill] size-3.5 text-white hover:text-pink-400" ></span> 
+      </a>
 
 
     </div>
@@ -64,6 +63,4 @@
   </body>
 </html>
 
-<div hidden>
- 
-</div>
+

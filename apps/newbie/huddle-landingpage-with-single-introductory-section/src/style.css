@@ -17,6 +17,8 @@
   --background-image-gradient-3: linear-gradient(180deg, #00c7fa 0%, #007dfa 100%);
   --background-image-gradient-4: linear-gradient(156.66deg, #fad961 0%, #ff52c1 100%);
 
+  --shadow-buttom: 1px 3px 5px rgba(0, 0, 0, 0.269);
+
   --font-poppins: "Poppins", sans-serif;
   --font-open-sans: "Open Sans", sans-serif; 
 }
