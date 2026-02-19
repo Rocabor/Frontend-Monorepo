@@ -64,3 +64,10 @@
   font-weight: 400;
   line-height: 1.5;
 }
+
+@utility text-footer {
+  font-family: var(--font-poppins);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+}

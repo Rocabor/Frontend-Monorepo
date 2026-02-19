@@ -11,56 +11,82 @@
     <link rel="stylesheet" href="src/style.css" />
     <script type="module" src="src/main.js"></script>
 
-   
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />  
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
   </head>
-  <body class="flex flex-col gap-15.5 items-center min-h-dvh bg-purple-700 bg-[url('/images/bg-mobile.svg')] bg-contain bg-no-repeat px-9 py-10">
+  <body
+    class="flex flex-col gap-10 md:gap-10 items-center min-h-100vh bg-purple-700 bg-[url('/images/bg-mobile.svg')] xl:bg-[url('/images/bg-desktop.svg')] 
+    bg-contain xl:bg-cover bg-no-repeat pt-10 xl:pt-16">
+    <!-- CONTAINER -->
+    <div class="flex flex-col gap-16 xl:gap-26 w-[304px] md:w-[608px] xl:w-[1272px]">
+      <img class="w-[120px] h-auto xl:w-[200px]" src="images/logo.svg" alt="Huddle Logo" />
 
+      <div class="flex flex-col gap-14 md:gap-10 md:items-center xl:flex-row xl:items-center">
+        <img class="h-[215px] md:h-[431px] xl:h-[493px]" src="images/illustration-mockups.svg" alt="" />
 
-     
-    <div class="flex flex-col gap-16 w-[304px]">
-
-      <img  class="w-[120px] h-auto " src="images/logo.svg" alt="Huddle Logo">
-
-      <div class="flex flex-col gap-14 ">
-
-        <img class="h-[215px] object-contain " src="images/illustration-mockups.svg" alt="">
-
-        <div class=" flex flex-col items-center gap-8 h-[276px]">
-
+        <div class="flex flex-col items-center xl:items-start gap-8 md:gap-10 h-[276px] md:w-[520px] md:h-[301px]">
           <div class="flex flex-col h-[204px] gap-6">
+            <h1 class="text-preset-2 md:text-preset-1 text-white text-center xl:text-start">Build The Community Your Fans Will Love</h1>
 
-            <h1 class="text-preset-2 text-white text-center">Build The Community Your Fans Will Love</h1>
-
-            <p class="text-preset-5 text-white text-center ">Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion. </p>
+            <p class="text-preset-5 md:text-preset-4 text-white text-center xl:text-start">
+              Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion.
+            </p>
           </div>
 
-          <button type="button" class="text-preset-6 text-purple-700 bg-white hover:bg-pink-400 hover:text-white active:bg-pink-400 active:text-white w-50 h-10 rounded-[20px] shadow-buttom">Register</button>
+          <button
+            type="button"
+            class="text-preset-6 md:text-preset-3 text-purple-700 bg-white hover:bg-pink-400 hover:text-white active:bg-pink-400 active:text-white w-50 h-10 md:h-14 rounded-full shadow-buttom"
+          >
+            Register
+          </button>
         </div>
+      </div>
+
+      <div class="flex gap-4 w-full justify-center xl:justify-end">
+        <a
+          href="https://wwww.facebook.com/"
+          aria-label="facebook"
+          class="border-white group hover:border-pink-400 active:border-pink-400 border w-[27.14px] h-7 md:size-10 rounded-full flex justify-center items-center"
+        >
+          <span class="icon-[eva--facebook-fill] size-4.5 md:size-5.5 text-white group-hover:text-pink-400 active:text-pink-400"></span>
+        </a>
+        <a
+          href="https://x.com/"
+          aria-label="twitter"
+          class="border-white group hover:border-pink-400 active:border-pink-400 border w-[27.14px] h-7 md:size-10 rounded-full flex justify-center items-center"
+        >
+          <span class="icon-[ri--twitter-fill] size-3.5 md:size-4.5 text-white group-hover:text-pink-400 active:text-pink-400"></span>
+        </a>
+        <a
+          href="https://www.instagram.com/"
+          aria-label="instagram"
+          class="border-white group hover:border-pink-400 active:border-pink-400 border w-[27.14px] h-7 md:size-10 rounded-full flex justify-center items-center"
+        >
+          <span class="icon-[akar-icons--instagram-fill] size-3.5 md:size-4.5 text-white group-hover:text-pink-400 active:text-pink-400"></span>
+        </a>
       </div>
     </div>
 
-    <div class="flex gap-4 ">
-
-      <a href="https://wwww.facebook.com/" aria-label="facebook" class="border-white group hover:border-pink-400 active:border-pink-400 border w-[27.14px] h-7 rounded-full flex justify-center items-center">
-        <span class="icon-[eva--facebook-fill] size-4.5 text-white  group-hover:text-pink-400 active:text-pink-400" ></span>
-      </a>
-      <a href="https://x.com/" aria-label="twitter" class="border-white group hover:border-pink-400 active:border-pink-400 border w-[27.14px] h-7 rounded-full flex justify-center items-center">
-        <span class="icon-[ri--twitter-fill] size-3.5 text-white group-hover:text-pink-400 active:text-pink-400"></span>
-      </a>
-      <a href="https://www.instagram.com/" aria-label="instagram" class="border-white group hover:border-pink-400 active:border-pink-400 border w-[27.14px] h-7 rounded-full flex justify-center items-center">
-        <span class="icon-[akar-icons--instagram-fill] size-3.5 text-white group-hover:text-pink-400 active:text-pink-400" ></span> 
-      </a>
-
-
-    </div>
-
-
-
+    <footer class="border-t border-gray-500 w-full flex justify-center p-3 bottom-0">
+      <nav class="text-pink-400 text-footer md:text-preset-5" aria-label="Attribution links">
+        <ul class="flex gap-1">
+          <li>
+            Challenge by
+            <a href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ" 
+            target="_blank" rel="noopener noreferrer" 
+            class="text-white font-bold">Frontend Mentor</a>
+          </li>
+          <li class="text-white">|</li>
+          <li>
+            Coded by
+            <a href="https://www.frontendmentor.io/profile/Rocabor" 
+            target="_blank" rel="noopener noreferrer" 
+            class="text-white font-bold">© 
+            <span class="year">2026 </span>Roberto Borges</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
-
-
