@@ -18,15 +18,16 @@
   <body
     class="flex flex-col gap-10 md:gap-10 items-center min-h-dvh bg-purple-700 bg-[url('/images/bg-mobile.svg')] xl:bg-[url('/images/bg-desktop.svg')] bg-contain xl:bg-fixed xl:bg-center bg-no-repeat pt-10 xl:pt-16">
     <!-- CONTAINER -->
-    <div class="flex flex-col w-[304px] md:w-[608px] xl:w-[1272px]">
-      <img class="w-[120px]  xl:w-[200px]" src="images/logo.svg" alt="Huddle Logo" />
+    <main class="flex flex-col w-[304px] md:w-[608px] xl:w-[1272px]">
+      <header><img class="w-[120px] xl:w-[200px]" src="images/logo.svg" alt="Huddle Logo" /></header>
+      
 
-      <div
+      <section
         class="flex flex-col gap-14 md:gap-10 xl:gap-14 md:items-center xl:flex-row xl:items-center mt-16 mb-15.5 md:mb-10 xl:mt-26 xl:mb-6">
         <img
           class="h-[215px] md:w-[608px] md:h-[431px] xl:w-[696px] xl:h-[493px]"
           src="images/illustration-mockups.svg"
-          alt="" />
+          alt="illustration-mockups" />
 
         <div class="flex flex-col items-center xl:items-start gap-8 md:gap-10 h-[276px] md:w-[520px] md:h-[301px]">
           <div class="flex flex-col h-[204px] gap-6">
@@ -46,9 +47,9 @@
             Register
           </button>
         </div>
-      </div>
+      </section>
 
-      <div class="flex gap-4 w-full justify-center xl:justify-end">
+      <nav class="flex gap-4 w-full justify-center xl:justify-end">
         <a
           href="#!"
           aria-label="facebook"
@@ -68,8 +69,8 @@
           class="group inter w-[27.14px] h-7 md:size-10 rounded-full flex justify-center items-center">
           <span class="icon-[akar-icons--instagram-fill] size-3.5 md:size-4.5 group-inter"></span>
         </a>
-      </div>
-    </div>
+      </nav>
+    </main>
 
     <footer class="border-t border-gray-500 w-full flex justify-center py-3 bottom-0">
       <nav class="text-pink-400 text-preset-6 md:text-preset-4" aria-label="Attribution links">
@@ -81,7 +82,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="text-white">
-              Frontend Mentor ©
+              © Frontend Mentor
               <span class="year">2026</span>
             </a>
           </li>
