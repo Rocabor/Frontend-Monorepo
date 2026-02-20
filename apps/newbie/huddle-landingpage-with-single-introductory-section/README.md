@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://snipboard.io/Yt3fze.jpg)
 
 
 
@@ -48,24 +48,37 @@ Users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
+- **Semantic HTML5 markup**
+- **Tailwind CSS v4**
+- **Flexbox**
+- **Mobile-first workflow**
+- **Iconify**: Integration of icons via the `@iconify/tailwind4` plugin, used for social media icons (Facebook, Twitter, Instagram).
 
 
 
 
 ### What I learned
 
+This project allowed me to deepen my understanding of **Tailwind CSS v4**, especially in creating custom utilities and themes. I learned how to use the `@theme` directive to centrally define colors, fonts and shadows, which makes maintenance and design consistency easier.
+
+I also successfully implemented the **@iconify/tailwind4** plugin to efficiently manage SVG icons, simply by adding classes like `icon-[eva--facebook-fill]`.
+
+Another key aspect was creating a component layer (`@layer components`) to define reusable styles, such as the `.inter` class that applies borders and colors to social media links with their `hover` and `focus` states.
+
 
 
 ### Continued development
 
+In future projects, I'd like to continue exploring Tailwind CSS capabilities, especially regarding more complex layouts with Grid. I also want to delve deeper into web accessibility, ensuring all components are fully navigable and understandable for users with assistive technologies, as already attempted with the aria-label attributes on social media links.
+
 
 
 ### Useful resources
+
+
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Essential resource for understanding and using all utilities and directives.
+- [Iconify Documentation](https://iconify.design/docs/usage/css/tailwind/) - Helped me understand how to integrate and use icons easily with Tailwind.
+
 
 
 
@@ -85,6 +98,6 @@ Describe how you used AI tools (if any) during this project. This helps demonstr
 
 ## Acknowledgments
 
-I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills. I'm also grateful to all the developers who share their knowledge online through tutorials, documentation, and educational resources that enable others to learn and grow in this industry
+I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills. 
 
 
