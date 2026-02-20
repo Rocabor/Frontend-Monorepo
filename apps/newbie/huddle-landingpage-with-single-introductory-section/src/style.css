@@ -1,6 +1,20 @@
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
 
+@layer components{
+  .inter{
+    border: 1px solid white;
+    color: white;
+    @variant hover{
+      border:1px solid var(--color-pink-400);
+      color:var(--color-pink-400);
+    }
+    @variant focus{
+      border:1px solid var(--color-pink-400);
+      color:var(--color-pink-400);
+    }
+  }
+}
 
 @theme {  
   --color-white: #ffffff;
@@ -11,11 +25,6 @@
   --color-gray-100: #e1e8ee;
   --color-gray-400: #a7b9c8;
   --color-blue-950: #00252e;
-
-  --background-image-gradient-1: linear-gradient(138.55deg, #ff52c1 0%, #9952ff 100%);
-  --background-image-gradient-2: linear-gradient(226.81deg, #ff52c1 0%, rgba(153, 82, 255, 0) 100%);
-  --background-image-gradient-3: linear-gradient(180deg, #00c7fa 0%, #007dfa 100%);
-  --background-image-gradient-4: linear-gradient(156.66deg, #fad961 0%, #ff52c1 100%);
 
   --shadow-buttom: 1px 3px 5px rgba(0, 0, 0, 0.269);
 
@@ -65,9 +74,3 @@
   line-height: 1.5;
 }
 
-@utility text-footer {
-  font-family: var(--font-poppins);
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 1.5;
-}
