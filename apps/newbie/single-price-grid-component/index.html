@@ -1,41 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Single Price Grid Component</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
- 
-</head>
-<body>
-  Join our community
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet" />
 
-  30-day, hassle-free money back guarantee
+    <script type="module" src="src/main.js"></script>
 
-  Gain access to our full library of tutorials along with expert code reviews. 
-  Perfect for any developers who are serious about honing their skills.
+    <title>Frontend Mentor | Single Price Grid Component</title>
+  </head>
 
-  Monthly Subscription
+  <body class="bg-teal-100 grid place-items-center font-karla min-h-dvh">
 
-  &dollar;29 per month
+    <main class="grid w-[311px] shadow-main rounded-lg overflow-hidden">
+      <!-- Container -->
+      <div class="bg-white grid place-items-center px-[36.5px] py-[34px]">
+        <!-- Header Section -->
+        <header class="flex flex-col gap-6 ">
+          <h1 class="text-preset-2 text-teal-500">Join our community</h1>
 
-  Full access for less than &dollar;1 a day
+          <!-- Description Section -->
+          <div class="grid gap-2">
+            <h2 class="text-preset-3 text-green-400">30-day, hassle-free money back guarantee</h2>
 
-  Sign Up
+            <p class="text-preset-4-reg text-gray-500 h-[130px]">
+              Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers
+              who are serious about honing their skills.
+            </p>
+          </div>
+        </header>
+      </div>
 
-  Why Us
+      <!-- Subscription Section -->
+      <div class="">
+        <!-- Subscription Details -->
+        <div class="bg-teal-500 p-2 grid place-items-center h-[225px]">
+          <!-- Subscription Info -->
+          <div class="w-[238px] h-[177px] flex flex-col justify-between">
 
-  Tutorials by industry experts
-  Peer &amp; expert code review
-  Coding exercises
-  Access to our GitHub repos
-  Community forum
-  Flashcard decks
-  New videos every week
-  
- 
-</body>
+            <!-- Subscription Price -->
+            <div>
+              <!-- Price Details -->
+              <div>
+                <h2 class="text-preset-3 text-white mb-4 ">Monthly Subscription</h2>
+
+                <!-- Price Breakdown -->
+                <div>
+                  <p class="text-preset-1 text-white ">
+                    &dollar;29
+                    <span class="text-preset-4-reg opacity-50">per month</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Full access for less -->
+              <p class="text-preset-4-reg text-white">Full access for less than &dollar;1 a day</p>
+            </div>
+
+            <!-- Sign Up Button -->
+            <button class="shadow-button w-[238px] h-[48px] bg-green-400 text-preset-4-bold text-white p-2 rounded-[5px]">Sign Up</button>
+          </div>
+        </div>
+
+        <!-- Why Us Section -->
+        <div class="bg-teal-400 p-2 h-[225px] grid place-items-center">
+          <!-- Why Us Details -->
+          <div class="w-[238px] h-[177px] ">
+            <h2 class="text-preset-3 text-white mb-4">Why Us</h2>
+            <ul class="text-preset-5 text-white opacity-75" style="list-style: none; padding: 0;">
+                <li>Tutorials by industry experts</li>
+                <li>Peer &amp; expert code review</li>
+                <li>Coding exercises</li>
+                <li>Access to our GitHub repos</li>
+                <li>Community forum</li>
+                <li>Flashcard decks</li>
+                <li>New videos every week</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
