@@ -16,11 +16,14 @@
     <title>Frontend Mentor | Single Price Grid Component</title>
   </head>
 
-  <body class="bg-teal-100 grid place-items-center font-karla min-h-dvh">
+  <body class="bg-teal-100 flex flex-col  items-center  font-karla min-h-dvh">
 
-    <main class="grid w-[311px] shadow-main rounded-lg overflow-hidden">
+       <!-- ESPACIADOR SUPERIOR -->
+    <div class="grow"></div>
+
+    <main class="grid w-[311px] shadow-main rounded-lg overflow-hidden md:w-[635px]">
       <!-- Container -->
-      <div class="bg-white grid place-items-center px-[36.5px] py-[34px]">
+      <div class="bg-white grid place-items-center md:place-items-start px-[36.5px] py-[34px] md:p-10 ">
         <!-- Header Section -->
         <header class="flex flex-col gap-6 ">
           <h1 class="text-preset-2 text-teal-500">Join our community</h1>
@@ -29,20 +32,22 @@
           <div class="grid gap-2">
             <h2 class="text-preset-3 text-green-400">30-day, hassle-free money back guarantee</h2>
 
-            <p class="text-preset-4-reg text-gray-500 h-[130px]">
-              Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers
-              who are serious about honing their skills.
+            <p class="text-preset-4-reg text-gray-500">
+              Gain access to our full library of tutorials along with expert code reviews. 
+              <br class="hidden md:block"> 
+              Perfect for any developers who are serious about honing 
+              <br class="hidden max-[768px]:block">their skills.
             </p>
           </div>
         </header>
       </div>
 
       <!-- Subscription Section -->
-      <div class="">
+      <div class="md:grid grid-cols-[repeat(2,auto)]">
         <!-- Subscription Details -->
-        <div class="bg-teal-500 p-2 grid place-items-center h-[225px]">
+        <div class="bg-teal-500 grid place-items-center py-6 px-[36.5px] md:px-[39.5px] md:py-[41px]">
           <!-- Subscription Info -->
-          <div class="w-[238px] h-[177px] flex flex-col justify-between">
+          <div class="flex flex-col gap-7.25">
 
             <!-- Subscription Price -->
             <div>
@@ -64,15 +69,15 @@
             </div>
 
             <!-- Sign Up Button -->
-            <button class="shadow-button w-[238px] h-[48px] bg-green-400 text-preset-4-bold text-white p-2 rounded-[5px]">Sign Up</button>
+            <button type="button"  class="shadow-button w-[238px] h-[48px] bg-green-400 text-preset-4-bold text-white p-2 rounded-[5px]">Sign Up</button>
           </div>
         </div>
 
         <!-- Why Us Section -->
-        <div class="bg-teal-400 p-2 h-[225px] grid place-items-center">
+        <div class="bg-teal-400 py-6 px-[36.5px] md:px-[39.5px] md:py-[41px] grid place-items-center">
           <!-- Why Us Details -->
-          <div class="w-[238px] h-[177px] ">
-            <h2 class="text-preset-3 text-white mb-4">Why Us</h2>
+          <div class="w-[238px] flex flex-col gap-4">
+            <h2 class="text-preset-3 text-white">Why Us</h2>
             <ul class="text-preset-5 text-white opacity-75" style="list-style: none; padding: 0;">
                 <li>Tutorials by industry experts</li>
                 <li>Peer &amp; expert code review</li>
@@ -86,5 +91,37 @@
         </div>
       </div>
     </main>
+
+       <!-- ESPACIADOR SUPERIOR -->
+    <div class="grow"></div>
+
+     <footer class="border-t border-gray-500 w-full h-10 flex justify-center items-center mt-auto">
+      <nav class="text-black text-preset-5 md:text-preset-3" aria-label="Attribution links">
+        <ul class="flex gap-1">
+          <li>
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io/challenges/single-price-grid-component-5ce41129d0ff452fec5abbbc"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-teal-500">
+              © Frontend Mentor
+              <span class="year">2026</span>
+            </a>
+          </li>
+          <li class="text-gray-500  opacity-50" aria-hidden="true">|</li>
+          <li>
+            Coded by
+            <a
+              href="https://www.frontendmentor.io/profile/Rocabor"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-teal-500">
+              @Rocabor
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>

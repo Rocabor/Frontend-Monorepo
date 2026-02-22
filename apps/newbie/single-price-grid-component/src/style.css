@@ -22,14 +22,14 @@
 }
 
 @utility text-preset-2 {
-  font-size: 24px;
+  font-size: 24.35px;
   font-weight: 700;
   letter-spacing: -0.25px;
   line-height: 1.15;
 }
 
 @utility text-preset-3 {
-  font-size: 18px;
+  font-size: 18.26px;
   font-weight: 700;
   letter-spacing: -0.25px;
   line-height: 1.15;
@@ -43,14 +43,14 @@
 }
 
 @utility text-preset-4-reg {
-  font-size: 16px;
+  font-size: 15.76px;
   font-weight: 400;
   letter-spacing: -0.5px;
   line-height: 1.65;
 }
 
 @utility text-preset-5 {
-  font-size: 14px;
+  font-size: 13.8px;
   font-weight: 400;
   line-height: 1.45;
 }
