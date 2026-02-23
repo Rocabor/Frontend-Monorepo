@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @layer base{
 
   body{
@@ -11,15 +10,23 @@
 
     @variant md{
       background-image: url('/images/bg-pattern-top-mobile.svg'),url('/images/bg-pattern-bottom-desktop.svg');
+      background-size: auto,768px 477px ;
 
     }
-
     
     font-family: var(--font-league);
   }
   
 }
 
+@layer components{
+  .review-cont{
+    @apply flex flex-col md:flex-row items-center gap-4 md:gap-8 text-preset-4-bold text-purple-900 bg-purple-100 rounded-lg py-[14.5px] md:px-8 md:py-4;
+  }
+  .testimonial{
+    @apply flex p-8 rounded-lg bg-purple-900 md:h-56;
+  }
+}
 
 @theme {
 
