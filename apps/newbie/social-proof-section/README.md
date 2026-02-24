@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![]()
+![](https://snipboard.io/lkd3cW.jpg)
 
 
 
@@ -50,20 +50,24 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
+- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
 
 
 
 
 ### What I learned
 
+This project was an excellent opportunity to solidify my understanding of layout techniques. I focused on creating a responsive design that adapts seamlessly from mobile to desktop views.
 
+One of the key challenges was positioning the rating cards and testimonials with staggered offsets on larger screens. I used Tailwind's utility classes like `xl:self-center` and `xl:self-end` to achieve this effect cleanly without writing custom CSS.
 
 ### Continued development
 
-
+In future projects, I want to explore more complex grid layouts and focus on perfecting pixel-perfect implementations from design files. I also plan to delve deeper into advanced TailwindCSS techniques.
 
 ### Useful resources
 
+- [TailwindCSS Documentation](https://tailwindcss.com/docs) - The official documentation is incredibly comprehensive.
 
 
 ### AI Collaboration
