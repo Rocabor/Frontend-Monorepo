@@ -14,26 +14,31 @@
     <title>Frontend Mentor | Social proof section</title>
   </head>
 
-  <body class="px-6 py-20 md:px-20 md:py-[118px] xl:px-[165px] xl:py-[116px] min-h-dvh">
-    <main class="w-full flex flex-col gap-8 md:gap-10">
+  <body class="px-6 py-20 md:px-20 grid place-items-center md:py-[118px] xl:px-[165px] xl:py-[116px] min-h-dvh">
+    <main
+      class="w-full flex flex-col gap-8 max-w-[1110px] md:gap-10 xl:grid xl:grid-cols-2 xl:grid-rows-2 xl:items-center xl:gap-y-14">
       <!-- Header Container -->
-      <header class="flex flex-col items-center gap-4">
-        <h1 class="text-preset-2 text-purple-900 text-center w-[295px] md:w-full md:text-preset-1">10,000+ of our users <br class="hidden md:block">love our products.</h1>
-        <p class="text-preset-3 text-purple-300 text-center md:w-[453px]">
+      <header class="flex flex-col items-center gap-4 xl:w-[445px]">
+        <h1
+          class="text-preset-2 text-purple-900 text-center w-[295px] md:w-full md:text-preset-1 xl:text-start xl:mb-3">
+          10,000+ of our users
+          <br class="hidden md:block xl:hidden" />
+          love our products.
+        </h1>
+        <p class="text-preset-3 text-purple-300 text-center md:w-[453px] xl:text-start">
           We only provide great products combined with excellent customer service. See what our satisfied customers are
           saying about our services.
         </p>
       </header>
 
       <!-- Reviews Container -->
-      <section class="flex flex-col items-center gap-12">
+      <section class="flex flex-col items-center gap-12 xl:contents xl:">
         <!-- Review Card -->
-        <div class="flex flex-col gap-4 w-full md:w-[453px]">
+        <div class="flex flex-col gap-4 w-full md:w-[453px] xl:">
           <!-- Review Header -->
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-4 xl:w-[542px]">
             <!-- Stars Container -->
-            <div
-              class="review-cont">
+            <div class="review-cont">
               <div class="flex gap-2" role="img" aria-label="Calificación de 5 estrellas">
                 <img src="/images/icon-star.svg" alt="" aria-hidden="true" />
                 <img src="/images/icon-star.svg" alt="" aria-hidden="true" />
@@ -45,8 +50,7 @@
               <p>Rated 5 Stars in Reviews</p>
             </div>
 
-            <div
-              class="review-cont">
+            <div class="review-cont xl:self-center">
               <div class="flex gap-2" role="img" aria-label="Calificación de 5 estrellas">
                 <img src="/images/icon-star.svg" alt="" aria-hidden="true" />
                 <img src="/images/icon-star.svg" alt="" aria-hidden="true" />
@@ -58,8 +62,7 @@
               <p>Rated 5 Stars in Report Guru</p>
             </div>
 
-            <div
-              class="review-cont">
+            <div class="review-cont xl:self-end">
               <div class="flex gap-2" role="img" aria-label="Calificación de 5 estrellas">
                 <img src="/images/icon-star.svg" alt="" aria-hidden="true" />
                 <img src="/images/icon-star.svg" alt="" aria-hidden="true" />
@@ -74,11 +77,9 @@
         </div>
 
         <!-- Testimonials Container -->
-        <section class="flex flex-col gap-4 md:w-[453px]">
-
+        <section class="flex flex-col gap-4 md:w-[453px] xl:flex-row xl:col-span-2 xl:w-full xl:h-[256px] xl:gap-7.5">
           <article class="testimonial">
             <div class="flex flex-col gap-8">
-
               <figure class="flex gap-6 items-center">
                 <img src="public/images/image-colton.jpg" alt="" class="rounded-full size-10" />
                 <figcaption>
@@ -94,9 +95,8 @@
             </div>
           </article>
 
-          <article class="testimonial">
+          <article class="testimonial xl:self-center">
             <div class="flex flex-col gap-8">
-
               <figure class="flex gap-6 items-center">
                 <img src="public/images/image-irene.jpg" alt="" class="rounded-full size-10" />
                 <figcaption>
@@ -112,9 +112,8 @@
             </div>
           </article>
 
-          <article class="testimonial">
+          <article class="testimonial xl:self-end">
             <div class="flex flex-col gap-8">
-
               <figure class="flex gap-6 items-center">
                 <img src="public/images/image-anne.jpg" alt="" class="rounded-full size-10" />
                 <figcaption>

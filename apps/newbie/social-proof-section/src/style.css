@@ -1,35 +1,38 @@
 @import "tailwindcss";
 
-@layer base{
-
-  body{
-    background-image: url('/images/bg-pattern-top-mobile.svg'),url('/images/bg-pattern-bottom-mobile.svg');
-    background-repeat: no-repeat;
-    background-size: auto,auto;
-    background-position: left 0 top 0, right 0 bottom 0;
-
-    @variant md{
-      background-image: url('/images/bg-pattern-top-mobile.svg'),url('/images/bg-pattern-bottom-desktop.svg');
-      background-size: auto,768px 477px ;
-
-    }
-    
+@layer base {
+  body {
     font-family: var(--font-league);
+    background-image: url("/images/bg-pattern-top-mobile.svg"), url("/images/bg-pattern-bottom-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: auto, auto;
+    background-position:
+      left top,
+      right bottom;
+
+    @variant md {
+      background-image: url("/images/bg-pattern-top-mobile.svg"), url("/images/bg-pattern-bottom-desktop.svg");
+      background-size:
+        auto,
+        768px 477px;
+    }
+    @variant xl {
+      background-image: url("/images/bg-pattern-top-desktop.svg"), url("/images/bg-pattern-bottom-desktop.svg");
+      background-size: 41%, 75%;
+    }
   }
-  
 }
 
-@layer components{
-  .review-cont{
-    @apply flex flex-col md:flex-row items-center gap-4 md:gap-8 text-preset-4-bold text-purple-900 bg-purple-100 rounded-lg py-[14.5px] md:px-8 md:py-4;
+@layer components {
+  .review-cont {
+    @apply flex flex-col md:flex-row items-center gap-4 md:gap-8 text-preset-4-bold text-purple-900 bg-purple-100 rounded-lg py-[14.5px] md:px-8 md:py-4 xl:w-[446px];
   }
-  .testimonial{
+  .testimonial {
     @apply flex p-8 rounded-lg bg-purple-900 md:h-56;
   }
 }
 
 @theme {
-
   --color-white: #ffffff;
   --color-purple-100: #f7f2f7;
   --color-purple-300: #927b91;
@@ -39,21 +42,21 @@
 
   --background-image-gradient-1: linear-gradient(316.77deg, rgba(138, 67, 137, 0) 0%, #512051 100%);
 
-  --font-league: "League Spartan", sans-serif;   
+  --font-league: "League Spartan", sans-serif;
 }
 
 @utility text-preset-1 {
   font-size: 56px;
   font-weight: 700;
   letter-spacing: -2px;
-  line-height: 0.85; 
+  line-height: 0.85;
 }
 
 @utility text-preset-2 {
   font-size: 40px;
   font-weight: 700;
   letter-spacing: -2px;
-  line-height: 0.85; 
+  line-height: 0.85;
 }
 
 @utility text-preset-3 {
