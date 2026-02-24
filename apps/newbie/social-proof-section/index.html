@@ -14,7 +14,7 @@
     <title>Frontend Mentor | Social proof section</title>
   </head>
 
-  <body class="px-6 py-20 md:px-20 grid place-items-center md:py-[118px] xl:px-[165px] xl:py-[116px] min-h-dvh">
+  <body class="relative px-6 py-20 md:px-20 md:py-[118px] xl:grid xl:place-items-center  min-h-dvh">
     <main
       class="w-full flex flex-col gap-8 max-w-[1110px] md:gap-10 xl:grid xl:grid-cols-2 xl:grid-rows-2 xl:items-center xl:gap-y-14">
       <!-- Header Container -->
@@ -77,11 +77,11 @@
         </div>
 
         <!-- Testimonials Container -->
-        <section class="flex flex-col gap-4 md:w-[453px] xl:flex-row xl:col-span-2 xl:w-full xl:h-[256px] xl:gap-7.5">
+        <div class="flex flex-col gap-4 md:w-[453px] xl:flex-row xl:col-span-2 xl:w-full xl:h-[256px] xl:gap-7.5">
           <article class="testimonial">
             <div class="flex flex-col gap-8">
               <figure class="flex gap-6 items-center">
-                <img src="public/images/image-colton.jpg" alt="" class="rounded-full size-10" />
+                <img src="public/images/image-colton.jpg" alt="Colton Smith photo" class="rounded-full size-10" />
                 <figcaption>
                   <h2 class="text-preset-4-bold text-white">Colton Smith</h2>
                   <p class="text-preset-4-regular text-pink-400">Verified Buyer</p>
@@ -98,7 +98,7 @@
           <article class="testimonial xl:self-center">
             <div class="flex flex-col gap-8">
               <figure class="flex gap-6 items-center">
-                <img src="public/images/image-irene.jpg" alt="" class="rounded-full size-10" />
+                <img src="public/images/image-irene.jpg" alt="Irene Roberts photo" class="rounded-full size-10" />
                 <figcaption>
                   <h2 class="text-preset-4-bold text-white">Irene Roberts</h2>
                   <p class="text-preset-4-regular text-pink-400">Verified Buyer</p>
@@ -115,7 +115,7 @@
           <article class="testimonial xl:self-end">
             <div class="flex flex-col gap-8">
               <figure class="flex gap-6 items-center">
-                <img src="public/images/image-anne.jpg" alt="" class="rounded-full size-10" />
+                <img src="public/images/image-anne.jpg" alt="Anne Wallace photo" class="rounded-full size-10" />
                 <figcaption>
                   <h2 class="text-preset-4-bold text-white">Anne Wallace</h2>
                   <p class="text-preset-4-regular text-pink-400">Verified Buyer</p>
@@ -128,8 +128,29 @@
               </p>
             </div>
           </article>
-        </section>
+        </div>
       </section>
     </main>
+
+    <footer class="absolute left-0 right-0 flex justify-center py-3 bottom-0 bg-purple-100">
+      <nav class="text-footer-mobile md:text-preset-4-medium" aria-label="Attribution links">
+        <ul class="flex gap-1">
+          <li>
+            Challenge by
+            <a href="https://www.frontendmentor.io/challenges/social-proof-section-6e0qTv_bA"
+              target="_blank" rel="noopener noreferrer" class="text-purple-900 font-bold"> © Frontend Mentor
+              <span class="year">2026</span>
+            </a>
+          </li>
+          <li class="text-current opacity-50" aria-hidden="true">|</li>
+          <li>
+            Coded by
+            <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer" class="text-purple-900 font-bold">
+              @Rocabor
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
