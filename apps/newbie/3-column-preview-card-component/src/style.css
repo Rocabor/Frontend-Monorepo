@@ -6,7 +6,7 @@
     place-items: center;
     min-height: 100dvh;
     color: white;
-    background-color: white;
+    background-color: var(--color-gray-100);
     padding-block: 88px;
     padding-inline: 24px;
     position: relative;
