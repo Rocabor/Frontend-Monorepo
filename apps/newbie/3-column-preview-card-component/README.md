@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Screenshot
 
-![]()
+![](https://snipboard.io/sfrkGJ.jpg)
 
 
 
@@ -52,20 +52,30 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-
-
+- [TailwindCSS](https://tailwindcss.com/) - Framework de CSS
 
 
 ### What I learned
 
+During this project, I reinforced my knowledge about:
+
+- Using TailwindCSS to style components efficiently
+- Implementing responsive designs with Flexbox and utility classes
+- Customizing colors and styles with CSS custom variables
 
 
 ### Continued development
 
+In future projects, I'd like to:
+
+- Deepen my understanding of TailwindCSS with custom configurations
+- Improve accessibility of interactive components
+- Implement more complex animations with CSS
 
 
 ### Useful resources
 
+- [TailwindCSS Documentation](https://tailwindcss.com/docs) - Helped me better understand utility classes and their implementation.
 
 
 ### AI Collaboration
