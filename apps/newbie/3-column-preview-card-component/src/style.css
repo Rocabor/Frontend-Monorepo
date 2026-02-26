@@ -31,7 +31,7 @@
   .button {
     color: var(--btn-color);
     @apply w-36.75 h-12 py-2 rounded-[25px] bg-white cursor-pointer 
-           border-2 border-transparent transition-all duration-300 outline-none xl:mt-12;
+           border-2 border-transparent transition-all duration-300 outline-none xl:mt-0;
 
     /* Combinamos hover y focus */
     @apply hover:bg-transparent focus:bg-transparent
