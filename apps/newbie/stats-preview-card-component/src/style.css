@@ -6,6 +6,7 @@
     display: grid;
     place-items:center;
     min-height: 100dvh;
+    color: white;
   }
 }
 
@@ -16,6 +17,7 @@
 
   --font-inter: "Inter", sans-serif;
   --font-lexend: "Lexend Deca", sans-serif;
+  --shadow-stcs-cont:0 20px 20px rgba(23, 25, 41, 0.2031);
 }
 
 @utility text-preset-1 {
