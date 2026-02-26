@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@layer base{
+  body{
+    background-color: var(--color-navy-950);
+    display: grid;
+    place-items:center;
+    min-height: 100dvh;
+  }
+}
+
 @theme {
   --color-navy-950: #0a0c1c;
   --color-blue-950: #1b1937;
