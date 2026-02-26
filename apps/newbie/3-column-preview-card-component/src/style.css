@@ -7,12 +7,7 @@
     min-height: 100dvh;
     color: white;
     background-color: var(--color-gray-100);
-    padding-block: 88px;
     position: relative;
-    @variant xl{
-      @apply py-37.5;
-    }
-   
   }
 }
 
