@@ -7,6 +7,7 @@
     place-items:center;
     min-height: 100dvh;
     color: white;
+    position: relative;
   }
 }
 
@@ -55,4 +56,13 @@
   line-height: 2;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+@layer components {
+  .attribution {
+    @apply text-[13px] font-bold md:text-[16px];
+  }
+  .link-attribution {
+    @apply text-purple-500 font-bold;
+  }
 }

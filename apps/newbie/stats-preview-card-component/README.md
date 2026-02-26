@@ -31,9 +31,65 @@ Users should be able to:
 
 - View the optimal layout depending on their device's screen size
 
+### Screenshot
+
+![](https://snipboard.io/FkM2hN.jpg)
+
 
 ### Links
 
 [![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)]( https://rocabor.github.io/stats-preview-card-component/)
 
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [TailwindCSS](https://tailwindcss.com/) - Framework de CSS
+
+
+### What I learned
+
+In this project, I reinforced key concepts such as:
+
+- 🎨 Using `mix-blend-mode` to apply color effects over images.
+- 📱 Implementing `<picture>` and `<source>` elements to optimize images based on screen size.
+- 🧩 Organizing components with **TailwindCSS** while maintaining a clean and scalable workflow.
+
+
+### Continued development
+
+In future projects, I'd like to:
+
+- Deepen my understanding of TailwindCSS with custom configurations
+- Improve accessibility of interactive components
+- Implement more complex animations with CSS
+
+
+### Useful resources
+
+- [TailwindCSS Documentation](https://tailwindcss.com/docs) - Helped me better understand utility classes and their implementation.
+
+
+### AI Collaboration
+
+Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+
+- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
+- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
+- What worked well? What didn't?
+
+
+
+## ​​Author
+
+- Frontend Mentor - 👨‍💻[@ Rocabor](https://www.frontendmentor.io/profile/Rocabor)
+
+## Acknowledgments
+
+I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills. 
 

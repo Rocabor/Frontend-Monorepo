@@ -16,34 +16,38 @@
     <title>Frontend Mentor | Stats preview card component</title>
   </head>
   <body>
-    <main class="w-[327px] my-22">
+    <main class="w-81.75 my-22 md:w-141 xl:w-282 xl:flex xl:flex-row-reverse">
 
       <!-- Bitmap -->
-      <header class="bg-purple-500 rounded-t-lg">
+      <header class="bg-purple-500 rounded-t-lg xl:rounded-r-lg xl:rounded-t-none">
+
+        <picture class="">          
+        <source srcset="images/image-header-desktop.jpg" media="(min-width: 1440px)" class="mix-blend-multiply opacity-75 ">
         <img src="images/image-header-mobile.jpg" alt="header-image" class="mix-blend-multiply opacity-75" />
+        </picture>
       </header>
 
       <!-- Statistics Container -->
-      <section class="px-8 py-6 shadow-stcs-cont bg-blue-950 rounded-b-lg">
+      <section class="px-8 py-6 shadow-stcs-cont bg-blue-950 rounded-b-lg md:px-20 md:py-16 xl:w-141 xl:rounded-l-lg">
 
         <!-- Text and Stats Container -->
-        <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-10 md:gap-18">
 
           <!-- Description Container -->
-          <div class="flex flex-col gap-2">
-            <h1 class="text-preset-2 text-center">
+          <div class="flex flex-col gap-2 md:gap-6">
+            <h1 class="text-preset-2 text-center md:text-preset-1 md:text-start">
               Get
               <span class="text-purple-500">insights</span>
               that help your business grow.
             </h1>
-            <p class="text-preset-4 text-center opacity-75">
+            <p class="text-preset-4 text-center opacity-75 md:text-start md:w-93.5">
               Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall
               efficiency.
             </p>
           </div>
 
           <!-- Stats Group -->
-          <div class="flex flex-col gap-8 items-center text-center">
+          <div class="flex flex-col gap-8 items-center text-center md:flex-row md:gap-16">
             <!-- Companies Stats -->
             <div>
               <h2 class="text-preset-3">10k+</h2>
@@ -65,5 +69,29 @@
         </div>
       </section>
     </main>
+
+     <footer class="absolute left-0 right-0 flex justify-center py-3 bottom-0 border border-blue-950">
+      <nav class="attribution" aria-label="Attribution links">
+        <ul class="flex gap-1 [&_li:not(:last-child):after]:content-['|'] [&_li:not(:last-child):after]:opacity-50">
+          <li>
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-attribution">
+              © Frontend Mentor
+              <span class="year">2026</span>
+            </a>
+          </li>
+          <li>
+            Coded by
+            <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer" class="link-attribution">
+              @Rocabor
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
