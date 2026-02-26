@@ -2,8 +2,9 @@
 
 @layer base {
   body {
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100dvh;
     color: white;
     background-color: var(--color-gray-100);
