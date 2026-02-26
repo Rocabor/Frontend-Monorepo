@@ -8,8 +8,10 @@
     color: white;
     background-color: var(--color-gray-100);
     padding-block: 88px;
-    padding-inline: 24px;
     position: relative;
+    @variant xl{
+      @apply py-37.5;
+    }
    
   }
 }
@@ -22,7 +24,7 @@
     @apply text-gold-500 font-bold;
   }
   .cont-0 {
-    @apply w-full max-w-[327px] min-h-[442px] p-12  md:max-w-[608px] md:min-h-[391px] md:px-20 xl:max-w-[307px] xl:min-h-[500px] xl:p-12;
+    @apply w-full max-w-81.75 min-h-110.5 p-12  md:max-w-152 md:min-h-97.75 md:px-20 xl:max-w-76.75 xl:min-h-125 xl:p-12;
   }
   .cont-1 {
     @apply flex flex-col gap-8 xl:gap-10;
