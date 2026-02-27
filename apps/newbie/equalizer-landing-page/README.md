@@ -36,6 +36,7 @@ Users should be able to:
 ### Links
 
 
+ [![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)]( https://rocabor.github.io/equalizer-landing-page/)
 
 ## My process
 
@@ -81,6 +82,16 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+
+
+
+## ​​Author
+
+- Frontend Mentor - 👨‍💻[@ Rocabor](https://www.frontendmentor.io/profile/Rocabor)
+
+## Acknowledgments
+
+I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills. 
 
 
 
