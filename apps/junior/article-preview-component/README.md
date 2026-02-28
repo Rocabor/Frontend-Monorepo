@@ -40,8 +40,8 @@ Users should be able to:
 
 ### 🌎 Links
 
-- Solution URL: [Repository URL](https://github.com/Rocabor/9.-Article_preview_component)
-- Live Site URL: [Article preview component solution](https://rocabor.github.io/9.-Article_preview_component/)
+- Solution URL: [Repository URL](https://github.com/Rocabor/Article_preview_component)
+- Live Site URL: [Article preview component solution](https://rocabor.github.io/Article_preview_component/)
 
 ## My process
 
