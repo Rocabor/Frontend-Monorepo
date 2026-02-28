@@ -16,7 +16,7 @@ This is a solution to the [Social links profile challenge on Frontend Mentor](ht
 
 ## 🔗 Links
 
-[Social links profile solution](https://rocabor.github.io/3.-Social_link_profile/)
+[Social links profile solution](https://rocabor.github.io/Social_link_profile/)
 
 
 
