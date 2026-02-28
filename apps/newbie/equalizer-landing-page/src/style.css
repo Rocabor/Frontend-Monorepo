@@ -1,1 +1,87 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: var(--font-IMB);
+    background-color: var(--color-white);
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+  }
+}
+
+@layer components {
+  .bg-main {
+    background-image: url("/assets/bg-main-mobile.png");
+    background-position: 40px -190px;
+    background-repeat: no-repeat;
+  }
+  .bg-pattern-2{
+    background-image: url("/assets/bg-pattern-2.svg");
+    background-color: var(--color-slate);
+    background-repeat: no-repeat;
+    background-position: 32px 0;
+  }
+}
+
+@theme {
+  --color-slate: #191826;
+  --color-white: #fcfaf9;
+  --color-cyan: #66e2dc;
+  --color-orange: #fa7453;
+  --color-yellow: #ffb964;
+
+  --font-IMB: "IBM Plex Sans", sans-serif;
+}
+
+@utility preset1 {
+  font-size: 88px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+@utility preset1-mobil {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+@utility preset2 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@utility preset3 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+@utility preset4 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@utility preset4-mobil {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@utility preset5 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@utility preset5-bold {
+  @apply preset5 font-bold;
+}
+
+@utility preset6 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.8;
+}
