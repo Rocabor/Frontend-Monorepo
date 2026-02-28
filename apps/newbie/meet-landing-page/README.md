@@ -37,8 +37,8 @@ Users should be able to:
 
 ### 🌎 Links
 
-- Solution URL: [Repository URL](https://github.com/Rocabor/8.-Meet_landing_page)
-- Live Site URL: [Meet landing page solution](https://rocabor.github.io/8.-Meet_landing_page/)
+- Solution URL: [Repository URL](https://github.com/Rocabor/Meet_landing_page)
+- Live Site URL: [Meet landing page solution](https://rocabor.github.io/Meet_landing_page/)
 
 ## My process
 
