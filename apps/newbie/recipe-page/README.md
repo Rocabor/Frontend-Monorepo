@@ -16,7 +16,7 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 
 ## 🔗 Links
 
-[Blog preview card solution](https://rocabor.github.io/4.-Recipe_page/)
+[Blog preview card solution](https://rocabor.github.io/Recipe_page/)
 
 
 ## Built with
