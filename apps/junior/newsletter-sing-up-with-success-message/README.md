@@ -42,8 +42,8 @@ Users should be able to:
 
 ### 🌎 Links
 
-- Solution URL: [Repository URL](https://github.com/Rocabor/10.-Newsletter_sign_up_with_success_message)
-- Live Site URL: [Newsletter sign-up form with success message solution](https://rocabor.github.io/10.-Newsletter_sign_up_with_success_message/)
+- Solution URL: [Repository URL](https://github.com/Rocabor/Newsletter_sign_up_with_success_message)
+- Live Site URL: [Newsletter sign-up form with success message solution](https://rocabor.github.io/Newsletter_sign_up_with_success_message/)
 
 ## My process
 
