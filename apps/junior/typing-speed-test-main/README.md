@@ -103,8 +103,8 @@ The personal best score should persist across browser sessions using `localStora
 
 ### 🌎 Links
 
-- Solution URL: [Repository URL](https://github.com/Rocabor/13.-typing-speed-test-main)
-- Live Site URL: [Typing Speed Test](https://rocabor.github.io/13.-typing-speed-test-main/)
+- Solution URL: [Repository URL](https://github.com/Rocabor/Typing-speed-test-main)
+- Live Site URL: [Typing Speed Test](https://rocabor.github.io/Typing-speed-test-main/)
 
 ## My process
 
