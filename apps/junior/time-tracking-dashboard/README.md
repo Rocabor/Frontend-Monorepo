@@ -41,8 +41,8 @@ Users should be able to:
 
 ### 🌎 Links
 
-- Solution URL: [Repository URL](https://github.com/Rocabor/11.-Time_tracking_dashboard)
-- Live Site URL: [Time tracking dashboard solution](https://rocabor.github.io/11.-Time_tracking_dashboard/)
+- Solution URL: [Repository URL](https://github.com/Rocabor/Time_tracking_dashboard)
+- Live Site URL: [Time tracking dashboard solution](https://rocabor.github.io/Time_tracking_dashboard/)
 
 ## My process
 
