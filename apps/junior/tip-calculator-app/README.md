@@ -40,8 +40,8 @@ Users should be able to:
 
 ### 🌎 Links
 
-- Solution URL: [Repository URL](https://github.com/Rocabor/12.-Tip_calculator_app)
-- Live Site URL: [Tip calculator app solution](https://rocabor.github.io/12.-Tip_calculator_app/)
+- Solution URL: [Repository URL](https://github.com/Rocabor/Tip_calculator_app)
+- Live Site URL: [Tip calculator app solution](https://rocabor.github.io/Tip_calculator_app/)
 
 
 
