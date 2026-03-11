@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet" />
+
+    <script type="module" src="src/main.js"></script>
+
+    <title>Frontend Mentor | Single Price Grid Component</title>
+  </head>
+
+  <body class="relative bg-teal-100 flex flex-col justify-center items-center font-karla min-h-screen">
+
+    <main class="my-5 md:my-10 w-[311px] shadow-main rounded-lg overflow-hidden md:w-[635px]">
+      <!-- Container -->
+      <div class="bg-white grid place-items-center md:place-items-start px-[36.5px] py-[34px] md:p-10">
+        <!-- Header Section -->
+        <header class="flex flex-col gap-6">
+          <h1 class="text-preset-2 text-teal-500">Join our community</h1>
+
+          <!-- Description Section -->
+          <div class="grid gap-2">
+            <h2 class="text-preset-3 text-green-400">30-day, hassle-free money back guarantee</h2>
+
+            <p class="text-preset-4-reg text-gray-500">
+              Gain access to our full library of tutorials along with expert code reviews.
+              <br class="hidden md:block" />
+              Perfect for any developers who are serious about honing
+              <br class="hidden max-[768px]:block" />
+              their skills.
+            </p>
+          </div>
+        </header>
+      </div>
+
+      <!-- Subscription Section -->
+      <div class="md:grid grid-cols-[repeat(2,auto)]">
+        <!-- Subscription Details -->
+        <section class="bg-teal-500 grid place-items-center py-6 px-[36.5px] md:px-[39.5px] md:py-[41px]">
+          <!-- Subscription Info -->
+          <div class="flex flex-col gap-7.25">
+            <!-- Subscription Price -->
+            <div>
+              <!-- Price Details -->
+              <div>
+                <h2 class="text-preset-3 text-white mb-4">Monthly Subscription</h2>
+
+                <!-- Price Breakdown -->
+                <div>
+                  <p class="text-preset-1 text-white">
+                    &dollar;29
+                    <span class="text-preset-4-reg opacity-50">per month</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Full access for less -->
+              <p class="text-preset-4-reg text-white">Full access for less than &dollar;1 a day</p>
+            </div>
+
+            <!-- Sign Up Button -->
+            <button
+              type="button"
+              class="shadow-button w-[238px] h-[48px] bg-green-400 text-preset-4-bold text-white p-2 rounded-[5px]">
+              Sign Up
+            </button>
+          </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section class="bg-teal-400 py-6 px-[36.5px] md:px-[39.5px] md:py-[41px] grid place-items-center">
+          <!-- Why Us Details -->
+          <div class="w-[238px] flex flex-col gap-4">
+            <h2 class="text-preset-3 text-white">Why Us</h2>
+            <ul class="text-preset-5 text-white opacity-75" style="list-style: none; padding: 0">
+              <li>Tutorials by industry experts</li>
+              <li>Peer &amp; expert code review</li>
+              <li>Coding exercises</li>
+              <li>Access to our GitHub repos</li>
+              <li>Community forum</li>
+              <li>Flashcard decks</li>
+              <li>New videos every week</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="xl:absolute bottom-0 border-t border-gray-500 w-full h-10 flex justify-center items-center">
+      <nav class="text-black text-preset-5 md:text-preset-3" aria-label="Attribution links">
+        <ul class="flex gap-1">
+          <li>
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io/challenges/single-price-grid-component-5ce41129d0ff452fec5abbbc"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-teal-500">
+              © Frontend Mentor
+              <span class="year">2026</span>
+            </a>
+          </li>
+          <li class="text-gray-500 opacity-50" aria-hidden="true">|</li>
+          <li>
+            Coded by
+            <a
+              href="https://www.frontendmentor.io/profile/Rocabor"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-teal-500">
+              @Rocabor
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

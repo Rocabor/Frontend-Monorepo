@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-gray-500: #9aa7be;
+  --color-teal-100: #e6eff5;
+  --color-teal-400: #4abfbd;
+  --color-teal-500: #2ab3b1;
+  --color-green-400: #c0df33;
+
+  --font-karla: "Karla", sans-serif;
+
+  --shadow-main: 0 15px 30px rgba(0, 81, 171, 0.15);
+  --shadow-button: 0 10px 10px rgba(0, 0, 0, 0.0973);
+}
+
+@utility text-preset-1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 1.15;
+}
+
+@utility text-preset-2 {
+  font-size: 24.35px;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  line-height: 1.15;
+}
+
+@utility text-preset-3 {
+  font-size: 18.26px;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  line-height: 1.15;
+}
+
+@utility text-preset-4-bold {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  line-height: 1.45;
+}
+
+@utility text-preset-4-reg {
+  font-size: 15.76px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 1.65;
+}
+
+@utility text-preset-5 {
+  font-size: 13.8px;
+  font-weight: 400;
+  line-height: 1.45;
+}
