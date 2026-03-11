@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script defer src="script.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- MOBIL FIRST // MAIN PAGE  -->
+
+    <main id="main-page" class="main-page">
+      <picture>
+        <source media="(min-width:1400px)" srcset="assets/images/illustration-sign-up-desktop.svg" />
+        <source media="(min-width:760px)" srcset="assets/images/illustration-sign-up-tablet.svg" />
+        <img src="assets/images/illustration-sign-up-mobile.svg" alt="Illustration" />
+      </picture>
+
+      <div class="container">
+        <section class="cont-title">
+          <h1>Stay updated!</h1>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+          <ul class="cont-list">
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+        </section>
+
+        <!-- FORMULARIO -->
+
+        <form action="" class="" id="form-email" >
+          <div class="form">
+            <div class="label">
+              <label for="email">Email address</label>
+              <span id="message-error" class="message-error"></span>
+            </div>
+
+            <input id="email" name="email" type="email" placeholder="email@company.com" />
+          </div>
+
+          <button id="subscribe" class="btn btn-1" type="submit">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- MOBIL FIRST // MAIN PAGE-SUCCESS -->
+
+    <div id="container-success" class="container-success" >
+      <section class="message">
+        <img src="assets/images/icon-success.svg" alt="" />
+        <h2>Thanks for subscribing!</h2>
+        <p>A confirmation email has been sent to <span class="e-user" id="e-user">strash@loremcompany.com.</span> Please open it and click the button inside to confirm your subscription.</p>
+      </section>
+
+      <button id="dismissBtn" class="btn btn-2" type="button">Dismiss message</button>
+    </div>
+
+    <!-- SECCION FOOTER  -->
+
+    <footer class="footer-cta">
+      <nav aria-label="Attribution links">
+        <ul class="attribution-list">
+          <li>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a></li>
+          <li>Coded by <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer">Roberto Borges</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
