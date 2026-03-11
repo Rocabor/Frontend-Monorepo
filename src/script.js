@@ -94,21 +94,21 @@ const projects = [
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/product-preview/dist/index.html",
+    href: "./apps/newbie/product-preview-card-component/dist/index.html",
     image: "images/5.jpg",
     title: "product preview card",
     technologies: ["html", "css"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/profile-card-component/dist/index.html",
+    href: "./apps/newbie/four-card-feature-section/dist/index.html",
     image: "images/6.jpg",
     title: "four card feature section",
     technologies: ["html", "css"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/testimonials/dist/index.html",
+    href: "./apps/newbie/testimonials-grid-section/dist/index.html",
     image: "images/7.jpg",
     title: "testimonials grid section",
     technologies: ["html", "css"],
