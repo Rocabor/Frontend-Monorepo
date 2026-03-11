@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  background-color: var(--color-blue-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 100vh;
+  background-image: url("/images/pattern-background-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("/images/pattern-background-desktop.svg");
+  }
+}
+
+@theme {
+ 
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-blue-50: #f7f9ff;
+  --color-blue-100: #e0e8ff;
+  --color-blue-150: #d6e1ff;
+  --color-blue-700: #382ae1;
+  --color-blue-950: #1f2e55;
+  --color-purple-500: #766cf1;
+  --color-gray-600: #717fa6;
+
+  /* Sombras personalizadas */
+  --shadow-card-primary: 0 40px 40px rgba(13, 48, 189, 0.1518);
+  --shadow-button: 0 20px 20px rgba(56, 42, 225, 0.1903);
+}
+
+
+@utility text-preset-1 {
+  @apply text-[28px] font-black leading-[1.35];
+}
+@utility text-preset-2 {
+  @apply text-[22px] font-black leading-[1.35];
+}
+@utility text-preset-3 {
+  @apply text-[16px] leading-[1.65];
+}
+@utility text-preset-4 {
+  @apply text-[15px] leading-[1.65];
+}
