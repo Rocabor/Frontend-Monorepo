@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Huddle landing page with single introductory section</title>
+
+    <link rel="stylesheet" href="src/style.css" />
+    <script type="module" src="src/main.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  </head>
+
+  <body
+    class="flex flex-col gap-10 md:gap-10 items-center min-h-dvh bg-purple-700 bg-[url('/images/bg-mobile.svg')] xl:bg-[url('/images/bg-desktop.svg')] bg-contain xl:bg-top bg-no-repeat pt-10 xl:pt-16">
+    <!-- CONTAINER -->
+    <main class="flex flex-col w-[304px] md:w-[608px] xl:w-[1272px]">
+      <header><img class="w-[120px] xl:w-[200px]" src="images/logo.svg" alt="Huddle Logo" /></header>
+      
+
+      <section
+        class="flex flex-col gap-14 md:gap-10 xl:gap-14 md:items-center xl:flex-row xl:items-center mt-16 mb-15.5 md:mb-10 xl:mt-26 xl:mb-6">
+        <img
+          class="h-[215px] md:w-[608px] md:h-[431px] xl:w-[696px] xl:h-[493px]"
+          src="images/illustration-mockups.svg"
+          alt="illustration-mockups" />
+
+        <div class="flex flex-col items-center xl:items-start gap-8 md:gap-10 h-[276px] md:w-[520px] md:h-[301px]">
+          <div class="flex flex-col h-[204px] gap-6">
+            <h1 class="text-preset-2 md:text-preset-1 text-white text-center xl:text-start">
+              Build The Community Your Fans Will Love
+            </h1>
+
+            <p class="text-preset-5 md:text-preset-4 text-white text-center xl:text-start">
+              Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create
+              connections with your users as you engage in genuine discussion.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            class="text-preset-6 md:text-preset-3 text-purple-700 bg-white hover:bg-pink-400 hover:text-white focus:bg-pink-400 focus:text-white w-50 h-10 md:h-14 rounded-full shadow-buttom">
+            Register
+          </button>
+        </div>
+      </section>
+
+      <nav class="flex gap-4 w-full justify-center xl:justify-end">
+        <a
+          href="#!"
+          aria-label="facebook"
+          class="group inter w-[27.14px] h-7 md:size-10 rounded-full flex justify-center items-center">
+          <span class="icon-[eva--facebook-fill] size-4.5 md:size-5.5 group-inter"></span>
+        </a>
+        <a
+          href="#!"
+          aria-label="twitter"
+          class="group inter flex size-[27.14px] h-7 md:size-10 items-center justify-center rounded-full">
+          <span class="icon-[ri--twitter-fill] size-3.5 md:size-4.5 group-inter"></span>
+        </a>
+
+        <a
+          href="#!"
+          aria-label="instagram"
+          class="group inter w-[27.14px] h-7 md:size-10 rounded-full flex justify-center items-center">
+          <span class="icon-[akar-icons--instagram-fill] size-3.5 md:size-4.5 group-inter"></span>
+        </a>
+      </nav>
+    </main>
+
+    <footer class="border-t border-gray-500 w-full flex justify-center py-3 bottom-0">
+      <nav class="text-pink-400 text-preset-6 md:text-preset-4" aria-label="Attribution links">
+        <ul class="flex gap-1">
+          <li>
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io/challenges/huddle-landing-page-with-a-single-introductory-section-B_2Wvxgi0"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white">
+              © Frontend Mentor
+              <span class="year">2026</span>
+            </a>
+          </li>
+          <li class="text-white opacity-50" aria-hidden="true">|</li>
+          <li>
+            Coded by
+            <a
+              href="https://www.frontendmentor.io/profile/Rocabor"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white">
+              @Rocabor
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
