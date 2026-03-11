@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    color: white;
+    background-color: var(--color-gray-100);
+    position: relative;
+  }
+}
+
+@layer components {
+  .attribution {
+    @apply text-green-950 text-[13px] font-bold md:text-[16px];
+  }
+  .link-attribution {
+    @apply text-gold-500 font-bold;
+  }
+  .cont-0 {
+    @apply w-full max-w-81.75 min-h-110.5 p-12  md:max-w-152 md:min-h-97.75 md:px-20 xl:max-w-76.75 xl:p-[47.5px];
+  }
+  .cont-1 {
+    @apply flex flex-col gap-8 xl:gap-10;
+  }
+  .cont-2 {
+    @apply flex flex-col gap-6;
+  }
+  .button {
+    color: var(--btn-color);
+    @apply w-36.75 h-12 py-2 rounded-[25px] bg-white cursor-pointer 
+           border-2 border-transparent transition-all duration-300 outline-none xl:mt-14;
+
+    /* Combinamos hover y focus */
+    @apply hover:bg-transparent focus:bg-transparent
+           hover:text-white focus:text-white
+           hover:border-white focus:border-white;
+  }
+}
+
+@theme {
+  --color-gray-100: #f2f2f2;
+  --color-green-500: #19b89d;
+  --color-green-950: #004140;
+  --color-cyan-500: #26b5c0;
+  --color-cyan-800: #006971;
+  --color-gold-200: #ffd473;
+  --color-gold-500: #e28625;
+
+  --font-big-shoulders: "Big Shoulders", sans-serif;
+  --font-lexend-deca: "Lexend Deca", sans-serif;
+}
+
+@utility text-preset-1 {
+  font-family: var(--font-big-shoulders);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-gray-100);
+}
+
+@utility text-preset-2 {
+  font-family: var(--font-lexend-deca);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+}
