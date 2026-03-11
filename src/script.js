@@ -66,21 +66,21 @@ document.addEventListener('DOMContentLoaded', renderProjects);
 const projects = [
   // NEWBIE PROJECTS (17 proyectos)
   {
-    href: "./apps/newbie/qr-code/dist/index.html",
+    href: "./apps/newbie/qr-code-component/dist/index.html",
     image: "images/1.jpg",
     title: "qr code component",
     technologies: ["html", "css"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/blog-preview/dist/index.html",
+    href: "./apps/newbie/blog-preview-card/dist/index.html",
     image: "images/2.jpg",
     title: "blog preview card",
     technologies: ["html", "css"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/social-links/dist/index.html",
+    href: "./apps/newbie/social-link-profile/dist/index.html",
     image: "images/3.jpg",
     title: "social links profile",
     technologies: ["html", "css"],
@@ -101,7 +101,7 @@ const projects = [
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/four-card/dist/index.html",
+    href: "./apps/newbie/profile-card-component/dist/index.html",
     image: "images/6.jpg",
     title: "four card feature section",
     technologies: ["html", "css"],
@@ -115,70 +115,70 @@ const projects = [
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/meet-landing/dist/index.html",
+    href: "./apps/newbie/meet-landing-page/dist/index.html",
     image: "images/8.jpg",
     title: "meet landing page",
     technologies: ["html", "css"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/results-summary/dist/index.html",
+    href: "./apps/newbie/result-summary-component/dist/index.html",
     image: "images/9.jpg",
     title: "results summary component",
     technologies: ["html", "css", "tailwind", "vite"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/order-summary/dist/index.html",
+    href: "./apps/newbie/order-summary-component/dist/index.html",
     image: "images/10.jpg",
     title: "order summary component",
     technologies: ["html", "css", "tailwind", "vite"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/profile-card/dist/index.html",
+    href: "./apps/newbie/profile-card-component/dist/index.html",
     image: "images/11.jpg",
     title: "profile card component",
     technologies: ["html", "css", "tailwind", "vite"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/huddle-landing/dist/index.html",
+    href: "./apps/newbie/huddle-landingpage-with-single-introductory-section/dist/index.html",
     image: "images/12.jpg",
     title: "huddle landing page with single introductory section",
     technologies: ["html", "css", "tailwind", "vite"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/price-grid/dist/index.html",
+    href: "./apps/newbie/single-price-grid-component/dist/index.html",
     image: "images/13.jpg",
     title: "single price grid component",
     technologies: ["html", "css", "tailwind", "vite"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/social-proof/dist/index.html",
+    href: "./apps/newbie/social-proof-section/dist/index.html",
     image: "images/14.jpg",
     title: "social proof section",
     technologies: ["html", "css", "tailwind", "vite"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/3-column-preview/dist/index.html",
+    href: "./apps/newbie/3-column-preview-card-component/dist/index.html",
     image: "images/15.jpg",
     title: "3 column preview card component",
     technologies: ["html", "css", "tailwind", "vite"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/stats-preview/dist/index.html",
+    href: "./apps/newbie/stats-preview-card-component/dist/index.html",
     image: "images/16.jpg",
     title: "stats preview card component",
     technologies: ["html", "css", "tailwind", "vite"],
     difficulty: "Newbie"
   },
   {
-    href: "./apps/newbie/equalizer-landing/dist/index.html",
+    href: "./apps/newbie/equalizer-landing-page/dist/index.html",
     image: "images/17.jpg",
     title: "equalizer landing page",
     technologies: ["html", "css", "tailwind", "vite"],
@@ -187,35 +187,35 @@ const projects = [
   
   // JUNIOR PROJECTS 
   {
-    href: "./apps/junior/interactive-rating/dist/index.html",
+    href: "./apps/junior/article-preview-component/dist/index.html",
     image: "images/1j.jpg",
     title: "article preview component",
     technologies: ["html", "css", "js"],
     difficulty: "Junior"
   },
   {
-    href: "./apps/junior/interactive-rating/dist/index.html",
+    href: "./apps/junior/newsletter-sing-up-with-success-message/dist/index.html",
     image: "images/2j.jpg",
     title: "newsletter sign up with success message",
     technologies: ["html", "css", "js"],
     difficulty: "Junior"
   },
   {
-    href: "./apps/junior/interactive-rating/dist/index.html",
+    href: "./apps/junior/time-tracking-dashboard/dist/index.html",
     image: "images/3j.jpg",
     title: "time tracking dashboard",
     technologies: ["html", "css", "js"],
     difficulty: "Junior"
   },
   {
-    href: "./apps/junior/interactive-rating/dist/index.html",
+    href: "./apps/junior/tip-calculator-app/dist/index.html",
     image: "images/4j.jpg",
     title: "tip calculator app",
     technologies: ["html", "css", "js"],
     difficulty: "Junior"
   },
   {
-    href: "./apps/junior/interactive-rating/dist/index.html",
+    href: "./apps/junior/typing-speed-test-main/dist/index.html",
     image: "images/5j.jpg",
     title: "typing speed test main",
     technologies: ["html", "css", "js"],
@@ -225,7 +225,7 @@ const projects = [
 
   // INTERMEDIATE PROJECTS 
    {
-    href: "./apps/junior/interactive-rating/dist/index.html",
+    href: "./apps/intermediate/password-generator-app/dist/index.html",
     image: "images/6j.jpg",
     title: "password generator app",
     technologies: ["html", "css", "js"],
