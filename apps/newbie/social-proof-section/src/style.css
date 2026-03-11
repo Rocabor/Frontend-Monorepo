@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: var(--font-league);
+    background-image: url("/images/bg-pattern-top-mobile.svg"), url("/images/bg-pattern-bottom-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto,100% 31%;
+    background-position:
+      left top,
+      right bottom;
+      
+
+    @variant md {
+      background-image: url("/images/bg-pattern-top-mobile.svg"), url("/images/bg-pattern-bottom-desktop.svg");
+      background-size:
+        50% 17%,
+        100% 35%;
+    }
+    @variant xl {
+      background-image: url("/images/bg-pattern-top-desktop.svg"), url("/images/bg-pattern-bottom-desktop.svg");
+      background-size: 41%, 75%;
+    }
+  }
+}
+
+@layer components {
+  .review-cont {
+    @apply flex flex-col md:flex-row items-center gap-4 md:gap-8 text-preset-4-bold text-purple-900 bg-purple-100 rounded-lg py-[14.5px] md:px-8 md:py-4 xl:w-[446px];
+  }
+  .testimonial {
+    @apply flex p-8 rounded-lg bg-purple-900 md:h-56;
+  }
+}
+
+@theme {
+  --color-white: #ffffff;
+  --color-purple-100: #f7f2f7;
+  --color-purple-300: #927b91;
+  --color-purple-900: #512051;
+  --color-pink-400: #ee69a4;
+  --color-orange-400: #ef9546;
+
+  --font-league: "League Spartan", sans-serif;
+}
+
+@utility text-preset-1 {
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 0.85;
+}
+
+@utility text-preset-2 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 0.85;
+}
+
+@utility text-preset-3 {
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  line-height: 1.35;
+}
+
+@utility text-preset-4-bold {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@utility text-preset-4-medium {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+@utility text-preset-4-regular {
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+@utility text-footer-mobile{
+  font-size: 14px;
+  line-height: 1.5;
+}
