@@ -1,0 +1,495 @@
+/* ============================================= */
+/*  VARIABLES GLOBALES */
+/* ============================================= */
+:root {
+  /* colors */
+  --colors-white: hsl(0, 0%, 100%);
+  --colors-black: hsl(0, 0%, 0%);
+  --colors-grey-200: hsl(252, 11%, 91%);
+  --colors-grey-600: hsl(251, 9%, 53%);
+  --colors-grey-700: hsl(248, 5%, 34%);
+  --colors-grey-800: hsl(247, 11%, 15%);
+  --colors-grey-850: hsl(248, 15%, 11%);
+  --colors-grey-900: hsl(248, 17%, 9%);
+  --colors-grey-950: hsl(255, 22%, 4%);
+  --colors-yellow-300: hsl(42, 91%, 68%);
+  --colors-orange-400: hsl(13, 95%, 66%);
+  --colors-red-500: hsl(0, 91%, 63%);
+  --colors-green-200: hsl(127, 100%, 82%);
+  --gradient: linear-gradient(90deg, #14131b 0%, #08070b 100%);
+
+  /* spacing */
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-700: 56px;
+  --spacing-1000: 80px;
+  --spacing-1300: 104px;
+  --spacing-1600: 128px;
+  --spacing-2000: 160px;
+  --spacing-2200: 176px;
+  --spacing-2300: 184px;
+}
+
+/* ============================================= */
+/*  RESET Y ESTILOS BASE */
+/* ============================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--colors-black);
+  font-family: "JetBrains Mono", sans-serif;
+  font-weight: 700;
+  color: var(--colors-grey-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* ============================================= */
+/*  PRESETS DE TEXTO */
+/* ============================================= */
+.TextPreset1 {
+  font-size: 32px;
+  line-height: 42px;
+}
+
+.TextPreset2 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.TextPreset3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.TextPreset4 {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/* ============================================= */
+/*  LAYOUT PRINCIPAL */
+/* ============================================= */
+.main {
+  width: min(100%, 343px);
+  min-height: 539px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+}
+
+.generator-title {
+  color: var(--colors-grey-600);
+  text-align: center;
+}
+
+.generator-card {
+  min-height: 503px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+}
+
+/* ============================================= */
+/*  SECCIÓN: VISUALIZACIÓN DE RESULTADO */
+/* ============================================= */
+.display-container {
+  padding: 16px;
+  background-color: var(--colors-grey-800);
+}
+
+.password-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.password-text {
+  color: var(--colors-grey-700);
+  font-size: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.password-text.active {
+  color: var(--colors-white);
+}
+
+/* ============================================= */
+/*  BOTÓN DE COPIAR */
+/* ============================================= */
+.copy-text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-200);
+  width: 102px;
+  height: 24px;
+}
+
+.copy-color {
+  color: var(--colors-green-200);
+}
+
+.copy-btn {
+  width: 17.5px;
+  height: 20px;
+  background-color: var(--colors-grey-800);
+  border: none;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  transform: scale(1.2);
+}
+
+.copy-btn img {
+  width: 100%;
+  height: 100%;
+}
+
+.copy-btn img:hover {
+  filter: brightness(0) invert(1);
+}
+
+/* ============================================= */
+/*  SECCIÓN: CONFIGURACIÓN Y FORMULARIO */
+/* ============================================= */
+.settings-container {
+  min-height: 423px;
+  padding: var(--spacing-200);
+  background-color: var(--colors-grey-800);
+}
+
+.generator-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+}
+
+/* ============================================= */
+/*  CONTROL: LONGITUD DE CARACTERES */
+/* ============================================= */
+.length-setting {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+  min-height: 68px;
+}
+
+.length-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 32px;
+}
+
+.length-number {
+  color: var(--colors-green-200);
+}
+
+/* ============================================= */
+/*  SLIDER DE RANGO */
+/* ============================================= */
+.range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: var(--spacing-100);
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: linear-gradient(var(--colors-green-200), var(--colors-green-200)), var(--gradient);
+  background-repeat: no-repeat;
+  background-size:
+    0% 100%,
+    100% 100%;
+  background-position:
+    0 0,
+    0 0;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--colors-grey-200);
+  cursor: pointer;
+}
+
+.range-input::-webkit-slider-thumb:active {
+  background-color: var(--colors-black);
+  border: 2px solid var(--colors-green-200);
+}
+
+/* ============================================= */
+/*  CONTROL: OPCIONES DE COMPLEJIDAD */
+/* ============================================= */
+.options-fieldset {
+  width: 280px;
+  min-height: 131px;
+  border: none;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+
+.checkbox-input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--colors-grey-200);
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-input:hover {
+  border-color: var(--colors-green-200);
+}
+
+.checkbox-input:checked {
+  background-color: var(--colors-green-200);
+  border-color: var(--colors-green-200);
+}
+
+.checkbox-input:checked::before {
+  content: "";
+  width: 11px;
+  height: 8px;
+  background-image: url("starter-code/assets/images/icon-check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ============================================= */
+/*  SECCIÓN: INDICADOR DE FORTALEZA */
+/* ============================================= */
+.generator-controls-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+}
+
+.strength-content {
+  display: flex;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 14px 16px;
+  align-items: center;
+  background-color: var(--colors-grey-850);
+}
+
+.strength-label {
+  color: var(--colors-grey-600);
+}
+
+.strength-cont {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+
+.strength-bars {
+  display: flex;
+  gap: var(--spacing-100);
+}
+
+/* ============================================= */
+/*  BARRAS DE FORTALEZA */
+/* ============================================= */
+.bar {
+  display: flex;
+  width: 10px;
+  height: 28px;
+  border: 2px solid var(--colors-grey-200);
+}
+
+.bar.filled {
+  background-color: var(--colors-green-200);
+  border-color: var(--colors-green-200);
+}
+
+.bar.filled.strength-too-weak {
+  background-color: var(--colors-red-500);
+  border-color: var(--colors-red-500);
+}
+
+.bar.filled.strength-weak {
+  background-color: var(--colors-orange-400);
+  border-color: var(--colors-orange-400);
+}
+
+.bar.filled.strength-medium {
+  background-color: var(--colors-yellow-300);
+  border-color: var(--colors-yellow-300);
+}
+
+.bar.filled.strength-strong {
+  background-color: var(--colors-green-200);
+  border-color: var(--colors-green-200);
+}
+
+/* ============================================= */
+/*  BOTÓN DE ACCIÓN PRINCIPAL */
+/* ============================================= */
+.action-container {
+  display: flex;
+  min-height: 56px;
+}
+
+.generate-btn {
+  display: flex;
+  gap: var(--spacing-300);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--colors-green-200);
+  border: none;
+  cursor: pointer;
+  padding: 16px 104px;
+  font-family: inherit;
+}
+
+.generate-btn .btn-text {
+  color: var(--colors-grey-800);
+  font-weight: 700;
+}
+
+.generate-btn:hover,
+.generate-btn:active {
+  background-color: transparent;
+  border: 1px solid var(--colors-green-200);
+}
+
+.generate-btn:hover .btn-text,
+.generate-btn:active .btn-text {
+  color: var(--colors-green-200);
+}
+
+.generate-btn:hover .btn-icon svg path,
+.generate-btn:active .btn-icon svg path {
+  fill: var(--colors-green-200);
+}
+
+/* ============================================= */
+/*  SECCIÓN: FOOTER */
+/* ============================================= */
+.attribution-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block-start: 0px;
+  font-size: 14px;
+  color: var(--colors-grey-200);
+  list-style: none;
+  gap: 5px;
+}
+
+.attribution-list a {
+  color: var(--colors-green-200);
+  text-decoration: none;
+}
+
+/* ============================================= */
+/*  MEDIA QUERY: DESKTOP */
+/* ============================================= */
+@media (min-width: 1400px) {
+  .main {
+    width: min(100%, 540px);
+    min-height: 696px;
+    gap: var(--spacing-400);
+  }
+
+  .generator-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .length-label,
+  .checkbox-label,
+  .strength-label,
+  .btn-text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .generator-card {
+    min-height: 632px;
+    gap: var(--spacing-300);
+  }
+
+  .display-container {
+    padding: var(--spacing-200) var(--spacing-400);
+  }
+
+  .password-text {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .copy-btn {
+    width: 21px;
+    height: 24px;
+  }
+
+  .settings-container {
+    min-height: 528px;
+    padding: var(--spacing-300) var(--spacing-400);
+  }
+
+  .generator-form {
+    gap: var(--spacing-400);
+    min-height: 463px;
+  }
+
+  .length-setting {
+    min-height: 86px;
+    gap: var(--spacing-200);
+  }
+
+  .options-list {
+    width: max(100%, 315px);
+    min-height: 144px;
+  }
+
+  .generator-controls-bottom {
+    gap: var(--spacing-400);
+    min-height: 169px;
+  }
+
+  .strength-content {
+    padding: var(--spacing-300) var(--spacing-400);
+  }
+
+  .generate-btn {
+    padding: var(--spacing-300) var(--spacing-2200);
+    min-height: 65px;
+  }
+}
