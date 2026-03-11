@@ -1,0 +1,267 @@
+:root {
+  --rose-800: #7a284e;
+  --rose-50: #fff7fb;
+  --stone-900: #312e2c;
+  --stone-600: #5f564d;
+  --stone-150: #e3ddd7;
+  --stone-100: #f3e5d7;
+  --brown-800: #854632;
+  --white: #ffffff;
+  --text-preset-1: normal 400 2.25rem/1 "young serif", serif;
+  --text-preset-2: normal 400 1.75rem/1 "young serif", serif;
+  --text-preset-3: normal 600 1.25rem/1 "outfit", sans-serif;
+  --text-preset-4: normal 400 1rem/1.5 "outfit", sans-serif;
+  --text-preset-4-bold: normal 700 1rem/1.5 "outfit", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--stone-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.recipe-page {
+  width: 23.4375rem;
+  height: auto;
+  background-color: var(--white);
+}
+
+.top-img img {
+  width: 100%;
+  height: auto;
+}
+
+.text-cont {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 2rem;
+  padding-block: 2.5rem;
+  gap: 2rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+
+  /* width: 19.4375rem; */
+  /* height: auto; */
+  gap: 1.5rem;
+}
+
+.title h1 {
+  font: var(--text-preset-1);
+  color: var(--stone-900);
+}
+
+.title p {
+  font: var(--text-preset-4);
+  color: var(--stone-600);
+}
+
+.preparation {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 1.5rem;
+  gap: 1rem;
+  background-color: var(--rose-50);
+}
+
+.preparation h3 {
+  font: var(--text-preset-3);
+  color: var(--rose-800);
+}
+
+.preparation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 1.375rem;
+  font: var(--text-preset-4);
+  color: var(--stone-600);
+}
+
+.preparation li {
+  padding-left: 1rem;
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ingredients h2 {
+  font: var(--text-preset-2);
+  color: var(--brown-800);
+}
+
+.ingredients ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 1.375rem;
+  font: var(--text-preset-4);
+  color: var(--stone-600);
+}
+
+.ingredients li {
+  padding-left: 1rem;
+}
+.instruction {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.instruction h2 {
+  font: var(--text-preset-2);
+  color: var(--rose-800);
+}
+
+.instruction ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font: var(--text-preset-4);
+  color: var(--stone-600);
+  margin-left: 1.375rem;
+}
+
+.instruction li {
+  padding-left: 1rem;
+}
+
+.instruction li::marker {
+  font-weight: bold;
+  font: var(--text-preset-4-bold);
+  color: var(--brown-800);
+}
+
+.nutrition {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nutrition h2 {
+  font: var(--text-preset-2);
+  color: var(--brown-800);
+}
+
+.nutrition p {
+  font: var(--text-preset-4);
+  color: var(--stone-600);
+}
+
+.val-nut {
+  border-collapse: collapse;
+}
+
+tr:nth-child(1) {
+  border-bottom: 1px solid;
+}
+
+tr:nth-child(1) td:nth-child(1) {
+  padding: 0 0.5rem 0.75rem 2rem;
+  text-align: start;
+}
+
+tr:nth-child(1) td:nth-child(2) {
+  padding: 0 2rem 0.75rem 0.5rem;
+  text-align: start;
+}
+
+tr:nth-child(2) {
+  border-bottom: 0.0625rem solid;
+}
+
+tr:nth-child(2) td:nth-child(1) {
+  padding: 0.75rem 0.5rem 0.75rem 2rem;
+  text-align: start;
+}
+
+tr:nth-child(2) td:nth-child(2) {
+  padding: 0.75rem 2rem 0.75rem 0.5rem;
+  text-align: start;
+}
+
+tr:nth-child(3) {
+  border-bottom: 0.0625rem solid;
+}
+
+tr:nth-child(3) td:nth-child(1) {
+  padding: 0.75rem 0.5rem 0.75rem 2rem;
+  text-align: start;
+}
+
+tr:nth-child(3) td:nth-child(2) {
+  padding: 0.75rem 2rem 0.75rem 0.5rem;
+  text-align: start;
+}
+
+tr:nth-child(4) td:nth-child(1) {
+  padding: 0.75rem 0.5rem 0 2rem;
+  text-align: start;
+}
+
+tr:nth-child(4) td:nth-child(2) {
+  padding: 0.75rem 2rem 0 0.5rem;
+  text-align: start;
+}
+
+.nut {
+  font: var(--text-preset-4);
+  color: var(--stone-600);
+  text-align: center;
+}
+
+.val {
+  font: var(--text-preset-4-bold);
+  color: var(--brown-800);
+  text-align: center;
+}
+
+.attribution {
+  font-size: 1rem;
+
+  text-align: center;
+}
+.attribution a {
+  font: var(--text-preset-4-bold);
+  color: var(--brown-800);
+}
+
+@media (min-width: 47.5em) {
+  body {
+    padding: 8rem 3rem;
+  }
+
+  .recipe-page {
+    width: 46rem;
+    height: auto;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    gap: 2.5rem;
+  }
+
+  .top-img img {
+    border-radius: 0.75rem;
+  }
+
+  .text-cont {
+    padding-inline: 0;
+    padding-bottom: 0;
+    gap: 2.5rem;
+  }
+}
