@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Time tracking dashboard</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script defer src="script.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- MOVIL FIRST WORKFLOW -->
+    <main class="main">
+      <!-- SECCION USER -->
+
+      <aside class="cont-user">
+        <div class="cont-perfil">
+          <div class="perfil">
+            <figure class="user-info">
+              <img src="images/image-jeremy.png" alt="" />
+              <figcaption>
+                <h1>Report for</h1>
+                <p class="user">Jeremy Robson</p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <nav>
+            <ul id="time-selector" class="timeframe-selector">
+              <li class="time" data-opcion="daily">Daily</li>
+              <li class="time" data-opcion="weekly">Weekly</li>
+              <li class="time" data-opcion="monthly">Monthly</li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- SECCION ACTIVITY -->
+
+      <article class="cont-work">
+        <div class="cont-stats">
+          <div class="stats">
+            <header class="activity-header">
+              <h2 class="activity">Work</h2>
+              <img src="images/icon-ellipsis.svg" alt="" />
+            </header>
+            <div class="actibity-stats">
+              <p class="hr-act"></p>
+              <p class="hr-prev"></p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="cont-play">
+        <div class="cont-stats">
+          <div class="stats">
+            <header class="activity-header">
+              <h2 class="activity">Play</h2>
+              <img src="images/icon-ellipsis.svg" alt="" />
+            </header>
+            <div class="actibity-stats">
+              <p class="hr-act"></p>
+              <p class="hr-prev"></p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="cont-study">
+        <div class="cont-stats">
+          <div class="stats">
+            <header class="activity-header">
+              <h2 class="activity">Study</h2>
+              <img src="images/icon-ellipsis.svg" alt="" />
+            </header>
+            <div class="actibity-stats">
+              <p class="hr-act"></p>
+              <p class="hr-prev"></p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="cont-exer">
+        <div class="cont-stats">
+          <div class="stats">
+            <header class="activity-header">
+              <h2 class="activity">Exercise</h2>
+              <img src="images/icon-ellipsis.svg" alt="" />
+            </header>
+            <div class="actibity-stats">
+              <p class="hr-act" data-id="4"></p>
+              <p class="hr-prev"></p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="cont-social">
+        <div class="cont-stats">
+          <div class="stats">
+            <header class="activity-header">
+              <h2 class="activity">Social</h2>
+              <img src="images/icon-ellipsis.svg" alt="" />
+            </header>
+            <div class="actibity-stats">
+              <p class="hr-act"></p>
+              <p class="hr-prev"></p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="cont-self">
+        <div class="cont-stats">
+          <div class="stats">
+            <header class="activity-header">
+              <h2 class="activity">Self Care</h2>
+              <img src="images/icon-ellipsis.svg" alt="" />
+            </header>
+            <div class="actibity-stats">
+              <p class="hr-act"></p>
+              <p class="hr-prev"></p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer-cta">
+      <nav aria-label="Attribution links">
+        <ul class="attribution-list">
+          <li>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a></li>
+          <li>Coded by <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer">Roberto Borges</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
