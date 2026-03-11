@@ -9,7 +9,7 @@
 
     <title>Frontend Mentor | Typing Speed Test</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
 
     <script defer src="./script.js"></script>
 
@@ -64,7 +64,8 @@
 
               <div class="dropdown-difficulty" role="listbox" aria-labelledby="difficulty-mobile-btn">
                 <div class="select active" role="option" tabindex="0" aria-selected="true" data-value="Easy">
-                  <div class="circle" role="radio"></div>
+                  <div class="circle" aria-hidden="true"></div>
+                  <!-- ✅ Solo decorativo -->
                   <span class="label">Easy</span>
                 </div>
 
@@ -132,7 +133,13 @@
 
         <section class="text-container" aria-label="Área de escritura">
           <div class="text-row" id="typing-area">
-            <div class="text-box" id="text-input" tabindex="0" role="textbox" aria-label="Texto para practicar mecanografía" aria-multiline="true"></div>
+            <div
+              class="text-box"
+              id="text-input"
+              tabindex="0"
+              role="textbox"
+              aria-label="Texto para practicar mecanografía"
+              aria-multiline="true"></div>
 
             <div class="test-controls">
               <button type="button" class="btn-start" id="start-btn">Start Typing Test</button>
@@ -144,7 +151,10 @@
         <!-- MAIN CONTENT > TEXT CONTAINER // HOME - STARTED -->
 
         <div class="btn-restart-cont">
-          <button type="button" class="btn-restart" id="restart-btn">Restart Test <img src="assets/images/icon-restart.svg" alt="" /></button>
+          <button type="button" class="btn-restart" id="restart-btn">
+            Restart Test
+            <img src="assets/images/icon-restart.svg" alt="" />
+          </button>
         </div>
       </div>
 
@@ -173,7 +183,7 @@
             <span class="label" id="label-chars">Characters</span>
             <span class="characters-values">
               <strong class="value-correct" id="Correct" aria-live="polite"></strong>
-              <span aria-hidden="true" class="bar"> / </span>
+              <span aria-hidden="true" class="bar">/</span>
               <strong class="value-incorrect" id="Incorrect" aria-live="polite"></strong>
             </span>
           </div>
@@ -188,59 +198,89 @@
 
     <!-- SECCION FOOTER -->
     <footer id="typing-footer">
-  <div class="footer-container">
-    <!-- Sección de Estadísticas -->
-    <div class="stats-grid">
-      <!-- Fácil -->
-      <div class="footer-stats" id="easy-stats">
-        <span class="stat-label label-easy">Easy</span>
-        <div class="stat-content">
-          <div class="stat-line">Try: <span id="easy-attempts" class="value-try">0</span></div>
-          <div class="stat-line">Best: <span id="easy-best" class="value-best">0</span> <small>WPM</small></div>
+      <div class="footer-container">
+        <!-- Sección de Estadísticas -->
+        <div class="stats-grid">
+          <!-- Fácil -->
+          <div class="footer-stats" id="easy-stats">
+            <span class="stat-label label-easy">Easy</span>
+            <div class="stat-content">
+              <div class="stat-line">
+                Try:
+                <span id="easy-attempts" class="value-try">0</span>
+              </div>
+              <div class="stat-line">
+                Best:
+                <span id="easy-best" class="value-best">0</span>
+                <small>WPM</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Medio -->
+          <div class="footer-stats" id="medium-stats">
+            <span class="stat-label label-medium">Medium</span>
+            <div class="stat-content">
+              <div class="stat-line">
+                Try:
+                <span id="medium-attempts" class="value-try">0</span>
+              </div>
+              <div class="stat-line">
+                Best:
+                <span id="medium-best" class="value-best">0</span>
+                <small>WPM</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Difícil -->
+          <div class="footer-stats" id="hard-stats">
+            <span class="stat-label label-hard">Hard</span>
+            <div class="stat-content">
+              <div class="stat-line">
+                Try:
+                <span id="hard-attempts" class="value-try">0</span>
+              </div>
+              <div class="stat-line">
+                Best:
+                <span id="hard-best" class="value-best">0</span>
+                <small>WPM</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tip y Navegación -->
+        <div class="footer-info">
+          <div id="tip-container">
+            <span class="tip-label">💡 Tip Pro:</span>
+            <p id="tip-text">Cargando consejo...</p>
+            <div id="tip-meta">
+              <span id="tip-category"></span>
+              <span id="tip-difficulty"></span>
+            </div>
+          </div>
+
+          <nav aria-label="Attribution links">
+            <ul class="attribution-list">
+              <li>
+                Challenge by
+                <a href="https://www.frontendmentor.io/challenges/typing-speed-test" target="_blank" rel="noopener noreferrer">
+                  Frontend Mentor
+                </a>
+              </li>
+              <li>
+                Coded by
+                <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer">
+                  ©
+                  <span class="year">2026</span>
+                  Roberto Borges
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
-
-      <!-- Medio -->
-      <div class="footer-stats" id="medium-stats">
-        <span class="stat-label label-medium">Medium</span>
-        <div class="stat-content">
-          <div class="stat-line">Try: <span id="medium-attempts" class="value-try">0</span></div>
-          <div class="stat-line">Best: <span id="medium-best" class="value-best">0</span> <small>WPM</small></div>
-        </div>
-      </div>
-
-      <!-- Difícil -->
-      <div class="footer-stats" id="hard-stats">
-        <span class="stat-label label-hard">Hard</span>
-        <div class="stat-content">
-          <div class="stat-line">Try: <span id="hard-attempts" class="value-try">0</span></div>
-          <div class="stat-line">Best: <span id="hard-best" class="value-best">0</span> <small>WPM</small></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tip y Navegación -->
-    <div class="footer-info">
-      <div id="tip-container">
-        <span class="tip-label">💡 Tip Pro:</span>
-        <p id="tip-text">Cargando consejo...</p>
-        <div id="tip-meta">
-          <span id="tip-category"></span>
-          <span id="tip-difficulty"></span>
-        </div>
-      </div>
-
-      <nav aria-label="Attribution links">
-        <ul class="attribution-list">
-          <li>Challenge by <a href="https://www.frontendmentor.io/challenges/typing-speed-test" target="_blank" rel="noopener noreferrer">Frontend Mentor</a></li>
-          <li>
-            Coded by <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer">© <span class="year">2026 </span>Roberto Borges</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</footer>
-
+    </footer>
   </body>
 </html>

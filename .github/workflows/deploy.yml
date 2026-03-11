@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Recomendado para que Turbo sea más inteligente
+          fetch-depth: 0
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm' # Cambiado a pnpm
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -35,15 +35,46 @@ jobs:
       - name: Build all projects
         run: pnpm build
 
+      - name: Prepare deployment folder
+        run: |
+          # Crear carpeta para deployment
+          mkdir -p deployment/apps
+          
+          # Copiar el index.html raíz si existe
+          if [ -f "index.html" ]; then
+            cp index.html deployment/
+          fi
+          
+          # Copiar README.md
+          cp README.md deployment/
+          
+          # Copiar todos los proyectos construidos manteniendo estructura
+          for category in newbie junior intermediate; do
+            if [ -d "apps/$category" ]; then
+              mkdir -p "deployment/apps/$category"
+              for project in apps/$category/*/; do
+                if [ -d "$project/dist" ]; then
+                  project_name=$(basename $project)
+                  echo "📦 Copiando $category/$project_name"
+                  cp -r "$project/dist" "deployment/apps/$category/$project_name"
+                fi
+              done
+            fi
+          done
+          
+          # Mostrar estructura generada
+          echo "📂 Estructura de deployment:"
+          ls -la deployment/
+          echo "📂 apps en deployment:"
+          ls -la deployment/apps/
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # IMPORTANTE: Aquí debes apuntar a la carpeta que contiene el index.html
-          # Si tienes un "lanzador" en la raíz, deja '.', pero asegúrate de que sea lo que quieres exponer.
-          path: '.' 
+          path: './deployment'
 
   deploy:
     needs: build
