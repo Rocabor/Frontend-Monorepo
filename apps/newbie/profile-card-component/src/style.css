@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    min-height: 100vh;
+    font-family: "Kumbh Sans", sans-serif;
+    background: url(/images/bg-pattern-top.svg), url(/images/bg-pattern-bottom.svg);
+    background-position:
+      right 45vw bottom 60vh,
+      left 45vw top 48vh;
+    background-size:
+      38.875rem 38.8125rem,
+      38.875rem 38.8125rem;
+    background-color: var(--color-blue-600);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @variant md {
+      background-position:
+        right 48vw bottom 40vh,
+        left 52vw top 50vh;
+      background-size:
+        61.125rem 61rem,
+        61.125rem 61rem;
+    }
+    @variant xl {
+      background-position:
+        right 51vw bottom 38vh,
+        left 49vw top 50vh;
+    }
+  }
+}
+
+@layer components {
+  .flex-stack {
+    @apply flex flex-col justify-center items-center;
+  }
+}
+
+@theme {
+  --color-gray-100: #e8e9ec;
+  --color-gray-500: #6b7082;
+  --color-blue-400: #41cbd3;
+  --color-blue-600: #19a1ae;
+  --color-navy-950: #2e3349;
+
+  --gradient: linear-gradient(180deg, rgba(9, 137, 180, 0) 0%, #53ffee 100%);
+  --shadow-card: 0 50px 100px rgba(8, 70, 94, 0.25);
+}
+
+@utility text-preset-1-bold {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@utility text-preset-1-regular {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+@utility text-preset-2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+@utility text-preset-3 {
+  font-size: 0.625rem;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.0938rem;
+}
