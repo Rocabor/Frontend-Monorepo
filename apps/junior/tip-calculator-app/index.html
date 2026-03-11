@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script defer src="script.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="splitter">
+        <img src="images/logo.svg" alt="Splitter Logo" aria-hidden="true" />
+      </div>
+
+      <div class="main-cont">
+        <form class="content-cont" id="tip-form">
+          <!-- SECCION 1 -->
+          <div class="bill-cont">
+            <div class="bill-header">
+              <label for="bill-input" class="bill">Bill</label>
+              <div class="bill-amount-cont">
+                <div class="bill-amount">
+                  <input id="bill-input" class="cash" type="number" placeholder="0" />
+                </div>
+              </div>
+            </div>
+
+            <div class="tip-selec-cont">
+              <label class="selec-tip">Select Tip %</label>
+              <div class="tip-opt-cont">
+                <button type="button" class="tip-btn">5%</button>
+                <button type="button" class="tip-btn">10%</button>
+                <button type="button" class="tip-btn">15%</button>
+                <button type="button" class="tip-btn">25%</button>
+                <button type="button" class="tip-btn">50%</button>
+                <input class="custom" type="number" placeholder="Custom" aria-label="Custom percentage tip" />
+              </div>
+            </div>
+
+            <div class="people-cont">
+              <div class="label-wrapper">
+                <label for="people-input" class="num-people">Number of People</label>
+
+                <span class="error-msg" id="people-error" aria-live="polite"></span>
+              </div>
+              <div class="people-input-cont">
+                <div class="people-input">
+                  <input id="people-input" class="people" type="number" placeholder="0" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECCION 2 -->
+          <section class="result-container" aria-labelledby="results-heading">
+            <div class="result-content">
+              <div class="results-datails">
+                <div class="tip-amout-row">
+                  <div class="tip-amount-label">
+                    <p class="tip-amout" id="label-tip">Tip Amount</p>
+                    <p class="person">/ person</p>
+                  </div>
+                  <div class="amount-display">
+                    <output id="tip-per-person" class="amount" aria-labelledby="label-tip" aria-live="polite">$0.00</output>
+                  </div>
+                </div>
+
+                <div class="total-amount-row">
+                  <div class="total-amount-label">
+                    <p class="total" id="label-total">Total</p>
+                    <p class="person">/ person</p>
+                  </div>
+
+                  <div class="amount-display">
+                    <output id="total-per-person" class="amount" aria-labelledby="label-total" aria-live="polite">$0.00</output>
+                  </div>
+                </div>
+              </div>
+              <button type="reset" class="reset" id="reset-btn">Reset</button>
+            </div>
+          </section>
+        </form>
+      </div>
+    </main>
+    <footer class="footer-cta">
+      <nav aria-label="Attribution links">
+        <ul class="attribution-list">
+          <li>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a></li>
+          <li>Coded by <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer">Roberto Borges</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
