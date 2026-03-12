@@ -1,8 +1,16 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base:'./',
-   build: {
-    outDir: 'dist', // Asegúrate de que esto sea 'dist'
+  base: './',  // ← Esto es lo crítico
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/[name].js',  // Mantiene el nombre
+        assetFileNames: 'assets/[name].[ext]'
+      }
+    }
   }
 })
