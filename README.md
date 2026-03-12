@@ -211,7 +211,7 @@ All projects have live demos, so you can see them running without any local setu
 | 02 | **Newsletter sign-up** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/newsletter-sing-up-with-success-message/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/newsletter-sing-up-with-success-message) |
 | 03 | **Time tracking dashboard** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/time-tracking-dashboard/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/time-tracking-dashboard) |
 | 04 | **Tip calculator app** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/tip-calculator-app/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/tip-calculator-app) |
-| 05 | **Typing speed test** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/typing-speed-test/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/typing-speed-test) |
+| 05 | **Typing speed test** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/typing-speed-test-main/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/typing-speed-test-main) |
 
 ---
 
