@@ -12,11 +12,12 @@
 }
 
 @layer components {
-  .bg-main {
+  /* .bg-main {
     background-image: url("/assets/bg-main-mobile.png");
     background-position: 40px -190px;
-    background-repeat: no-repeat;
-  }
+    background-repeat: no-repeat;    
+    position: absolute;
+  } */
   .bg-pattern-2{
     background-image: url("/assets/bg-pattern-2.svg");
     background-color: var(--color-slate);
