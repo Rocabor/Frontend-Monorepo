@@ -14,8 +14,7 @@
 @layer components {
   .bg-main {
     background-image: url("/assets/bg-main-mobile.png");
-    background-position:center;
-    background-size: 180%;
+    background-position:-5% 65%;
     background-repeat: no-repeat;    
   }
   .bg-pattern-2{
@@ -31,6 +30,10 @@
     display: flex;
     gap:8px;
     justify-content: center;    
+  }
+  .btn-ios{
+    @apply preset6 text-white bg-slate cursor-pointer hover:bg-cyan hover:text-slate focus:bg-cyan;      
+    
   }
 }
 
