@@ -8,32 +8,76 @@
     place-items: center;
     min-height: 100dvh;
     color: var(--color-slate);
+    position: relative;
   }
 }
 
 @layer components {
   .bg-main {
     background-image: url("/assets/bg-main-mobile.png");
-    background-position:-5% 65%;
-    background-repeat: no-repeat;    
+    background-position: -5% 65%;
+    background-repeat: no-repeat;
   }
-  .bg-pattern-2{
+  .bg-pattern-2 {
     background-image: url("/assets/bg-pattern-2.svg");
     background-color: var(--color-slate);
     background-repeat: no-repeat;
     background-position: 50% 0%;
   }
-  .buttons{
+  .buttons {
     height: 64px;
     border-radius: 12px;
     padding: 16px 32px;
     display: flex;
-    gap:8px;
-    justify-content: center;    
+    gap: 8px;
+    justify-content: center;
   }
-  .btn-ios{
-    @apply preset6 text-white bg-slate cursor-pointer hover:bg-cyan hover:text-slate focus:bg-cyan;      
-    
+  .btn-apple {
+    @apply preset6 text-white bg-slate cursor-pointer hover:bg-cyan hover:text-slate
+     focus:bg-cyan focus:text-slate;
+  }
+  .btn-android {
+    @apply preset6 text-slate bg-white cursor-pointer hover:bg-yellow hover:text-slate focus:bg-yellow;
+  }
+  .icon-apple {
+    width: 18px;
+    height: 20px;
+    background-color: currentColor;
+    mask-image: url("/assets/icon-apple.svg");
+  }
+  .icon-android {
+    width: 17px;
+    height: 20px;
+    background-color: currentColor;
+    mask-image: url("/assets/icon-android.svg");
+  }
+  .icon-facebook {
+    width: 20px;
+    height: 20px;
+    background-color: currentColor;
+    mask-image: url("/assets/icon-facebook.svg");
+    @apply hover:bg-orange focus:bg-orange cursor-pointer;
+  }
+  .icon-instagram {
+    width: 20px;
+    height: 20px;
+    background-color: currentColor;
+    mask-image: url("/assets/icon-instagram.svg");
+    @apply hover:bg-orange focus:bg-orange cursor-pointer;
+  }
+  .icon-twitter {
+    width: 20px;
+    height: 17px;
+    background-color: currentColor;
+    mask-image: url("/assets/icon-twitter.svg");
+    @apply hover:bg-orange focus:bg-orange cursor-pointer;
+  }
+  /* footer-personal */
+  .attribution {
+    @apply text-[13px] font-bold md:text-[16px];
+  }
+  .link-attribution {
+    @apply text-orange font-bold;
   }
 }
 
