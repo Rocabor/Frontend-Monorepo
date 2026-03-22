@@ -5,5 +5,8 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-  base:'/equalizer-landing-page/',
+   base:'./',
+   build: {
+    outDir: 'dist', // Asegúrate de que esto sea 'dist'
+  }
 })
