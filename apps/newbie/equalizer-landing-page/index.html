@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/style.css" />
+    <script type="module" src="src/main.js"></script>
+
+    <title>Frontend Mentor | Equalizer landing page</title>
+  </head>
+  <body>
+    <main class="w-full bg-main">
+      <!-- hero -->
+      <header class="relative w-full h-153.5 py-16 flex flex-col gap-16 md:h-184.5 md:gap-32">
+        <!-- logo -->
+        <div class="w-full max-w-83.75 mx-auto md:max-w-170 xl:max-w-280">
+          <img src="assets/logo.svg" alt="" />
+        </div>
+
+        <!-- hero-text -->
+        <section class="w-full flex flex-col gap-10 max-w-83.75 mx-auto md:max-w-170 xl:max-w-280">
+          <h1 class="preset1-mobil md:preset2 md:max-w-104 xl:max-w-232 xl:preset1">We make your music sound extraordinary</h1>
+          <p class="preset4-mobil md:preset4t md:max-w-126 xl:max-w-184 xl:preset4">
+            A system audio equalizer specifically designed for Android and iOS. Freely tune the way your music sounds with a professional grade parametric EQ & volume mixer.
+            Control bass, mids, treble, gain control, reverb, and more!
+          </p>
+        </section>
+      </header>
+
+      <!-- mobile-illustration + Frame 279-->
+      <div class="w-full max-w-3xl mx-auto relative md:h-205 xl:max-w-280 xl:h-150">
+        <div class="relative h-95 md:h-157 md:max-w-170 md:mx-auto xl:max-w-280 xl:h-150">
+          <img
+            src="assets/illustration-app.png"
+            alt=""
+            class="absolute -top-27.5 left-1/2 -translate-x-1/2 w-52 h-107.5 md:w-67.5 md:h-139 md:translate-x-0 md:left-10.75 xl:w-[290px] xl:h-[642px] xl:left-30" />
+
+          <!-- hero -->
+          <div class="w-full h-95 bg-pattern-2 absolute -z-1 md:max-w-170 left-1/2 -translate-x-1/2 md:h-150 md:rounded-xl xl:max-w-[1120px] xl:h-[600px]"></div>
+        </div>
+
+        <!-- Frame 279 -->
+        <div
+          class="w-full h-156.25 bg-orange py-12 flex flex-col gap-12 md:absolute md:bottom-26 md:left-75 md:max-w-89 md:h-157 md:rounded-2xl xl:max-w-[512px] xl:h-[632px] xl:p-14 xl:-bottom-31 xl:left-136">
+          <!-- Frame 272 -->
+          <div class="flex flex-col gap-10 mx-auto max-w-83.75 md:max-w-65 xl:max-w-[400px]">
+            <!-- Frame 271 -->
+            <div class="flex flex-col gap-6">
+              <h2 class="preset3">Premium EQ</h2>
+
+              <p class="preset4-mobil md:preset4t xl:preset4">
+                Get expert-level control with a robust equalizer, volume mixer, and spatial audio. Take your listening experience to a whole new level and access all our incredible
+                features!
+              </p>
+            </div>
+
+            <!-- Frame 283 -->
+            <div class="w-full">
+              <h2 class="flex gap-4 preset2 items-center">
+                $4
+                <span class="preset4">/ month</span>
+              </h2>
+            </div>
+          </div>
+
+          <!-- Frame 276 -->
+          <div class="h-36 flex flex-col gap-4 w-full max-w-83.75 mx-auto md:max-w-65 xl:max-w-[400px]">
+            <button class="buttons btn-apple">
+              <span class="icon-apple self-center"></span>
+              iOS Download
+            </button>
+
+            <button class="buttons btn-android">
+              <span class="icon-android self-center"></span>
+              Android Download
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <footer class="w-full flex flex-col gap-8 h-53.25 mt-16 mb-20 mx-auto md:h-34.25 xl:flex-row xl:mt-66 xl:max-w-281 xl:h-18.25 xl:gap-32 xl:justify-between">
+        <!-- logo -->
+        <div class="w-full max-w-83.75 mx-auto md:max-w-172 xl:max-w-36 xl:mx-0">
+          <img src="assets/logo.svg" alt="" />
+        </div>
+
+        <div class="w-full max-w-83.75 flex flex-col gap-8 mx-auto md:flex-row md:items-center md:max-w-172 md:gap- xl:mx-0 xl:gap-41 xl:max-w-212">
+          <p class="preset5 w-full md:max-w-141 xl:max-w-140">
+            All rights reserved © Equalizer 2021
+            <br />
+            Have any problems? Contact us via social media or email us at
+            <br />
+            <span class="font-bold">equalizer@example.com</span>
+          </p>
+
+          <div class="flex gap-8 w-full max-w-83.75 mx-auto md:max-w-31">
+            <a href="#!" aria-label="Ir a Facebook" class="icon-facebook"></a>
+            <a href="#!" aria-label="Ir a Instagram" class="icon-instagram"></a>
+            <a href="#!" aria-label="Ir a Twitter" class="icon-twitter"></a>
+          </div>
+        </div>
+      </footer>     
+    </main>
+
+    <!-- footer-personal -->
+      <div class="w-full border-t border-gray-200 absolute bottom-0">
+        
+        <nav class="attribution w-full max-w-83.75 mx-auto flex justify-between py-1 md:max-w-172 xl:max-w-150 xl:items-center" aria-label="Attribution links">
+          <ul class="flex flex-col [&_li:not(:last-child):after]:content-['|'] [&_li:not(:last-child):after]:opacity-0 xl:flex-row">
+            <li>
+              Challenge by
+              <a href="https://www.frontendmentor.io/challenges/equalizer-landing-page-7VJ4gp3DE" target="_blank" rel="noopener noreferrer" class="link-attribution">
+                © Frontend Mentor
+              </a>
+            </li>
+            <li>
+              Coded by
+              <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer" class="link-attribution">
+                @Rocabor
+                <span class="year">2026</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="flex gap-4 items-end justify-between w-31 h-9.75 xl:gap-8">
+            <a href="https://github.com/Rocabor" aria-label="ir a github">
+              <span class="icon-[mdi--github]" style="width: 28px; height: 28px; color: #000"></span>
+            </a>
+            <a href="https://discord.com/users/1084832720913444945" aria-label="ir a discrod">
+              <span class="icon-[skill-icons--discord]" style="width: 26px; height: 26px"></span>
+            </a>
+            <a href="mailto:robertoborgesjimez@gmail.com" aria-label="ir a mi correo">
+              <span class="icon-[logos--google-gmail]" style="width: 26px; height: 26px"></span>
+            </a>
+          </div>
+        </nav>
+      </div>
+  </body>
+</html>
