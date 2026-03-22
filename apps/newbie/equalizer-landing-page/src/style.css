@@ -17,24 +17,28 @@
   .bg-main {
     background-image: url("/assets/bg-main-mobile.png");
     background-repeat: no-repeat;
-    background-position: 0% 100%;
+    background-position: 0 -200px;
     background-size: 170%;
     @variant md {
-      background-image: url("/assets/bg-main-tablet.png");
-      background-repeat: no-repeat;
-      background-position: right;
-      background-size: 150%;
+      background-image: url("/assets/bg-pattern-1.svg"), url("/assets/bg-main-tablet.png");
+      background-position:
+        top -40px right -50px,
+        -370px -200px;
+      background-size:
+        267px 400px,
+        150%;
+    }
+    @variant xl {
+      background-image: url("/assets/bg-pattern-1.svg"), url("/assets/bg-main-desktop.png");
+      background-position:
+        top -40px right,
+        -100px -200px;
+      background-size:
+        312px 468px,
+        110%;
     }
   }
-  .bg-pattern-1 {
-    background-image: none;
-    @variant md {
-      background-image: url("/assets/bg-pattern-1.svg");
-      background-size: 267px 400px;
-      background-repeat: no-repeat;
-      background-position: top -40px right -50px;      
-    }
-  }
+
   .bg-pattern-2 {
     background-image: url("/assets/bg-pattern-2.svg");
     background-color: var(--color-slate);
@@ -42,6 +46,9 @@
     background-position: 50% 0%;
     @variant md {
       background-position: 0% 0%;
+    }
+    @variant xl {
+      background-position: 368px 0%;
     }
   }
   .buttons {
