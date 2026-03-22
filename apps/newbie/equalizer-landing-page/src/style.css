@@ -16,14 +16,33 @@
 @layer components {
   .bg-main {
     background-image: url("/assets/bg-main-mobile.png");
-    background-position: -5% 65%;
     background-repeat: no-repeat;
+    background-position: 0% 100%;
+    background-size: 170%;
+    @variant md {
+      background-image: url("/assets/bg-main-tablet.png");
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: 150%;
+    }
+  }
+  .bg-pattern-1 {
+    background-image: none;
+    @variant md {
+      background-image: url("/assets/bg-pattern-1.svg");
+      background-size: 267px 400px;
+      background-repeat: no-repeat;
+      background-position: top -40px right -50px;      
+    }
   }
   .bg-pattern-2 {
     background-image: url("/assets/bg-pattern-2.svg");
     background-color: var(--color-slate);
     background-repeat: no-repeat;
     background-position: 50% 0%;
+    @variant md {
+      background-position: 0% 0%;
+    }
   }
   .buttons {
     height: 64px;
@@ -119,6 +138,11 @@
 
 @utility preset4 {
   font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@utility preset4t {
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
 }
