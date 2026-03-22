@@ -45,10 +45,10 @@
     background-repeat: no-repeat;
     background-position: 50% 0%;
     @variant md {
-      background-position: 0% 0%;
+      background-position: 0 0;
     }
     @variant xl {
-      background-position: 368px 0%;
+      background-position: 368px 0;
     }
   }
   .buttons {
