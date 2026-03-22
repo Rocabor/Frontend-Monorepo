@@ -40,7 +40,7 @@ Users should be able to:
 ### Links
 
 
- [![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)]( https://rocabor.github.io/equalizer-landing-page/)
+ [![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/equalizer-landing-page/dist/index.html)
 
 ## My process
 
