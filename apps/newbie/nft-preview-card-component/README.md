@@ -66,68 +66,6 @@ Key learnings:
 
 Here's how the overlay effect was implemented:
 
-# Frontend Mentor - NFT preview card component solution
-
-This is a solution to the [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
-
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-- [Author](#author)
-
-## Overview
-
-### The challenge
-
-![Static Badge](https://img.shields.io/badge/NEWBIE-%23ffffff?style=flat&label=1&labelColor=%2306B6D4&color=%23ffffff)
-![Static Badge](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![Static Badge](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
-
-Users should be able to:
-
-- View the optimal layout depending on their device's screen size
-- See hover/active states for interactive elements
-
-### Screenshot
-
-![](./screenshot.jpg)
-
-### Links
-
-[![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/nft-preview-card-component/dist/index.html)
-
-## My process
-
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- Tailwind CSS (via CSS-first approach with `@import 'tailwindcss'`)
-- Google Fonts (Outfit)
-
-### What I learned
-
-This project was a great opportunity to practice Tailwind CSS with a custom configuration. Instead of using a traditional `tailwind.config.js`, I leveraged the `@theme` layer to define custom colors and utilities, keeping the setup simple and self-contained.
-
-Key learnings:
-
-- **Tailwind CSS with `@import`**: Using `@import 'tailwindcss'` in the main CSS file allows for a streamlined integration without additional build tools.
-- **Custom theme extension**: Defining colors like `--color-cyan-400`, `--color-blue-500`, etc., directly in the `@theme` layer made the color palette consistent with the design system.
-- **Custom utilities with `@utility`**: Creating reusable typography utilities (`preset-1`, `preset-2`, etc.) helped maintain design consistency across the component.
-- **Interactive overlay effect**: The card image overlay effect uses `:active` on the figure element to show a cyan overlay and the view icon, providing visual feedback on click.
-
-Here's how the overlay effect was implemented:
-
 ```css
 .card-img:active .card-overlay {
   background-color: var(--color-cyan-400);
@@ -139,8 +77,6 @@ Here's how the overlay effect was implemented:
   background-position: center;
 }
 ```
-
-
 
 ### Continued development
 
