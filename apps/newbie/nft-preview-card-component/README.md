@@ -16,11 +16,15 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+
 
 ## Overview
 
 ### The challenge
+
+![Static Badge](https://img.shields.io/badge/NEWBIE-%23ffffff?style=flat&label=1&labelColor=%2306B6D4&color=%23ffffff)
+![Static Badge](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![Static Badge](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
 
 Users should be able to:
 
@@ -29,20 +33,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://snipboard.io/tSRZUA.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+[![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/nft-preview-card-component/dist/index.html)
 
 ## My process
 
@@ -53,59 +50,123 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This project was a great opportunity to practice Tailwind CSS with a custom configuration. Instead of using a traditional `tailwind.config.js`, I leveraged the `@theme` layer to define custom colors and utilities, keeping the setup simple and self-contained.
 
-To see how you can add code snippets, see below:
+Key learnings:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+- **Tailwind CSS with `@import`**: Using `@import 'tailwindcss'` in the main CSS file allows for a streamlined integration without additional build tools.
+- **Custom theme extension**: Defining colors like `--color-cyan-400`, `--color-blue-500`, etc., directly in the `@theme` layer made the color palette consistent with the design system.
+- **Custom utilities with `@utility`**: Creating reusable typography utilities (`preset-1`, `preset-2`, etc.) helped maintain design consistency across the component.
+- **Interactive overlay effect**: The card image overlay effect uses `:active` on the figure element to show a cyan overlay and the view icon, providing visual feedback on click.
+
+Here's how the overlay effect was implemented:
+
+# Frontend Mentor - NFT preview card component solution
+
+This is a solution to the [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
+
+## Overview
+
+### The challenge
+
+![Static Badge](https://img.shields.io/badge/NEWBIE-%23ffffff?style=flat&label=1&labelColor=%2306B6D4&color=%23ffffff)
+![Static Badge](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![Static Badge](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+
+Users should be able to:
+
+- View the optimal layout depending on their device's screen size
+- See hover/active states for interactive elements
+
+### Screenshot
+
+![](./screenshot.jpg)
+
+### Links
+
+[![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/nft-preview-card-component/dist/index.html)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- Tailwind CSS (via CSS-first approach with `@import 'tailwindcss'`)
+- Google Fonts (Outfit)
+
+### What I learned
+
+This project was a great opportunity to practice Tailwind CSS with a custom configuration. Instead of using a traditional `tailwind.config.js`, I leveraged the `@theme` layer to define custom colors and utilities, keeping the setup simple and self-contained.
+
+Key learnings:
+
+- **Tailwind CSS with `@import`**: Using `@import 'tailwindcss'` in the main CSS file allows for a streamlined integration without additional build tools.
+- **Custom theme extension**: Defining colors like `--color-cyan-400`, `--color-blue-500`, etc., directly in the `@theme` layer made the color palette consistent with the design system.
+- **Custom utilities with `@utility`**: Creating reusable typography utilities (`preset-1`, `preset-2`, etc.) helped maintain design consistency across the component.
+- **Interactive overlay effect**: The card image overlay effect uses `:active` on the figure element to show a cyan overlay and the view icon, providing visual feedback on click.
+
+Here's how the overlay effect was implemented:
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.card-img:active .card-overlay {
+  background-color: var(--color-cyan-400);
+  opacity: 0.4;
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+.card-img:active .icon-view {
+  background-image: url('/images/icon-view.svg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+In future projects, I want to explore:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- **Implementing proper `:hover` states alongside `:active`** — Currently, the interactive overlay only responds to `:active` events. Adding `:hover` states would provide better desktop interactivity and a more polished user experience across devices.
+
+- **Using Tailwind's `@apply` directive more extensively** — While custom utilities (`preset-1`, `preset-2`, etc.) helped maintain consistency, leveraging `@apply` within component layers could further reduce repetitive utility classes and improve maintainability.
+
+- **Adding responsive typography adjustments** — The current typography uses fixed font sizes (16px, 18px, 22px). Implementing responsive typography with `clamp()` or viewport-based units would ensure optimal readability across different screen sizes.
+
+- **Enhancing accessibility** — Adding proper `:focus` states and ensuring interactive elements are fully keyboard-navigable would make the component more inclusive.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+The **Useful resources** section now includes:
+- [Tailwind CSS v4 Docs](https://tailwindcss.com/docs/installation/using-vite) - Because you used the latest version features
 
-## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+
+## ​​Author
+
+- Frontend Mentor - 👨‍💻[@ Rocabor](https://www.frontendmentor.io/profile/Rocabor)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills. 
