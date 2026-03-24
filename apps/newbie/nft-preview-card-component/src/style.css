@@ -1,5 +1,17 @@
 @import 'tailwindcss';
 
+@layer base {
+  body {
+    background-color: var(--color-blue-950);
+    font-family: 'Outfit', sans-serif;
+    color: var(--color-white);
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    position: relative;
+  }
+}
+
 @theme {
   --color-cyan-400: #00fff8;
   --color-blue-500: #8bacd9;
@@ -9,37 +21,52 @@
   --color-white: #ffffff;
 }
 
-@utility text-preset-1 {
+@layer component {
+  .shadow-card {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.0953);
+  }
+
+  .card-img:active .card-overlay {
+    background-color: var(--color-cyan-400);
+    opacity: 0.4;
+  }
+  .card-img:active .icon-view{
+    background-image: url('/images/icon-view.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* footer-personal */
+  .attribution {
+    @apply text-[12px] md:text-[14px];
+  }
+  .link-attribution {
+    @apply text-cyan-400 font-bold;
+  }
+}
+
+@utility preset-1 {
   font-size: 22px;
   font-weight: 600;
   line-height: 1.25;
 }
 
-@utility text-preset-2 {
+@utility preset-2 {
   font-size: 18px;
   font-weight: 300;
   line-height: 1.45;
 }
 
-@utility text-preset-3 {
+@utility preset-3 {
   font-size: 16px;
   font-weight: 600;
   line-height: 1.25;
 }
 
-@utility text-preset-3-reg {
+@utility preset-3-reg {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
 }
 
-@layer base {
-  body {
-    background-color: var(--color-blue-950);
-    font-family: 'Outfit', sans-serif;
-    color: var(--color-white);
-    display: grid;
-    place-content: center;
-    height: 100vh;
-  }
-}
+
