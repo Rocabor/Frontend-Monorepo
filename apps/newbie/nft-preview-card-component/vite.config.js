@@ -3,5 +3,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [tailwindcss()],
-  base: '/nft-preview-card-component/',
+  base: './',
+  build: {
+    outDir: 'dist', // Asegúrate de que esto sea 'dist'
+  },
 });

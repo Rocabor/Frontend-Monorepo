@@ -197,6 +197,7 @@ All projects have live demos, so you can see them running without any local setu
 | 15 | **3-column preview card** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/3-column-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/3-column-preview-card-component) |
 | 16 | **Stats preview card** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/stats-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/stats-preview-card-component) |
 | 17 | **Equalizer landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/equalizer-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/equalizer-landing-page) |
+| 18 | **NFT preview card component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/nft-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/nft-preview-card-component) |
 
 
 ---
