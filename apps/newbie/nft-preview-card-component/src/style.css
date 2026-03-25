@@ -27,11 +27,12 @@
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.0953);
   }
 
-  .card-img:active .card-overlay {
+  .card-img:hover .card-overlay {
     background-color: var(--color-cyan-400);
     opacity: 0.4;
+    
   }
-  .card-img:active .icon-view {
+  .card-img:hover .icon-view {
     background-image: url('/images/icon-view.svg');
     background-repeat: no-repeat;
     background-position: center;
