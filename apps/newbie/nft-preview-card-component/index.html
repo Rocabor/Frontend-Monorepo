@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/style.css" />
+    <script type="module" src="src/main.js"></script>
+
+    <title>Frontend Mentor | NFT preview card component</title>
+  </head>
+  <body>
+    <!-- Card -->
+    <main class="w-87.5 py-6 bg-blue-900 rounded-xl shadow-card">
+      <!-- Card Content -->
+      <div class="w-full max-w-75.5 mx-auto flex flex-col gap-6">
+        <!-- Image -->
+        <figure class="card-img relative rounded-lg overflow-hidden cursor-pointer">
+          <img src="images/image-equilibrium.jpg" alt="Equilibrium cube" class="size-75.5" />
+          <div class="card-overlay absolute inset-0"></div>
+          <div class="icon-view absolute inset-0"></div>
+        </figure>
+
+        <!-- Card Details -->
+        <section>
+          <!-- Text Container -->
+          <div class="flex flex-col gap-6">
+            <!-- Title and Description -->
+            <header class="flex flex-col gap-4">
+              <h1 class="preset-1 active:text-cyan-400 cursor-pointer">Equilibrium #3429</h1>
+              <p class="preset-2 text-blue-500">Our Equilibrium collection promotes balance and calm.</p>
+            </header>
+
+            <!-- Info Container -->
+            <div class="flex justify-between">
+              <!-- Price Info -->
+              <div class="flex gap-2 items-center">
+                <img src="images/icon-ethereum.svg" alt="Ethereum" />
+                <p class="preset-3 text-cyan-400">0.041 ETH</p>
+              </div>
+
+              <!-- Time Info -->
+              <div class="flex gap-2 items-center">
+                <img src="images/icon-clock.svg" alt="Time remaining" />
+                <p class="text-blue-500">3 days left</p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-6 text-blue-800" />
+
+          <!-- Creator Info -->
+          <footer class="flex gap-4 items-center">
+            <img src="images/image-avatar.png" alt="Avatar of Jules Wyvern" class="size-8.25 border rounded-full" />
+
+            <p class="preset-3-reg flex gap-2 active:text-cyan-400 cursor-pointer">
+              <span class="preset-3-reg text-blue-500">Creation of</span>
+              Jules Wyvern
+            </p>
+          </footer>
+        </section>
+      </div>
+    </main>
+
+    <!-- footer-personal -->
+    <div class="absolute inset-x-0 bottom-0 flex justify-center">
+      <nav class="attribution" aria-label="Attribution links">
+        <ul class="flex flex-col gap-1 items-center">
+          <li>
+            Challenge by
+            <a href="https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U" target="_blank" rel="noopener noreferrer" class="link-attribution">
+              © Frontend Mentor
+              <span class="year">2026</span>
+            </a>
+          </li>
+          <li>
+            Coded by
+            <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer" class="link-attribution">@Rocabor</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
