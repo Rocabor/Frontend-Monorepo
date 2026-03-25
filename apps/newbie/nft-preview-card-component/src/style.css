@@ -9,6 +9,7 @@
     place-content: center;
     min-height: 100dvh;
     position: relative;
+    padding-block: 50px;
   }
 }
 
