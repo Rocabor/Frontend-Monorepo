@@ -1,7 +1,7 @@
 {
-  "name": "results-summary-component",
-  "private": true,
+  "name": "workit-landing-page",
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,10 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^8.0.0"
-  },
-  "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
-    "tailwindcss": "^4.2.2"
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.1"
   }
 }
