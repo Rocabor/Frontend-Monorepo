@@ -1,1 +1,65 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("./assets/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("./assets/fonts/manrope/Manrope-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    display: grid;
+    place-items: center;
+  }
+}
+@theme {
+  --color-green: #44ffa1;
+  --color-slate900: #24053e;
+  --color-slate500: #584d62;
+  --color-slate100: #fcf8ff;
+  --color-white: #ffffff;
+
+  --font-fraunces:'Fraunces',sans-serif;
+  --font-manrope:'Manrope',sans-serif;
+}
+
+@utility preset-1 {
+  font-size: 80px;
+  font-family: var(--font-fraunces);
+  font-weight: 600;
+  line-height: 1;
+}
+@utility preset-2 {
+  font-size: 56px;
+  font-family: var(--font-fraunces);
+  font-weight: 600;
+  line-height: 1.2;
+}
+@utility preset-3 {
+  font-size: 32px;
+  font-family: var(--font-fraunces);
+  font-weight: 600;
+  line-height: 1.2;
+}
+@utility preset-4 {
+  font-size: 18px;
+  font-family: var(--font-manrope);
+  font-weight: 400;
+  line-height: 1.8;
+}
+@utility preset-5 {
+  font-size: 18px;
+  font-family: var(--font-manrope);
+  font-weight: 700;
+  line-height: 1.8;
+}
