@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("./assets/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf")
+  src: url("/assets/fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf")
     format("truetype");
   font-weight: 100 900;
   font-display: swap;
@@ -10,8 +10,7 @@
 
 @font-face {
   font-family: "Manrope";
-  src: url("./assets/fonts/manrope/Manrope-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("/assets/fonts/manrope/Manrope-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-display: swap;
 }
@@ -20,6 +19,8 @@
   body {
     display: grid;
     place-items: center;
+    min-height: 100dvh;
+    
   }
 }
 @theme {
@@ -44,6 +45,11 @@
   font-family: var(--font-fraunces);
   font-weight: 600;
   line-height: 1.2;
+}
+@utility preset-2m {
+  font-size: 48px;
+  font-family: var(--font-fraunces);  
+  line-height: 1;
 }
 @utility preset-3 {
   font-size: 32px;
