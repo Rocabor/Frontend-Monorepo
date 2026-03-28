@@ -11,94 +11,134 @@
     <title>Frontend Mentor | Workit landing page</title>
   </head>
   <body>
-    <main class="w-full max-w-[375px]">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:z-50">Skip to main content</a>
+    <main id="main-content" class="w-full max-w-93.75">
       <!-- nav + hero + illustration -->
-      <div class="relative h-[561px]">
+      <div class="bg-slate100 relative h-140.25">
         <!-- hero -->
-        <div class="bg-slate900 h-[481px] text-white">
+        <div class="bg-slate900 h-120.25 text-white">
           <!-- nav -->
-          <div class="h-16.75 pt-8">
+          <nav class="h-16.75 pt-8" aria-label="Main navigation">
             <!-- Frame 292 -->
             <div class="mx-auto flex max-w-83.75 justify-between">
-              <img src="assets/images/logo-light.svg" alt="" />
+              <img src="assets/images/logo-light.svg" alt="Workit" />
 
               <button type="button" class="preset-5 decoration-green h-8.75 underline decoration-[3px] underline-offset-10">Apply for access</button>
             </div>
-          </div>
+          </nav>
 
           <!-- hero -->
-          <div class="h-[390px] pt-[56px] pb-[144px]">
+          <div class="h-97.5 pt-14 pb-36">
             <!-- Frame 293 -->
-            <div class="mx-auto flex max-w-[335px] flex-col items-center gap-10">
+            <div class="mx-auto flex max-w-83.75 flex-col items-center gap-10">
               <h1 class="preset-2m text-center">
                 Data
                 <span class="decoration-green underline underline-offset-4">tailored</span>
                 to your needs.
               </h1>
-              <button class="bg-green text-slate900 h-[53px] w-[151px]">Learn more</button>
+              <button class="btn preset-4mb h-13.25 w-37.75">Learn more</button>
             </div>
           </div>
 
           <!-- ornamental -->
-          <svg width="375px" height="24" viewBox="0 0 375 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0V24H375V0C375 0 282.021 22.6667 188.021 22.6667C94.0206 22.6667 0 0 0 0Z" fill="#ffffff" />
+          <svg width="375px" height="24" viewBox="0 0 375 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <path d="M0 0V24H375V0C375 0 282.021 22.6667 188.021 22.6667C94.0206 22.6667 0 0 0 0Z" fill="#fcf8ff" />
           </svg>
         </div>
 
-       
-
-
         <!-- illustration -->
-        <div class="absolute bottom-0 mx-auto h-[184px] w-[360px]">
-          <img src="assets/images/image-hero.webp" alt="" class="mx-auto h-[184px] w-[320px]" />
+        <div class="absolute bottom-0 mx-auto h-46 w-90">
+          <img src="assets/images/image-hero.webp" alt="" class="mx-auto h-46 w-[320px]" />
         </div>
       </div>
 
       <!-- value -->
-      <div></div>
+      <section class="bg-slate100" aria-label="Value propositions">
+        <!-- content -->
+        <div class="h-215.5 py-16">
+          <!-- content -->
+          <div class="mx-auto flex max-w-83.75 flex-col gap-8">
+            <!-- value -->
+            <div class="value">
+              <!-- Frame 15 -->
+              <div class="numbers frame-15">1</div>
+
+              <!-- Frame 296 -->
+              <div class="frame-296">
+                <h2 class="preset-3m">Actionable insights</h2>
+                <p class="preset-4m">Optimize your products, improve customer satisfaction and stay ahead of the competition with our product data analytics.</p>
+              </div>
+            </div>
+            <!-- value -->
+            <div class="value">
+              <!-- Frame 15 -->
+              <div class="frame-15 numbers">2</div>
+              <!-- Frame 296 -->
+              <div class="frame-296">
+                <h2 class="preset-3m">Data-driven decisions</h2>
+                <p class="preset-4m">Make data-driven decisions with our product data analytics. Our AI-generated reports help you unlock insights hidden in your product data.</p>
+              </div>
+            </div>
+
+            <!-- value -->
+            <div class="value">
+              <!-- Frame 15 -->
+              <div class="numbers frame-15">3</div>
+              <!-- Frame 296 -->
+              <div class="frame-296">
+                <h2 class="preset-3m">Always affordable</h2>
+                <p class="preset-4m">Always affordable pricing that scales with your business. Get top-quality product data analytics services without hidden costs or unexpected fees.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ornamental -->
+        <svg width="375px" height="24" viewBox="0 0 375 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <path d="M0 0V24H375V0C375 0 282.021 22.6667 188.021 22.6667C94.0206 22.6667 0 0 0 0Z" fill="#ffffff" />
+        </svg>
+      </section>
 
       <!-- cta -->
-      <div></div>
+      <section aria-label="Call to action" class="pt-28">
+        <!-- content -->
+        <div class="relative mx-auto max-w-83.75 h-156.25">
+          <!-- headshot -->
+          <img src="assets/images/image-founder.webp" alt="" class="mx-auto size-70" />
+
+          <!-- cta-content -->
+          <div class="bg-slate900 -translate-y-12 top-58 flex h-98.25 max-w-83.75 flex-col items-center gap-8 p-8 text-center text-white">
+            <h2 class="preset-3">Be the first to test</h2>
+
+            <p class="preset-4m opacity-80">
+              Hi, I'm Louis Graham, the founder of the company. Book a demo call with me to become a beta tester for our app and kickstart your company. Apply for access below and I’ll be in touch to
+              schedule a call.
+            </p>
+
+            <button type="button" class="btn preset-4mb h-13.25 w-47.75">Apply for access</button>
+          </div>
+        </div>
+      </section>
 
       <!-- footer -->
-      <footer></footer>
+      <footer class="h-65 py-20">
+
+        <!-- content -->
+        <div class="w-29 flex flex-col gap-14 mx-auto">
+          <img src="assets/images/logo-dark.svg" alt="Workit">
+
+          <nav aria-label="Social media links">
+            <ul class="flex gap-7 list-none p-0">
+              <li><a href="#!" aria-label="Facebook"><img src="assets/images/icon-facebook.svg" alt=""></a></li>
+              <li><a href="#!" aria-label="Twitter"><img src="assets/images/icon-twitter.svg" alt=""></a></li>
+              <li><a href="#!" aria-label="Instagram"><img src="assets/images/icon-instagram.svg" alt=""></a></li>
+            </ul>
+          </nav>
+        </div>
+
+        
+
+      </footer>
     </main>
-
-    <!-- prettier-ignore -->
-    <p>
-    
-
-  
-
-  
-  
-  1
-
-  Actionable insights
-  
-  Optimize your products, improve customer satisfaction and stay ahead of the competition 
-  with our product data analytics.
-
-  2
-
-  Data-driven decisions
-
-  Make data-driven decisions with our product data analytics. Our AI-generated reports help 
-  you unlock insights hidden in your product data.
-
-  3
-
-  Always affordable
-
-  Always affordable pricing that scales with your business. Get top-quality product data 
-  analytics services without hidden costs or unexpected fees.
-
-  Be the first to test
-
-  Hi, I'm Louis Graham, the founder of the company. Book a demo call with me to become a 
-  beta tester for our app and kickstart your company. Apply for access below and I’ll be 
-  in touch to schedule a call.
-
-  Apply for access</p>
   </body>
 </html>
