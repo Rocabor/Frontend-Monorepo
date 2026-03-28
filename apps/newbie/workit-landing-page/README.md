@@ -1,4 +1,4 @@
-como# Frontend Mentor - Workit landing page solution
+# Frontend Mentor - Workit landing page solution
 
 This is a solution to the [Workit landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/workit-landing-page-2fYnyle5lu). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
@@ -41,8 +41,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+
+- Live Site URL:  [Live site URL here](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/workit-landing-page/dist/index.html)
 
 ## My process
 

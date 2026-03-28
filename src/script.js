@@ -191,6 +191,13 @@ const projects = [
     technologies: ['html', 'css', 'tailwind', 'vite'],
     difficulty: 'Newbie',
   },
+  {
+    href: './apps/newbie/workit-landing-page/dist/index.html',
+    image: 'images/19.jpg',
+    title: 'workit-landing-page',
+    technologies: ['html', 'css', 'tailwind', 'vite'],
+    difficulty: 'Newbie',
+  },
 
   // JUNIOR PROJECTS
   {

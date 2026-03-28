@@ -28,7 +28,7 @@
 This repository is a **monorepo** documenting my frontend development journey through [Frontend Mentor](https://www.frontendmentor.io/) challenges. Each project is independently built and showcases progressive skill development.
 
 ### ✨ Features
-- 📦 **23 completed challenges** across 3 difficulty levels
+- 📦 **25 completed challenges** across 3 difficulty levels
 - 🎨 **Responsive designs** with mobile-first approach
 - 🔗 **Live demos** for each project
 - 📚 **Organized codebase** by difficulty
@@ -174,9 +174,9 @@ All projects have live demos, so you can see them running without any local setu
 
 <div align="center">
 
-### 🟢 Newbie Projects (17)
+### 🟢 Newbie Projects (19)
 
-[![Newbie](https://img.shields.io/badge/🟢%20NEWBIE-17%20projects-2ecc71?style=for-the-badge&labelColor=1a472a&color=2ecc71)](#-newbie-projects-17)
+[![Newbie](https://img.shields.io/badge/🟢%20NEWBIE-19%20projects-2ecc71?style=for-the-badge&labelColor=1a472a&color=2ecc71)](#-newbie-projects-17)
 
 | # | Project | Live Demo | Repository |
 |:---:|:---|:---:|:---:|
@@ -198,6 +198,7 @@ All projects have live demos, so you can see them running without any local setu
 | 16 | **Stats preview card** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/stats-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/stats-preview-card-component) |
 | 17 | **Equalizer landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/equalizer-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/equalizer-landing-page) |
 | 18 | **NFT preview card component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/nft-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/nft-preview-card-component) |
+| 19 | **Workit landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/workit-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/workit-landing-page) |
 
 
 ---
