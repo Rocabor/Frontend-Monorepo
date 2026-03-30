@@ -31,6 +31,11 @@ function updateReadme() {
   const total = counts.newbie + counts.junior + counts.intermediate;
 
   content = content.replace(
+    /\d+_projects(?!\s+across)/,
+    `${total}_projects`
+  );
+
+  content = content.replace(
     /\d+ projects(?!\s+across)/,
     `${total} projects`
   );

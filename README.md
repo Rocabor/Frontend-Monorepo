@@ -2,7 +2,7 @@
 
 # 🚀 My Frontend Journey
 
-[![Monorepo](https://img.shields.io/badge/Monorepo-23_projects-8A2BE2?style=for-the-badge&logo=github)](https://github.com/Rocabor/Frontend-Monorepo)
+[![Monorepo](https://img.shields.io/badge/Monorepo-25_projects-8A2BE2?style=for-the-badge&logo=github)](https://github.com/Rocabor/Frontend-Monorepo)
 [![Last Commit](https://img.shields.io/github/last-commit/Rocabor/Frontend-Monorepo?style=for-the-badge&color=blue)](https://github.com/Rocabor/Frontend-Monorepo)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
