@@ -174,9 +174,9 @@ All projects have live demos, so you can see them running without any local setu
 
 <div align="center">
 
-### 🟢 Newbie Projects (19)
+### 🟢 Newbie Projects (20)
 
-[![Newbie](https://img.shields.io/badge/🟢%20NEWBIE-20%20projects-2ecc71?style=for-the-badge&labelColor=1a472a&color=2ecc71)](#-newbie-projects-17)
+[![Newbie](https://img.shields.io/badge/🟢%20NEWBIE-20%20projects-2ecc71?style=for-the-badge&labelColor=1a472a&color=2ecc71)](#-newbie-projects-20)
 
 | # | Project | Live Demo | Repository |
 |:---:|:---|:---:|:---:|
