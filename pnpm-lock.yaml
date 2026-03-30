@@ -206,6 +206,18 @@ importers:
         specifier: ^7.3.1
         version: 7.3.1(@types/node@22.15.3)(jiti@2.6.1)(lightningcss@1.32.0)
 
+  apps/newbie/skilled-elearning-landing-page:
+    devDependencies:
+      '@tailwindcss/vite':
+        specifier: ^4.2.2
+        version: 4.2.2(vite@8.0.3(@types/node@22.15.3)(esbuild@0.27.3)(jiti@2.6.1))
+      tailwindcss:
+        specifier: ^4.2.2
+        version: 4.2.2
+      vite:
+        specifier: ^8.0.1
+        version: 8.0.3(@types/node@22.15.3)(esbuild@0.27.3)(jiti@2.6.1)
+
   apps/newbie/social-link-profile:
     devDependencies:
       vite:
