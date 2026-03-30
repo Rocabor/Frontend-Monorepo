@@ -15,7 +15,7 @@
 - [🛠️ How to Explore](#️-how-to-explore)
 - [📚 Learning Journey](#-learning-journey)
 - [📁 Project Index](#-project-index)
-  - [🟢 Newbie Projects (17)](#-newbie-projects-17)
+  - [🟢 Newbie Projects (19)](#-newbie-projects-17)
   - [🔵 Junior Projects (5)](#-junior-projects-5)
   - [🟡 Intermediate Projects (1)](#-intermediate-projects-1)
 - [💻 Technologies](#-technologies)
