@@ -11,53 +11,66 @@
     <title>Frontend Mentor | Workit landing page</title>
   </head>
   <body>
-    
     <main class="w-full">
-      <!-- nav + hero + illustration -->
-      <div class="bg-slate100 relative flex flex-col items-center h-140.25">
+      <!--* nav + hero + illustration -->
+      <section class="relative h-[561px] w-full bg-slate100 md:h-[676px] xl:h-[932px]">
+
         <!-- hero -->
-        <div class="bg-slate900 w-full h-120.25 text-white">
+        <div class="bg-slate900 w-full ">
+
           <!-- nav -->
-          <nav class="h-16.75 pt-8 max-w-93.75 mx-auto" aria-label="Main navigation">
+          <div class="mx-auto h-16.75 max-w-[375px] pt-8 md:max-w-[768px] xl:pt-14 xl:h-[91px] xl:max-w-[1440px]">
+
             <!-- Frame 292 -->
-            <div class="mx-auto flex max-w-83.75 justify-between">
-              <img src="assets/images/logo-light.svg" alt="Workit" />
+            <div class="mx-auto flex max-w-83.75 justify-between md:max-w-[680px] xl:max-w-[1120px]">
 
-              <button type="button" class="preset-5 decoration-green h-8.75 underline decoration-[3px] underline-offset-10 cursor-pointer hover:text-green focus:text-green">Apply for access</button>
-            </div>
-          </nav>
+              <img src="assets/images/logo-light.svg" alt="logo-Workit" />
 
-          <!-- hero -->
-          <div class="h-97.5 pt-14 pb-36">
-            <!-- Frame 293 -->
-            <div class="mx-auto flex max-w-83.75 flex-col items-center gap-10">
-              <h1 class="preset-2m text-center">
-                Data
-                <span class="decoration-green underline underline-offset-4">tailored</span>
-                to your needs.
-              </h1>
-              <button class="btn preset-4mb h-13.25 w-37.75 cursor-pointer">Learn more</button>
+              <button type="button" class="preset-5 btn-nav">Apply for access</button>
             </div>
           </div>
 
+          <!-- hero -->
+          <div class="relative mx-auto max-w-[375px] pt-14 pb-36 md:max-w-[680px] xl:h-[608px]">
+            <!-- Frame 293 -->
+            <header class="mx-auto flex max-w-[335px] flex-col items-center gap-10 md:max-w-[680px]">
+              <h1 class="preset-1">
+                Data
+                <span class="decoration-green underline underline-offset-4">tailored</span>
+                to
+                <br />
+                your needs.
+              </h1>
+
+              <button class="btn preset-btn w-37.75">Learn more</button>
+            </header>
+
+            <!-- bg-pattern -->
+            <figure class="bg-pattern-1"></figure>
+            <figure class="bg-pattern-2"></figure>
+          </div>
+
           <!-- ornamental -->
-          <svg class="w-full h-6" viewBox="0 0 375 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-            <path d="M0 0V24H375V0C375 0 282.021 22.6667 188.021 22.6667C94.0206 22.6667 0 0 0 0Z" fill="#fcf8ff" />
-          </svg>
+          <figure>
+            <svg class="h-6 w-full md:h-14" viewBox="0 0 375 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <path d="M0 0V24H375V0C375 0 282.021 22.6667 188.021 22.6667C94.0206 22.6667 0 0 0 0Z" fill="#fcf8ff" />
+            </svg>
+          </figure>
         </div>
 
         <!-- illustration -->
-        <div class="absolute bottom-0 mx-auto h-46 w-90">
-          <img src="assets/images/image-hero.webp" alt="" class="mx-auto h-46 w-[320px]" />
-        </div>
-      </div>
+        <figure class="absolute w-full right-0 bottom-0 left-0 mx-auto h-46 w-90 md:max-w-[602px] md:h-[296px] xl:max-w-[767px] xl:h-[441px]">
 
-      <!-- value -->
-      <section class="bg-slate100" aria-label="Value propositions">
+          <img src="assets/images/image-hero.webp" alt="" class="w-full mx-auto h-46 w-[320px] md:max-w-[514px] md:h-[296px] xl:max-w-[767px] xl:h-[441px]" />
+        </figure>
+      </section>
+
+      <!--* value -->
+      <section class="bg-slate100">
         <!-- content -->
-        <div class="h-215.5 py-16">
+        <section class="py-16 md:pt-[56px] md:pb-[44px] xl:pt-[88px] xl:pb-[144px]">
           <!-- content -->
-          <div class="mx-auto flex max-w-83.75 flex-col gap-8">
+          <div class="content">
             <!-- value -->
             <div class="value">
               <!-- Frame 15 -->
@@ -65,18 +78,19 @@
 
               <!-- Frame 296 -->
               <div class="frame-296">
-                <h2 class="preset-3m">Actionable insights</h2>
-                <p class="preset-4m">Optimize your products, improve customer satisfaction and stay ahead of the competition with our product data analytics.</p>
+                <h2 class="preset-3">Actionable insights</h2>
+                <p class="preset-4">Optimize your products, improve customer satisfaction and stay ahead of the competition with our product data analytics.</p>
               </div>
             </div>
+
             <!-- value -->
             <div class="value">
               <!-- Frame 15 -->
               <div class="frame-15 numbers">2</div>
               <!-- Frame 296 -->
               <div class="frame-296">
-                <h2 class="preset-3m">Data-driven decisions</h2>
-                <p class="preset-4m">Make data-driven decisions with our product data analytics. Our AI-generated reports help you unlock insights hidden in your product data.</p>
+                <h2 class="preset-3">Data-driven decisions</h2>
+                <p class="preset-4">Make data-driven decisions with our product data analytics. Our AI-generated reports help you unlock insights hidden in your product data.</p>
               </div>
             </div>
 
@@ -86,43 +100,53 @@
               <div class="numbers frame-15">3</div>
               <!-- Frame 296 -->
               <div class="frame-296">
-                <h2 class="preset-3m">Always affordable</h2>
-                <p class="preset-4m">Always affordable pricing that scales with your business. Get top-quality product data analytics services without hidden costs or unexpected fees.</p>
+                <h2 class="preset-3">Always affordable</h2>
+                <p class="preset-4">Always affordable pricing that scales with your business. Get top-quality product data analytics services without hidden costs or unexpected fees.</p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- ornamental -->
-        <svg class="w-full h-6" viewBox="0 0 375 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <figure>
+          <svg class="w-full h-6 md:h-[72px]" viewBox="0 0 375 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
           <path d="M0 0V24H375V0C375 0 282.021 22.6667 188.021 22.6667C94.0206 22.6667 0 0 0 0Z" fill="#ffffff" />
         </svg>
+        </figure>
       </section>
 
-      <!-- cta -->
-      <section aria-label="Call to action" class="pt-28">
+      <!--* cta -->
+      <section class="pt-28 ">
+
         <!-- content -->
-        <div class="relative mx-auto max-w-83.75 h-156.25">
+        <div class="relative max-w-[335px] h-[625px] mx-auto md:max-w-[680px] md:h-[558px] xl:max-w-[1120px] xl:h-[579px]">
           <!-- headshot -->
-          <img src="assets/images/image-founder.webp" alt="" class="mx-auto size-70" />
+          <figure>
+            <img src="assets/images/image-founder.webp" alt="" class="mx-auto size-70 md:mx-0 xl:size-[477px]" />
+          </figure>
 
           <!-- cta-content -->
-          <div class="bg-slate900 -translate-y-12 top-58 flex h-98.25 max-w-83.75 flex-col items-center gap-8 p-8 text-center text-white">
-            <h2 class="preset-3">Be the first to test</h2>
+          <div class="cta-content">
+            <h2 class="preset-2">Be the first to test</h2>
 
-            <p class="preset-4m opacity-80">
+            <p class="preset-4">
               Hi, I'm Louis Graham, the founder of the company. Book a demo call with me to become a beta tester for our app and kickstart your company. Apply for access below and I’ll be in touch to
               schedule a call.
             </p>
 
-            <button type="button" class="btn preset-4mb h-13.25 w-47.75 cursor-pointer">Apply for access</button>
+            <button type="button" class="btn preset-btn">Apply for access</button>
+
+            <!-- bg-pattern -->
+             <figure class="bg-pattern-3"></figure>            
+
           </div>
         </div>
+
+
       </section>
 
-      <!-- footer -->
-      <footer class="h-65 py-20">
-
+      <!--* footer -->
+      <footer class=" py-20 h-auto xl:py-[112px] ">
         <!-- content -->
         <div class="w-29 flex flex-col gap-14 mx-auto">
           <img src="assets/images/logo-dark.svg" alt="Workit" class="h-6.25">
@@ -135,8 +159,6 @@
             </ul>
           </nav>
         </div>
-
-        
 
       </footer>
     </main>

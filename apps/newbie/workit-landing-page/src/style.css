@@ -1,18 +1,6 @@
 @import 'tailwindcss';
-
-@font-face {
-  font-family: 'Fraunces';
-  src: url('/assets/fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Manrope';
-  src: url('/assets/fonts/manrope/Manrope-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
-}
+@import './tipography';
+@import './component';
 
 @layer base {
   body {
@@ -20,6 +8,9 @@
     place-items: center;
     min-height: 100dvh;
   }
+  /* * {
+    border: 1px solid black;
+  } */
 }
 
 @theme {
@@ -33,127 +24,4 @@
   --font-manrope: 'Manrope', sans-serif;
 }
 
-@layer utilities {
-  .numbers {
-    font-size: 20px;
-    line-height: 0.4;
-    font-family: var(--font-fraunces);
-  }
-  .preset-1 {
-    font-size: 80px;
-    font-family: var(--font-fraunces);
-    font-weight: 600;
-    line-height: 1;
-  }
-  .preset-2 {
-    font-size: 56px;
-    font-family: var(--font-fraunces);
-    font-weight: 600;
-    line-height: 1.2;
-  }
-  .preset-2m {
-    font-size: 48px;
-    font-family: var(--font-fraunces);
-    line-height: 1;
-  }
-  .preset-3 {
-    font-size: 32px;
-    font-family: var(--font-fraunces);
-    font-weight: 600;
-    line-height: 1.2;
-  }
-  .preset-3m {
-    font-size: 24px;
-    font-family: var(--font-fraunces);
-    font-weight: 600;
-    line-height: 1.2;
-  }
-  .preset-4 {
-    font-size: 18px;
-    font-family: var(--font-manrope);
-    font-weight: 400;
-    line-height: 1.8;
-  }
-  .preset-4m {
-    font-size: 16px;
-    font-family: var(--font-manrope);
-    font-weight: 400;
-    line-height: 1.8;
-  }
-  .preset-4mb {
-    font-size: 16px;
-    font-family: var(--font-manrope);
-    font-weight: 700;
-    line-height: 1.8;
-  }
-  .preset-5 {
-    font-size: 18px;
-    font-family: var(--font-manrope);
-    font-weight: 700;
-    line-height: 1.8;
-  }
-}
 
-@layer components {
-  .value {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 24px;
-  }
-  .frame-15 {
-    width: 48px;
-    height: 48px;
-    border: 1px solid var(--color-slate500);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 50%;
-  }
-  .frame-296 {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .btn {
-    background-color: var(--color-green);
-    padding-block: 12px;
-    padding-inline: 30px;
-    border: 2px solid var(--color-green);
-    color: var(--color-slate-900);
-  }
-  .btn:hover {
-    background-color: inherit;
-    color: var(--color-green);
-    border: 2px solid var(--color-green);
-  }
-  .btn:focus {
-    background-color: inherit;
-    color: var(--color-green);
-    border: 2px solid var(--color-green);
-  }
-  .icon-facebook {
-    @apply bg-slate500 hover:bg-slate900 focus:bg-slate900 inline-block size-5 mask-[url(/assets/images/icon-facebook.svg)] mask-center mask-no-repeat;
-  }
-  .icon-twitter {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: var(--color-slate500);
-    mask-image: url('/assets/images/icon-twitter.svg');
-    mask-repeat: no-repeat;
-    mask-position: center;
-    @apply hover:bg-slate900 focus:bg-slate900;
-  }
-  .icon-instagram {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: var(--color-slate500);
-    mask-image: url('/assets/images/icon-instagram.svg');
-    mask-repeat: no-repeat;
-    mask-position: center;
-    @apply hover:bg-slate900 focus:bg-slate900;
-  }
-}
