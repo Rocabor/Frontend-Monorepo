@@ -7,23 +7,20 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 
     <link rel="stylesheet" href="src/style.css" />
+    <script type="module" src="src/main.js"></script>
 
     <title>Frontend Mentor | Workit landing page</title>
   </head>
   <body>
-    <main class="w-full">
+    <main class="w-full overflow-hidden relative">
       <!--* nav + hero + illustration -->
-      <section class="relative h-[561px] w-full bg-slate100 md:h-[676px] xl:h-[932px]">
-
+      <section class="bg-slate100 relative h-140.25 w-full md:h-169 xl:h-233">
         <!-- hero -->
-        <div class="bg-slate900 w-full ">
-
+        <div class="bg-slate900 w-full">
           <!-- nav -->
-          <div class="mx-auto h-16.75 max-w-[375px] pt-8 md:max-w-[768px] xl:pt-14 xl:h-[91px] xl:max-w-[1440px]">
-
+          <div class="mx-auto h-16.75 w-full max-w-93.75 pt-8 md:max-w-3xl xl:h-22.75 xl:max-w-360 xl:pt-14">
             <!-- Frame 292 -->
-            <div class="mx-auto flex max-w-83.75 justify-between md:max-w-[680px] xl:max-w-[1120px]">
-
+            <div class="mx-auto flex w-full max-w-83.75 justify-between md:max-w-170 xl:max-w-280">
               <img src="assets/images/logo-light.svg" alt="logo-Workit" />
 
               <button type="button" class="preset-5 btn-nav">Apply for access</button>
@@ -31,9 +28,9 @@
           </div>
 
           <!-- hero -->
-          <div class="relative mx-auto max-w-[375px] pt-14 pb-36 md:max-w-[680px] xl:h-[608px]">
+          <div class="relative mx-auto w-full max-w-93.75 pt-14 pb-36 md:max-w-170 xl:h-152">
             <!-- Frame 293 -->
-            <header class="mx-auto flex max-w-[335px] flex-col items-center gap-10 md:max-w-[680px]">
+            <header class="mx-auto flex w-full max-w-83.75 flex-col items-center gap-10 md:max-w-170">
               <h1 class="preset-1">
                 Data
                 <span class="decoration-green underline underline-offset-4">tailored</span>
@@ -59,16 +56,15 @@
         </div>
 
         <!-- illustration -->
-        <figure class="absolute w-full right-0 bottom-0 left-0 mx-auto h-46 w-90 md:max-w-[602px] md:h-[296px] xl:max-w-[767px] xl:h-[441px]">
-
-          <img src="assets/images/image-hero.webp" alt="" class="w-full mx-auto h-46 w-[320px] md:max-w-[514px] md:h-[296px] xl:max-w-[767px] xl:h-[441px]" />
+        <figure class="absolute bottom-0 inset-x-0 mx-auto h-46 w-full md:h-74 md:max-w-150.5 xl:h-110.25 xl:max-w-191.75">
+          <img src="assets/images/image-hero.webp" alt="Phone showing data analytics dashboard" class="mx-auto h-46 w-full max-w-[320px] md:h-74 md:max-w-128.5 xl:h-110.25 xl:max-w-191.75" />
         </figure>
       </section>
 
       <!--* value -->
       <section class="bg-slate100">
         <!-- content -->
-        <section class="py-16 md:pt-[56px] md:pb-[44px] xl:pt-[88px] xl:pb-[144px]">
+        <section class="py-16 md:pt-14 md:pb-11 xl:pt-22 xl:pb-36">
           <!-- content -->
           <div class="content">
             <!-- value -->
@@ -109,20 +105,19 @@
 
         <!-- ornamental -->
         <figure>
-          <svg class="w-full h-6 md:h-[72px]" viewBox="0 0 375 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-          <path d="M0 0V24H375V0C375 0 282.021 22.6667 188.021 22.6667C94.0206 22.6667 0 0 0 0Z" fill="#ffffff" />
-        </svg>
+          <svg class="h-6 w-full md:h-18" viewBox="0 0 375 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <path d="M0 0V24H375V0C375 0 282.021 22.6667 188.021 22.6667C94.0206 22.6667 0 0 0 0Z" fill="#ffffff" />
+          </svg>
         </figure>
       </section>
 
       <!--* cta -->
-      <section class="pt-28 ">
-
+      <section class="pt-28">
         <!-- content -->
-        <div class="relative max-w-[335px] h-[625px] mx-auto md:max-w-[680px] md:h-[558px] xl:max-w-[1120px] xl:h-[579px]">
+        <div class="relative mx-auto h-156.25 w-full max-w-83.75 md:h-139.5 md:max-w-170 xl:h-144.75 xl:max-w-280">
           <!-- headshot -->
           <figure>
-            <img src="assets/images/image-founder.webp" alt="" class="mx-auto size-70 md:mx-0 xl:size-[477px]" />
+            <img src="assets/images/image-founder.webp" alt="Portrait of Louis Graham, company founder" class="mx-auto size-70 md:mx-0 xl:size-119.25" />
           </figure>
 
           <!-- cta-content -->
@@ -134,33 +129,48 @@
               schedule a call.
             </p>
 
-            <button type="button" class="btn preset-btn">Apply for access</button>
+            <button type="button" class="btn preset-btn z-1">Apply for access</button>
 
             <!-- bg-pattern -->
-             <figure class="bg-pattern-3"></figure>            
-
+            <figure class="bg-pattern-3"></figure>
           </div>
         </div>
-
-
       </section>
 
       <!--* footer -->
-      <footer class=" py-20 h-auto xl:py-[112px] ">
+      <footer class="h-auto py-20 xl:py-28">
         <!-- content -->
-        <div class="w-29 flex flex-col gap-14 mx-auto">
-          <img src="assets/images/logo-dark.svg" alt="Workit" class="h-6.25">
+        <div class="mx-auto flex w-29 flex-col gap-14">
+          <img src="assets/images/logo-dark.svg" alt="Workit" class="h-6.25" />
 
           <nav aria-label="Social media links">
-            <ul class="flex h-5 gap-7 list-none p-0">
-              <li><a href="#!" aria-label="Facebook" class="icon-facebook" ></a></li>              
+            <ul class="flex h-5 list-none gap-7 p-0">
+              <li><a href="#!" aria-label="Facebook" class="icon-facebook"></a></li>
               <li><a href="#!" aria-label="Twitter" class="icon-twitter"></a></li>
               <li><a href="#!" aria-label="Instagram" class="icon-instagram"></a></li>
             </ul>
           </nav>
         </div>
-
       </footer>
+
+      <!--* footer-personal -->
+    <footer class="absolute inset-x-0 bottom-0 flex justify-center border-t border-gray-300 md:p-3">
+      <nav class="attribution" aria-label="Attribution links">
+        <ul class="flex flex-col items-center md:flex-row md:gap-2 font-manrope md:text-[18px]">
+          <li>
+            Challenge by
+            <a href="https://www.frontendmentor.io/challenges/workit-landing-page-2fYnyle5lu" target="_blank" rel="noopener noreferrer" class="link-attribution font-bold">
+              © Frontend Mentor
+              <span class="year">2026</span>
+            </a>
+          </li>
+          <li>
+            Coded by
+            <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer" class="link-attribution font-bold">@Rocabor</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
     </main>
   </body>
 </html>

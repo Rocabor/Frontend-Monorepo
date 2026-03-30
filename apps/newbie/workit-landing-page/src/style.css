@@ -6,7 +6,7 @@
   body {
     display: grid;
     place-items: center;
-    min-height: 100dvh;
+    min-height: 100dvh;    
   }
   /* * {
     border: 1px solid black;
