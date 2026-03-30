@@ -1,1 +1,36 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import './tipography';
+@import './component';
+
+@layer base {
+  body {
+    display: grid;
+    place-items: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100dvh;
+  }
+}
+
+@theme {
+  --color-blue900: #13183f;
+  --color-blue600: #666ca3;
+  --color-pink600: #f74780;
+  --color-pink300: #ffa7c3;
+  --color-grey: #83869a;
+  --color-white: #ffffff;
+}
+
+@layer component {
+  .gradientpreset1 {
+    background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+  }
+  .gradientpreset1light {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .gradientpreset2 {
+    background: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
+  }
+  .gradientpreset2light {
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
