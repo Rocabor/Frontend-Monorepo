@@ -70,6 +70,21 @@ function updateReadme() {
     `JUNIOR-${counts.junior}%20projects`
   );
 
+  content = content.replace(
+    /#-newbie-projects-\d+\)/,
+    `#-newbie-projects-${counts.newbie})`
+  );
+
+  content = content.replace(
+    /#-junior-projects-\d+\)/,
+    `#-junior-projects-${counts.junior})`
+  );
+
+  content = content.replace(
+    /#-intermediate-projects-\d+\)/,
+    `#-intermediate-projects-${counts.intermediate})`
+  );
+
   fs.writeFileSync(README_PATH, content);
   console.log(`Updated: ${counts.newbie} Newbie, ${counts.junior} Junior, ${counts.intermediate} Intermediate = ${total} total`);
 }
