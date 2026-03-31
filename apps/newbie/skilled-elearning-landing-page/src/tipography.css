@@ -1,16 +1,32 @@
-@layer component {
-  .preset-1 {
-    font-size: 56px;
-    font-weight: 800;
-    line-height: 1.2;
-  }
-  .preset-7 {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.5;
-  }
-
-  .cardshadow {
-    box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.04);
-  }
+@utility preset-1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+@utility preset-3 {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+@utility preset-4 {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+@utility preset-5 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-grey);
+}
+@utility preset-7 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+@utility preset-p {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-grey);
 }
