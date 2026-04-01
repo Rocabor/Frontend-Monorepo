@@ -1,5 +1,6 @@
 @utility preset-1 {
-  font-size: 40px;
+  /* font-size: 40px; */
+  font-size: clamp(2.50rem, calc(1.357rem + 2.381vw), 3.50rem);
   font-weight: 800;
   line-height: 1.2;
 }

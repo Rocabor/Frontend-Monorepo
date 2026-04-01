@@ -14,30 +14,31 @@
 
     <title>Frontend Mentor | Skilled e-learning landing page</title>
   </head>
-  <body class="gradient-light">
-    <header class="w-full">
+  <body class="gradient-light ">
+    <header class="w-full ">
       <!-- Frame 286 -->
-      <nav class="mx-auto flex max-w-83.75 items-center justify-between py-4">
+      <nav class="mx-auto flex max-w-83.75 items-center justify-between py-4 md:max-w-170py-6 xl:max-w-280">
         <a href="#!"><img src="assets/logo-dark.svg" alt="Skilled" class="h-5 w-19.75" /></a>
-
-        <button type="button" class="btn-gt-start bg-blue900 hover:bg-blue600 focus:bg-blue600">Get Started</button>
+        
+        <button type="button" class="btn-gt-start z-1">Get Started</button>
       </nav>
     </header>
 
-    <main>
+    <main class="w-full ">
       <!--* hero -->
-      <section class="w-full py-16">
+      <section class="w-full py-16 ">
         <!-- content -->
-        <div class="flex w-full max-w-83.75 flex-col gap-12">
+        <div class="flex w-full max-w-83.75 flex-col gap-12 md:max-w-170 mx-auto md:flex-row md:gap-6 xl:max-w-280 xl:gap-8 ">
           <!-- content -->
-          <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-10 md:max-w-82 md:h-79.25 md:my-auto  
+          xl:max-w-136 xl:h-84.75">
             <!-- texts -->
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-6 w-full xl:w-114.25 xl:mr-21.75 ">
               <h1 class="preset-1">Maximize skill, minimize budget</h1>
 
               <p class="preset-5">
                 Our modern courses across a range of in-demand skills will give you the knowledge you need to live the life
-                <br />
+                <br class="xl:hidden" />
                 you want.
               </p>
             </div>
@@ -46,18 +47,26 @@
           </div>
 
           <!-- illustration -->
-          <div class="relative h-80 overflow-hidden">
+          <div class="relative h-80 overflow-hidden w-full md:max-w-82 md:h-100 md:overflow-visible xl:max-w-136 xl:h-140">
             <!-- Group 9 -->
-            <img src="assets/image-hero-mobile@2x.webp" alt="" class="absolute -top-4 -left-12 h-105 w-107.5 max-w-none" />
+            <picture>
+              <source srcset="assets/image-hero-desktop@2x.webp" media="(min-width:1440px)"/>
+              <source srcset="assets/image-hero-tablet@2x.webp" media="(min-width:768px)"/>
+
+              <img src="assets/image-hero-mobile@2x.webp" alt="" 
+              class="absolute -top-4 -left-12 h-105 w-107.5 max-w-none 
+              md:w-175 md:h-180 md:-top-60 md:-left-8
+              xl:w-247.5 xl:h-235 xl:-top-79 xl:left-5" />
+            </picture>
           </div>
         </div>
       </section>
 
       <!-- * content -->
-      <section class="pt-16 pb-20">
+      <section class="pt-16 pb-20 md:pt-23 md:pb-36">
         <!-- content -->
-        <div class="flex max-w-83.75 flex-col gap-15">
-          <h2 class="frame-291 gradient-1 pointer-events-none preset-3">Check out our most popular courses!</h2>
+        <div class="grid mx-auto max-w-83.75 gap-15 grid-cols-1 md:max-w-170 md:grid-cols-2 md:gap-x-6 md:gap-y-15 xl:grid-cols-3 xl:gap-x-8 xl:gap-y-14 xl:max-w-280">
+          <h2 class="frame-291 gradient-1 preset-3 pointer-events-none">Check out our most popular courses!</h2>
 
           <!-- Animation -->
           <div class="card">
@@ -129,7 +138,7 @@
 
     <!-- * footer -->
     <footer class="bg-blue900 h-24 w-full py-6">
-      <nav class="mx-auto flex max-w-83.75 items-center justify-between">
+      <nav class="mx-auto flex max-w-83.75 items-center justify-between md:max-w-170 xl:max-w-280">
         <a href="#!"><img src="assets/logo-light.svg" alt="Skilled" class="h-5 w-19.75" /></a>
 
         <button type="button" class="btn-gt-start-2 gradient-2">Get Started</button>
