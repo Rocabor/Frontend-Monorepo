@@ -73,6 +73,13 @@
       padding-top: 64px;
       padding-bottom: 40px;
     }
+    @variant xl{
+      width: 352px;
+      height: 322px;
+      padding-top: 64px;
+      padding-bottom: 40px;
+
+    }
   }
 
   h2 {
@@ -112,6 +119,15 @@
     flex-direction: column;
     gap: 24px;
     margin-inline: auto;
+    justify-content: space-between;
+    @variant md {
+      width: 264px;
+    }
+    @variant xl {
+      width: 288px;
+      height: 218px;
+      
+    }
   }
 }
 @utility cardshadow {
