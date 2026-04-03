@@ -15,8 +15,8 @@
 - [🛠️ How to Explore](#️-how-to-explore)
 - [📚 Learning Journey](#-learning-journey)
 - [📁 Project Index](#-project-index)
-  - [🟢 Newbie Projects (20)](#-newbie-projects-20)
-  - [🔵 Junior Projects (5)](#-junior-projects-5)
+  - [🟢 Newbie Projects (19)](#-newbie-projects-19)
+  - [🔵 Junior Projects (6)](#-junior-projects-6)
   - [🟡 Intermediate Projects (1)](#-intermediate-projects-1)
 - [💻 Technologies](#-technologies)
 - [🤝 Connect](#-connect)
@@ -176,7 +176,7 @@ All projects have live demos, so you can see them running without any local setu
 
 ### 🟢 Newbie Projects (20)
 
-[![Newbie](https://img.shields.io/badge/🟢%20NEWBIE-20%20projects-2ecc71?style=for-the-badge&labelColor=1a472a&color=2ecc71)](#-newbie-projects-20)
+[![Newbie](https://img.shields.io/badge/🟢%20NEWBIE-19%20projects-2ecc71?style=for-the-badge&labelColor=1a472a&color=2ecc71)](#-newbie-projects-20)
 
 | # | Project | Live Demo | Repository |
 |:---:|:---|:---:|:---:|
@@ -205,7 +205,7 @@ All projects have live demos, so you can see them running without any local setu
 
 ### 🔵 Junior Projects (5)
 
-[![Junior](https://img.shields.io/badge/🔵%20JUNIOR-5%20projects-3498db?style=for-the-badge&labelColor=1a4b6e&color=3498db)](#-junior-projects-5)
+[![Junior](https://img.shields.io/badge/🔵%20JUNIOR-6%20projects-3498db?style=for-the-badge&labelColor=1a4b6e&color=3498db)](#-junior-projects-5)
 
 | # | Project | Live Demo | Repository |
 |:---:|:---|:---:|:---:|
