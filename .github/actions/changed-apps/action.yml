@@ -12,6 +12,11 @@ outputs:
 runs:
   using: composite
   steps:
+    - name: Fetch main branch
+      shell: bash
+      run: |
+        git fetch origin main:main
+
     - name: Detect changed apps
       id: changed
       shell: bash
@@ -29,7 +34,7 @@ runs:
         # Compare with main branch to find changed apps
         CHANGED_APPS=""
         for app in $ALL_APPS; do
-          if git diff --name-only origin/main...HEAD -- "$app" | grep -q .; then
+          if git diff --name-only main...HEAD -- "$app" | grep -q .; then
             APP_NAME=$(basename "$app")
             if [ -z "$CHANGED_APPS" ]; then
               CHANGED_APPS="$APP_NAME"
