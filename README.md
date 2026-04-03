@@ -15,9 +15,9 @@
 - [🛠️ How to Explore](#️-how-to-explore)
 - [📚 Learning Journey](#-learning-journey)
 - [📁 Project Index](#-project-index)
-  - [🟢 Newbie Projects (19)](#-newbie-projects-19)
-  - [🔵 Junior Projects (6)](#-junior-projects-6)
-  - [🟡 Intermediate Projects (1)](#-intermediate-projects-1)
+  - [🟢 Newbie Projects (19)](#-newbie-projects)
+  - [🔵 Junior Projects (6)](#-junior-projects)
+  - [🟡 Intermediate Projects (1)](#-intermediate-projects)
 - [💻 Technologies](#-technologies)
 - [🤝 Connect](#-connect)
 
@@ -170,11 +170,11 @@ All projects have live demos, so you can see them running without any local setu
 </details>
 
 
-## 📁 Project Index
+## 🗂️ Project Index
 
 <div align="center">
 
-### 🟢 Newbie Projects (20)
+### 🟢 Newbie Projects
 
 [![Newbie](https://img.shields.io/badge/🟢%20NEWBIE-19%20projects-2ecc71?style=for-the-badge&labelColor=1a472a&color=2ecc71)](#-newbie-projects-20)
 
@@ -186,39 +186,39 @@ All projects have live demos, so you can see them running without any local setu
 | 04 | **Recipe page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/recipe-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/recipe-page) |
 | 05 | **Product preview card** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/product-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/product-preview-card-component) |
 | 06 | **Four card feature section** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/four-card-feature-section/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/four-card-feature-section) |
-| 08 | **Meet landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/meet-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/meet-landing-page) |
-| 09 | **Results summary component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/result-summary-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/result-summary-component) |
-| 10 | **Order summary component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/order-summary-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/order-summary-component) |
-| 11 | **Profile card component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/profile-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/profile-card-component) |
-| 12 | **Huddle landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/huddle-landingpage-with-single-introductory-section/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/huddle-landingpage-with-single-introductory-section) |
-| 13 | **Single price grid component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/single-price-grid-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/single-price-grid-component) |
-| 14 | **Social proof section** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/social-proof-section/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/social-proof-section) |
-| 15 | **3-column preview card** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/3-column-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/3-column-preview-card-component) |
-| 16 | **Stats preview card** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/stats-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/stats-preview-card-component) |
-| 17 | **Equalizer landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/equalizer-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/equalizer-landing-page) |
-| 18 | **NFT preview card component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/nft-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/nft-preview-card-component) |
-| 19 | **Workit landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/workit-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/workit-landing-page) |
-| 20 | **Skilled e-learning landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/skilled-elearning-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/skilled-elearning-landing-page) |
+| 07 | **Meet landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/meet-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/meet-landing-page) |
+| 08 | **Results summary component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/result-summary-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/result-summary-component) |
+| 09 | **Order summary component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/order-summary-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/order-summary-component) |
+| 10 | **Profile card component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/profile-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/profile-card-component) |
+| 11 | **Huddle landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/huddle-landingpage-with-single-introductory-section/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/huddle-landingpage-with-single-introductory-section) |
+| 12 | **Single price grid component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/single-price-grid-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/single-price-grid-component) |
+| 13 | **Social proof section** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/social-proof-section/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/social-proof-section) |
+| 14 | **3-column preview card** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/3-column-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/3-column-preview-card-component) |
+| 15 | **Stats preview card** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/stats-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/stats-preview-card-component) |
+| 16 | **Equalizer landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/equalizer-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/equalizer-landing-page) |
+| 17 | **NFT preview card component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/nft-preview-card-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/nft-preview-card-component) |
+| 18 | **Workit landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/workit-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/workit-landing-page) |
+| 19 | **Skilled e-learning landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/skilled-elearning-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/skilled-elearning-landing-page) |
 
 
 ---
 
-### 🔵 Junior Projects (5)
+### 🔵 Junior Projects
 
 [![Junior](https://img.shields.io/badge/🔵%20JUNIOR-6%20projects-3498db?style=for-the-badge&labelColor=1a4b6e&color=3498db)](#-junior-projects-5)
 
 | # | Project | Live Demo | Repository |
 |:---:|:---|:---:|:---:|
-| 07 | **Testimonials grid section** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/testimonials-grid-section/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/testimonials-grid-section) |
-| 01 | **Article preview component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/article-preview-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/article-preview-component) |
-| 02 | **Newsletter sign-up** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/newsletter-sing-up-with-success-message/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/newsletter-sing-up-with-success-message) |
-| 03 | **Time tracking dashboard** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/time-tracking-dashboard/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/time-tracking-dashboard) |
-| 04 | **Tip calculator app** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/tip-calculator-app/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/tip-calculator-app) |
-| 05 | **Typing speed test** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/typing-speed-test-main/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/typing-speed-test-main) |
+| 01 | **Testimonials grid section** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/testimonials-grid-section/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/testimonials-grid-section) |
+| 02 | **Article preview component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/article-preview-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/article-preview-component) |
+| 03 | **Newsletter sign-up** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/newsletter-sing-up-with-success-message/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/newsletter-sing-up-with-success-message) |
+| 04 | **Time tracking dashboard** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/time-tracking-dashboard/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/time-tracking-dashboard) |
+| 05 | **Tip calculator app** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/tip-calculator-app/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/tip-calculator-app) |
+| 06 | **Typing speed test** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/typing-speed-test-main/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/typing-speed-test-main) |
 
 ---
 
-### 🟡 Intermediate Projects (1)
+### 🟡 Intermediate Projects
 
 [![Intermediate](https://img.shields.io/badge/🟡%20INTERMEDIATE-1%20project-f1c40f?style=for-the-badge&labelColor=7d5d0e&color=f1c40f)](#-intermediate-projects-1)
 
