@@ -15,8 +15,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Get changed apps
+        id: changed-apps
+        uses: ./.github/actions/changed-apps@main
         with:
-          fetch-depth: 0 # Recomendado para que Turbo sea más inteligente
+          apps-dir: "apps"
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -27,13 +31,26 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm" # Cambiado a pnpm
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build all projects
-        run: pnpm build
+      - name: Restore Turbo Cache
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: turbo-${{ github.sha }}
+          restore-keys: |
+            turbo-
+
+      - name: Build changed projects
+        run: |
+          if [ -n "${{ steps.changed-apps.outputs.apps }}" ]; then
+            pnpm turbo run build --filter="${{ steps.changed-apps.outputs.apps }}"
+          else
+            echo "No apps changed, skipping build"
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -41,8 +58,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # IMPORTANTE: Aquí debes apuntar a la carpeta que contiene el index.html
-          # Si tienes un "lanzador" en la raíz, deja '.', pero asegúrate de que sea lo que quieres exponer.
           path: "."
 
   deploy:
