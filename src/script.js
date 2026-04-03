@@ -106,14 +106,7 @@ const projects = [
     title: 'four card feature section',
     technologies: ['html', 'css'],
     difficulty: 'Newbie',
-  },
-  {
-    href: './apps/newbie/testimonials-grid-section/dist/index.html',
-    image: 'images/7.jpg',
-    title: 'testimonials grid section',
-    technologies: ['html', 'css'],
-    difficulty: 'Newbie',
-  },
+  },  
   {
     href: './apps/newbie/meet-landing-page/dist/index.html',
     image: 'images/8.jpg',
@@ -207,6 +200,13 @@ const projects = [
   },
 
   // JUNIOR PROJECTS
+  {
+    href: './apps/junior/testimonials-grid-section/dist/index.html',
+    image: 'images/7.jpg',
+    title: 'testimonials grid section',
+    technologies: ['html', 'css'],
+    difficulty: 'Junior',
+  },
   {
     href: './apps/junior/article-preview-component/dist/index.html',
     image: 'images/1j.jpg',
