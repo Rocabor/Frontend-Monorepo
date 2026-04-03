@@ -14,26 +14,25 @@
 
     <title>Frontend Mentor | Skilled e-learning landing page</title>
   </head>
-  <body class="gradient-light">
-    <header class="w-full ">
+  <body class="gradient-light relative">
+    <header class="w-full">
       <!-- Frame 286 -->
       <nav class="mx-auto flex max-w-83.75 items-center justify-between py-4 md:max-w-170 md:py-6 xl:max-w-280">
         <a href="#!"><img src="assets/logo-dark.svg" alt="Skilled" class="h-5 w-19.75" /></a>
-        
+
         <button type="button" class="btn-gt-start z-1">Get Started</button>
       </nav>
     </header>
 
-    <main class="w-full overflow-x-clip ">
+    <main class="w-full overflow-x-clip">
       <!--* hero -->
-      <section class="w-full py-16 ">
+      <section class="w-full py-16">
         <!-- content -->
-        <div class="flex w-full max-w-83.75 flex-col gap-12 md:max-w-170 mx-auto md:flex-row md:gap-6 xl:max-w-280 xl:gap-8 ">
+        <div class="mx-auto flex w-full max-w-83.75 flex-col gap-12 md:max-w-170 md:flex-row md:gap-6 xl:max-w-280 xl:gap-8">
           <!-- content -->
-          <div class="flex flex-col gap-10 md:max-w-82 md:h-79.25 md:my-auto  
-          xl:max-w-136 xl:h-84.75">
+          <div class="flex flex-col gap-10 md:my-auto md:h-79.25 md:max-w-82 xl:h-84.75 xl:max-w-136">
             <!-- texts -->
-            <div class="flex flex-col gap-6 w-full xl:w-114.25 xl:mr-21.75 ">
+            <div class="flex w-full flex-col gap-6 xl:mr-21.75 xl:w-114.25">
               <h1 class="preset-1">Maximize skill, minimize budget</h1>
 
               <p class="preset-5">
@@ -47,16 +46,16 @@
           </div>
 
           <!-- illustration -->
-          <div class="relative h-80 overflow-hidden w-full md:max-w-82 md:h-100 md:overflow-visible xl:max-w-136 xl:h-140">
+          <div class="relative h-80 w-full overflow-hidden md:h-100 md:max-w-82 md:overflow-visible xl:h-140 xl:max-w-136">
             <!-- Group 9 -->
             <picture>
-              <source srcset="assets/image-hero-desktop@2x.webp" media="(min-width:1440px)"/>
-              <source srcset="assets/image-hero-tablet@2x.webp" media="(min-width:768px)"/>
+              <source srcset="assets/image-hero-desktop@2x.webp" media="(min-width:1440px)" />
+              <source srcset="assets/image-hero-tablet@2x.webp" media="(min-width:768px)" />
 
-              <img src="assets/image-hero-mobile@2x.webp" alt="" 
-              class="absolute -top-4 -left-12 h-105 w-107.5 max-w-none 
-              md:w-175 md:h-180 md:-top-60 md:-left-8
-              xl:w-247.5 xl:h-235 xl:-top-79 xl:left-5" />
+              <img
+                src="assets/image-hero-mobile@2x.webp"
+                alt=""
+                class="absolute -top-4 -left-12 h-105 w-107.5 max-w-none md:-top-60 md:-left-8 md:h-180 md:w-175 xl:-top-79 xl:left-5 xl:h-235 xl:w-247.5" />
             </picture>
           </div>
         </div>
@@ -65,7 +64,7 @@
       <!-- * content -->
       <section class="pt-16 pb-20 md:pt-23 md:pb-36">
         <!-- content -->
-        <div class="grid mx-auto max-w-83.75 gap-15 grid-cols-1 md:max-w-170 md:grid-cols-2 md:gap-x-6 md:gap-y-15 xl:grid-cols-3 xl:gap-x-8 xl:gap-y-21 xl:max-w-280">
+        <div class="mx-auto grid max-w-83.75 grid-cols-1 gap-15 md:max-w-170 md:grid-cols-2 md:gap-x-6 md:gap-y-15 xl:max-w-280 xl:grid-cols-3 xl:gap-x-8 xl:gap-y-21">
           <h2 class="frame-291 gradient-1 preset-3 pointer-events-none">Check out our most popular courses!</h2>
 
           <!-- Animation -->
@@ -75,7 +74,11 @@
             <div class="card-in">
               <h2>Animation</h2>
 
-              <p>Learn the latest animation techniques to create stunning motion design and captivate <br class="md:visible">your audience.</p>
+              <p>
+                Learn the latest animation techniques to create stunning motion design and captivate
+                <br class="hidden md:block xl:hidden" />
+                your audience.
+              </p>
 
               <a href="#!">Get Started</a>
             </div>
@@ -88,7 +91,13 @@
             <div class="card-in">
               <h2>Design</h2>
 
-              <p>Create beautiful, usable <br class="xl:visible"> interfaces to help shape the <br class="xl:visible"> future of how the web looks.</p>
+              <p>
+                Create beautiful, usable
+                <br class="hidden xl:block" />
+                interfaces to help shape the
+                <br class="hidden xl:block" />
+                future of how the web looks.
+              </p>
 
               <a href="#!">Get Started</a>
             </div>
@@ -101,7 +110,15 @@
             <div class="card-in">
               <h2>Photography</h2>
 
-              <p>Explore critical fundamentals like lighting, composition, and focusto capture exceptional photos.</p>
+              <p>
+                Explore critical fundamentals
+                <br class="hidden md:block xl:hidden" />
+                like
+                <br class="md:hidden xl:block" />
+                lighting, composition, and focus
+                <br class="hidden md:hidden xl:block" />
+                to capture exceptional photos.
+              </p>
 
               <a href="#!">Get Started</a>
             </div>
@@ -114,7 +131,17 @@
             <div class="card-in">
               <h2>Crypto</h2>
 
-              <p>All you need to know to get started investing in crypto. Go  from beginner to advanced with this 54 hour course.</p>
+              <p>
+                All you need to know to get
+                <br class="hidden xl:block" />
+                started investing in crypto. Go
+                <br class="hidden xl:block" />
+                from beginner to advanced
+                <br class="hidden md:block xl:hidden" />
+                with
+                <br class="hidden xl:block" />
+                this 54 hour course.
+              </p>
 
               <a href="#!">Get Started</a>
             </div>
@@ -127,7 +154,13 @@
             <div class="card-in">
               <h2>Business</h2>
 
-              <p>A step-by-step playbook to help you start, scale, and sustain your business without outside investment.</p>
+              <p>
+                A step-by-step playbook to
+                <br class="hidden md:block xl:hidden" />
+                help you start, scale, and
+                <br class="hidden md:block xl:hidden" />
+                sustain your business without outside investment.
+              </p>
 
               <a href="#!">Get Started</a>
             </div>
@@ -137,11 +170,29 @@
     </main>
 
     <!-- * footer -->
-    <footer class="bg-blue900 h-24 w-full py-6">
+    <footer class="bg-blue900 h-26 md:h-27 w-full py-6 xl:h-31 ">
       <nav class="mx-auto flex max-w-83.75 items-center justify-between md:max-w-170 xl:max-w-280">
         <a href="#!"><img src="assets/logo-light.svg" alt="Skilled" class="h-5 w-19.75" /></a>
 
         <button type="button" class="btn-gt-start-2 gradient-2">Get Started</button>
+      </nav>
+
+      <!--* PERSONAL FOOTER -->
+      <nav class="site-credits absolute bottom-0 inset-x-0" aria-label="Footer credits">
+        <div class="credits-wrapper">
+          <p class="credit-line">
+            <span class="credit-label">Challenge by</span>
+            <a href="https://www.frontendmentor.io/challenges/skilled-elearning-landing-page-S1ObDrZ8q" target="_blank" rel="noopener noreferrer" class="credit-link">© Frontend Mentor</a>
+          </p>
+
+          <span class="separator" aria-hidden="true">•</span>
+
+          <p class="credit-line">
+            <span class="credit-label">Coded by</span>
+            <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer" class="credit-link">@Rocabor</a>
+            <span class="year" aria-hidden="true">2026</span>            
+          </p>
+        </div>
       </nav>
     </footer>
   </body>
