@@ -18,7 +18,7 @@ jobs:
 
       - name: Get changed apps
         id: changed-apps
-        uses: ./.github/actions/changed-apps@main
+        uses: ./.github/actions/changed-apps
         with:
           apps-dir: "apps"
 
