@@ -127,7 +127,7 @@ All projects have live demos, so you can see them running without any local setu
   <i>Evolution of technical skills across different challenge complexities</i>
 </div>
 
-<details open> 
+<details> 
 <summary>🟢 <b>Newbie Level Fundamentals</b></summary> 
 <br>
 
@@ -170,7 +170,7 @@ All projects have live demos, so you can see them running without any local setu
 </details>
 
 
-## 🗂️ Project Index
+## 📁​ Project Index
 
 <div align="center">
 
