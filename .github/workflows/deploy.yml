@@ -16,12 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Get changed apps
-        id: changed-apps
-        uses: ./.github/actions/changed-apps
-        with:
-          apps-dir: "apps"
-
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -44,13 +38,8 @@ jobs:
           restore-keys: |
             turbo-
 
-      - name: Build changed projects
-        run: |
-          if [ -n "${{ steps.changed-apps.outputs.apps }}" ]; then
-            pnpm turbo run build --filter="${{ steps.changed-apps.outputs.apps }}"
-          else
-            echo "No apps changed, skipping build"
-          fi
+      - name: Build all projects
+        run: pnpm build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
