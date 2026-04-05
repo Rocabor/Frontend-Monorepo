@@ -15,15 +15,15 @@
 
     <script type="module" src="src/main.js"></script>
   </head>
-  <body>
-    <main class="mx-auto grid w-[326px] gap-4">
+  <body class="bg">
+    <main class="mx-auto flex flex-col gap-4 md:w-135 xl:w-230.5 xl:flex-row xl:gap-8">
       <!--* Container -->
-      <section aria-label="Fylo navigation menu">
+      <section aria-label="Fylo brand">
         <!--* Container -->
-        <div class="bg-blue850 h-[201px] w-[326px] rounded-[10px] rounded-tr-[100px] p-10">
+        <div class="bg-blue850  w-81.5 rounded-[10px] rounded-tr-[100px] p-10 md:w-87.5">
           <!-- Logo Container -->
-          <div class="flex w-[176px] flex-col gap-8">
-            <img src="images/logo.svg" alt="Fylo Logo" aria-hidden="true" />
+          <div class="flex w-44 flex-col gap-8">
+            <img src="images/logo.svg" alt="" aria-hidden="true" class="self-start" />
 
             <!-- Icon Container -->
             <div class="flex gap-4">
@@ -42,15 +42,19 @@
       </section>
 
       <!--* Storage Info Container -->
-      <section aria-label="Storage information" class="relative h-[196px]">
-        <!-- Rectangle -->
-        <div class="bg-blue850 absolute inset-0 -z-1 h-[154px] rounded-[10px]"></div>
+      <section aria-label="Storage information" class="relative h-48.5 xl:h-auto  xl:w-135">
+
+        <!-- Rectangle -->        
+        <div class="bg-blue850 absolute inset-x-0 top-0 -z-1 
+        h-38.5 rounded-[10px] xl:top-auto xl:bottom-0"></div>
 
         <!-- Storage Details Container -->
-        <div class="absolute inset-x-0 bottom-0 mx-auto flex h-[154px] w-[262px] flex-col gap-2">
+        <div class="absolute inset-x-0 bottom-0 mx-auto flex h-38.5 w-65.5 flex-col gap-2 md:h-36.5 md:w-115.75 
+        xl:h-38 xl:top-0">
+
           <!-- Storage Text Container -->
           <div class="flex flex-col gap-4">
-            <h1 class="preset-2-regular">
+            <h1 class="preset-2-regular md:self-start">
               You've used
               <strong>815 GB</strong>
               of your storage
@@ -59,7 +63,7 @@
             <div class="relative flex flex-col gap-2">
               <progress value="815" max="1000" aria-label="Storage usage: 815 GB used out of 1000 GB"></progress>
 
-              <div class="absolute top-[5px] right-[53px] size-2.5 rounded-full bg-white"></div>
+              <div class="absolute top-1.25 right-13.25 size-2.5 rounded-full bg-white md:right-22.5"></div>
 
               <div class="preset-3-extrabold flex justify-between">
                 <span>0 GB</span>
@@ -69,10 +73,13 @@
           </div>
 
           <!-- Storage Left Container -->
-          <div class="h-[72px] w-[179px] rounded-[10px] bg-white flex items-center justify-center self-center">
-            <div class="w-[130px] h-[40px] text-blue950 flex gap-2 items-center justify-center">
+          <div class="flex py-4 w-44.75 items-center justify-center self-center rounded-[10px] bg-white xl:order-first xl:self-end xl:rounded-br-none">
+
+            <div class="text-blue950 flex h-10 w-32.5 items-center justify-center gap-2">
+
+              <span class="triangulo-up bottom-16 right-0"></span>
               <span class="preset-1">185</span>
-              <span class="preeset-3-bold">GB Left</span>
+              <span class="preset-3-bold">GB Left</span>
             </div>
           </div>
         </div>
@@ -84,8 +91,10 @@
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>
       <span class="separator" aria-hidden="true">•</span>
       Coded by
-      <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer">@Rocaborges</a>
+      <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer">@Rocabor</a>
       <span class="year" aria-hidden="true">2026</span>
+
+      
     </footer>
   </body>
 </html>

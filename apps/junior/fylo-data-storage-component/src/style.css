@@ -6,7 +6,7 @@
     place-content: center;
     min-height: 100dvh;
     font-family: 'Raleway', sans-serif;
-    background-color: var(--color-blue900);
+    background-color: var(--color-blue950);
     color: var(--color-white);
     position: relative;
   }
@@ -19,6 +19,8 @@
   --color-blue850: #1e2d69;
   --color-blue900: #0f1b3d;
   --color-blue950: #0c122c;
+  --color-coral100: #ffa197;
+  --color-coral500: #ff4a95;
 }
 
 @layer utilities {
@@ -49,21 +51,48 @@
   .icon {
     @apply bg-blue950 grid size-12 place-items-center rounded-[10px];
   }
+  .bg {
+    background-image: url('/images/bg-mobile.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @variant md {
+      background-image: url('/images/bg-desktop.png');
+      background-size: 100% 43.4%;
+      background-position: left 0px bottom 0%;
+    }
+    @variant xl {
+      background-size: 100% 52.5%;
+    }
+  }
+  .triangulo-up {
+    @variant xl {
+      width: 0;
+      height: 0;
+      border-left: 0px solid transparent;
+      border-right: 22px solid transparent;
+      border-bottom: 22px solid var(--color-white);
+      rotate: 180deg;
+      position: absolute;
+    }
+  }
 }
 
 .attribution {
-  font-size: 12px;
+  font-size: clamp(0.81rem, calc(0.727rem + 0.364vw), 1rem);
   text-align: center;
   position: absolute;
   bottom: 0;
   inset-inline: 0;
+  padding-block: 5px;
 }
-.attribution a {
-  color: #ffa197;
+.attribution a,
+.year {
+  color: var(--color-coral100);
   font-weight: 700;
 }
 .attribution a:hover {
-  color: #ff4a95;
+  color: var(--color-coral500);
   font-weight: 700;
 }
 
@@ -85,6 +114,6 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background: linear-gradient(90deg, #ffa197 0%, #ff4a95 100%);
+  background: linear-gradient(90deg, var(--color-coral100) 0%, var(--color-coral500) 100%);
   border-radius: 8px;
 }
