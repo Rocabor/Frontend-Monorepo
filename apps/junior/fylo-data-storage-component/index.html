@@ -14,27 +14,77 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap" rel="stylesheet" />
 
     <script type="module" src="src/main.js"></script>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 0.6875rem;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
-    You’ve used 815 GB of your storage 185 GB Left 0 GB 1000 GB
+    <main class="mx-auto grid w-[326px] gap-4">
+      <!--* Container -->
+      <section aria-label="Fylo navigation menu">
+        <!--* Container -->
+        <div class="bg-blue850 h-[201px] w-[326px] rounded-[10px] rounded-tr-[100px] p-10">
+          <!-- Logo Container -->
+          <div class="flex w-[176px] flex-col gap-8">
+            <img src="images/logo.svg" alt="Fylo Logo" aria-hidden="true" />
+
+            <!-- Icon Container -->
+            <div class="flex gap-4">
+              <div class="icon">
+                <img src="images/icon-document.svg" alt="" aria-hidden="true" />
+              </div>
+              <div class="icon">
+                <img src="images/icon-folder.svg" alt="" aria-hidden="true" />
+              </div>
+              <div class="icon">
+                <img src="images/icon-upload.svg" alt="" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--* Storage Info Container -->
+      <section aria-label="Storage information" class="relative h-[196px]">
+        <!-- Rectangle -->
+        <div class="bg-blue850 absolute inset-0 -z-1 h-[154px] rounded-[10px]"></div>
+
+        <!-- Storage Details Container -->
+        <div class="absolute inset-x-0 bottom-0 mx-auto flex h-[154px] w-[262px] flex-col gap-2">
+          <!-- Storage Text Container -->
+          <div class="flex flex-col gap-4">
+            <h1 class="preset-2-regular">
+              You've used
+              <strong>815 GB</strong>
+              of your storage
+            </h1>
+
+            <div class="relative flex flex-col gap-2">
+              <progress value="815" max="1000" aria-label="Storage usage: 815 GB used out of 1000 GB"></progress>
+
+              <div class="absolute top-[5px] right-[53px] size-2.5 rounded-full bg-white"></div>
+
+              <div class="preset-3-extrabold flex justify-between">
+                <span>0 GB</span>
+                <span>1000 GB</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Storage Left Container -->
+          <div class="h-[72px] w-[179px] rounded-[10px] bg-white flex items-center justify-center self-center">
+            <div class="w-[130px] h-[40px] text-blue950 flex gap-2 items-center justify-center">
+              <span class="preset-1">185</span>
+              <span class="preeset-3-bold">GB Left</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="attribution">
       Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>
       <span class="separator" aria-hidden="true">•</span>
       Coded by
-      <a href="#">Your Name Here</a>
+      <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer">@Rocaborges</a>
       <span class="year" aria-hidden="true">2026</span>
     </footer>
   </body>
