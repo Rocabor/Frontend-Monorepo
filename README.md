@@ -216,6 +216,7 @@ All projects have live demos, so you can see them running without any local setu
 | 05 | **Tip calculator app** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/tip-calculator-app/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/tip-calculator-app) |
 | 06 | **Typing speed test** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/typing-speed-test-main/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/typing-speed-test-main) |
 | 07 | **Fylo data storage component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/fylo-data-storage-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/fylo-data-storage-component) |
+| 08 | **Clipboard landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/junior/clipboard-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/clipboard-landing-page) |
 
 ---
 

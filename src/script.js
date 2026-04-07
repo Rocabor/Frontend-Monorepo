@@ -249,6 +249,13 @@ const projects = [
     technologies: ['html', 'css', 'js'],
     difficulty: 'Junior',
   },
+  {
+    href: './apps/junior/clipboard-landing-page/dist/index.html',
+    image: 'images/clipboard-landing-page.jpg',
+    title: 'clipboard landing page',
+    technologies: ['html', 'css', 'js'],
+    difficulty: 'Junior',
+  },
 
   // INTERMEDIATE PROJECTS
   {
