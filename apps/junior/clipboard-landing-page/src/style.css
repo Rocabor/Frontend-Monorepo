@@ -2,8 +2,8 @@
 
 @layer base {
   body {
-    display: grid;
-    place-content: center;
+    display: flex;
+    flex-direction: column;
     min-height: 100dvh;
     font-family: 'Bai Jamjuree', sans-serif;
     position: relative;
@@ -63,6 +63,14 @@
   text-align: center;
   color: white;
 }
+@utility preset-7-regular {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-gray700);
+}
 
 @utility preset-8 {
   font-size: 16px;
@@ -97,12 +105,16 @@
   .feature {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    & h2 {
-      @apply preset-6;
-    }
-    & p {
-      @apply preset-8;
-    }
+    gap: 8px;   
+   
+  }
+  h2{
+     @apply preset-5;
+  }  
+  h3{
+     @apply preset-6;
+  }
+  p{
+     @apply preset-8;
   }
 }
