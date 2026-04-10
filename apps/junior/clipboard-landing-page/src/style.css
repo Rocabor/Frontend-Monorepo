@@ -1,1 +1,108 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    display: grid;
+    place-content: center;
+    min-height: 100dvh;
+    font-family: 'Bai Jamjuree', sans-serif;
+    position: relative;
+  }
+}
+
+@theme {
+  --color-gray500: #9eabb2;
+  --color-gray700: #4c545c;
+  --color-gray950: #2a2a2a;
+  --color-green300: #5dccbb;
+  --color-green500: #26bba4;
+  --color-blue400: #8897ff;
+  --color-blue500: #6174ff;
+  --color-gray50: #f5f7f7;
+}
+
+/* ✅ Utilities primero */
+
+@utility preset-1 {
+  font-size: 46px;
+  font-weight: 600;
+  letter-spacing: -0.75px;
+  line-height: 1.25;
+}
+
+@utility preset-4 {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--color-gray700);
+}
+@utility preset-5 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--color-gray700);
+}
+@utility preset-6 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--color-gray700);
+}
+
+@utility preset-7 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  text-align: center;
+  color: white;
+}
+
+@utility preset-8 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-gray500);
+}
+
+@utility gradient-1 {
+  background: linear-gradient(315deg, #000000 0%, #4f4f4f 100%);
+}
+
+@utility gradient-2 {
+  background: linear-gradient(315deg, #000000 0%, #6d6d6d 100%);
+}
+
+@layer components {
+  .bitmap {
+    background-image: url('../images/bg-header-mobile.png');
+    background-size: cover;
+  }
+  .btn {
+    height: 56px;
+    border-radius: 28px;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1513);
+    cursor: pointer;
+    @apply preset-7;
+  }
+
+  .feature {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    & h2 {
+      @apply preset-6;
+    }
+    & p {
+      @apply preset-8;
+    }
+  }
+}

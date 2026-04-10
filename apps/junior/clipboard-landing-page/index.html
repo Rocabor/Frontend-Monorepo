@@ -1,64 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Clipboard landing page</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-  
-</head>
-<body>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,600&display=swap" rel="stylesheet" />
+    <script type="module" src="src/main.js"></script>
 
-  <!-- prettier-ignore -->
-  A history of everything you copy
+    <title>Frontend Mentor | Clipboard landing page</title>
+  </head>
+  <body>
+    <!--* Bitmap 2 -->
+    <div class="bitmap absolute inset-0 h-[363px] w-full"></div>
 
-  Clipboard allows you to track and organize everything you 
-  copy. Instantly access your clipboard on all your devices.
+    <!--* Profile Image -->
+    <header class="mx-auto mt-[123px] flex w-[318px] flex-col gap-16">
+      <!-- Combined Shape -->
+      <img src="images/logo.svg" alt="" class="self-center" />
 
-  Download for iOS
-  Download for Mac
+      <!-- Content Container -->
+      <section class="flex flex-col gap-14">
+        <!-- Description Container -->
+        <div class="flex flex-col gap-4">
+          <h1 class="preset-4">A history of everything you copy</h1>
 
-  Keep track of your snippets
+          <p class="preset-8">Clipboard allows you to track and organize everything you copy. Instantly access your clipboard on all your devices.</p>
+        </div>
 
-  Clipboard instantly stores any item you copy in the cloud, 
-  meaning you can access your snippets immediately on all your 
-  devices. Our Mac and iOS apps will help you organize everything.
+        <!-- Download Buttons Container -->
+        <div class="flex flex-col gap-6">
+          <button type="button" class="btn bg-green500 hover:bg-green300">Download for iOS</button>
 
-  Quick Search
+          <button type="button" class="btn bg-blue500 hover:bg-blue400">Download for Mac</button>
+        </div>
+      </section>
+    </header>
 
-  Easily search your snippets by content, category, web address, application, and more.
+    <!--* Section Container -->
+    <section class="mx-auto mt-[158px] w-[312px] flex flex-col gap-[72px]">
 
-  iCloud Sync
+      <!-- Description Container -->
+      <div class="flex flex-col gap-4">
 
-  Instantly saves and syncs snippets across all your devices.
+        <h2 class="preset-5">Keep track of your snippets</h2>
 
-  Complete History
+        <p class="preset-8">Clipboard instantly stores any item you copy in the cloud, meaning you can access your snippets immediately on all your devices. Our Mac and iOS apps will help you organize everything.</p>
+      </div>
 
-  Retrieve any snippets from the first moment you started using the app.
+      <!-- Image Container -->
+      <div>
 
-  Access Clipboard anywhere
+        <img src="./images/image-computer.png" alt="">
+      </div>
 
-  Whether you’re on the go, or at your computer, you can access all your Clipboard 
-  snippets in a few simple clicks.
+      <!-- Features Container -->
+      <div class="flex flex-col gap-[56px]">
 
-  Supercharge your workflow
+        <!-- Feature -->
+        <div class="feature">
 
-  We’ve got the tools to boost your productivity.
+          <h2>Quick Search</h2>
 
-  Create blacklists
+          <p>Easily search your snippets by content, category, web address, application, and more.</p>
 
-  Ensure sensitive information never makes its way to your clipboard by excluding certain sources.
+        </div>
 
-  Plain text snippets
+        <!-- Feature -->
+        <div class="feature">
+          <h2>iCloud Sync</h2>
 
-  Remove unwanted formatting from copied text for a consistent look.
+          <p>Instantly saves and syncs snippets across all your devices.</p>
 
-  Sneak preview
+        </div>
+        
+        <!-- Feature -->
+        <div class="feature">
+          <h2>Complete History</h2>
 
-  Quick preview of all snippets on your Clipboard for easy access.
+          <p>Retrieve any snippets from the first moment you started using the app.</p>
+        </div>
+      </div>
+    </section>
+
+    <!--* Section Container -->
+    <section class="flex flex-col gap-[72px] w-[311px] mt-[177px]">
+
+      <!-- Description Container -->
+      <div class="flex flex-col gap-4">
+
+        <h2 class="preset-5">Access Clipboard anywhere</h2>
+
+        <p class="preset-8">Whether you’re on the go, or at your computer, you can access all your Clipboard snippets in a few simple clicks.</p>
+
+      </div>
+
+      <!-- Group 29 Copy 2 -->
+      <div>
+        <img src="./images/image-devices.png" alt="">
+      </div>
+    </section>
+
+    <!--* Section Container -->
+    <section class="mt-[129px] flex flex-col gap-[88px] w-[311px]">
+
+      <!-- Description Container -->
+      <div class="flex flex-col gap-4">
+        <h2 class="preset-5">Supercharge your workflow</h2>
+
+        <p class="preset-8">We’ve got the tools to boost your productivity.</p>
+      </div>
+
+
+      <!-- Features Container -->
+      <div class="flex flex-col gap-16">
+
+        <!-- Feature -->
+        <div class="flex flex-col gap-10">
+
+          <img src="./images/icon-blacklist.svg" alt="" class="self-center">
+
+          <div class="feature gap-4">
+
+            <h2>Create blacklists</h2>
+
+            <p>Ensure sensitive information never makes its way to your clipboard by excluding certain sources.</p>
+
+          </div>
+        </div>
+
+        <!-- Feature -->
+        <div class="flex flex-col gap-10">
+
+          <img src="./images/icon-text.svg" alt="" class="self-center">
+
+          <div class="feature gap-4">
+
+            <h2>Plain text snippets</h2>
+
+            <p>Remove unwanted formatting from copied text for a consistent look.</p>
+
+          </div>
+        </div>
+        <!-- Feature -->
+        <div class="flex flex-col gap-10">
+
+          <img src="./images/icon-preview.svg" alt="" class="self-center">
+
+          <div class="feature gap-4">
+
+            <h2>Sneak preview</h2>
+
+            <p>Quick preview of all snippets on your Clipboard for easy access.</p>
+
+          </div>
+        </div>
+
+
+        
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- prettier-ignore -->
+    <p hidden> 
+
 
   Clipboard for iOS and Mac OS
 
@@ -72,8 +187,6 @@
   Contact Us
   Privacy Policy
   Press Kit
-  Install Guide
-  
-      
-</body>
+  Install Guide</p>
+  </body>
 </html>
