@@ -21,17 +21,23 @@
   --color-gray50: #f5f7f7;
 }
 
-/* ✅ Utilities primero */
-
 @utility preset-1 {
   font-size: 46px;
   font-weight: 600;
   letter-spacing: -0.75px;
   line-height: 1.25;
 }
+@utility preset-2 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-gray500);
+}
 
 @utility preset-4 {
-  font-size: clamp(2.00rem, calc(1.682rem + 1.591vw), 2.88rem);
+  font-size: clamp(2rem, calc(1.682rem + 1.591vw), 2.88rem);
   font-weight: 600;
   letter-spacing: -0.5px;
   line-height: 1.25;
@@ -53,9 +59,6 @@
   line-height: 1.25;
   text-align: center;
   color: var(--color-gray700);
-  @variant xl{
-    text-align: start;
-  }
 }
 
 @utility preset-7 {
@@ -76,21 +79,12 @@
 }
 
 @utility preset-8 {
-  font-size: clamp(1.00rem, calc(0.886rem + 0.485vw), 1.25rem);
+  font-size: clamp(1rem, calc(0.761rem + 1.018vw), 1.25rem);
   font-weight: 400;
   letter-spacing: 0.15px;
   line-height: 1.5;
   text-align: center;
   color: var(--color-gray500);
-  
-}
-
-@utility gradient-1 {
-  background: linear-gradient(315deg, #000000 0%, #4f4f4f 100%);
-}
-
-@utility gradient-2 {
-  background: linear-gradient(315deg, #000000 0%, #6d6d6d 100%);
 }
 
 @layer components {
@@ -117,13 +111,37 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    
-    @variant xl {
-      /* align-self: center; */
+    @variant md {
+      width: 350px;
+      align-self: center;
     }
-  } 
- 
-  p {
-    @apply preset-8 text-[16px];
+  }
+
+  .social-icon {
+    width: 24px;
+    height: 24px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--color-gray700);
+    transition: background-color 0.3s ease;
+  }
+
+  .social-icon:hover,
+  .social-icon:focus {
+    background-color: var(--color-green500);
+  }
+
+  .icon-facebook {
+    mask-image: url('/images/icon-facebook.svg');
+  }
+  .icon-twitter {
+    mask-image: url('/images/icon-twitter.svg');
+  }
+  .icon-instagram {
+    mask-image: url('/images/icon-instagram.svg');
+  }
+
+  .nav-link {
+    @apply hover:text-green300 focus:text-green300;
   }
 }
