@@ -34,7 +34,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](https://snipboard.io/I0mZvj.jpg)
+<p align="center">
+  <img src="https://snipboard.io/I0mZvj.jpg" width="200" alt="Clipboard Landing Page">
+</p>
+
 
 
 
