@@ -21,12 +21,12 @@
 
     <main>
       <!--* Hero / Header -->
-      <header class="mx-auto mt-30.75 flex w-79.5 flex-col gap-16">
+      <header class="mx-auto mt-30.75 flex w-79.5 flex-col gap-16 md:mt-[131px] md:w-[616px] md:gap-[56px] xl:w-[730px]">
         <!-- Combined Shape -->
         <img src="images/logo.svg" alt="Clipboard logo" class="self-center" />
 
         <!-- Content Container -->
-        <section class="flex flex-col gap-14">
+        <section class="flex flex-col gap-14 md:gap-[48px]">
           <!-- Description Container -->
           <div class="flex flex-col gap-4">
             <h1 class="preset-4">A history of everything you copy</h1>
@@ -35,7 +35,7 @@
           </div>
 
           <!-- Download Buttons Container -->
-          <div class="flex flex-col gap-6">
+          <div class="flex flex-col gap-6 md:w-[470px] md:flex-row md:justify-center md:gap-4 md:self-center">
             <button type="button" class="btn bg-green500 hover:bg-green300">Download for iOS</button>
 
             <button type="button" class="btn bg-blue500 hover:bg-blue400">Download for Mac</button>
@@ -44,9 +44,9 @@
       </header>
 
       <!--* Section Container -->
-      <section class="mx-auto mt-39.5 flex w-78 flex-col gap-18">
+      <section class="mx-auto mt-39.5 flex w-78 flex-col gap-18 md:w-[616px] md:gap-[96px] xl:w-full">
         <!-- Description Container -->
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 xl:w-[730px] xl:mx-auto">
           <h2 class="preset-5">Keep track of your snippets</h2>
 
           <p class="preset-8">
@@ -55,89 +55,93 @@
         </div>
 
         <!-- Image Container -->
-        <div>
+        <div class="gap-[72px] md:gap-[96px] xl:flex-row  flex-col flex xl:gap-[72px] ">
+
           <img src="./images/image-computer.png" alt="Computer showing Clipboard app" />
-        </div>
 
-        <!-- Features Container -->
-        <div class="flex flex-col gap-14">
-          <!-- Feature -->
-          <div class="feature">
-            <h2>Quick Search</h2>
+          <!-- Features Container -->
+          <div class="flex flex-col gap-14 md:w-[350px] md:gap-[64px] md:self-center ">
+            <!-- Feature -->
+            <div class="feature">
+              <h2 class="preset-6">Quick Search</h2>
 
-            <p>Easily search your snippets by content, category, web address, application, and more.</p>
-          </div>
+              <p>Easily search your snippets by content, category, web address, application, and more.</p>
+            </div>
 
-          <!-- Feature -->
-          <div class="feature">
-            <h2>iCloud Sync</h2>
+            <!-- Feature -->
+            <div class="feature">
+              <h2 class="preset-6">iCloud Sync</h2>
 
-            <p>Instantly saves and syncs snippets across all your devices.</p>
-          </div>
+              <p>Instantly saves and syncs snippets across all your devices.</p>
+            </div>
 
-          <!-- Feature -->
-          <div class="feature">
-            <h2>Complete History</h2>
+            <!-- Feature -->
+            <div class="feature">
+              <h2 class="preset-6">Complete History</h2>
 
-            <p>Retrieve any snippets from the first moment you started using the app.</p>
+              <p>Retrieve any snippets from the first moment you started using the app.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <!--* Section Container -->
-      <section class="mx-auto mt-44.25 flex w-77.75 flex-col gap-18">
+      <section class="mx-auto mt-44.25 flex w-77.75 flex-col gap-18 md:w-[616px] md:gap-[80px] xl:w-[810px] xl:gap-[96px]">
+
         <!-- Description Container -->
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 xl:w-[730px] xl:self-center">
           <h2 class="preset-5">Access Clipboard everywhere</h2>
 
           <p class="preset-8">Whether you're on the go, or at your computer, you can access all your Clipboard snippets in a few simple clicks.</p>
         </div>
 
         <!-- Group 29 Copy 2 -->
-        <div>
-          <img src="./images/image-devices.png" alt="Devices showing Clipboard app" />
-        </div>
+      
+          <img src="./images/image-devices.png" alt="Devices showing Clipboard app" class="max-w-none w-[345px] self-center md:w-[680px] xl:w-[890px]"/>
+        
       </section>
 
       <!--* Section Container -->
-      <section class="mx-auto mt-32.25 flex w-77.75 flex-col gap-22">
+      <section class="mx-auto mt-32.25 flex w-77.75 flex-col gap-22 md:w-[616px] md:gap-[72px] xl:w-[1114px]">
+
         <!-- Description Container -->
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 xl:w-[730px] xl:self-center">
           <h2 class="preset-5">Supercharge your workflow</h2>
 
-          <p class="preset-8">We've got the tools to boost your productivity.</p>
+          <p class="preset-8 self-center">We've got the tools to boost your productivity.</p>
         </div>
 
         <!-- Features Container -->
-        <div class="flex flex-col gap-16">
+        <div class="flex flex-col gap-16 md:gap-[48px] xl:flex-row xl:gap-8">
+
           <!-- Feature -->
-          <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-10 xl:w-[350px]">
             <img src="./images/icon-blacklist.svg" alt="Blacklist icon" class="self-center" />
 
             <div class="feature gap-4">
-              <h3>Create blacklists</h3>
+              <h2 class="preset-6">Create blacklists</h2>
 
               <p>Ensure sensitive information never makes its way to your clipboard by excluding certain sources.</p>
             </div>
           </div>
 
           <!-- Feature -->
-          <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-10 xl:w-[350px]">
             <img src="./images/icon-text.svg" alt="Text icon" class="self-center" />
 
             <div class="feature gap-4">
-              <h3>Plain text snippets</h3>
+              <h2 class="preset-6">Plain text snippets</h2>
 
               <p>Remove unwanted formatting from copied text for a consistent look.</p>
             </div>
           </div>
 
           <!-- Feature -->
-          <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-10 xl:w-[350px]">
             <img src="images/icon-preview.svg" alt="Preview icon" class="self-center" />
 
             <div class="feature gap-4">
-              <h3>Sneak preview</h3>
+              <h2 class="preset-6">Sneak preview</h2>
 
               <p>Quick preview of all snippets on your Clipboard for easy access.</p>
             </div>
@@ -146,29 +150,39 @@
       </section>
 
       <!--* Logos Container -->
-      <section class="mx-auto mt-36.25 flex w-34.75 flex-col gap-14">
-        <img src="images/logo-google.png" alt="Google" class="h-10.25" />
-        <img src="images/logo-ibm.png" alt="IBM" class="h-15 w-30.25 self-center" />
-        <img src="images/logo-microsoft.png" alt="Microsoft" class="h-10 w-33.75 self-center" />
-        <img src="images/logo-hp.png" alt="HP" class="h-11.75 w-28.25 self-center" />
-        <img src="images/logo-vector-graphics.png" alt="Vector Graphics" class="h-6.25 w-26.25 self-center" />
+      <section class="mx-auto mt-36.25 flex w-34.75 flex-col gap-14 
+      md:w-[592px] md:grid md:grid-cols-6 md:gap-x-20 md:gap-y-14
+      xl:w-[1112px] xl:flex xl:flex-row xl:gap-[96px]">
+
+
+          <img src="images/logo-google.png" alt="Google" class="h-10.25 self-center
+          md:h-[45px] md:w-[152px] md:col-span-2" />
+          <img src="images/logo-ibm.png" alt="IBM" class="h-15 w-30.25 self-center
+           md:h-[66px] md:w-[132px] md:col-span-2 md:justify-self-center" />
+          <img src="images/logo-microsoft.png" alt="Microsoft" class="h-10 w-33.75 self-center
+           md:h-[42px] md:w-[147px] md:col-span-2" />
+          <img src="images/logo-hp.png" alt="HP" class="h-11.75 w-28.25 self-center
+           md:h-[52px] md:w-[124px] md:col-span-2 md:col-start-2 md:justify-self-end" />
+          <img src="images/logo-vector-graphics.png" alt="Vector Graphics" class="h-6.25 w-26.25 self-center 
+          md:h-[28px] md:w-[115px] md:col-span-2" />
+
       </section>
 
       <!--* Section Container -->
-      <section class="mx-auto mt-43 flex w-77.75 flex-col gap-14">
+      <section class="mx-auto mt-43 flex w-77.75 flex-col gap-14 md:w-[616px] xl:w-[730px]">
         <!-- Description Container -->
         <div class="flex flex-col gap-4">
-          <h2>
+          <h2 class="preset-5">
             Clipboard for iOS
-            <br />
+            <br class="md:hidden" />
             and Mac OS
           </h2>
 
-          <p class="w-76.25">Available for free on the App Store. Download for Mac or iOS, sync with iCloud and you're ready to start adding to your clipboard.</p>
+          <p class="w-76.25 md:w-full">Available for free on the App Store. Download for Mac or iOS, sync with iCloud and you're ready to start adding to your clipboard.</p>
         </div>
 
         <!-- Download Buttons Container -->
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-6 md:w-[470px] md:flex-row md:justify-center md:gap-4 md:self-center">
           <button type="button" class="btn bg-green500 hover:bg-green300">Download for iOS</button>
 
           <button type="button" class="btn bg-blue500 hover:bg-blue400">Download for Mac</button>
@@ -177,19 +191,20 @@
     </main>
 
     <!--* footer -->
-    <footer class="bg-gray50 mt-42 flex h-125 py-[55.5px]">
-      <div class="mx-auto flex w-40 flex-col gap-8">
+    <footer class="bg-gray50 mt-42 flex h-125 py-[55.5px] xl:h-[150px] xl:py-[41px]">
+
+      <div class="mx-auto flex w-40 flex-col gap-8 xl:w-[1110px] xl:flex-row xl:h-[68px] xl:justify-between">
         <img src="images/logo.svg" alt="Clipboard logo" class="size-13.75 self-center" />
 
-        <nav class="preset-7-regular flex flex-col items-center gap-6">
+        <nav class="preset-7-regular flex flex-col items-center gap-6 xl:w-[480px] xl:h-[68px] xl:grid xl:grid-cols-[104px_132px_116px] xl:gap-x-[64px] xl:gap-y-2 ">
           <a href="">FAQs</a>
-          <a href="">Contact Us</a>
+          <a href="" class="xl:row-start-2">Contact Us</a>
           <a href="">Privacy Policy</a>
-          <a href="">Press Kit</a>
+          <a href="" class="xl:col-start-2 xl:row-start-2">Press Kit</a>
           <a href="">Install Guide</a>
         </nav>
 
-        <nav class="flex gap-10" aria-label="Social media">
+        <nav class="flex gap-10 xl:w-[120px] xl:gap-6 xl:items-center" aria-label="Social media">
           <a href=""><img src="images/icon-facebook.svg" alt="Facebook" /></a>
           <a href=""><img src="images/icon-twitter.svg" alt="Twitter" /></a>
           <a href=""><img src="images/icon-instagram.svg" alt="Instagram" /></a>
