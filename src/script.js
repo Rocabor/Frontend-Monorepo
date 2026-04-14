@@ -198,6 +198,13 @@ const projects = [
     technologies: ['html', 'css', 'tailwind', 'vite'],
     difficulty: 'Newbie',
   },
+  {
+    href: './apps/newbie/faq-accordion/dist/index.html',
+    image: 'images/faq-accordion.jpg',
+    title: 'faq accordion',
+    technologies: ['html', 'css', 'tailwind', 'vite'],
+    difficulty: 'Newbie',
+  },
 
   // JUNIOR PROJECTS
   {
