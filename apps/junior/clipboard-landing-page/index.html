@@ -44,7 +44,7 @@
       </header>
 
       <!--* Section Container -->
-      <section class="mx-auto mt-39.5 flex w-78 flex-col gap-18 md:w-154 md:gap-24 xl:w-full">
+      <section class="mx-auto mt-39.5 flex w-78 flex-col gap-18 md:mt-37.5 md:w-154 md:gap-24 xl:w-full xl:gap-16">
         <!-- Description Container -->
         <div class="flex flex-col gap-4 xl:mx-auto xl:w-182.5">
           <h2 class="preset-5">Keep track of your snippets</h2>
@@ -62,21 +62,21 @@
           <div class="flex flex-col gap-14 md:w-87.5 md:gap-16 md:self-center">
             <!-- Feature -->
             <div class="feature">
-              <h2 class="preset-3">Quick Search</h2>
+              <h3 class="preset-3">Quick Search</h3>
 
               <p class="preset-2 xl:text-start">Easily search your snippets by content, category, web address, application, and more.</p>
             </div>
 
             <!-- Feature -->
             <div class="feature">
-              <h2 class="preset-3">iCloud Sync</h2>
+              <h3 class="preset-3">iCloud Sync</h3>
 
               <p class="preset-2 xl:text-start">Instantly saves and syncs snippets across all your devices.</p>
             </div>
 
             <!-- Feature -->
             <div class="feature">
-              <h2 class="preset-3">Complete History</h2>
+              <h3 class="preset-3">Complete History</h3>
 
               <p class="preset-2 xl:text-start">Retrieve any snippets from the first moment you started using the app.</p>
             </div>
@@ -85,7 +85,7 @@
       </section>
 
       <!--* Section Container -->
-      <section class="mx-auto mt-44.25 flex w-77.75 flex-col gap-18 md:w-154 md:gap-20 xl:w-202.5 xl:gap-24">
+      <section class="mx-auto mt-44.25 flex w-77.75 flex-col gap-18 md:mt-39.5 md:w-154 md:gap-20 xl:mt-37.5 xl:w-202.5 xl:gap-24">
         <!-- Description Container -->
         <div class="flex flex-col gap-4 xl:w-182.5 xl:self-center">
           <h2 class="preset-5">Access Clipboard everywhere</h2>
@@ -99,7 +99,7 @@
       </section>
 
       <!--* Section Container -->
-      <section class="mx-auto mt-32.25 flex w-77.75 flex-col gap-22 md:w-154 md:gap-18 xl:w-278.5">
+      <section class="mx-auto mt-32.25 flex w-77.75 flex-col gap-22 md:mt-38.25 md:w-154 md:gap-18 xl:mt-42.5 xl:w-278.5">
         <!-- Description Container -->
         <div class="flex flex-col gap-4 xl:w-182.5 xl:self-center">
           <h2 class="preset-5">Supercharge your workflow</h2>
@@ -145,7 +145,7 @@
       </section>
 
       <!--* Logos Container -->
-      <section class="mx-auto mt-36.25 flex w-34.75 flex-col gap-14 md:grid md:w-148 md:grid-cols-6 md:gap-x-20 md:gap-y-14 xl:flex xl:w-278 xl:flex-row xl:gap-24">
+      <section class="mx-auto mt-36.25 flex w-34.75 flex-col gap-14 md:mt-38.75 md:grid md:w-148 md:grid-cols-6 md:gap-x-20 md:gap-y-14 xl:mt-42.5 xl:flex xl:w-278 xl:flex-row xl:gap-24">
         <img src="images/logo-google.png" alt="Google" class="h-10.25 self-center md:col-span-2 md:h-11.25 md:w-38" />
         <img src="images/logo-ibm.png" alt="IBM" class="h-15 w-30.25 self-center md:col-span-2 md:h-16.5 md:w-33 md:justify-self-center" />
         <img src="images/logo-microsoft.png" alt="Microsoft" class="h-10 w-33.75 self-center md:col-span-2 md:h-10.5 md:w-36.75" />
@@ -154,7 +154,7 @@
       </section>
 
       <!--* Section Container -->
-      <section class="mx-auto mt-43 flex w-77.75 flex-col gap-14 md:w-154 xl:w-182.5">
+      <section class="mx-auto mt-43 flex w-77.75 flex-col gap-14 md:mt-38.5 md:w-154 md:gap-12 xl:mt-40 xl:w-182.5">
         <!-- Description Container -->
         <div class="flex flex-col gap-4">
           <h2 class="preset-5">
@@ -176,16 +176,31 @@
     </main>
 
     <!--* footer -->
-    <footer class="bg-gray50 mt-42 flex h-125 py-[55.5px] xl:h-37.5 xl:py-10.25">
+    <footer class="bg-gray50 mt-42 flex h-125 py-[55.5px] md:mt-38.25 xl:mt-36.75 xl:h-37.5 xl:py-10.25">
       <div class="mx-auto flex w-40 flex-col gap-8 xl:h-17 xl:w-277.5 xl:flex-row xl:gap-33.75">
         <img src="images/logo.svg" alt="Clipboard logo" class="size-13.75 self-center" />
 
-        <nav class="preset-7-regular flex flex-col items-center gap-6 xl:grid xl:h-17 xl:w-120 xl:grid-cols-[104px_132px_116px] xl:gap-x-16 xl:gap-y-2">
-          <a href="#!" class="nav-link justify-self-start">FAQs</a>
-          <a href="#!" class="nav-link xl:row-start-2">Contact Us</a>
-          <a href="#!" class="nav-link">Privacy Policy</a>
-          <a href="#!" class="nav-link xl:col-start-2 xl:row-start-2 xl:justify-self-start">Press Kit</a>
-          <a href="#!" class="nav-link">Install Guide</a>
+        <nav aria-label="Footer navigation">
+          <ul class="preset-7-regular flex flex-col items-center gap-6 xl:grid xl:h-auto xl:w-max xl:grid-cols-[104px_132px_116px] xl:grid-rows-2 xl:gap-x-16 xl:gap-y-2">
+            
+            <li class="xl:col-start-1 xl:row-start-1 justify-self-start">
+              <a href="#!" class="nav-link focus-visible:outline-2">FAQs</a>
+            </li>
+            <li class="xl:col-start-1 xl:row-start-2">
+              <a href="#!" class="nav-link focus-visible:outline-2">Contact Us</a>
+            </li>
+
+            <li class="xl:col-start-2 xl:row-start-1">
+              <a href="#!" class="nav-link focus-visible:outline-2">Privacy Policy</a>
+            </li>
+            <li class="xl:col-start-2 xl:row-start-2 justify-self-start">
+              <a href="#!" class="nav-link focus-visible:outline-2">Press Kit</a>
+            </li>
+
+            <li class="xl:col-start-3 xl:row-start-1">
+              <a href="#!" class="nav-link focus-visible:outline-2">Install Guide</a>
+            </li>
+          </ul>
         </nav>
 
         <nav class="flex gap-10 xl:ml-auto xl:w-30 xl:items-center xl:gap-6" aria-label="Social media links">
@@ -195,7 +210,7 @@
         </nav>
       </div>
 
-      <nav class="attribution">
+      <nav class="attribution" aria-label="Attribution credits">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>
         <span class="separator" aria-hidden="true">•</span>

@@ -41,8 +41,8 @@
   letter-spacing: -0.4px;
   line-height: 1.25;
   text-align: center;
-  color: var(--color-gray700); 
-  @variant xl{
+  color: var(--color-gray700);
+  @variant xl {
     text-align: start;
   }
 }
@@ -69,8 +69,7 @@
   letter-spacing: -0.4px;
   line-height: 1.25;
   text-align: center;
-  color: var(--color-gray700); 
-  
+  color: var(--color-gray700);
 }
 
 @utility preset-7 {
@@ -117,6 +116,11 @@
     cursor: pointer;
     flex-grow: 1;
     @apply preset-7;
+  }
+
+  .btn:focus-visible {
+    outline: 2px solid black; 
+    outline-offset: 3px; 
   }
 
   .feature {
