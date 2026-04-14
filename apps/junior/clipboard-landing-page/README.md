@@ -35,7 +35,7 @@ Users should be able to:
 ### Screenshot
 
 <p align="center">
-  <img src="https://snipboard.io/I0mZvj.jpg" width="200" alt="Clipboard Landing Page">
+  <img src="https://snipboard.io/I0mZvj.jpg" width="300" alt="Clipboard Landing Page">
 </p>
 
 
