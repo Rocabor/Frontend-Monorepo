@@ -1,1 +1,82 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    @apply font-worksans bg-purple100 relative flex min-h-dvh flex-col items-center;
+  }
+}
+
+@theme {
+  --color-purple950: #301534;
+  --color-purple600: #8b6990;
+  --color-purple100: #f8eeff;
+  --color-violet600: #ad28eb;
+  --shadow-boxshw: 0 32px 56px rgba(80, 0, 118, 0.1);
+
+  --font-worksans: 'Work Sans', sans-serif;
+}
+
+@utility preset-1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-purple950);
+}
+
+@layer components {
+  .bg-pattern {
+    @apply h-[232px] w-full bg-[url(/assets/images/background-pattern-mobile.svg)] bg-cover bg-center bg-no-repeat;
+  }
+  .card {
+    @apply shadow-boxshw flex max-w-[327px] -translate-y-[101.5px] flex-col gap-6 rounded-lg bg-white p-6;
+  }
+
+  .qtn-cont {
+    @apply flex items-center gap-6;
+  }
+
+  .qtn-cont.active:focus {
+    @apply text-purple600;
+  }
+
+  button {
+    @apply size-7.5 cursor-pointer bg-[url(/assets/images/icon-plus.svg)] bg-no-repeat;
+  }
+
+  button.active {
+    @apply bg-[url(/assets/images/icon-minus.svg)];
+  }
+
+  .question {
+    @apply text-purple950 w-[225px] text-[16px] font-semibold;
+  }
+
+  .question.viewed {
+    color: var(--color-violet600);
+  }
+
+  .answer {
+    @apply text-purple600 text-[14px] leading-normal font-normal;
+  }
+
+  hr {
+    @apply border-purple100 border;
+  }
+
+  .attribution {
+    font-size: clamp(0.81rem, calc(0.727rem + 0.364vw), 1rem);
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    inset-inline: 0;
+    padding-block: 5px;
+  }
+  .attribution a,
+  .year {
+    color: var(--color-violet600);
+    font-weight: 700;
+  }
+  .attribution a:hover {
+    color: var(--color-purple950);
+    font-weight: 700;
+  }
+}
