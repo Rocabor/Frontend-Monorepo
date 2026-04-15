@@ -202,7 +202,7 @@ const projects = [
     href: './apps/newbie/faq-accordion/dist/index.html',
     image: 'images/faq-accordion.jpg',
     title: 'faq accordion',
-    technologies: ['html', 'css', 'tailwind', 'vite'],
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
     difficulty: 'Newbie',
   },
 
