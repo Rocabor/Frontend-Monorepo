@@ -17,21 +17,31 @@
 }
 
 @utility preset-1 {
-  font-size: 32px;
+  font-size: clamp(2rem, calc(0.569rem + 6.107vw), 3.5rem);
+  line-height: 1.19;
   font-weight: 700;
   color: var(--color-purple950);
 }
 
 @layer components {
   .bg-pattern {
-    @apply h-[232px] w-full bg-[url(/assets/images/background-pattern-mobile.svg)] bg-cover bg-center bg-no-repeat;
+    @apply h-58 w-full bg-[url(/assets/images/background-pattern-mobile.svg)] bg-cover bg-center bg-no-repeat;
+    @variant md {
+      @apply h-80 bg-[url(/assets/images/background-pattern-desktop.svg)];
+    }
   }
   .card {
-    @apply shadow-boxshw flex max-w-[327px] -translate-y-[101.5px] flex-col gap-6 rounded-lg bg-white p-6;
+    @apply shadow-boxshw flex max-w-81.75 -translate-y-[101.5px] flex-col gap-6 rounded-lg bg-white p-6;
+    @variant md {
+      @apply max-w-150 -translate-y-[152.5px] gap-8 rounded-2xl p-10;
+    }
   }
 
   .qtn-cont {
     @apply flex items-center gap-6;
+    @variant md {
+      @apply w-130;
+    }
   }
 
   .qtn-cont.active:focus {
@@ -42,12 +52,27 @@
     @apply size-7.5 cursor-pointer bg-[url(/assets/images/icon-plus.svg)] bg-no-repeat;
   }
 
+  button:focus-visible {
+    outline: 2px solid var(--color-violet600);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--color-violet600);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
   button.active {
     @apply bg-[url(/assets/images/icon-minus.svg)];
   }
 
   .question {
-    @apply text-purple950 w-[225px] text-[16px] font-semibold;
+    @apply text-purple950 w-56.25 text-[16px] font-semibold;
+    @variant md {
+      @apply w-112.25 text-[18px];
+    }
   }
 
   .question.viewed {
@@ -56,6 +81,9 @@
 
   .answer {
     @apply text-purple600 text-[14px] leading-normal font-normal;
+    @variant md {
+      @apply text-[16px];
+    }
   }
 
   hr {
@@ -73,10 +101,6 @@
   .attribution a,
   .year {
     color: var(--color-violet600);
-    font-weight: 700;
-  }
-  .attribution a:hover {
-    color: var(--color-purple950);
     font-weight: 700;
   }
 }
