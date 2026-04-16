@@ -31,21 +31,17 @@
     }
   }
   .card {
-    @apply shadow-boxshw flex max-w-81.75 -translate-y-[101.5px] flex-col gap-6 rounded-lg bg-white p-6;
+    @apply shadow-boxshw flex max-w-81.75 -translate-y-[6.34rem] flex-col gap-6 rounded-lg bg-white p-6;
     @variant md {
-      @apply max-w-150 -translate-y-[152.5px] gap-8 rounded-2xl p-10;
+      @apply max-w-150 -translate-y-[9.53rem] gap-8 rounded-2xl p-10;
     }
   }
 
-  .qtn-cont {
+  .faq-item {
     @apply flex items-center gap-6;
     @variant md {
       @apply w-130;
     }
-  }
-
-  .qtn-cont.active:focus {
-    @apply text-purple600;
   }
 
   button {
@@ -53,15 +49,15 @@
   }
 
   button:focus-visible {
-    outline: 2px solid var(--color-violet600);
-    outline-offset: 2px;
-    border-radius: 4px;
+    outline: 0.125rem solid var(--color-violet600);
+    outline-offset: 0.125rem;
+    border-radius: 0.25rem;
   }
 
   a:focus-visible {
-    outline: 2px solid var(--color-violet600);
-    outline-offset: 2px;
-    border-radius: 4px;
+    outline: 0.125rem solid var(--color-violet600);
+    outline-offset: 0.125rem;
+    border-radius: 0.25rem;
   }
 
   button.active {
@@ -69,9 +65,9 @@
   }
 
   .question {
-    @apply text-purple950 w-56.25 text-[16px] font-semibold;
+    @apply text-purple950 w-56.25 text-[1rem] font-semibold;
     @variant md {
-      @apply w-112.25 text-[18px];
+      @apply w-112.25 text-[1.125rem];
     }
   }
 
@@ -80,9 +76,9 @@
   }
 
   .answer {
-    @apply text-purple600 text-[14px] leading-normal font-normal;
+    @apply text-purple600 text-[0.875rem] leading-normal font-normal;
     @variant md {
-      @apply text-[16px];
+      @apply text-[1rem];
     }
   }
 
@@ -96,7 +92,7 @@
     position: absolute;
     bottom: 0;
     inset-inline: 0;
-    padding-block: 5px;
+    padding-block: 0.3125rem;
   }
   .attribution a,
   .year {

@@ -1,4 +1,4 @@
-const accordionButtons = document.querySelectorAll('.qtn-cont button');
+const accordionButtons = document.querySelectorAll('.faq-item button');
 
 accordionButtons.forEach((button) => {
   button.addEventListener('click', toggleAccordion);
