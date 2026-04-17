@@ -3,15 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="src/style.css" />
     <script type="module" src="src/main.js"></script>
-
     <title>Frontend Mentor | FAQ accordion</title>
   </head>
   <body>
@@ -23,65 +20,62 @@
         <h1 class="preset-1">FAQs</h1>
       </div>
 
-      <!--* FAQ List -->
       <section aria-label="FAQs">
-        <!-- FAQ Item -->
         <div class="flex flex-col gap-6">
           
-          <!-- Question Container 1 -->
           <article class="faq-item">
-            <h2 id="question-1" class="question">What is Frontend Mentor, and how will it help me?</h2>
-            <button type="button" aria-expanded="false" aria-controls="answer-1" aria-labelledby="question-1"><span class="sr-only">Show answer</span></button>
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="answer-1">
+              <span class="question">What is Frontend Mentor, and how will it help me?</span>
+              <span class="icon"></span>
+            </button>
+            <p id="answer-1" class="answer" hidden>
+              Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.
+            </p>
           </article>
-          <p id="answer-1" class="answer" hidden>
-            Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.
-          </p>
 
           <hr />
 
-          <!-- Question Container 2 -->
           <article class="faq-item">
-            <h2 id="question-2" class="question">Is Frontend Mentor free?</h2>
-            <button type="button" aria-expanded="false" aria-controls="answer-2" aria-labelledby="question-2"><span class="sr-only">Show answer</span></button>
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="answer-2">
+              <span class="question">Is Frontend Mentor free?</span>
+              <span class="icon"></span>
+            </button>
+            <p id="answer-2" class="answer" hidden>
+              Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels.
+            </p>
           </article>
-          <p id="answer-2" class="answer" hidden>
-            Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels.
-          </p>
 
           <hr />
 
-          <!-- Question Container 3 -->
           <article class="faq-item">
-            <h2 id="question-3" class="question">Can I use Frontend Mentor projects in my portfolio?</h2>
-            <button type="button" aria-expanded="false" aria-controls="answer-3" aria-labelledby="question-3"><span class="sr-only">Show answer</span></button>
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="answer-3">
+              <span class="question">Can I use Frontend Mentor projects in my portfolio?</span>
+              <span class="icon"></span>
+            </button>
+            <p id="answer-3" class="answer" hidden>Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!</p>
           </article>
-          <p id="answer-3" class="answer" hidden>Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!</p>
 
           <hr />
 
-          <!-- Question Container 4 -->
           <article class="faq-item">
-            <h2 id="question-4" class="question">How can I get help if I'm stuck on a Frontend Mentor challenge?</h2>
-            <button type="button" aria-expanded="false" aria-controls="answer-4" aria-labelledby="question-4"><span class="sr-only">Show answer</span></button>
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="answer-4">
+              <span class="question">How can I get help if I'm stuck on a challenge?</span>
+              <span class="icon"></span>
+            </button>
+            <p id="answer-4" class="answer" hidden>
+              The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members.
+            </p>
           </article>
-          <p id="answer-4" class="answer" hidden>
-            The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members.
-          </p>
         </div>
       </section>
     </main>
 
     <footer>
       <nav class="attribution" aria-label="Attribution credits">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>
-        <span class="separator" aria-hidden="true">•</span>
-        Coded by
-        <a href="https://www.frontendmentor.io/profile/Rocabor" target="_blank" rel="noopener noreferrer">@Rocabor</a>
-        <span class="year" aria-label="2026">2026</span>
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a> 
+        • Coded by <a href="https://www.frontendmentor.io/profile/Rocabor">@Rocabor</a>
+        <span class="year">2026</span>
       </nav>
     </footer>
   </body>
 </html>
-
-

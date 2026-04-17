@@ -1,38 +1,29 @@
-const accordionButtons = document.querySelectorAll('.faq-item button');
+const accordionButtons = document.querySelectorAll('.faq-question-btn');
 
 accordionButtons.forEach((button) => {
-  button.addEventListener('click', toggleAccordion);
-});
+  button.addEventListener('click', () => {
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    const contentId = button.getAttribute('aria-controls');
+    const content = document.getElementById(contentId);
+    const questionText = button.querySelector('.question');
 
-function toggleAccordion() {
-  const button = this;
-  const contentId = button.getAttribute('aria-controls');
-  const content = document.getElementById(contentId);
-  const question = button.parentElement.querySelector('h2');
+    // 1. Cerrar todos los demás acordeones
+    accordionButtons.forEach((otherButton) => {
+      if (otherButton !== button) {
+        otherButton.setAttribute('aria-expanded', 'false');
+        const otherContent = document.getElementById(otherButton.getAttribute('aria-controls'));
+        otherContent.hidden = true;
+      }
+    });
 
-  accordionButtons.forEach((otherButton) => {
-    if (otherButton !== button) {
-      const otherContentId = otherButton.getAttribute('aria-controls');
-      const otherContent = document.getElementById(otherContentId);
+    // 2. Alternar el estado del actual
+    const newState = !isExpanded;
+    button.setAttribute('aria-expanded', newState.toString());
+    content.hidden = !newState;
 
-      otherButton.setAttribute('aria-expanded', 'false');
-      otherButton.classList.remove('active');
-      otherContent.hidden = true;
+    // 3. Efecto visual de "leído"
+    if (newState) {
+      questionText.classList.add('viewed');
     }
   });
-
-  const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-  const newState = !isExpanded;
-
-  button.setAttribute('aria-expanded', newState.toString());
-
-  content.hidden = !newState;
-
-  button.classList.toggle('active');
-
-  if (!isExpanded) {
-    question.classList.add('viewed');
-  }
-}
-
+});
