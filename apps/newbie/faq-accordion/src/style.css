@@ -13,6 +13,13 @@
   --color-violet600: #ad28eb;
   --shadow-boxshw: 0 32px 56px rgba(80, 0, 118, 0.1);
   --font-worksans: 'Work Sans', sans-serif;
+
+  /* DESIGN TOKENS */
+  --spacing-card-max-width-mobile: 20.4375rem; 
+  --spacing-card-max-width-desktop: 37.5rem;   
+  --spacing-card-offset-mobile: -6.34rem;
+  --spacing-card-offset-desktop: -9.53rem;
+  --spacing-faq-width-desktop: 32.5rem;        
 }
 
 @utility preset-1 {
@@ -29,13 +36,20 @@
   }
 
   .card {
-    @apply shadow-boxshw flex max-w-81.75 -translate-y-[6.34rem] flex-col gap-6 rounded-lg bg-white p-6;
-    @variant md { @apply max-w-150 -translate-y-[9.53rem] gap-8 rounded-2xl p-10; }
+    @apply shadow-boxshw flex flex-col gap-6 rounded-lg bg-white p-6;
+    max-width: var(--spacing-card-max-width-mobile);
+    transform: translateY(var(--spacing-card-offset-mobile));
+
+    @variant md {
+      @apply gap-8 rounded-2xl p-10;
+      max-width: var(--spacing-card-max-width-desktop);
+      transform: translateY(var(--spacing-card-offset-desktop));
+    }
   }
 
   .faq-item {
     @apply flex flex-col gap-4;
-    @variant md { @apply w-130; }
+    @variant md { width: var(--spacing-faq-width-desktop); }
   }
 
   .faq-question-btn {
@@ -47,25 +61,22 @@
   }
 
   .faq-question-btn:focus-visible {
-    outline: 2px solid var(--color-violet600);
-    outline-offset: 4px;
-    border-radius: 4px;
+    @apply outline-violet600 rounded-[4px] outline-2 outline-offset-4;
   }
 
   .question {
-    @apply text-purple950 w-5/6 text-[1rem] font-semibold leading-tight transition-colors;
+    @apply text-purple950 text-[1rem] font-semibold leading-tight transition-colors;
     @variant md { @apply text-[1.125rem]; }
   }
 
-  /* Estado del título cuando ya fue abierto */
-  .question.viewed {
-    @apply text-violet600;
-  }
+  .question.viewed { @apply text-violet600; }
 
+  /* Icono como Imagen de Fondo Estándar */
   .icon {
     @apply size-7.5 shrink-0 bg-[url(/assets/images/icon-plus.svg)] bg-no-repeat bg-contain transition-all;
   }
 
+  /* Cambio de fondo mediante atributo ARIA */
   .faq-question-btn[aria-expanded="true"] .icon {
     @apply bg-[url(/assets/images/icon-minus.svg)];
   }
@@ -78,7 +89,7 @@
   hr { @apply border-purple100 border; }
 
   .attribution {
-    @apply absolute bottom-0 inset-x-0 py-2 text-center text-[0.813rem];
+    @apply absolute bottom-0 inset-x-0 py-2 text-center text-[0.85rem];
   }
   .attribution a, .year { @apply text-violet600 font-bold; }
 }
