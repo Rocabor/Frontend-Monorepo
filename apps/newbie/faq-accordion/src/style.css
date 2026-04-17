@@ -61,7 +61,7 @@
   }
 
   .faq-question-btn:focus-visible {
-    @apply outline-violet600 rounded-[4px] outline-2 outline-offset-4;
+    @apply outline-violet600 rounded-sm outline-2 outline-offset-4;
   }
 
   .question {
