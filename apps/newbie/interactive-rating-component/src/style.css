@@ -1,1 +1,88 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    @apply font-overpass bg-grey950 flex min-h-dvh flex-col items-center justify-center text-white;
+  }
+}
+
+@theme {
+  --color-orange500: #fc7614;
+  --color-grey500: #969fad;
+  --color-grey900: #262e38;
+  --color-grey950: #131518;
+  --gradient-card: radial-gradient(circle at 50% 0%, #232a34 0%, #181e27 100%);
+
+  --font-overpass: 'Overpass', sans-serif;
+}
+
+@utility preset-1 {
+  font-size: clamp(1.5rem, calc(1.261rem + 1.018vw), 1.75rem);
+  line-height: 1.25;
+  font-weight: 700;
+}
+@utility preset-2 {
+  font-size: clamp(0.88rem, calc(0.815rem + 0.254vw), 0.94rem);
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-grey500);
+}
+@utility preset-3 {
+  font-size: clamp(0.88rem, calc(0.756rem + 0.509vw), 1rem);
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--color-grey500);
+  letter-spacing: 1.87px;
+}
+@utility preset-4 {
+  font-size: clamp(1.5rem, calc(1.261rem + 1.018vw), 1.75rem);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+@layer components {
+  .card {
+    background: var(--gradient-card);
+    @apply max-w-81.75 rounded-[15px] px-6 py-[28.5px] md:max-w-103 md:py-[34.5px];
+  }
+  .icon-cont {
+    @apply bg-grey900 grid size-10 place-items-center rounded-full p-3.5 md:size-12;
+  }
+  .card-cont {
+    @apply flex flex-col gap-6 md:gap-8;
+  }
+
+  .text-cont {
+    @apply flex flex-col gap-4;
+  }
+  .rating-cont {
+    @apply flex justify-center gap-4;
+  }
+  .rating-cont > * {
+    @apply bg-grey900 preset-3 hover:text-grey900 size-10.5 cursor-pointer rounded-full transition-all hover:bg-white focus-visible:ring-2 focus-visible:ring-white md:size-12.75;
+  }
+  .rating-btn.selected {
+    @apply bg-orange500 text-grey900;
+  }
+  .submit-btn {
+    @apply bg-orange500 text-grey950 preset-3 h-11.25 cursor-pointer rounded-[22.5px] px-26 py-4 uppercase transition-all hover:bg-white focus-visible:ring-2 focus-visible:ring-white active:scale-95;
+  }
+
+  /** Mobile - Thanks */
+  .card-cont-thank {
+    @apply flex max-w-69.75 flex-col items-center gap-6 md:mx-6 md:my-2.5 md:max-w-85 md:gap-8;
+  }
+  .card-cont-thank img {
+    @apply h-24 w-36 self-center md:h-27 md:w-40.5;
+  }
+
+  .attribution {
+    font-size: clamp(0.81rem, calc(0.634rem + 0.763vw), 1.00rem);
+    @apply absolute bottom-0 inset-x-0 py-2 text-center;
+  }
+  .attribution a, .year { 
+    @apply text-orange500 font-bold hover:text-grey500 transition-all focus-visible:ring-2 focus-visible:ring-white; 
+  }
+
+}
+
