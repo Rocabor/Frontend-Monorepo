@@ -1,8 +1,3 @@
-import { defineConfig } from 'vite'
+import baseConfig from '@turborepo/vite-config'
 
-export default defineConfig({
-  base:'./',
-   build: {
-    outDir: 'dist', // Asegúrate de que esto sea 'dist'
-  }
-})
+export default baseConfig

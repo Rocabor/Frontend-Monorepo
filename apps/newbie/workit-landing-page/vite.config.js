@@ -1,10 +1,7 @@
-import { defineConfig } from 'vite';
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite'
+import baseConfig from '@turborepo/vite-config'
 
-export default defineConfig({
+export default {
+  ...baseConfig,
   plugins: [tailwindcss()],
-  base: './',
-  build: {
-    outDir: 'dist', // Asegúrate de que esto sea 'dist'
-  },
-});
+}

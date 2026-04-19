@@ -1,0 +1,12 @@
+{
+  "name": "@turborepo/vite-config",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "peerDependencies": {
+    "vite": "^6.0.0"
+  }
+}

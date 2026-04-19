@@ -30,11 +30,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Restore Turbo Cache
+      - name: Cache Turbo
         uses: actions/cache@v4
         with:
           path: .turbo
-          key: turbo-${{ github.sha }}
+          key: turbo-${{ hashFiles('pnpm-lock.yaml', 'turbo.json') }}
           restore-keys: |
             turbo-
 

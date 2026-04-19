@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@turborepo/vite-config": "workspace:*",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "vite": "^8.0.4"
@@ -18,3 +19,5 @@
     "tailwindcss": "^4.2.2"
   }
 }
+
+
