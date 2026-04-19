@@ -11,4 +11,9 @@ export function baseConfig(plugins: Plugin[] = []): UserConfig {
   }
 }
 
-export default defineConfig(baseConfig())
+export default defineConfig({
+  base: './',
+  build: {
+    outDir: 'dist',
+  },
+})
