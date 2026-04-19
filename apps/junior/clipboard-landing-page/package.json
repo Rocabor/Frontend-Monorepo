@@ -9,6 +9,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@iconify/tailwind4": "^1.0.0",
     "@tailwindcss/vite": "^4.2.2",
     "tailwindcss": "^4.2.2"
   },
