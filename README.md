@@ -200,6 +200,7 @@ All projects have live demos, so you can see them running without any local setu
 | 18 | **Workit landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/workit-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/workit-landing-page) |
 | 19 | **Skilled e-learning landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/skilled-elearning-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/skilled-elearning-landing-page) |
 | 20 | **FAQ accordion** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/faq-accordion/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/faq-accordion) |
+| 21 | **Interactive rating component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/interactive-rating-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/interactive-rating-component) |
 
 
 ---

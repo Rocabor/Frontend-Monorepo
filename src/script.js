@@ -205,6 +205,13 @@ const projects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
     difficulty: 'Newbie',
   },
+  {
+    href: './apps/newbie/interactive-rating-component/dist/index.html',
+    image: 'images/interactive-rating-component.jpg',
+    title: 'interactive rating component',
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
+    difficulty: 'Newbie',
+  },
 
   // JUNIOR PROJECTS
   {
