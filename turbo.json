@@ -5,11 +5,11 @@
       "dependsOn": ["^build"],
       "inputs": ["$ turbo.json", "apps/**", "packages/**", "src/**", "index.html"],
       "outputs": ["dist/**"],
-      "cache": true
+      "cache": false
     },
     "check-types": {
       "dependsOn": ["^check-types"],
-      "cache": true
+      "cache": false
     },
     "dev": {
       "persistent": true,
