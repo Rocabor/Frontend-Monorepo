@@ -260,14 +260,14 @@ const projects = [
     href: './apps/junior/fylo-data-storage-component/dist/index.html',
     image: 'images/fylo-data-storage-component.jpg',
     title: 'fylo data storage component',
-    technologies: ['html', 'css', 'js'],
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
     difficulty: 'Junior',
   },
   {
     href: './apps/junior/clipboard-landing-page/dist/index.html',
     image: 'images/clipboard-landing-page.jpg',
     title: 'clipboard landing page',
-    technologies: ['html', 'css', 'js'],
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
     difficulty: 'Junior',
   },
 
