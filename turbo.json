@@ -1,19 +1,10 @@
 {
-  "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["$ turbo.json", "apps/**", "packages/**", "src/**", "index.html"],
-      "outputs": ["dist/**"],
-      "cache": false
-    },
-    "check-types": {
-      "dependsOn": ["^check-types"],
-      "cache": false
+      "outputs": ["dist/**"]
     },
     "dev": {
-      "persistent": true,
-      "cache": false
+      "persistent": true
     }
   }
 }
