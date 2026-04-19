@@ -1,8 +1,9 @@
 {
   "name": "four-card-feature-section",
-  "private":true,
+  "private": true,
   "version": "1.0.0",
-  "packageManager": "pnpm@10.33.0",  
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
@@ -10,8 +11,5 @@
   "devDependencies": {
     "@turborepo/vite-config": "workspace:*",
     "vite": "latest"
-  }  
+  }
 }
-
-
-

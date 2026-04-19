@@ -1,21 +1,15 @@
 {
-  "name": "results-summary-component",
+  "name": "result-summary-component",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "vite build"
   },
   "devDependencies": {
     "@turborepo/vite-config": "workspace:*",
-    "vite": "^8.0.0"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.2.2",
-    "tailwindcss": "^4.2.2"
+    "vite": "latest"
   }
 }
-
-

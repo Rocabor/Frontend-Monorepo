@@ -1,12 +1,15 @@
 {
-  "name": "@turborepo/vite-config",
-  "version": "1.0.0",
+  "name": "vite-config",
   "private": true,
+  "version": "1.0.0",
   "type": "module",
-  "exports": {
-    ".": "./index.ts"
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
   },
-  "peerDependencies": {
-    "vite": "^6.0.0"
+  "devDependencies": {
+    "@turborepo/vite-config": "workspace:*",
+    "vite": "latest"
   }
 }
