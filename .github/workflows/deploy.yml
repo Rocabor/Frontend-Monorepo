@@ -20,16 +20,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: "pnpm"
 
       - run: pnpm install --frozen-lockfile
 
-      - run: |
-          for dir in apps/*/*/; do
-            if [ -f "$dir/package.json" ]; then
-              echo "Building $dir..."
-              (cd "$dir" && pnpm build)
-            fi
-          done
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: turbo-${{ hashFiles('pnpm-lock.yaml', 'turbo.json') }}
+          restore-keys: |
+            turbo-
+
+      - run: pnpm build
 
       - uses: actions/configure-pages@v4
 
