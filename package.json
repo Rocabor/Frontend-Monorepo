@@ -10,7 +10,7 @@
     "clean": "Get-ChildItem -Path '.' -Include 'node_modules' -Recurse -Directory | Remove-Item -Recurse -Force; pnpm store prune; pnpm install"
   },
   "devDependencies": {
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.3",
     "turbo": "^2.9.6",
     "typescript": "5.9.2"
   },
