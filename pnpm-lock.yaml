@@ -17,6 +17,9 @@ importers:
       typescript:
         specifier: 5.9.2
         version: 5.9.2
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@22.15.3)(esbuild@0.27.3)(jiti@2.6.1)
 
   apps/intermediate/password-generator-app:
     devDependencies:
