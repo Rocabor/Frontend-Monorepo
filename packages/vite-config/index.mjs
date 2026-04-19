@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
-import type { UserConfig, Plugin } from 'vite'
 
-export function baseConfig(plugins: Plugin[] = []): UserConfig {
+export function baseConfig(plugins = []) {
   return {
     base: './',
     build: {
