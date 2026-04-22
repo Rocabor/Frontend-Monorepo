@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    font-family: var(--font-chivo);
+    background-color: var(--color-blue950);
+    color: white;
+    padding-block: 36px;
+    background: linear-gradient(rgba(18, 23, 37, 0.9), rgba(18, 23, 37, 0.9)), url('/assets/mobile/image-host.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@theme {
+  --color-green: #54e6af;
+  --color-blue950: #121725;
+  --color-blue900: #2c344b;
+  --color-red: #fb3e3e;
+  --color-blue600: #5a668a;
+  --color-blue300: #c2cbe5;
+
+  --font-chivo: 'Chivo', sans-serif;
+}
+
+@utility preset-1 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 300;
+  text-align: center;
+}
+@utility preset-2 {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 300;
+  text-align: center;
+  color: var(--color-blue300);
+}
+@utility preset-3 {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-blue950);
+}
+
+@layer components {
+  header {
+    width: 100%;
+    max-width: 303px;
+    height: 222.5px;
+    padding-bottom: 56px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+  }
+
+  main {
+    width: 100%;
+    max-width: 303px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 110.5px;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  form input,
+  form button {
+    height: 44px;
+    border-radius: 28px;
+    padding: 0 32px;
+    transition: all 0.3s ease;
+  }
+  form button:hover {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+    linear-gradient(rgba(84, 230, 175, 1), rgba(84, 230, 175, 1));
+  }
+  
+  form input:focus-visible,
+  form button:focus-visible {
+    outline: 2px solid red;
+    outline-offset: 2px;
+  }
+}
