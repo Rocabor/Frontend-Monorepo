@@ -212,6 +212,13 @@ const projects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
     difficulty: 'Newbie',
   },
+  {
+    href: './apps/newbie/pod-request-access-landing-page/dist/index.html',
+    image: 'images/pod-request-access-landing-page.jpg',
+    title: 'pod request access landing page',
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
+    difficulty: 'Newbie',
+  },
 
   // JUNIOR PROJECTS
   {
