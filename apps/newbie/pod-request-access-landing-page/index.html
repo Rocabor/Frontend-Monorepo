@@ -20,29 +20,37 @@
     </header>
 
     <main>
-      <div class="text">
+      <section class="text">
         <h1 class="preset-1">
           <span class="text-green">Publish your podcasts</span>
           everywhere.
         </h1>
         <p class="preset-2">Upload your audio to Pod with a single click. We'll <br class="hidden md:inline">then distribute your podcast to Spotify, Apple<br class="hidden md:inline">Podcasts, Google Podcasts, Pocket Casts and more!</p>
-      </div>
+      </section>
 
-      <div class="logos">
-        <img src="assets/desktop/spotify.svg" alt="" class="h-4.25 w-14 md:w-24 md:h-7.25" />
-        <img src="assets/desktop/apple-podcast.svg" alt="" class="h-4.25 w-11.25 md:w-19.5 md:h-7.25" />
-        <img src="assets/desktop/google-podcasts.svg" alt="" class="h-2.75 w-18.25 md:w-31.25 md:h-[17.5px]" />
-        <img src="assets/desktop/pocket-casts.svg" alt="" class="h-3.75 w-19 md:w-32.25 md:h-6.5" />
-      </div>
+      <section class="logos" aria-label="Available Platforms">
+        <img src="assets/desktop/spotify.svg" alt="Available on spotify" class="h-4.25 w-14 md:w-24 md:h-7.25" />
+        <img src="assets/desktop/apple-podcast.svg" alt="Available on apple-podcast" class="h-4.25 w-11.25 md:w-19.5 md:h-7.25" />
+        <img src="assets/desktop/google-podcasts.svg" alt="Available on google-podcasts" class="h-2.75 w-18.25 md:w-31.25 md:h-[17.5px]" />
+        <img src="assets/desktop/pocket-casts.svg" alt="Available on pocket-casts" class="h-3.75 w-19 md:w-32.25 md:h-6.5" />
+      </section>
 
       <form class="form" novalidate>
         <label for="email" class="sr-only">Email address</label>
-        <input id="email" type="text" placeholder="Email address" name="email" aria-invalid="false" class="bg-blue900 cursor-text" />
+        <input id="email" type="email" placeholder="Email address" name="email" aria-invalid="false" aria-describedby="email-error"  class="bg-blue900 cursor-text" />
         
         <button type="submit" class="bg-green preset-3 active:scale-95 cursor-pointer hover:bg-hover">Request access</button>
-        <span class="message hidden"></span>
+        <span class="message hidden" id="email-error"></span>
       </form>
       
     </main>
+
+    <footer>
+      <nav class="attribution" aria-label="Attribution credits">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a> 
+        • Coded by <a href="https://www.frontendmentor.io/profile/Rocabor">@Rocabor</a>
+        <span class="year">2026</span>
+      </nav>
+    </footer>
   </body>
 </html>

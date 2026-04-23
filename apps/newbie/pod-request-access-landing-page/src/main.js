@@ -2,43 +2,43 @@ const form = document.querySelector('.form');
 const input = document.querySelector('#email');
 const message = document.querySelector('.message');
 
+function showError(text) {
+  message.textContent = text;
+  message.className = 'message error';
+  message.classList.remove('hidden');
+  input.setAttribute('aria-invalid', 'true');
+}
+
+function showSuccess(text) {
+  message.textContent = text;
+  message.className = 'message success';
+  message.classList.remove('hidden');
+  input.setAttribute('aria-invalid', 'false');
+}
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const email = input.value.trim();
 
   if (!email) {
-    message.textContent = 'Oops! Please add your email';
-    message.className = 'message error';
-    message.classList.remove('hidden');
-    input.setAttribute('aria-invalid', 'true');
+    showError('Oops! Please add your email');
     return;
   }
 
-  if (!isValidEmail(email)) {
-    message.textContent = 'Oops! Please check your email';
-    message.className = 'message error';
-    message.classList.remove('hidden');
-    input.setAttribute('aria-invalid', 'true');
+  if (!input.checkValidity()) {
+    showError('Oops! Please check your email');
     return;
   }
 
-  message.textContent = 'Thanks! We\'ll be in touch soon.';
-  message.className = 'message success';
-  message.classList.remove('hidden');
-  input.setAttribute('aria-invalid', 'false');
-
+  showSuccess("Thanks! We'll be in touch soon.");
   input.value = '';
 });
 
-function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
-
 input.addEventListener('input', () => {
-  if (message.classList.contains('error')) {
+  if (!message.classList.contains('hidden')) {
     message.classList.add('hidden');
+    message.textContent = '';
     input.setAttribute('aria-invalid', 'false');
   }
 });
