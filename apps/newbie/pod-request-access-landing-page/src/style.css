@@ -15,6 +15,31 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    @variant md {
+      background-color: var(--color-blue950);
+      background-image: url('/assets/desktop/bg-pattern-dots.svg'), url('/assets/tablet/image-host.jpg');
+      background-size:
+        232px 184px,
+        auto 868px;
+      background-position:
+        bottom 65px right -127px,
+        140% 0%;
+      align-items: start;
+      padding-left: 44px;
+      padding-block: 156px;
+    }
+    @variant xl {
+      background-image: url('/assets/desktop/bg-pattern-dots.svg'), url('/assets/desktop/image-host.jpg');
+      background-size:
+        232px 104px,
+        960px 654px;
+      background-position:
+        bottom 100px right,
+        center right;
+      align-items: start;
+      padding-left: 160px;
+      padding-block: 153px;
+    }
   }
 }
 
@@ -25,22 +50,30 @@
   --color-red: #fb3e3e;
   --color-blue600: #5a668a;
   --color-blue300: #c2cbe5;
+  --color-hover: #aaf3d7;
 
   --font-chivo: 'Chivo', sans-serif;
 }
 
 @utility preset-1 {
-  font-size: 32px;
+  font-size: clamp(2rem, calc(1.046rem + 4.071vw), 3rem);
   line-height: 1.2;
   font-weight: 300;
   text-align: center;
+  text-transform: uppercase;
+  @variant md {
+    text-align: start;
+  }
 }
 @utility preset-2 {
-  font-size: 14px;
+  font-size: clamp(0.88rem, calc(0.636rem + 1.018vw), 1.13rem);
   line-height: 1.5;
   font-weight: 300;
   text-align: center;
   color: var(--color-blue300);
+  @variant md {
+    text-align: start;
+  }
 }
 @utility preset-3 {
   font-size: 14px;
@@ -59,6 +92,17 @@
     display: flex;
     align-items: end;
     justify-content: center;
+    @variant md {
+      max-width: 592px;
+      height: 160px;
+      padding-bottom: 104px;
+      justify-content: start;
+    }
+    @variant xl {
+      max-width: 736px;
+      height: 160px;
+      padding-bottom: 80px;
+    }
   }
 
   main {
@@ -68,21 +112,46 @@
     flex-direction: column;
     gap: 40px;
     padding-bottom: 110.5px;
+    @variant md {
+      background-color: var(--color-blue950);
+      max-width: 592px;
+      padding-top: 88px;
+      padding-right: 64px;
+      padding-bottom: 0;
+    }
+    @variant xl {
+      max-width: 736px;
+    }
   }
   .text {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    @variant md {
+      gap: 24px;
+    }
   }
   .logos {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @variant md {
+      order: 3;
+      padding-top: 24px;
+    }
+    @variant xl {
+      max-width: 548px;
+    }
   }
   form {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    @variant md {
+      position: relative;
+      order: 2;
+      width: 448px;
+    }
   }
   form input,
   form button {
@@ -91,14 +160,26 @@
     padding: 0 32px;
     transition: all 0.3s ease;
   }
-  form button:hover {
-    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-    linear-gradient(rgba(84, 230, 175, 1), rgba(84, 230, 175, 1));
+  form input {
+    @variant md {
+      height: 52px;
+      width: 100%;
+      padding-block: 4px;
+      padding-left: 28px;
+      padding-right: 180px;
+    }
   }
-  
+  form button {
+    @variant md {
+      position: absolute;
+      right: 4px;
+      top: 4px;
+    }
+  }
+
   form input:focus-visible,
   form button:focus-visible {
-    outline: 2px solid red;
+    outline: 2px solid var(--color-red);
     outline-offset: 2px;
   }
 }
