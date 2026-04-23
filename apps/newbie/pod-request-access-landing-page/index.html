@@ -35,11 +35,14 @@
         <img src="assets/desktop/pocket-casts.svg" alt="" class="h-3.75 w-19 md:w-32.25 md:h-6.5" />
       </div>
 
-      <form class="form">
+      <form class="form" novalidate>
         <label for="email" class="sr-only">Email address</label>
-        <input id="email" type="email" placeholder="Email address" name="email" aria-invalid="false" class="bg-blue900 cursor-text" />
+        <input id="email" type="text" placeholder="Email address" name="email" aria-invalid="false" class="bg-blue900 cursor-text" />
+        
         <button type="submit" class="bg-green preset-3 active:scale-95 cursor-pointer hover:bg-hover">Request access</button>
+        <span class="message hidden"></span>
       </form>
+      
     </main>
   </body>
 </html>

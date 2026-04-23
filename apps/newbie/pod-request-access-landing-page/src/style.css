@@ -10,7 +10,7 @@
     font-family: var(--font-chivo);
     background-color: var(--color-blue950);
     color: white;
-    padding-block: 36px;
+    padding-block: 2.25rem;
     background: linear-gradient(rgba(18, 23, 37, 0.9), rgba(18, 23, 37, 0.9)), url('/assets/mobile/image-host.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -19,26 +19,26 @@
       background-color: var(--color-blue950);
       background-image: url('/assets/desktop/bg-pattern-dots.svg'), url('/assets/tablet/image-host.jpg');
       background-size:
-        232px 184px,
-        auto 868px;
+        14.5rem 11.5rem,
+        auto 54.25rem;
       background-position:
-        bottom 65px right -127px,
+        bottom 5.25rem right -7.9375rem,
         140% 0%;
       align-items: start;
-      padding-left: 44px;
-      padding-block: 156px;
+      padding-left: 2.75rem;
+      padding-block: 9.75rem;
     }
     @variant xl {
       background-image: url('/assets/desktop/bg-pattern-dots.svg'), url('/assets/desktop/image-host.jpg');
       background-size:
-        232px 104px,
-        960px 654px;
+        14.5rem 6.5rem,
+        60rem 40.875rem;
       background-position:
-        bottom 100px right,
+        bottom 7rem right,
         center right;
       align-items: start;
-      padding-left: 160px;
-      padding-block: 153px;
+      padding-left: 10rem;
+      padding-block: 9.5625rem;
     }
   }
 }
@@ -66,7 +66,7 @@
   }
 }
 @utility preset-2 {
-  font-size: clamp(0.88rem, calc(0.636rem + 1.018vw), 1.13rem);
+  font-size: clamp(0.875rem, calc(0.636rem + 1.018vw), 1.125rem);
   line-height: 1.5;
   font-weight: 300;
   text-align: center;
@@ -76,7 +76,7 @@
   }
 }
 @utility preset-3 {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 2;
   font-weight: 700;
   text-align: center;
@@ -86,49 +86,49 @@
 @layer components {
   header {
     width: 100%;
-    max-width: 303px;
-    height: 222.5px;
-    padding-bottom: 56px;
+    max-width: 18.9375rem;
+    height: 13.90625rem;
+    padding-bottom: 3.5rem;
     display: flex;
     align-items: end;
     justify-content: center;
     @variant md {
-      max-width: 592px;
-      height: 160px;
-      padding-bottom: 104px;
+      max-width: 37rem;
+      height: 10rem;
+      padding-bottom: 6.5rem;
       justify-content: start;
     }
     @variant xl {
-      max-width: 736px;
-      height: 160px;
-      padding-bottom: 80px;
+      max-width: 46rem;
+      height: 10rem;
+      padding-bottom: 5rem;
     }
   }
 
   main {
     width: 100%;
-    max-width: 303px;
+    max-width: 18.9375rem;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding-bottom: 110.5px;
+    gap: 2.5rem;
+    padding-bottom: 6.90625rem;
     @variant md {
       background-color: var(--color-blue950);
-      max-width: 592px;
-      padding-top: 88px;
-      padding-right: 64px;
+      max-width: 37rem;
+      padding-top: 5.5rem;
+      padding-right: 4rem;
       padding-bottom: 0;
     }
     @variant xl {
-      max-width: 736px;
+      max-width: 46rem;
     }
   }
   .text {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
     @variant md {
-      gap: 24px;
+      gap: 1.5rem;
     }
   }
   .logos {
@@ -137,49 +137,68 @@
     justify-content: space-between;
     @variant md {
       order: 3;
-      padding-top: 24px;
+      padding-top: 1.5rem;
     }
     @variant xl {
-      max-width: 548px;
+      max-width: 34.25rem;
     }
   }
   form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5rem;
+    min-height: 7.375rem;
     @variant md {
       position: relative;
       order: 2;
-      width: 448px;
+      width: 28rem;
+      min-height: 4.625rem;
     }
   }
   form input,
   form button {
-    height: 44px;
-    border-radius: 28px;
-    padding: 0 32px;
+    height: 2.75rem;
+    border-radius: 1.75rem;
+    padding: 0 2rem;
     transition: all 0.3s ease;
   }
   form input {
     @variant md {
-      height: 52px;
+      height: 3.25rem;
       width: 100%;
-      padding-block: 4px;
-      padding-left: 28px;
-      padding-right: 180px;
+      padding-block: 0.25rem;
+      padding-left: 1.75rem;
+      padding-right: 11.25rem;
     }
   }
   form button {
     @variant md {
       position: absolute;
-      right: 4px;
-      top: 4px;
+      right: 0.25rem;
+      top: 0.25rem;
     }
   }
 
-  form input:focus-visible,
-  form button:focus-visible {
-    outline: 2px solid var(--color-red);
-    outline-offset: 2px;
+  form button:focus-visible,
+  form input:focus-visible {
+    outline: 0.125rem solid var(--color-red);
+    outline-offset: 0.125rem;
+  }
+  .message {
+    font-size: 0.75rem;    
+    text-align: center;
+    line-height: 1;
+    @variant md {
+      text-align: left;
+      padding-left: 2rem;
+    }
+  }
+  .message.error {
+    color: var(--color-red);
+    font-weight: 700;
+  }
+  .message.success {
+    color: var(--color-green);
+    font-weight: 700;
   }
 }
