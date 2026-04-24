@@ -10,30 +10,98 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="src/styles.css" />
     <script type="module" src="src/main.js"></script>
   </head>
   <body>
 
+    <main class="bg-intro-pattern flex min-h-screen items-center justify-center px-6 py-16">
+      
+      <!--* Container -->
+      <div class="max-w-278.25 grid w-full items-center gap-16 xl:grid-cols-2">
+        <!-- Header Section -->
+        <header class="text-center md:text-left">
+          <h1 class="preset-1 mb-4">Learn to code by watching others</h1>
 
-    <!-- prettier-ignore -->
-    Learn to code by watching others
+          <p class="preset-2">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+        </header>
 
-  See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
-  but understanding how developers think is invaluable. 
+        <!--* Form Section -->
+        <div class="space-y-6">
 
-  Try it free 7 days then $20/mo. thereafter
+          <div class="bg-purple700 shadow-card rounded-[10px] px-16.75 py-4.5 text-center">
+            <p class="preset-3">
+              <span class="font-bold">Try it free 7 days</span>
+              then $20/mo. thereafter
+            </p>
+          </div>
 
-  First Name 
-  Last Name 
-  Email Address
-  Password
+          <!--* Form Container -->
+          <form id="signup-form" class="space-y-4 rounded-[10px] bg-white p-6 shadow-card" novalidate>
 
-  Claim your free trial 
+            <div class="relative">
+              <label for="first-name" class="sr-only">First Name</label>
+              <input
+                type="text"
+                id="first-name"
+                name="firstName"
+                placeholder="First Name"
+                autocomplete="given-name"
+                class="form-input" />
+              <p class="error-message text-error-red mt-1 hidden text-sm" role="alert"></p>
+            </div>
 
-  By clicking the button, you are agreeing to our Terms and Services
+            <div class="relative">
+              <label for="last-name" class="sr-only">Last Name</label>
+              <input
+                type="text"
+                id="last-name"
+                name="lastName"
+                placeholder="Last Name"
+                autocomplete="family-name"
+                class="form-input" />
+              <p class="error-message text-error-red mt-1 hidden text-sm" role="alert"></p>
+            </div>
+
+            <div class="relative">
+              <label for="email" class="sr-only">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Address"
+                autocomplete="email"
+                class="form-input" />
+              <p class="error-message text-error-red mt-1 hidden text-sm" role="alert"></p>
+            </div>
+
+            <div class="relative">
+              <label for="password" class="sr-only">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                autocomplete="new-password"
+                class="form-input" />
+              <p class="error-message text-error-red mt-1 hidden text-sm" role="alert"></p>
+            </div>
+
+            <button type="submit" class="bg-green400 preset-4 hover:bg-green300 w-full cursor-pointer rounded-[5px] px-8 py-4 transition-all active:scale-95 shadow-btn focus-visible:outline-none focus-visible:ring-purple700 focus-visible:ring-1 focus-visible:ring-offset-2">
+              CLAIM YOUR FREE TRIAL
+            </button>
+
+            <p class="text-purple350 text-center text-xs">
+              By clicking the button, you are agreeing to our
+              <a href="#" class="text-red400 focus-visible:ring-error-red rounded font-bold hover:underline focus-visible:ring-2 focus-visible:ring-offset-2">Terms and Services</a>
+            </p>
+          </form>
+
+        </div>
+
+
+      </div>
+    </main>
   </body>
 </html>
