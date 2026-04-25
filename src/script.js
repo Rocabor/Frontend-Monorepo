@@ -219,6 +219,13 @@ const projects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
     difficulty: 'Newbie',
   },
+  {
+    href: './apps/newbie/intro-component-with-signup-form/dist/index.html',
+    image: 'images/intro-component-with-signup-form.jpg',
+    title: 'intro component with signup form',
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
+    difficulty: 'Newbie',
+  },
 
   // JUNIOR PROJECTS
   {

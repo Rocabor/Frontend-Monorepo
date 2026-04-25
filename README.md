@@ -202,6 +202,7 @@ All projects have live demos, so you can see them running without any local setu
 | 20 | **FAQ accordion** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/faq-accordion/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/faq-accordion) |
 | 21 | **Interactive rating component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/interactive-rating-component/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/interactive-rating-component) |
 | 22 | **Pod request access landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/pod-request-access-landing-page/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/pod-request-access-landing-page) |
+| 23 | **Intro component with sign up form** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/apps/newbie/intro-component-with-signup-form/dist/index.html) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/newbie/intro-component-with-signup-form) |
 
 
 ---
