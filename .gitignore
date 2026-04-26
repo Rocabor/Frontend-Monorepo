@@ -51,3 +51,7 @@ Thumbs.db
 **/preview.jpg
 **/style-guide.md
 
+# OpenCode / AI Skills
+.opencode/node_modules/
+.opencode/*.json
+.opencode/*.lock

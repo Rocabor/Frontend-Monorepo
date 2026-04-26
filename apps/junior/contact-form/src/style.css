@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer base{
+  body{
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-karla);
+  }
+}
+
+@theme {
+  --color-grey900: hsl(187, 24%, 22%);
+  --color-grey500: hsl(186, 15%, 59%);
+  --color-white: hsl(0, 0%, 100%);
+  
+  --color-green600: hsl(169, 82%, 27%);
+  --color-green200: hsl(148, 38%, 91%);
+  
+  --color-red-errors: hsl(0, 66%, 54%);
+
+  --font-karla: "Karla", sans-serif;
+
+  --spacing-1600: 128px;
+  --spacing-500: 40px;
+  --spacing-400: 32px;
+  --spacing-300: 24px;
+  --spacing-200: 16px;
+  --spacing-150: 12px;
+  --spacing-100: 8px;
+}
