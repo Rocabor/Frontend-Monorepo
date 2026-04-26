@@ -1,31 +1,46 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@layer base{
-  body{
+@layer base {
+  body {
     min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
     font-family: var(--font-karla);
+    background-color: var(--color-green-200);
+    padding-inline: var(--spacing-200);
+    padding-block: var(--spacing-400);
   }
 }
 
 @theme {
-  --color-grey900: hsl(187, 24%, 22%);
-  --color-grey500: hsl(186, 15%, 59%);
+  --color-grey-900: hsl(187, 24%, 22%);
+  --color-grey-500: hsl(186, 15%, 59%);
   --color-white: hsl(0, 0%, 100%);
-  
-  --color-green600: hsl(169, 82%, 27%);
-  --color-green200: hsl(148, 38%, 91%);
-  
+  --color-green-600: hsl(169, 82%, 27%);
+  --color-green-200: hsl(148, 38%, 91%);
   --color-red-errors: hsl(0, 66%, 54%);
 
-  --font-karla: "Karla", sans-serif;
+  --font-karla: 'Karla', sans-serif;
 
-  --spacing-1600: 128px;
-  --spacing-500: 40px;
-  --spacing-400: 32px;
-  --spacing-300: 24px;
-  --spacing-200: 16px;
-  --spacing-150: 12px;
   --spacing-100: 8px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-1600: 128px;
 }
+
+@utility preset-1{
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-weight: 700;
+  color: var(--color-grey-900);
+}
+
+@utility label-text{
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-grey-900);
+}
+
