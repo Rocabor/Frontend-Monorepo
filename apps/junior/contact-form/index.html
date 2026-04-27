@@ -16,10 +16,8 @@
     <title>Frontend Mentor | Contact form</title>
   </head>
   <body>
-
     <!--* Form Content -->
-    <main class="p-300 md:p-500 w-full max-w-184 rounded-2xl bg-white mx-auto">
-
+    <main class="p-300 md:p-500 xl:max-w-184 md:max-w-172.5 mx-auto w-full rounded-2xl bg-white">
       <!--* Title -->
       <header class="mb-400">
         <h1 class="preset-1">Contact Us</h1>
@@ -27,84 +25,76 @@
 
       <!--* Fields -->
       <form action="#" method="POST" class="space-y-300">
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-200">
+        <div class="gap-200 grid grid-cols-1 md:grid-cols-2">
+          <div class="flex flex-col">
+            <label for="first-name" class="label-text mb-2">
+              First Name
+              <span class="required-dot" aria-hidden="true">*</span>
+            </label>
+            <input type="text" id="first-name" name="first-name" required class="form-control" />
+          </div>
 
-        <div class="flex flex-col">
-          <label for="first-name" class="label-text mb-2">
-            First Name <span class="required-dot" aria-hidden="true">*</span>
-          </label>
-          <input type="text" id="first-name" name="first-name" required class="form-control">
+          <div class="flex flex-col">
+            <label for="last-name" class="label-text mb-2">
+              Last Name
+              <span class="required-dot" aria-hidden="true">*</span>
+            </label>
+            <input type="text" id="last-name" name="last-name" required class="form-control" />
+          </div>
         </div>
 
         <div class="flex flex-col">
-
-          <label for="last-name" class="label-text mb-2">
-            Last Name <span class="required-dot" aria-hidden="true">*</span>
+          <label for="email" class="label-text mb-2">
+            Email Address
+            <span class="required-dot" aria-hidden="true">*</span>
           </label>
-          <input type="text" id="last-name" name="last-name" required class="form-control">
+          <input type="email" id="email" name="email" required class="form-control" />
         </div>
-      </div>
 
-      <div class="flex flex-col">
+        <!--* Contact Method -->
+        <fieldset class="space-y-200">
+          <!-- Title Block -->
+          <legend class="label-text mb-4">
+            Query Type
+            <span class="required-dot" aria-hidden="true">*</span>
+          </legend>
 
-        <label for="email" class="label-text mb-2">
-          Email Address <span class="required-dot" aria-hidden="true">*</span>
-        </label>
-        <input type="email" id="email" name="email" required class="form-control">
-      </div>
+          <!-- Radio Selection -->
+          <div class="gap-200 grid grid-cols-1 md:grid-cols-2">
+            <label for="general-enquiry" class="query-option">
+              <input id="general-enquiry" type="radio" name="query-type" value="general" required class="radio-custom" />
+              <span class="label-text text-[18px]">General Enquiry</span>
+            </label>
 
-      <!--* Contact Method -->
-      <fieldset class="space-y-200">
+            <label for="support-request" class="query-option">
+              <input id="support-request" type="radio" name="query-type" value="support" required class="radio-custom" />
+              <span class="label-text text-[18px]">Support Request</span>
+            </label>
+          </div>
+        </fieldset>
 
-        <!-- Title Block -->
-        <legend class="label-text mb-4">
-          Query Type <span class="required-dot" aria-hidden="true">*</span>
-        </legend>
-
-        <!-- Radio Selection -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-200">
-
-          <label class="query-option ">
-            <input type="radio" name="query-type" value="general" required class="radio-custom ">
-            <span class="label-text text-[18px]">General Enquiry</span>
+        <!--* Message -->
+        <div class="h-68 md:h-41 xl:h-34.25 mb-10 flex flex-col">
+          <label for="message" class="label-text mb-2">
+            Message
+            <span class="required-dot" aria-hidden="true">*</span>
           </label>
 
-          <label class="query-option">
-            <input type="radio" name="query-type" value="support" required class="radio-custom">
-            <span class="label-text text-[18px]">Support Request</span>
+          <textarea id="message" name="message" required class="form-control h-full resize-none"></textarea>
+        </div>
+
+        <!--* Checkbox -->
+        <div class="gap-200 mb-10 flex items-start">
+          <input type="checkbox" id="consent" name="consent" required class="h-6 w-6 cursor-pointer self-center accent-green-600" />
+          <label for="consent" class="label-text mb-0 cursor-pointer">
+            I consent to being contacted by the team
+            <span class="required-dot" aria-hidden="true">*</span>
           </label>
         </div>
-      </fieldset>
 
-      <!--* Message -->
-      <div class="flex flex-col mb-10">
-
-        <label for="message" class="label-text mb-2">
-          Message <span class="required-dot" aria-hidden="true">*</span>
-        </label>
-
-        <textarea id="message" name="message" rows="8" required class="form-control resize-none"></textarea>
-      </div>
-
-      <!--* Checkbox -->
-      <div class="flex items-start gap-200 mb-10">
-        <input 
-          type="checkbox" id="consent" name="consent" required 
-          class="accent-green-600 w-6 h-6 self-center cursor-pointer"
-        >
-        <label for="consent" class="label-text mb-0 cursor-pointer">
-          I consent to being contacted by the team <span class="required-dot" aria-hidden="true">*</span>
-        </label>
-      </div>
-
-      <!--* Button Submit-->
-      <button type="submit" class="btn-submit">
-        Submit
-      </button>
-
-    </form>
-
+        <!--* Button Submit-->
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
     </main>
   </body>
 </html>
