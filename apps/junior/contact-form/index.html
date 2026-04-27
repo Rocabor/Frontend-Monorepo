@@ -41,7 +41,7 @@
               <span class="required-dot" aria-hidden="true">*</span>
             </label>
             <input type="text" id="first-name" name="first-name" required aria-required="true" aria-describedby="first-name-error" class="form-control" />
-            <span id="first-name-error" class="text-red-errors mt-2 text-sm" role="alert">This field is required</span>
+            <span id="first-name-error" class="text-red-errors mt-2 text-sm" role="alert" hidden>This field is required</span>
           </div>
 
           <div class="flex flex-col">
@@ -50,7 +50,7 @@
               <span class="required-dot" aria-hidden="true">*</span>
             </label>
             <input type="text" id="last-name" name="last-name" required aria-required="true" aria-describedby="last-name-error" class="form-control" />
-            <span id="last-name-error" class="text-red-errors mt-2 text-sm" role="alert">This field is required</span>
+            <span id="last-name-error" class="text-red-errors mt-2 text-sm" role="alert" hidden>This field is required</span>
           </div>
         </div>
 
@@ -60,7 +60,7 @@
             <span class="required-dot" aria-hidden="true">*</span>
           </label>
           <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-address-error" class="form-control" />
-          <span id="email-address-error" class="text-red-errors mt-2 text-sm" role="alert">Please enter a valid email address</span>
+          <span id="email-address-error" class="text-red-errors mt-2 text-sm" role="alert" hidden>Please enter a valid email address</span>
         </div>
 
         <!--* Contact Method -->
@@ -74,16 +74,16 @@
           <!-- Radio Selection -->
           <div class="gap-200 grid grid-cols-1 md:grid-cols-2">
             <label for="general-enquiry" class="query-option">
-              <input id="general-enquiry" type="radio" name="query-type" value="general" required class="radio-custom" />
+              <input id="general-enquiry" type="radio" name="query-type" value="general" required aria-required="true" aria-describedby="radio-select" class="radio-custom" />
               <span class="label-text text-[18px]">General Enquiry</span>
             </label>
 
             <label for="support-request" class="query-option">
-              <input id="support-request" type="radio" name="query-type" value="support" required class="radio-custom" />
+              <input id="support-request" type="radio" name="query-type" value="support" required aria-required="true" aria-describedby="radio-select" class="radio-custom" />
               <span class="label-text text-[18px]">Support Request</span>
             </label>
           </div>
-          <span id="radio" class="text-red-errors mt-2 text-sm" role="alert">Please select a query type</span>
+          <span id="radio-select" class="text-red-errors mt-2 text-sm" role="alert" hidden>Please select a query type</span>
         </fieldset>
 
         <!--* Message -->
@@ -94,7 +94,7 @@
           </label>
 
           <textarea id="message" name="message" required aria-required="true" aria-describedby="textarea-empty-error" class="form-control h-full resize-none"></textarea>
-          <span id="textarea-empty-error" class="text-red-errors mt-2 text-sm" role="alert">This field is required</span>
+          <span id="textarea-empty-error" class="text-red-errors mt-2 text-sm" role="alert" hidden>This field is required</span>
         </div>
 
         <!--* Checkbox -->
@@ -105,7 +105,7 @@
             <span class="required-dot" aria-hidden="true">*</span>
           </label>
         </div>
-        <span id="textarea-empty" class="text-red-errors text-sm" role="alert">To submit this form, please consent to being contacted</span>
+        <span id="textarea-empty" class="text-red-errors text-sm" role="alert" hidden>To submit this form, please consent to being contacted</span>
 
         <!--* Button Submit-->
         <button type="submit" class="btn-submit">Submit</button>

@@ -57,7 +57,11 @@
 
 @layer components {
   .form-control {
-    @apply border-grey-500 px-300 py-150 text-grey-900 w-full rounded-lg border transition-all duration-200 hover:border-green-600 focus:border-green-600 focus:outline-none  focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2;
+    @apply border-grey-500 px-300 py-150 text-grey-900 w-full rounded-lg border transition-all duration-200 hover:border-green-600 focus:border-green-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2;
+  }
+
+  .form-control.error {
+    border-color: var(--color-red-errors);
   }
 
   .required-dot {
@@ -65,8 +69,7 @@
   }
 
   .query-option {
-    @apply gap-150 border-grey-500 px-200 py-150 has-checked:bg-green-200 has-checked:border-green-600 flex cursor-pointer items-center rounded-lg border transition-all hover:border-green-600;   
-    
+    @apply gap-150 border-grey-500 px-200 py-150 has-checked:bg-green-200 has-checked:border-green-600 flex cursor-pointer items-center rounded-lg border transition-all hover:border-green-600;
   }
 
   .radio-custom {
@@ -83,6 +86,6 @@
   }
 
   .btn-submit {
-    @apply py-200 mt-10 hover:bg-grey-900 w-full cursor-pointer rounded-lg bg-green-600 outline-none transition-colors duration-200 focus:ring-4 text-btn focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2;
+    @apply py-200 hover:bg-grey-900 text-btn mt-10 w-full cursor-pointer rounded-lg bg-green-600 outline-none transition-colors duration-200 focus:ring-4 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2;
   }
 }
