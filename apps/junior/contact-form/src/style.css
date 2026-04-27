@@ -29,7 +29,7 @@
   --spacing-1600: 128px;
 }
 
-@utility preset-1{
+@utility preset-1 {
   font-size: 2rem;
   line-height: 1;
   letter-spacing: -1px;
@@ -37,10 +37,46 @@
   color: var(--color-grey-900);
 }
 
-@utility label-text{
+@utility label-text {
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 400;
   color: var(--color-grey-900);
 }
+@utility text-btn {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--color-white);
+}
 
+@layer components {
+  .form-control {
+    @apply border-grey-500 px-300 py-150 text-grey-900 w-full rounded-lg border transition-all duration-200 hover:border-green-600 focus:border-transparent focus:outline-none focus:ring-1 focus:ring-green-600;
+  }
+
+  .required-dot {
+    @apply ml-2 text-green-600;
+  }
+
+  .query-option {
+    @apply gap-150 border-grey-500 px-200 py-150 has-checked:bg-green-200 has-checked:border-green-600 flex cursor-pointer items-center rounded-lg border transition-all hover:border-green-600;
+  }
+
+  .radio-custom {
+    @apply border-grey-500 flex h-6 w-6 appearance-none items-center justify-center rounded-full border-2 transition-all;
+  }
+
+  .radio-custom:checked {
+    @apply border-green-600 bg-green-200;
+  }
+
+  .radio-custom:checked::after {
+    content: '';
+    @apply block h-3.5 w-3.5 rounded-full bg-green-600;
+  }
+
+  .btn-submit {
+    @apply py-200 hover:bg-grey-900 w-full cursor-pointer rounded-lg bg-green-600 outline-none transition-colors duration-200 focus:ring-4 text-btn;
+  }
+}

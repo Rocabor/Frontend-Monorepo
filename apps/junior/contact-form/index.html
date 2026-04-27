@@ -18,7 +18,7 @@
   <body>
 
     <!--* Form Content -->
-    <main class="p-300 md:p-500 w-full max-w-184 rounded-2xl bg-white">
+    <main class="p-300 md:p-500 w-full max-w-184 rounded-2xl bg-white mx-auto">
 
       <!--* Title -->
       <header class="mb-400">
@@ -31,7 +31,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-200">
 
         <div class="flex flex-col">
-          <label for="first-name" class="label-text">
+          <label for="first-name" class="label-text mb-2">
             First Name <span class="required-dot" aria-hidden="true">*</span>
           </label>
           <input type="text" id="first-name" name="first-name" required class="form-control">
@@ -39,7 +39,7 @@
 
         <div class="flex flex-col">
 
-          <label for="last-name" class="label-text">
+          <label for="last-name" class="label-text mb-2">
             Last Name <span class="required-dot" aria-hidden="true">*</span>
           </label>
           <input type="text" id="last-name" name="last-name" required class="form-control">
@@ -48,7 +48,7 @@
 
       <div class="flex flex-col">
 
-        <label for="email" class="label-text">
+        <label for="email" class="label-text mb-2">
           Email Address <span class="required-dot" aria-hidden="true">*</span>
         </label>
         <input type="email" id="email" name="email" required class="form-control">
@@ -58,42 +58,42 @@
       <fieldset class="space-y-200">
 
         <!-- Title Block -->
-        <legend class="label-text">
+        <legend class="label-text mb-4">
           Query Type <span class="required-dot" aria-hidden="true">*</span>
         </legend>
 
         <!-- Radio Selection -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-200">
 
-          <label class="query-option">
-            <input type="radio" name="query-type" value="general" required class=" w-6 h-6">
+          <label class="query-option ">
+            <input type="radio" name="query-type" value="general" required class="radio-custom ">
             <span class="label-text text-[18px]">General Enquiry</span>
           </label>
 
           <label class="query-option">
-            <input type="radio" name="query-type" value="support" required class=" w-6 h-6">
+            <input type="radio" name="query-type" value="support" required class="radio-custom">
             <span class="label-text text-[18px]">Support Request</span>
           </label>
         </div>
       </fieldset>
 
       <!--* Message -->
-      <div class="flex flex-col">
+      <div class="flex flex-col mb-10">
 
-        <label for="message" class="label-text">
+        <label for="message" class="label-text mb-2">
           Message <span class="required-dot" aria-hidden="true">*</span>
         </label>
 
-        <textarea id="message" name="message" rows="5" required class="form-control resize-none"></textarea>
+        <textarea id="message" name="message" rows="8" required class="form-control resize-none"></textarea>
       </div>
 
       <!--* Checkbox -->
-      <div class="flex items-start gap-200 pt-100">
+      <div class="flex items-start gap-200 mb-10">
         <input 
           type="checkbox" id="consent" name="consent" required 
-          class="accent-brand-green-600 w-4 h-4 mt-1 cursor-pointer"
+          class="accent-green-600 w-6 h-6 self-center cursor-pointer"
         >
-        <label for="consent" class="text-sm text-brand-grey-900 cursor-pointer">
+        <label for="consent" class="label-text mb-0 cursor-pointer">
           I consent to being contacted by the team <span class="required-dot" aria-hidden="true">*</span>
         </label>
       </div>
