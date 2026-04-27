@@ -16,6 +16,15 @@
     <title>Frontend Mentor | Contact form</title>
   </head>
   <body>
+    <!--* Toast -->
+    <div class="bg-grey-900 flex flex-col gap-2 rounded-lg p-6 absolute top-6 max-w-81.75 md:max-w-112.5 place-self-center text-white text-[18px]" role="alert" aria-live="assertive">
+      <p class="flex gap-2">
+        <img src="assets/images/icon-success-check.svg" alt="" />
+        <strong>Message Sent!</strong>
+      </p>
+      <p class="label-text text-green-200">Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+
     <!--* Form Content -->
     <main class="p-300 md:p-500 xl:max-w-184 md:max-w-172.5 mx-auto w-full rounded-2xl bg-white">
       <!--* Title -->
@@ -31,7 +40,8 @@
               First Name
               <span class="required-dot" aria-hidden="true">*</span>
             </label>
-            <input type="text" id="first-name" name="first-name" required class="form-control" />
+            <input type="text" id="first-name" name="first-name" required aria-required="true" aria-describedby="first-name-error" class="form-control" />
+            <span id="first-name-error" class="text-red-errors mt-2 text-sm" role="alert">This field is required</span>
           </div>
 
           <div class="flex flex-col">
@@ -39,7 +49,8 @@
               Last Name
               <span class="required-dot" aria-hidden="true">*</span>
             </label>
-            <input type="text" id="last-name" name="last-name" required class="form-control" />
+            <input type="text" id="last-name" name="last-name" required aria-required="true" aria-describedby="last-name-error" class="form-control" />
+            <span id="last-name-error" class="text-red-errors mt-2 text-sm" role="alert">This field is required</span>
           </div>
         </div>
 
@@ -48,7 +59,8 @@
             Email Address
             <span class="required-dot" aria-hidden="true">*</span>
           </label>
-          <input type="email" id="email" name="email" required class="form-control" />
+          <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-address-error" class="form-control" />
+          <span id="email-address-error" class="text-red-errors mt-2 text-sm" role="alert">Please enter a valid email address</span>
         </div>
 
         <!--* Contact Method -->
@@ -71,6 +83,7 @@
               <span class="label-text text-[18px]">Support Request</span>
             </label>
           </div>
+          <span id="radio" class="text-red-errors mt-2 text-sm" role="alert">Please select a query type</span>
         </fieldset>
 
         <!--* Message -->
@@ -80,21 +93,25 @@
             <span class="required-dot" aria-hidden="true">*</span>
           </label>
 
-          <textarea id="message" name="message" required class="form-control h-full resize-none"></textarea>
+          <textarea id="message" name="message" required aria-required="true" aria-describedby="textarea-empty-error" class="form-control h-full resize-none"></textarea>
+          <span id="textarea-empty-error" class="text-red-errors mt-2 text-sm" role="alert">This field is required</span>
         </div>
 
         <!--* Checkbox -->
-        <div class="gap-200 mb-10 flex items-start">
-          <input type="checkbox" id="consent" name="consent" required class="h-6 w-6 cursor-pointer self-center accent-green-600" />
+        <div class="gap-200 mb-2 flex items-start">
+          <input type="checkbox" id="consent" name="consent" required aria-required="true" aria-describedby="textarea-empty" class="h-6 w-6 cursor-pointer self-center accent-green-600" />
           <label for="consent" class="label-text mb-0 cursor-pointer">
             I consent to being contacted by the team
             <span class="required-dot" aria-hidden="true">*</span>
           </label>
         </div>
+        <span id="textarea-empty" class="text-red-errors text-sm" role="alert">To submit this form, please consent to being contacted</span>
 
         <!--* Button Submit-->
         <button type="submit" class="btn-submit">Submit</button>
       </form>
     </main>
+
+    
   </body>
 </html>

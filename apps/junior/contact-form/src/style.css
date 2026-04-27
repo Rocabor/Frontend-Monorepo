@@ -3,10 +3,15 @@
 @layer base {
   body {
     min-height: 100dvh;
+    display: grid;
     font-family: var(--font-karla);
     background-color: var(--color-green-200);
     padding-inline: var(--spacing-200);
     padding-block: var(--spacing-400);
+    position: relative;
+    @variant md {
+      padding-block: var(--spacing-1600);
+    }
   }
 }
 
@@ -65,7 +70,7 @@
   }
 
   .radio-custom {
-    @apply border-grey-500 flex h-6 w-6 appearance-none items-center justify-center rounded-full border-2 transition-all;
+    @apply border-grey-500 flex h-6 w-6 appearance-none items-center justify-center rounded-full border-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2;
   }
 
   .radio-custom:checked {
@@ -78,6 +83,6 @@
   }
 
   .btn-submit {
-    @apply py-200 hover:bg-grey-900 w-full cursor-pointer rounded-lg bg-green-600 outline-none transition-colors duration-200 focus:ring-4 text-btn focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2;
+    @apply py-200 mt-10 hover:bg-grey-900 w-full cursor-pointer rounded-lg bg-green-600 outline-none transition-colors duration-200 focus:ring-4 text-btn focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2;
   }
 }
