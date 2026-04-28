@@ -286,7 +286,7 @@ const projects = [
   },
   {
     href: './apps/junior/contact-form/dist/index.html',
-    image: 'contact-form.jpg',
+    image: 'images/contact-form.jpg',
     title: 'contact form',
     technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
     difficulty: 'Junior',
