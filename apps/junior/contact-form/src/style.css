@@ -123,3 +123,12 @@
 [role='alert'].bg-grey-900:not(.hidden) {
   animation: slideDown 0.5s ease-out forwards;
 }
+
+.attribution {
+  font-size: clamp(0.75rem, calc(0.511rem + 1.018vw), 1rem);
+  @apply absolute inset-x-0 bottom-0 py-2 text-center;
+}
+.attribution a,
+.year {
+  @apply hover:text-red-errors font-bold text-green-600 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600;
+}
