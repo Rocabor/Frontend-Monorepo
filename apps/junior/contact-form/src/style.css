@@ -85,7 +85,41 @@
     @apply block h-3.5 w-3.5 rounded-full bg-green-600;
   }
 
+  .checkbox-custom {
+    @apply border-grey-500 flex h-6 w-6 shrink-0 cursor-pointer appearance-none items-center justify-center rounded border-2 transition-all;
+  }
+
+  .checkbox-custom:hover {
+    @apply border-green-600;
+  }
+  .checkbox-custom:checked {
+    @apply border-green-600;
+    background-image: url('../assets/images/icon-checkbox-check.svg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .checkbox-custom:focus-visible {
+    @apply outline-none ring-2 ring-green-600 ring-offset-2;
+  }
+
   .btn-submit {
     @apply py-200 hover:bg-grey-900 text-btn mt-10 w-full cursor-pointer rounded-lg bg-green-600 outline-none transition-colors duration-200 focus:ring-4 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2;
   }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(0, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+[role='alert'].bg-grey-900:not(.hidden) {
+  animation: slideDown 0.5s ease-out forwards;
 }
