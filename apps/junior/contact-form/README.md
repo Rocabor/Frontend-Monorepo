@@ -17,11 +17,15 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
 ### The challenge
+
+![Static Badge](https://img.shields.io/badge/JUNIOR-%23ffffff?style=flat&label=2&labelColor=%2334d399&color=%23ffffff)
+![Static Badge](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![Static Badge](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Javascript-%23F7DF1E?style=flat&logo=javascript&logoColor=black)
 
 Users should be able to:
 
@@ -36,93 +40,65 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://snipboard.io/1VkSoW.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+[![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)](https://rocabor.github.io/Frontend-Monorepo/apps/junior/contact-form/dist/index.html)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Semantic HTML5 markup adhering to accessibility guidelines
+- Vanilla JavaScript for client-side validation and state management
+- Tailwind CSS v4, utilizing the CSS-first engine for theme customization
+- Mobile-first workflow for responsive design
+- Custom logic implemented for real-time error feedback and accessible toast messages
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I reinforced my knowledge on creating robust, accessible client-side form handling without relying on frameworks like React. Key learnings include:
 
-To see how you can add code snippets, see below:
+- **Accessible Form Validation:** Implementing dynamic error announcements using `aria-live="polite"` on error spans and ensuring all required fields have `aria-required` and `aria-describedby`.
+- **Custom Radios/Checkboxes:** Developing custom styling for radio buttons and checkboxes using `appearance-none` combined with Tailwind's `has-checked:` and custom utility classes, while ensuring keyboard focus remains visible via `focus-visible:ring`.
+- **Accessible Toasts:** Creating a non-blocking success notification using `role="status"` and `aria-live="assertive"` to guarantee screen readers announce submission success.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+<!-- Example of dynamic error handling logic in JS -->
+function showElementError(input, errorSpan) {
+  if (errorSpan) errorSpan.classList.remove('hidden');
+  input.classList.add('error');
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Future work will focus on improving the interactivity and visual polish:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+1.  **Refining Toast Animation:** Implement a cleaner animation for the success toast message (currently using a simple fade/scale).
+2.  **Server-Side Simulation:** Replace the `console.log` submission with an asynchronous function to better simulate a real API interaction.
+3.  **Input Grouping:** Review how errors are grouped visually and programmatically, especially for radio buttons, to ensure better proximity for screen readers.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [MDN Web Docs on ARIA Live Regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) - Critical for implementing the accessible toast notification.
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+I utilized the AI agent extensively throughout this task:
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
-
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+- **Initial Guidance:** The agent helped define the required modifications based on the "Senior Frontend Mentor" rules (`AGENTS.md`).
+- **Code Generation:** The agent generated the complete JavaScript logic for form validation, error handling, and the toast notification, ensuring accessibility attributes were included in the HTML placeholders first.
+- **Refinement:** The agent assisted in drafting the commit messages based on the technical changes applied to the code.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@Rocabor](https://www.frontendmentor.io/profile/Rocabor)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
