@@ -1,2 +1,27 @@
 @import "tailwindcss";
 
+@theme {
+  /* Colores Base */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* Escala de Grises */
+  --color-gray-950: #262626;
+  --color-gray-400: #A8AEB2;
+  --color-gray-200: #DFE0E5;
+
+  /* Colores de Marca / Acento */
+  --color-purple-950: #21092F;
+  --color-purple-600: #D83AFF;
+  --color-orange-400: #FF854A;
+  --color-blue-400: #47A3FF;
+  --color-red-400: #FF5D5D;
+
+  /* Gradientes (como variables de fondo) */
+  --bg-gradient-1: linear-gradient(to right, #FFFFFF, #D1D5DB);
+  --bg-gradient-2: linear-gradient(to right, #6348FE, #610595);
+
+  --background-mobile: url('./assets/images/bg-main-mobile.png');
+  --background-desktop: url('./assets/images/bg-main-desktop.png');
+}
+
