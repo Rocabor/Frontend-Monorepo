@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -8,9 +8,7 @@ export function baseConfig(plugins = []) {
     build: {
       outDir: 'dist',
     },
-    plugins: [
-      vue(), 
-      typeof tailwindcss === 'function' ? tailwindcss() : tailwindcss.default()],
+    plugins: [vue(), typeof tailwindcss === 'function' ? tailwindcss() : tailwindcss.default(), ...plugins],
   };
 }
 

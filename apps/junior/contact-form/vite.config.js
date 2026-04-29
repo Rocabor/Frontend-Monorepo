@@ -1,8 +1,4 @@
-import tailwindcss from '@tailwindcss/vite'
-import baseConfig from '@turborepo/vite-config'
+import { defineConfig } from 'vite';
+import { baseConfig } from '@turborepo/vite-config';
 
-export default {
-  ...baseConfig,
-  base: './',
-  plugins: [tailwindcss()],
-};
+export default defineConfig(baseConfig([]));
