@@ -1,3 +1,13 @@
+
+import { createApp } from 'vue';
+import App from './App.vue';
+import './style.css'; // Importante: aquí es donde entra Tailwind
+
+createApp(App).mount('#app');
+
+
+
+
 // Función que crea una card
 function createCard(project) {
   return `

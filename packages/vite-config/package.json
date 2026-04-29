@@ -8,5 +8,9 @@
   },
   "peerDependencies": {
     "vite": "^6.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "@vitejs/plugin-vue": "^6.0.6"
   }
 }

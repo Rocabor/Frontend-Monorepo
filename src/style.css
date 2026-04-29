@@ -1,3 +1,6 @@
+@import "tailwindcss";
+
+
 /* VARIABLES Y GLOBAL */
 :root {
   --newbie: #06b6d4;
