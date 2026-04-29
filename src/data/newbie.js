@@ -1,80 +1,4 @@
-
-import { createApp } from 'vue';
-import App from './App.vue';
-import './style.css'; // Importante: aquí es donde entra Tailwind
-
-createApp(App).mount('#app');
-
-
-
-
-// Función que crea una card
-function createCard(project) {
-  return `
-    <a href="${project.href}" class="card card--${project.difficulty.toLowerCase()}">
-      <div class="cont-img">
-        <img src="${project.image}" alt="${project.title}" />
-      </div>
-      <h2>${project.title}</h2>
-      <div class="tech-stack">
-        ${project.technologies.map(tech => 
-          `<img src="icons/${tech}.png" alt="${tech} icon" title="${tech.toUpperCase()}" />`
-        ).join('')}
-      </div>
-      <div class="footer-card footer-card--${project.difficulty.toLowerCase()}">
-        <p class="dificulty">${project.difficulty}</p>
-      </div>
-    </a>
-  `;
-}
-
-// Función para agrupar proyectos por dificultad
-function groupByDifficulty(projects) {
-  const difficulties = ['Newbie', 'Junior', 'Intermediate', 'Advanced', 'Guru'];
-  const grouped = {};
-  
-  difficulties.forEach(diff => {
-    grouped[diff] = projects.filter(p => p.difficulty === diff);
-  });
-  
-  return grouped;
-}
-
-// Renderizar todas las cards agrupadas por dificultad
-function renderProjects() {
-  const container = document.getElementById('projects-container');
-  const groupedProjects = groupByDifficulty(projects);
-  let html = '';
-  
-  // Recorrer cada dificultad
-  Object.entries(groupedProjects).forEach(([difficulty, projectsList]) => {
-    if (projectsList.length > 0) {
-      // Título de la sección con ID para el enlace
-      html += `
-        <div class="section-header" id="${difficulty.toLowerCase()}">
-          <h2 class="section-title ${difficulty.toLowerCase()}">${difficulty}</h2>
-          <span class="project-count">${projectsList.length} projects</span>
-        </div>
-      `;
-      
-      // Grid de proyectos
-      html += '<div class="grid">';
-      html += projectsList.map(createCard).join('');
-      html += '</div>';
-    }
-  });
-  
-  container.innerHTML = html;
-}
-
-// Ejecutar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', renderProjects);
-
-
-
-// Base de datos de proyectos - SOLO MANTIENES ESTO
-const projects = [
-  // NEWBIE PROJECTS (17 proyectos)
+export const newbieProjects = [
   {
     href: './apps/newbie/qr-code-component/dist/index.html',
     image: 'images/1.jpg',
@@ -116,7 +40,7 @@ const projects = [
     title: 'four card feature section',
     technologies: ['html', 'css'],
     difficulty: 'Newbie',
-  },  
+  },
   {
     href: './apps/newbie/meet-landing-page/dist/index.html',
     image: 'images/8.jpg',
@@ -236,79 +160,4 @@ const projects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
     difficulty: 'Newbie',
   },
-
-  // JUNIOR PROJECTS
-  {
-    href: './apps/junior/testimonials-grid-section/dist/index.html',
-    image: 'images/7.jpg',
-    title: 'testimonials grid section',
-    technologies: ['html', 'css'],
-    difficulty: 'Junior',
-  },
-  {
-    href: './apps/junior/article-preview-component/dist/index.html',
-    image: 'images/1j.jpg',
-    title: 'article preview component',
-    technologies: ['html', 'css', 'js'],
-    difficulty: 'Junior',
-  },
-  {
-    href: './apps/junior/newsletter-sing-up-with-success-message/dist/index.html',
-    image: 'images/2j.jpg',
-    title: 'newsletter sign up with success message',
-    technologies: ['html', 'css', 'js'],
-    difficulty: 'Junior',
-  },
-  {
-    href: './apps/junior/time-tracking-dashboard/dist/index.html',
-    image: 'images/3j.jpg',
-    title: 'time tracking dashboard',
-    technologies: ['html', 'css', 'js'],
-    difficulty: 'Junior',
-  },
-  {
-    href: './apps/junior/tip-calculator-app/dist/index.html',
-    image: 'images/4j.jpg',
-    title: 'tip calculator app',
-    technologies: ['html', 'css', 'js'],
-    difficulty: 'Junior',
-  },
-  {
-    href: './apps/junior/typing-speed-test-main/dist/index.html',
-    image: 'images/5j.jpg',
-    title: 'typing speed test main',
-    technologies: ['html', 'css', 'js'],
-    difficulty: 'Junior',
-  },
-  {
-    href: './apps/junior/fylo-data-storage-component/dist/index.html',
-    image: 'images/fylo-data-storage-component.jpg',
-    title: 'fylo data storage component',
-    technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
-    difficulty: 'Junior',
-  },
-  {
-    href: './apps/junior/clipboard-landing-page/dist/index.html',
-    image: 'images/clipboard-landing-page.jpg',
-    title: 'clipboard landing page',
-    technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
-    difficulty: 'Junior',
-  },
-  {
-    href: './apps/junior/contact-form/dist/index.html',
-    image: 'images/contact-form.jpg',
-    title: 'contact form',
-    technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
-    difficulty: 'Junior',
-  },
-
-  // INTERMEDIATE PROJECTS
-  {
-    href: './apps/intermediate/password-generator-app/dist/index.html',
-    image: 'images/6j.jpg',
-    title: 'password generator app',
-    technologies: ['html', 'css', 'js'],
-    difficulty: 'Intermediate',
-  },
 ];
-
