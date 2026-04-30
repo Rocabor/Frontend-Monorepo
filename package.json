@@ -2,7 +2,7 @@
   "name": "turborepo",
   "private": true,
   "scripts": {
-    "build": "turbo run build && node ./scripts/unify.mjs",
+    "build": "turbo run build && pnpm portal:build && node ./scripts/unify.mjs",
     "portal:build": "vite build",
     "portal": "vite",
     "dev": "turbo run dev",
