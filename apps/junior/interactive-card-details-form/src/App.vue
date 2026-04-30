@@ -8,21 +8,19 @@ const cardData = reactive({
   number: '',
   month: '',
   year: '',
-  cvc: ''
+  cvc: '',
 });
 </script>
 
-
-
 <template>
-  <main class="min-h-screen flex flex-col lg:flex-row">
-    <section class="h-[240px] lg:h-screen lg:w-1/3 relative flex items-center"
-             style="background-image: var(--bg-main-desktop); background-size: cover;">
-      <CardDisplay :cardData="cardData" />
+  <main class="relative flex min-h-dvh flex-col lg:flex-row">
+
+    <section class="bg-main h-60 w-full md:h-85 xl:min-h-dvh xl:w-120.75">
+
+      <CardDisplay :cardData="cardData"/>
+
     </section>
 
-    <section class="flex-1 flex items-center justify-center p-6">
-      <p class="text-gray-400">El formulario aparecerá aquí...</p>
-    </section>
+
   </main>
 </template>
