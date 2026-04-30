@@ -1,5 +1,6 @@
 <script setup>
 import { allProjects } from './data/index';
+const baseUrl = import.meta.env.BASE_URL;
 </script>
 
 <template>
@@ -38,7 +39,7 @@ import { allProjects } from './data/index';
           <div class="tech-stack">
             <img v-for="tech in project.technologies" 
                  :key="tech" 
-                 :src="`/icons/${tech}.png`" 
+                 :src="`${baseUrl}icons/${tech}.png`"
                  :alt="tech" 
                  :title="tech.toUpperCase()" />
           </div>
