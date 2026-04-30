@@ -1,27 +1,46 @@
 @import "tailwindcss";
 
-@theme {
-  /* Colores Base */
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-
-  /* Escala de Grises */
-  --color-gray-950: #262626;
-  --color-gray-400: #A8AEB2;
-  --color-gray-200: #DFE0E5;
-
-  /* Colores de Marca / Acento */
-  --color-purple-950: #21092F;
-  --color-purple-600: #D83AFF;
-  --color-orange-400: #FF854A;
-  --color-blue-400: #47A3FF;
-  --color-red-400: #FF5D5D;
-
-  /* Gradientes (como variables de fondo) */
-  --bg-gradient-1: linear-gradient(to right, #FFFFFF, #D1D5DB);
-  --bg-gradient-2: linear-gradient(to right, #6348FE, #610595);
-
-  --background-mobile: url('./assets/images/bg-main-mobile.png');
-  --background-desktop: url('./assets/images/bg-main-desktop.png');
+@layer base{
+  body{
+    font-family: 'Space Grotesk', sans-serif;
+  }
 }
 
+@theme {
+  --color-gray950: #262626;
+  --color-gray400: #A8AEB2;
+  --color-gray200: #DFE0E5;
+
+  --color-purple950: #21092F;
+  --color-purple600: #D83AFF;
+  --color-orange400: #FF854A;
+  --color-blue400: #47A3FF;
+  --color-red400: #FF5D5D;
+
+  --bg-main-mobile: url('./assets/images/bg-main-mobile.png');
+  --bg-main-desktop: url('./assets/images/bg-main-desktop.png');
+  --bg-card-back: url('./assets/images/bg-card-back.png');
+  --bg-card-front: url('./assets/images/bg-card-front.png');
+  --bg-logo: url('./assets/images/card-logo.svg');
+  --bg-complete: url('./assets/images/icon-complete.svg'); 
+  
+
+}
+
+@utility preset-1 {
+  font-size: 18px;
+  letter-spacing: 2.5px;
+  line-height: 1.3;  
+}
+@utility preset-2 {
+  font-size: 9px;
+  letter-spacing: 1.25px;
+  line-height: 1.25;  
+}
+
+.card-back{
+  background-image: url('./assets/images/bg-card-back.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
