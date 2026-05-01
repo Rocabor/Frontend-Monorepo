@@ -62,4 +62,11 @@ export const juniorProjects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite'],
     difficulty: 'Junior',
   },
+  {
+    href: './junior/interactive-card-details-form/',
+    image: 'images/interactive-card-details-form.jpg',
+    title: 'interactive card details form',
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
+    difficulty: 'Junior',
+  },
 ];
