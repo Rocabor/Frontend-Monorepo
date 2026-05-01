@@ -17,7 +17,7 @@ const cardData = reactive({
   <main class="relative flex min-h-dvh flex-col xl:flex-row xl:gap-87.25">
 
     <!-- Card Container -->
-    <section class="bg-main h-60 w-full md:h-85 xl:min-h-dvh xl:w-120.75" aria-label="Vista previa de tarjeta">
+    <section class="bg-main h-60 w-full md:h-85 xl:min-h-dvh xl:w-120.75 xl:z-1" aria-label="Vista previa de tarjeta">
       <CardDisplay :cardData="cardData" :isComplete="isComplete" />
     </section>
 
@@ -27,4 +27,14 @@ const cardData = reactive({
     </section>
     
   </main>
+
+   <footer>
+      <nav class="attribution" aria-label="Attribution credits">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>
+        • Coded by
+        <a href="https://www.frontendmentor.io/profile/Rocabor">@Rocabor</a>
+        <span class="year"> 2026</span>
+      </nav>
+    </footer>
 </template>

@@ -21,37 +21,36 @@
 @utility text-cvc {
   font-size: clamp(0.56rem, calc(0.264rem + 1.272vw), 0.88rem);
   line-height: 1.25;
-  letter-spacing: 1.25px;
+  letter-spacing: 0.078rem;
   text-transform: uppercase;
   color: white;
   @variant md {
     line-height: 1.3;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
   }
 }
 /* numbers */
 @utility preset-1 {
   font-size: clamp(1.13rem, calc(0.529rem + 2.545vw), 1.75rem);
-  letter-spacing: 2.5px;
+  letter-spacing: 0.156rem;
   line-height: 1.3;
   color: white;
   @variant md {
     line-height: 1.3;
-    letter-spacing: 3.5px;
+    letter-spacing: 0.219rem;
   }
 }
 /* name */
 @utility preset-2 {
   font-size: clamp(0.56rem, calc(0.264rem + 1.272vw), 0.88rem);
-  letter-spacing: 1.25px;
+  letter-spacing: 0.078rem;
   line-height: 1.25;
   color: white;
   @variant md {
     line-height: 1.3;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
   }
 }
-
 
 .bg-main {
   background-image: url('./assets/images/bg-main-mobile.png');
@@ -67,56 +66,76 @@
   background-image: url('./assets/images/bg-card-back.png');
   background-size: cover;
   background-repeat: no-repeat;
-  width: clamp(285px, calc(130.42px + 41.221vw), 447px);
+  width: clamp(17.81rem, calc(8.15rem + 41.221vw), 27.94rem);
 }
 .card-front {
   background-image: url('./assets/images/bg-card-front.png');
   background-size: cover;
   background-repeat: no-repeat;
-  width: clamp(285px, calc(130.42px + 41.221vw), 447px);
+  width: clamp(17.81rem, calc(8.15rem + 41.221vw), 27.94rem);
 }
 
 .field-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
 }
-.input-field {  
-  padding: 8px 16px;
-  border: 1px solid var(--color-gray200);
-  border-radius: 8px;
+.input-field {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-gray200);
+  border-radius: 0.5rem;
   width: 100%;
-  height: 45px;  
+  height: 2.81rem;
   outline: none;
 }
+
+.input-field:focus {
+  border-color: transparent;
+  background-image: linear-gradient(white, white), linear-gradient(to right, #6348fe, #610595);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.btn:focus-visible {
+  @apply ring-purple-950 ring-offset-4 ring-2;
+}
+
 .input-field::placeholder {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.3;
   color: var(--color-purple950);
   opacity: 25%;
 }
 label {
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1.25;
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
   text-transform: uppercase;
-  color: #21092f;
+  color: var(--color-purple950);
 }
-.btn { 
-  height: 53px;
-  background: #21092f;
-  border-radius: 8px;
-  border: none;
+.btn {
+  height: 3.31rem;
+  background-color: var(--color-purple950);
+  border-radius: 0.5rem;
   cursor: pointer;
   color: white;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.3;
 }
-.field-group span{
-  font-size: 12px;
+.field-group span {
+  font-size: 0.75rem;
   line-height: 1.25;
   color: var(--color-red400);
 }
 .input-field.border-red500 {
-  border-color: #ef4444;
+  border-color: var(--color-red400);
+}
+
+.attribution {
+  font-size: clamp(0.75rem, calc(0.511rem + 1.018vw), 1rem);
+  @apply fixed inset-x-0 bottom-0 py-2 text-center bg-white;
+}
+.attribution a,
+.year {
+  @apply hover:text-purple600 font-bold text-blue400 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2;
 }

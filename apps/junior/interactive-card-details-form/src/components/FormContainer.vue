@@ -27,7 +27,13 @@ const handleSubmit = () => {
   touched.year = true
   touched.cvc = true
 
-  if (!props.cardData.name || !props.cardData.number || !props.cardData.month || !props.cardData.year || !props.cardData.cvc) {
+  const isNameValid = /^[a-zA-Z\s]+$/.test(props.cardData.name) && props.cardData.name.length <= 25
+  const isNumberValid = /^\d{16}$/.test(props.cardData.number)
+  const isMonthValid = /^\d{2}$/.test(props.cardData.month)
+  const isYearValid = /^\d{2}$/.test(props.cardData.year)
+  const isCvcValid = /^\d{3}$/.test(props.cardData.cvc)
+
+  if (!isNameValid || !isNumberValid || !isMonthValid || !isYearValid || !isCvcValid) {
     return
   }
 
@@ -46,7 +52,22 @@ const handleContinue = () => {
 }
 
 const showError = (field) => {
+  if (field === 'number') {
+    const isTouched = touched[field] || props.cardData[field]
+    return isTouched && props.cardData[field] && !/^\d*$/.test(props.cardData[field])
+  }
+  if (field === 'month' || field === 'year' || field === 'cvc') {
+    const isTouched = touched[field] || props.cardData[field]
+    return isTouched && (!props.cardData[field] || !/^\d*$/.test(props.cardData[field]))
+  }
+  if (field === 'name') {
+    return touched[field] && (!props.cardData[field] || !/^[a-zA-Z\s]+$/.test(props.cardData[field]))
+  }
   return touched[field] && !props.cardData[field]
+}
+
+const handleNumberInput = (field) => {
+  touched[field] = true
 }
 </script>
 
@@ -84,13 +105,14 @@ const showError = (field) => {
           type="text"
           v-model="cardData.number"
           placeholder="e.g. 1234 5678 9123 0000"
-          class="input-field"
+          class="input-field peer"
           :class="{ 'border-red500': showError('number') }"
           aria-describedby="numberError"
           maxlength="16"
-          required
+          required          
           @blur="handleBlur('number')"
-        />
+          @input="handleNumberInput"
+        />        
         <span v-if="showError('number')" id="numberError" role="alert" class="text-red500 text-xs mt-1">Wrong format, numbers only</span>
       </div>
 
@@ -114,6 +136,7 @@ const showError = (field) => {
                 maxlength="2"
                 required
                 @blur="handleBlur('month')"
+                @input="handleNumberInput('month')"
               />
               <input
                 type="text"
@@ -126,6 +149,7 @@ const showError = (field) => {
                 maxlength="2"
                 required
                 @blur="handleBlur('year')"
+                @input="handleNumberInput('year')"
               />
             </div>
           </fieldset>
@@ -140,7 +164,7 @@ const showError = (field) => {
             id="cvc"
             v-model="cardData.cvc"
             placeholder="e.g. 123"
-            class="input-field"
+            class="input-field focus-visible:ring-off"
             :class="{ 'border-red500': showError('cvc') }"
             aria-describedby="cvcError"
             maxlength="3"
@@ -153,19 +177,23 @@ const showError = (field) => {
     </fieldset>
 
     <!-- Confirm Button -->
-    <button type="submit" class="btn">Confirm</button>
+    <button type="submit" class="btn active:scale-95">Confirm</button>    
   </form>
 
   <!-- Complete State -->
   <article v-else class="flex flex-col gap-8 items-center w-81.75" aria-live="polite">
     <img src="/src/assets/images/icon-complete.svg" alt="Form completed successfully" class="size-20" />
 
+    <!-- Message Container -->
     <div class="flex flex-col gap-12 items-center w-full">
+
+      <!-- Message Text Container -->
       <div class="flex flex-col gap-4 w-full items-center">
         <h2 class="text-[28px] leading-[1.3] tracking-[3.5px] text-purple950">THANK YOU!</h2>
         <p class="text-[18px] leading-[1.3] text-gray400">Your card details have been added.</p>
       </div>
 
+      <!-- Button Continue -->
       <button type="button" class="btn w-full" @click="handleContinue">Continue</button>
     </div>
   </article>
