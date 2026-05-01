@@ -9,19 +9,18 @@ const formatNumber = (num) => {
         .trim()
     : '0000 0000 0000 0000';
 };
-</script>
+</script>   
 
 <template>
   <!-- Card Container -->
-  <div class="absolute top-8 left-1/2 flex w-85.75 md:w-135.75 -translate-x-1/2 flex-col xl:w-135.25 xl:top-1/2 xl:-translate-y-1/2 xl:left-41 xl:translate-x-0">
- 
+  <div class="absolute top-8 left-1/2 flex w-85.75 -translate-x-1/2 flex-col md:w-135.75 xl:top-1/2 xl:left-41 xl:w-135.25 xl:translate-x-0 xl:-translate-y-1/2">
     <!-- Card Back -->
-    <div class="card-back relative h-39.25 w-71.5 md:w-111.75 md:h-61.25  self-end xl:order-2 xl:translate-y-8">
+    <div class="card-back relative h-39.25 self-end md:h-61.25 xl:order-2 xl:translate-y-8">
       <span class="text-cvc absolute top-[45%] right-[12%]">{{ cardData.cvc || '000' }}</span>
     </div>
 
     <!-- Card Front -->
-    <div class="card-front h-38 w-71.25 -translate-y-17 p-4 md:w-111.75 md:h-61.25 md:-translate-y-27 md:px-8 md:py-6 xl:translate-y-0 xl:order-1">
+    <div class="card-front -translate-y-17 p-4 md:h-61.25 md:-translate-y-27 md:px-8 md:py-6 xl:order-1 xl:translate-y-0">
       <!-- Card Details -->
       <div class="flex flex-col gap-10 md:gap-16">
         <!-- Card Logo -->

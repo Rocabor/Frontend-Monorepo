@@ -24,32 +24,34 @@
   letter-spacing: 1.25px;
   text-transform: uppercase;
   color: white;
-  @variant md{
+  @variant md {
     line-height: 1.3;
-  letter-spacing: 2px;
+    letter-spacing: 2px;
   }
 }
-
+/* numbers */
 @utility preset-1 {
   font-size: clamp(1.13rem, calc(0.529rem + 2.545vw), 1.75rem);
   letter-spacing: 2.5px;
   line-height: 1.3;
   color: white;
-   @variant md{
+  @variant md {
     line-height: 1.3;
-  letter-spacing: 3.5px;
+    letter-spacing: 3.5px;
   }
 }
+/* name */
 @utility preset-2 {
   font-size: clamp(0.56rem, calc(0.264rem + 1.272vw), 0.88rem);
   letter-spacing: 1.25px;
   line-height: 1.25;
   color: white;
-  @variant md{
+  @variant md {
     line-height: 1.3;
-  letter-spacing: 2px;
+    letter-spacing: 2px;
   }
 }
+
 
 .bg-main {
   background-image: url('./assets/images/bg-main-mobile.png');
@@ -65,9 +67,53 @@
   background-image: url('./assets/images/bg-card-back.png');
   background-size: cover;
   background-repeat: no-repeat;
+  width: clamp(285px, calc(130.42px + 41.221vw), 447px);
 }
 .card-front {
   background-image: url('./assets/images/bg-card-front.png');
   background-size: cover;
   background-repeat: no-repeat;
+  width: clamp(285px, calc(130.42px + 41.221vw), 447px);
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.input-field {  
+  padding: 8px 16px;
+  border: 1px solid var(--color-gray200);
+  border-radius: 8px;
+  width: 100%;
+  height: 45px;  
+  outline: none;
+}
+.input-field::placeholder {
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--color-purple950);
+  opacity: 25%;
+}
+label {
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #21092f;
+}
+.btn { 
+  height: 53px;
+  background: #21092f;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  line-height: 1.3;
+}
+.field-group span{
+  font-size: 12px;
+  line-height: 1.25;
+  color: var(--color-red400);
 }
