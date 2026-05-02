@@ -28,9 +28,21 @@ const selectCategory = (diff) => {
 };
 
 // 3. Propiedad computada para obtener solo los proyectos de la pestaña activa
+// 3.1 Filtro de orden (recientes/antiguos) usando índice del array
+const sortOrder = ref('newest');
+
 const activeProjects = computed(() => {
-  return allProjects[activeCategory.value] || [];
+  const projects = allProjects[activeCategory.value] || [];
+  const sorted = [...projects];
+  if (sortOrder.value === 'newest') {
+    sorted.reverse();
+  }
+  return sorted;
 });
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 </script>
 
 <template>
@@ -76,6 +88,20 @@ const activeProjects = computed(() => {
             <span class="count-badge">
               {{ activeProjects.length }} projects completed
             </span>
+            <div class="sort-buttons">
+              <button 
+                :class="['sort-btn', { active: sortOrder === 'newest' }]"
+                @click="sortOrder = 'newest'"
+              >
+                Newest
+              </button>
+              <button 
+                :class="['sort-btn', { active: sortOrder === 'oldest' }]"
+                @click="sortOrder = 'oldest'"
+              >
+                Oldest
+              </button>
+            </div>
           </div>
 
 <div class="project-grid">
@@ -111,6 +137,12 @@ const activeProjects = computed(() => {
           </div>
         </section>
       </transition>
+
+      <div class="footer-nav">
+        <a href="#" class="back-to-top" @click.prevent="scrollToTop">
+          ↑ Back to top
+        </a>
+      </div>
     </div>
   </main>
 </template>
@@ -140,5 +172,60 @@ const activeProjects = computed(() => {
   transition: all 0.3s ease;
   font-family: inherit;
   outline: none;
+}
+
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.sort-btn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.sort-btn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.sort-btn:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.sort-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.back-to-top {
+  color: inherit;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+}
+
+.back-to-top:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 </style>
