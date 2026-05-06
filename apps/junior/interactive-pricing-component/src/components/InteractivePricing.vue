@@ -61,7 +61,7 @@ const sliderPercentage = computed(() => {
               :style="{ left: `calc(${sliderPercentage}% - 20px)` }"
               aria-hidden="true"
             >
-              <img src="./images/icon-slider.svg" alt="" />
+              <img src="../images/icon-slider.svg" alt="" />
             </div>
           </div>
 
@@ -103,15 +103,15 @@ const sliderPercentage = computed(() => {
       <div class="py-8 px-6 md:py-10 md:pb-8 md:pt-8 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
         <ul class="space-y-3 text-gray-500 text-xs text-center md:text-left">
           <li class="flex items-center gap-4">
-            <img src="./images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
+            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
             Unlimited websites
           </li>
           <li class="flex items-center gap-4">
-            <img src="./images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
+            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
             100% data ownership
           </li>
           <li class="flex items-center gap-4">
-            <img src="./images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
+            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
             Email reports
           </li>
         </ul>
