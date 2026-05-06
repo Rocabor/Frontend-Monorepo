@@ -1,14 +1,11 @@
 <script setup>
 
-import { ref } from 'vue';
 import InteractivePricing from './components/InteractivePricing.vue';
-
-
 
 </script>
 
 <template>
-  <header class="h-100 bg-slate-50 bg-[url(images/bg-pattern.svg)] bg-bottom bg-no-repeat bg-auto xl:h-112.25 xl:bg-[length:100%_100%]">
+  <header class="h-100 bg-slate-50 bg-[url(images/bg-pattern.svg)] bg-bottom bg-no-repeat bg-auto xl:h-112.25 xl:bg-size-[100%_100%]">
     <div
       class="relative mx-auto flex w-81.5 translate-y-22.25 flex-col gap-2 bg-[url(images/pattern-circles.svg)] bg-center bg-no-repeat text-center before:absolute before:top-1/2 before:left-1/2 before:z-[-1] before:size-36.5 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-[url(images/pattern-circles.svg)] before:content-[''] md:w-98.75 md:gap-3 
       md:translate-y-25">
