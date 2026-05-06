@@ -223,6 +223,7 @@ All projects have live demos, so you can see them running without any local setu
 | 08 | **Clipboard landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/clipboard-landing-page/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/clipboard-landing-page) |
 | 09 | **Contact form** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/contact-form/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/contact-form) |
 | 10 | **Interactive card details form** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/interactive-card-details-form/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/interactive-card-details-form) |
+| 11 | **Interactive pricing component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/interactive-pricing-component/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/interactive-pricing-component) |
 
 ---
 
