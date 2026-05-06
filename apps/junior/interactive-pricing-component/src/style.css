@@ -5,6 +5,10 @@
     font-family: 'Manrope', sans-serif;
     position: relative;
     min-height: 100dvh;
+    background-color: white;
+    @variant md{
+      @apply bg-[#F9FAFF];
+    }
    
   }
 }

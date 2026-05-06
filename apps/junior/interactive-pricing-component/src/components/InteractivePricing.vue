@@ -52,15 +52,16 @@ const sliderPercentage = computed(() => {
               min="0" 
               :max="pricingData.length - 1" 
               v-model="currentLevel"
-              class="slider-input w-full appearance-none h-2 rounded-full cursor-pointer outline-none"
+              class="slider-input w-full appearance-none h-2 rounded-full cursor-pointer outline-none focus:outline-2 focus:outline-[#10d8c4] focus:outline-offset-4"
               :style="{ background: `linear-gradient(to right, #10d8c4 ${sliderPercentage}%, #eaeefb ${sliderPercentage}%)` }"
+              :aria-valuetext="`${currentPricing.pageviews} pageviews, ${finalPrice} dollars per month`"
             />
-            <!-- Thumb que sigue las imágenes de active-states.jpg -->
             <div 
               class="slider-thumb absolute top-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center shadow-lg shadow-cyan-200"
               :style="{ left: `calc(${sliderPercentage}% - 20px)` }"
+              aria-hidden="true"
             >
-              <img src="/images/icon-slider.svg" alt="slider icon" />
+              <img src="/images/icon-slider.svg" alt="" />
             </div>
           </div>
 
@@ -76,8 +77,11 @@ const sliderPercentage = computed(() => {
           <span>Monthly Billing</span>
           <button 
             @click="isYearlyBilling = !isYearlyBilling"
-            class="w-11 h-5.5 rounded-full p-1 flex transition-colors duration-300 relative"
+            class="w-11 h-5.5 rounded-full p-1 flex transition-colors duration-300 relative focus:outline-none focus:ring-2 focus:ring-[#10d8c4] focus:ring-offset-2"
             :class="isYearlyBilling ? 'bg-[#10d8c4]' : 'bg-[#eaeefb]'"
+            role="switch"
+            :aria-checked="isYearlyBilling"
+            aria-label="Toggle yearly billing"
           >
             <div 
               class="bg-white w-3.5 h-3.5 rounded-full shadow-sm transition-transform duration-300"
@@ -99,19 +103,19 @@ const sliderPercentage = computed(() => {
       <div class="py-8 px-6 md:py-10 md:pb-8 md:pt-8 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
         <ul class="space-y-3 text-gray-500 text-xs text-center md:text-left">
           <li class="flex items-center gap-4">
-            <img src="/images/icon-check.svg" alt="">
+            <img src="/images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
             Unlimited websites
           </li>
           <li class="flex items-center gap-4">
-                        <img src="/images/icon-check.svg" alt="">
+            <img src="/images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
             100% data ownership
           </li>
           <li class="flex items-center gap-4">
-                        <img src="/images/icon-check.svg" alt="">
+            <img src="/images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
             Email reports
           </li>
         </ul>
-        <button class="bg-[#293356] text-[#bdccff] font-extrabold px-11 py-3 rounded-full text-xs hover:text-white transition-colors">
+        <button class="bg-[#293356] text-[#bdccff] font-extrabold px-11 py-3 rounded-full text-xs hover:bg-[#1a233a] hover:text-white focus:text-white focus:bg-[#1a233a] focus:outline-none focus:ring-2 focus:ring-[#10d8c4] focus:ring-offset-2 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-90">
           Start my trial
         </button>
       </div>
@@ -120,7 +124,6 @@ const sliderPercentage = computed(() => {
 </template>
 
 <style scoped>
-/* Ocultar thumb nativo para usar el personalizado div.slider-thumb */
 .slider-input::-webkit-slider-thumb {
   appearance: none;
   width: 40px;
@@ -140,7 +143,6 @@ const sliderPercentage = computed(() => {
   transition: all 0.2s;
 }
 
-/* Efectos de estado activo (Referencia: active-states.jpg) */
 .slider-input:active + .slider-thumb {
   background-color: #24aea1;
   box-shadow: 0 0 20px 5px rgba(16, 216, 196, 0.4);
