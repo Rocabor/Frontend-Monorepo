@@ -60,7 +60,7 @@ const sliderPercentage = computed(() => {
               class="slider-thumb pointer-events-none absolute top-1/2 flex -translate-y-1/2 items-center justify-center shadow-lg shadow-cyan-200"
               :style="{ left: `calc(${sliderPercentage}% - 20px)` }"
               aria-hidden="true">
-              <img src="../images/icon-slider.svg" alt="" />
+              <img src="../assets/images/icon-slider.svg" alt="" />
             </div>
           </div>
 
@@ -99,15 +99,15 @@ const sliderPercentage = computed(() => {
       <div class="flex flex-col items-center justify-between gap-8 px-6 py-8 md:flex-row md:px-12 md:py-10 md:pt-8 md:pb-8">
         <ul class="space-y-3 text-center text-xs text-gray-500 md:text-left">
           <li class="flex items-center gap-4">
-            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="h-4 w-4" />
+            <img src="../assets/images/icon-check.svg" alt="" aria-hidden="true" class="h-1.5 w-2" />
             Unlimited websites
           </li>
           <li class="flex items-center gap-4">
-            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="h-4 w-4" />
+            <img src="../assets/images/icon-check.svg" alt="" aria-hidden="true" class="h-1.5 w-2" />
             100% data ownership
           </li>
           <li class="flex items-center gap-4">
-            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="h-4 w-4" />
+            <img src="../assets/images/icon-check.svg" alt="" aria-hidden="true" class="h-1.5 w-2" />
             Email reports
           </li>
         </ul>
