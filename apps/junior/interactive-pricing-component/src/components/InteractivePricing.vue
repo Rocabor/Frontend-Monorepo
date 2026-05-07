@@ -26,72 +26,68 @@ const sliderPercentage = computed(() => {
 </script>
 
 <template>
-  <div class="flex items-center justify-center w-full px-6">
-    
-    <div class="bg-white rounded-lg shadow-xl w-full max-w-135">
-      
-      <div class="py-8 px-6 md:py-10 md:px-12 ">
+  <div class="flex w-full items-center justify-center px-6">
+    <div class="w-full max-w-135 rounded-lg bg-white shadow-xl">
+      <div class="px-6 py-8 md:px-12 md:py-10">
         <!-- Layout Responsivo: Grid para alinear como en desktop-design.jpg -->
-        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-y-8 md:gap-y-12">
-          
+        <div class="grid grid-cols-1 items-center gap-y-8 md:grid-cols-2 md:gap-y-12">
           <!-- Pageviews: Izquierda en Desktop -->
-          <h2 class="text-[#848EAD] uppercase tracking-[1.71px] leading-[1.33] font-extrabold text-xs md:text-sm text-center md:text-left md:tracking-[2px] md:leading-[1.36]">
+          <h2 id="pageviews-label" class="text-center text-xs leading-[1.33] font-extrabold tracking-[1.71px] text-[#848EAD] uppercase md:text-left md:text-sm md:leading-[1.36] md:tracking-[2px]">
             {{ currentPricing.pageviews }} Pageviews
           </h2>
 
           <!-- Precio: Derecha en Desktop (Oculto en móvil aquí para moverlo abajo) -->
-          <div class="hidden md:flex items-center justify-end gap-2">
+          <div class="hidden items-center justify-end gap-2 md:flex">
             <span class="text-4xl font-extrabold text-[#293356]">${{ finalPrice }}</span>
             <span class="text-[#848EAD]">/ month</span>
           </div>
 
           <!-- Slider: Ancho completo debajo de los títulos -->
-          <div class="md:col-span-2 relative">
-            <input 
-              type="range" 
-              min="0" 
-              :max="pricingData.length - 1" 
+          <div class="relative md:col-span-2">
+            <input
+              type="range"
+              aria-labelledby="pageviews-label"
+              min="0"
+              :max="pricingData.length - 1"
               v-model="currentLevel"
-              class="slider-input w-full appearance-none h-2 rounded-full cursor-pointer outline-none focus:outline-2 focus:outline-[#10d8c4] focus:outline-offset-4"
+              :aria-valuenow="currentLevel"
+              aria-valuemin="0"
+              :aria-valuemax="pricingData.length - 1"
+              class="slider-input h-2 w-full cursor-pointer appearance-none rounded-full outline-none focus-visible:ring-2 focus-visible:ring-[#10d8c4] focus-visible:ring-offset-8"
               :style="{ background: `linear-gradient(to right, #10d8c4 ${sliderPercentage}%, #eaeefb ${sliderPercentage}%)` }"
-              :aria-valuetext="`${currentPricing.pageviews} pageviews, ${finalPrice} dollars per month`"
-            />
-            <div 
-              class="slider-thumb absolute top-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center shadow-lg shadow-cyan-200"
+              :aria-valuetext="`${currentPricing.pageviews} pageviews, ${finalPrice} dollars per month`" />
+            <div
+              class="slider-thumb pointer-events-none absolute top-1/2 flex -translate-y-1/2 items-center justify-center shadow-lg shadow-cyan-200"
               :style="{ left: `calc(${sliderPercentage}% - 20px)` }"
-              aria-hidden="true"
-            >
+              aria-hidden="true">
               <img src="../images/icon-slider.svg" alt="" />
             </div>
           </div>
 
           <!-- Precio: Solo visible en móvil en esta posición (mobile-design.jpg) -->
-          <div class="flex md:hidden items-center justify-center gap-2">
+          <div class="flex items-center justify-center gap-2 md:hidden">
             <span class="text-3xl font-extrabold text-slate-800">${{ finalPrice }}</span>
             <span class="text-gray-500">/ month</span>
           </div>
         </div>
 
         <!-- Toggle Facturación -->
-        <div class="flex items-center justify-center gap-3 md:gap-4 text-gray-500 text-[11px] md:text-xs mt-10 md:mt-14">
+        <div class="mt-10 flex items-center justify-center gap-3 text-[11px] text-gray-500 md:mt-14 md:gap-4 md:text-xs">
           <span>Monthly Billing</span>
-          <button 
+          <button
             @click="isYearlyBilling = !isYearlyBilling"
-            class="w-11 h-5.5 rounded-full p-1 flex transition-colors duration-300 relative focus:outline-none focus:ring-2 focus:ring-[#10d8c4] focus:ring-offset-2"
+            class="relative flex h-5.5 w-11 rounded-full p-1 transition-colors duration-300 focus:ring-2 focus:ring-[#10d8c4] focus:ring-offset-2 focus:outline-none"
             :class="isYearlyBilling ? 'bg-[#10d8c4]' : 'bg-[#eaeefb]'"
             role="switch"
             :aria-checked="isYearlyBilling"
-            aria-label="Toggle yearly billing"
-          >
-            <div 
-              class="bg-white w-3.5 h-3.5 rounded-full shadow-sm transition-transform duration-300"
-              :class="isYearlyBilling ? 'translate-x-5' : 'translate-x-0'"
-            />
+            aria-label="Toggle yearly billing">
+            <div class="h-3.5 w-3.5 rounded-full bg-white shadow-sm transition-transform duration-300" :class="isYearlyBilling ? 'translate-x-5' : 'translate-x-0'" />
           </button>
           <div class="flex items-center gap-1.5">
             <span>Yearly Billing</span>
-            <span class="bg-[#feeae7] text-[#ff8c66] font-extrabold px-2 py-0.5 rounded-full text-[10px]">
-              -25% <span class="hidden md:inline">discount</span>
+            <span class="rounded-full bg-[#feeae7] px-2 py-0.5 text-[10px] font-extrabold text-[#ff8c66]">
+              -25%
+              <span class="hidden md:inline">discount</span>
             </span>
           </div>
         </div>
@@ -100,22 +96,23 @@ const sliderPercentage = computed(() => {
       <hr class="border-slate-100" />
 
       <!-- Footer: Beneficios y Botón -->
-      <div class="py-8 px-6 md:py-10 md:pb-8 md:pt-8 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
-        <ul class="space-y-3 text-gray-500 text-xs text-center md:text-left">
+      <div class="flex flex-col items-center justify-between gap-8 px-6 py-8 md:flex-row md:px-12 md:py-10 md:pt-8 md:pb-8">
+        <ul class="space-y-3 text-center text-xs text-gray-500 md:text-left">
           <li class="flex items-center gap-4">
-            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
+            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="h-4 w-4" />
             Unlimited websites
           </li>
           <li class="flex items-center gap-4">
-            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
+            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="h-4 w-4" />
             100% data ownership
           </li>
           <li class="flex items-center gap-4">
-            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="w-4 h-4">
+            <img src="../images/icon-check.svg" alt="" aria-hidden="true" class="h-4 w-4" />
             Email reports
           </li>
         </ul>
-        <button class="bg-[#293356] text-[#bdccff] font-extrabold px-11 py-3 rounded-full text-xs hover:bg-[#1a233a] hover:text-white focus:text-white focus:bg-[#1a233a] focus:outline-none focus:ring-2 focus:ring-[#10d8c4] focus:ring-offset-2 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-90">
+        <button
+          class="rounded-full bg-[#293356] px-11 py-3 text-xs font-extrabold text-[#bdccff] shadow-lg transition-all duration-300 hover:bg-[#1a233a] hover:text-white hover:shadow-xl focus:bg-[#1a233a] focus:text-white focus:ring-2 focus:ring-[#10d8c4] focus:ring-offset-2 focus:outline-none active:scale-90">
           Start my trial
         </button>
       </div>
@@ -132,7 +129,10 @@ const sliderPercentage = computed(() => {
 .slider-input::-moz-range-thumb {
   width: 40px;
   height: 40px;
-  opacity: 0;
+  background: transparent; 
+  border: none;            
+  cursor: pointer;
+ 
 }
 
 .slider-thumb {
