@@ -1,0 +1,12 @@
+{
+  "name": "@packages/ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  }
+}
