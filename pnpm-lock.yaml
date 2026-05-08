@@ -598,6 +598,12 @@ importers:
         specifier: latest
         version: 8.0.8(@types/node@22.15.3)(esbuild@0.27.3)(jiti@2.6.1)
 
+  packages/ui:
+    dependencies:
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.33(typescript@5.9.2)
+
   packages/vite-config:
     dependencies:
       vite:
