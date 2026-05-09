@@ -26,24 +26,13 @@ defineProps({
 </script>
 
 <template>
-  <footer>
-    <nav class="attribution" aria-label="Attribution credits">
+  <footer class="fixed inset-x-0 bottom-0 bg-white py-2 text-center">
+    <nav class="font-size-[clamp(0.75rem,calc(0.511rem+1.018vw),1rem)]" aria-label="Attribution credits">
       Challenge by
-      <a :href="challengeLink" target="_blank" rel="noopener noreferrer">{{ challengeText }}</a>
+      <a :href="challengeLink" target="_blank" rel="noopener noreferrer" class="font-bold text-[#10d8c4] transition-all duration-300 ease-in-out hover:text-[#ff8c66] focus-visible:ring-2 focus-visible:outline-none">{{ challengeText }}</a>
       • Coded by
-      <a :href="coderLink" target="_blank" rel="noopener noreferrer">{{ coderName }}</a>
-      <span class="year">{{ year }}</span>
+      <a :href="coderLink" target="_blank" rel="noopener noreferrer" class="font-bold text-[#10d8c4] transition-all duration-300 ease-in-out hover:text-[#ff8c66] focus-visible:ring-2 focus-visible:outline-none">{{ coderName }}</a>
+      <span class="font-bold text-[#10d8c4] transition-all duration-300 ease-in-out hover:text-[#ff8c66] focus-visible:ring-2 focus-visible:outline-none">{{ year }}</span>
     </nav>
   </footer>
 </template>
-
-<style scoped>
-.attribution {
-  font-size: clamp(0.75rem, calc(0.511rem + 1.018vw), 1rem);
-  @apply fixed inset-x-0 bottom-0 bg-white py-2 text-center;
-}
-.attribution a,
-.year {
-  @apply font-bold text-[#10d8c4] transition-all duration-300 ease-in-out hover:text-[#ff8c66] focus-visible:ring-2 focus-visible:outline-none;
-}
-</style>
