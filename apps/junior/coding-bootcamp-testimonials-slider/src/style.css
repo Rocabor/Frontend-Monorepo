@@ -4,7 +4,10 @@
   body{
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-height: 100dvh;
+    position: relative;
+    padding: 24px;
 
     font-family: 'Inter', sans-serif;
   }
@@ -27,4 +30,6 @@
 
   /* Custom Gradient Utility */
   --background-gradient: linear-gradient(to right, var(--color-gradient-start), var(--color-gradient-end));
+
+  --shadow-img: 0 40px 50px -30px rgba(36, 36, 113, 0.50);
 }
