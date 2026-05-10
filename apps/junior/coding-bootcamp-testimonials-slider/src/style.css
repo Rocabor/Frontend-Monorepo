@@ -1,5 +1,30 @@
 @import "tailwindcss";
 
+@layer base{
+  body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+
+    font-family: 'Inter', sans-serif;
+  }
+}
+
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui;
+  /* Grays */
+  --color-gray-400: #B9B9CE;
+  --color-gray-100: #EBEBEB;
+  --color-gray-50: #F4F4FC;
+
+  /* Brand Colors */
+  --color-purple-500: #CF6BCB;
+  --color-pink-500: #D3629D;
+  --color-blue-950: #202047;
+
+  /* Gradient Colors */
+  --color-gradient-start: #9975D0;
+  --color-gradient-end: #4A3FDB;
+
+  /* Custom Gradient Utility */
+  --background-gradient: linear-gradient(to right, var(--color-gradient-start), var(--color-gradient-end));
 }
