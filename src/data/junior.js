@@ -76,4 +76,11 @@ export const juniorProjects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
     difficulty: 'Junior',
   },
+  {
+    href: './apps/junior/coding-bootcamp-testimonials-slider/',
+    image: 'images/coding-bootcamp-testimonials-slider.jpg',
+    title: 'coding bootcamp testimonials slider',
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
+    difficulty: 'Junior',
+  },
 ];
