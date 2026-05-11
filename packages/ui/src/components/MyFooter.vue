@@ -36,8 +36,12 @@ defineProps({
 
 .attribution {
   background-color: v-bind(bgColor);
-  font-size: clamp(0.81rem, calc(0.634rem + 0.763vw), 1.00rem);
-  @apply fixed inset-x-0 bottom-0 py-2 text-center;
+  font-size: clamp(0.75rem, calc(0.511rem + 1.018vw), 1.00rem);
+  @apply absolute inset-x-0 bottom-0 py-2 text-center;
+}
+
+nav{
+  @apply font-light;
 }
 
 .attribution a, 

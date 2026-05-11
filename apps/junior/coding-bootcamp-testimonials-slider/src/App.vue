@@ -71,4 +71,12 @@ const prev = () => {
   </div>
 
   <img src="./assets/images/pattern-curve.svg" alt="" class="absolute bottom-0 left-0 -z-10 w-71.25 xl:w-auto" />
+
+  <MyFooter
+  bg-color="transparent"
+  text-color="var(--color-gradient-end)"
+  hover-color="var(--color-pink-500)"
+  focus-visible="var(--color-pink-500)" 
+  
+  />
 </template>
