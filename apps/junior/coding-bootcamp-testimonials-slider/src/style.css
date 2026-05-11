@@ -5,11 +5,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100dvh;
+    min-height: 667px;
     position: relative;
     padding: 24px;
 
     font-family: 'Inter', sans-serif;
+
+    @variant md{
+      min-height: 1024px;
+    }
+
+    @variant xl{
+      padding:50px;
+      min-height: 800px;
+    }
   }
 }
 
@@ -32,4 +41,21 @@
   --background-gradient: linear-gradient(to right, var(--color-gradient-start), var(--color-gradient-end));
 
   --shadow-img: 0 40px 50px -30px rgba(36, 36, 113, 0.50);
+  --shadow-btn: 0 15px 20px -10px rgba(36, 36, 113, 0.10);
+}
+
+@utility preset-1{
+ font-size: clamp(1.13rem, calc(0.290rem + 3.562vw), 2.00rem);
+ font-weight: 300;
+ line-height: 135%;
+ color:var(--color-blue-950); 
+}
+@utility preset-2{
+font-size: clamp(0.94rem, calc(0.639rem + 1.272vw), 1.25rem);
+ font-weight: 700;
+ line-height: 135%;
+ color:var(--color-blue-950); 
+ @variant md{
+  line-height:190%;
+ }
 }
