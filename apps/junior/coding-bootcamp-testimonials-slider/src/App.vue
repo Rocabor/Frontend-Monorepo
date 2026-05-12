@@ -38,16 +38,16 @@ const prev = () => {
   <div class="xl:flex">
   <div class="relative h-[307.5px] w-[326.5px] bg-[url('./assets/images/pattern-bg.svg')] bg-cover bg-no-repeat px-9.25 py-7.5 md:h-122.5 md:w-130 md:px-14.25 md:py-12 mx-auto xl:h-164.25 xl:w-174.25 xl:px-16.25 xl:py-15.75 xl:order-1">
 
-    <img src="./assets/images/image-tanya.jpg" class="shadow-img h-63.25 w-63.5 rounded-[5px] md:h-100.75 md:w-101.25 xl:size-135" alt="" />
+    <img :src="current.image" :alt="current.name" class="shadow-img h-63.25 w-63.5 rounded-[5px] md:h-100.75 md:w-101.25 xl:size-135" alt="" />
 
     <div class="shadow-btn absolute bottom-1 left-1/2 flex h-10 w-20 -translate-x-1/2 rounded-[28px] bg-white md:bottom-3 md:h-14 md:w-28 xl:bottom-6 xl:left-46.25">
       
-      <button type="button" class="flex w-10 cursor-pointer items-center justify-center rounded-l-[28px] md:w-14">
+      <button @click="prev" type="button" class="flex w-10 cursor-pointer items-center justify-center rounded-l-[28px] md:w-14 active:scale-75 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-pink-500">
 
         <div class="size-3 bg-gray-400 mask-[url('./assets/images/icon-prev.svg')] mask-contain mask-no-repeat mask-center md:size-4 "></div>
       </button>
 
-      <button type="button" class="flex w-10 cursor-pointer items-center justify-center rounded-r-[28px] md:w-14">
+      <button @click="next" type="button" class="flex w-10 cursor-pointer items-center justify-center rounded-r-[28px] md:w-14 active:scale-75 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-pink-500">
 
         <div class="size-3 bg-gray-400 mask-[url('./assets/images/icon-next.svg')] mask-contain mask-no-repeat mask-center md:size-4"></div>
       </button>
@@ -60,12 +60,12 @@ const prev = () => {
     <img src="./assets/images/pattern-quotes.svg" alt="" class="absolute left-1/2 h-12.5 w-15 -translate-x-1/2 md:w-30 md:h-25 xl:-translate-x-53.75" />
 
     <p class="preset-1 mt-6.25 text-center md:mt-18.5 xl:text-left">
-      “ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”
+      {{ current.quote }}
     </p>
 
     <div class="flex h-10 min-w-26.5 flex-col text-center md:flex-row md:gap-2">
-      <p class="preset-2">Tanya Sinclair</p>
-      <p class="preset-2 font-medium text-gray-400">UX Engineer</p>
+      <p class="preset-2">{{ current.name }}</p>
+      <p class="preset-2 font-medium text-gray-400">{{ current.role }}</p>
     </div>
   </div>
   </div>
