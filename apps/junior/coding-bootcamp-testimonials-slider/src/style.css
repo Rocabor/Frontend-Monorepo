@@ -51,11 +51,23 @@
  color:var(--color-blue-950); 
 }
 @utility preset-2{
-font-size: clamp(0.94rem, calc(0.639rem + 1.272vw), 1.25rem);
- font-weight: 700;
- line-height: 135%;
- color:var(--color-blue-950); 
- @variant md{
-  line-height:190%;
- }
+ font-size: clamp(0.94rem, calc(0.639rem + 1.272vw), 1.25rem);
+  font-weight: 700;
+  line-height: 135%;
+  color:var(--color-blue-950); 
+  @variant md{
+   line-height:190%;
+  }
+}
+
+@utility sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
