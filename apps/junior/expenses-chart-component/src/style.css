@@ -2,6 +2,13 @@
 
 @layer base {
   body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100dvh;
+    background-color: var(--color-red-100);
 
     font-family: 'DM Sans', sans-serif;
   }
@@ -38,6 +45,7 @@
   font-size: 24px;
   line-height: 1.3;
   font-weight: 700;
+  color:white;
 }
 
 @utility text-preset-4-bold {
@@ -60,8 +68,9 @@
 
 @utility text-preset-5-reg {
   font-size: 15px;
-  line-height: 1.33;
-  font-weight: 400;
+  line-height: 1.35;
+  font-weight: 400;  
+  color:white;
 }
 
 @utility text-preset-6 {

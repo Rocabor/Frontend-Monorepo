@@ -3,26 +3,36 @@ import { MyFooter } from '@packages/ui';
 </script>
 
 <template>
-  <main class="min-h-screen bg-slate-50 flex items-center justify-center p-6">
-    <section class="max-w-md w-full bg-white rounded-3xl shadow-2xl shadow-slate-200/60 p-8 border border-slate-100 text-center">
-      <header class="space-y-2">
-        <h1 class="text-2xl font-black text-slate-900 tracking-tight">
-          Expenses Chart Component
-        </h1>
-        <p class="text-slate-500 font-medium text-balance">
-          Configuración lista para el monorepo.
-        </p>
-      </header>
-      
-      <div class="mt-8 pt-6 border-t border-slate-50 flex flex-col items-center gap-4">
-        <div class="flex -space-x-2">
-          <span class="h-10 w-10 rounded-full bg-emerald-500 border-4 border-white flex items-center justify-center text-[10px] text-white font-bold shadow-sm">VUE</span>
-          <span class="h-10 w-10 rounded-full bg-sky-500 border-4 border-white flex items-center justify-center text-[10px] text-white font-bold shadow-sm">TW4</span>
-        </div>
-        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Ready to Code</p>
-      </div>
-    </section>
-  </main>
 
-  <MyFooter />
+  <!--* Balance section -->
+   <div class="flex flex-col gap-4 max-w-[540px]">
+
+    <!--* Balance container -->
+    <div class="flex p-4 bg-red-500 rounded-[10px] w-[343px]">
+
+      <!--* Balance info -->
+      <div class="flex justify-between items-center w-full">
+
+        <div class="">
+          <p class="text-preset-5-reg">My balance</p>
+          <p class="text-preset-3 ">$921.48</p>
+        </div>
+        <img src="./assets/images/logo.svg" alt="" class="w-[60px] h-[40px]">
+      </div>
+
+    </div>
+
+
+    <!--* Spending section -->
+    <div></div>
+
+
+   </div>
+
+
+
+  
+
+  <MyFooter 
+  bg-color="transparent"/>
 </template>
