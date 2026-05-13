@@ -1,5 +1,71 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@layer base {
+  body {
+
+    font-family: 'DM Sans', sans-serif;
+  }
+}
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui;
+  /* Red Palette */
+  --color-red-500: #ec755d;
+  --color-red-300: #ffa896;
+  --color-red-100: #f9ece2;
+
+  /* Brown Palette */
+  --color-brown-950: #382314;
+  --color-brown-400: #92857a;
+
+  /* Blue Palette */
+  --color-blue-300: #88bfc5;
+  --color-blue-200: #bee4e8;
+}
+
+@utility text-preset-1 {
+  font-size: 48px;
+  line-height: 1.3;
+  font-weight: 700;  
+}
+
+@utility text-preset-2 {
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+@utility text-preset-3 {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+@utility text-preset-4-bold {
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+@utility text-preset-4-reg {
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+@utility text-preset-5-bold {
+  font-size: 15px;
+  line-height: 1.33;
+  font-weight: 700;
+}
+
+@utility text-preset-5-reg {
+  font-size: 15px;
+  line-height: 1.33;
+  font-weight: 400;
+}
+
+@utility text-preset-6 {
+  font-size: 12px;
+  line-height: 1.33;
+  font-weight: 400;
 }
