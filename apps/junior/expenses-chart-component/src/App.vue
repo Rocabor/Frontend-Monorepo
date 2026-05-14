@@ -9,10 +9,8 @@ const maxAmount = Math.max(...chartData.map((item) => item.amount));
 <template>
   <!--* Balance section -->
   <div class="flex w-85.75 flex-col gap-4 md:w-135 md:gap-6">
-
     <!--* Balance container -->
     <div class="flex w-full rounded-[10px] bg-red-500 px-5.5 py-5.75 md:rounded-[20px] md:px-[35.5px] md:py-6.5">
-
       <!--* Balance info -->
       <div class="flex w-full items-center justify-between">
         <div class="flex flex-col md:gap-2">
@@ -25,10 +23,8 @@ const maxAmount = Math.max(...chartData.map((item) => item.amount));
 
     <!--* Spending section -->
     <div class="w-full rounded-[10px] bg-white px-4 py-6 md:rounded-[20px] md:px-10 md:py-9.5">
-
       <!--* Spending container -->
       <div class="flex flex-col gap-14 md:gap-16">
-
         <!--* Bar chart container -->
         <figure class="flex flex-col">
           <figcaption class="text-preset-3 text-brown-950 mb-14 md:mb-16">Spending - Last 7 days</figcaption>
@@ -40,21 +36,19 @@ const maxAmount = Math.max(...chartData.map((item) => item.amount));
               <div
                 :style="{ height: (item.amount / maxAmount) * 100 + '%' }"
                 :class="[item.amount === maxAmount ? 'bg-blue-300 group-hover:bg-blue-200 group-active:bg-blue-200' : 'bg-red-500 group-hover:bg-red-300 group-active:bg-red-300']"
-                class="w-full rounded-sm relative">
+                class="relative w-full rounded-sm">
                 <!-- Amount visible en hover -->
-                <span class="bg-brown-950 absolute -top-11 left-1/2 -translate-x-1/2 rounded-[5px] p-2 text-preset-4-bold text-white opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
+                <span
+                  class="bg-brown-950 md:text-preset-4-bold absolute -top-9 left-1/2 -translate-x-1/2 rounded-[5px] p-1 text-[14px] font-bold text-white opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100 md:-top-11 md:p-2">
                   ${{ item.amount }}
-                  </span>
-
-                
+                </span>
               </div>
               <p class="text-preset-6">{{ item.day }}</p>
             </li>
           </ul>
 
           <!--* Total section -->
-          <div class="border-t-2 border-red-100 mt-6 md:mt-8">
-
+          <div class="mt-6 border-t-2 border-red-100 md:mt-8">
             <!--* Total container -->
             <div class="mt-6 md:mt-8">
               <p class="text-preset-5-reg text-brown-400">Total this month</p>
@@ -76,5 +70,5 @@ const maxAmount = Math.max(...chartData.map((item) => item.amount));
     </div>
   </div>
 
-  <MyFooter bg-color="transparent" text-color="var(--color-blue-300)" />
+  <MyFooter bg-color="transparent" text-color="var(--color-red-500)" />
 </template>

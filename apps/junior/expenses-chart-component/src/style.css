@@ -30,12 +30,6 @@
   --color-blue-200: #bee4e8;
 }
 
-@utility text-preset-1 {
-  font-size: 48px;
-  line-height: 1.3;
-  font-weight: 700;
-}
-
 @utility text-preset-2 {
   font-size: clamp(2rem, calc(1.046rem + 4.071vw), 3rem);
   line-height: 1.3;
@@ -47,18 +41,6 @@
   line-height: 1.3;
   font-weight: 700;
   color: white;
-}
-
-@utility text-preset-4-bold {
-  font-size: 18px;
-  line-height: 1.25;
-  font-weight: 700;
-}
-
-@utility text-preset-4-reg {
-  font-size: 18px;
-  line-height: 1.25;
-  font-weight: 400;
 }
 
 @utility text-preset-5-bold {
@@ -81,14 +63,4 @@
   color: var(--color-brown-400);
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
-}
+
