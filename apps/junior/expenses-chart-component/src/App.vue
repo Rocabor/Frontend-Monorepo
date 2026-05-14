@@ -1,5 +1,10 @@
 <script setup>
 import { MyFooter } from '@packages/ui';
+import data from '../data.json';
+
+const chartData = data;
+const maxAmount = Math.max(...chartData.map(item => item.amount));
+
 </script>
 
 <template>
@@ -25,56 +30,27 @@ import { MyFooter } from '@packages/ui';
     <div class="rounded-[10px] md:rounded-[20px] bg-white px-4 py-6 w-full md:px-10 md:py-9.5">
       <!--* Spending container -->
       <div class="flex flex-col gap-14 md:gap-16">
-        <h1 class="text-preset-3 text-brown-950">Spending - Last 7 days</h1>
+        
 
         <!--* Bar chart container -->
-        <div class="flex flex-col gap-6 md:gap-8">
+        <figure class="flex flex-col gap-6 md:gap-8">
+
+          <figcaption class="text-preset-3 text-brown-950">Spending - Last 7 days</figcaption>
 
           <!--* Bar chart -->
-          <div class="mx-auto grid h-43.5 max-w-112.5 w-full grid-cols-7 items-end gap-2">
+          <ul class="mx-auto grid h-43.5 max-w-112.5 w-full grid-cols-7 items-end gap-2">
             
-            <!-- Lunes -->
-            <div class="flex h-full flex-col items-center justify-end gap-2">
-              <div class="h-[30%] w-full rounded-sm bg-[#ec775f]"></div>
-              <span class="text-preset-6">mon</span>
-            </div>
+            <!-- iteraciones del archivo data.json para los dias de la semana -->
+            <li v-for="item in chartData" :key="item.day" class="flex h-full flex-col items-center justify-end gap-2">
+              <div 
+              :style="{height:(item.amount/maxAmount*100)+'%'}" 
+              :class="[item.amount === maxAmount ?  'bg-blue-300' : 'bg-red-500']" class="w-full rounded-sm"></div>
+              <p class="text-preset-6">{{ item.day }}</p>
+              <span class="visually-hidden" >amount: ${{ item.amount }}</span>
+            </li>
 
-            <!-- Martes -->
-            <div class="flex h-full flex-col items-center justify-end gap-2">
-              <div class="h-[50%] w-full rounded-sm bg-[#ec775f]"></div>
-              <span class="text-preset-6">tue</span>
-            </div>
-
-            <!-- Miércoles -->
-            <div class="flex h-full flex-col items-center justify-end gap-2">              
-              <div class="h-[75%] w-full rounded-sm bg-[#76b5bc]"></div>
-              <span class="text-preset-6">wed</span>
-            </div>
-
-            <!-- Jueves -->
-            <div class="flex h-full flex-col items-center justify-end gap-2">
-              <div class="h-[45%] w-full rounded-sm bg-[#ec775f]"></div>
-              <span class="text-preset-6">thu</span>
-            </div>
-
-            <!-- Viernes -->
-            <div class="flex h-full flex-col items-center justify-end gap-2">
-              <div class="h-[35%] w-full rounded-sm bg-[#ec775f]"></div>
-              <span class="text-preset-6">fri</span>
-            </div>
-
-            <!-- Sábado -->
-            <div class="flex h-full flex-col items-center justify-end gap-2">
-              <div class="h-[65%] w-full rounded-sm bg-[#ec775f]"></div>
-              <span class="text-preset-6">sat</span>
-            </div>
-
-            <!-- Domingo -->
-            <div class="flex h-full flex-col items-center justify-end gap-2">
-              <div class="h-[40%] w-full rounded-sm bg-[#ec775f]"></div>
-              <span class="text-preset-6">sun</span>
-            </div>
-          </div>
+            
+          </ul>
 
           <!--* Total section -->
           <div class="border-t-2 border-red-100">
@@ -94,7 +70,7 @@ import { MyFooter } from '@packages/ui';
               </div>
             </div>
           </div>
-        </div>
+        </figure>
       </div>
     </div>
   </div>
