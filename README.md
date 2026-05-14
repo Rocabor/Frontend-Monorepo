@@ -225,6 +225,7 @@ All projects have live demos, so you can see them running without any local setu
 | 10 | **Interactive card details form** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/interactive-card-details-form/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/interactive-card-details-form) |
 | 11 | **Interactive pricing component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/interactive-pricing-component/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/interactive-pricing-component) |
 | 12 | **Coding bootcamp testimonials slider** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/coding-bootcamp-testimonials-slider/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/coding-bootcamp-testimonials-slider) |
+| 12 | **Expenses chart component** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/expenses-chart-component/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/expenses-chart-component) |
 
 ---
 
