@@ -32,19 +32,19 @@ const maxAmount = Math.max(...chartData.map((item) => item.amount));
           <!--* Bar chart -->
           <ul class="mx-auto grid min-h-43.5 w-full max-w-112.5 grid-cols-7 items-end gap-2 md:gap-4">
             <!-- iteraciones del archivo data.json para los dias de la semana -->
-            <li v-for="item in chartData" :key="item.day" class="group flex h-full cursor-pointer flex-col items-center justify-end gap-2">
+            <button type="button" v-for="item in chartData" :key="item.day" :aria-label="item.day + ', $' + item.amount" class="group flex h-full cursor-pointer flex-col items-center justify-end gap-2 border-none bg-transparent p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500 transition-all rounded-sm">
               <div
                 :style="{ height: (item.amount / maxAmount) * 100 + '%' }"
                 :class="[item.amount === maxAmount ? 'bg-blue-300 group-hover:bg-blue-200 group-active:bg-blue-200' : 'bg-red-500 group-hover:bg-red-300 group-active:bg-red-300']"
                 class="relative w-full rounded-sm">
                 <!-- Amount visible en hover -->
                 <span
-                  class="bg-brown-950 md:text-preset-4-bold absolute -top-9 left-1/2 -translate-x-1/2 rounded-[5px] p-1 text-[14px] font-bold text-white opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100 md:-top-11 md:p-2">
+                  class="bg-brown-950 md:text-preset-4-bold absolute -top-9 left-1/2 -translate-x-1/2 rounded-[5px] p-1 text-[14px] font-bold text-white opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100 md:-top-11 md:p-2 ">
                   ${{ item.amount }}
                 </span>
               </div>
               <p class="text-preset-6">{{ item.day }}</p>
-            </li>
+            </button>
           </ul>
 
           <!--* Total section -->
