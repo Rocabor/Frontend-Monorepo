@@ -1,5 +1,69 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui;
+@theme { 
+  --color-grey-200: #d8d8d8;
+  --color-blue-50: #f6faff;
+  --color-blue-100: #e5eaf1;
+  
+  --background-gradient: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0) 60%);
+
+  --font-josefin: "Josefin Sans", sans-serif;
+  --font-alata: "Alata", sans-serif;
+}
+
+/* Hero Title (Une Preset 3 Móvil de 40px y Preset 1 Escritorio de 72px)
+  - Mínimo: 40px (2.5rem) | Máximo: 72px (4.5rem)
+*/
+@utility text-preset-1 {
+  font-family: var(--font-josefin);
+  font-size: clamp(2.5rem, 1.795rem + 3vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
+/* Section Title (Une Preset 4 Móvil de 32px y Preset 2 Escritorio de 48px)
+  - Mínimo: 32px (2rem) | Máximo: 48px (3rem)
+*/
+@utility text-preset-2 {
+  font-family: var(--font-josefin);
+  font-size: clamp(2rem, 1.647rem + 1.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
+/* Card / Small Titles (Une Preset 5 Móvil de 24px y Preset 4 Escritorio de 32px)
+  - Mínimo: 24px (1.5rem) | Máximo: 32px (2rem)
+*/
+@utility text-preset-4 {
+  font-family: var(--font-josefin);
+  font-size: clamp(1.5rem, 1.323rem + 0.75vw, 2rem);
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
+/* Body Text (Preset 6 original: Alata Regular 15px)
+*/
+@utility text-preset-6 {
+  font-family: var(--font-alata);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0px;
+}
+
+/* Buttons / Navigation (Preset 7 original: Alata Regular 14px)
+*/
+@utility text-preset-7 {
+  font-family: var(--font-alata);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.35em; /* Simula los 5px de tracking del plugin */
+  text-transform: uppercase;
 }
