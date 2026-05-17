@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@layer base{
+  body{
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100dvh;
+  }
+}
+
 @theme { 
   --color-grey-200: #d8d8d8;
   --color-blue-50: #f6faff;
