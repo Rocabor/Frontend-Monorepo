@@ -4,26 +4,28 @@ import { MyFooter } from '@packages/ui';
 
 <template>
   <!--* Main Container -->
-  <header class="h-[650px] bg-[url('./assets/images/mobile/image-hero.jpg')] bg-cover bg-no-repeat pt-10" >
-    
+  <header class="h-[650px] bg-[url('./assets/images/mobile/image-hero.jpg')] bg-cover bg-no-repeat pt-10">
 
     <!--* Header Container -->
-    <div class="w-[327px] h-[383px] mx-auto flex flex-col justify-between">
+    <div class="mx-auto flex h-[383px] w-[327px] flex-col justify-between">
 
-      <!--* Header -->
-      <nav class="flex justify-between items-center">
-        <img src="./assets/images/logo.svg" alt="Logo" class="w-[144px] h-[24px]"/>
+      <!--* Navigation Bar -->
+      <nav class="flex items-center justify-between" aria-label="Main Navigation">
 
-        <button type="button" class="cursor-pointer">
-          <img src="./assets/images/icon-hamburger.svg" alt="Open menu"/>
+        <!-- logo -->
+        <a href="/" class="focus:outline-2 focus:outline-white">
+          <img src="./assets/images/logo.svg" alt="Loopstudios" class="h-[24px] w-[144px]" />
+        </a>
+
+        <!-- Botón con atributos de accesibilidad para lectores de pantalla y teclado -->
+        <button type="button" class="cursor-pointer" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open main menu">
+          <img src="./assets/images/icon-hamburger.svg" alt="" aria-hidden="true" />
         </button>
       </nav>
 
       <!--* Main Content Container -->
-      <div class="border-white border-2 px-6 py-4">
-
+      <div class="border-2 border-white px-6 py-4">
         <h1 class="text-preset-1 text-white">Immersive experiences that deliver</h1>
-
       </div>
     </div>
   </header>
