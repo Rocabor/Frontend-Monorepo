@@ -11,13 +11,12 @@ import { MyFooter } from '@packages/ui';
 
       <!--* Navigation Bar -->
       <nav class="flex items-center justify-between" aria-label="Main Navigation">
-
-        <!-- logo -->
-        <a href="/" class="focus:outline-2 focus:outline-white">
+        <!-- Logo principal -->
+        <a href="/" class="focus-visible:outline-2 focus-visible:outline-white">
           <img src="./assets/images/logo.svg" alt="Loopstudios" class="h-[24px] w-[144px]" />
         </a>
 
-        <!-- Botón con atributos de accesibilidad para lectores de pantalla y teclado -->
+        <!-- Botón de menú accesible -->
         <button type="button" class="cursor-pointer" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open main menu">
           <img src="./assets/images/icon-hamburger.svg" alt="" aria-hidden="true" />
         </button>
@@ -29,4 +28,144 @@ import { MyFooter } from '@packages/ui';
       </div>
     </div>
   </header>
+
+  <main class="flex flex-col px-6">
+    <!--* Image and Description Container -->
+    <section class="flex flex-col gap-12 mt-[96px] items-center" aria-labelledby="interactive-title">
+      <img src="./assets/images/mobile/image-interactive.jpg" alt="A person wearing a VR headset">
+
+      <!--* Description Container -->
+      <div class="flex flex-col gap-4 text-center w-[279px]">
+        <h2 id="interactive-title" class="text-preset-2">The leader in interactive VR</h2>
+        <p class="text-preset-6 opacity-50">Founded in 2011, Loopstudios has been producing world-class virtual reality projects for some of the best companies around the globe. Our award-winning creations have transformed businesses through digital experiences that bind to their brand.</p>
+      </div>
+    </section>
+
+    <!--* Creations Container -->    
+    <section class="flex flex-col mt-[96px] items-center" aria-labelledby="creations-title">
+      <h2 id="creations-title" class="text-preset-2 tracking-widest">OUR CREATIONS</h2>
+
+      <!--* Creation Items Container -->
+      <ul class="flex flex-col space-y-6 mt-12 mb-8 w-full">
+
+        <!--* 1. Deep Earth -->
+        <li class="relative group overflow-hidden">
+          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
+            <img src="./assets/images/mobile/image-deep-earth.jpg" alt="Deep Earth VR experience" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
+            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-20 uppercase">
+              Deep Earth
+            </span>
+          </a>
+        </li>
+
+        <!--* 2. Night Arcade -->
+        <li class="relative group overflow-hidden">
+          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
+            <img src="./assets/images/mobile/image-night-arcade.jpg" alt="Night Arcade game experience" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
+            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[99px] uppercase">
+              Night Arcade
+            </span>
+          </a>
+        </li>
+
+        <!--* 3. Soccer Team -->
+        <li class="relative group overflow-hidden">
+          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
+            <img src="./assets/images/mobile/image-soccer-team.jpg" alt="Soccer Team VR simulation" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
+            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[108px] uppercase">
+              Soccer Team VR
+            </span>
+          </a>
+        </li>
+
+        <!--* 4. The Grid -->
+        <li class="relative group overflow-hidden">
+          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
+            <img src="./assets/images/mobile/image-grid.jpg" alt="The Grid racing game" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
+            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[58px] uppercase">
+              The Grid
+            </span>
+          </a>
+        </li>
+
+        <!--* 5. From Up Above -->
+        <li class="relative group overflow-hidden">
+          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
+            <img src="./assets/images/mobile/image-from-above.jpg" alt="From Up Above VR aerial view" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
+            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[123px] uppercase">
+              From Up Above VR
+            </span>
+          </a>
+        </li>
+
+        <!--* 6. Pocket Borealis -->
+        <li class="relative group overflow-hidden">
+          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
+            <img src="./assets/images/mobile/image-pocket-borealis.jpg" alt="Pocket Borealis northern lights" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
+            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[118px] uppercase">
+              Pocket Borealis
+            </span>
+          </a>
+        </li>
+
+        <!--* 7. The Curiosity -->
+        <li class="relative group overflow-hidden">
+          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
+            <img src="./assets/images/mobile/image-curiosity.jpg" alt="The Curiosity rover exploration" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
+            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[127px] uppercase">
+              The Curiosity
+            </span>
+          </a>
+        </li>
+
+        <!--* 8. Make It Fisheye -->
+        <li class="relative group overflow-hidden">
+          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
+            <img src="./assets/images/mobile/image-fisheye.jpg" alt="Make It Fisheye immersive lens" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
+            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[99px] uppercase">
+              Make It Fisheye
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <button type="button" class="text-preset-7 border px-[40.5px] py-[13px] cursor-pointer hover:bg-black hover:text-white transition-colors duration-300 uppercase">See all</button>
+    </section>
+  </main>
+
+  <footer class="h-[470px] bg-black p-14 mt-[98px]">
+    <!--* Footer Content Container -->
+    <div class="flex flex-col gap-4 items-center">
+      <a href="/" class="focus-visible:outline-2 focus-visible:outline-white">
+        <img src="./assets/images/logo.svg" alt="Loopstudios" class="h-[24px] w-[144px]">
+      </a>
+
+      <!--* Footer Links -->
+      <ul aria-label="Footer Navigation" class="flex flex-col gap-4 items-center text-white mt-6">
+        <li><a href="#" class="hover:underline">About</a></li>
+        <li><a href="#" class="hover:underline">Careers</a></li>
+        <li><a href="#" class="hover:underline">Events</a></li>
+        <li><a href="#" class="hover:underline">Products</a></li>
+        <li><a href="#" class="hover:underline">Support</a></li>
+      </ul>
+
+      <!--* Social Media Icons Container -->
+      <nav aria-label="Social Media" class="flex gap-4 mt-6">
+        <a href="#" aria-label="Facebook"><img src="./assets/images/icon-facebook.svg" alt="" aria-hidden="true"></a>
+        <a href="#" aria-label="Twitter"><img src="./assets/images/icon-twitter.svg" alt="" aria-hidden="true"></a>
+        <a href="#" aria-label="Pinterest"><img src="./assets/images/icon-pinterest.svg" alt="" aria-hidden="true"></a>
+        <a href="#" aria-label="Instagram"><img src="./assets/images/icon-instagram.svg" alt="" aria-hidden="true"></a>
+      </nav>
+
+      <p class="text-preset-6 text-white opacity-50 mt-6 text-center">© 2021 Loopstudios. All rights reserved.</p>
+    </div>
+  </footer>
 </template>
