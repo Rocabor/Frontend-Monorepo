@@ -90,4 +90,11 @@ export const juniorProjects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
     difficulty: 'Junior',
   },
+  {
+    href: './apps/junior/loopstudios-landing-page/',
+    image: 'images/loopstudios-landing-page.jpg',
+    title: 'loopstudios landing page',
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
+    difficulty: 'Junior',
+  },
 ];
