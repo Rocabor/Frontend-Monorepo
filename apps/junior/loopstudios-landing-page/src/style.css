@@ -25,7 +25,7 @@
 */
 @utility text-preset-1 {
   font-family: var(--font-josefin);
-  font-size: clamp(2.5rem, 1.795rem + 3vw, 4.5rem);
+  font-size: clamp(2.50rem, calc(0.592rem + 8.142vw), 4.50rem);
   font-weight: 300;
   line-height: 1;
   text-transform: uppercase;
@@ -37,7 +37,7 @@
 */
 @utility text-preset-2 {
   font-family: var(--font-josefin);
-  font-size: clamp(2rem, 1.647rem + 1.5vw, 3rem);
+  font-size: clamp(2.00rem, calc(1.046rem + 4.071vw), 3.00rem);
   font-weight: 300;
   line-height: 1;
   text-transform: uppercase;
