@@ -74,5 +74,5 @@
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.35em; /* Simula los 5px de tracking del plugin */
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }

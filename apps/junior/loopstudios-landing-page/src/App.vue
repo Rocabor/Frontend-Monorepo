@@ -1,5 +1,31 @@
 <script setup>
 import { MyFooter } from '@packages/ui';
+import { ref } from 'vue'
+
+import iconHamburger from './assets/images/icon-hamburger.svg';
+import iconClose from './assets/images/icon-close.svg';
+
+// Estado reactivo para controlar la apertura del menú móvil
+const isMenuOpen = ref(false)
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
+
+// Enlaces de navegación reutilizables tanto para el header como para el footer
+const navLinks = ['About', 'Careers', 'Events', 'Products', 'Support']
+
+// Listado de creaciones optimizado para renderizarse dinámicamente con imágenes móvil/desktop
+const creations = ref([
+  { id: 1, title: 'Deep Earth', imgMobile: './assets/images/mobile/image-deep-earth.jpg', imgDesktop: './assets/images/desktop/image-deep-earth.jpg', widthClass: 'w-20' },
+  { id: 2, title: 'Night Arcade', imgMobile: './assets/images/mobile/image-night-arcade.jpg', imgDesktop: './assets/images/desktop/image-night-arcade.jpg', widthClass: 'w-[99px]' },
+  { id: 3, title: 'Soccer Team VR', imgMobile: './assets/images/mobile/image-soccer-team.jpg', imgDesktop: './assets/images/desktop/image-soccer-team.jpg', widthClass: 'w-[108px]' },
+  { id: 4, title: 'The Grid', imgMobile: './assets/images/mobile/image-grid.jpg', imgDesktop: './assets/images/desktop/image-grid.jpg', widthClass: 'w-[58px]' },
+  { id: 5, title: 'From Up Above VR', imgMobile: './assets/images/mobile/image-from-above.jpg', imgDesktop: './assets/images/desktop/image-from-above.jpg', widthClass: 'w-[123px]' },
+  { id: 6, title: 'Pocket Borealis', imgMobile: './assets/images/mobile/image-pocket-borealis.jpg', imgDesktop: './assets/images/desktop/image-pocket-borealis.jpg', widthClass: 'w-[118px]' },
+  { id: 7, title: 'The Curiosity', imgMobile: './assets/images/mobile/image-curiosity.jpg', imgDesktop: './assets/images/desktop/image-curiosity.jpg', widthClass: 'w-[127px]' },
+  { id: 8, title: 'Make It Fisheye', imgMobile: './assets/images/mobile/image-fisheye.jpg', imgDesktop: './assets/images/desktop/image-fisheye.jpg', widthClass: 'w-[99px]' },
+])
 </script>
 
 <template>
@@ -8,7 +34,7 @@ import { MyFooter } from '@packages/ui';
     
 
     <!--* Header Container -->
-    <div class="mx-auto flex h-[383px] w-[327px] flex-col justify-between md:w-[608px] md:h-[440px]">
+    <div class="mx-auto flex h-[383px] w-[327px] flex-col justify-between md:w-[608px] md:h-[440px] xl:w-full xl:max-w-6xl">
 
       <!--* Navigation Bar -->
       <nav class="flex items-center justify-between z-1" aria-label="Main Navigation">
@@ -18,17 +44,50 @@ import { MyFooter } from '@packages/ui';
           <img src="./assets/images/logo.svg" alt="Loopstudios" class="h-[24px] w-[144px] md:w-[192px] md:h-8" />
         </a>
 
+        <ul class="hidden xl:flex items-center gap-8 text-white text-preset-7">
+          <li v-for="item in navLinks" :key="item">
+            <a href="#" class="relative py-2 after:absolute after:bottom-0 after:left-1/2 
+            after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300  hover:after:-translate-x-1/2 hover:after:w-8 focus-visible:outline-2 focus-visible:outline-white">
+              {{ item }}
+            </a>
+          </li>
+        </ul>
+
         <!-- Botón de menú accesible -->
-        <button type="button" class="cursor-pointer" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open main menu">
-          <img src="./assets/images/icon-hamburger.svg" alt="" aria-hidden="true" class="md:w-8 md:h-[21px]"/>
+        <button type="button" 
+        @click="toggleMenu" 
+        class="cursor-pointer relative z-10 xl:hidden focus-visible:outline-2 focus-visible:outline-white p-2" 
+          :aria-expanded="isMenuOpen.toString()" 
+          aria-controls="mobile-menu" 
+          :aria-label="isMenuOpen ? 'Close main menu' : 'Open main menu'">
+          <img :src="isMenuOpen ? iconClose : iconHamburger" alt="" aria-hidden="true" class="w-6 h-4 md:w-8 md:h-5.25 object-contain"/>
         </button>
       </nav>
 
       <!--* Main Content Container -->
-      <div class="border-2 border-white px-6 py-4 md:p-10 z-1">
+      <div class="border-2 border-white px-6 py-4 md:p-10 z-10 xl:w-[650px] xl:py-[42px]">
         <h1 class="text-preset-1 text-white">Immersive experiences that deliver</h1>
       </div>
     </div>
+
+    <transition
+      enter-from-class="opacity-0 -translate-y-full"
+      enter-active-class="transition ease-in-out duration-300"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-active-class="transition ease-in-out duration-300"
+      leave-to-class="opacity-0 -translate-y-full"
+    >
+      <div v-if="isMenuOpen" id="mobile-menu" class="fixed inset-0 z-40 bg-black px-6 pt-32 xl:hidden">
+        <ul class="flex flex-col gap-6 text-white text-preset-2 font-light">
+          <li v-for="item in navLinks" :key="item">
+            <a href="#" @click="isMenuOpen = false" class="hover:text-grey-200 focus-visible:outline-2 focus-visible:outline-white">
+              {{ item }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </transition>h
   </header>
 
   <main class="flex flex-col px-6 md:px-20">
