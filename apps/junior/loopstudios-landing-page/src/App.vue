@@ -37,7 +37,7 @@ const creations = ref([
     <div class="mx-auto flex h-[383px] w-[327px] flex-col justify-between md:w-[608px] md:h-[440px] xl:w-full xl:max-w-6xl">
 
       <!--* Navigation Bar -->
-      <nav class="flex items-center justify-between z-1" aria-label="Main Navigation">
+      <nav class="flex items-center justify-between z-20" aria-label="Main Navigation">
 
         <!-- Logo principal -->
         <a href="/" class="focus-visible:outline-2 focus-visible:outline-white">
@@ -56,7 +56,7 @@ const creations = ref([
         <!-- Botón de menú accesible -->
         <button type="button" 
         @click="toggleMenu" 
-        class="cursor-pointer relative z-10 xl:hidden focus-visible:outline-2 focus-visible:outline-white p-2" 
+        class="cursor-pointer relative z-20 xl:hidden focus-visible:outline-2 focus-visible:outline-white p-2" 
           :aria-expanded="isMenuOpen.toString()" 
           aria-controls="mobile-menu" 
           :aria-label="isMenuOpen ? 'Close main menu' : 'Open main menu'">
@@ -78,8 +78,8 @@ const creations = ref([
       leave-active-class="transition ease-in-out duration-300"
       leave-to-class="opacity-0 -translate-y-full"
     >
-      <div v-if="isMenuOpen" id="mobile-menu" class="fixed inset-0 z-40 bg-black px-6 pt-32 xl:hidden">
-        <ul class="flex flex-col gap-6 text-white text-preset-2 font-light">
+      <div v-if="isMenuOpen" id="mobile-menu" class="fixed inset-0 z-10 bg-black px-6 pt-[183px] xl:hidden border md:px-20">        
+        <ul class="flex flex-col gap-6 text-white text-[24px] uppercase font-light">
           <li v-for="item in navLinks" :key="item">
             <a href="#" @click="isMenuOpen = false" class="hover:text-grey-200 focus-visible:outline-2 focus-visible:outline-white">
               {{ item }}
