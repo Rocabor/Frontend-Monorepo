@@ -7,6 +7,7 @@ defineProps({
   year: { type: [String, Number], default: new Date().getFullYear() },
 
   textColor: { type: String, default: '#000000' },
+  textColorAttribution: { type: String, default: '#000000' },
   hoverColor: { type: String, default: '#ff3e00' },
   bgColor: { type: String, default: '#ffffff' },
   focusVisible: { type: String, default: '#ff3e00' }
@@ -35,6 +36,7 @@ defineProps({
 @reference "../reference.css";
 
 .attribution {
+  color: v-bind(textColorAttribution);
   background-color: v-bind(bgColor);
   font-size: clamp(0.75rem, calc(0.511rem + 1.018vw), 1.00rem);
   @apply absolute inset-x-0 bottom-0 py-2 text-center;
