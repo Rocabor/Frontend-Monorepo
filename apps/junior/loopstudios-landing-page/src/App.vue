@@ -30,11 +30,11 @@ const creations = ref([
 
 <template>
   <!--* Main Container -->
-  <header class="relative h-[650px] bg-[url('./assets/images/mobile/image-hero.jpg')] bg-cover bg-center bg-no-repeat pt-10 md:bg-[url('./assets/images/desktop/image-hero.jpg')] md:bg-position-[-385px_0px] after:absolute after:inset-0 after:bg-black/40 xl:bg-position-[0px_0px]">
+  <header class="relative h-[650px] bg-[url('./assets/images/mobile/image-hero.jpg')] bg-cover bg-center bg-no-repeat pt-10 md:pt-16 md:bg-[url('./assets/images/desktop/image-hero.jpg')] md:bg-position-[-385px_0px] after:absolute after:inset-0 after:bg-black/40 xl:bg-position-[0px_0px]">
     
 
     <!--* Header Container -->
-    <div class="mx-auto flex h-[383px] w-[327px] flex-col justify-between md:w-[608px] md:h-[440px] xl:w-full xl:max-w-6xl">
+    <div class="mx-auto flex h-[383px] w-[327px] flex-col justify-between md:w-[608px] md:h-[440px] xl:w-full xl:max-w-[1110px] ">
 
       <!--* Navigation Bar -->
       <nav class="flex items-center justify-between z-20" aria-label="Main Navigation">
@@ -44,7 +44,7 @@ const creations = ref([
           <img src="./assets/images/logo.svg" alt="Loopstudios" class="h-[24px] w-[144px] md:w-[192px] md:h-8" />
         </a>
 
-        <ul class="hidden xl:flex items-center gap-8 text-white text-preset-7">
+        <ul class="hidden xl:flex items-center gap-8 text-white text-preset-6">
           <li v-for="item in navLinks" :key="item">
             <a href="#" class="relative py-2 after:absolute after:bottom-0 after:left-1/2 
             after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300  hover:after:-translate-x-1/2 hover:after:w-8 focus-visible:outline-2 focus-visible:outline-white">
@@ -65,7 +65,7 @@ const creations = ref([
       </nav>
 
       <!--* Main Content Container -->
-      <div class="border-2 border-white px-6 py-4 md:p-10 z-10 xl:w-[650px] xl:py-[42px]">
+      <div class="border-2 border-white px-6 py-4 md:p-10 z-10 xl:w-[650px] md:h-[278px]">
         <h1 class="text-preset-1 text-white">Immersive experiences that deliver</h1>
       </div>
     </div>
@@ -78,7 +78,7 @@ const creations = ref([
       leave-active-class="transition ease-in-out duration-300"
       leave-to-class="opacity-0 -translate-y-full"
     >
-      <div v-if="isMenuOpen" id="mobile-menu" class="fixed inset-0 z-10 bg-black px-6 pt-[183px] xl:hidden border md:px-20">        
+      <div v-if="isMenuOpen" id="mobile-menu" class="fixed inset-0 z-10 bg-black px-6 pt-[183px] xl:hidden md:px-20">        
         <ul class="flex flex-col gap-6 text-white text-[24px] uppercase font-light">
           <li v-for="item in navLinks" :key="item">
             <a href="#" @click="isMenuOpen = false" class="hover:text-grey-200 focus-visible:outline-2 focus-visible:outline-white">
@@ -87,120 +87,69 @@ const creations = ref([
           </li>
         </ul>
       </div>
-    </transition>h
+    </transition>
   </header>
 
-  <main class="flex flex-col px-6 md:px-20">
+  <main class="flex flex-col mx-auto px-6 md:px-20 xl:px-[164px]">
 
     <!--* Image and Description Container -->
-    <section class="flex flex-col gap-12 mt-[96px] items-center" aria-labelledby="interactive-title">
-      <img src="./assets/images/mobile/image-interactive.jpg" alt="A person wearing a VR headset">
+    <section class="relative flex flex-col max-w-[1111px] items-center text-center xl:items-start xl:text-left mb-24 xl:mb-44 mt-[96px]" aria-labelledby="leader-heading">
+        <picture class="w-full xl:max-w-[731px]">
+          <source media="(min-width: 1440px)" srcset="./assets/images/desktop/image-interactive.jpg" />
+          <img src="./assets/images/mobile/image-interactive.jpg" alt="Persona usando gafas de realidad virtual" class="w-full object-cover" />
+        </picture>
 
-      <!--* Description Container -->
-      <div class="flex flex-col gap-4 text-center w-[279px] md:w-full">
-        <h2 id="interactive-title" class="text-preset-2">The leader in interactive VR</h2>
-        <p class="text-preset-6 opacity-50">Founded in 2011, Loopstudios has been producing world-class virtual reality projects for some of the best companies around the globe. Our award-winning creations have transformed businesses through digital experiences that bind to their brand.</p>
-      </div>
-    </section>
+        <div class="bg-white pt-12 xl:absolute xl:bottom-0 xl:right-0 xl:pt-24 xl:pl-24 xl:max-w-[540px]">
+          <h2 id="leader-heading" class="font-josefin-sans text-3xl font-light uppercase tracking-widest text-black xl:text-5xl leading-none mb-4 md:mb-6">
+            The leader in interactive VR
+          </h2>
+          <p class="font-alata text-gray-500 leading-relaxed px-4 xl:px-0">
+            Founded in 2011, Loopstudios has been producing world-class virtual reality 
+            projects for some of the best companies around the globe. Our award-winning 
+            creations have transformed businesses through digital experiences that bind 
+            to their brand.
+          </p>
+        </div>
+      </section>
 
     <!--* Creations Container -->    
-    <section class="flex flex-col mt-[96px] items-center" aria-labelledby="creations-title">
-      <h2 id="creations-title" class="text-preset-2 tracking-widest">OUR CREATIONS</h2>
+    <section aria-labelledby="creations-heading">
+        <div class="flex flex-col items-center justify-between mb-12 md:md-8 xl:flex-row xl:mb-20">
+          <h2 id="creations-heading" class="text-preset-2">
+            Our creations
+          </h2>
+          <button class="hidden xl:block border-2 border-black px-10 py-3 uppercase tracking-[0.3em] font-alata hover:bg-black hover:text-white transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-black">
+            See all
+          </button>
+        </div>
 
-      <!--* Creation Items Container -->
-      <ul class="flex flex-col space-y-6 mt-12 mb-8 w-full">
+        <div class="grid grid-cols-1 gap-6 xl:grid-cols-4">
+          <div 
+            v-for="project in creations" 
+            :key="project.id"
+            class="group relative h-[120px] overflow-hidden cursor-pointer xl:h-[450px]"
+          >
+            <picture>
+              <source media="(min-width: 640px)" :srcset="project.imgDesktop" />
+              <img :src="project.imgMobile" :alt="`Proyecto ${project.title}`" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            </picture>
 
-        <!--* 1. Deep Earth -->
-        <li class="relative group overflow-hidden">
-          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
-            <img src="./assets/images/mobile/image-deep-earth.jpg" alt="Deep Earth VR experience" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
-            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-20 uppercase">
-              Deep Earth
-            </span>
-          </a>
-        </li>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent sm:bg-gradient-to-t sm:from-black/70 sm:to-transparent group-hover:bg-white/70 transition-all duration-300" aria-hidden="true"></div>
 
-        <!--* 2. Night Arcade -->
-        <li class="relative group overflow-hidden">
-          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
-            <img src="./assets/images/mobile/image-night-arcade.jpg" alt="Night Arcade game experience" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
-            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[99px] uppercase">
-              Night Arcade
-            </span>
-          </a>
-        </li>
+            <h3 class="absolute bottom-5 left-5 right-5 font-josefin-sans text-2xl font-light uppercase text-white group-hover:text-black transition-colors duration-300 md:bottom-10 md:left-10 md:text-3xl leading-none max-w-[150px]">
+              <a href="#" class="after:absolute after:inset-0 focus:outline-none">
+                {{ project.title }}
+              </a>
+            </h3>
+          </div>
+        </div>
 
-        <!--* 3. Soccer Team -->
-        <li class="relative group overflow-hidden">
-          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
-            <img src="./assets/images/mobile/image-soccer-team.jpg" alt="Soccer Team VR simulation" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
-            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[108px] uppercase">
-              Soccer Team VR
-            </span>
-          </a>
-        </li>
-
-        <!--* 4. The Grid -->
-        <li class="relative group overflow-hidden">
-          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
-            <img src="./assets/images/mobile/image-grid.jpg" alt="The Grid racing game" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
-            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[58px] uppercase">
-              The Grid
-            </span>
-          </a>
-        </li>
-
-        <!--* 5. From Up Above -->
-        <li class="relative group overflow-hidden">
-          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
-            <img src="./assets/images/mobile/image-from-above.jpg" alt="From Up Above VR aerial view" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
-            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[123px] uppercase">
-              From Up Above VR
-            </span>
-          </a>
-        </li>
-
-        <!--* 6. Pocket Borealis -->
-        <li class="relative group overflow-hidden">
-          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
-            <img src="./assets/images/mobile/image-pocket-borealis.jpg" alt="Pocket Borealis northern lights" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
-            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[118px] uppercase">
-              Pocket Borealis
-            </span>
-          </a>
-        </li>
-
-        <!--* 7. The Curiosity -->
-        <li class="relative group overflow-hidden">
-          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
-            <img src="./assets/images/mobile/image-curiosity.jpg" alt="The Curiosity rover exploration" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
-            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[127px] uppercase">
-              The Curiosity
-            </span>
-          </a>
-        </li>
-
-        <!--* 8. Make It Fisheye -->
-        <li class="relative group overflow-hidden">
-          <a href="/" class="block relative focus-visible:outline-2 focus-visible:outline-white">
-            <img src="./assets/images/mobile/image-fisheye.jpg" alt="Make It Fisheye immersive lens" class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70" aria-hidden="true"></div>
-            <span class="absolute left-5 bottom-5 text-white text-preset-4 w-[99px] uppercase">
-              Make It Fisheye
-            </span>
-          </a>
-        </li>
-      </ul>
-
-      <button type="button" class="text-preset-7 border px-[40.5px] py-[13px] cursor-pointer hover:bg-black hover:text-white transition-colors duration-300 uppercase">See all</button>
-    </section>
+        <div class="mt-10 text-center xl:hidden">
+          <button class="border-2 border-black px-10 py-3 uppercase tracking-[0.3em] font-alata hover:bg-black hover:text-white transition-colors duration-300 w-full max-w-[200px]">
+            See all
+          </button>
+        </div>
+      </section>
   </main>
 
   <footer class="bg-black p-14 mt-[98px] md:px-20 md:py-14">
