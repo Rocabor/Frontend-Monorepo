@@ -106,7 +106,7 @@ const navLinks = ['About', 'Careers', 'Events', 'Products', 'Support'];
             <source media="(min-width: 640px)" srcset="./assets/images/desktop/image-deep-earth.jpg" />
             <img src="./assets/images/mobile/image-deep-earth.jpg" alt="Deep Earth" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </picture>
-          <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent transition-all duration-300 group-hover:bg-white/70 sm:bg-gradient-to-t sm:from-black/70 sm:to-transparent" aria-hidden="true"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent transition-all duration-300 group-hover:bg-grey-200/75 sm:bg-gradient-to-t sm:from-black/70 sm:to-transparent" aria-hidden="true"></div>
           <h3 class="font-josefin-sans absolute right-5 bottom-5 left-5 max-w-[150px] text-2xl leading-none font-light text-white uppercase transition-colors duration-300 group-hover:text-black md:bottom-10 md:left-10 md:text-3xl">
             <a href="#" class="after:absolute after:inset-0 focus:outline-none">Deep Earth</a>
           </h3>
@@ -172,7 +172,7 @@ const navLinks = ['About', 'Careers', 'Events', 'Products', 'Support'];
             <source media="(min-width: 640px)" srcset="./assets/images/desktop/image-curiosity.jpg" />
             <img src="./assets/images/mobile/image-curiosity.jpg" alt="The Curiosity" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </picture>
-          <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent transition-all duration-300 group-hover:bg-white/70 sm:bg-gradient-to-t sm:from-black/70 sm:to-transparent" aria-hidden="true"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent transition-all duration-300 group-hover:bg-white/75 sm:bg-gradient-to-t sm:from-black/70 sm:to-transparent" aria-hidden="true"></div>
           <h3 class="font-josefin-sans absolute right-5 bottom-5 left-5 max-w-[150px] text-2xl leading-none font-light text-white uppercase transition-colors duration-300 group-hover:text-black md:bottom-10 md:left-10 md:text-3xl">
             <a href="#" class="after:absolute after:inset-0 focus:outline-none">The Curiosity</a>
           </h3>
@@ -208,20 +208,20 @@ const navLinks = ['About', 'Careers', 'Events', 'Products', 'Support'];
       <!-- Celda 2: Redes Sociales (Arriba Derecha) -->
       <!-- Cambiado: md:justify-self-end para mandarlo a la derecha y md:mt-0 -->
       <nav aria-label="Social Media" class="mt-6 flex gap-4 md:mt-0 md:justify-self-end">
-        <a href="#" aria-label="Facebook"><img src="./assets/images/icon-facebook.svg" alt="" aria-hidden="true" /></a>
-        <a href="#" aria-label="Twitter"><img src="./assets/images/icon-twitter.svg" alt="" aria-hidden="true" /></a>
-        <a href="#" aria-label="Pinterest"><img src="./assets/images/icon-pinterest.svg" alt="" aria-hidden="true" /></a>
-        <a href="#" aria-label="Instagram"><img src="./assets/images/icon-instagram.svg" alt="" aria-hidden="true" /></a>
+        <a href="#" aria-label="Facebook" class="relative py-2 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-6 hover:after:-translate-x-1/2 focus-visible:outline-2 focus-visible:outline-white"><img src="./assets/images/icon-facebook.svg" alt="" aria-hidden="true" /></a>
+        <a href="#" aria-label="Twitter" class="relative py-2 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-6 hover:after:-translate-x-1/2 focus-visible:outline-2 focus-visible:outline-white"><img src="./assets/images/icon-twitter.svg" alt="" aria-hidden="true" /></a>
+        <a href="#" aria-label="Pinterest" class="relative py-2 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-6 hover:after:-translate-x-1/2 focus-visible:outline-2 focus-visible:outline-white"><img src="./assets/images/icon-pinterest.svg" alt="" aria-hidden="true" /></a>
+        <a href="#" aria-label="Instagram" class="relative py-2 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-6 hover:after:-translate-x-1/2 focus-visible:outline-2 focus-visible:outline-white"><img src="./assets/images/icon-instagram.svg" alt="" aria-hidden="true" /></a>
       </nav>
 
       <!-- Celda 3: Enlaces (Abajo Izquierda) -->
       <!-- Cambiado: md:justify-self-start y corregido md:mt-0 -->
       <ul aria-label="Footer Navigation" class="mt-6 flex flex-col items-center gap-4 text-white md:mt-0 md:flex-row md:justify-self-start">
-        <li><a href="#" class="hover:underline">About</a></li>
-        <li><a href="#" class="hover:underline">Careers</a></li>
-        <li><a href="#" class="hover:underline">Events</a></li>
-        <li><a href="#" class="hover:underline">Products</a></li>
-        <li><a href="#" class="hover:underline">Support</a></li>
+        <li><a href="#" class="relative py-2 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-8 hover:after:-translate-x-1/2 focus-visible:outline-2 focus-visible:outline-white">About</a></li>
+        <li><a href="#" class="relative py-2 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-8 hover:after:-translate-x-1/2 focus-visible:outline-2 focus-visible:outline-white">Careers</a></li>
+        <li><a href="#" class="relative py-2 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-8 hover:after:-translate-x-1/2 focus-visible:outline-2 focus-visible:outline-white">Events</a></li>
+        <li><a href="#" class="relative py-2 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-8 hover:after:-translate-x-1/2 focus-visible:outline-2 focus-visible:outline-white">Products</a></li>
+        <li><a href="#" class="relative py-2 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-8 hover:after:-translate-x-1/2 focus-visible:outline-2 focus-visible:outline-white">Support</a></li>
       </ul>
 
       <!-- Celda 4: Copyright (Abajo Derecha) -->
