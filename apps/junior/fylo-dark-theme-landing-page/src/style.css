@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@layer base{
+  body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    background-color: var(--color-navy-850);
+  }
+}
+
 @theme {
   
   /* Bloque de Oscuros */
@@ -27,95 +36,40 @@
   --font-open-sans: "Open Sans", sans-serif;
 }
 
-/* Preset 1: (Raleway Bold) -> Mín: 24px | Máx: 40px */
+/* Preset 1: (Raleway regular) -> Mín: 12px | Máx: 16px */
 @utility text-preset-1 {
   font-family: var(--font-raleway);
-  font-weight: 700;
-  font-size: clamp(1.5rem, 1.218rem + 1.2vw, 2.5rem);
+  font-weight: 400;
+  font-size: clamp(0.75rem, calc(0.511rem + 1.018vw), 1.00rem);
   line-height: 1.2;
   letter-spacing: 0px;
+  color:white;
 }
-
-/* Preset 2: (Raleway Bold) -> Mín: 18px | Máx: 20px */
+/* Preset 2: (Raleway bold) -> Mín: 20px | Máx: 40px */
 @utility text-preset-2 {
   font-family: var(--font-raleway);
   font-weight: 700;
-  font-size: clamp(1.125rem, 1.081rem + 0.19vw, 1.25rem);
+  font-size: clamp(1.25rem, calc(0.057rem + 5.089vw), 2.50rem);
   line-height: 1.2;
   letter-spacing: 0px;
+  color:white;
 }
-
-/* Preset 3: (Raleway Bold) -> Fijo: 14px */
+/* Preset 2: (open sans regular) -> Mín: 14px | Máx: 20px */
 @utility text-preset-3 {
-  font-family: var(--font-raleway);
-  font-weight: 700;
-  font-size: 0.875rem;
-  line-height: 1.2;
+  font-family: var(--font-open-sans);
+  font-weight: 400;
+  font-size: clamp(0.88rem, calc(0.517rem + 1.527vw), 1.25rem);
+  line-height: 1.5;
   letter-spacing: 0px;
+  color:white;
 }
-
-/* Preset 4: (Raleway Bold) -> Fijo: 14px */
+/* Preset 2: boton (Raleway bold) -> Mín: 14px | Máx: 16px */
 @utility text-preset-4 {
   font-family: var(--font-raleway);
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: clamp(0.88rem, calc(0.756rem + 0.509vw), 1.00rem);
   line-height: 1.2;
   letter-spacing: 0px;
+  color:white;
 }
 
-/* Preset 5: (Raleway Bold) -> Fijo: 12px */
-@utility text-preset-5 {
-  font-family: var(--font-raleway);
-  font-weight: 700;
-  font-size: 0.75rem;
-  line-height: 1.2;
-  letter-spacing: 0px;
-}
-
-
-/* --- GRUPO OPEN SANS (400 / 700) --- */
-
-/* Preset 6: (Open Sans Regular) -> Mín: 15px | Máx: 20px */
-@utility text-preset-6 {
-  font-family: var(--font-open-sans);
-  font-weight: 400;
-  font-size: clamp(0.938rem, 0.828rem + 0.47vw, 1.25rem);
-  line-height: 1.5;
-  letter-spacing: 0px;
-}
-
-/* Preset 7: (Open Sans Regular) -> Fijo: 14px */
-@utility text-preset-7 {
-  font-family: var(--font-open-sans);
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  letter-spacing: 0px;
-}
-
-/* Preset 8: (Open Sans Regular) -> Fijo: 14px */
-@utility text-preset-8 {
-  font-family: var(--font-open-sans);
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  letter-spacing: 0px;
-}
-
-/* Preset 9: (Open Sans Regular) -> Fijo: 10px */
-@utility text-preset-9 {
-  font-family: var(--font-open-sans);
-  font-weight: 400;
-  font-size: 0.625rem;
-  line-height: 1.375;
-  letter-spacing: 0px;
-}
-
-/* Preset 10: (Open Sans Regular) -> Fijo: 11px */
-@utility text-preset-10 {
-  font-family: var(--font-open-sans);
-  font-weight: 400;
-  font-size: 0.688rem;
-  line-height: 1.45;
-  letter-spacing: 0.5px;
-}
