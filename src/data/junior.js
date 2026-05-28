@@ -97,4 +97,11 @@ export const juniorProjects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
     difficulty: 'Junior',
   },
+  {
+    href: './apps/junior/fylo-dark-theme-landing-page/',
+    image: 'images/fylo-dark-theme-landing-page.jpg',
+    title: 'fylo dark theme landing page',
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
+    difficulty: 'Junior',
+  },
 ];
