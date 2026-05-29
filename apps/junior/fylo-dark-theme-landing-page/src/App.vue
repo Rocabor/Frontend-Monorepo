@@ -3,6 +3,7 @@ import { MyFooter } from '@packages/ui';
 import TheNavbar from './components/TheNavbar.vue';
 import TheHero from './components/TheHero.vue';
 import FeaturesGrid from './components/FeaturesGrid.vue';
+import ProductiveSection from './components/ProductiveSection.vue';
 
 
 </script>
@@ -12,6 +13,7 @@ import FeaturesGrid from './components/FeaturesGrid.vue';
     <TheNavbar />
     <TheHero/>
     <FeaturesGrid/>
+    <ProductiveSection/>
     
 
   </div>

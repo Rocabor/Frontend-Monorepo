@@ -90,4 +90,21 @@
   letter-spacing: 0px;
   color:white;
 }
-
+/* Preset 2: (Raleway bold) -> Mín: 16px | Máx: 40px */
+@utility text-preset-5 {
+  font-family: var(--font-raleway);
+  font-weight: 700;
+  font-size: clamp(1.00rem, calc(-0.431rem + 6.107vw), 2.50rem);
+  line-height: 1.2;
+  letter-spacing: 0px;
+  color:white;
+}
+/* Preset 3: (open sans regular) -> Mín: 14px | Máx: 16px */
+@utility text-preset-6 {
+  font-family: var(--font-open-sans);
+  font-weight: 400;
+  font-size: clamp(0.88rem, calc(0.756rem + 0.509vw), 1.00rem);
+  line-height: 1.5;
+  letter-spacing: 0px;
+  color:white;
+}

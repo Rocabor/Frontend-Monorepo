@@ -31,7 +31,7 @@ const getIconUrl = (name) => {
 </script>
 
 <template>
-  <section id="features" class="mx-auto py-12 max-w-5xl">
+  <section id="features" class="mx-auto pt-[82px] max-w-5xl">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-18">
       <!-- Pasamos el resultado de la función al prop :icon -->
       <FeatureCard 
