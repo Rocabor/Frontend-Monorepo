@@ -54,7 +54,16 @@
   letter-spacing: 0px;
   color:white;
 }
-/* Preset 2: (open sans regular) -> Mín: 14px | Máx: 20px */
+/* Preset 2: (Raleway bold) -> Fijo: 20px  */
+@utility text-preset-2F {
+  font-family: var(--font-raleway);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0px;
+  color:white;
+}
+/* Preset 3: (open sans regular) -> Mín: 14px | Máx: 20px */
 @utility text-preset-3 {
   font-family: var(--font-open-sans);
   font-weight: 400;
@@ -63,7 +72,16 @@
   letter-spacing: 0px;
   color:white;
 }
-/* Preset 2: boton (Raleway bold) -> Mín: 14px | Máx: 16px */
+/* Preset 3: (open sans regular) -> Fijo: 14px */
+@utility text-preset-3F {
+  font-family: var(--font-open-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  color:white;
+}
+/* Preset 4: boton (Raleway bold) -> Mín: 14px | Máx: 16px */
 @utility text-preset-4 {
   font-family: var(--font-raleway);
   font-weight: 700;
