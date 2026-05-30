@@ -90,7 +90,7 @@
   letter-spacing: 0px;
   color:white;
 }
-/* Preset 2: (Raleway bold) -> Mín: 16px | Máx: 40px */
+/* Preset 5: (Raleway bold) -> Mín: 16px | Máx: 40px */
 @utility text-preset-5 {
   font-family: var(--font-raleway);
   font-weight: 700;
@@ -99,7 +99,7 @@
   letter-spacing: 0px;
   color:white;
 }
-/* Preset 3: (open sans regular) -> Mín: 14px | Máx: 16px */
+/* Preset 6: (open sans regular) -> Mín: 14px | Máx: 16px */
 @utility text-preset-6 {
   font-family: var(--font-open-sans);
   font-weight: 400;
@@ -107,4 +107,37 @@
   line-height: 1.5;
   letter-spacing: 0px;
   color:white;
+}
+/* Preset 7: (open sans regular) -> Mín: 10px | Máx: 14px */
+@utility text-preset-7 {
+  font-family: var(--font-open-sans);
+  font-weight: 400;
+  font-size: clamp(0.63rem, calc(0.386rem + 1.018vw), 0.88rem);
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  color:white;
+  opacity: 80%;
+  @variant md{
+  line-height: 1.5;
+  letter-spacing: 0px;
+  }
+}
+/* Preset 8: (open sans bold) -> Fijo: 10px */
+@utility text-preset-8F {
+  font-family: var(--font-open-sans);
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  color:white;
+}
+/* Preset 9: (open sans regular) -> Fijo: 7px */
+@utility text-preset-9F {
+  font-family: var(--font-open-sans);
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color:white;
+  opacity: 80%;
 }

@@ -4,6 +4,7 @@ import TheNavbar from './components/TheNavbar.vue';
 import TheHero from './components/TheHero.vue';
 import FeaturesGrid from './components/FeaturesGrid.vue';
 import ProductiveSection from './components/ProductiveSection.vue';
+import TestimonialsSection from './components/TestimonialsSection.vue';
 
 
 </script>
@@ -14,6 +15,7 @@ import ProductiveSection from './components/ProductiveSection.vue';
     <TheHero/>
     <FeaturesGrid/>
     <ProductiveSection/>
+    <TestimonialsSection/>
     
 
   </div>

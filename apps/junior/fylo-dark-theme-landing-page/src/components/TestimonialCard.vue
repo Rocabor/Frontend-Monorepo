@@ -1,0 +1,40 @@
+<script setup>
+defineProps({
+  text: {
+    type: String,
+    required: true
+  },
+  name: {
+    type: String,
+    required: true
+  },
+  role: {
+    type: String,
+    required: true
+  },
+  image: {
+    type: String,
+    required: true
+  }
+})
+</script>
+
+<template>
+  <div class="bg-navy-800 py-5.5 px-4.5 md:p-10 rounded-[4px] shadow-lg flex flex-col justify-between relative z-10 w-[280px] md:w-[480px] xl:w-[360px] xl:px-6 xl:py-8">
+
+    <p class="text-preset-7 mb-4 md:mb-6">
+      {{ text }}
+    </p>
+    
+    <div class="flex items-center gap-3">
+      <img :src="image" :alt="name" class="w-7 h-7 rounded-full object-cover" />
+      
+      <div>
+        <h4 class="text-preset-8F">{{ name }}</h4>
+        
+        <p class="text-preset-9F mt-0.5">{{ role }}</p>
+      </div>
+    </div>
+  </div>
+</template>
+
