@@ -5,6 +5,7 @@ import TheHero from './components/TheHero.vue';
 import FeaturesGrid from './components/FeaturesGrid.vue';
 import ProductiveSection from './components/ProductiveSection.vue';
 import TestimonialsSection from './components/TestimonialsSection.vue';
+import CtaSection from './components/CtaSection.vue';
 
 
 </script>
@@ -16,6 +17,7 @@ import TestimonialsSection from './components/TestimonialsSection.vue';
     <FeaturesGrid/>
     <ProductiveSection/>
     <TestimonialsSection/>
+    <CtaSection/>
     
 
   </div>

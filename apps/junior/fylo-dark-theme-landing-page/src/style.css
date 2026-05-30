@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
-    background-color: var(--color-navy-850);
+    background-color: var(--color-navy-900);
   }
 }
 
@@ -30,6 +30,8 @@
 
   /* Gradiente para botones */
   --background-image-gradient-cyan-blue: linear-gradient(135deg, #63e1d9 0%, #34a0cd 100%);
+
+  --shadow-card: 5px 5px 8px rgba(0, 0, 0, 0.2543);
 
   /* Fuentes */
   --font-raleway: "Raleway", sans-serif;

@@ -20,7 +20,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="bg-navy-800 py-5.5 px-4.5 md:p-10 rounded-[4px] shadow-lg flex flex-col justify-between relative z-10 w-[280px] md:w-[480px] xl:w-[360px] xl:px-6 xl:py-8">
+  <div class="bg-navy-800 py-5.5 px-4.5 md:p-10 rounded-sm shadow-lg flex flex-col justify-between relative z-10 w-70 md:w-120 xl:w-90 xl:px-6 xl:py-8">
 
     <p class="text-preset-7 mb-4 md:mb-6">
       {{ text }}
