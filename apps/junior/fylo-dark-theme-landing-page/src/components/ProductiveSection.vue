@@ -22,9 +22,17 @@
           Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.
         </p>
 
-        <a href="#" class="inline-flex items-center gap-2 text-blue-300 border-b border-blue-300  text-preset-6 hover:text-white hover:border-white transition-all group w-fit">
+        <a href="#" class="inline-flex items-center gap-2 text-blue-300 border-b border-blue-300 text-preset-6 hover:text-white hover:border-white transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white group w-fit">
           See how Fylo works
-          <img src="../assets/images/icon-arrow.svg" alt="" class="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          <svg width="16" height="16" viewBox="0 0 16 16" class="w-4 h-4 transition-all group-hover:translate-x-1">
+            <defs>
+              <mask id="arrowMask">
+                <rect width="16" height="16" fill="white" />
+                <path d="M8.582 6l-.363.35 1.452 1.4H5.333v.5h4.338L8.22 9.65l.363.35 2.074-2z" fill="black" />
+              </mask>
+            </defs>
+            <circle cx="8" cy="8" r="6" fill="currentColor" mask="url(#arrowMask)" />
+          </svg>
         </a>
       </div>
     </div>

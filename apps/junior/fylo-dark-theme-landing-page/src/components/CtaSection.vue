@@ -20,7 +20,7 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <section id="sign-in" class="absolute w-[338px] top-[3170px] md:w-[480px] md:top-[3560px] inset-x-0 mx-auto xl:w-[863px] xl:top-[2925px]">
+  <section id="sign-in" class="absolute w-84.5 top-792.5 md:w-120 md:top-890 inset-x-0 mx-auto xl:w-215.75 xl:top-731.25">
 
     <div class="bg-navy-850 px-6 py-10 md:px-10 md:py-12 rounded-[9px] text-center shadow-card 
     md:w-120 md:mx-auto xl:w-215.75 xl:px-20">
@@ -38,10 +38,10 @@ const handleSubmit = () => {
             v-model="email"
             type="text" 
             placeholder="email@example.com" 
-            class="w-full py-4 px-8 text-preset-3F text-center md:text-left rounded-full bg-white text-navy-950 focus:outline-none focus:ring-2 focus:ring-blue-300 placeholder:text-gray-400"
+            class="w-full py-4 px-8 text-preset-3F text-center md:text-left rounded-full bg-white text-navy-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-850 focus-visible:ring-blue-300 placeholder:text-gray-400"
           />
           <p v-if="error" class="text-red-500 text-left text-preset-9 font-bold mt-2 pl-6">
-            Please enter a valid email address
+            Error, please check your email
           </p>
         </div>
         

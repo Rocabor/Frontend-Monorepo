@@ -143,3 +143,12 @@
   color:white;
   opacity: 80%;
 }
+/* Preset 10: (open sans regular) -> Fijo: 16px */
+@utility text-preset-10F {
+  font-family: var(--font-open-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  color:white;
+}
