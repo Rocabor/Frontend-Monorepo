@@ -8,9 +8,9 @@ const socialLinks = [
 </script>
 
 <template>
-  <footer class="bg-navy-950 pt-64 pb-16 text-gray-400 text-preset-10  -translate-y-20 md:-translate-y-42 ">
+  <footer class="bg-navy-950 pt-64 pb-12 text-gray-400 text-preset-10 xl:h-[441px] xl:pt-20">
 
-    <div class="mx-auto px-6 max-w-6xl md:px-14">
+    <div class="mx-auto px-6 md:px-14">
       <img src="../assets/images/logo.svg" alt="Fylo Logo" class="w-28 mb-10" />
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">

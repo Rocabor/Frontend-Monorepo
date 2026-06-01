@@ -20,7 +20,7 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <section id="sign-in" class="mx-auto relative z-10 translate-y-25.5 w-full md:translate-y-3 xl:translate-y-55">
+  <section id="sign-in" class="absolute w-[338px] top-[3170px] md:w-[480px] md:top-[3560px] inset-x-0 mx-auto xl:w-[863px] xl:top-[2925px]">
 
     <div class="bg-navy-850 px-6 py-10 md:px-10 md:py-12 rounded-[9px] text-center shadow-card 
     md:w-120 md:mx-auto xl:w-215.75 xl:px-20">
