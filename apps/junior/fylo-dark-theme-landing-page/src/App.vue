@@ -6,6 +6,7 @@ import FeaturesGrid from './components/FeaturesGrid.vue';
 import ProductiveSection from './components/ProductiveSection.vue';
 import TestimonialsSection from './components/TestimonialsSection.vue';
 import CtaSection from './components/CtaSection.vue';
+import TheFooter from './components/TheFooter.vue';
 
 
 </script>
@@ -18,7 +19,6 @@ import CtaSection from './components/CtaSection.vue';
     <ProductiveSection/>
     <TestimonialsSection/>
     <CtaSection/>
-    
-
   </div>
+  <TheFooter/>
 </template>

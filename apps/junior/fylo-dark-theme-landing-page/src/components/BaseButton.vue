@@ -18,7 +18,7 @@ defineProps({
   },
   width: {
     type: String,
-    default: 'w-[240px] md:w-[280px]' 
+    default: 'w-[240px]' 
   }
 })
 </script>
