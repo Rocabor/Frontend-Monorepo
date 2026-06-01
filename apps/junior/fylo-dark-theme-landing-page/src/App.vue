@@ -12,14 +12,14 @@ import TheFooter from './components/TheFooter.vue';
 </script>
 
 <template>
-  <div class="flex flex-col mb-81.25 md:mb-63.75 xl:mb-88.75 gap-12 md:gap-16 px-5 pt-6 md:px-13.5 md:pt-20 xl:px-19.75">
+  <main class="flex flex-col mb-81.25 md:mb-63.75 xl:mb-88.75 gap-12 md:gap-16 px-5 pt-6 md:px-13.5 md:pt-20 xl:px-19.75">
     <TheNavbar />
     <TheHero/>
     <FeaturesGrid/>
     <ProductiveSection/>
     <TestimonialsSection/>
     <CtaSection/>
-  </div>
+  </main>
   <TheFooter/>
   <MyFooter
   text-color="white"

@@ -1,9 +1,9 @@
 <script setup>
 // Mapeo dinámico para las clases de FontAwesome de tus redes sociales
 const socialLinks = [
-  { icon: 'fab fa-facebook-f', url: '#' },
-  { icon: 'fab fa-twitter', url: '#' },
-  { icon: 'fab fa-instagram', url: '#' },
+  { icon: 'fab fa-facebook-f', label: 'Facebook', url: '#' },
+  { icon: 'fab fa-twitter', label: 'Twitter', url: '#' },
+  { icon: 'fab fa-instagram', label: 'Instagram', url: '#' },
 ];
 </script>
 
@@ -59,6 +59,7 @@ const socialLinks = [
               v-for="(social, idx) in socialLinks"
               :key="idx"
               :href="social.url"
+              :aria-label="`Visit us on ${social.label}`"
               class="flex h-8 w-8 items-center justify-center rounded-full border border-white transition-colors hover:border-blue-300 hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
               <i :class="[social.icon, 'text-xs']"></i>
             </a>

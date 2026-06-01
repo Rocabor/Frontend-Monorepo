@@ -34,9 +34,11 @@ const handleSubmit = () => {
       <form @submit.prevent="handleSubmit" class="flex flex-col xl:flex-row gap-6 md:gap-4 items-start w-full xl:gap-6">
         <div class="w-full flex-1 relative">
           
+          <label for="cta-email" class="sr-only">Email address</label>
           <input 
+            id="cta-email"
             v-model="email"
-            type="text" 
+            type="email" 
             placeholder="email@example.com" 
             class="w-full py-4 px-8 text-preset-3F text-center md:text-left rounded-full bg-white text-navy-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-850 focus-visible:ring-blue-300 placeholder:text-gray-400"
           />
