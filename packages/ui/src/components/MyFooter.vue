@@ -43,7 +43,7 @@ defineProps({
 }
 
 nav{
-  @apply font-light;
+  @apply font-bold;
 }
 
 .attribution a, 

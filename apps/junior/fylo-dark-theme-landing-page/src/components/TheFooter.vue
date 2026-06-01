@@ -8,7 +8,7 @@ const socialLinks = [
 </script>
 
 <template>
-  <footer class="bg-navy-950 text-preset-10F pt-64 pb-12 text-gray-400 xl:h-110.25 xl:pt-48">
+  <footer class="bg-navy-950 text-preset-10F pt-64 pb-12 text-gray-400 xl:h-113 xl:pt-48">
 
     <div class="mx-auto px-6 md:px-14 xl:px-20">
 
