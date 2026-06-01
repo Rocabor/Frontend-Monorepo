@@ -13,7 +13,7 @@ const handleSubmit = () => {
     error.value = true
   } else {
     error.value = false
-    alert('¡Registro exitoso! Te hemos enviado un acceso temprano.')
+    alert('¡Registration successful! We have sent you early access.')
     email.value = ''
   }
 }
@@ -32,7 +32,7 @@ const handleSubmit = () => {
       </p>
       
       <form @submit.prevent="handleSubmit" class="flex flex-col xl:flex-row gap-6 md:gap-4 items-start w-full xl:gap-6">
-        <div class="w-full flex-1">
+        <div class="w-full flex-1 relative">
           
           <input 
             v-model="email"
@@ -40,7 +40,7 @@ const handleSubmit = () => {
             placeholder="email@example.com" 
             class="w-full py-4 px-8 text-preset-3F text-center md:text-left rounded-full bg-white text-navy-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-850 focus-visible:ring-blue-300 placeholder:text-gray-400"
           />
-          <p v-if="error" class="text-red-500 text-left text-preset-9 font-bold mt-2 pl-6">
+          <p v-if="error" class="text-red-500 text-left text-preset-8F font-bold mt-1 md:mt-0.5 xl:mt-2 pl-8 absolute">
             Error, please check your email
           </p>
         </div>
