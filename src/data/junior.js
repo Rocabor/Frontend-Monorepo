@@ -104,4 +104,11 @@ export const juniorProjects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
     difficulty: 'Junior',
   },
+  {
+    href: './apps/junior/bmi-calculator.jpg/',
+    image: 'images/bmi-calculator.jpg.jpg',
+    title: 'Body Mass Index Calculator.jpg',
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
+    difficulty: 'Junior',
+  },
 ];
