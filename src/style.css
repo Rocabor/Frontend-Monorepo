@@ -1,5 +1,126 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'Clash';
+  src: url('assets/fonts/Clash_Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui;
+  /* Grey */
+  --color-grey-300: #acc1de;
+  --color-grey-500: #5e6e85;
+
+  /* Blue */
+  --color-blue-100: #e1e7fe;
+  --color-blue-300: #b3d3f1;
+  --color-blue-500: #345ff6;
+  --color-blue-900: #253347;
+
+  /* Gradients (Fines ilustrativos para fondos/direcciones) */
+  --color-gradient-start: #d6fcfe;
+  --color-gradient-end: #d6e6fe;
+
+  --font-inter: "Inter", sans-serif;
+  --font-clash: "Clash", sans-serif;
+
+  /* Escala de espaciado personalizada */
+  --spacing-0: 0px;
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-700: 56px;
+  --spacing-900: 72px;
+  --spacing-1100: 88px;
+  --spacing-1200: 96px;
+  --spacing-1300: 104px;
+  --spacing-1600: 128px;
+  --spacing-1800: 144px;
+}
+
+@utility text-preset-1 {
+  font-family: var(--font-inter);
+  font-size: 64px;
+  font-weight: 600; /* Semi Bold */
+  line-height: 1.1;  /* 110% Line Height */
+  letter-spacing: -0.05em; /* -5% Letter Spacing */
+}
+
+@utility text-preset-2 {
+  font-family: var(--font-inter);
+  font-size: 48px;
+  font-weight: 600; /* Semi Bold */
+  line-height: 1.1;  /* 110% Line Height */
+  letter-spacing: -0.05em; /* -5% Letter Spacing */
+}
+
+@utility text-preset-3 {
+  font-family: var(--font-inter);
+  font-size: 32px;
+  font-weight: 600; /* Semi Bold */
+  line-height: 1.1;  /* 110% Line Height */
+  letter-spacing: -0.05em; /* -5% Letter Spacing */
+}
+
+@utility text-preset-4 {
+  font-family: var(--font-inter);
+  font-size: 24px;
+  font-weight: 600; /* Semi Bold */
+  line-height: 1.2;  /* 120% Line Height */
+  letter-spacing: -0.03em; /* -3% Letter Spacing */
+}
+
+@utility text-preset-5 {
+  font-family: var(--font-inter);
+  font-size: 20px;
+  font-weight: 600; /* Semi Bold */
+  line-height: 1.2;  /* 120% Line Height */
+  letter-spacing: -0.03em; /* -3% Letter Spacing */
+}
+
+/* Preset 6 (Semi Bold) */
+@utility text-preset-6-semibold {
+  font-family: var(--font-inter);
+  font-size: 16px;
+  font-weight: 600; /* Semi Bold */
+  line-height: 1.5;  /* 150% Line Height */
+  letter-spacing: 0em; /* 0% Letter Spacing */
+}
+
+/* Preset 6 (Regular) */
+@utility text-preset-6-regular {
+  font-family: var(--font-inter);
+  font-size: 16px;
+  font-weight: 400; /* Regular */
+  line-height: 1.5;  /* 150% Line Height */
+  letter-spacing: 0em; /* 0% Letter Spacing */
+}
+
+/* Preset 7 (Bold) */
+@utility text-preset-7-bold {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 700; /* Bold */
+  line-height: 1.5;  /* 150% Line Height */
+  letter-spacing: 0em; /* 0% Letter Spacing */
+}
+
+/* Preset 7 (Regular) */
+@utility text-preset-7-regular {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 400; /* Regular */
+  line-height: 1.5;  /* 150% Line Height */
+  letter-spacing: 0em; /* 0% Letter Spacing */
 }
