@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "@iconify/tailwind4": "^1.0.0",
-    "@tailwindcss/vite": "^4.2.2",
-    "tailwindcss": "^4.2.2"
+    "@tailwindcss/vite": "^4.3.0",
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
     "@turborepo/vite-config": "workspace:*",
     "prettier": "^3.8.3",
-    "prettier-plugin-tailwindcss": "^0.6.0",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "vite": "latest"
   }
 }

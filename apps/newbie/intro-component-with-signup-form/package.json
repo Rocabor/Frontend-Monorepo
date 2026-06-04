@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@iconify/tailwind4": "^1.0.0",
-    "@tailwindcss/vite": "^4.2.2",
-    "tailwindcss": "^4.2.2"
+    "@tailwindcss/vite": "^4.3.0",
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
     "@turborepo/vite-config": "workspace:*",
