@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @font-face {
   font-family: 'Clash';
   src: url('assets/fonts/Clash_Regular.otf') format('opentype');
@@ -14,6 +14,14 @@
   font-display: swap;
 }
 
+@layer base {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+}
+
 @theme {
   /* Grey */
   --color-grey-300: #acc1de;
@@ -25,23 +33,23 @@
   --color-blue-500: #345ff6;
   --color-blue-900: #253347;
 
-  /* Gradients (Fines ilustrativos para fondos/direcciones) */  
+  /* Gradients (Fines ilustrativos para fondos/direcciones) */
   --color-gradient-start: rgba(214, 252, 254, 0);
-  --color-gradient-end: rgba(214, 230, 254, 1); 
+  --color-gradient-end: rgba(214, 230, 254, 1);
 
-  --font-princ: "Inter", sans-serif;
-  --font-clash: "Clash", sans-serif;
+  --font-princ: 'Inter', sans-serif;
+  --font-clash: 'Clash', sans-serif;
 
-  
+  --gradient-bgGradient: linear-gradient(90deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
 
-  --shadow-form:16px 32px 56px rgba(143, 174, 207, 0.25);
+  --shadow-form: 16px 32px 56px rgba(143, 174, 207, 0.25);
 }
 
 @utility text-preset-1 {
   font-family: var(--font-princ);
   font-size: 64px;
   font-weight: 600; /* Semi Bold */
-  line-height: 1.1;  /* 110% Line Height */
+  line-height: 1.1; /* 110% Line Height */
   letter-spacing: -0.05em; /* -5% Letter Spacing */
 }
 
@@ -50,36 +58,39 @@
   font-family: var(--font-princ);
   font-size: 48px;
   font-weight: 600; /* Semi Bold */
-  line-height: 1.1;  /* 110% Line Height */
+  line-height: 1.1; /* 110% Line Height */
   letter-spacing: -0.05em; /* -5% Letter Spacing */
-  color:var(--color-blue-900);
-  @variant md{
-    font-size: clamp(3.00rem, calc(1.857rem + 2.381vw), 4.00rem);
+  color: var(--color-blue-900);
+  @variant md {
+    font-size: clamp(3rem, calc(1.857rem + 2.381vw), 4rem);
   }
 }
-
+/* font-size: min:32px | max:48px */
 @utility text-preset-3 {
   font-family: var(--font-princ);
   font-size: 32px;
   font-weight: 600; /* Semi Bold */
-  line-height: 1.1;  /* 110% Line Height */
+  line-height: 1.1; /* 110% Line Height */
   letter-spacing: -0.05em; /* -5% Letter Spacing */
+  @variant md{
+    
+  }
 }
 /* Font size: Fijo */
 @utility text-preset-4 {
   font-family: var(--font-princ);
   font-size: 24px;
   font-weight: 600; /* Semi Bold */
-  line-height: 1.2;  /* 120% Line Height */
+  line-height: 1.2; /* 120% Line Height */
   letter-spacing: -0.05em; /* -5% Letter Spacing */
-  color:var(--color-blue-900);
+  color: var(--color-blue-900);
 }
 
 @utility text-preset-5 {
   font-family: var(--font-princ);
   font-size: 20px;
   font-weight: 600; /* Semi Bold */
-  line-height: 1.2;  /* 120% Line Height */
+  line-height: 1.2; /* 120% Line Height */
   letter-spacing: -0.03em; /* -3% Letter Spacing */
 }
 
@@ -88,9 +99,9 @@
   font-family: var(--font-princ);
   font-size: 16px;
   font-weight: 600; /* Semi Bold */
-  line-height: 1.5;  /* 150% Line Height */
+  line-height: 1.5; /* 150% Line Height */
   letter-spacing: 0em; /* 0% Letter Spacing */
-  color:var(--color-blue-900);
+  color: var(--color-blue-900);
 }
 
 /* Preset 6 (Regular) | Font size: Fijo */
@@ -98,9 +109,9 @@
   font-family: var(--font-princ);
   font-size: 16px;
   font-weight: 400; /* Regular */
-  line-height: 1.5;  /* 150% Line Height */
+  line-height: 1.5; /* 150% Line Height */
   letter-spacing: 0em; /* 0% Letter Spacing */
-  color:var(--color-grey-500);
+  color: var(--color-grey-500);
 }
 
 /* Preset 7 (Bold) */
@@ -108,7 +119,7 @@
   font-family: var(--font-princ);
   font-size: 14px;
   font-weight: 700; /* Bold */
-  line-height: 1.5;  /* 150% Line Height */
+  line-height: 1.5; /* 150% Line Height */
   letter-spacing: 0em; /* 0% Letter Spacing */
 }
 
@@ -117,29 +128,31 @@
   font-family: var(--font-princ);
   font-size: 14px;
   font-weight: 400; /* Regular */
-  line-height: 1.5;  /* 150% Line Height */
+  line-height: 1.5; /* 150% Line Height */
   letter-spacing: 0em; /* 0% Letter Spacing */
-  color:var(--color-grey-500);
+  color: var(--color-grey-500);
 }
 
 @utility radio-custom {
   appearance: none;
-  border-radius: 100%; /* rounded-full */
+  border-radius: 100%;
   border-width: 1px;
   cursor: pointer;
-  /* transition-property: all;
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms; */
-  
+  transition-duration: 200ms;
+
   &:checked {
     background-color: var(--color-blue-100);
-    border-color: var(--color-blue-100);    
+    border-color: var(--color-blue-100);
     background-image: radial-gradient(circle, var(--color-blue-500) 35%, transparent 0%);
   }
+}
 
-  &:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-   
-  }
+input:focus-visible {
+  outline: 2px solid var(--color-blue-500);
+  outline-offset: 3px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
 }
