@@ -2,6 +2,8 @@
   <section
     aria-labelledby="bmi-results-title"
     class="md:my-21.5 flex flex-col gap-12 md:w-210.25 md:-translate-x-29 md:flex-row md:gap-18 xl:mx-auto xl:h-146.25 xl:w-290 xl:translate-x-0 xl:justify-between xl:mt-0">
+
+    <img src="../assets/images/pattern-curved-line-left.svg" alt="" class="absolute hidden xl:block top-0 right-7 w-21.25 h-50">
     
     <!--* Image Container -->
     <img

@@ -15,7 +15,7 @@ import Form from './Form.vue';
       <!-- game-icons:abstract-082 -->
       <img
         src="../assets/images/logo.svg"
-        alt="Logo"
+        alt=""
         class="size-10 md:size-9.25 xl:order-1 xl:col-span-2 xl:size-14.75" />
 
       <!-- Header -->

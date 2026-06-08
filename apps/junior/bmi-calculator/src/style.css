@@ -40,7 +40,7 @@
   --font-princ: 'Inter', sans-serif;
   --font-clash: 'Clash', sans-serif;  
 
-  --shadow-form: 16px 32px 56px rgba(143, 174, 207, 0.25);
+  --shadow-form: 16px 32px 58px rgba(143, 174, 207, 0.25);
 }
 
 @utility text-preset-1 {
@@ -71,7 +71,7 @@
   line-height: 1.1; /* 110% Line Height */
   letter-spacing: -0.05em; /* -5% Letter Spacing */
   @variant md{
-    font-size:48px;
+    font-size: clamp(2.00rem, calc(0.857rem + 2.381vw), 3.00rem);
   }
 }
 /* Font size: Fijo */
@@ -83,13 +83,14 @@
   letter-spacing: -0.05em; /* -5% Letter Spacing */
   color: var(--color-blue-900);
 }
-
+/* Preset 5 (Semi Bold) | Font size: Fijo */
 @utility text-preset-5 {
   font-family: var(--font-princ);
   font-size: 20px;
   font-weight: 600; /* Semi Bold */
-  line-height: 1.2; /* 120% Line Height */
-  letter-spacing: -0.03em; /* -3% Letter Spacing */
+  line-height: 1.5; /* 120% Line Height */
+  letter-spacing: -0.05em; /* -5% Letter Spacing */
+  color: var(--color-blue-900);
 }
 
 /* Preset 6 (Semi Bold) | Font size: Fijo */
