@@ -26,7 +26,7 @@ const tips = [
 </script>
 
 <template>
-  <section aria-labelledby="tips-title" class="bg-linear-to-br from-gradient-start to-gradient-end/40 xl:rounded-[35px] px-6 py-12 md:px-9.75 md:py-12.5 xl:px-32 xl:py-24 grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 xl:mr-9.5 xl:m-2.5">
+  <section aria-labelledby="tips-title" class="bg-linear-90 from-gradient-start to-gradient-end/25 xl:rounded-[35px] px-6 py-12 md:px-9.75 md:py-12.5 xl:px-32 xl:py-24 grid grid-cols-1 lg:grid-cols-3 gap-10 xl:gap-8 xl:mr-9.5 xl:m-2.5">
     
     <h2 id="tips-title" class="sr-only">Tips for a healthy lifestyle</h2>
 

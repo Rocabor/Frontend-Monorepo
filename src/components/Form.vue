@@ -78,12 +78,12 @@ watch(bmi, (newBmi) => {
     <!--* Unit Selector -->
     <div class="mb-6 grid grid-cols-2 gap-6 md:mb-8">
       <label class="text-preset-6-semibold flex cursor-pointer items-center gap-4">
-        <input type="radio" value="metric" v-model="unitSystem" class="radio-custom size-7.75" />
+        <input type="radio" name="unit-system" value="metric" v-model="unitSystem" class="radio-custom size-7.75" />
         Metric
       </label>
 
       <label class="text-preset-6-semibold flex cursor-pointer items-center gap-4">
-        <input type="radio" value="imperial" v-model="unitSystem" class="radio-custom size-7.75" />
+        <input type="radio" name="unit-system" value="imperial" v-model="unitSystem" class="radio-custom size-7.75" />
         Imperial
       </label>
     </div>
@@ -100,6 +100,7 @@ watch(bmi, (newBmi) => {
             <input
               type="number"
               v-model.number="metric.height"
+              min="0"
               placeholder="0"
               class="border-grey-500 text-preset-4 w-full rounded-xl border p-6 pr-14  xl:py-4" />
 
@@ -115,6 +116,7 @@ watch(bmi, (newBmi) => {
             <input
               type="number"
               v-model.number="metric.weight"
+              min="0"
               placeholder="0"
               class="border-grey-500 text-preset-4 w-full rounded-xl border p-6 pr-14  xl:py-4" />
 
@@ -134,6 +136,7 @@ watch(bmi, (newBmi) => {
               <input
                 type="number"
                 v-model.number="imperial.ft"
+                min="0"
                 placeholder="0"
                 class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12 " />
 
@@ -144,6 +147,7 @@ watch(bmi, (newBmi) => {
               <input
                 type="number"
                 v-model.number="imperial.in"
+                min="0"
                 placeholder="0"
                 class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12 text-blue-900 " />
 
@@ -161,6 +165,7 @@ watch(bmi, (newBmi) => {
               <input
                 type="number"
                 v-model.number="imperial.st"
+                min="0"
                 placeholder="0"
                 class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12 " />
 
@@ -171,6 +176,7 @@ watch(bmi, (newBmi) => {
               <input
                 type="number"
                 v-model.number="imperial.lbs"
+                min="0"
                 placeholder="0"
                 class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12 " />
 
