@@ -10,7 +10,8 @@ defineProps({
   textColorAttribution: { type: String, default: '#000000' },
   hoverColor: { type: String, default: '#ff3e00' },
   bgColor: { type: String, default: '#ffffff' },
-  focusVisible: { type: String, default: '#ff3e00' }
+  focusVisible: { type: String, default: '#ff3e00' },
+  fontFamily:{type: String, default: 'sans-serif'}
 })
 </script>
 
@@ -38,6 +39,7 @@ defineProps({
 .attribution {
   color: v-bind(textColorAttribution);
   background-color: v-bind(bgColor);
+  font-family: v-bind(fontFamily);
   font-size: clamp(0.75rem, calc(0.511rem + 1.018vw), 1.00rem);
   @apply absolute inset-x-0 bottom-0 py-2 text-center;
 }

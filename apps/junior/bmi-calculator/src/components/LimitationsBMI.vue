@@ -41,7 +41,7 @@ const limitations = [
 
 <template>
   <section
-    class="relative mx-auto mt-20.5 grid grid-cols-1 gap-x-4 gap-y-6 px-6 md:grid-cols-2 md:grid-rows-[auto_232px_256px_232px] md:px-10 xl:grid-cols-12 xl:grid-rows-[232px_184px_232px] xl:my-26 xl:w-290 xl:px-0 xl:gap-8">
+    class="relative mx-auto my-20.5 grid grid-cols-1 gap-x-4 gap-y-6 px-6 md:grid-cols-2 md:grid-rows-[auto_232px_256px_232px] md:px-10 xl:grid-cols-12 xl:grid-rows-[232px_184px_232px] xl:my-26 xl:w-290 xl:px-0 xl:gap-8 ">
 
     <div class="space-y-8 pr-0 text-center md:col-span-2 md:text-left xl:w-141 ">
 
