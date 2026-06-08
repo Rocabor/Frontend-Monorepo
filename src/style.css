@@ -38,9 +38,7 @@
   --color-gradient-end: rgba(214, 230, 254, 1);
 
   --font-princ: 'Inter', sans-serif;
-  --font-clash: 'Clash', sans-serif;
-
-  --gradient-bgGradient: linear-gradient(90deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+  --font-clash: 'Clash', sans-serif;  
 
   --shadow-form: 16px 32px 56px rgba(143, 174, 207, 0.25);
 }
@@ -73,7 +71,7 @@
   line-height: 1.1; /* 110% Line Height */
   letter-spacing: -0.05em; /* -5% Letter Spacing */
   @variant md{
-    
+    font-size:48px;
   }
 }
 /* Font size: Fijo */

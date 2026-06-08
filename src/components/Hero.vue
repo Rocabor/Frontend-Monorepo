@@ -5,15 +5,13 @@ import Form from './Form.vue';
 <template>
   <!--* Hero -->
   <div class="relative h-282 md:h-207.25 xl:h-184.25">
-
     <!-- Container gradient-->
     <div
       class="from-gradient-start to-gradient-end absolute inset-0 h-162.25 rounded-b-[35px] bg-linear-to-r xl:h-184.25 xl:w-[70%]"></div>
 
     <!-- Container form-->
     <div
-      class="absolute mx-6 my-8 grid grid-cols-1 place-items-center gap-8 text-center md:mx-10 md:gap-10 xl:left-1/2 xl:-translate-x-1/2 xl:my-22 xl:w-290 xl:mx-0 xl:grid-cols-2 xl:place-items-start xl:gap-x-8 xl:gap-y-6">
-
+      class="absolute mx-6 my-8 grid grid-cols-1 place-items-center gap-8 text-center md:mx-10 md:gap-10 xl:left-1/2 xl:mx-0 xl:my-22 xl:w-290 xl:-translate-x-1/2 xl:grid-cols-2 xl:place-items-start xl:gap-x-8 xl:gap-y-6">
       <!-- game-icons:abstract-082 -->
       <img
         src="../assets/images/logo.svg"
