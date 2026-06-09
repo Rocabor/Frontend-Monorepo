@@ -1,5 +1,69 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui;
+@font-face {
+  font-family: 'DmSans',sans-serif;
+  src: url(assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf) format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
 }
+
+@layer base{
+  body{
+    font-family:'DmSans',sans-serif;
+  }
+}
+
+@theme {
+  --color-neutral-900: #12131a;
+  --color-neutral-800: #21222c;
+  --color-neutral-700: #2a2b37;
+  --color-neutral-600: #404254;
+  --color-neutral-200: #e4e4ef;
+  --color-neutral-100: #f2f2f7;  
+
+  --color-purple-400: #d3a0fa;
+  --color-purple-500: #c27cf8;
+
+  --color-yellow-500: #ff9f00;
+
+  --color-orange-500: #fe8159;
+  --color-orange-800: #da3701;
+}
+
+
+  @utility text-preset-1 {
+    
+    font-size: 64px;
+    font-weight: 700; /* Bold */
+    line-height: 100%;
+    letter-spacing: -1px;
+  
+  }
+
+  /* --- Text Preset 2 --- */
+  @utility text-preset-2 {
+    
+    font-size: 24px;
+    font-weight: 600; /* SemiBold */
+    line-height: 130%;
+    letter-spacing: -1px;
+  }
+
+  /* --- Text Preset 3 --- */
+  @utility text-preset-3 {
+    
+    font-size: 20px;
+    font-weight: 400; /* Regular */
+    line-height: 140%;
+    letter-spacing: -0.6px;
+  }
+
+  /* --- Text Preset 4 --- */
+  @utility text-preset-4 {
+    
+    font-size: 16px;
+    font-weight: 400; /* Regular */
+    line-height: 130%;
+    letter-spacing: -0.6px;
+  }
