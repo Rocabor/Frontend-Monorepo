@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'; // Se eliminó Static
 import Stats from './Stats.vue';
+import Density from './Density.vue';
 
 const showCharLimit = ref(false);
 const text = ref('');
@@ -30,6 +31,43 @@ const sentCount = computed(() => {
   if (!trimmedText) return 0;
   const sentences = trimmedText.split(/[.!?]+/).filter(Boolean);
   return sentences.length;
+});
+
+
+// Propiedad computada para determinar densidad de caracteres
+const letterDensity = computed(() => {
+
+  // Usamos el texto limpio (sin espacios) para calcular la densidad real de letras
+  const cleanText = effectiveText.value.toLowerCase();
+
+  const counts = {};
+
+  // 1. Contamos las ocurrencias de cada carácter
+  for (const char of cleanText) {
+    // Filtramos para contar solo letras y números (opcional, según tu diseño)
+    if (/[a-z0-9áéíóúñ]/i.test(char)) {
+      counts[char] = (counts[char] || 0) + 1;
+    }
+  }
+
+  const total = Object.values(counts).reduce((sum, c) => sum + c, 0);
+
+  if (total === 0) return [];
+
+  // 2. Convertimos el objeto en un Array, calculamos porcentaje y ordenamos
+  return (
+    Object.entries(counts)
+      .map(([letter, count]) => {
+        const percentage = ((count / total) * 100).toFixed(2); // Retorna un string con 2 decimales (ej: "15.45")
+        return {
+          letter: letter.toUpperCase(),
+          count,
+          percentage,
+        };
+      })
+      // Ordenamos de mayor a menor cantidad de apariciones
+      .sort((a, b) => b.count - a.count)
+  );
 });
 </script>
 
@@ -87,6 +125,10 @@ const sentCount = computed(() => {
       :total-char="totalChar"
       :word-count="wordCount"
       :sent-count="sentCount"        
+    />
+
+    <Density    
+    :letter-density="letterDensity"
     />
   </main>
 </template>
