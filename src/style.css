@@ -42,7 +42,6 @@
   font-weight: 700;
   line-height: 100%;
   letter-spacing: -1px;
-  color: var(--color-neutral-900);
 }
 
 @utility text-preset-2 {
@@ -52,11 +51,10 @@
   letter-spacing: -1px;
 }
 @utility text-preset-3 {
-  font-size: clamp(1rem, calc(0.761rem + 1.018vw), 1.25rem);
+  font-size: 20px;
   font-weight: 400;
   line-height: 140%;
   letter-spacing: -0.6px;
-  /* color:var(--neutral-700) */
 }
 
 @utility text-preset-4 {
@@ -64,7 +62,6 @@
   font-weight: 400;
   line-height: 130%;
   letter-spacing: -0.6px;
- 
 }
 
 @utility bg-icon-check {
@@ -75,7 +72,7 @@
 }
 
 .checkBox {
-  @apply size-4 cursor-pointer appearance-none rounded-sm border border-neutral-900 dark:border-neutral-200 transition-all;
+  @apply size-4 cursor-pointer appearance-none rounded-sm border border-neutral-900 transition-all dark:border-neutral-200;
 
   &:checked {
     @apply bg-icon-check border-purple-500 bg-purple-500 hover:bg-purple-400;
@@ -83,4 +80,37 @@
   &:focus-visible {
     @apply border-neutral-0 border-2 ring-2 ring-purple-400 outline-none;
   }
+}
+
+/** Stats Container */
+
+.Stat-Container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  min-height: 130px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+@utility bg-pattern-char {
+  background-image: url('./assets/images/pattern-character-count.svg');
+  background-repeat: no-repeat;
+  background-position: right -50px center;
+  background-size: 150px;
+}
+
+@utility bg-pattern-word {
+  background-image: url('./assets/images/pattern-word-count.svg');
+  background-repeat: no-repeat;
+  background-position: right -50px center;
+  background-size: 150px;
+}
+
+@utility bg-pattern-sentence {
+  background-image: url('./assets/images/pattern-sentence-count.svg');
+  background-repeat: no-repeat;
+  background-position: right -50px center;
+  background-size: 150px;
 }
