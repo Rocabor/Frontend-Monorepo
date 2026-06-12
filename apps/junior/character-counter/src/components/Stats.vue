@@ -16,7 +16,7 @@ const props = defineProps({
   },
 });
 
-// Formateadores locales para asegurar el look "00" del diseño original
+// Formateadores locales para asegurar el look "00" 
 const formatChar = computed(() => String(props.totalChar).padStart(2, '0'));
 const formatWords = computed(() => String(props.wordCount).padStart(2, '0'));
 const formatSentences = computed(() => String(props.sentCount).padStart(2, '0'));
