@@ -33,6 +33,15 @@ const sentCount = computed(() => {
   return sentences.length;
 });
 
+// Propiedad computada para tiempo de lectura
+const readingTime = computed(() => {
+  const words = wordCount.value;
+  if (words === 0) return '0 minutes';
+  const minutes = Math.round(words / 200);
+  if (minutes < 1) return '<1 minute';
+  return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'}`;
+});
+
 
 // Propiedad computada para determinar densidad de caracteres
 const letterDensity = computed(() => {
@@ -117,7 +126,7 @@ const letterDensity = computed(() => {
             maxlength="3" />
           <label for="input-char-limit" class="sr-only">Character limit value</label>
         </div>
-        <p class="dark:text-neutral-200">Approx. reading time: &lt;1 minute</p>
+        <p class="dark:text-neutral-200">Approx. reading time: {{ readingTime }}</p>
       </fieldset>
     </section>
 
