@@ -13,12 +13,12 @@
     "clean": "Get-ChildItem -Path '.' -Include 'node_modules' -Recurse -Directory | Remove-Item -Recurse -Force; pnpm store prune; pnpm install"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.0",
+    "@tailwindcss/vite": "^4.3.1",
     "fs-extra": "^11.3.5",
-    "prettier": "^3.8.3",
+    "prettier": "^3.8.4",
     "prettier-plugin-tailwindcss": "^0.8.0",
-    "tailwindcss": "^4.3.0",
-    "turbo": "^2.9.16",
+    "tailwindcss": "^4.3.1",
+    "turbo": "^2.9.18",
     "typescript": "6.0.3",
     "vite": "^8.0.16"
   },
@@ -27,6 +27,6 @@
     "node": ">=24"
   },
   "dependencies": {
-    "vue": "^3.5.35"
+    "vue": "^3.5.38"
   }
 }
