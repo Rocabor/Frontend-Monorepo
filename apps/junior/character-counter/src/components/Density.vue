@@ -19,7 +19,7 @@ const displayedDensity = computed(() => {
 </script>
 
 <template>
-  <section class="mb-5 flex flex-col gap-3 px-4" aria-labelledby="density-heading">
+  <section class="mb-5 flex flex-col gap-3 px-4 md:px-8" aria-labelledby="density-heading">
     <h2 id="density-heading" class="text-preset-2 mb-1.5 font-bold text-neutral-900 dark:text-neutral-200">
       Letter Density
     </h2>
@@ -61,5 +61,5 @@ const displayedDensity = computed(() => {
         class="inline-block size-1.5 transform border-t-2 border-r-2 border-current transition-transform duration-300"
         :class="isExpanded ? 'rotate-315' : 'rotate-135'"></span>
     </button>
-  </section>
+  </section>  
 </template>
