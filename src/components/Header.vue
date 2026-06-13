@@ -37,8 +37,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="flex items-center justify-between p-4 md:px-8">
-    <a href="#" class="" aria-label="Character Counter - Inicio">
+  <header class="flex items-center justify-between p-4 md:px-8 xl:h-11 xl:px-0">
+    <a href="#" class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-500" aria-label="Character Counter - Inicio">
       <img :src="isDark ? logoDark : logoLight" alt="Character Counter" />
     </a>
 
@@ -47,7 +47,7 @@ onMounted(() => {
       @click="toggleTheme"
       :aria-pressed="isDark"
       :aria-label="isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
-      class="flex size-8 cursor-pointer items-center justify-center rounded-md bg-neutral-100 md:size-11 dark:bg-neutral-700">
+      class="flex size-8 cursor-pointer items-center justify-center rounded-md bg-neutral-100 md:size-11 dark:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-500">
       <img :src="isDark ? iconSun : iconMoon" alt="" aria-hidden="true" class="size-4.25 md:size-5.5" />
     </button>
   </header>

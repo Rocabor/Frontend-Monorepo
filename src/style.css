@@ -2,7 +2,7 @@
 @variant dark (&:where(.dark, .dark *));
 
 @font-face {
-  font-family: 'DmSans', sans-serif;
+  font-family: 'DmSans';
   src: url(./assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf) format('truetype');
   font-weight: 400 700;
   font-style: normal;

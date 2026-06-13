@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'; 
+import { ref, computed } from 'vue';
 import Stats from './Stats.vue';
 import Density from './Density.vue';
 
@@ -42,10 +42,8 @@ const readingTime = computed(() => {
   return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'}`;
 });
 
-
 // Propiedad computada para determinar densidad de caracteres
 const letterDensity = computed(() => {
-
   // Usamos el texto limpio (sin espacios) para calcular la densidad real de letras
   const cleanText = effectiveText.value.toLowerCase();
 
@@ -82,62 +80,66 @@ const letterDensity = computed(() => {
 
 <template>
   <main class="space-y-10">
-    <header class="my-10 px-4 md:px-8">
-      <h1 class="text-preset-1 text-center dark:text-neutral-100 md:w-127.5 md:mx-auto">Analyze your text in real-time.</h1>
+    <header class="my-10 xl:my-12">
+      <h1 class="text-preset-1 text-center md:mx-auto dark:text-neutral-100">
+        Analyze your text
+        <br class="hidden md:block" />
+        in real-time.
+      </h1>
     </header>
 
-    <section class="px-4 md:px-8">
+    <section class="px-4 md:px-8 xl:px-0">
       <label for="text-input" class="sr-only">your text</label>
       <div class="mb-4 flex flex-col gap-3">
         <textarea
           id="text-input"
           v-model="text"
           placeholder="Start typing here… (or paste your text)"
-          class="placeholder-neutral-700 dark:placeholder-neutral-200 text-preset-3 focus:shadow-textarea mx-auto flex h-50 w-full rounded-xl border-2 p-5 hover:bg-neutral-200 focus:ring-2 focus:outline-hidden dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700 transition-all"
+          class="text-preset-3 focus:shadow-textarea mx-auto flex h-50 w-full rounded-xl border-2 p-5 text-neutral-700 placeholder-neutral-700 transition-all hover:bg-neutral-200 focus:ring-2 focus:outline-hidden dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder-neutral-200 dark:hover:bg-neutral-700"
           :class="{
-            'border-neutral-200 dark:border-neutral-700 focus:ring-purple-500': !isOverLimit,
+            'border-neutral-200 focus:ring-purple-500 dark:border-neutral-700': !isOverLimit,
             'border-orange-500 focus:ring-orange-500': isOverLimit,
           }"></textarea>
 
-        <p class="text-preset-4 text-orange-500 flex items-center" v-if="isOverLimit" aria-live="polite" role="alert">
+        <p class="text-preset-4 flex items-center text-orange-500" v-if="isOverLimit" aria-live="polite" role="alert">
           <img src="../assets/images/icon-info.svg" alt="" aria-hidden="true" class="mr-2 inline" />
           Limit reached! Your text exceeds {{ charLimit }} characters.
         </p>
       </div>
 
-      <fieldset class="flex flex-col gap-3  md:flex-row">
+      <fieldset class="flex flex-col gap-3 md:flex-row">
         <legend class="sr-only">Options</legend>
 
         <div class="flex items-center gap-2.5">
           <input type="checkbox" id="exclude-spaces" v-model="excEsp" class="checkBox" />
-          <label for="exclude-spaces" class="dark:text-neutral-200 py-1 cursor-pointer select-none">Exclude Spaces</label>
+          <label for="exclude-spaces" class="cursor-pointer py-1 select-none dark:text-neutral-200">
+            Exclude Spaces
+          </label>
         </div>
 
         <div class="flex items-center gap-2.5">
           <input type="checkbox" id="character-limit" v-model="showCharLimit" class="checkBox" />
-          <label for="character-limit" class="dark:text-neutral-200 py-0.5 cursor-pointer select-none">Set Character Limit</label>
+          <label for="character-limit" class="cursor-pointer py-0.5 select-none dark:text-neutral-200">
+            Set Character Limit
+          </label>
 
           <input
             type="text"
             id="input-char-limit"
             v-if="showCharLimit"
             v-model="charLimit"
-            class="w-13.75 rounded-md border border-neutral-900 dark:border-neutral-200 px-3 py-0.5 text-preset-4 text-neutral-900 dark:text-neutral-0 dark:bg-neutral-800 focus:outline-hidden focus:ring-1 focus:ring-purple-500 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+            class="text-preset-4 dark:text-neutral-0 w-13.75 rounded-md border border-neutral-900 px-3 py-0.5 text-neutral-900 hover:bg-neutral-200 focus:ring-1 focus:ring-purple-500 focus:outline-hidden dark:border-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700"
             maxlength="3" />
           <label for="input-char-limit" class="sr-only">Character limit value</label>
         </div>
-        <p class="dark:text-neutral-200 flex md:flex-1 items-center md:justify-end">Approx. reading time: {{ readingTime }}</p>
+        <p class="flex items-center md:flex-1 md:justify-end dark:text-neutral-200">
+          Approx. reading time: {{ readingTime }}
+        </p>
       </fieldset>
     </section>
 
-    <Stats
-      :total-char="totalChar"
-      :word-count="wordCount"
-      :sent-count="sentCount"        
-    />
+    <Stats :total-char="totalChar" :word-count="wordCount" :sent-count="sentCount" />
 
-    <Density    
-    :letter-density="letterDensity"
-    />
-  </main>  
+    <Density :letter-density="letterDensity" />
+  </main>
 </template>
