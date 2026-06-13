@@ -13,11 +13,11 @@ export function baseConfig(options = {}) {
   // Buscamos la raíz del monorepo dividiendo por la carpeta 'apps'
   const rootPath = projectPath.split(`${sep}apps${sep}`)[0];
 
-  // Base por defecto para el portal principal
-  let dynamicBase = '/Frontend-Monorepo/';
+  // 1. Si estamos en Vercel usamos ruta relativa './'. Si no, la base por defecto.
+  let dynamicBase = process.env.VERCEL ? './' : '/Frontend-Monorepo/';
 
-  // Si el proyecto actual está dentro de /apps/, calculamos su subruta
-  if (projectPath.includes(`${sep}apps${sep}`)) {
+  // 2. Solo calculamos subrutas si NO estamos en Vercel (para mantener GitHub Pages/Local)
+  if (!process.env.VERCEL && projectPath.includes(`${sep}apps${sep}`)) {
     const relativePath = relative(join(rootPath, 'apps'), projectPath);
     // Convertimos separadores de Windows (\) a URL (/) y limpiamos
     dynamicBase += `${relativePath.replace(/\\/g, '/')}/`;
