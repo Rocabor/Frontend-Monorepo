@@ -83,7 +83,7 @@ const letterDensity = computed(() => {
 <template>
   <main class="space-y-10">
     <header class="my-10 px-4 md:px-8">
-      <h1 class="text-preset-1 text-center dark:text-neutral-100 md:w-[510px] md:mx-auto">Analyze your text in real-time.</h1>
+      <h1 class="text-preset-1 text-center dark:text-neutral-100 md:w-127.5 md:mx-auto">Analyze your text in real-time.</h1>
     </header>
 
     <section class="px-4 md:px-8">
@@ -99,13 +99,13 @@ const letterDensity = computed(() => {
             'border-orange-500 focus:ring-orange-500': isOverLimit,
           }"></textarea>
 
-        <p class="text-preset-4 text-orange-500 flex items-center" v-if="isOverLimit" aria-live="polite">
+        <p class="text-preset-4 text-orange-500 flex items-center" v-if="isOverLimit" aria-live="polite" role="alert">
           <img src="../assets/images/icon-info.svg" alt="" aria-hidden="true" class="mr-2 inline" />
           Limit reached! Your text exceeds {{ charLimit }} characters.
         </p>
       </div>
 
-      <fieldset class="flex flex-col gap-3  md:flex-row md:">
+      <fieldset class="flex flex-col gap-3  md:flex-row">
         <legend class="sr-only">Options</legend>
 
         <div class="flex items-center gap-2.5">
