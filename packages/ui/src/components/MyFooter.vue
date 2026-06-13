@@ -11,7 +11,8 @@ defineProps({
   hoverColor: { type: String, default: '#ff3e00' },
   bgColor: { type: String, default: '#ffffff' },
   focusVisible: { type: String, default: '#ff3e00' },
-  fontFamily:{type: String, default: 'sans-serif'}
+  fontFamily:{type: String, default: 'sans-serif'},
+  position:{type: String,default:'absolute'}
 })
 </script>
 
@@ -41,7 +42,8 @@ defineProps({
   background-color: v-bind(bgColor);
   font-family: v-bind(fontFamily);
   font-size: clamp(0.75rem, calc(0.511rem + 1.018vw), 1.00rem);
-  @apply absolute inset-x-0 bottom-0 py-2 text-center;
+  position: v-bind(position);
+  @apply inset-x-0 bottom-0 py-2 text-center;
 }
 
 nav{
