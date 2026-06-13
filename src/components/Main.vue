@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'; // Se eliminó Static
+import { ref, computed } from 'vue'; 
 import Stats from './Stats.vue';
 import Density from './Density.vue';
 
@@ -82,18 +82,18 @@ const letterDensity = computed(() => {
 
 <template>
   <main class="space-y-10">
-    <header class="my-10 px-4">
-      <h1 class="text-preset-1 text-center dark:text-neutral-100">Analyze your text in real-time.</h1>
+    <header class="my-10 px-4 md:px-8">
+      <h1 class="text-preset-1 text-center dark:text-neutral-100 md:w-[510px] md:mx-auto">Analyze your text in real-time.</h1>
     </header>
 
-    <section class="px-4">
+    <section class="px-4 md:px-8">
       <label for="text-input" class="sr-only">your text</label>
       <div class="mb-4 flex flex-col gap-3">
         <textarea
           id="text-input"
           v-model="text"
           placeholder="Start typing here… (or paste your text)"
-          class="text-preset-3 focus:shadow-textarea mx-auto flex h-50 w-full rounded-xl border-2 p-5 hover:bg-neutral-200 focus:ring-2 focus:outline-hidden dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 transition-all"
+          class="placeholder-neutral-700 dark:placeholder-neutral-200 text-preset-3 focus:shadow-textarea mx-auto flex h-50 w-full rounded-xl border-2 p-5 hover:bg-neutral-200 focus:ring-2 focus:outline-hidden dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700 transition-all"
           :class="{
             'border-neutral-200 dark:border-neutral-700 focus:ring-purple-500': !isOverLimit,
             'border-orange-500 focus:ring-orange-500': isOverLimit,
@@ -105,7 +105,7 @@ const letterDensity = computed(() => {
         </p>
       </div>
 
-      <fieldset class="flex flex-col gap-3">
+      <fieldset class="flex flex-col gap-3  md:flex-row md:">
         <legend class="sr-only">Options</legend>
 
         <div class="flex items-center gap-2.5">
@@ -122,11 +122,11 @@ const letterDensity = computed(() => {
             id="input-char-limit"
             v-if="showCharLimit"
             v-model="charLimit"
-            class="w-13.75 rounded-md border border-neutral-900 dark:border-neutral-600 px-3 py-0.5 text-preset-4 text-neutral-900 dark:text-neutral-0 dark:bg-neutral-800 focus:outline-hidden focus:ring-1 focus:ring-purple-500"
+            class="w-13.75 rounded-md border border-neutral-900 dark:border-neutral-200 px-3 py-0.5 text-preset-4 text-neutral-900 dark:text-neutral-0 dark:bg-neutral-800 focus:outline-hidden focus:ring-1 focus:ring-purple-500 hover:bg-neutral-200 dark:hover:bg-neutral-700"
             maxlength="3" />
           <label for="input-char-limit" class="sr-only">Character limit value</label>
         </div>
-        <p class="dark:text-neutral-200">Approx. reading time: {{ readingTime }}</p>
+        <p class="dark:text-neutral-200 flex md:flex-1 items-center md:justify-end">Approx. reading time: {{ readingTime }}</p>
       </fieldset>
     </section>
 
@@ -139,5 +139,5 @@ const letterDensity = computed(() => {
     <Density    
     :letter-density="letterDensity"
     />
-  </main>
+  </main>  
 </template>

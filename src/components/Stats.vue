@@ -23,7 +23,7 @@ const formatSentences = computed(() => String(props.sentCount).padStart(2, '0'))
 </script>
 
 <template>
-  <div class="mt-10 flex flex-col gap-4 px-4 md:grid md:grid-cols-3">
+  <div class="mt-10 flex flex-col gap-4 px-4 md:grid md:grid-cols-3 md:px-8 md:mb-6">
     <div class="Stat-Container bg-pattern-char bg-purple-400 text-neutral-900">
       <p class="text-preset-1">{{ formatChar }}</p>
       <p class="text-preset-3">Total Characters</p>
