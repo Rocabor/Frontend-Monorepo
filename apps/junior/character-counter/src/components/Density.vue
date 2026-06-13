@@ -54,7 +54,7 @@ const displayedDensity = computed(() => {
       @click="isExpanded = !isExpanded"
       type="button"
       :aria-expanded="isExpanded" 
-      class="text-preset-3 mt-1.5 flex cursor-pointer items-center gap-2 font-medium text-neutral-900 dark:text-neutral-200 focus:outline-2 focus:outline-offset-4 focus:outline-purple-500">
+      class="text-preset-3 mt-1.5 flex cursor-pointer items-center gap-2 font-medium text-neutral-900 dark:text-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-500">
       {{ isExpanded ? 'See less' : 'See more' }}
       <span
         aria-hidden="true"
