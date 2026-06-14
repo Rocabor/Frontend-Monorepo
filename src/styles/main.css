@@ -1,5 +1,58 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('../assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui;
+  /* Neutros */
+  --color-neutral-900: #0d082d;
+  --color-neutral-700: #4b4869;
+  --color-neutral-500: #8784a5;
+  --color-neutral-300: #d1d0d5;
+  --color-neutral-0: #ffffff;
+  /* Naranjas */
+  --color-orange-700: #e1604f;
+  --color-orange-500: #f57463;
+  /* Gradientes personalizados */
+  --background-image-gradient-01: linear-gradient(90deg, #f37362 0%, #ffffff 100%);
+
+  --font-inconsolata: 'Inconsolata', sans-serif;
+
+  --background-image-mobile: url('../assets/images/background-mobile.png');
+  --background-image-tablet: url('../assets/images/background-tablet.png');
+  --background-image-desktop: url('../assets/images/background-desktop.png');
+  --background-image-pattern-lines: url('../assets/images/pattern-lines.svg');
+}
+
+@layer base {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    background-image: var(--background-image-pattern-lines), var(--background-image-mobile);
+    background-repeat: no-repeat;
+    background-size: 970px, cover;
+    background-position:
+      left top,
+      left top;
+
+    @variant md {
+      background-image: var(--background-image-pattern-lines), var(--background-image-tablet);
+    }
+    @variant xl {
+      background-image: var(--background-image-pattern-lines), var(--background-image-desktop);
+    }
+  }
+}
+
+@utility text-preset-1 {
+  font-size: 60px;
+  font-weight: 800; /* ExtraBold */
+  line-height: 1.1; /* 110% */
+  letter-spacing: -1px;
 }
