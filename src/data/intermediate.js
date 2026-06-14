@@ -1,7 +1,7 @@
 export const intermediateProjects = [
   {
     href: './apps/intermediate/password-generator-app/',
-    image: 'images/6j.jpg',
+    image: 'images/password-generator-app.jpg',
     title: 'password generator app',
     technologies: ['html', 'css', 'js'],
     difficulty: 'Intermediate',

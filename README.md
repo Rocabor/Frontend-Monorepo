@@ -230,6 +230,7 @@ All projects have live demos, so you can see them running without any local setu
 | 15 | **Fylo dark theme landing page** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/fylo-dark-theme-landing-page/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/fylo-dark-theme-landing-page) |
 | 16 | **Body Mass Index Calculator** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/bmi-calculator/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/bmi-calculator) |
 | 17 | **Character Counter** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/character-counter/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/character-counter) |
+| 18 | **Conference ticket generator** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/conference-ticket-generator/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/conference-ticket-generator) |
 
 ---
 
