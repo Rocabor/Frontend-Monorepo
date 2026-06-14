@@ -124,7 +124,7 @@ const letterDensity = computed(() => {
           </label>
 
           <input
-            type="text"
+            type="number"
             id="input-char-limit"
             v-if="showCharLimit"
             v-model="charLimit"
