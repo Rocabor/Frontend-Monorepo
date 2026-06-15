@@ -2,6 +2,7 @@
 import { MyFooter } from '@packages/ui';
 import logoFull from './assets/images/logo-full.svg';
 import patternSquiggly from './assets/images/pattern-squiggly-line-top.svg';
+import Form from './components/Form.vue';
 </script>
 
 <template>
@@ -22,7 +23,7 @@ import patternSquiggly from './assets/images/pattern-squiggly-line-top.svg';
     <div class="flex flex-col gap-5">
     <!--* Main Heading -->
     <h1
-      class="text-preset-1 text-neutral-0 text-center">
+      class="text-preset-1 text-center">
       Your Journey to Coding Conf 2026 Starts Here!
     </h1>
 
@@ -31,6 +32,8 @@ import patternSquiggly from './assets/images/pattern-squiggly-line-top.svg';
       Secure your spot at next year’s biggest coding conference.
     </p>
     </div>
+
+    <Form/>
 
   </main>
 </template>
