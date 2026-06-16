@@ -10,7 +10,7 @@ import Form from './components/Form.vue';
 
 <template>
   <header
-    class="relative flex w-full items-center justify-center px-6 pt-8.25 pb-10 md:pt-10 md:pb-15">
+    class="relative flex w-full items-center justify-center px-6 pt-8.25 pb-10 md:pt-10 md:pb-15 overflow-hidden">
 
     <!--* logo -->
     <div class="flex items-center">
