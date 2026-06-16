@@ -40,7 +40,7 @@
     color: var(--color-neutral-0);
     background-image: var(--background-image-pattern-lines), var(--background-image-mobile);
     background-repeat: no-repeat;
-    background-size: 970px, cover;
+    background-size: 970px, cover;    
     background-position:
       left top,
       left top;
