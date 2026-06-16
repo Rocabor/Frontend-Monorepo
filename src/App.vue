@@ -37,8 +37,8 @@ import Form from './components/Form.vue';
 
   <main
     class="flex flex-col items-center max-w-222.75 mx-4 md:mx-7.75 xl:mx-auto ">
-
     <div class="flex flex-col gap-5">
+
     <!--* Main Heading -->
     <h1
       class="text-preset-1 text-center">
