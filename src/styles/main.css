@@ -94,5 +94,11 @@ label{
   line-height: 1; 
   letter-spacing: -0.3px;
 }
+@utility text-preset-7b {
+  font-size: 12px;
+  font-weight: 400; 
+  line-height: 1.2; 
+  letter-spacing: -0.2px;
+}
 
 
