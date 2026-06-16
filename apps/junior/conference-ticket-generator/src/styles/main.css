@@ -35,9 +35,11 @@
     flex-direction: column;
     /* justify-content: center; */
     /* align-items: center; */
+    
     min-height: 100dvh;
     font-family: 'Inconsolata',sans-serif;
     color: var(--color-neutral-0);
+    /* position: relative; */
     background-image: var(--background-image-pattern-lines), var(--background-image-mobile);
     background-repeat: no-repeat;
     background-size: 970px, cover;    

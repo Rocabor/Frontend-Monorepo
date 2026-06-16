@@ -9,8 +9,9 @@ import Form from './components/Form.vue';
 </script>
 
 <template>
+  
   <header
-    class="relative flex w-full items-center justify-center px-6 pt-8.25 pb-10 md:pt-10 md:pb-15 overflow-hidden">
+    class="relative overflow-x-clip flex w-full items-center justify-center px-6 pt-8.25 pb-10 md:pt-10 md:pb-15" >
 
     <!--* logo -->
     <div class="flex items-center">
@@ -26,10 +27,13 @@ import Form from './components/Form.vue';
       <img :src="patternBottom" alt="" class="absolute -left-px top-196.25 -z-10 w-75.25 h-52.5 md:left-0 md:top-201 md:w-99 md:h-69 xl:w-206.25 xl:h-100 xl:top-156">
     </picture>
 
-    <!--* patrones circulares -->
+    <!--* patron circular top -->
     <img :src="patternCircle" alt="" class="absolute size-26.75 -top-7.5 -left-5 md:size-54.25 md:-left-6.75 md:-top-21.75 xl:left-11 xl:-top-21.25">
-    <img :src="patternCircle" alt="" class="absolute size-26.75 top-137 -right-11.25 md:size-54.25 md:top-138 md:-right-29.5 xl:left-234.5 xl:right-71.25">
+
+    <!--* patron circular bottom -->
+    <img :src="patternCircle" alt="" class="absolute size-26.75 left-1/2 top-137 translate-x-[125.5px] md:size-54.25 md:translate-x-71.25 xl:translate-x-54.5">
   </header>
+  
 
   <main
     class="flex flex-col items-center max-w-222.75 mx-4 md:mx-7.75 xl:mx-auto ">
@@ -47,7 +51,7 @@ import Form from './components/Form.vue';
     </p>
     </div>
 
-    <Form/>
+    <Form/>   
 
   </main>
 </template>
