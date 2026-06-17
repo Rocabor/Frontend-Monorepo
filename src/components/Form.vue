@@ -24,24 +24,58 @@ const fileinput = ref(null);
 const avatarFile = ref(null);
 const avatarPreview = ref(null);
 
-function openFilePicker () {
+// Nuevas variables para el estado del error
+const errorMessage = ref('');
+const isError = ref(false);
+
+function openFilePicker() {
   fileinput.value.click();
 }
 function changeImage() {
-  fileinput.value.click()  
+  fileinput.value.click();
 }
 function removeImage() {
-  avatarFile.value = null
-  avatarPreview.value = null
-  fileinput.value.value = ''  
+  avatarFile.value = null;
+  avatarPreview.value = null;
+  fileinput.value.value = '';
 }
 
-
-function handleFileChange(event) {
-  const file = event.target.files[0];
+function processFile(file) {
   if (!file) return;
+
+  // 1. Validar formato
+  const validTypes = ['image/jpeg', 'image/png'];
+  if (!validTypes.includes(file.type)) {
+    errorMessage.value = 'Invalid file type. Please upload a JPG or PNG image.';
+    isError.value = true;
+    return;
+  }
+
+  // 2. Validar tamaño (500 KB)
+  if (file.size > 500 * 1024) {
+    errorMessage.value = 'File too large. Please upload a photo under 500KB.';
+    isError.value = true;
+    return;
+  }
+
+  // Si pasa las validaciones, limpiamos cualquier error previo
+  errorMessage.value = '';
+  isError.value = false;
+
   avatarFile.value = file;
   avatarPreview.value = URL.createObjectURL(file);
+}
+
+// Controla la selección clásica (Click)
+function handleFileChange(event) {
+  const file = event.target.files[0];
+  processFile(file);
+}
+
+// Controla el arrastre (Drag & Drop)
+function handleDrop(event) {
+  const file = event.dataTransfer.files[0];
+  processFile(file);
 }
 </script>
 
@@ -51,14 +85,20 @@ function handleFileChange(event) {
     <div class="flex w-full flex-col gap-3">
       <label>Upload Avatar</label>
 
-      <!--* upload file -->
-      <input ref="fileinput" type="file" accept="image/png, image/jpeg" @change="handleFileChange" class="sr-only" />
-
       <!--* Drag and drop container -->
-      <button
-        type="button"
-        @click="openFilePicker"
-        class="bg-neutral-0/5 hover:bg-neutral-0/20 relative flex aspect-[2.72/1] h-31.5 w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-neutral-500 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-3 focus-visible:ring-offset-neutral-900">
+      <div
+        tabindex="0"
+        @dragover.prevent
+        @drop.prevent="handleDrop"
+        @click="!avatarPreview && openFilePicker()"
+        @keydown.enter="openFilePicker"
+        @keydown.space.prevent="openFilePicker"
+        class="bg-neutral-0/5 relative flex aspect-[2.72/1] h-31.5 w-full flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-neutral-500 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-3 focus-visible:ring-offset-neutral-900"
+        :class="{
+          'hover:bg-neutral-0/20 cursor-pointer': !avatarPreview,
+        }">
+        <!--* upload file -->
+        <input ref="fileinput" type="file" accept="image/png, image/jpeg" @change="handleFileChange" class="sr-only" />
 
         <div
           v-if="!avatarPreview"
@@ -72,20 +112,34 @@ function handleFileChange(event) {
           <img :src="avatarPreview" alt="" class="size-full rounded-xl object-cover" />
         </div>
 
-        <div v-if="avatarPreview" class="w-[180px] h-[22px] flex gap-2 text-preset-7b">
+        <div v-if="avatarPreview" class="text-preset-7b flex h-5.5 w-45 gap-2">
+          <button
+            type="button"
+            @click.stop="removeImage"
+            class="bg-neutral-0/10 cursor-pointer rounded-sm px-2 py-1 hover:text-neutral-300 hover:underline hover:underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-3 focus-visible:ring-offset-neutral-900">
+            Remove image
+          </button>
 
-          <button type="button" @click="removeImage" class="underline underline-offset-2 text-neutral-300 bg-neutral-0/10 px-2 py-1 rounded-sm cursor-pointer">Remove image</button>
-          
-          <button type="button" @click="changeImage" class="text-neutral-0 bg-neutral-0/10 px-2 py-1 rounded-sm cursor-pointer">Change image</button>
+          <button
+            type="button"
+            @click.stop="changeImage"
+            class="bg-neutral-0/10 cursor-pointer rounded-sm px-2 py-1 hover:text-neutral-300 hover:underline hover:underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-3 focus-visible:ring-offset-neutral-900">
+            Change image
+          </button>
         </div>
 
         <p v-else class="text-preset-4 text-center text-neutral-300">Drag and drop or click to upload</p>
-      </button>
+      </div>
 
       <!--* Hint text -->
       <div class="flex items-center gap-2">
-        <img src="../assets/images/icon-info.svg" alt="" class="size-3" />
-        <p class="text-preset-5 text-neutral-300">Upload your photo (JPG or PNG, max size: 500KB).</p>
+        <div
+          class="size-3 mask-[url('../assets/images/icon-info.svg')] mask-contain mask-center mask-no-repeat transition-colors"
+          :class="isError ? 'bg-orange-500' : 'bg-neutral-300'"></div>
+
+        <p class="text-preset-5 text-neutral-300" :class="isError ? 'text-orange-500' : 'text-neutral-300'">
+          {{ isError ? errorMessage : 'Upload your photo (JPG or PNG, max size: 500KB).' }}
+        </p>
       </div>
     </div>
 
@@ -102,7 +156,7 @@ function handleFileChange(event) {
 
     <button
       type="submit"
-      class="text-preset-6 focus:outline-neutral-0 flex h-13.5 w-full items-center justify-center rounded-xl bg-orange-500 text-neutral-900 transition-colors hover:bg-orange-700 hover:inset-shadow-[0_-4px_0_rgba(245,116,99,1)] focus:outline-2 focus:outline-offset-3">
+      class="text-preset-6 focus:outline-neutral-0 flex h-13.5 w-full items-center justify-center rounded-xl bg-orange-500 text-neutral-900 transition-colors hover:bg-orange-700 hover:inset-shadow-[0_-4px_0_rgba(245,116,99,1)] focus:outline-2 focus:outline-offset-3 active:scale-95">
       Generate My Ticket
     </button>
   </form>
