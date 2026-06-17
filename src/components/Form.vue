@@ -28,6 +28,12 @@ const avatarPreview = ref(null);
 const errorMessage = ref('');
 const isError = ref(false);
 
+const fieldErrors = ref({
+  fullName: '',
+  emailAddress: '',
+  githubUsername: '',
+});
+
 function openFilePicker() {
   fileinput.value.click();
 }
@@ -77,10 +83,66 @@ function handleDrop(event) {
   const file = event.dataTransfer.files[0];
   processFile(file);
 }
+
+function validateForm() {
+  let isValid = true;
+
+  // Reset errores
+  fieldErrors.value = { fullName: '', emailAddress: '', githubUsername: '' };
+
+  // Validar Full Name
+  if (!formData.value.fullName.trim()) {
+    fieldErrors.value.fullName = 'Please enter your full name.';
+    isValid = false;
+  }
+
+  // Validar Email (regex básico)
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.value.emailAddress)) {
+    fieldErrors.value.emailAddress = 'Please enter a valid email address.';
+    isValid = false;
+  }
+
+  // Validar GitHub Username
+  if (!formData.value.githubUsername.trim()) {
+    fieldErrors.value.githubUsername = 'Please enter your GitHub username.';
+    isValid = false;
+  }
+
+  return isValid;
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  if (validateForm()) {
+    // TODO: generar ticket (próximo paso)
+    console.log('Form valid:', formData.value);
+  }
+}
+
+function validateField(fieldId) {
+  // Resetear error de ese campo
+  fieldErrors.value[fieldId] = '';
+
+  if (fieldId === 'fullName' && !formData.value.fullName.trim()) {
+    fieldErrors.value.fullName = 'Please enter your full name.';
+  }
+  
+  if (fieldId === 'emailAddress') {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.value.emailAddress)) {
+      fieldErrors.value.emailAddress = 'Please enter a valid email address.';
+    }
+  }
+
+  if (fieldId === 'githubUsername' && !formData.value.githubUsername.trim()) {
+    fieldErrors.value.githubUsername = 'Please enter your GitHub username.';
+  }
+}
 </script>
 
 <template>
-  <form class="mt-10 flex w-full flex-col gap-6 md:mt-11.25 md:w-130.5 xl:w-115">
+  <form @submit="handleSubmit" class="mt-10 flex w-full flex-col gap-6 md:mt-11.25 md:w-130.5 xl:w-115">
     <!--* Upload -->
     <div class="flex w-full flex-col gap-3">
       <label>Upload Avatar</label>
@@ -148,10 +210,23 @@ function handleDrop(event) {
       <label :for="field.id">{{ field.label }}</label>
       <input
         v-model="formData[field.id]"
+         @blur="validateField(field.id)"
         :type="field.type"
         :id="field.id"
         :placeholder="field.placeholder"
-        class="text-preset-4 hover:bg-neutral-0/20 h-13.5 w-full rounded-xl border border-neutral-500 bg-white/8 px-4 placeholder-neutral-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-3 focus-visible:ring-offset-neutral-900" />
+        :class="[
+          'text-preset-4 h-13.5 w-full rounded-xl border bg-white/8 px-4 placeholder-neutral-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-3 focus-visible:ring-offset-neutral-900',
+          fieldErrors[field.id]
+            ? 'border-orange-500 hover:bg-orange-500/10'
+            : 'hover:bg-neutral-0/20 border-neutral-500',
+        ]" />
+
+      <!--* Error message -->
+      <div v-if="fieldErrors[field.id]" class="flex items-center gap-2">
+        <div
+          class="size-3 bg-orange-500 mask-[url('../assets/images/icon-info.svg')] mask-contain mask-center mask-no-repeat"></div>
+        <p class="text-preset-5 text-orange-500">{{ fieldErrors[field.id] }}</p>
+      </div>
     </div>
 
     <button
