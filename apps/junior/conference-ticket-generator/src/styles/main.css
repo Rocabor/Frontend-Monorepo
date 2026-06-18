@@ -19,7 +19,7 @@
   --color-orange-700: #e1604f;
   --color-orange-500: #f57463;
   /* Gradientes personalizados */
-  --background-image-gradient-01: linear-gradient(90deg, #f37362 0%, #ffffff 100%);
+  --background-image-gradient-text: linear-gradient(90deg, #f37362 0%, #ffffff 100%);
 
   --font-inconsolata: 'Inconsolata', sans-serif;
 
@@ -27,6 +27,7 @@
   --background-image-tablet: url('../assets/images/background-tablet.png');
   --background-image-desktop: url('../assets/images/background-desktop.png');
   --background-image-pattern-lines: url('../assets/images/pattern-lines.svg');
+  --background-image-pattern-ticket: url('../assets/images/pattern-ticket.svg');
 }
 
 @layer base {
@@ -36,7 +37,7 @@
     /* justify-content: center; */
     /* align-items: center; */
     
-    min-height: 100dvh;
+    min-height: 1024px;
     font-family: 'Inconsolata',sans-serif;
     color: var(--color-neutral-0);
     /* position: relative; */
@@ -68,6 +69,7 @@
   line-height: 1.2; 
   letter-spacing: -0.5px;
 }
+
 @utility text-preset-3 {
   font-size: 20px;
   font-weight: 500; 
@@ -101,4 +103,48 @@ label{
   letter-spacing: -0.2px;
 }
 
-
+/* font size (Ticket component) min:24px max:40px */
+@utility text-preset-1t {
+  font-size: clamp(1.50rem, calc(0.546rem + 4.071vw), 2.50rem);
+  font-weight: 700; 
+  line-height: 1.1; 
+  letter-spacing: -1px;
+}
+/* font size min:14px max:18px */
+@utility text-preset-2t {
+  font-size: clamp(0.88rem, calc(0.636rem + 1.018vw), 1.13rem);
+  font-weight: 400; 
+  line-height: 1.2; 
+  letter-spacing: 0px;
+  color:var(--color-neutral-300);
+}
+/* font size min:20px max:30px */
+@utility text-preset-3t {
+  font-size: clamp(1.25rem, calc(0.654rem + 2.545vw), 1.88rem);
+  font-weight: 500; 
+  line-height: 1.1; 
+  letter-spacing: -1px;  
+}
+/* font size min:14px max:20px */
+@utility text-preset-4t {
+  font-size: clamp(0.88rem, calc(0.517rem + 1.527vw), 1.25rem);
+  font-weight: 500; 
+  line-height: 1.2; 
+  letter-spacing: -0.5px;
+  color:var(--color-neutral-300);
+}
+/* font size min:20px max:20px */
+@utility text-preset-5t {
+  font-size: clamp(1.25rem, calc(1.011rem + 1.018vw), 1.50rem);
+  font-weight: 500; 
+  line-height: 1.2; 
+  letter-spacing: -0.5px;
+  color:var(--color-neutral-300);
+}
+/* font size min:22px max:30px */
+@utility text-preset-6t {
+  font-size: clamp(1.38rem, calc(0.898rem + 2.036vw), 1.88rem);
+  font-weight: 500; 
+  line-height: 1.1; 
+  letter-spacing: -1px;    
+}
