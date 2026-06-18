@@ -17,7 +17,6 @@ This is a solution to the [Conference ticket generator challenge on Frontend Men
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -38,93 +37,90 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://snipboard.io/o4cVOa.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+[![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)](https://rocabor.github.io/Frontend-Monorepo/junior/conference-ticket-generator/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Vue.js 3](https://vuejs.org/) - JavaScript framework (Composition API)
+- [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first CSS framework with dynamic theme configs
+- [Vite](https://vite.dev/) - Frontend Build tool
+- [BigDataCloud Reverse Geocoding API](https://www.bigdatacloud.com/) - Rest API for dynamic location tracking
+- Semantic HTML5 & WAI-ARIA Markup
+- Mobile-first responsive workflow
+- @packages/ui - Monorepo UI shared architecture
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+During this project, I deepened my knowledge in web accessibility (A11y), clean input manipulation, and browser API integrations:
 
-To see how you can add code snippets, see below:
+**Advanced Accessibility & Screen Reader Semantics**
+- I learned how to turn abstract interactive `div` containers into custom accessible components by leveraging explicit keyboard triggers (`tabindex="0"`, `keydown.enter`, `keydown.space`) and robust ARIA labeling hooks (`aria-labelledby`, `aria-describedby`).
+- I implemented asynchronous structural announcements with `aria-live="polite"` so screen readers seamlessly catch when the view mutates from the form layout over to the ticket visualization.
+- I corrected heading levels across the DOM structure, swapping non-hierarchical headings into strong semantic text elements to comply with strict semantic guidelines.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div
+  tabindex="0"
+  role="button"
+  aria-labelledby="avatar-label"
+  :aria-describedby="isError ? 'avatar-error' : 'avatar-instructions'"
+  @click="!avatarPreview && openFilePicker()"
+  @keydown.enter="openFilePicker"
+  @keydown.space.prevent="openFilePicker"
+>
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+**Asynchronous Data & Geocoding Manipulations**
+- I integrated the Geolocation browser API to query coordinates on mount, processing international ISO subdivision strings (principalSubdivisionCode) through array splitting to consistently extract tidy state or region abbreviations (e.g., turning US-TX into a clean "TX" output).
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+if (data.principalSubdivisionCode) {
+  const partes = data.principalSubdivisionCode.split('-');
+  regionAbreviada = partes[1] || data.countryCode; // Extracts standard abbreviations like "TX"
 }
+location.value = `${data.city}, ${regionAbreviada}`;
 ```
+**State Form Formatting & Defensive Engineering**
+- I added active programmatic sanitization handlers (blur, submit) to mutate real underlying Vue state, mapping names cleanly into Title Case formats while enforcing a defensive reset against pointer exceptions on hidden native input file values.
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+After completing this project, I want to focus on:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+1. **Automated Accessibility Testing Audit workflows**
+   - Incorporating tools like Axe-core or Cypress-A11y into the deployment pipeline to ensure zero interactive barriers across diverse device trees.
+
+2. **Defensive API State Caching & Edge Failure Management**
+   - Learning how to build custom visual loaders or transitions when geocoding calls experience high latency, expanding graceful fallback workflows.
+
+3. **Tailwind CSS v4 Advanced Design-Token Systems**
+   - Further mastering the new @theme configuration directives to build fully reusable monorepo theme layers across scale.
+
+
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [WAI-ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/) - Essential reference patterns for handling accessible custom buttons and drag regions.
+- [BigDataCloud Reverse Geocoding API Documentation](https://www.google.com/search?q=https://www.bigdatacloud.com/docs/api/reverse-geocode) - Helped me understand the structure of locality and regional subdivision responses.
+- [Vue.js Composition API Docs](https://www.google.com/search?q=https://vuejs.org/api/composition-api-core.html) - Provided deep insights into component lifecycle tracking (onMounted) and precise template ref referencing.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
-
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
-
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+This project benefited from an active pairing collaboration with an AI assistant. The AI tool was utilized strategically to audit the structural implementation, refactor interactive nodes to meet rigorous WCAG accessibility guidelines, and eliminate string formatting bugs (such as resolving state tracking string leaks and optimizing standard ISO code parsing routines). This manual interaction loop accelerated learning regarding screen reader compliance while keeping complete control over the application's layout choices.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@Rocabor](https://www.frontendmentor.io/profile/Rocabor)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills.

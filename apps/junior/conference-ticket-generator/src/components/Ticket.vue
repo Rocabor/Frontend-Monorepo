@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
+// Recibir datos del formulario via props
 const props = defineProps({
   fullName: { type: String, required: true },
   emailAddress: { type: String, required: true },
@@ -8,14 +9,17 @@ const props = defineProps({
   avatarPreview: { type: String, required: true }
 })
 
+// 1. CORRECCIÓN: Valor por defecto limpio y abreviado sin caracteres basura
 const location = ref('Austin, TX')
 
+// Generar número de ticket aleatorio
 const generateTicketNumber = () => {
   const min = 10000
   const max = 99999
   return `#${Math.floor(Math.random() * (max - min + 1) + min)}`
 }
 
+// Función para obtener fecha actual del sistema
 const getCurrentDate = () => {
   const date = new Date()
   const options = { 
@@ -29,25 +33,39 @@ const getCurrentDate = () => {
 const ticketNumber = ref(generateTicketNumber())
 const conferenceDate = ref(getCurrentDate())
 
+// Lógica de Geolocalización al montar el componente
 onMounted(() => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const { latitude, longitude } = position.coords
         try {
+          // Consultamos la API de BigDataCloud
           const response = await fetch(
             `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
           )
           const data = await response.json()
+          
           if (data.city) {
-            const region = data.principalSubdivision || data.countryCode
-            location.value = `${data.city}, ${region}`
+            // 2. MEJORA DE ABREVIACIÓN: 
+            // Usamos 'principalSubdivisionCode' que devuelve formatos estándar ISO (ej: "US-TX", "ES-M")
+            let regionAbreviada = data.countryCode; 
+            
+            if (data.principalSubdivisionCode) {
+              // Separamos por el guion (-) para aislar la abreviatura del estado/provincia ("TX", "M")
+              const partes = data.principalSubdivisionCode.split('-');
+              regionAbreviada = partes[1] || data.countryCode;
+            }
+
+            // Resultado final formateado limpiamente: "Austin, TX"
+            location.value = `${data.city}, ${regionAbreviada}`
           }
         } catch (error) {
           console.error("Error al consultar el servicio de geolocalización:", error)
         }
       },
       (error) => {
+        // En caso de denegación, se mantiene la configuración base ("Austin, TX")
         console.warn("Permiso denegado o ubicación no disponible:", error.message)
       }
     )
@@ -89,9 +107,7 @@ onMounted(() => {
             <p class="text-preset-3t font-medium">{{ fullName }}</p>
             <p class="flex gap-1 items-center">
               <img src="../assets/images/icon-github.svg" alt="" aria-hidden="true" class="w-3.75 h-4 md:w-5.25 md:h-5.5">
-              <span class="text-preset-4t">
-                <span class="sr-only">GitHub username:</span>{{ githubUsername }}
-              </span>
+              <span class="text-preset-4t"><span class="sr-only">GitHub username:</span>{{ githubUsername }}</span>
             </p>
           </div>
         </div>
