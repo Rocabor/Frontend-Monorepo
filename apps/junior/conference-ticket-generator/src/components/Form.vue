@@ -1,8 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, nextTick } from 'vue';
 import Ticket from './Ticket.vue';
 
-// Definimos el emisor para avisar a App.vue cuando el ticket esté listo
 const emit = defineEmits(['ticket-generated']);
 
 const formData = ref({
@@ -39,17 +38,25 @@ const fieldErrors = ref({
   githubUsername: '',
 });
 
+// Referencia al componente del Ticket para el manejo del foco
+const ticketRef = ref(null);
+
 function openFilePicker() {
   if (fileinput.value) fileinput.value.click();
 }
 function changeImage() {
   if (fileinput.value) fileinput.value.click();
 }
+
 function removeImage() {
+  // Limpieza de memoria RAM al eliminar la previsualización
+  if (avatarPreview.value) {
+    URL.revokeObjectURL(avatarPreview.value);
+  }
   avatarFile.value = null;
   avatarPreview.value = null;
   if (fileinput.value) {
-    fileinput.value.value = ''; // Forma segura para evitar fallos de puntero nulo
+    fileinput.value.value = ''; 
   }
 }
 
@@ -67,6 +74,11 @@ function processFile(file) {
     errorMessage.value = 'File too large. Please upload a photo under 500KB.';
     isError.value = true;
     return;
+  }
+
+  // Liberamos la memoria del blob anterior si existía
+  if (avatarPreview.value) {
+    URL.revokeObjectURL(avatarPreview.value);
   }
 
   errorMessage.value = '';
@@ -93,7 +105,6 @@ function validateForm() {
     fieldErrors.value.fullName = 'Please enter your full name.';
     isValid = false;
   } else {
-    // Formatea con mayúsculas la primera letra de cada palabra al enviar
     formData.value.fullName = formData.value.fullName
       .split(' ')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
@@ -131,6 +142,11 @@ function handleSubmit(event) {
     
     emit('ticket-generated');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Corrección de Accesibilidad: Movemos el foco del teclado directamente al Ticket
+    nextTick(() => {
+      ticketRef.value?.focus();
+    });
   }
 }
 
@@ -141,7 +157,6 @@ function validateField(fieldId) {
     if (!formData.value.fullName.trim()) {
       fieldErrors.value.fullName = 'Please enter your full name.';
     } else {
-      // JavaScript: Pasa el valor real a formato tipo Título 
       formData.value.fullName = formData.value.fullName
         .split(' ')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
@@ -175,19 +190,19 @@ function clearFieldError(fieldId) {
 <template>
   <form v-if="!showTicket" @submit="handleSubmit" class="mt-10 flex w-full flex-col gap-6 md:mt-11.25 md:w-130.5 xl:w-115">
     
+    <!-- Zona de Carga de Avatar Semántica y Accesible -->
     <div class="flex w-full flex-col gap-3">
       <label id="avatar-label">Upload Avatar</label>
 
       <div
         tabindex="0"
-        role="button"
-        aria-labelledby="avatar-label"
-        :aria-describedby="isError ? 'avatar-error' : 'avatar-instructions'"
         @dragover.prevent
         @drop.prevent="handleDrop"
         @click="!avatarPreview && openFilePicker()"
         @keydown.enter="openFilePicker"
         @keydown.space.prevent="openFilePicker"
+        aria-labelledby="avatar-label"
+        :aria-describedby="isError ? 'avatar-error' : 'avatar-instructions'"
         class="bg-neutral-0/5 relative flex aspect-[2.72/1] h-31.5 w-full flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-neutral-500 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-3 focus-visible:ring-offset-neutral-900"
         :class="{ 'hover:bg-neutral-0/20 cursor-pointer': !avatarPreview }">
         
@@ -201,11 +216,12 @@ function clearFieldError(fieldId) {
           <img :src="avatarPreview" alt="Avatar preview" class="size-full rounded-xl object-cover" />
         </div>
 
+        <!-- Botones secundarios con anillos de enfoque visibles -->
         <div v-if="avatarPreview" class="text-preset-7b flex h-5.5 w-45 gap-2 z-10">
-          <button type="button" @click.stop="removeImage" class="bg-neutral-0/10 cursor-pointer rounded-sm px-2 py-1 hover:text-neutral-300 hover:underline hover:underline-offset-2 focus:outline-none">
+          <button type="button" @click.stop="removeImage" class="bg-neutral-0/10 cursor-pointer rounded-sm px-2 py-1 hover:text-neutral-300 hover:underline hover:underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500">
             Remove image
           </button>
-          <button type="button" @click.stop="changeImage" class="bg-neutral-0/10 cursor-pointer rounded-sm px-2 py-1 hover:text-neutral-300 hover:underline hover:underline-offset-2 focus:outline-none">
+          <button type="button" @click.stop="changeImage" class="bg-neutral-0/10 cursor-pointer rounded-sm px-2 py-1 hover:text-neutral-300 hover:underline hover:underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500">
             Change image
           </button>
         </div>
@@ -221,6 +237,7 @@ function clearFieldError(fieldId) {
       </div>
     </div>
 
+    <!-- Inputs del Formulario -->
     <div v-for="field in formFields" :key="field.id" :class="['flex flex-col gap-3', field.className]">
       <label :for="field.id">{{ field.label }}</label>
       <input
@@ -235,7 +252,6 @@ function clearFieldError(fieldId) {
         :class="[
           'text-preset-4 h-13.5 w-full rounded-xl border bg-white/8 px-4 placeholder-neutral-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-3 focus-visible:ring-offset-neutral-900',
           fieldErrors[field.id] ? 'border-orange-700 hover:bg-orange-700/10' : 'hover:bg-neutral-0/20 border-neutral-500',
-          // CSS: Fuerza visualmente las mayúsculas iniciales mientras el usuario escribe
           { 'capitalize': field.id === 'fullName' }
         ]" />
 
@@ -252,9 +268,42 @@ function clearFieldError(fieldId) {
 
   <Ticket 
     v-else
+    ref="ticketRef"
     :fullName="ticketData.fullName"
     :emailAddress="ticketData.emailAddress"
     :githubUsername="ticketData.githubUsername"
     :avatarPreview="ticketData.avatarPreview"
   />
 </template>
+
+<style>
+@utility text-preset-3 {
+  font-size: 1.25rem;
+  font-weight: 500; 
+  line-height: 1.2; 
+  letter-spacing: -0.5px;
+}
+@utility text-preset-4 {
+  font-size: 1.125rem;
+  font-weight: 400; 
+  line-height: 1.2;
+}
+@utility text-preset-5 {
+  font-size: 0.75rem;
+  font-weight: 400; 
+  line-height: 1.2; 
+  letter-spacing: -0.2px;
+}
+@utility text-preset-6 {
+  font-size: 1.25rem;
+  font-weight: 800; 
+  line-height: 1; 
+  letter-spacing: -0.3px;
+}
+@utility text-preset-7b {
+  font-size: 0.75rem;
+  font-weight: 400; 
+  line-height: 1.2; 
+  letter-spacing: -0.2px;
+}
+</style>

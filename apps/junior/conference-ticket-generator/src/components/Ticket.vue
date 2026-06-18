@@ -1,25 +1,28 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-// Recibir datos del formulario via props
-const props = defineProps({
-  fullName: { type: String, required: true },
-  emailAddress: { type: String, required: true },
-  githubUsername: { type: String, required: true },
-  avatarPreview: { type: String, required: true }
+defineProps({
+  fullName: { type: String, default: '' },
+  emailAddress: { type: String, default: '' },
+  githubUsername: { type: String, default: '' },
+  avatarPreview: { type: String, default: '' }
 })
 
-// 1. CORRECCIÓN: Valor por defecto limpio y abreviado sin caracteres basura
 const location = ref('Austin, TX')
+const ticketContainer = ref(null) // Referencia para enfocar el contenedor principal
 
-// Generar número de ticket aleatorio
+// Exponemos el método focus() para que el componente padre lo invoque
+const focus = () => {
+  ticketContainer.value?.focus()
+}
+defineExpose({ focus })
+
 const generateTicketNumber = () => {
   const min = 10000
   const max = 99999
   return `#${Math.floor(Math.random() * (max - min + 1) + min)}`
 }
 
-// Función para obtener fecha actual del sistema
 const getCurrentDate = () => {
   const date = new Date()
   const options = { 
@@ -33,31 +36,25 @@ const getCurrentDate = () => {
 const ticketNumber = ref(generateTicketNumber())
 const conferenceDate = ref(getCurrentDate())
 
-// Lógica de Geolocalización al montar el componente
 onMounted(() => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const { latitude, longitude } = position.coords
         try {
-          // Consultamos la API de BigDataCloud
           const response = await fetch(
             `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
           )
           const data = await response.json()
           
           if (data.city) {
-            // 2. MEJORA DE ABREVIACIÓN: 
-            // Usamos 'principalSubdivisionCode' que devuelve formatos estándar ISO (ej: "US-TX", "ES-M")
             let regionAbreviada = data.countryCode; 
             
             if (data.principalSubdivisionCode) {
-              // Separamos por el guion (-) para aislar la abreviatura del estado/provincia ("TX", "M")
               const partes = data.principalSubdivisionCode.split('-');
               regionAbreviada = partes[1] || data.countryCode;
             }
 
-            // Resultado final formateado limpiamente: "Austin, TX"
             location.value = `${data.city}, ${regionAbreviada}`
           }
         } catch (error) {
@@ -65,7 +62,6 @@ onMounted(() => {
         }
       },
       (error) => {
-        // En caso de denegación, se mantiene la configuración base ("Austin, TX")
         console.warn("Permiso denegado o ubicación no disponible:", error.message)
       }
     )
@@ -74,8 +70,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-18 items-center w-full max-w-222.75 md:mx-7.75 xl:mx-auto" aria-live="polite">
-    
+  <!-- tabindex="-1" permite enfocar programáticamente este contenedor sin interferir con la navegación normal de Tabulación -->
+  <div 
+    ref="ticketContainer"
+    tabindex="-1"
+    class="flex flex-col gap-18 items-center w-full max-w-222.75 md:mx-7.75 xl:mx-auto focus:outline-none" 
+    aria-live="polite"
+  >
     <div class="flex flex-col gap-5 text-center">
       <h1 class="text-preset-1">
         Congrats,
@@ -87,7 +88,8 @@ onMounted(() => {
       </p>
     </div>
 
-    <div class="bg-pattern-ticket h-40 w-full bg-cover bg-center bg-no-repeat md:w-150 md:h-70 " role="article" :aria-label="`Conference ticket for ${fullName}`">
+    <!-- Tarjeta del ticket -->
+    <div class="bg-pattern-ticket h-40 w-full bg-cover bg-center bg-no-repeat md:w-150 md:h-70" role="article" :aria-label="`Conference ticket for ${fullName}`">
       <div class="relative flex flex-col justify-between h-full p-4 md:p-6">
         
         <header class="flex gap-3 md:gap-4">
@@ -119,3 +121,45 @@ onMounted(() => {
     </div>
   </div>
 </template>
+
+<style>
+@utility text-preset-1t {
+  font-size: clamp(1.50rem, calc(0.546rem + 4.071vw), 2.50rem);
+  font-weight: 700; 
+  line-height: 1.1; 
+  letter-spacing: -1px;
+}
+@utility text-preset-2t {
+  font-size: clamp(0.88rem, calc(0.636rem + 1.018vw), 1.13rem);
+  font-weight: 400; 
+  line-height: 1.2; 
+  letter-spacing: 0px;
+  color: var(--color-neutral-300);
+}
+@utility text-preset-3t {
+  font-size: clamp(1.25rem, calc(0.654rem + 2.545vw), 1.88rem);
+  font-weight: 500; 
+  line-height: 1.1; 
+  letter-spacing: -1px;  
+}
+@utility text-preset-4t {
+  font-size: clamp(0.88rem, calc(0.517rem + 1.527vw), 1.25rem);
+  font-weight: 500; 
+  line-height: 1.2; 
+  letter-spacing: -0.5px;
+  color: var(--color-neutral-300);
+}
+@utility text-preset-5t {
+  font-size: clamp(1.25rem, calc(1.011rem + 1.018vw), 1.50rem);
+  font-weight: 500; 
+  line-height: 1.2; 
+  letter-spacing: -0.5px;
+  color: var(--color-neutral-300);
+}
+@utility text-preset-6t {
+  font-size: clamp(1.38rem, calc(0.898rem + 2.036vw), 1.88rem);
+  font-weight: 500; 
+  line-height: 1.1; 
+  letter-spacing: -1px;    
+}
+</style>
