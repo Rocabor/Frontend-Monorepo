@@ -71,38 +71,50 @@ watch(bmi, (newBmi) => {
 <template>
   <!--* Form -->
   <div class="w-full rounded-2xl bg-white p-6 shadow-(--shadow-form) md:p-8">
-    
     <!--* Form Header -->
-    <h2 class="text-preset-4 mb-6 md:mb-8 md:text-left">Enter your details below</h2>
+    <h2 class="text-preset-4 mb-6 md:mb-8 md:text-left">
+      Enter your details below
+    </h2>
 
     <!--* Unit Selector -->
     <div class="mb-6 grid grid-cols-2 gap-6 md:mb-8">
       <label class="text-preset-6-semibold flex cursor-pointer items-center gap-4">
-        <input type="radio" name="unit-system" value="metric" v-model="unitSystem" class="radio-custom size-7.75" />
+        <input
+          v-model="unitSystem"
+          type="radio"
+          name="unit-system"
+          value="metric"
+          class="radio-custom size-7.75">
         Metric
       </label>
 
       <label class="text-preset-6-semibold flex cursor-pointer items-center gap-4">
-        <input type="radio" name="unit-system" value="imperial" v-model="unitSystem" class="radio-custom size-7.75" />
+        <input
+          v-model="unitSystem"
+          type="radio"
+          name="unit-system"
+          value="imperial"
+          class="radio-custom size-7.75">
         Imperial
       </label>
     </div>
 
     <!--* Input Fields | Metric -->
     <div class="space-y-4">
-      <div v-if="unitSystem === 'metric'" class="grid grid-cols-1 gap-4 text-left md:grid-cols-2 md:gap-6">
-
+      <div
+        v-if="unitSystem === 'metric'"
+        class="grid grid-cols-1 gap-4 text-left md:grid-cols-2 md:gap-6">
         <!--* Height Input | Metric-->
         <div>
           <label class="text-preset-7-regular mb-2 block">Height</label>
 
           <div class="relative">
             <input
-              type="number"
               v-model.number="metric.height"
+              type="number"
               min="0"
               placeholder="0"
-              class="border-grey-500 text-preset-4 w-full rounded-xl border p-6 pr-14  xl:py-4" />
+              class="border-grey-500 text-preset-4 w-full rounded-xl border p-6 pr-14 xl:py-4">
 
             <span class="text-preset-4 absolute top-1/2 right-6 -translate-y-1/2 text-blue-500">cm</span>
           </div>
@@ -114,11 +126,11 @@ watch(bmi, (newBmi) => {
 
           <div class="relative">
             <input
-              type="number"
               v-model.number="metric.weight"
+              type="number"
               min="0"
               placeholder="0"
-              class="border-grey-500 text-preset-4 w-full rounded-xl border p-6 pr-14  xl:py-4" />
+              class="border-grey-500 text-preset-4 w-full rounded-xl border p-6 pr-14 xl:py-4">
 
             <span class="text-preset-4 absolute top-1/2 right-6 -translate-y-1/2 text-blue-500">kg</span>
           </div>
@@ -126,7 +138,9 @@ watch(bmi, (newBmi) => {
       </div>
 
       <!--* Input Fields | Imperial -->
-      <div v-else class="space-y-4 text-left">
+      <div
+        v-else
+        class="space-y-4 text-left">
         <div>
           <!--* Height Input | Imperial-->
           <label class="text-preset-7-regular mb-2 block">Height</label>
@@ -134,22 +148,22 @@ watch(bmi, (newBmi) => {
           <div class="grid grid-cols-2 gap-4">
             <div class="relative">
               <input
-                type="number"
                 v-model.number="imperial.ft"
+                type="number"
                 min="0"
                 placeholder="0"
-                class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12 " />
+                class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12">
 
               <span class="text-preset-4 absolute top-1/2 right-4 -translate-y-1/2 text-blue-500">ft</span>
             </div>
 
             <div class="relative">
               <input
-                type="number"
                 v-model.number="imperial.in"
+                type="number"
                 min="0"
                 placeholder="0"
-                class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12 text-blue-900 " />
+                class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12 text-blue-900">
 
               <span class="text-preset-4 absolute top-1/2 right-4 -translate-y-1/2 text-blue-500">in</span>
             </div>
@@ -163,22 +177,22 @@ watch(bmi, (newBmi) => {
           <div class="grid grid-cols-2 gap-4">
             <div class="relative">
               <input
-                type="number"
                 v-model.number="imperial.st"
+                type="number"
                 min="0"
                 placeholder="0"
-                class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12 " />
+                class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12">
 
               <span class="text-preset-4 absolute top-1/2 right-4 -translate-y-1/2 text-blue-500">st</span>
             </div>
 
             <div class="relative">
               <input
-                type="number"
                 v-model.number="imperial.lbs"
+                type="number"
                 min="0"
                 placeholder="0"
-                class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12 " />
+                class="border-grey-300 text-preset-4 w-full rounded-xl border p-6 pr-12">
 
               <span class="text-preset-4 absolute top-1/2 right-4 -translate-y-1/2 text-blue-500">lbs</span>
             </div>
@@ -189,10 +203,16 @@ watch(bmi, (newBmi) => {
 
     <!--* Form Section -->
     <div class="mt-6 rounded-2xl bg-blue-500 p-8 text-left md:mt-8 md:rounded-l-2xl md:rounded-r-[100px]">
-      <div v-if="bmi > 0" class="grid grid-cols-1 items-center gap-4 md:grid-cols-2">
+      <div
+        v-if="bmi > 0"
+        class="grid grid-cols-1 items-center gap-4 md:grid-cols-2">
         <div>
-          <p class="text-preset-6-semibold text-white">Your BMI is...</p>
-          <h3 class="text-preset-2 my-2 text-white">{{ bmi }}</h3>
+          <p class="text-preset-6-semibold text-white">
+            Your BMI is...
+          </p>
+          <h3 class="text-preset-2 my-2 text-white">
+            {{ bmi }}
+          </h3>
         </div>
 
         <div>
@@ -207,7 +227,9 @@ watch(bmi, (newBmi) => {
       </div>
 
       <div v-else>
-        <h3 class="text-preset-4 mb-6 text-white md:mb-4">Welcome!</h3>
+        <h3 class="text-preset-4 mb-6 text-white md:mb-4">
+          Welcome!
+        </h3>
         <p class="text-preset-7-regular text-white">
           Enter your height and weight and you’ll see your BMI result here.
         </p>

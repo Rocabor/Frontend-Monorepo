@@ -42,10 +42,10 @@ const limitations = [
 <template>
   <section
     class="relative mx-auto my-20.5 grid grid-cols-1 gap-x-4 gap-y-6 px-6 md:grid-cols-2 md:grid-rows-[auto_232px_256px_232px] md:px-10 xl:grid-cols-12 xl:grid-rows-[232px_184px_232px] xl:my-26 xl:w-290 xl:px-0 xl:gap-8 ">
-
     <div class="space-y-8 pr-0 text-center md:col-span-2 md:text-left xl:w-141 ">
-
-      <h2 class="text-preset-3 md:text-center xl:text-start">Limitations of BMI</h2>
+      <h2 class="text-preset-3 md:text-center xl:text-start">
+        Limitations of BMI
+      </h2>
 
       <p class="text-preset-6-regular mb-10 md:mb-14 md:text-center xl:text-start">
         Although BMI is often a practical indicator of healthy weight, it is not suited for every person. Specific
@@ -60,12 +60,12 @@ const limitations = [
       v-for="(item, index) in limitations"
       :key="index"
       :class="['shadow-form flex flex-col gap-4 rounded-2xl bg-white p-6 md:p-8', item.gridClass]">
-
       <div class="flex items-center gap-4">
+        <span><img :src="item.iconSrc" alt=""></span>
 
-        <span><img :src="item.iconSrc" alt="" /></span>
-
-        <h4 class="text-preset-5">{{ item.title }}</h4>
+        <h4 class="text-preset-5">
+          {{ item.title }}
+        </h4>
       </div>
 
       <p class="text-preset-6-regular">

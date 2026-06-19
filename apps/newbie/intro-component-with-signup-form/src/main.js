@@ -66,7 +66,7 @@ form.addEventListener('submit', (e) => {
   });
 
   if (isValid) {
-    console.log('Form submitted successfully!');
+    console.warn('Form submitted successfully!');
     form.reset();
   }
 });

@@ -10,13 +10,13 @@ import LimitationsBMI from './components/LimitationsBMI.vue';
 <template>
   <main>
     <Hero />
-    <Results/>
-    <Tips/>
-    <LimitationsBMI/>
+    <Results />
+    <Tips />
+    <LimitationsBMI />
     <MyFooter
-    text-color="var(--color-blue-500)"
-    bg-color="transparent"    
-    font-family="var(--font-princ)"    
-     />
+      text-color="var(--color-blue-500)"
+      bg-color="transparent"    
+      font-family="var(--font-princ)"    
+    />
   </main>
 </template>

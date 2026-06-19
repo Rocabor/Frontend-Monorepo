@@ -7,7 +7,7 @@ import Form from './Form.vue';
   <div class="relative h-282 md:h-207.25 xl:h-184.25">
     <!-- Container gradient-->
     <div
-      class="from-gradient-start to-gradient-end absolute inset-0 h-162.25 rounded-b-[35px] bg-linear-to-r xl:h-184.25 xl:w-[70%]"></div>
+      class="from-gradient-start to-gradient-end absolute inset-0 h-162.25 rounded-b-[35px] bg-linear-to-r xl:h-184.25 xl:w-[70%]" />
 
     <!-- Container form-->
     <div
@@ -16,15 +16,15 @@ import Form from './Form.vue';
       <img
         src="../assets/images/logo.svg"
         alt=""
-        class="size-10 md:size-9.25 xl:order-1 xl:col-span-2 xl:size-14.75" />
+        class="size-10 md:size-9.25 xl:order-1 xl:col-span-2 xl:size-14.75">
 
       <!-- Header -->
       <header class="flex flex-col gap-6 xl:order-2 xl:w-141 xl:gap-8 xl:pt-18">
         <h1 class="text-preset-2 xl:text-left">
           Body Mass
-          <br class="hidden md:block" />
+          <br class="hidden md:block">
           Index
-          <br class="md:hidden" />
+          <br class="md:hidden">
           Calculator
         </h1>
 

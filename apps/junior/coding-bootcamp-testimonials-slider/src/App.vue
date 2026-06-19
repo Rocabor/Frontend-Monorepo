@@ -1,7 +1,6 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { MyFooter } from '@packages/ui';
-import { onMounted, onUnmounted } from 'vue';
 
 // Importación directa de archivos
 import imageTanya from './assets/images/image-tanya.jpg';
