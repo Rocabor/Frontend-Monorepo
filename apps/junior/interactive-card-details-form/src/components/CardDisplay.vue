@@ -1,6 +1,9 @@
 <script setup>
 defineProps({
-  cardData: Object,
+  cardData: {
+    type: Object,
+    default: () => ({ name: '', number: '', month: '', year: '', cvc: '' })
+  },
   isComplete: Boolean
 });
 

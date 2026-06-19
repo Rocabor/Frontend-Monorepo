@@ -1,9 +1,7 @@
 <script setup>
 import { ref, reactive } from 'vue'
 
-const props = defineProps({
-  cardData: Object
-})
+const cardData = defineModel('cardData', { type: Object, required: true })
 
 const emit = defineEmits(['complete'])
 
@@ -27,11 +25,11 @@ const handleSubmit = () => {
   touched.year = true
   touched.cvc = true
 
-  const isNameValid = /^[a-zA-Z\s]+$/.test(props.cardData.name) && props.cardData.name.length <= 25
-  const isNumberValid = /^\d{16}$/.test(props.cardData.number)
-  const isMonthValid = /^\d{2}$/.test(props.cardData.month)
-  const isYearValid = /^\d{2}$/.test(props.cardData.year)
-  const isCvcValid = /^\d{3}$/.test(props.cardData.cvc)
+  const isNameValid = /^[a-zA-Z\s]+$/.test(cardData.value.name) && cardData.value.name.length <= 25
+  const isNumberValid = /^\d{16}$/.test(cardData.value.number)
+  const isMonthValid = /^\d{2}$/.test(cardData.value.month)
+  const isYearValid = /^\d{2}$/.test(cardData.value.year)
+  const isCvcValid = /^\d{3}$/.test(cardData.value.cvc)
 
   if (!isNameValid || !isNumberValid || !isMonthValid || !isYearValid || !isCvcValid) {
     return
@@ -43,27 +41,27 @@ const handleSubmit = () => {
 
 const handleContinue = () => {
   isComplete.value = false
-  props.cardData.name = ''
-  props.cardData.number = ''
-  props.cardData.month = ''
-  props.cardData.year = ''
-  props.cardData.cvc = ''
+  cardData.value.name = ''
+  cardData.value.number = ''
+  cardData.value.month = ''
+  cardData.value.year = ''
+  cardData.value.cvc = ''
   Object.keys(touched).forEach(key => touched[key] = false)
 }
 
 const showError = (field) => {
   if (field === 'number') {
-    const isTouched = touched[field] || props.cardData[field]
-    return isTouched && props.cardData[field] && !/^\d*$/.test(props.cardData[field])
+    const isTouched = touched[field] || cardData.value[field]
+    return isTouched && cardData.value[field] && !/^\d*$/.test(cardData.value[field])
   }
   if (field === 'month' || field === 'year' || field === 'cvc') {
-    const isTouched = touched[field] || props.cardData[field]
-    return isTouched && (!props.cardData[field] || !/^\d*$/.test(props.cardData[field]))
+    const isTouched = touched[field] || cardData.value[field]
+    return isTouched && (!cardData.value[field] || !/^\d*$/.test(cardData.value[field]))
   }
   if (field === 'name') {
-    return touched[field] && (!props.cardData[field] || !/^[a-zA-Z\s]+$/.test(props.cardData[field]))
+    return touched[field] && (!cardData.value[field] || !/^[a-zA-Z\s]+$/.test(cardData.value[field]))
   }
-  return touched[field] && !props.cardData[field]
+  return touched[field] && !cardData.value[field]
 }
 
 const handleNumberInput = (field) => {
