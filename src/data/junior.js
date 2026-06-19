@@ -125,4 +125,11 @@ export const juniorProjects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
     difficulty: 'Junior',
   },
+  {
+    href: './apps/junior/product-list-with-cart/',
+    image: 'images/product-list-with-cart.jpg',
+    title: 'product list with cart',
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
+    difficulty: 'Junior',
+  },
 ];
