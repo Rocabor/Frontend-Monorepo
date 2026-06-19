@@ -27,10 +27,8 @@ defineProps({
       <a :href="coderLink" target="_blank" rel="noopener noreferrer">
         {{ coderName }} 
       </a>  
-      <span class="year"> &copy;{{ year }}</span>    
-          
+      <span class="year"> &copy;{{ year }}</span>
     </nav>
-    
   </footer>
 </template>
 

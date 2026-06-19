@@ -13,8 +13,7 @@ const testimonialsData = [
 
 <template>
   <section class=" mx-auto max-w-315.25 relative mt-25.5 md:mt-23">
-
-    <img src="../assets/images/bg-quotes.png" alt="" class="absolute top-0 left-1 md:-left-2 md:-top-4 w-8 md:w-14 " />
+    <img src="../assets/images/bg-quotes.png" alt="" class="absolute top-0 left-1 md:-left-2 md:-top-4 w-8 md:w-14 ">
 
     <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 pt-5 md:gap-10">
       <TestimonialCard 

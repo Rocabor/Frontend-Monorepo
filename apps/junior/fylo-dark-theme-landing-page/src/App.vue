@@ -14,15 +14,15 @@ import TheFooter from './components/TheFooter.vue';
 <template>
   <main class="flex flex-col mb-81.25 md:mb-63.75 xl:mb-88.75 gap-12 md:gap-16 px-5 pt-6 md:px-13.5 md:pt-20 xl:px-19.75">
     <TheNavbar />
-    <TheHero/>
-    <FeaturesGrid/>
-    <ProductiveSection/>
-    <TestimonialsSection/>
-    <CtaSection/>
+    <TheHero />
+    <FeaturesGrid />
+    <ProductiveSection />
+    <TestimonialsSection />
+    <CtaSection />
   </main>
-  <TheFooter/>
+  <TheFooter />
   <MyFooter
-  text-color="white"
-  bg-color="transparent"
-  text-color-attribution="var(--color-blue-300)"  />
+    text-color="white"
+    bg-color="transparent"
+    text-color-attribution="var(--color-blue-300)" />
 </template>

@@ -1,15 +1,11 @@
 <template>
   <section id="team" class=" mx-auto pt-12 md:pt-20.5 max-w-296.75">
-
     <div class="flex flex-col xl:flex-row items-center gap-12 md:gap-18 xl:gap-14">
-
       <div class="w-full md:w-153.75">
-
-        <img src="../assets/images/illustration-stay-productive.png" alt="Stay productive" class="w-full" />
+        <img src="../assets/images/illustration-stay-productive.png" alt="Stay productive" class="w-full">
       </div>
 
       <div class="w-full xl:w-129 text-left">
-
         <h2 class="text-preset-5 mb-4 md:mb-6 xl:mb-8">
           Stay productive,<br class="hidden xl:block"> wherever you are
         </h2>

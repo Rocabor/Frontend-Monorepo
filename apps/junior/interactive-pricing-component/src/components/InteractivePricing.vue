@@ -45,22 +45,22 @@ const sliderPercentage = computed(() => {
           <!-- Slider: Ancho completo debajo de los títulos -->
           <div class="relative md:col-span-2">
             <input
+              v-model="currentLevel"
               type="range"
               aria-labelledby="pageviews-label"
               min="0"
               :max="pricingData.length - 1"
-              v-model="currentLevel"
               :aria-valuenow="currentLevel"
               aria-valuemin="0"
               :aria-valuemax="pricingData.length - 1"
               class="slider-input h-2 w-full cursor-pointer appearance-none rounded-full outline-none focus-visible:ring-2 focus-visible:ring-[#10d8c4] focus-visible:ring-offset-8"
               :style="{ background: `linear-gradient(to right, #10d8c4 ${sliderPercentage}%, #eaeefb ${sliderPercentage}%)` }"
-              :aria-valuetext="`${currentPricing.pageviews} pageviews, ${finalPrice} dollars per month`" />
+              :aria-valuetext="`${currentPricing.pageviews} pageviews, ${finalPrice} dollars per month`">
             <div
               class="slider-thumb pointer-events-none absolute top-1/2 flex -translate-y-1/2 items-center justify-center shadow-lg shadow-cyan-200"
               :style="{ left: `calc(${sliderPercentage}% - 20px)` }"
               aria-hidden="true">
-              <img src="../assets/images/icon-slider.svg" alt="" />
+              <img src="../assets/images/icon-slider.svg" alt="">
             </div>
           </div>
 
@@ -75,12 +75,12 @@ const sliderPercentage = computed(() => {
         <div class="mt-10 flex items-center justify-center gap-3 text-[11px] text-gray-500 md:mt-14 md:gap-4 md:text-xs">
           <span>Monthly Billing</span>
           <button
-            @click="isYearlyBilling = !isYearlyBilling"
             class="relative flex h-5.5 w-11 rounded-full p-1 transition-colors duration-300 focus:ring-2 focus:ring-[#10d8c4] focus:ring-offset-2 focus:outline-none"
             :class="isYearlyBilling ? 'bg-[#10d8c4]' : 'bg-[#eaeefb]'"
             role="switch"
             :aria-checked="isYearlyBilling"
-            aria-label="Toggle yearly billing">
+            aria-label="Toggle yearly billing"
+            @click="isYearlyBilling = !isYearlyBilling">
             <div class="h-3.5 w-3.5 rounded-full bg-white shadow-sm transition-transform duration-300" :class="isYearlyBilling ? 'translate-x-5' : 'translate-x-0'" />
           </button>
           <div class="flex items-center gap-1.5">
@@ -93,21 +93,21 @@ const sliderPercentage = computed(() => {
         </div>
       </div>
 
-      <hr class="border-slate-100" />
+      <hr class="border-slate-100">
 
       <!-- Footer: Beneficios y Botón -->
       <div class="flex flex-col items-center justify-between gap-8 px-6 py-8 md:flex-row md:px-12 md:py-10 md:pt-8 md:pb-8">
         <ul class="space-y-3 text-center text-xs text-gray-500 md:text-left">
           <li class="flex items-center gap-4">
-            <img src="../assets/images/icon-check.svg" alt="" aria-hidden="true" class="h-1.5 w-2" />
+            <img src="../assets/images/icon-check.svg" alt="" aria-hidden="true" class="h-1.5 w-2">
             Unlimited websites
           </li>
           <li class="flex items-center gap-4">
-            <img src="../assets/images/icon-check.svg" alt="" aria-hidden="true" class="h-1.5 w-2" />
+            <img src="../assets/images/icon-check.svg" alt="" aria-hidden="true" class="h-1.5 w-2">
             100% data ownership
           </li>
           <li class="flex items-center gap-4">
-            <img src="../assets/images/icon-check.svg" alt="" aria-hidden="true" class="h-1.5 w-2" />
+            <img src="../assets/images/icon-check.svg" alt="" aria-hidden="true" class="h-1.5 w-2">
             Email reports
           </li>
         </ul>

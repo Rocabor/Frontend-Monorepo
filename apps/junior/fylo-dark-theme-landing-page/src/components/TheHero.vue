@@ -3,10 +3,8 @@ import BaseButton from './BaseButton.vue'
 </script>
 
 <template>
-
   <header class="flex flex-col max-w-183.5 mx-auto">
-
-    <img src="../assets/images/illustration-intro.png" alt="Files illustration" class="w-[95%]  mx-auto md:w-full xl:max-w-180 mb-18 md:mb-16 xl:mb-14" />
+    <img src="../assets/images/illustration-intro.png" alt="Files illustration" class="w-[95%]  mx-auto md:w-full xl:max-w-180 mb-18 md:mb-16 xl:mb-14">
 
     <h1 class="text-preset-2 text-center mb-6 md:mb-12 xl:mb-10">
       All your files in one secure location, accessible anywhere.

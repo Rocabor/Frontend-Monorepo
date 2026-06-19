@@ -19,7 +19,7 @@ const formatNumber = (num) => {
   <div role="group" aria-label="Card View" class="absolute top-8 left-1/2 flex w-85.75 -translate-x-1/2 flex-col md:w-135.75 xl:top-1/2 xl:left-41 xl:w-135.25 xl:translate-x-0 xl:-translate-y-1/2">
     <!-- Card Back -->
     <article aria-label="Card Back Info" class="card-back relative h-39.25 self-end md:h-61.25 xl:order-2 xl:translate-y-8">
-      <span aria-label="security code"  class="text-cvc absolute top-[45%] right-[12%]">{{ cardData.cvc || '000' }}</span>
+      <span aria-label="security code" class="text-cvc absolute top-[45%] right-[12%]">{{ cardData.cvc || '000' }}</span>
     </article>
 
     <!-- Card Front -->
@@ -27,11 +27,13 @@ const formatNumber = (num) => {
       <!-- Card Details -->
       <section aria-label="Details card" class="flex flex-col gap-10 md:gap-16">
         <!-- Card Logo -->
-        <img src="/src/assets/images/card-logo.svg" alt="Logo card" class="h-7.5 w-13 md:h-11.75 md:w-21" />
+        <img src="/src/assets/images/card-logo.svg" alt="Logo card" class="h-7.5 w-13 md:h-11.75 md:w-21">
 
         <!-- Card Number and Name -->
         <div class="flex flex-col gap-4 md:gap-6">
-          <p aria-label="card number" class="preset-1">{{ formatNumber(cardData.number) }}</p>
+          <p aria-label="card number" class="preset-1">
+            {{ formatNumber(cardData.number) }}
+          </p>
 
           <div class="preset-2 flex justify-between">
             <span aria-label="titular name">{{ cardData.name || 'Jane Appleseed' }}</span>

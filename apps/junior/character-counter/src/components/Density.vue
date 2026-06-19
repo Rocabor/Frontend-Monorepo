@@ -38,7 +38,7 @@ const displayedDensity = computed(() => {
         <div class="h-3 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800" aria-hidden="true">
           <div
             class="h-full rounded-full bg-purple-500 transition-all duration-300"
-            :style="{ width: `${item.percentage}%` }"></div>
+            :style="{ width: `${item.percentage}%` }" />
         </div>
 
         <span class="w-24 text-right">
@@ -50,15 +50,15 @@ const displayedDensity = computed(() => {
 
     <button
       v-if="letterDensity.length > 5"
-      @click="isExpanded = !isExpanded"
       type="button"
       :aria-expanded="isExpanded"
-      class="text-preset-3 mt-1.5 flex cursor-pointer items-center gap-2 font-medium text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-500 xl:mt-2 dark:text-neutral-200">
+      class="text-preset-3 mt-1.5 flex cursor-pointer items-center gap-2 font-medium text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-500 xl:mt-2 dark:text-neutral-200"
+      @click="isExpanded = !isExpanded">
       {{ isExpanded ? 'See less' : 'See more' }}
       <span
         aria-hidden="true"
         class="inline-block size-1.5 transform border-t-2 border-r-2 border-current transition-transform duration-300"
-        :class="isExpanded ? 'rotate-315' : 'rotate-135'"></span>
+        :class="isExpanded ? 'rotate-315' : 'rotate-135'" />
     </button>
   </section>
 </template>

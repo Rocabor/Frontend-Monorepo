@@ -83,7 +83,7 @@ const letterDensity = computed(() => {
     <header class="my-10 xl:my-12">
       <h1 class="text-preset-1 text-center md:mx-auto dark:text-neutral-100">
         Analyze your text
-        <br class="hidden md:block" />
+        <br class="hidden md:block">
         in real-time.
       </h1>
     </header>
@@ -99,37 +99,39 @@ const letterDensity = computed(() => {
           :class="{
             'border-neutral-200 focus:ring-purple-500 dark:border-neutral-700': !isOverLimit,
             'border-orange-500 focus:ring-orange-500': isOverLimit,
-          }"></textarea>
+          }" />
 
-        <p class="text-preset-4 flex items-center text-orange-500" v-if="isOverLimit" aria-live="polite" role="alert">
-          <img src="../assets/images/icon-info.svg" alt="" aria-hidden="true" class="mr-2 inline" />
+        <p v-if="isOverLimit" class="text-preset-4 flex items-center text-orange-500" aria-live="polite" role="alert">
+          <img src="../assets/images/icon-info.svg" alt="" aria-hidden="true" class="mr-2 inline">
           Limit reached! Your text exceeds {{ charLimit }} characters.
         </p>
       </div>
 
       <fieldset class="flex flex-col gap-3 md:flex-row">
-        <legend class="sr-only">Options</legend>
+        <legend class="sr-only">
+          Options
+        </legend>
 
         <div class="flex items-center gap-2.5">
-          <input type="checkbox" id="exclude-spaces" v-model="excEsp" class="checkBox" />
+          <input id="exclude-spaces" v-model="excEsp" type="checkbox" class="checkBox">
           <label for="exclude-spaces" class="cursor-pointer py-1 select-none dark:text-neutral-200">
             Exclude Spaces
           </label>
         </div>
 
         <div class="flex items-center gap-2.5">
-          <input type="checkbox" id="character-limit" v-model="showCharLimit" class="checkBox" />
+          <input id="character-limit" v-model="showCharLimit" type="checkbox" class="checkBox">
           <label for="character-limit" class="cursor-pointer py-0.5 select-none dark:text-neutral-200">
             Set Character Limit
           </label>
 
           <input
-            type="number"
-            id="input-char-limit"
             v-if="showCharLimit"
+            id="input-char-limit"
             v-model="charLimit"
+            type="number"
             class="text-preset-4 dark:text-neutral-0 w-13.75 rounded-md border border-neutral-900 px-3 py-0.5 text-neutral-900 hover:bg-neutral-200 focus:ring-1 focus:ring-purple-500 focus:outline-hidden dark:border-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700"
-            maxlength="3" />
+            maxlength="3">
           <label for="input-char-limit" class="sr-only">Character limit value</label>
         </div>
         <p class="flex items-center md:flex-1 md:justify-end dark:text-neutral-200">

@@ -73,19 +73,20 @@ const handleNumberInput = (field) => {
 
 <template>
   <!-- Card Form -->
-  <form v-if="!isComplete" class="flex w-81.75 flex-col gap-6 md:w-95.75 md:gap-10" @submit.prevent="handleSubmit" novalidate>
-
+  <form v-if="!isComplete" class="flex w-81.75 flex-col gap-6 md:w-95.75 md:gap-10" novalidate @submit.prevent="handleSubmit">
     <!-- Cardholder Name Field -->
     <fieldset class="flex flex-col gap-6">
-      <legend class="sr-only">Cardholder information</legend>
+      <legend class="sr-only">
+        Cardholder information
+      </legend>
 
       <!-- Cardholder Name Label -->
       <div class="field-group">
         <label for="cardName">Cardholder Name</label>
         <input
           id="cardName"
-          type="text"
           v-model="cardData.name"
+          type="text"
           placeholder="e.g. Jane Appleseed"
           class="input-field"
           :class="{ 'border-red500': showError('name') }"
@@ -93,7 +94,7 @@ const handleNumberInput = (field) => {
           maxlength="25"
           required
           @blur="handleBlur('name')"
-        />
+        >
         <span v-if="showError('name')" id="nameError" role="alert" class="text-red500 text-xs mt-1">Can't be blank</span>
       </div>
 
@@ -102,8 +103,8 @@ const handleNumberInput = (field) => {
         <label for="cardNumber">Card Number</label>
         <input
           id="cardNumber"
-          type="text"
           v-model="cardData.number"
+          type="text"
           placeholder="e.g. 1234 5678 9123 0000"
           class="input-field peer"
           :class="{ 'border-red500': showError('number') }"
@@ -112,23 +113,24 @@ const handleNumberInput = (field) => {
           required          
           @blur="handleBlur('number')"
           @input="handleNumberInput"
-        />        
+        >        
         <span v-if="showError('number')" id="numberError" role="alert" class="text-red500 text-xs mt-1">Wrong format, numbers only</span>
       </div>
 
       <!-- Expiry and CVC Fields -->
       <div class="flex gap-6">
-
         <!-- Expiry Date Field -->
         <div class="field-group flex-1">
           <fieldset class="flex flex-col gap-2">
-            <legend class="sr-only">Expiration date</legend>
+            <legend class="sr-only">
+              Expiration date
+            </legend>
             <label for="expMonth">Exp. Date (MM/YY)</label>
             <div class="flex gap-2">
               <input
-                type="text"
                 id="expMonth"
                 v-model="cardData.month"
+                type="text"
                 placeholder="MM"
                 class="input-field"
                 :class="{ 'border-red500': showError('month') }"
@@ -137,11 +139,11 @@ const handleNumberInput = (field) => {
                 required
                 @blur="handleBlur('month')"
                 @input="handleNumberInput('month')"
-              />
+              >
               <input
-                type="text"
                 id="expYear"
                 v-model="cardData.year"
+                type="text"
                 placeholder="YY"
                 class="input-field"
                 :class="{ 'border-red500': showError('year') }"
@@ -150,7 +152,7 @@ const handleNumberInput = (field) => {
                 required
                 @blur="handleBlur('year')"
                 @input="handleNumberInput('year')"
-              />
+              >
             </div>
           </fieldset>
           <span v-if="showError('month') || showError('year')" id="expError" role="alert" class="text-red500 text-xs mt-1">Can't be blank</span>
@@ -160,9 +162,9 @@ const handleNumberInput = (field) => {
         <div class="field-group flex-1">
           <label for="cvc">CVC</label>
           <input
-            type="text"
             id="cvc"
             v-model="cardData.cvc"
+            type="text"
             placeholder="e.g. 123"
             class="input-field focus-visible:ring-off"
             :class="{ 'border-red500': showError('cvc') }"
@@ -170,31 +172,38 @@ const handleNumberInput = (field) => {
             maxlength="3"
             required
             @blur="handleBlur('cvc')"
-          />
+          >
           <span v-if="showError('cvc')" id="cvcError" role="alert" class="text-red500 text-xs mt-1">Can't be blank</span>
         </div>
       </div>
     </fieldset>
 
     <!-- Confirm Button -->
-    <button type="submit" class="btn active:scale-95">Confirm</button>    
+    <button type="submit" class="btn active:scale-95">
+      Confirm
+    </button>    
   </form>
 
   <!-- Complete State -->
   <article v-else class="flex flex-col gap-8 items-center w-81.75" aria-live="polite">
-    <img src="/src/assets/images/icon-complete.svg" alt="Form completed successfully" class="size-20" />
+    <img src="/src/assets/images/icon-complete.svg" alt="Form completed successfully" class="size-20">
 
     <!-- Message Container -->
     <div class="flex flex-col gap-12 items-center w-full">
-
       <!-- Message Text Container -->
       <div class="flex flex-col gap-4 w-full items-center">
-        <h2 class="text-[28px] leading-[1.3] tracking-[3.5px] text-purple950">THANK YOU!</h2>
-        <p class="text-[18px] leading-[1.3] text-gray400">Your card details have been added.</p>
+        <h2 class="text-[28px] leading-[1.3] tracking-[3.5px] text-purple950">
+          THANK YOU!
+        </h2>
+        <p class="text-[18px] leading-[1.3] text-gray400">
+          Your card details have been added.
+        </p>
       </div>
 
       <!-- Button Continue -->
-      <button type="button" class="btn w-full" @click="handleContinue">Continue</button>
+      <button type="button" class="btn w-full" @click="handleContinue">
+        Continue
+      </button>
     </div>
   </article>
 </template>
