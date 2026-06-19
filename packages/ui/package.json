@@ -8,5 +8,8 @@
   },
   "dependencies": {
     "vue": "^3.5.35"
+  },
+  "scripts": {
+    "lint": "eslint ."
   }
 }

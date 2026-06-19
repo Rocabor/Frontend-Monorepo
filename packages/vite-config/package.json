@@ -12,5 +12,8 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.0",
     "@vitejs/plugin-vue": "^6.0.7"
+  },
+  "scripts": {
+    "lint": "eslint ."
   }
 }
