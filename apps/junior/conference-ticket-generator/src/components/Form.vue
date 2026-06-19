@@ -276,34 +276,3 @@ function clearFieldError(fieldId) {
   />
 </template>
 
-<style>
-@utility text-preset-3 {
-  font-size: 1.25rem;
-  font-weight: 500; 
-  line-height: 1.2; 
-  letter-spacing: -0.5px;
-}
-@utility text-preset-4 {
-  font-size: 1.125rem;
-  font-weight: 400; 
-  line-height: 1.2;
-}
-@utility text-preset-5 {
-  font-size: 0.75rem;
-  font-weight: 400; 
-  line-height: 1.2; 
-  letter-spacing: -0.2px;
-}
-@utility text-preset-6 {
-  font-size: 1.25rem;
-  font-weight: 800; 
-  line-height: 1; 
-  letter-spacing: -0.3px;
-}
-@utility text-preset-7b {
-  font-size: 0.75rem;
-  font-weight: 400; 
-  line-height: 1.2; 
-  letter-spacing: -0.2px;
-}
-</style>
