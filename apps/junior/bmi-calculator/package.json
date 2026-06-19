@@ -20,13 +20,13 @@
   "license": "MIT",
   "dependencies": {
     "@packages/ui": "workspace:*",
-    "vue": "^3.5.35"
+    "vue": "^3.5.38"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.0",
+    "@tailwindcss/vite": "^4.3.1",
     "@turborepo/vite-config": "workspace:*",
     "@vitejs/plugin-vue": "^6.0.7",
-    "tailwindcss": "^4.3.0",
+    "tailwindcss": "^4.3.1",
     "vite": "^8.0.16"
   }
 }

@@ -7,7 +7,7 @@
     ".": "./index.js"
   },
   "dependencies": {
-    "vue": "^3.5.35"
+    "vue": "^3.5.38"
   },
   "scripts": {
     "lint": "eslint ."
