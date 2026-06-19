@@ -56,7 +56,7 @@ function removeImage() {
   avatarFile.value = null;
   avatarPreview.value = null;
   if (fileinput.value) {
-    fileinput.value.value = ''; 
+    fileinput.value.value = '';
   }
 }
 
@@ -107,7 +107,7 @@ function validateForm() {
   } else {
     formData.value.fullName = formData.value.fullName
       .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
       .join(' ');
   }
 
@@ -136,10 +136,10 @@ function handleSubmit(event) {
       fullName: formData.value.fullName,
       emailAddress: formData.value.emailAddress,
       githubUsername: formData.value.githubUsername,
-      avatarPreview: avatarPreview.value
+      avatarPreview: avatarPreview.value,
     };
     showTicket.value = true;
-    
+
     emit('ticket-generated');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -159,11 +159,11 @@ function validateField(fieldId) {
     } else {
       formData.value.fullName = formData.value.fullName
         .split(' ')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
         .join(' ');
     }
   }
-  
+
   if (fieldId === 'emailAddress' && formData.value.emailAddress) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.value.emailAddress)) {
@@ -188,91 +188,139 @@ function clearFieldError(fieldId) {
 </script>
 
 <template>
-  <form v-if="!showTicket" @submit="handleSubmit" class="mt-10 flex w-full flex-col gap-6 md:mt-11.25 md:w-130.5 xl:w-115">
-    
+  <form
+    v-if="!showTicket"
+    class="mt-10 flex w-full flex-col gap-6 md:mt-11.25 md:w-130.5 xl:w-115"
+    @submit="handleSubmit">
     <!-- Zona de Carga de Avatar Semántica y Accesible -->
     <div class="flex w-full flex-col gap-3">
       <label id="avatar-label">Upload Avatar</label>
 
       <div
         tabindex="0"
+        aria-labelledby="avatar-label"
+        :aria-describedby="isError ? 'avatar-error' : 'avatar-instructions'"
+        class="bg-neutral-0/5 relative flex aspect-[2.72/1] h-31.5 w-full flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-neutral-500 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-3 focus-visible:ring-offset-neutral-900"
+        :class="{ 'hover:bg-neutral-0/20 cursor-pointer': !avatarPreview }"
         @dragover.prevent
         @drop.prevent="handleDrop"
         @click="!avatarPreview && openFilePicker()"
         @keydown.enter="openFilePicker"
-        @keydown.space.prevent="openFilePicker"
-        aria-labelledby="avatar-label"
-        :aria-describedby="isError ? 'avatar-error' : 'avatar-instructions'"
-        class="bg-neutral-0/5 relative flex aspect-[2.72/1] h-31.5 w-full flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-neutral-500 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-3 focus-visible:ring-offset-neutral-900"
-        :class="{ 'hover:bg-neutral-0/20 cursor-pointer': !avatarPreview }">
-        
-        <input ref="fileinput" type="file" accept="image/png, image/jpeg" @change="handleFileChange" class="sr-only" aria-hidden="true" />
+        @keydown.space.prevent="openFilePicker">
+        <input
+          ref="fileinput"
+          type="file"
+          accept="image/png, image/jpeg"
+          class="sr-only"
+          aria-hidden="true"
+          @change="handleFileChange">
 
-        <div v-if="!avatarPreview" class="bg-neutral-0/10 flex size-12.5 items-center justify-center rounded-xl border-2 border-neutral-700 shadow-[0_2px_4px_-2px_rgba(4,1,40,1)] backdrop-blur-sm">
-          <img src="../assets/images/icon-upload.svg" alt="" aria-hidden="true" class="aspect-square w-1/2" />
+        <div
+          v-if="!avatarPreview"
+          class="bg-neutral-0/10 flex size-12.5 items-center justify-center rounded-xl border-2 border-neutral-700 shadow-[0_2px_4px_-2px_rgba(4,1,40,1)] backdrop-blur-sm">
+          <img
+            src="../assets/images/icon-upload.svg"
+            alt=""
+            aria-hidden="true"
+            class="aspect-square w-1/2">
         </div>
 
-        <div v-else class="bg-neutral-0/10 flex size-12.5 items-center justify-center rounded-xl border-2 border-neutral-500 shadow-[0_2px_4px_-2px_rgba(4,1,40,1)] backdrop-blur-sm">
-          <img :src="avatarPreview" alt="Avatar preview" class="size-full rounded-xl object-cover" />
+        <div
+          v-else
+          class="bg-neutral-0/10 flex size-12.5 items-center justify-center rounded-xl border-2 border-neutral-500 shadow-[0_2px_4px_-2px_rgba(4,1,40,1)] backdrop-blur-sm">
+          <img
+            :src="avatarPreview"
+            alt="Avatar preview"
+            class="size-full rounded-xl object-cover">
         </div>
 
         <!-- Botones secundarios con anillos de enfoque visibles -->
-        <div v-if="avatarPreview" class="text-preset-7b flex h-5.5 w-45 gap-2 z-10">
-          <button type="button" @click.stop="removeImage" class="bg-neutral-0/10 cursor-pointer rounded-sm px-2 py-1 hover:text-neutral-300 hover:underline hover:underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500">
+        <div
+          v-if="avatarPreview"
+          class="text-preset-7b z-10 flex h-5.5 w-45 gap-2">
+          <button
+            type="button"
+            class="bg-neutral-0/10 cursor-pointer rounded-sm px-2 py-1 hover:text-neutral-300 hover:underline hover:underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500"
+            @click.stop="removeImage">
             Remove image
           </button>
-          <button type="button" @click.stop="changeImage" class="bg-neutral-0/10 cursor-pointer rounded-sm px-2 py-1 hover:text-neutral-300 hover:underline hover:underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500">
+          <button
+            type="button"
+            class="bg-neutral-0/10 cursor-pointer rounded-sm px-2 py-1 hover:text-neutral-300 hover:underline hover:underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500"
+            @click.stop="changeImage">
             Change image
           </button>
         </div>
 
-        <p v-else class="text-preset-4 text-center text-neutral-300">Drag and drop or click to upload</p>
+        <p
+          v-else
+          class="text-preset-4 text-center text-neutral-300">
+          Drag and drop or click to upload
+        </p>
       </div>
 
       <div class="flex items-center gap-2">
-        <div aria-hidden="true" class="size-3 mask-[url('../assets/images/icon-info.svg')] mask-contain mask-center mask-no-repeat transition-colors" :class="isError ? 'bg-orange-700' : 'bg-neutral-300'"></div>
-        <p :id="isError ? 'avatar-error' : 'avatar-instructions'" class="text-preset-5" :class="isError ? 'text-orange-700' : 'text-neutral-300'">
+        <div
+          aria-hidden="true"
+          class="size-3 mask-[url('../assets/images/icon-info.svg')] mask-contain mask-center mask-no-repeat transition-colors"
+          :class="isError ? 'bg-orange-700' : 'bg-neutral-300'" />
+        <p
+          :id="isError ? 'avatar-error' : 'avatar-instructions'"
+          class="text-preset-5"
+          :class="isError ? 'text-orange-700' : 'text-neutral-300'">
           {{ isError ? errorMessage : 'Upload your photo (JPG or PNG, max size: 500KB).' }}
         </p>
       </div>
     </div>
 
     <!-- Inputs del Formulario -->
-    <div v-for="field in formFields" :key="field.id" :class="['flex flex-col gap-3', field.className]">
+    <div
+      v-for="field in formFields"
+      :key="field.id"
+      :class="['flex flex-col gap-3', field.className]">
       <label :for="field.id">{{ field.label }}</label>
       <input
-        v-model="formData[field.id]"
-        @blur="validateField(field.id)"
-        @input="clearFieldError(field.id)"
-        :type="field.type"
         :id="field.id"
+        v-model="formData[field.id]"
+        :type="field.type"
         :placeholder="field.placeholder"
         :aria-invalid="!!fieldErrors[field.id]"
         :aria-describedby="fieldErrors[field.id] ? `${field.id}-error` : null"
         :class="[
           'text-preset-4 h-13.5 w-full rounded-xl border bg-white/8 px-4 placeholder-neutral-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-3 focus-visible:ring-offset-neutral-900',
-          fieldErrors[field.id] ? 'border-orange-700 hover:bg-orange-700/10' : 'hover:bg-neutral-0/20 border-neutral-500',
-          { 'capitalize': field.id === 'fullName' }
-        ]" />
+          fieldErrors[field.id]
+            ? 'border-orange-700 hover:bg-orange-700/10'
+            : 'hover:bg-neutral-0/20 border-neutral-500',
+          { capitalize: field.id === 'fullName' },
+        ]"
+        @blur="validateField(field.id)"
+        @input="clearFieldError(field.id)">
 
-      <div v-if="fieldErrors[field.id]" :id="`${field.id}-error`" class="flex items-center gap-2">
-        <div aria-hidden="true" class="size-3 bg-orange-700 mask-[url('../assets/images/icon-info.svg')] mask-contain mask-center mask-no-repeat"></div>
-        <p class="text-preset-5 text-orange-700">{{ fieldErrors[field.id] }}</p>
+      <div
+        v-if="fieldErrors[field.id]"
+        :id="`${field.id}-error`"
+        class="flex items-center gap-2">
+        <div
+          aria-hidden="true"
+          class="size-3 bg-orange-700 mask-[url('../assets/images/icon-info.svg')] mask-contain mask-center mask-no-repeat" />
+        <p class="text-preset-5 text-orange-700">
+          {{ fieldErrors[field.id] }}
+        </p>
       </div>
     </div>
 
-    <button type="submit" class="text-preset-6 flex h-13.5 w-full items-center justify-center rounded-xl bg-orange-500 text-neutral-900 transition-colors hover:bg-orange-700 focus:outline-2 focus:outline-offset-3 active:scale-95 cursor-pointer font-bold">
+    <button
+      type="submit"
+      class="text-preset-6 flex h-13.5 w-full cursor-pointer items-center justify-center rounded-xl bg-orange-500 font-bold text-neutral-900 transition-colors hover:bg-orange-700 focus:outline-2 focus:outline-offset-3 active:scale-95">
       Generate My Ticket
     </button>
   </form>
 
-  <Ticket 
+  <Ticket
     v-else
     ref="ticketRef"
-    :fullName="ticketData.fullName"
-    :emailAddress="ticketData.emailAddress"
-    :githubUsername="ticketData.githubUsername"
-    :avatarPreview="ticketData.avatarPreview"
-  />
+    :full-name="ticketData.fullName"
+    :email-address="ticketData.emailAddress"
+    :github-username="ticketData.githubUsername"
+    :avatar-preview="ticketData.avatarPreview" />
 </template>
-

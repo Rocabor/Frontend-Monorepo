@@ -52,7 +52,7 @@ const current = computed(() => testimonials[currentIndex.value]);
       role="region"
       aria-label="Testimonials slider"
       class="relative mx-auto h-[307.5px] w-[326.5px] bg-[url('./assets/images/pattern-bg.svg')] bg-cover bg-no-repeat px-9.25 py-7.5 md:h-122.5 md:w-130 md:px-14.25 md:py-12 xl:order-1 xl:h-164.25 xl:w-174.25 xl:px-16.25 xl:py-15.75">
-      <img :src="current.image" :alt="current.name" class="shadow-img h-63.25 w-63.5 rounded-[5px] md:h-100.75 md:w-101.25 xl:size-135" />
+      <img :src="current.image" :alt="current.name" class="shadow-img h-63.25 w-63.5 rounded-[5px] md:h-100.75 md:w-101.25 xl:size-135"/>
 
       <div class="shadow-btn absolute bottom-1 left-1/2 flex h-10 w-20 -translate-x-1/2 rounded-[28px] bg-white md:bottom-3 md:h-14 md:w-28 xl:bottom-6 xl:left-46.25">
         <button
