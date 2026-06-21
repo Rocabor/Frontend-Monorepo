@@ -44,8 +44,8 @@ const orderTotal = computed(() => {
     <div
       v-else
       class="flex flex-col gap-4">
-      <div class="flex flex-col divide-y divide-rose-100 overflow-y-auto">
-        <div
+      <ul class="max-h-64 flex flex-col divide-y divide-rose-100 overflow-y-auto">
+        <li
           v-for="item in cart"
           :key="item.name"
           class="flex items-center justify-between py-4">
@@ -62,11 +62,12 @@ const orderTotal = computed(() => {
 
           <button
             class="flex size-5 cursor-pointer items-center justify-center rounded-full border border-rose-300 text-xs font-bold text-rose-400 transition-colors hover:border-rose-900 hover:text-rose-900"
+            :aria-label="`Remove ${item.name} from cart`"
             @click="$emit('delete-item', item.name)">
             ✕
           </button>
-        </div>
-      </div>
+        </li>
+      </ul>
 
       <div class="flex items-center justify-between border-t border-rose-100 pt-4">
         <span class="text-preset-2 font-normal text-rose-900">Order Total</span>
@@ -88,7 +89,7 @@ const orderTotal = computed(() => {
       </div>
 
       <button
-        class="bg-red text-preset-3 w-full cursor-pointer rounded-full py-3 text-center text-white transition-colors duration-200 hover:bg-rose-900"
+        class="bg-red text-preset-3 w-full cursor-pointer rounded-full py-3 text-center text-white transition-colors duration-200 hover:bg-[color-mix(in_srgb,var(--color-red)_75%,black)]"
         @click="$emit('confirm-order')">
         Confirm Order
       </button>

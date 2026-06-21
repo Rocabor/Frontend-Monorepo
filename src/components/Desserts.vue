@@ -39,14 +39,14 @@ const getProductQuantity = (productName) => {
           :srcset="product.image.tablet">
         <img
           :src="product.image.mobile"
-          :alt="product.name"
+          alt=""
           class="h-53 rounded-lg xl:h-60"
           :class="getProductQuantity(product.name) > 0 ? 'border-red border-3' : 'border-transparent'">
       </picture>
 
       <button
         v-if="getProductQuantity(product.name) === 0"
-        class="text-preset-2 absolute bottom-0 left-1/2 flex h-11 w-40 -translate-x-1/2 cursor-pointer items-center justify-center gap-2 rounded-full border border-rose-400 bg-white p-3"
+        class="text-preset-2 absolute bottom-0 left-1/2 flex h-11 w-40 -translate-x-1/2 cursor-pointer items-center justify-center gap-2 rounded-full border border-rose-400 bg-white p-3 hover:border-2 hover:border-red hover:text-red"
         @click="$emit('add-to-cart', product)">
         <img
           :src="iconAddtoCart"
@@ -60,6 +60,7 @@ const getProductQuantity = (productName) => {
         class="text-preset-2 absolute bottom-0 left-1/2 flex h-11 w-40 -translate-x-1/2 items-center justify-between rounded-full bg-red px-3 py-2 text-white shadow-xs">
         <button 
           class="flex size-5 items-center justify-center rounded-full border border-white hover:bg-white hover:text-red transition-all cursor-pointer font-bold"
+          :aria-label="`Decrease quantity of ${product.name}`"
           @click="$emit('remove-from-cart', product)">
           -
         </button>
@@ -68,6 +69,7 @@ const getProductQuantity = (productName) => {
         
         <button 
           class="flex size-5 items-center justify-center rounded-full border border-white hover:bg-white hover:text-red transition-all cursor-pointer font-bold"
+          :aria-label="`Increase quantity of ${product.name}`"
           @click="$emit('add-to-cart', product)">
           +
         </button>
