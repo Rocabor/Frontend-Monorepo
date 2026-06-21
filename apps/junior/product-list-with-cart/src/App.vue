@@ -4,6 +4,7 @@ import Desserts from './components/Desserts.vue';
 import Cart from './components/Cart.vue';
 
 const products = ref([]);
+const cart = ref([]);
 
 // Función mágica de Vite para resolver rutas dinámicas desde src/assets
 const getURLImage = (pathInJson) => {
@@ -30,15 +31,49 @@ onMounted(async () => {
     console.error('Error cargando los postres:', error);
   }
 });
+
+// --- FUNCIONES DEL CARRITO ---
+// Añadir o incrementar un producto
+const addToCart = (product) => {
+  const itemInCart = cart.value.find((item) => item.name === product.name);
+  if (itemInCart) {
+    itemInCart.quantity++;
+  } else {
+    cart.value.push({ ...product, quantity: 1 });
+  }
+};
+
+// Decrementar la cantidad de un producto (o quitarlo si llega a 0)
+const removeFromCart = (product) => {
+  const itemInCart = cart.value.find((item) => item.name === product.name);
+  if (itemInCart) {
+    itemInCart.quantity--;
+    if (itemInCart.quantity === 0) {
+      cart.value = cart.value.filter((item) => item.name !== product.name);
+    }
+  }
+};
+
+// Eliminar un producto por completo pulsando la 'X' en el carrito
+const deleteItem = (productName) => {
+  cart.value = cart.value.filter((item) => item.name !== productName);
+};
 </script>
 
 <template>
-  <!-- * Main Content -->
-  <main class="my-6 mx-auto w-[327px] grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-x-6 md:w-[688px] xl:my-[88px] xl:grid-cols-[repeat(3,251px)_384px] xl:w-[1216px]">
+  <!--* Main Content -->
+  <main
+    class="mx-auto my-6 grid w-81.75 grid-cols-1 gap-8 md:w-172 md:grid-cols-3 md:gap-x-6 xl:my-22 xl:w-304 xl:grid-cols-[repeat(3,251px)_384px]">
     <h1 class="text-preset-1 md:col-span-3">
       Desserts
     </h1>
-    <Desserts :products="products" />
-    <Cart />
+    <Desserts
+      :products="products"
+      :cart="cart"      
+      @add-to-cart="addToCart"
+      @remove-from-cart="removeFromCart" />
+    <Cart
+      :cart="cart"
+      @delete-item="deleteItem" />
   </main>
 </template>
