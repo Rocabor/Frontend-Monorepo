@@ -2,9 +2,11 @@
 import { ref, onMounted } from 'vue';
 import Desserts from './components/Desserts.vue';
 import Cart from './components/Cart.vue';
+import OrderModal from './components/OrderModal.vue';
 
 const products = ref([]);
 const cart = ref([]);
+const isModalOpen = ref(false);
 
 // Función mágica de Vite para resolver rutas dinámicas desde src/assets
 const getURLImage = (pathInJson) => {
@@ -58,6 +60,17 @@ const removeFromCart = (product) => {
 const deleteItem = (productName) => {
   cart.value = cart.value.filter((item) => item.name !== productName);
 };
+
+// Función para abrir el modal desde el botón de confirmar del carrito
+const confirmOrder = () => {
+  isModalOpen.value = true;
+};
+
+// Función para vaciar el carrito y resetear la aplicación
+const startNewOrder = () => {
+  cart.value = [];
+  isModalOpen.value = false;
+};
 </script>
 
 <template>
@@ -67,13 +80,21 @@ const deleteItem = (productName) => {
     <h1 class="text-preset-1 md:col-span-3">
       Desserts
     </h1>
+
     <Desserts
       :products="products"
-      :cart="cart"      
+      :cart="cart"
       @add-to-cart="addToCart"
       @remove-from-cart="removeFromCart" />
+
     <Cart
       :cart="cart"
-      @delete-item="deleteItem" />
+      @delete-item="deleteItem"
+      @confirm-order="confirmOrder" />
   </main>
+
+  <OrderModal
+    :cart="cart"
+    :is-open="isModalOpen"
+    @start-new-order="startNewOrder" />
 </template>
