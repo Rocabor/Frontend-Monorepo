@@ -28,8 +28,26 @@
 }
 
 @utility text-preset-1 {
-  font-size: 16px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: 0px;
+  color:var(--color-rose-900);
+}
+@utility text-preset-2 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color:var(--color-rose-900);
+}
+@utility text-preset-3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color:var(--color-rose-900);
+}
+@utility text-preset-4 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  color:var(--color-red);
 }

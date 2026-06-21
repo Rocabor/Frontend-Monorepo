@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import Desserts from './components/Desserts.vue';
+import Cart from './components/Cart.vue';
 
 const products = ref([]);
 
@@ -33,8 +34,11 @@ onMounted(async () => {
 
 <template>
   <!-- * Main Content -->
-  <main class="m-6 flex flex-col gap-8">
-    <h1>Desserts</h1>
+  <main class="my-6 mx-auto w-[327px] grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-x-6 md:w-[688px] xl:my-[88px] xl:grid-cols-[repeat(3,251px)_384px] xl:w-[1216px]">
+    <h1 class="text-preset-1 md:col-span-3">
+      Desserts
+    </h1>
     <Desserts :products="products" />
+    <Cart />
   </main>
 </template>
