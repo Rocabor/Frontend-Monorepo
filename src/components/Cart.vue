@@ -8,7 +8,8 @@ const props = defineProps({
   },
 });
 
-defineEmits(['delete-item']);
+// Agregamos 'confirm-order' a los eventos que el carrito puede emitir
+defineEmits(['delete-item', 'confirm-order']);
 
 // Calcular el número total de artículos en el carrito (ej: "Your Cart (7)")
 const totalItems = computed(() => {
@@ -23,7 +24,7 @@ const orderTotal = computed(() => {
 
 <template>
   <div
-    class="flex min-h-56.5 h-fit flex-col gap-6 rounded-xl bg-white p-6 md:col-span-3 xl:col-span-1 xl:col-start-4 xl:row-span-4 xl:row-start-1 xl:ml-2">
+    class="flex h-fit min-h-56.5 flex-col gap-6 rounded-xl bg-white p-6 md:col-span-3 xl:col-span-1 xl:col-start-4 xl:row-span-4 xl:row-start-1 xl:ml-2">
     <h2 class="text-preset-4">
       Your Cart ({{ totalItems }})
     </h2>
@@ -40,42 +41,55 @@ const orderTotal = computed(() => {
       </p>
     </div>
 
-    <div v-else class="flex flex-col gap-4">
-      <div class=" overflow-y-auto flex flex-col divide-y divide-rose-100">
-        <div 
-          v-for="item in cart" 
-          :key="item.name" 
+    <div
+      v-else
+      class="flex flex-col gap-4">
+      <div class="flex flex-col divide-y divide-rose-100 overflow-y-auto">
+        <div
+          v-for="item in cart"
+          :key="item.name"
           class="flex items-center justify-between py-4">
           <div class="flex flex-col gap-1">
             <p class="text-preset-2">
               {{ item.name }}
             </p>
-            <div class="flex gap-2 items-center text-preset-2">
-              <span class="text-red font-bold mr-2">{{ item.quantity }}x</span>
-              <span class="text-rose-500 font-normal">@ ${{ item.price.toFixed(2) }}</span>
+            <div class="text-preset-2 flex items-center gap-2">
+              <span class="text-red mr-2 font-bold">{{ item.quantity }}x</span>
+              <span class="font-normal text-rose-500">@ ${{ item.price.toFixed(2) }}</span>
               <span class="text-rose-500">${{ (item.price * item.quantity).toFixed(2) }}</span>
             </div>
           </div>
 
-          <button 
-            class="flex size-5 items-center justify-center rounded-full border border-rose-300 text-rose-400 hover:border-rose-900 hover:text-rose-900 transition-colors cursor-pointer text-xs font-bold"
+          <button
+            class="flex size-5 cursor-pointer items-center justify-center rounded-full border border-rose-300 text-xs font-bold text-rose-400 transition-colors hover:border-rose-900 hover:text-rose-900"
             @click="$emit('delete-item', item.name)">
             ✕
           </button>
         </div>
       </div>
 
-      <div class="flex items-center justify-between pt-4 border-t border-rose-100">
-        <span class="text-preset-2 text-rose-900 font-normal">Order Total</span>
-        <span class="text-preset-1 text-rose-900 text-2xl font-bold">${{ orderTotal.toFixed(2) }}</span>
+      <div class="flex items-center justify-between border-t border-rose-100 pt-4">
+        <span class="text-preset-2 font-normal text-rose-900">Order Total</span>
+        <span class="text-preset-1 text-2xl font-bold text-rose-900">${{ orderTotal.toFixed(2) }}</span>
       </div>
 
-      <div class="flex items-center justify-center gap-2 rounded-lg bg-rose-50 p-3 text-preset-2 font-normal text-rose-900">
-        <span><img src="../assets/images/icon-carbon-neutral.svg" alt=""></span>
-        <p>This is a <span class="font-semibold">carbon-neutral</span> delivery</p>
+      <div
+        class="text-preset-2 flex items-center justify-center gap-2 rounded-lg bg-rose-50 p-3 font-normal text-rose-900">
+        <span>
+          <img
+            src="../assets/images/icon-carbon-neutral.svg"
+            alt="">
+        </span>
+        <p>
+          This is a
+          <span class="font-semibold">carbon-neutral</span>
+          delivery
+        </p>
       </div>
 
-      <button class="w-full bg-red text-white py-3 rounded-full hover:bg-rose-900 transition-colors duration-200 cursor-pointer text-preset-3 text-center">
+      <button
+        class="bg-red text-preset-3 w-full cursor-pointer rounded-full py-3 text-center text-white transition-colors duration-200 hover:bg-rose-900"
+        @click="$emit('confirm-order')">
         Confirm Order
       </button>
     </div>
