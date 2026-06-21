@@ -1,5 +1,6 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { MyFooter } from '@packages/ui';
+import { ref, onMounted, watch } from 'vue';
 import Desserts from './components/Desserts.vue';
 import Cart from './components/Cart.vue';
 import OrderModal from './components/OrderModal.vue';
@@ -71,6 +72,15 @@ const startNewOrder = () => {
   cart.value = [];
   isModalOpen.value = false;
 };
+
+// Bloquear scroll del fondo cuando el modal esté abierto
+watch(isModalOpen, (newValue) => {
+  if (newValue) {
+    document.body.classList.add('overflow-hidden');
+  } else {
+    document.body.classList.remove('overflow-hidden');
+  }
+});
 </script>
 
 <template>
@@ -97,4 +107,10 @@ const startNewOrder = () => {
     :cart="cart"
     :is-open="isModalOpen"
     @start-new-order="startNewOrder" />
+
+  <MyFooter
+    position="relative"
+    bg-color="transparent"
+    text-color="red"
+    font-family="RedHatText" />
 </template>

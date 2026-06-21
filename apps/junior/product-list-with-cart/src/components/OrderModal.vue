@@ -24,7 +24,10 @@ const orderTotal = computed(() => {
 <template>
   <div
     v-if="isOpen"
-    class="fixed inset-0 z-50 flex items-end justify-center bg-black/50 md:items-center p-0 md:p-4">
+    class="fixed inset-0 z-50 flex items-end justify-center bg-black/50 md:items-center p-0 md:p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title">
     <div
       class="w-full md:w-172 xl:w-148 rounded-t-2xl md:rounded-2xl bg-white p-6 md:p-10 flex flex-col gap-8 overflow-y-auto animate-in fade-in slide-in-from-bottom-4 duration-200">
       <div class="flex flex-col gap-4">
@@ -72,7 +75,7 @@ const orderTotal = computed(() => {
       </div>
 
       <button
-        class="w-full bg-red text-white py-4 rounded-full font-semibold hover:bg-rose-900 transition-colors duration-200 cursor-pointer text-preset-3 text-center"
+        class="w-full bg-red text-white py-4 rounded-full font-semibold hover:bg-[color-mix(in_srgb,var(--color-red)_75%,black)] transition-colors duration-200 cursor-pointer text-preset-3 text-center"
         @click="$emit('start-new-order')">
         Start New Order
       </button>
