@@ -1,24 +1,28 @@
-# Frontend Mentor - Product list with cart
+# Frontend Mentor - Product list with cart solution
 
-![Design preview for the Product list with cart coding challenge](./preview.jpg)
+This is a solution to the [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+  - [AI Collaboration](#ai-collaboration)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-**To do this challenge, you need a good understanding of HTML, CSS and JavaScript.**
+## Overview
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this product list project that includes a functional cart and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So, if you have something you'd like to practice, feel free to give it a go.
-
-We provide the data for the products in a local `data.json` file. So you can use that to populate the UI dynamically if you choose.
-
-Your users should be able to: 
+Users should be able to:
 
 - Add items to the cart and remove them
 - Increase/decrease the number of items in the cart
@@ -27,87 +31,88 @@ Your users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-### Want some support on the challenge? 
+### Screenshot
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+![](https://snipboard.io/sDjL2G.jpg)
 
-## Where to find everything
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Links
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+[![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)](https://rocabor.github.io/Frontend-Monorepo/junior/product-list-with-cart/)
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+## My process
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+### Built with
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- Semantic HTML5 markup
+- CSS custom properties & Native `color-mix()` function
+- Mobile-first workflow
+- [Vue 3](https://vuejs.org/) - Composition API (`<script setup>`)
+- [Tailwind CSS v4.0](https://tailwindcss.com/) - Next-generation CSS framework
+- [Vite](https://vite.dev/) - Next-generation frontend tooling
 
-## Using AI coding assistants
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+### What I learned
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+I learned several key concepts while building this project:
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+1. **State Management in Vue**: How to use `ref()` for reactive state, `computed()` for derived values, and `watch()` for side effects when state changes.
 
-## Building your project
+2. **Component Communication**: Using props to pass data between components and custom events (`@emit`) for parent-child communication.
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+3. **Dynamic Image Loading**: Using Vite's `new URL()` function to dynamically resolve image paths at runtime, which is essential for handling assets in modern build tools.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+4. **Responsive Design with CSS Grid**: Creating complex layouts that adapt to different screen sizes using CSS Grid's `repeat()` function and breakpoints.
 
-## Deploying your project
+5. **Accessibility**: Implementing proper ARIA attributes, semantic HTML elements, and focus management for better user experience.
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+6. **Modal Implementation**: Building a modal component with proper focus trapping and scroll locking using Headless UI.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+7. **Event Handling**: Managing complex user interactions like adding/removing items from cart, updating quantities, and form validation.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+### Continued development
 
-## Create a custom `README.md`
+I plan to continue developing the following areas:
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+1. **Advanced Vue.js Patterns**: I'm still learning about composition API patterns, custom hooks, and more advanced state management solutions like Pinia.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+2. **Performance Optimization**: I'll focus on optimizing bundle size, implementing code splitting, and using performance profiling tools to make the application faster.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+3. **Testing**: I want to learn how to write unit tests for Vue components using tools like Vitest and component testing with Testing Library.
 
-## Submitting your solution
+4. **TypeScript**: While I can work with JavaScript, I plan to learn TypeScript to add type safety to my Vue applications.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+5. **Backend Integration**: I'll work on connecting the frontend to a real API and handling server-side state management.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+6. **Advanced CSS**: I want to master CSS custom properties, CSS-in-JS solutions, and more advanced Tailwind CSS features.
 
-## Sharing your solution
+7. **Animation and Transitions**: I'll focus on adding smooth animations and transitions to improve the user experience.
 
-There are multiple places you can share your solution:
+8. **Internationalization**: Learning how to make applications support multiple languages and locales.
 
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+### Useful resources
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+- Vite Guide on Static Asset Handling - This documentation was critical to understanding why production builds on platforms like GitHub Pages can experience broken image paths and how to build deterministic URLs programmatically.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+- MDN Web Docs: color-mix() - A wonderful reference for applying real-time, mathematical color adjustments directly via modern CSS instead of manually calculating static color palette variants.
 
-## Got feedback for us?
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+### AI Collaboration
 
-**Have fun building!** 🚀
+The AI assistant was particularly helpful in:
+
+- Refactoring & State Design: Planning out a clean, lightweight state-lifting pattern in App.vue to share reactive shopping cart states seamlessly across components.
+- Modernizing CSS Rules: Suggesting performance optimizations to substitute heavy, layered CSS linear-gradient hover overlays in Tailwind with native inline utility functions.
+- Accessibility (A11y) Auditing: Identifying semantic improvements such as changing raw list containers to proper / structures, integrating aria-live="polite" for state tracking updates, and applying descriptive aria-label attributes for screen readers.
+
+
+## Author
+
+- Frontend Mentor - [@Rocabor](https://www.frontendmentor.io/profile/Rocabor)
+
+## Acknowledgments
+
+I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills.
