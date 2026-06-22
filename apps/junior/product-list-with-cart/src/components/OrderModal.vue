@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue';
+import { ref, watch, nextTick } from 'vue';
 import iconConfirmed from '../assets/images/icon-order-confirmed.svg';
 
 const props = defineProps({
@@ -11,13 +11,20 @@ const props = defineProps({
     type: Boolean,
     required: true,
   },
+  orderTotal: { type: Number, required: true }
 });
 
 defineEmits(['start-new-order']);
 
-// Calcular el precio total de la orden
-const orderTotal = computed(() => {
-  return props.cart.reduce((total, item) => total + item.price * item.quantity, 0);
+// 1. Creamos una referencia para el botón
+const actionButton = ref(null);
+
+// 2. Cuando el modal cambie a abierto, movemos el foco al botón
+watch(() => props.isOpen, async (newValue) => {
+  if (newValue) {
+    await nextTick(); // Esperamos a que el modal aparezca en el DOM
+    actionButton.value?.focus(); // Movemos el foco al botón
+  }
 });
 </script>
 
@@ -33,7 +40,7 @@ const orderTotal = computed(() => {
       <div class="flex flex-col gap-4">
         <img :src="iconConfirmed" alt="Order Confirmed" class="size-10.5">
         <div class="flex flex-col gap-2">
-          <h2 class="text-preset-1">
+          <h2 id="modal-title" class="text-preset-1">
             Order Confirmed
           </h2>
           <p class="text-preset-3 font-normal text-rose-500">
@@ -46,7 +53,7 @@ const orderTotal = computed(() => {
         <div class="max-h-56 overflow-y-auto pr-1 flex flex-col divide-y divide-rose-100">
           <div
             v-for="item in cart"
-            :key="item.name"
+            :key="item.id"
             class="flex items-center justify-between py-4 first:pt-0">
             <div class="flex items-center gap-4">
               <img :src="item.image.thumbnail" :alt="item.name" class="size-12 rounded-sm object-cover">
@@ -75,6 +82,7 @@ const orderTotal = computed(() => {
       </div>
 
       <button
+        ref="actionButton"
         class="w-full bg-red text-white py-4 rounded-full font-semibold hover:bg-[color-mix(in_srgb,var(--color-red)_75%,black)] transition-colors duration-200 cursor-pointer text-preset-3 text-center"
         @click="$emit('start-new-order')">
         Start New Order

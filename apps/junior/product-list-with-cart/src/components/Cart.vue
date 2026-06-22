@@ -6,6 +6,7 @@ const props = defineProps({
     type: Array,
     required: true,
   },
+  orderTotal: { type: Number, required: true }
 });
 
 // Agregamos 'confirm-order' a los eventos que el carrito puede emitir
@@ -16,10 +17,7 @@ const totalItems = computed(() => {
   return props.cart.reduce((total, item) => total + item.quantity, 0);
 });
 
-// Calcular el precio total de la orden
-const orderTotal = computed(() => {
-  return props.cart.reduce((total, item) => total + item.price * item.quantity, 0);
-});
+
 </script>
 
 <template>

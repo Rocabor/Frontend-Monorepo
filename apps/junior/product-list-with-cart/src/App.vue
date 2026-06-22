@@ -1,6 +1,6 @@
 <script setup>
 import { MyFooter } from '@packages/ui';
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, watch, computed } from 'vue';
 import Desserts from './components/Desserts.vue';
 import Cart from './components/Cart.vue';
 import OrderModal from './components/OrderModal.vue';
@@ -8,6 +8,11 @@ import OrderModal from './components/OrderModal.vue';
 const products = ref([]);
 const cart = ref([]);
 const isModalOpen = ref(false);
+
+// Calcular el precio total de la orden
+const orderTotal = computed(() => {
+  return cart.value.reduce((total, item) => total + item.price * item.quantity, 0);
+});
 
 // Función mágica de Vite para resolver rutas dinámicas desde src/assets
 const getURLImage = (pathInJson) => {
@@ -38,7 +43,7 @@ onMounted(async () => {
 // --- FUNCIONES DEL CARRITO ---
 // Añadir o incrementar un producto
 const addToCart = (product) => {
-  const itemInCart = cart.value.find((item) => item.name === product.name);
+  const itemInCart = cart.value.find((item) => item.id === product.id);
   if (itemInCart) {
     itemInCart.quantity++;
   } else {
@@ -48,11 +53,11 @@ const addToCart = (product) => {
 
 // Decrementar la cantidad de un producto (o quitarlo si llega a 0)
 const removeFromCart = (product) => {
-  const itemInCart = cart.value.find((item) => item.name === product.name);
+  const itemInCart = cart.value.find((item) => item.id === product.id);
   if (itemInCart) {
     itemInCart.quantity--;
     if (itemInCart.quantity === 0) {
-      cart.value = cart.value.filter((item) => item.name !== product.name);
+      cart.value = cart.value.filter((item) => item.id !== product.id);
     }
   }
 };
@@ -99,6 +104,7 @@ watch(isModalOpen, (newValue) => {
 
     <Cart
       :cart="cart"
+      :order-total="orderTotal"
       @delete-item="deleteItem"
       @confirm-order="confirmOrder" />
   </main>
@@ -106,6 +112,7 @@ watch(isModalOpen, (newValue) => {
   <OrderModal
     :cart="cart"
     :is-open="isModalOpen"
+    :order-total="orderTotal"
     @start-new-order="startNewOrder" />
 
   <MyFooter

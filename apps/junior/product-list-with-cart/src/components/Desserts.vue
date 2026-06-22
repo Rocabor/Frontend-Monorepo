@@ -26,7 +26,7 @@ const getProductQuantity = (productName) => {
   <!--* DessertTarget -->
   <div
     v-for="product in products"
-    :key="product.name"
+    :key="product.id"
     class="mb-2 flex flex-col gap-4 md:mb-0">
     <!--* Item Image and Add To Cart Button -->
     <div class="relative h-58.5 xl:h-65.5">
@@ -39,7 +39,7 @@ const getProductQuantity = (productName) => {
           :srcset="product.image.tablet">
         <img
           :src="product.image.mobile"
-          alt=""
+          :alt="`Photo of ${product.name}`"
           class="h-53 rounded-lg xl:h-60"
           :class="getProductQuantity(product.name) > 0 ? 'border-red border-3' : 'border-transparent'">
       </picture>
