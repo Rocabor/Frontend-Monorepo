@@ -2,7 +2,7 @@
 
 # 🚀 My Frontend Journey
 
-[![Monorepo](https://img.shields.io/badge/Monorepo-43_projects-8A2BE2?style=for-the-badge&logo=github)](https://github.com/Rocabor/Frontend-Monorepo)
+[![Monorepo](https://img.shields.io/badge/Monorepo-44_projects-8A2BE2?style=for-the-badge&logo=github)](https://github.com/Rocabor/Frontend-Monorepo)
 [![Last Commit](https://img.shields.io/github/last-commit/Rocabor/Frontend-Monorepo?style=for-the-badge&color=blue)](https://github.com/Rocabor/Frontend-Monorepo)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
@@ -17,7 +17,7 @@
 - [📁 Project Index](#-project-index)
   - [🟢 Newbie Projects (23)](#-newbie-projects)
   - [🔵 Junior Projects (19)](#-junior-projects)
-  - [🟡 Intermediate Projects (1)](#-intermediate-projects)
+  - [🟡 Intermediate Projects (2)](#-intermediate-projects)
 - [💻 Technologies](#-technologies)
 - [🤝 Connect](#-connect)
 
@@ -28,7 +28,7 @@
 This repository is a **monorepo** documenting my frontend development journey through [Frontend Mentor](https://www.frontendmentor.io/) challenges. Each project is independently built and showcases progressive skill development.
 
 ### ✨ Features
-- 📦 **43 completed challenges** across 3 difficulty levels
+- 📦 **44 completed challenges** across 3 difficulty levels
 - 🎨 **Responsive designs** with mobile-first approach
 - 🔗 **Live demos** for each project
 - 📚 **Organized codebase** by difficulty
@@ -237,7 +237,7 @@ All projects have live demos, so you can see them running without any local setu
 
 ### 🟡 Intermediate Projects
 
-[![Intermediate](https://img.shields.io/badge/🟡%20INTERMEDIATE-1%20project-f1c40f?style=for-the-badge&labelColor=7d5d0e&color=f1c40f)](#-intermediate-projects-1)
+[![Intermediate](https://img.shields.io/badge/🟡%20INTERMEDIATE-1%20project-f1c40f?style=for-the-badge&labelColor=7d5d0e&color=f1c40f)](#-intermediate-projects-2)
 
 | # | Project | Live Demo | Repository |
 |:---:|:---|:---:|:---:|
