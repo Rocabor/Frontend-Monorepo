@@ -1,5 +1,46 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
+@layer base{
+  body{
+    font-family: var(--font-Rubik);   
+  }
+}
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui;
+   /* Grey */
+  --color-grey-500: #626A7F;
+  --color-grey-50: #F4F6FA;
+
+  /* Blue */
+  --color-blue-950: #2D3649;
+  --color-blue-900: #3D475C;
+  --color-blue-800: #4B566E;
+  --color-blue-500: #306AFF;
+  --color-blue-300: #ABC1E8;
+  --color-blue-100: #EDF1F9;
+  --color-blue-50: #EEF3FF;
+
+  /* Green */
+  --color-green-500: #2FD887;
+  --color-green-100: #E0FDEE;
+
+  /* Purple */
+  --color-purple-600: #A729F5;
+  --color-purple-100: #F6E7FF;
+
+  /* Orange */
+  --color-orange-400: #FF7E35;
+  --color-orange-50: #FFF6F0;
+
+  /* Red */
+  --color-red-500: #EE5454;
+
+  --font-Rubik:'Rubik',sans-serif;
+}
+
+@utility text-preset-1 {  
+  font-size: 144px;
+  font-weight: 500; 
+  line-height: 100%;
+  letter-spacing: 0px;
 }
