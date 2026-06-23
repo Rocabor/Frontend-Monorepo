@@ -242,6 +242,7 @@ All projects have live demos, so you can see them running without any local setu
 | # | Project | Live Demo | Repository |
 |:---:|:---|:---:|:---:|
 | 01 | **Password generator app** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/intermediate/password-generator-app/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/intermediate/password-generator-app) |
+| 02 | **Frontend quiz app** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/intermediate/frontend-quiz-app/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/intermediate/frontend-quiz-app) |
 
 </div>
 

@@ -6,4 +6,11 @@ export const intermediateProjects = [
     technologies: ['html', 'css', 'js'],
     difficulty: 'Intermediate',
   },
+  {
+    href: './apps/intermediate/frontend-quiz-app/',
+    image: 'images/frontend-quiz-app.jpg',
+    title: 'frontend quiz app',
+    technologies: ['html', 'css', 'js'],
+    difficulty: 'Intermediate',
+  },
 ];
