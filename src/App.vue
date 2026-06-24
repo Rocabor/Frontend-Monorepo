@@ -10,14 +10,12 @@ const isDark = ref(false);
 const getAssetUrl = (path) => {
   return new URL(`./assets/images/${path}`, import.meta.url).href;
 };
-
-
 </script>
 
 <template>
-  <div
-    :class="{ dark: isDark }"
-    class="min-h-dvh bg-gray-50 transition-colors duration-600 dark:bg-blue-900">
+  <div    
+    :class="{ dark: isDark }"   
+    class="min-h-dvh bg-gray-50 dark:bg-blue-900 bg-quiz-app transition-colors duration-300 ">
     <header class="flex justify-between px-6 py-4">
       <!--* Subject List -->
       <div class="h-10 w-[167px]"></div>

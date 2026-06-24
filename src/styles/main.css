@@ -1,46 +1,71 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 
-@layer base{
-  body{
-    font-family: var(--font-Rubik);   
+@layer base {
+  body {
+    font-family: var(--font-Rubik);
   }
 }
 @theme {
-   /* Grey */
-  --color-grey-500: #626A7F;
-  --color-grey-50: #F4F6FA;
+  /* Grey */
+  --color-grey-500: #626a7f;
+  --color-grey-50: #f4f6fa;
 
   /* Blue */
-  --color-blue-950: #2D3649;
-  --color-blue-900: #3D475C;
-  --color-blue-800: #4B566E;
-  --color-blue-500: #306AFF;
-  --color-blue-300: #ABC1E8;
-  --color-blue-100: #EDF1F9;
-  --color-blue-50: #EEF3FF;
+  --color-blue-950: #2d3649;
+  --color-blue-900: #313e51;
+  --color-blue-800: #4b566e;
+  --color-blue-500: #306aff;
+  --color-blue-300: #abc1e8;
+  --color-blue-100: #edf1f9;
+  --color-blue-50: #eef3ff;
 
   /* Green */
-  --color-green-500: #2FD887;
-  --color-green-100: #E0FDEE;
+  --color-green-500: #2fd887;
+  --color-green-100: #e0fdee;
 
   /* Purple */
-  --color-purple-600: #A729F5;
-  --color-purple-100: #F6E7FF;
+  --color-purple-600: #a729f5;
+  --color-purple-100: #f6e7ff;
 
   /* Orange */
-  --color-orange-400: #FF7E35;
-  --color-orange-50: #FFF6F0;
+  --color-orange-400: #ff7e35;
+  --color-orange-50: #fff6f0;
 
   /* Red */
-  --color-red-500: #EE5454;
+  --color-red-500: #ee5454;
 
-  --font-Rubik:'Rubik',sans-serif;
+  --font-Rubik: 'Rubik', sans-serif;
 }
 
-@utility text-preset-1 {  
+.bg-quiz-app {
+  background-image: url('../assets/images/pattern-background-mobile-light.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+ 
+  @variant md {
+    background-image: url('../assets/images/pattern-background-tablet-light.svg');
+  }
+  @variant xl {
+    background-image: url('../assets/images/pattern-background-desktop-light.svg');
+    background-position: left top;
+  }
+  @variant dark {
+    background-image: url('../assets/images/pattern-background-mobile-dark.svg');
+    @variant md {
+      background-image: url('../assets/images/pattern-background-tablet-dark.svg');
+    }
+    @variant xl {
+      background-image: url('../assets/images/pattern-background-desktop-dark.svg');
+    }
+  }
+}
+
+@utility text-preset-1 {
   font-size: 144px;
-  font-weight: 500; 
+  font-weight: 500;
   line-height: 100%;
   letter-spacing: 0px;
 }
