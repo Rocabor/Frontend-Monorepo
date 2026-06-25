@@ -4,7 +4,11 @@
 @layer base {
   body {
     font-family: var(--font-Rubik);
+    
   }
+  /* ul,ul *{
+    border: 1px solid;
+  } */
 }
 @theme {
   /* Grey */
@@ -41,15 +45,15 @@
 @utility bg-quiz-app {
   background-image: url('../assets/images/pattern-background-mobile-light.svg');
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
+  background-size: auto;
+  background-position: left top;
 
   @variant md {
-    background-image: url('../assets/images/pattern-background-tablet-light.svg');
-    background-position: -50vw top;
+    background-image: url('../assets/images/pattern-background-tablet-light.svg');    
   }
   @variant xl {
     background-image: url('../assets/images/pattern-background-desktop-light.svg');
+    background-size: cover;
   }
   @variant dark {
     background-image: url('../assets/images/pattern-background-mobile-dark.svg');
@@ -72,4 +76,9 @@
   font-size: clamp(0.88rem, calc(0.517rem + 1.527vw), 1.25rem);
   font-style: italic;
   line-height: 1.5;
+}
+@utility text-preset-3 {
+  font-size: clamp(1.13rem, calc(0.529rem + 2.545vw), 1.75rem);
+  font-weight: 500;
+  line-height: 1;
 }
