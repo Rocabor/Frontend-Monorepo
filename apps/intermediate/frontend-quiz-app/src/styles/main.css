@@ -66,19 +66,28 @@
   }
 }
 
-
+/* 40px - 64px */
 @utility text-preset-1 {
   font-size: clamp(2.5rem, calc(1.069rem + 6.107vw), 4rem);
   font-weight: 500;
   line-height: 1;
 }
+/* 14px - 20px */
 @utility text-preset-2 {
   font-size: clamp(0.88rem, calc(0.517rem + 1.527vw), 1.25rem);
   font-style: italic;
   line-height: 1.5;
 }
+/* 18px - 28px */
 @utility text-preset-3 {
   font-size: clamp(1.13rem, calc(0.529rem + 2.545vw), 1.75rem);
   font-weight: 500;
   line-height: 1;
 }
+/* 20px - 36px */
+@utility text-preset-4 {
+  font-size: clamp(1.25rem, calc(0.296rem + 4.071vw), 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+

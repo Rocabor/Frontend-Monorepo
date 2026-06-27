@@ -50,7 +50,7 @@ const emit = defineEmits(['select-quiz']);
           <button
             type="button"
             :aria-describedby="'desc-' + quiz.title.toLowerCase()"
-            class="dark:bg-blue-850 group text-preset-3 flex w-full cursor-pointer items-center gap-4 rounded-3xl border-2 border-transparent bg-white p-4 shadow-[0_16px_40px_rgba(143,160,193,0.14)] transition-all hover:border-purple-600 focus:border-purple-600 focus:ring-2 focus:ring-purple-100 focus:outline-none xl:p-6 dark:shadow-[0_16px_40px_rgba(49,62,81,0.14)]"
+            class="dark:bg-blue-850 group text-preset-3 flex w-full cursor-pointer items-center gap-4 rounded-xl border-3 border-transparent bg-white p-4 shadow-[0_16px_40px_rgba(143,160,193,0.14)] transition-all hover:border-purple-600 focus:border-purple-600 focus:ring-2 focus:ring-purple-100 focus:outline-none xl:p-6 dark:shadow-[0_16px_40px_rgba(49,62,81,0.14)] active:scale-95"
             @click="emit('select-quiz', quiz)">
             <div
               :class="subjectBgColors[quiz.title.toLowerCase()]"
