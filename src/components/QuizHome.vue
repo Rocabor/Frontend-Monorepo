@@ -30,7 +30,9 @@ const emit = defineEmits(['select-quiz']);
       </h1>
 
       <!--* Description -->
-      <p class="text-preset-2 text-gray-500 dark:text-blue-300">Pick a subject to get started.</p>
+      <p class="text-preset-2 text-gray-500 dark:text-blue-300">
+        Pick a subject to get started.
+      </p>
     </section>
 
     <!--* Subjects Container -->
@@ -59,7 +61,7 @@ const emit = defineEmits(['select-quiz']);
                 :src="getAssetUrl(quiz.icon)"
                 alt=""
                 class="size-6 object-contain md:size-10"
-                aria-hidden="true" />
+                aria-hidden="true">
             </div>
 
             <span :id="'desc-' + quiz.title.toLowerCase()">

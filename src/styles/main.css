@@ -90,4 +90,10 @@
   font-weight: 500;
   line-height: 1.2;
 }
+/* 88px - 144px */
+@utility text-preset-5 {
+  font-size: clamp(5.50rem, calc(2.160rem + 14.249vw), 9.00rem);
+  font-weight: 500;
+  line-height: 1;
+}
 
