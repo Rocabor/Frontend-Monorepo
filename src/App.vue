@@ -4,11 +4,26 @@ import { MyFooter } from '@packages/ui';
 import dataQuiz from './data/data.json';
 
 import QuizHome from './components/QuizHome.vue';
+import QuizQuestion from './components/QuizQuestion.vue';
 
 // Estado reactivo para controlar el modo oscuro
 // Comprueba si el usuario tiene activado el modo oscuro en su sistema (Windows/Mac/Android)
 const prefersDarkSystem = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const isDark = ref(prefersDarkSystem || true);
+
+// Estados del Flujo Global
+const currentQuiz = ref(null);
+const currentQuestionIndex = ref(0);
+const score = ref(0);
+const isQuizFinished = ref(false);
+
+// Mapeo de colores de fondo adaptativos para cada asignatura
+const subjectBgColors = {
+  html: 'bg-orange-50 ',
+  css: 'bg-green-100 ',
+  javascript: 'bg-blue-50 ',
+  accessibility: 'bg-purple-100 ',
+};
 
 // Función auxiliar para resolver la ruta estática de imágenes en Vite
 const getAssetUrl = (path) => {
@@ -17,12 +32,23 @@ const getAssetUrl = (path) => {
   return new URL(`./assets/images/${fileName}`, import.meta.url).href;
 };
 
-// Mapeo de colores de fondo adaptativos para cada asignatura
-const subjectBgColors = {
-  html: 'bg-orange-50 ',
-  css: 'bg-green-100 ',
-  javascript: 'bg-blue-50 ',
-  accessibility: 'bg-purple-100 ',
+// Acciones reactivas
+const handleSelectQuiz = (quiz) => {
+  currentQuiz.value = quiz;
+  currentQuestionIndex.value = 0;
+  score.value = 0;
+  isQuizFinished.value = false;
+};
+const handleAnswerSubmitted = (isCorrect) => {
+  if (isCorrect) score.value++;
+};
+
+const handleNextQuestion = () => {
+  if (currentQuestionIndex.value + 1 < currentQuiz.value.questions.length) {
+    currentQuestionIndex.value++;
+  } else {
+    isQuizFinished.value = true;
+  }
 };
 </script>
 
@@ -32,7 +58,26 @@ const subjectBgColors = {
     class="bg-quiz-app min-h-dvh bg-gray-50 px-6 text-blue-900 transition-colors duration-300 md:px-16 dark:bg-blue-900 dark:text-white">
     <header class="flex justify-between py-4 md:py-10 xl:mx-auto xl:w-290 xl:py-20.75">
       <!--* Subject List -->
-      <div class="h-10 w-41.75"></div>
+      <div
+        v-if="currentQuiz"
+        class="flex min-h-10 min-w-41.75 items-center gap-4">
+        <div
+          :class="subjectBgColors[currentQuiz.title.toLowerCase()]"
+          class="flex size-10 items-center justify-center rounded-sm p-2 transition-colors md:size-14">
+          <img
+            :src="getAssetUrl(currentQuiz.icon)"
+            alt=""
+            class="h-[25px] w-[21px] object-contain md:h-[35px] md:w-[30px]"
+            aria-hidden="true" />
+        </div>
+        <span class="text-preset-3 text-blue-950 dark:text-white">
+          {{ currentQuiz.title }}
+        </span>
+      </div>
+      <!--*  -->
+      <div
+        v-else
+        class="min-h-14 min-w-41.75" />
 
       <!--* Toggle Container -->
       <div class="flex items-center gap-2">
@@ -62,8 +107,17 @@ const subjectBgColors = {
     </header>
 
     <QuizHome
+      v-if="!currentQuiz"
       :quizzes="dataQuiz.quizzes"
       :subject-bg-colors="subjectBgColors"
-      :get-asset-url="getAssetUrl" />
+      :get-asset-url="getAssetUrl"
+      @select-quiz="handleSelectQuiz" />
+
+    <QuizQuestion
+      v-else-if="currentQuiz && !isQuizFinished"
+      :quiz="currentQuiz"
+      :current-question-index="currentQuestionIndex"
+      @answer-submitted="handleAnswerSubmitted"
+      @next-question="handleNextQuestion" />
   </div>
 </template>
