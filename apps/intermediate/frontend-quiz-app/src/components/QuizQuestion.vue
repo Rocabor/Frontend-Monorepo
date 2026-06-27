@@ -49,9 +49,9 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <main class="flex flex-col gap-10 mt-8 md:mt-[9px]  xl:mx-auto xl:w-290 xl:flex-row xl:mt-0.5 xl:gap-[128px] ">
+  <main class="flex flex-col gap-10 mt-8 md:mt-2.25  xl:mx-auto xl:w-290 xl:flex-row xl:mt-0.5 xl:gap-32 ">
     <!--*  -->
-    <section class="flex flex-col justify-between  xl:h-[472px] ">
+    <section class="flex flex-col justify-between  xl:h-118 ">
       <div class="flex flex-col gap-4">
         <p class="text-preset-2 text-gray-500 dark:text-blue-300">
           Question {{ currentQuestionIndex + 1 }} of {{ totalQuestions }}
@@ -69,13 +69,15 @@ const handleSubmit = () => {
         :aria-valuemax="totalQuestions">
         <div
           class="h-full rounded-full bg-purple-600 transition-all duration-300"
-          :style="{ width: progressPercentage + '%' }"></div>
+          :style="{ width: progressPercentage + '%' }" />
       </div>
     </section>
 
     <section class="flex  flex-col gap-4 md:gap-8 ">
-      <fieldset class=" flex flex-col gap-4 md:gap-6 xl:gap-4 border-none xl:w-[564px]">
-        <legend class="sr-only">Choose the correct option</legend>
+      <fieldset class=" flex flex-col gap-4 md:gap-6 xl:gap-4 border-none xl:w-141">
+        <legend class="sr-only">
+          Choose the correct option
+        </legend>
 
         <button
           v-for="(option, index) in currentQuestion.options"
@@ -104,7 +106,7 @@ const handleSubmit = () => {
                   ? 'bg-red-500! text-white!  dark:text-blue-850!'
                   : '',
               ]"
-              class="flex size-10 shrink-0 items-center justify-center rounded-[6px] transition-colors md:size-14">
+              class="flex size-10 shrink-0 items-center justify-center rounded-md transition-colors md:size-14">
               {{ letters[index] }}
             </div>
             <span class="text-preset-3 text-blue-950 dark:text-white">{{ option }}</span>
@@ -112,16 +114,16 @@ const handleSubmit = () => {
 
           <div
             v-if="isSubmitted"
-            class="shrink-0 pr-2">
+            class="shrink-0">
             <span
               v-if="option === currentQuestion.answer"
               class="">
-              <img src="../assets/images/icon-correct.svg" alt="" class="size-6 md:size-[30px]">
+              <img src="../assets/images/icon-correct.svg" alt="" class="size-6 md:size-7.5">
             </span>
             <span
               v-else-if="selectedOption === option"
               class="">
-              <img src="../assets/images/icon-incorrect.svg" alt="" class="size-6 md:size-[30px]">
+              <img src="../assets/images/icon-incorrect.svg" alt="" class="size-6 md:size-7.5">
             </span>
           </div>
         </button>
@@ -129,7 +131,7 @@ const handleSubmit = () => {
 
       <button
         type="button"
-        class="w-full cursor-pointer rounded-xl min-h-14 bg-purple-600 p-4 md:p-8 text-preset-3 text-white shadow-[0_16px_40px_rgba(143,160,193,0.14)] dark:shadow-[0_16px_40px_rgba(49,62,81,0.14)] transition-all hover:bg-[color-mix(in_srgb,var(--color-purple-600)_50%,white)] md:rounded-[24px] active:scale-95"
+        class="w-full cursor-pointer rounded-xl min-h-14 bg-purple-600 p-4 md:p-8 text-preset-3 text-white shadow-[0_16px_40px_rgba(143,160,193,0.14)] dark:shadow-[0_16px_40px_rgba(49,62,81,0.14)] transition-all hover:bg-[color-mix(in_srgb,var(--color-purple-600)_50%,white)] md:rounded-3xl active:scale-95"
         @click="handleSubmit">
         {{ isSubmitted ? 'Next Question' : 'Submit Answer' }}
       </button>
@@ -138,7 +140,7 @@ const handleSubmit = () => {
         v-if="showFeedbackError"
         role="alert"
         class="flex items-center justify-center gap-2 text-center text-[18px] font-medium md:text-[24px] md:font-normal md:leading-normal  text-red-500">
-        <span><img src="../assets/images/icon-error.svg" alt="" class="size-6 md:size-[30px]"></span>
+        <span><img src="../assets/images/icon-error.svg" alt="" class="size-6 md:size-7.5"></span>
         Please select an answer
       </p>
     </section>

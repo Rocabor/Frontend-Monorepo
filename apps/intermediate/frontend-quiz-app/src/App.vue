@@ -5,6 +5,7 @@ import dataQuiz from './data/data.json';
 
 import QuizHome from './components/QuizHome.vue';
 import QuizQuestion from './components/QuizQuestion.vue';
+import QuizScore from './components/QuizScore.vue';
 
 // Estado reactivo para controlar el modo oscuro
 // Comprueba si el usuario tiene activado el modo oscuro en su sistema (Windows/Mac/Android)
@@ -67,8 +68,8 @@ const handleNextQuestion = () => {
           <img
             :src="getAssetUrl(currentQuiz.icon)"
             alt=""
-            class="h-[25px] w-[21px] object-contain md:h-[35px] md:w-[30px]"
-            aria-hidden="true" />
+            class="h-6.25 w-5.25 object-contain md:h-8.75 md:w-7.5"
+            aria-hidden="true">
         </div>
         <span class="text-preset-3 text-blue-950 dark:text-white">
           {{ currentQuiz.title }}
@@ -85,7 +86,7 @@ const handleNextQuestion = () => {
           :src="isDark ? getAssetUrl('icon-sun-light.svg') : getAssetUrl('icon-sun-dark.svg')"
           alt=""
           class="size-4 md:size-6"
-          aria-hidden="true" />
+          aria-hidden="true">
 
         <button
           role="switch"
@@ -95,14 +96,14 @@ const handleNextQuestion = () => {
           @click="isDark = !isDark">
           <div
             :class="isDark ? 'translate-x-3 md:translate-x-5' : 'translate-x-0'"
-            class="size-3 rounded-full bg-white transition-transform duration-400 ease-in-out md:size-5"></div>
+            class="size-3 rounded-full bg-white transition-transform duration-400 ease-in-out md:size-5" />
         </button>
 
         <img
           :src="isDark ? getAssetUrl('icon-moon-light.svg') : getAssetUrl('icon-moon-dark.svg')"
           alt=""
           class="size-4 md:size-6"
-          aria-hidden="true" />
+          aria-hidden="true">
       </div>
     </header>
 
@@ -119,5 +120,13 @@ const handleNextQuestion = () => {
       :current-question-index="currentQuestionIndex"
       @answer-submitted="handleAnswerSubmitted"
       @next-question="handleNextQuestion" />
+
+    <QuizScore
+      v-else
+      :quiz="currentQuiz"
+      :score="score"
+      :subject-bg-colors="subjectBgColors"
+      :get-asset-url="getAssetUrl"
+      @restart="currentQuiz = null" />
   </div>
 </template>
