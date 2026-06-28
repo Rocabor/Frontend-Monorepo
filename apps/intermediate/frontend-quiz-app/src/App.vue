@@ -95,7 +95,7 @@ const handleNextQuestion = () => {
           class="flex h-5 w-8 cursor-pointer items-center rounded-full bg-purple-600 p-1 md:h-7 md:w-12"
           @click="isDark = !isDark">
           <div
-            :class="isDark ? 'translate-x-2 md:translate-x-4' : 'translate-x-0'"
+            :class="isDark ? 'translate-x-2.5 md:translate-x-4.5' : 'translate-x-0'"
             class="size-3 rounded-full bg-white transition-transform duration-400 ease-in-out md:size-5" />
         </button>
 
@@ -135,6 +135,6 @@ const handleNextQuestion = () => {
       font-family="Rubik"
       text-color-attribution="white dark:var(--color-blue-900)"
       text-color="var( --color-orange-500)"
-      class="mt-4 min-w-87.5 -translate-x-4" />
+      class="mt-6 min-w-88 -translate-x-4" />
   </div>
 </template>

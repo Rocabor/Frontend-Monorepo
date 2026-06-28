@@ -16,7 +16,6 @@ This is a solution to the [Frontend quiz app challenge on Frontend Mentor](https
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -38,83 +37,104 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://snipboard.io/jkUmFl.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+[![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)](https://rocabor.github.io/Frontend-Monorepo/intermediate/frontend-quiz-app/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Vue.js 3 with Composition API
+- Tailwind CSS
+- Vite for bundling
+- Swiper.js for carousel (if applicable)
+- Responsive design with md, xl breakpoints
+- System-based dark mode detection
+- Component architecture with QuizHome, QuizQuestion, QuizScore components
 
 ### What I learned
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
-To see how you can add code snippets, see below:
+Here are the key learnings from this frontend quiz application project:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+**Component Architecture:** Developed reusable component patterns (QuizHome, QuizQuestion, QuizScore) using Vue.js Composition API, implementing proper state management and props validation.
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+**Responsive Design:** Created fluid typography with Tailwind CSS using `clamp()` utilities, designed layouts for mobile, tablet, and desktop breakpoints using responsive classes.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+**Accessibility:** Implemented ARIA attributes for screen reader navigation, ensured keyboard accessibility with proper focus handling, and maintained semantic HTML structure.
+
+**Dark Mode:** Implemented system-based dark mode detection using `window.matchMedia('(prefers-color-scheme: dark)')` with responsive color schemes and smooth transitions.
+
+**State Management:** Managed complex quiz flow states including current quiz, question progress, score tracking, and completion status using Vue reactive variables.
+
+**Vite Integration:** Configured Vite for optimal development experience with module federation support and static asset optimization.
+
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Areas for continued development and refinement:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- **Performance Optimization:** Implement lazy loading for quiz images, code splitting for components, and optimize re-renders using Vue's optimized reactivity system.
+
+- **Accessibility Enhancement:** Further improve keyboard navigation, add screen reader announcements for quiz feedback, and ensure color contrast meets WCAG AA standards.
+
+- **Advanced Reactivity:** Explore Vue 3's new reactivity features, particularly `EffectScope` and `Watchable` utilities for more granular state management.
+
+- **Testing Strategy:** Implement comprehensive unit and integration tests using Vue Test Utils, establishing test coverage for all quiz components and edge cases.
+
+- **Type Safety:** Add TypeScript types for all props, emits, and component interfaces to improve developer experience and catch errors early.
+
+- **Animation Library:** Integrate a lightweight animation library (like Animate.css) for smoother transitions between quiz states and question progress.
+
+- **Error Handling:** Implement robust error boundaries and user-friendly error messages for API failures or invalid quiz data.
+
+
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+The following resources were invaluable during this project's development:
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- **Vite Documentation** ([vitejs.dev](https://vitejs.dev/)) - Provided comprehensive guidance on modern frontend tooling, module federation, and optimized development workflows for Vue.js applications.
+
+- **Tailwind CSS Documentation** ([tailwindui.com/docs](https://tailwindcss.com/docs)) - Offered detailed documentation on utility-first CSS framework implementation, responsive design patterns, and responsive breakpoint utilities.
+
+- **Vue.js Composition API Guide** ([vuejs.org/guide/reactivity.html](https://vuejs.org/guide/reactivity.html)) - Provided thorough understanding of reactive state management, component composition, and custom hook patterns for complex applications.
+
+- **MDN Web Docs for Accessibility** ([developer.mozilla.org](https://developer.mozilla.org/)) - Delivered detailed guidance on ARIA attributes, keyboard navigation, and semantic HTML5 implementation for inclusive web applications.
+
+- **CSS-Tricks Flexbox Guide** ([css-tricks.com/flexbox](https://css-tricks.com/flexbox/)) - Explained complex flexbox layout concepts and responsive design strategies used extensively throughout the quiz interface.
+
+- **Frontend Mentor Challenges** ([frontendmentor.io](https://www.frontendmentor.io/)) - Provided structured project requirements, responsive design challenges, and community solutions that inspired various implementation approaches.
+
+
+
+## AI Collaboration
+
+During development of this comprehensive quiz application, I collaborated extensively with AI systems to:
+
+- **Learn and implement advanced Vue.js patterns:** AI guided me through Vue.js 3 Composition API best practices, reactive state management, and component composition techniques for complex quiz applications.
+
+- **Design and optimize responsive layouts:** AI assisted in creating responsive designs using Tailwind CSS utilities, implementing fluid typography with `clamp()`, and developing mobile-first breakpoints for quiz components.
+
+- **Implement system-based features:** AI helped integrate sophisticated features like system-based dark mode detection, responsive image handling, and performance optimization strategies.
+
+- **Enhance accessibility:** AI provided guidance on ARIA implementation, keyboard navigation, and semantic HTML structuring to ensure an inclusive user experience.
+
+- **Develop component architecture:** AI helped design and refine component patterns (QuizHome, QuizQuestion, QuizScore) following Vue.js best practices and clean code principles.
+
+- **Iterative refinement:** AI provided feedback on code quality, suggested improvements for performance and maintainability, and helped debug complex state management scenarios.
+
+This collaboration accelerated development while ensuring the final application adheres to modern web development best practices.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@Rocabor](https://www.frontendmentor.io/profile/Rocabor)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills.
