@@ -56,7 +56,7 @@ const handleNextQuestion = () => {
 <template>
   <div
     :class="{ dark: isDark }"
-    class="bg-quiz-app min-h-dvh bg-gray-50 px-6 text-blue-900 transition-colors duration-300 md:px-16 dark:bg-blue-900 dark:text-white">
+    class="bg-quiz-app min-h-dvh overflow-x-visible bg-gray-50 px-6 text-blue-900 transition-colors duration-300 md:px-16 dark:bg-blue-900 dark:text-white">
     <header class="flex justify-between py-4 md:py-10 xl:mx-auto xl:w-290 xl:py-20.75">
       <!--* Subject List -->
       <div
@@ -95,7 +95,7 @@ const handleNextQuestion = () => {
           class="flex h-5 w-8 cursor-pointer items-center rounded-full bg-purple-600 p-1 md:h-7 md:w-12"
           @click="isDark = !isDark">
           <div
-            :class="isDark ? 'translate-x-3 md:translate-x-5' : 'translate-x-0'"
+            :class="isDark ? 'translate-x-2 md:translate-x-4' : 'translate-x-0'"
             class="size-3 rounded-full bg-white transition-transform duration-400 ease-in-out md:size-5" />
         </button>
 
@@ -128,5 +128,13 @@ const handleNextQuestion = () => {
       :subject-bg-colors="subjectBgColors"
       :get-asset-url="getAssetUrl"
       @restart="currentQuiz = null" />
+
+    <MyFooter
+      bg-color="transparent"
+      position="reative"
+      font-family="Rubik"
+      text-color-attribution="white dark:var(--color-blue-900)"
+      text-color="var( --color-orange-500)"
+      class="mt-4 min-w-87.5 -translate-x-4" />
   </div>
 </template>
