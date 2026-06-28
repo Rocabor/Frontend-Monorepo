@@ -83,7 +83,7 @@ const handleSubmit = () => {
           v-for="(option, index) in currentQuestion.options"
           :key="option"
           type="button"
-          class="dark:bg-blue-850 group text-preset-3 flex w-full cursor-pointer items-center justify-between rounded-xl md:rounded-3xl bg-white p-4 xl:p-6 text-left shadow-[0_16px_40px_rgba(143,160,193,0.14)] transition-all focus:outline-none border-3 border-transparent focus:border-purple-600  hover:border-purple-600  disabled:cursor-not-allowed dark:shadow-[0_16px_40px_rgba(49,62,81,0.14)] active:scale-95"
+          class="dark:bg-blue-850 group text-preset-3 flex w-full cursor-pointer items-center justify-between rounded-xl md:rounded-3xl bg-white p-4 xl:p-6 text-left shadow-[0_16px_40px_rgba(143,160,193,0.14)] transition-all   disabled:cursor-not-allowed dark:shadow-[0_16px_40px_rgba(49,62,81,0.14)] active:scale-95"
           :class="[
             selectedOption === option
               ? ' border-purple-600 '
