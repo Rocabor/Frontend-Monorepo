@@ -37,11 +37,13 @@ Users should be able to:
 
 ### Challenge Requirements Checklist
 
-To help reviewers quickly verify the expected behavior, here is the implementation status of the requirements:
+### Challenge Requirements Checklist
 
-- [x] **Keyboard navigation:** *Implemented.* The entire application can be fully navigated using only the keyboard.
-- [x] **Error message on submit without selection:** *Implemented with alert element.* A clear warning element is triggered dynamically if a user tries to submit without a selection.
-- [x] **Dark mode:** *System-based only.* The theme matches and responds automatically to the user's operating system preferences.
+To help reviewers quickly verify the expected behavior, here is the implementation status of the requirements linked to their technical implementation:
+
+- [x] **Keyboard navigation:** *Implemented* – see focus handling and global key handlers.
+- [x] **Error message on submit without selection:** *Implemented* – see `src/components/QuizQuestion.vue` (`role="alert"` element).
+- [x] **Dark mode:** *System-based only.* The theme matches and responds automatically to the user's operating system preferences via `matchMedia`.
 - [x] **Core Game Flow:** Fully functional quiz subject selection, 4-option question states, correct/incorrect visual validation, score screen, and play again loop.
 - [x] **Responsive Layout & States:** Optimal viewing experience across mobile, tablet, and desktop viewports, with distinct interactive hover/focus states.
 
