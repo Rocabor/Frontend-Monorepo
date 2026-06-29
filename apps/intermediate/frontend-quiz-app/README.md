@@ -51,14 +51,11 @@ Users should be able to:
 - Vue.js 3 with Composition API
 - Tailwind CSS
 - Vite for bundling
-- Swiper.js for carousel (if applicable)
 - Responsive design with md, xl breakpoints
 - System-based dark mode detection
 - Component architecture with QuizHome, QuizQuestion, QuizScore components
 
 ### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 Here are the key learnings from this frontend quiz application project:
 
@@ -99,17 +96,15 @@ Areas for continued development and refinement:
 
 The following resources were invaluable during this project's development:
 
-- **Vite Documentation** ([vitejs.dev](https://vitejs.dev/)) - Provided comprehensive guidance on modern frontend tooling, module federation, and optimized development workflows for Vue.js applications.
+- **Vite Documentation** - Provided comprehensive guidance on modern frontend tooling, module federation, and optimized development workflows for Vue.js applications.
 
-- **Tailwind CSS Documentation** ([tailwindui.com/docs](https://tailwindcss.com/docs)) - Offered detailed documentation on utility-first CSS framework implementation, responsive design patterns, and responsive breakpoint utilities.
+- **Tailwind CSS Documentation** - Offered detailed documentation on utility-first CSS framework implementation, responsive design patterns, and responsive breakpoint utilities.
 
-- **Vue.js Composition API Guide** ([vuejs.org/guide/reactivity.html](https://vuejs.org/guide/reactivity.html)) - Provided thorough understanding of reactive state management, component composition, and custom hook patterns for complex applications.
+- **Vue.js Composition API Guide** - Provided thorough understanding of reactive state management, component composition, and custom hook patterns for complex applications.
 
-- **MDN Web Docs for Accessibility** ([developer.mozilla.org](https://developer.mozilla.org/)) - Delivered detailed guidance on ARIA attributes, keyboard navigation, and semantic HTML5 implementation for inclusive web applications.
+- **MDN Web Docs for Accessibility** - Delivered detailed guidance on ARIA attributes, keyboard navigation, and semantic HTML5 implementation for inclusive web applications.
 
-- **CSS-Tricks Flexbox Guide** ([css-tricks.com/flexbox](https://css-tricks.com/flexbox/)) - Explained complex flexbox layout concepts and responsive design strategies used extensively throughout the quiz interface.
-
-- **Frontend Mentor Challenges** ([frontendmentor.io](https://www.frontendmentor.io/)) - Provided structured project requirements, responsive design challenges, and community solutions that inspired various implementation approaches.
+- **CSS-Tricks Flexbox Guide** - Explained complex flexbox layout concepts and responsive design strategies used extensively throughout the quiz interface.
 
 
 
