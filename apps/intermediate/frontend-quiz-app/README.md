@@ -35,6 +35,16 @@ Users should be able to:
 - Navigate the entire app only using their keyboard
 - **Bonus**: Change the app's theme between light and dark
 
+### Challenge Requirements Checklist
+
+To help reviewers quickly verify the expected behavior, here is the implementation status of the requirements:
+
+- [x] **Keyboard navigation:** *Implemented.* The entire application can be fully navigated using only the keyboard.
+- [x] **Error message on submit without selection:** *Implemented with alert element.* A clear warning element is triggered dynamically if a user tries to submit without a selection.
+- [x] **Dark mode:** *System-based only.* The theme matches and responds automatically to the user's operating system preferences.
+- [x] **Core Game Flow:** Fully functional quiz subject selection, 4-option question states, correct/incorrect visual validation, score screen, and play again loop.
+- [x] **Responsive Layout & States:** Optimal viewing experience across mobile, tablet, and desktop viewports, with distinct interactive hover/focus states.
+
 ### Screenshot
 
 ![](https://snipboard.io/jkUmFl.jpg)
@@ -57,19 +67,47 @@ Users should be able to:
 
 ### What I learned
 
-Here are the key learnings from this frontend quiz application project:
+Here are the key learnings from this frontend quiz application project along with concrete examples of how tricky requirements were handled:
 
 **Component Architecture:** Developed reusable component patterns (QuizHome, QuizQuestion, QuizScore) using Vue.js Composition API, implementing proper state management and props validation.
 
 **Responsive Design:** Created fluid typography with Tailwind CSS using `clamp()` utilities, designed layouts for mobile, tablet, and desktop breakpoints using responsive classes.
 
-**Accessibility:** Implemented ARIA attributes for screen reader navigation, ensured keyboard accessibility with proper focus handling, and maintained semantic HTML structure.
+**Accessibility & Error Handling:** Implemented proper semantic HTML structure and ARIA attributes for accessible screen reader navigation. To ensure visually impaired users operating assistive technologies are immediately notified when a validation error occurs on submission, I used a combination of `role="alert"` and `aria-live="assertive"`:
 
-**Dark Mode:** Implemented system-based dark mode detection using `window.matchMedia('(prefers-color-scheme: dark)')` with responsive color schemes and smooth transitions.
+```html
+<div 
+  v-if="showError" 
+  id="error-message" 
+  role="alert" 
+  aria-live="assertive" 
+  class="flex items-center gap-2 text-red-500 mt-4 text-sm font-medium"
+>
+  <img src="./assets/images/icon-error.svg" alt="" aria-hidden="true" />
+  <span>Please select an answer</span>
+</div>
+```
 
-**State Management:** Managed complex quiz flow states including current quiz, question progress, score tracking, and completion status using Vue reactive variables.
+**Dark Mode Implementation:** Implemented system-based dark mode detection using JavaScript's native window.matchMedia('(prefers-color-scheme: dark)') utility. This allows the application to dynamically stay in sync with the user's system preferences without forcing manual toggling:
 
-**Vite Integration:** Configured Vite for optimal development experience with module federation support and static asset optimization.
+```Javascript
+// Inside the component lifecycle/setup or a dedicated composable:
+const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+const checkTheme = (e) => {
+  if (e.matches) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+};
+
+// Check initial preference state
+checkTheme(userPrefersDark);
+
+// Listen in real-time for system preference changes
+userPrefersDark.addEventListener('change', checkTheme);
+```
 
 
 ### Continued development
@@ -90,6 +128,9 @@ Areas for continued development and refinement:
 
 - **Error Handling:** Implement robust error boundaries and user-friendly error messages for API failures or invalid quiz data.
 
+**State Management:** Managed complex quiz flow states including current quiz, question progress, score tracking, and completion status using Vue reactive variables.
+
+**Vite Integration:** Configured Vite for optimal development experience with module federation support and static asset optimization.
 
 
 ### Useful resources
