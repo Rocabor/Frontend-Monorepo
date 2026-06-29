@@ -131,7 +131,7 @@ const handleNextQuestion = () => {
 
     <MyFooter
       bg-color="transparent"
-      position="reative"
+      position="relative"
       font-family="Rubik"
       text-color-attribution="white dark:var(--color-blue-900)"
       text-color="var( --color-orange-500)"
