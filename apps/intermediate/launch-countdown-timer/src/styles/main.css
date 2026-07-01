@@ -14,15 +14,16 @@ body {
   background-size: 250%, auto, auto;
   min-height: 100dvh;
   color: white;
+  @variant md {
+    background-position:
+      left bottom,
+      top,
+      center;
+    background-size: contain, auto, auto;
+  }
 }
 
 @theme {
-  --color-lavender-300: hsl(237, 18%, 59%);
-  --color-pink-100: hsl(345, 95%, 68%);
-
-  --color-slate-700: hsl(236, 21%, 26%);
-  --color-slate-800: hsl(235, 16%, 14%);
-  --color-slate-900: hsl(234, 17%, 12%);
 }
 
 @utility text-preset-1 {
