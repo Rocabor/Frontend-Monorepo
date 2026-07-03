@@ -1,7 +1,7 @@
 <script setup>
-import { MyFooter } from '@packages/ui';
+import CountdownTimer from './components/CountdownTimer.vue'
 </script>
 
 <template>
-  <MyFooter hidden />
+  <CountdownTimer />
 </template>
