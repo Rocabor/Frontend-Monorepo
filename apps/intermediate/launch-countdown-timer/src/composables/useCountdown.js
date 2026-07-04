@@ -15,18 +15,12 @@ export function useCountdown(configRef = ref({ days: 14, hours: 0, minutes: 0, s
     if (interval) clearInterval(interval)
 
     const now = new Date()
-    const config = configRef.value || configRef
-    
-    // Sumamos la configuración actual a partir de la hora de inicio (ahora)
-    const d = Number(config.days ?? 14)
-    const h = Number(config.hours ?? 0)
-    const m = Number(config.minutes ?? 0)
-    const s = Number(config.seconds ?? 0)
+    const { days: d = 14, hours: h = 0, minutes: m = 0, seconds: s = 0 } = configRef.value || configRef
 
-    now.setDate(now.getDate() + d)
-    now.setHours(now.getHours() + h)
-    now.setMinutes(now.getMinutes() + m)
-    now.setSeconds(now.getSeconds() + s)
+    now.setDate(now.getDate() + Number(d))
+    now.setHours(now.getHours() + Number(h))
+    now.setMinutes(now.getMinutes() + Number(m))
+    now.setSeconds(now.getSeconds() + Number(s))
 
     target.value = now
     isFinished.value = false

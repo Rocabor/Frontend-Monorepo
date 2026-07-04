@@ -5,52 +5,32 @@ import FlipCard from './FlipCard.vue'
 
 const isSettingsOpen = ref(false)
 
-// Configuración activa que lee useCountdown
-const config = ref({
-  days: 15,
-  hours: 0,
-  minutes: 0,
-  seconds: 0
-})
+const DEFAULT_CONFIG = { days: 15, hours: 0, minutes: 0, seconds: 0 }
 
-// Configuración temporal para el formulario (evita reinicios instantáneos mientras se escribe)
-const tempConfig = ref({
-  days: 15,
-  hours: 0,
-  minutes: 0,
-  seconds: 0
-})
+const config = ref({ ...DEFAULT_CONFIG })
+const tempConfig = ref({ ...DEFAULT_CONFIG })
 
 const { days, hours, minutes, seconds, isFinished } = useCountdown(config)
 
 const toggleSettings = () => {
   if (!isSettingsOpen.value) {
-    // Sincronizar temporal con la config real al abrir
     tempConfig.value = { ...config.value }
   }
   isSettingsOpen.value = !isSettingsOpen.value
 }
 
-const closeSettings = () => {
-  isSettingsOpen.value = false
-}
-
 const applySettings = () => {
-  // Aseguramos que los valores sean números enteros positivos o cero
   config.value = {
     days: Math.max(0, Math.floor(tempConfig.value.days || 0)),
     hours: Math.max(0, Math.floor(tempConfig.value.hours || 0)),
     minutes: Math.max(0, Math.floor(tempConfig.value.minutes || 0)),
     seconds: Math.max(0, Math.floor(tempConfig.value.seconds || 0))
   }
-  closeSettings()
+  isSettingsOpen.value = false
 }
 
-// Cierra el menú al presionar la tecla Escape (mejorando la accesibilidad)
 const handleKeyDown = (e) => {
-  if (e.key === 'Escape') {
-    closeSettings()
-  }
+  if (e.key === 'Escape') isSettingsOpen.value = false
 }
 
 onMounted(() => {
@@ -69,21 +49,19 @@ onUnmounted(() => {
       <button
         class="burger-btn"
         :class="{ 'is-active': isSettingsOpen }"
-        aria-label="Configurar tiempo de cuenta regresiva"
+        aria-label="Open countdown settings"
         :aria-expanded="isSettingsOpen"
         aria-controls="settings-dropdown"
         @click="toggleSettings">
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
+        <span class="burger-line" aria-hidden="true" />
+        <span class="burger-line" aria-hidden="true" />
+        <span class="burger-line" aria-hidden="true" />
       </button>
 
       <div
         v-if="isSettingsOpen"
         id="settings-dropdown"
-        class="settings-dropdown"
-        role="dialog"
-        aria-label="Panel de configuración">
+        class="settings-dropdown">
         <form
           class="settings-form"
           @submit.prevent="applySettings">
@@ -93,7 +71,7 @@ onUnmounted(() => {
               id="input-days"
               v-model.number="tempConfig.days"
               type="number"
-              min="0" />
+              min="0">
           </div>
           <div class="form-group">
             <label for="input-hours">Hours</label>
@@ -102,7 +80,7 @@ onUnmounted(() => {
               v-model.number="tempConfig.hours"
               type="number"
               min="0"
-              max="23" />
+              max="23">
           </div>
           <div class="form-group">
             <label for="input-minutes">Minutes</label>
@@ -111,7 +89,7 @@ onUnmounted(() => {
               v-model.number="tempConfig.minutes"
               type="number"
               min="0"
-              max="59" />
+              max="59">
           </div>
           <div class="form-group">
             <label for="input-seconds">Seconds</label>
@@ -120,7 +98,7 @@ onUnmounted(() => {
               v-model.number="tempConfig.seconds"
               type="number"
               min="0"
-              max="59" />
+              max="59">
           </div>
           <button
             type="submit"
@@ -131,11 +109,16 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <h1 class="title">We're launching soon</h1>
+    <h1 class="title">
+      We're launching soon
+    </h1>
 
     <div
       v-if="!isFinished"
-      class="cards">
+      class="cards"
+      role="timer"
+      aria-live="polite"
+      aria-label="Countdown">
       <FlipCard
         :value="days"
         label="Days" />
@@ -162,21 +145,21 @@ onUnmounted(() => {
         aria-label="Facebook">
         <img
           src="../assets/images/icon-facebook.svg"
-          alt="" />
+          alt="">
       </a>
       <a
         href="#"
         aria-label="Pinterest">
         <img
           src="../assets/images/icon-pinterest.svg"
-          alt="" />
+          alt="">
       </a>
       <a
         href="#"
         aria-label="Instagram">
         <img
           src="../assets/images/icon-instagram.svg"
-          alt="" />
+          alt="">
       </a>
     </div>
   </div>
@@ -190,11 +173,19 @@ onUnmounted(() => {
   min-height: 100dvh;
   /* El diseño original usa dos fondos: las estrellas y las montañas abajo */
   background:
-    url('../assets/images/pattern-hills.svg') no-repeat bottom center / 100% auto,
+    url('../assets/images/pattern-hills.svg') no-repeat bottom right / 971px 150px,
     url('../assets/images/bg-stars.svg') repeat center center,
     linear-gradient(to bottom, #1e1e28, #251d2c);
   padding: 130px 24px 0;
   box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  .countdown-container {
+    background:
+      url('../assets/images/pattern-hills.svg') no-repeat bottom right / 100% 150px,
+      url('../assets/images/bg-stars.svg') no-repeat top,
+      linear-gradient(to bottom, #1e1e28, #251d2c);
+  }
 }
 
 /* Estilos de Configuración (Hamburguesa & Dropdown) */
@@ -226,6 +217,12 @@ onUnmounted(() => {
   background-color: #8486a9;
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+
+.burger-btn:focus-visible {
+  outline: 2px solid #fb5e84;
+  outline-offset: 6px;
+  border-radius: 2px;
 }
 
 .burger-btn:hover .burger-line {
@@ -322,6 +319,11 @@ onUnmounted(() => {
   background-color: #d1496c;
 }
 
+.apply-btn:focus-visible {
+  outline: 2px solid #fb5e84;
+  outline-offset: 2px;
+}
+
 .title {
   font-family: 'Red Hat Text', sans-serif;
   font-size: clamp(14px, 4vw, 22px);
@@ -346,7 +348,7 @@ onUnmounted(() => {
 
 .launched-message h2 {
   font-family: 'Red Hat Text', sans-serif;
-  font-size: clamp(1.5rem, 6vw, 3.5rem);
+  font-size: clamp(1.88rem, calc(0.086rem + 7.634vw), 3.75rem);
   background: linear-gradient(to right, white, #f44336);
   background-clip: text;
   color: transparent;
@@ -368,6 +370,12 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease;
+}
+
+.social-icons a:focus-visible {
+  outline: 2px solid #fb5e84;
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 /* Color exacto de hover usando filtros CSS */

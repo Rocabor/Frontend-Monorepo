@@ -6,7 +6,8 @@ const props = defineProps({
   label: { type: String, required: true }
 })
 
-// Mantenemos tres estados para controlar el "pasado" y el "presente"
+const fmt = (n) => String(n).padStart(2, '0')
+
 const currentValue = ref(props.value)
 const previousValue = ref(props.value)
 const isFlipping = ref(false)
@@ -14,17 +15,14 @@ const isFlipping = ref(false)
 watch(() => props.value, async (newVal, oldVal) => {
   if (newVal === oldVal) return
   
-  // 1. Guardamos el valor viejo para las caras que se quedan estáticas o caen
   previousValue.value = oldVal
   currentValue.value = newVal
   
-  // 2. Reiniciamos la animación de forma segura
   isFlipping.value = false
   await nextTick()
   isFlipping.value = true
 })
 
-// Cuando la animación de la solapa termina, limpiamos el estado de volteo
 const handleAnimationEnd = () => {
   isFlipping.value = false
 }
@@ -34,26 +32,26 @@ const handleAnimationEnd = () => {
   <div class="flip-card">
     <div class="card">
       <div class="card-top">
-        <span class="number">{{ String(currentValue).padStart(2, '0') }}</span>
+        <span class="number">{{ fmt(currentValue) }}</span>
       </div>
       
       <div class="card-bottom">
-        <span class="number">{{ String(isFlipping ? previousValue : currentValue).padStart(2, '0') }}</span>
+        <span class="number">{{ fmt(isFlipping ? previousValue : currentValue) }}</span>
       </div>
 
       <template v-if="isFlipping">
         <div class="flip-top">
-          <span class="number">{{ String(previousValue).padStart(2, '0') }}</span>
+          <span class="number">{{ fmt(previousValue) }}</span>
         </div>
         
         <div class="flip-bottom" @animationend="handleAnimationEnd">
-          <span class="number">{{ String(currentValue).padStart(2, '0') }}</span>
+          <span class="number">{{ fmt(currentValue) }}</span>
         </div>
       </template>
 
-      <div class="divider" />
-      <div class="circle-left" />
-      <div class="circle-right" />
+      <div class="divider" aria-hidden="true" />
+      <div class="circle-left" aria-hidden="true" />
+      <div class="circle-right" aria-hidden="true" />
     </div>
     <span class="label">{{ label }}</span>
   </div>
@@ -89,13 +87,15 @@ const handleAnimationEnd = () => {
   backface-visibility: hidden;
 }
 
-.card-top {
+.card-top,
+.flip-top {
   top: 0;
   border-radius: 8px 8px 0 0;
   background: #2c2c44;
 }
 
-.card-bottom {
+.card-bottom,
+.flip-bottom {
   bottom: 0;
   border-radius: 0 0 8px 8px;
   background: #343650;
@@ -129,24 +129,16 @@ const handleAnimationEnd = () => {
 /* --- ANIMACIONES Y CAPAS (Z-INDEX) --- */
 
 .flip-top {
-  top: 0;
-  border-radius: 8px 8px 0 0;
-  background: #2c2c44;
   transform-origin: bottom center;
-  /* Se ejecuta en la primera mitad del segundo (0s a 0.15s) */
   animation: flipTop 0.15s linear forwards;
   z-index: 3;
 }
 
 .flip-bottom {
-  bottom: 0;
-  border-radius: 0 0 8px 8px;
-  background: #343650;
   transform-origin: top center;
   transform: rotateX(90deg);
-  /* Espera a que caiga la de arriba y luego se abre (0.15s a 0.3s) */
   animation: flipBottom 0.15s linear 0.15s forwards;
-  z-index: 4; /* Queda por encima de la mitad inferior estática */
+  z-index: 4;
 }
 
 @keyframes flipTop {
