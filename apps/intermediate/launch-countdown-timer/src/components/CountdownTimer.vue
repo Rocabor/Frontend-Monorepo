@@ -1,45 +1,45 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { useCountdown } from '../composables/useCountdown'
-import FlipCard from './FlipCard.vue'
+import { ref, onMounted, onUnmounted } from 'vue';
+import { useCountdown } from '../composables/useCountdown';
+import FlipCard from './FlipCard.vue';
 
-const isSettingsOpen = ref(false)
+const isSettingsOpen = ref(false);
 
-const DEFAULT_CONFIG = { days: 15, hours: 0, minutes: 0, seconds: 0 }
+const DEFAULT_CONFIG = { days: 15, hours: 0, minutes: 0, seconds: 0 };
 
-const config = ref({ ...DEFAULT_CONFIG })
-const tempConfig = ref({ ...DEFAULT_CONFIG })
+const config = ref({ ...DEFAULT_CONFIG });
+const tempConfig = ref({ ...DEFAULT_CONFIG });
 
-const { days, hours, minutes, seconds, isFinished } = useCountdown(config)
+const { days, hours, minutes, seconds, isFinished } = useCountdown(config);
 
 const toggleSettings = () => {
   if (!isSettingsOpen.value) {
-    tempConfig.value = { ...config.value }
+    tempConfig.value = { ...config.value };
   }
-  isSettingsOpen.value = !isSettingsOpen.value
-}
+  isSettingsOpen.value = !isSettingsOpen.value;
+};
 
 const applySettings = () => {
   config.value = {
     days: Math.max(0, Math.floor(tempConfig.value.days || 0)),
     hours: Math.max(0, Math.floor(tempConfig.value.hours || 0)),
     minutes: Math.max(0, Math.floor(tempConfig.value.minutes || 0)),
-    seconds: Math.max(0, Math.floor(tempConfig.value.seconds || 0))
-  }
-  isSettingsOpen.value = false
-}
+    seconds: Math.max(0, Math.floor(tempConfig.value.seconds || 0)),
+  };
+  isSettingsOpen.value = false;
+};
 
 const handleKeyDown = (e) => {
-  if (e.key === 'Escape') isSettingsOpen.value = false
-}
+  if (e.key === 'Escape') isSettingsOpen.value = false;
+};
 
 onMounted(() => {
-  window.addEventListener('keydown', handleKeyDown)
-})
+  window.addEventListener('keydown', handleKeyDown);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('keydown', handleKeyDown)
-})
+  window.removeEventListener('keydown', handleKeyDown);
+});
 </script>
 
 <template>
@@ -53,9 +53,15 @@ onUnmounted(() => {
         :aria-expanded="isSettingsOpen"
         aria-controls="settings-dropdown"
         @click="toggleSettings">
-        <span class="burger-line" aria-hidden="true" />
-        <span class="burger-line" aria-hidden="true" />
-        <span class="burger-line" aria-hidden="true" />
+        <span
+          class="burger-line"
+          aria-hidden="true" />
+        <span
+          class="burger-line"
+          aria-hidden="true" />
+        <span
+          class="burger-line"
+          aria-hidden="true" />
       </button>
 
       <div
@@ -71,7 +77,7 @@ onUnmounted(() => {
               id="input-days"
               v-model.number="tempConfig.days"
               type="number"
-              min="0">
+              min="0" />
           </div>
           <div class="form-group">
             <label for="input-hours">Hours</label>
@@ -80,7 +86,7 @@ onUnmounted(() => {
               v-model.number="tempConfig.hours"
               type="number"
               min="0"
-              max="23">
+              max="23" />
           </div>
           <div class="form-group">
             <label for="input-minutes">Minutes</label>
@@ -89,7 +95,7 @@ onUnmounted(() => {
               v-model.number="tempConfig.minutes"
               type="number"
               min="0"
-              max="59">
+              max="59" />
           </div>
           <div class="form-group">
             <label for="input-seconds">Seconds</label>
@@ -98,7 +104,7 @@ onUnmounted(() => {
               v-model.number="tempConfig.seconds"
               type="number"
               min="0"
-              max="59">
+              max="59" />
           </div>
           <button
             type="submit"
@@ -109,9 +115,7 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <h1 class="title">
-      We're launching soon
-    </h1>
+    <h1 class="title">We're launching soon</h1>
 
     <div
       v-if="!isFinished"
@@ -145,21 +149,21 @@ onUnmounted(() => {
         aria-label="Facebook">
         <img
           src="../assets/images/icon-facebook.svg"
-          alt="">
+          alt="" />
       </a>
       <a
         href="#"
         aria-label="Pinterest">
         <img
           src="../assets/images/icon-pinterest.svg"
-          alt="">
+          alt="" />
       </a>
       <a
         href="#"
         aria-label="Instagram">
         <img
           src="../assets/images/icon-instagram.svg"
-          alt="">
+          alt="" />
       </a>
     </div>
   </div>
@@ -183,7 +187,7 @@ onUnmounted(() => {
   .countdown-container {
     background:
       url('../assets/images/pattern-hills.svg') no-repeat bottom right / 100% 150px,
-      url('../assets/images/bg-stars.svg') no-repeat top,
+      url('../assets/images/bg-stars.svg') repeat top,
       linear-gradient(to bottom, #1e1e28, #251d2c);
   }
 }
@@ -207,7 +211,6 @@ onUnmounted(() => {
   height: 18px;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 .burger-line {
@@ -338,7 +341,7 @@ onUnmounted(() => {
 
 .cards {
   display: flex;
-  gap: clamp(12px, 3vw, 32px); /* Espaciado adaptativo entre tarjetas */
+  gap: clamp(12px, 3vw, 32px); 
   margin-top: 100px;
 }
 
@@ -353,16 +356,14 @@ onUnmounted(() => {
   background-clip: text;
   color: transparent;
   font-weight: 700;
-
-  
 }
 
 .social-icons {
   display: flex;
   gap: 32px;
   margin-top: auto;
-  padding-bottom: 48px;
-  z-index: 10; /* Asegura que quede por encima del fondo de las montañas */
+  margin-bottom: 48px;
+  z-index: 10;
 }
 
 .social-icons a {
@@ -382,7 +383,7 @@ onUnmounted(() => {
 .social-icons a:hover {
   transform: scale(1.4) rotate(30deg);
   filter: invert(53%) sepia(24%) saturate(4646%) hue-rotate(315deg) brightness(101%) contrast(98%)
-    drop-shadow(0px 0px 5px #fb5e84);
+    drop-shadow(0px 0px 10px #fb5e84);
 }
 .social-icons img {
   width: 24px;

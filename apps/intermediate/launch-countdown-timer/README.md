@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://snipboard.io/x5LCuy.jpg)
 
 
 
@@ -44,58 +44,70 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+- CSS Flexbox
+- CSS custom properties and `clamp()` for fluid typography
+- CSS 3D transforms and `@keyframes` animations
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [Vue 3](https://vuejs.org/) — Composition API with `<script setup>`
+- [Vite](https://vitejs.dev/) — Build tool
+- Accessible ARIA patterns (`aria-expanded`, `aria-controls`, `aria-live`, `role="timer"`)
 
 
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This project reinforced several important concepts:
 
-To see how you can add code snippets, see below:
+**Reactive state management with Vue 3 Composables**
+Creating the `useCountdown` composable taught me how to encapsulate timer logic in a reusable, reactive way. Passing a `ref` with `{ days, hours, minutes, seconds }` and using `watch` with `immediate: true` allowed the countdown to react instantly to configuration changes without polling.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+**The `Math.ceil` vs `Math.floor` subtlety in timers**
+I discovered that using `Math.floor` to calculate the remaining seconds caused a 1-second skip because the few milliseconds of execution time made `floor((target - now) / 1000)` round down immediately. Switching to `Math.ceil` at the diff level eliminated the visual jump.
+
+**CSS flip-card animation with 3D transforms**
+Building the flip animation required coordinating `rotateX`, `transform-origin`, `backface-visibility`, and staggered `@keyframes` — the top half folds down, then the bottom half unfolds, all within 300ms. Managing the `z-index` layers (static faces, flipping flaps, divider, decorative circles) was key to avoiding visual glitches.
+
+**Accessible configuration panel**
+Adding a hamburger button with `aria-expanded`, `aria-controls`, `aria-label`, `role="timer"`, and `aria-live="polite"` taught me how to make dynamic UI elements usable by screen readers.
+
+**Preventing premature timer resets**
+Using a `tempConfig` buffer that only syncs to the active `config` on "Apply" prevented the countdown from resetting on every keystroke inside the input fields.
 
 
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I'd like to explore:
+- **Web Workers** for the countdown interval to prevent background tab throttling
+- **LocalStorage persistence** so the countdown survives page refreshes
+- **Unit tests** for the `useCountdown` composable edge cases (very large durations, zero values, rapid re-configuration)
+- A **dark/light theme toggle** using CSS custom properties
+- Using the **VueUse** `useIntervalFn` composable as a more robust alternative to raw `setInterval`
 
 
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Vue 3 Composition API Docs](https://vuejs.org/guide/extras/composition-api-faq) — The official guide for `ref`, `watch`, and composable patterns.
+- [CSS `clamp()`](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp) — Fluid typography and spacing without media queries.
+- [MDN `aria-expanded`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-expanded) — Reference for accessible disclosure patterns.
+- [CSS-Tricks: 3D Card Flip](https://css-tricks.com/useful-uses-of-css-3d-transforms/) — Practical examples of `rotateX`, `backface-visibility`, and `perspective`.
 
 
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+I used **Claude (opencode.ai)** as a coding assistant throughout this project.
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
+**How I used it:**
+- **Debugging the 1-second timer jump** — Claude helped identify that `Math.floor` on the millisecond diff was losing the first tick, and proposed `Math.ceil` as the fix.
+- **Accessibility audit** — Claude reviewed the template for ARIA compliance and suggested `role="timer"`, `aria-live="polite"`, and `aria-hidden` on decorative elements.
+- **Code simplification** — After implementation, Claude identified redundant patterns (duplicated `padStart` calls, repeated default objects, CSS selector duplication) and helped consolidate them.
+- **CSS flip-card animation** — Claude helped structure the staggered `@keyframes` animation with correct `z-index` layering.
+
+**What worked well:** The conversational debugging — being able to describe the visual bug ("shows 10 then jumps to 8") and have Claude trace through the execution to find the `Math.floor` root cause was very efficient.
+
+**What I'd do differently:** For larger projects, I'd want to establish coding conventions upfront (naming, file structure) so the AI-generated code is more consistent from the start.
 
 
 
