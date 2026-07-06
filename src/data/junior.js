@@ -132,4 +132,11 @@ export const juniorProjects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
     difficulty: 'Junior',
   },
+  {
+    href: './apps/junior/advice-generator-app/',
+    image: 'images/advice-generator-app.jpg',
+    title: 'advice generator app',
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
+    difficulty: 'Junior',
+  },
 ];
