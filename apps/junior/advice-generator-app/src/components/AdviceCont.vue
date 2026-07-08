@@ -4,16 +4,31 @@ import Dice3D from './Dice3D.vue';
 
 // Variables reactivas
 const adviceId = ref(null);
-const adviceText = ref('Loading advice...'); 
-const textOriginalIngles = ref(''); 
-const idiomaActual = ref('en'); 
-const menuAbierto = ref(false); 
+const adviceText = ref('Loading advice...');
+const textOriginalIngles = ref('');
+const idiomaActual = ref('en');
+const menuAbierto = ref(false);
 
 // Textos fijos de la interfaz
 const textosInterfaz = {
-  en: { titulo: 'ADVICE', cargando: 'Loading advice...', error: 'Could not load advice. Please try again.', botonAlt: 'Generate new advice' },
-  es: { titulo: 'CONSEJO', cargando: 'Cargando consejo...', error: 'No se pudo cargar el consejo. Por favor, intenta de nuevo.', botonAlt: 'Generar nuevo consejo' },
-  fr: { titulo: 'CONSEIL', cargando: 'Chargement du conseil...', error: 'Impossible de charger le conseil. Veuillez réessayer.', botonAlt: 'Générer un nouveau conseil' }
+  en: {
+    titulo: 'ADVICE',
+    cargando: 'Loading advice...',
+    error: 'Could not load advice. Please try again.',
+    botonAlt: 'Generate new advice',
+  },
+  es: {
+    titulo: 'CONSEJO',
+    cargando: 'Cargando consejo...',
+    error: 'No se pudo cargar el consejo. Por favor, intenta de nuevo.',
+    botonAlt: 'Generar nuevo consejo',
+  },
+  fr: {
+    titulo: 'CONSEIL',
+    cargando: 'Chargement du conseil...',
+    error: 'Impossible de charger le conseil. Veuillez réessayer.',
+    botonAlt: 'Générer un nouveau conseil',
+  },
 };
 
 const dadoRef = ref(null);
@@ -21,10 +36,10 @@ const dadoRef = ref(null);
 // Se encarga exclusivamente de traducir el texto guardado
 const traducirTexto = async (texto, idioma) => {
   if (idioma === 'en') return texto;
-  
+
   try {
     const resTraduccion = await fetch(
-      `https://api.mymemory.translated.net/get?q=${encodeURIComponent(texto)}&langpair=en|${idioma}`
+      `https://api.mymemory.translated.net/get?q=${encodeURIComponent(texto)}&langpair=en|${idioma}`,
     );
     const dataTraduccion = await resTraduccion.json();
     return dataTraduccion.responseData.translatedText;
@@ -45,13 +60,12 @@ const fetchAdvice = async () => {
   try {
     const response = await fetch(`https://api.adviceslip.com/advice?timestamp=${new Date().getTime()}`);
     const data = await response.json();
-    
+
     adviceId.value = data.slip.id;
-    textOriginalIngles.value = data.slip.advice; 
+    textOriginalIngles.value = data.slip.advice;
 
     // Traducimos el consejo recién obtenido al idioma activo
     adviceText.value = await traducirTexto(textOriginalIngles.value, idiomaActual.value);
-
   } catch (error) {
     console.error('Error en la petición principal:', error);
     adviceText.value = textosInterfaz[idiomaActual.value].error;
@@ -68,7 +82,7 @@ const fetchAdvice = async () => {
 const cambiarIdioma = async (codigoIdioma) => {
   idiomaActual.value = codigoIdioma;
   menuAbierto.value = false;
-  
+
   // Si ya tenemos un consejo cargado, lo traducimos directamente sin consultar de nuevo a Advice Slip
   if (textOriginalIngles.value) {
     adviceText.value = textosInterfaz[codigoIdioma].cargando;
@@ -83,53 +97,63 @@ onMounted(() => {
 
 <template>
   <main class="advCont relative">
-    <div class="absolute top-4 right-4 z-10 flex  gap-2 ">
-      <!-- ** -->
-       <span class="text-[12px] font-bold tracking-wider uppercase select-none" style="color: var(--color-blue-200);">
+    <!-- ** -->
+    <div
+      v-if="menuAbierto"
+      class="animate-fade-in absolute inset-0 z-10 rounded-[inherit] bg-slate-950/70 backdrop-blur-[4px] transition-all duration-300"
+      @click="menuAbierto = false" />
+      
+    <!-- ** -->
+    <div class="absolute top-4 right-4 z-10 flex gap-2">
+      <span
+        class="text-[12px] font-bold tracking-wider uppercase select-none"
+        style="color: var(--color-blue-200)">
         {{ idiomaActual }}
       </span>
 
-      <button 
+      <button
         type="button"
         aria-label="Seleccionar idioma"
-        class="btnHam flex flex-col justify-between w-6 h-4 cursor-pointer group"
-        @click="menuAbierto = !menuAbierto"
-      >
-        <span class="w-full h-0.5 bg-blue-200 transition-all duration-300 " :class="{'rotate-45 translate-y-1.5': menuAbierto}" />
-        <span class="w-full h-0.5 bg-blue-200 transition-all duration-300" :class="{'opacity-0': menuAbierto}" />
-        <span class="w-full h-0.5 bg-blue-200 transition-all duration-300" :class="{'-rotate-45 -translate-y-2': menuAbierto}" />
+        class="btnHam group flex h-4 w-6 cursor-pointer flex-col justify-between"
+        @click="menuAbierto = !menuAbierto">
+        <span
+          class="h-0.5 w-full bg-blue-200 transition-all duration-300"
+          :class="{ 'translate-y-1.5 rotate-45': menuAbierto }" />
+        <span
+          class="h-0.5 w-full bg-blue-200 transition-all duration-300"
+          :class="{ 'opacity-0': menuAbierto }" />
+        <span
+          class="h-0.5 w-full bg-blue-200 transition-all duration-300"
+          :class="{ '-translate-y-2 -rotate-45': menuAbierto }" />
       </button>
 
-      <div 
-        v-if="menuAbierto" 
-        class="absolute right-0 mt-6 w-24 bg-slate-800/70 rounded-md shadow-lg py-1 border border-blue-950 text-[14px]"
-      >
-        <button 
-          class="btnLang" 
-          :class="{'text-green-300! font-bold': idiomaActual === 'en'}"
-          @click="cambiarIdioma('en')"
-        >
-          English 
+      <div
+        v-if="menuAbierto"
+        class="absolute right-0 mt-6 w-24 rounded-md border border-blue-950 bg-slate-800 py-1 text-[14px] shadow-lg">
+        <button
+          class="btnLang"
+          :class="{ 'font-bold text-green-300!': idiomaActual === 'en' }"
+          @click="cambiarIdioma('en')">
+          English
         </button>
-        <button 
-          class="btnLang" 
-          :class="{'text-green-300! font-bold': idiomaActual === 'es'}"
-          @click="cambiarIdioma('es')"
-        >
-          Español 
+        <button
+          class="btnLang"
+          :class="{ 'font-bold text-green-300!': idiomaActual === 'es' }"
+          @click="cambiarIdioma('es')">
+          Español
         </button>
-        <button 
-          class="btnLang" 
-          :class="{'text-green-300! font-bold': idiomaActual === 'fr'}"
-          @click="cambiarIdioma('fr')"
-        >
-          Français 
+        <button
+          class="btnLang"
+          :class="{ 'font-bold text-green-300!': idiomaActual === 'fr' }"
+          @click="cambiarIdioma('fr')">
+          Français
         </button>
       </div>
     </div>
 
-    <div class="cont ">
-      <div class="flex flex-col justify-evenly min-h-40.5 gap-[clamp(16px,calc(8.366px+2.036vw),24px)] text-center ">
+    <!-- ** -->
+    <div class="cont">
+      <div class="flex min-h-40.5 flex-col justify-evenly gap-[clamp(16px,calc(8.366px+2.036vw),24px)] text-center">
         <h1 class="text-[13px] leading-[1.35] tracking-[4px] text-green-300">
           {{ textosInterfaz[idiomaActual].titulo }} #{{ adviceId || '...' }}
         </h1>
@@ -141,18 +165,17 @@ onMounted(() => {
       <picture>
         <source
           srcset="../assets/images/pattern-divider-desktop.svg"
-          media="(min-width:768px)">
+          media="(min-width:768px)" />
         <img
           src="../assets/images/pattern-divider-mobile.svg"
-          alt="divider">
+          alt="divider" />
       </picture>
 
       <button
         type="button"
         :aria-label="textosInterfaz[idiomaActual].botonAlt"
-        class="btnAdv flex size-16 cursor-pointer items-center justify-center rounded-full bg-green-300 active:scale-90 absolute bottom-0 translate-y-1/2"
-        @click="fetchAdvice"
-      >
+        class="btnAdv absolute bottom-0 flex size-16 translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-green-300 active:scale-90"
+        @click="fetchAdvice">
         <Dice3D ref="dadoRef" />
       </button>
     </div>
@@ -180,11 +203,12 @@ onMounted(() => {
   width: clamp(296px, calc(154.78px + 37.66vw), 444px);
 }
 
-.btnAdv:hover, .btnAdv:active {
+.btnAdv:hover,
+.btnAdv:active {
   box-shadow: 0px 0px 40px rgba(83, 255, 170, 1);
 }
 
-.btnLang{
+.btnLang {
   width: 100%;
   text-align: center;
   padding-block: 8px;
@@ -196,11 +220,13 @@ onMounted(() => {
 }
 
 .btnLang:hover {
-  color:var(--color-green-300);
+  color: var(--color-green-300);
   box-shadow: 0px 0px 3px rgba(83, 255, 170, 1);
 }
 
-.btnAdv:focus-visible, .btnLang:focus-visible, .btnHam:focus-visible{
+.btnAdv:focus-visible,
+.btnLang:focus-visible,
+.btnHam:focus-visible {
   outline: 3px solid rgba(83, 255, 170, 1);
   outline-offset: 4px;
 }
