@@ -5,5 +5,9 @@ import AdviceCont from './components/AdviceCont.vue';
 
 <template>
   <AdviceCont />
-  <MyFooter hidden />
+  <MyFooter
+    bg-color="current"
+    text-color="var(--color-blue-200)"
+    text-color-attribution="var(--color-green-300)"
+    font-family="Manrope,sans-serif" />
 </template>
