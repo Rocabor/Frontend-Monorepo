@@ -100,7 +100,7 @@ onMounted(() => {
     <!-- ** -->
     <div
       v-if="menuAbierto"
-      class="animate-fade-in absolute inset-0 z-10 rounded-[inherit] bg-slate-950/70 backdrop-blur-[4px] transition-all duration-300"
+      class="animate-fade-in absolute inset-0 z-10 rounded-[inherit] bg-slate-950/70 backdrop-blur-xs transition-all duration-300"
       @click="menuAbierto = false" />
       
     <!-- ** -->
@@ -113,7 +113,9 @@ onMounted(() => {
 
       <button
         type="button"
-        aria-label="Seleccionar idioma"
+        aria-label="Select language"
+        :aria-expanded="menuAbierto.toString()"
+        aria-haspopup="true"
         class="btnHam group flex h-4 w-6 cursor-pointer flex-col justify-between"
         @click="menuAbierto = !menuAbierto">
         <span
@@ -127,28 +129,34 @@ onMounted(() => {
           :class="{ '-translate-y-2 -rotate-45': menuAbierto }" />
       </button>
 
-      <div
+      <ul
         v-if="menuAbierto"
         class="absolute right-0 mt-6 w-24 rounded-md border border-blue-950 bg-slate-800 py-1 text-[14px] shadow-lg">
-        <button
-          class="btnLang"
-          :class="{ 'font-bold text-green-300!': idiomaActual === 'en' }"
-          @click="cambiarIdioma('en')">
-          English
-        </button>
-        <button
-          class="btnLang"
-          :class="{ 'font-bold text-green-300!': idiomaActual === 'es' }"
-          @click="cambiarIdioma('es')">
-          Español
-        </button>
-        <button
-          class="btnLang"
-          :class="{ 'font-bold text-green-300!': idiomaActual === 'fr' }"
-          @click="cambiarIdioma('fr')">
-          Français
-        </button>
-      </div>
+        <li>
+          <button
+            class="btnLang"
+            :class="{ 'font-bold text-green-300!': idiomaActual === 'en' }"
+            @click="cambiarIdioma('en')">
+            English
+          </button>
+        </li>
+        <li>
+          <button
+            class="btnLang"
+            :class="{ 'font-bold text-green-300!': idiomaActual === 'es' }"
+            @click="cambiarIdioma('es')">
+            Español
+          </button>
+        </li>
+        <li>
+          <button
+            class="btnLang"
+            :class="{ 'font-bold text-green-300!': idiomaActual === 'fr' }"
+            @click="cambiarIdioma('fr')">
+            Français
+          </button>
+        </li>
+      </ul>
     </div>
 
     <!-- ** -->
@@ -157,7 +165,7 @@ onMounted(() => {
         <h1 class="text-[13px] leading-[1.35] tracking-[4px] text-green-300">
           {{ textosInterfaz[idiomaActual].titulo }} #{{ adviceId || '...' }}
         </h1>
-        <p class="text-[clamp(1rem,calc(1.261rem+1.018vw),1.75rem)] leading-[1.35] tracking-[-0.3px]">
+        <p class="text-[clamp(1rem,calc(1.261rem+1.018vw),1.75rem)] leading-[1.35] tracking-[-0.3px]" aria-live="polite">
           “{{ adviceText }}”
         </p>
       </div>
@@ -165,10 +173,10 @@ onMounted(() => {
       <picture>
         <source
           srcset="../assets/images/pattern-divider-desktop.svg"
-          media="(min-width:768px)" />
+          media="(min-width:768px)">
         <img
           src="../assets/images/pattern-divider-mobile.svg"
-          alt="divider" />
+          alt="">
       </picture>
 
       <button
