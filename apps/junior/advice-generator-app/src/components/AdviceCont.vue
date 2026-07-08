@@ -30,11 +30,11 @@ onMounted(() => {
 
 <template>
   <!--* Advice Container -->
-  <main class="advCont">
+  <main class="advCont relative">
     <!-- *** -->
     <!--* Text and Button Container -->
-    <div class="cont relative">
-      <div class="flex flex-col min-h-[162px] gap-[clamp(16px,calc(8.366px+2.036vw),24px)] text-center ">
+    <div class="cont ">
+      <div class="flex flex-col  justify-evenly min-h-[162px] gap-[clamp(16px,calc(8.366px+2.036vw),24px)] text-center ">
         <h1 class="text-[13px] leading-[1.35] tracking-[4px] text-green-300">ADVICE #{{ adviceId || '...' }}</h1>
         <p class="text-[clamp(1rem,calc(1.261rem+1.018vw),1.75rem)] leading-[1.35] tracking-[-0.3px]">
           “{{ adviceText }}”
@@ -56,9 +56,9 @@ onMounted(() => {
         class="flex size-16 cursor-pointer items-center justify-center rounded-full bg-green-300 active:scale-90 absolute bottom-0 translate-y-1/2"
         @click="fetchAdvice">
         <img
-          src="../assets/images/icon-dice.svg"
+          src="../assets/images/icon-dice-3d.svg"
           alt=""
-          class="size-6" />
+          class="size-9" />
       </button>
     </div>
   </main>
@@ -71,9 +71,10 @@ onMounted(() => {
   background-color: var(--color-blue-900);
   border-radius: clamp(10px, calc(5.23px + 1.27vw), 15px);
   width: clamp(343px, calc(155.02px + 50.13vw), 540px);
-  height: clamp(314px, calc(296.82px + 4.58vw), 332px);
+  min-height: 314px;
   box-shadow: 30px 50px 80px rgba(0, 0, 0, 0.1002);
   padding-top: clamp(40px, 32.37px + 2.04vw, 48px);
+  padding-bottom: 64px;
 }
 
 .cont {
