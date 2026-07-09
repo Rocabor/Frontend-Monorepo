@@ -42,6 +42,6 @@ defineExpose({ iniciarGiro, detenerGiro });
       :src="obtenerRutaDado(caraActual)" 
       alt="Dice Face" 
       class="w-full h-full select-none pointer-events-none"
-    />
+    >
   </div>
 </template>

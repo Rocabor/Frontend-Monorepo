@@ -49,8 +49,16 @@ const traducirTexto = async (texto, idioma) => {
   }
 };
 
-// solo obtiene un consejo nuevo cuando tiras el dado
+// Variable de control local para evitar spam de llamadas
+const cargandoConsejo = ref(false);
+
 const fetchAdvice = async () => {
+  // Si ya hay una petición en curso, bloqueamos los clics adicionales
+  if (cargandoConsejo.value) return;
+
+  
+  // Activamos el estado de carga y hacemos girar el dado
+  cargandoConsejo.value = true;
   if (dadoRef.value) {
     dadoRef.value.iniciarGiro();
   }
@@ -70,11 +78,15 @@ const fetchAdvice = async () => {
     console.error('Error en la petición principal:', error);
     adviceText.value = textosInterfaz[idiomaActual.value].error;
   } finally {
-    // El bloque 'finally' se ejecuta SIEMPRE (termine bien o con error)
-    // Justo aquí paramos el dado en seco en el mismo render cycle
+    // 3. Quitamos el estado de carga y detenemos el dado de forma segura
     if (dadoRef.value) {
       dadoRef.value.detenerGiro();
     }
+
+    // Disparamos la explosión cuando la carga finaliza y el dado se detiene
+    window.dispatchEvent(new CustomEvent('explotar-particulas'));
+
+    cargandoConsejo.value = false;
   }
 };
 
