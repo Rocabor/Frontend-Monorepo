@@ -6,12 +6,12 @@ defineProps({
   coderName: { type: String, default: '@Rocabor' },
   year: { type: [String, Number], default: new Date().getFullYear() },
 
-  textColor: { type: String, default: '#000000' },
-  textColorAttribution: { type: String, default: '#000000' },
+  textColor: { type: String, default: 'inherit' },
+  textColorAttribution: { type: String, default: 'inherit' },
   hoverColor: { type: String, default: '#ff3e00' },
-  bgColor: { type: String, default: '#ffffff' },
+  bgColor: { type: String, default: 'transparent' },
   focusVisible: { type: String, default: '#ff3e00' },
-  fontFamily:{type: String, default: 'sans-serif'},
+  fontFamily:{type: String, default: 'inherit'},
   position:{type: String,default:'absolute'}
 })
 </script>

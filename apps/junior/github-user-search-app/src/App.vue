@@ -3,9 +3,5 @@ import { MyFooter } from '@packages/ui';
 </script>
 
 <template>
-  <main>
-    <h1>Github User Search App</h1>
-
-    <MyFooter />
-  </main>
+  <MyFooter class="tracking-[-0.7px]" />
 </template>
