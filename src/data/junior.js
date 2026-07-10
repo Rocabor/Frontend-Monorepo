@@ -139,4 +139,11 @@ export const juniorProjects = [
     technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
     difficulty: 'Junior',
   },
+  {
+    href: './apps/junior/github-user-search-app/',
+    image: 'images/github-user-search-app.jpg',
+    title: 'github user search app',
+    technologies: ['html', 'css', 'js', 'tailwind', 'vite', 'vuejs'],
+    difficulty: 'Junior',
+  },
 ];

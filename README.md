@@ -233,6 +233,7 @@ All projects have live demos, so you can see them running without any local setu
 | 18 | **Conference ticket generator** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/conference-ticket-generator/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/conference-ticket-generator) |
 | 19 | **Product list with cart** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/product-list-with-cart/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/product-list-with-cart) |
 | 20 | **Advice generator app** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/advice-generator-app/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/advice-generator-app) |
+| 21 | **GitHub user search app** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/junior/github-user-search-app/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/junior/github-user-search-app) |
 
 ---
 
