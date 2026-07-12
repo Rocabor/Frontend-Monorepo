@@ -1,9 +1,11 @@
 <script setup>
 import { MyFooter } from '@packages/ui';
-import ProfileCard from './components/ProfileCard.vue';
+import UserSearch from './components/UserSearch.vue';
 </script>
 
 <template>
-  <ProfileCard />
-  <MyFooter class="tracking-[-0.7px]" />
+  <UserSearch />
+  <MyFooter
+    class="tracking-[-0.7px]"
+    position="relative" />
 </template>

@@ -11,6 +11,14 @@
   --color-neutral-800: #1e2a47;
   --color-neutral-900: #141d2f;
   --color-red-500: #f74646;
+
+  --spacing-main-gap: clamp(32px, calc(24.366px + 2.036vw), 40px);  
+  --spacing-main-top: clamp(40px, calc(-62.857px + 13.393vw), 130px);  
+  --spacing-main-width: clamp(704px, calc(674.286px + 3.869vw), 730px);
+  --spacing-search-pl: clamp(12px, calc(0.55px + 3.053vw), 24px);
+  --spacing-profile: clamp(20px, calc(8.55px + 3.053vw), 32px);
+  --spacing-button-px: clamp(20px, calc(16.183px + 1.018vw), 24px);  
+  
 }
 
 body {
@@ -19,7 +27,6 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Space Mono',sans-serif;
-  /* justify-content: center; */
   min-height: 100vh;
   color: white;
 }
