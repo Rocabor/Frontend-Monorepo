@@ -18,6 +18,8 @@
   --spacing-search-pl: clamp(12px, calc(0.55px + 3.053vw), 24px);
   --spacing-profile: clamp(20px, calc(8.55px + 3.053vw), 32px);
   --spacing-button-px: clamp(20px, calc(16.183px + 1.018vw), 24px);  
+
+  --shadow-shadow-dark:0 16px 30px -10px rgba(70, 96, 187, 0.2);
   
 }
 
