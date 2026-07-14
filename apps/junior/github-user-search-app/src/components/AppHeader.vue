@@ -24,7 +24,8 @@ const onToggle = (event) => {
 
     <button
       type="button"
-      class="group flex cursor-pointer items-center gap-3 active:scale-95"
+      class="group flex cursor-pointer items-center gap-3 rounded-lg outline-none active:scale-95
+         focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1 focus-visible:ring-offset-transparent "
       @click="onToggle">
       <span class="text-[13px] text-neutral-500 dark:text-neutral-200 font-bold transition-colors duration-300 group-hover:text-neutral-700 dark:group-hover:text-neutral-0">{{ theme === 'dark' ? 'LIGHT' : 'DARK' }}</span>
       <span
