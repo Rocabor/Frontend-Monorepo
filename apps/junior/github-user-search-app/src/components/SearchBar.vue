@@ -24,7 +24,7 @@ const onSearch = () => {
   <!-- 1. Cambiado a etiqueta <form> para soporte nativo de teclado (Enter) -->
   <form
     role="search"
-    class="pl-search-pl flex justify-between rounded-2xl bg-neutral-800 py-2 pr-3 shadow-shadow-dark"
+    class="pl-search-pl flex justify-between rounded-2xl bg-neutral-0 dark:bg-neutral-800 py-2 pr-3 shadow-shadow-theme"
     @submit.prevent="onSearch">
     <div class="flex w-full items-center gap-3">
       <!-- 2. 'alt' vacío porque es un icono decorativo; el texto del input ya da contexto -->
@@ -45,13 +45,13 @@ const onSearch = () => {
         v-model="username"
         type="search"
         placeholder="Search GitHub username..."
-        class="w-full bg-transparent text-[13px] leading-[1.4] text-ellipsis outline-none" />
+        class="w-full bg-transparent text-[13px] leading-[1.4] text-ellipsis outline-none text-neutral-500 dark:text-white" />
     </div>
 
     <!-- 4. Cambiado a type="submit" para que procese el formulario nativamente -->
     <button
       type="submit"
-      class="px-button-px cursor-pointer rounded-[10px] bg-blue-500 py-3 text-[16px] leading-normal active:scale-95">
+      class="px-button-px cursor-pointer text-white rounded-[10px] bg-blue-500 hover:bg-blue-300 py-3 text-[16px] leading-normal active:scale-95">
       Search
     </button>
   </form>

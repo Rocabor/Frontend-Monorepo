@@ -12,7 +12,7 @@ defineProps({
   bgColor: { type: String, default: 'transparent' },
   focusVisible: { type: String, default: '#ff3e00' },
   fontFamily:{type: String, default: 'inherit'},
-  position:{type: String,default:'absolute'}
+  position:{type: String,default:'relative'}
 })
 </script>
 
@@ -41,7 +41,7 @@ defineProps({
   font-family: v-bind(fontFamily);
   font-size: clamp(0.75rem, calc(0.511rem + 1.018vw), 1.00rem);
   position: v-bind(position);
-  @apply inset-x-0 bottom-0 py-2 text-center;
+  @apply inset-x-0 bottom-0 pt-4 pb-2 text-center xl:absolute;
 }
 
 nav{

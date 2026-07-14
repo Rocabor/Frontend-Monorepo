@@ -1,8 +1,10 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-blue-300: #60abff;
   --color-blue-500: #0079ff;
+  --color-neutral-0: #ffffff;
   --color-neutral-100: #f6f8ff;
   --color-neutral-200: #90a4d4;
   --color-neutral-300: #697c9a;
@@ -11,24 +13,29 @@
   --color-neutral-800: #1e2a47;
   --color-neutral-900: #141d2f;
   --color-red-500: #f74646;
+  --color-icon: #141d2f;
 
-  --spacing-main-gap: clamp(32px, calc(24.366px + 2.036vw), 40px);  
-  --spacing-main-top: clamp(40px, calc(-62.857px + 13.393vw), 130px);  
+  --spacing-main-gap: clamp(32px, calc(24.366px + 2.036vw), 40px);
   --spacing-main-width: clamp(704px, calc(674.286px + 3.869vw), 730px);
   --spacing-search-pl: clamp(12px, calc(0.55px + 3.053vw), 24px);
   --spacing-profile: clamp(20px, calc(8.55px + 3.053vw), 32px);
-  --spacing-button-px: clamp(20px, calc(16.183px + 1.018vw), 24px);  
+  --spacing-button-px: clamp(20px, calc(16.183px + 1.018vw), 24px);
 
-  --shadow-shadow-dark:0 16px 30px -10px rgba(70, 96, 187, 0.2);
-  
+  --shadow-shadow-theme: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
 body {
   align-items: center;
-  background-color: var(--color-neutral-900);
+  justify-content: center;
+  background-color: var(--color-neutral-100);
   display: flex;
-  flex-direction: column;
-  font-family: 'Space Mono',sans-serif;
+  font-family: 'Space Mono', sans-serif;
   min-height: 100vh;
-  color: white;
+  color: var(--color-neutral-500);
+}
+
+.dark {
+  --color-neutral-100: #141d2f;
+  --color-icon: #ffffff;
+  --color-neutral-500:#90a4d4;
 }

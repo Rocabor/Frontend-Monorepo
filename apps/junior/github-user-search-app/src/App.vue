@@ -5,7 +5,5 @@ import UserSearch from './components/UserSearch.vue';
 
 <template>
   <UserSearch />
-  <MyFooter
-    class="tracking-[-0.7px]"
-    position="relative" />
+  <MyFooter class="tracking-[-0.7px]" />
 </template>
