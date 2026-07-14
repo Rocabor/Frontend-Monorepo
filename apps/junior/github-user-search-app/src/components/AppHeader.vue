@@ -18,7 +18,9 @@ const onToggle = (event) => {
 
 <template>
   <header class="flex justify-between">
-    <h1 class="text-[26px] font-bold text-neutral-900 dark:text-neutral-0">devfinder</h1>
+    <h1 class="text-[26px] font-bold text-neutral-900 dark:text-neutral-0">
+      devfinder
+    </h1>
 
     <button
       type="button"
@@ -26,7 +28,7 @@ const onToggle = (event) => {
       @click="onToggle">
       <span class="text-[13px] text-neutral-500 dark:text-neutral-200 font-bold transition-colors duration-300 group-hover:text-neutral-700 dark:group-hover:text-neutral-0">{{ theme === 'dark' ? 'LIGHT' : 'DARK' }}</span>
       <span
-        class="icon-mode group-hover:bg-neutral-700! dark:group-hover:bg-neutral-0! transition-all duration-300"
+        class="icon-mode transition-all duration-300"
         :class="[theme === 'dark' ? 'icon-sun' : 'icon-moon', { 'theme-spin': spinning }]" />
     </button>
   </header>
@@ -37,14 +39,14 @@ const onToggle = (event) => {
   width: 20px;
   height: 20px;
   display: inline-block;
-  background-color: var(--color-neutral-500);
-  transition: all 0.3s ease-in-out;
+  background-color: var(--color-mode-icon);
+  transition: background-color 0.3s ease-in-out;
   mask-repeat: no-repeat;
   mask-size: contain;
   mask-position: center;
 }
-.dark .icon-mode {
-  background-color: #90a4d4;
+.group:hover .icon-mode {
+  background-color: var(--color-mode-icon-hover);
 }
 .icon-sun {
   mask-image: url('../assets/images/icon-sun.svg');

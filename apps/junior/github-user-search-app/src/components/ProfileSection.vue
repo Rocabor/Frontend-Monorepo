@@ -1,7 +1,7 @@
 <script setup>
 import imgGithub from '../assets/images/github-octocat.svg';
 // Definimos la prop que viene del padre
-const props = defineProps({
+defineProps({
   user: {
     type: Object,
     default: null, // Por defecto no hay usuario
@@ -19,7 +19,7 @@ const props = defineProps({
     <h2 class="text-[22px] leading-[1.4] font-bold text-neutral-700 dark:text-neutral-0">
       No results found!
     </h2>
-    <p class="mt-4 text-center text-[15px] leading-[1.5] text-neutral-300 dark:text-neutral-200">
+    <p class="mt-4 text-center text-[15px] leading-normal text-neutral-300 dark:text-neutral-200">
       We couldn’t find any GitHub users matching your search. Please double-check the username and try again.
     </p>
   </div>
@@ -31,7 +31,7 @@ const props = defineProps({
       <img
         :src="user?.avatar_url || imgGithub"
         alt=""
-        class="size-[70px] rounded-full bg-white md:size-[117px]" />
+        class="size-17.5 rounded-full bg-white md:size-29.25">
 
       <div class="flex w-full flex-col gap-1 md:flex-row md:justify-between">
         <div class="flex flex-col gap-0.5">
@@ -47,10 +47,10 @@ const props = defineProps({
           {{
             user?.created_at
               ? new Date(user.created_at).toLocaleDateString('en-GB', {
-                  day: 'numeric',
-                  month: 'short',
-                  year: 'numeric',
-                })
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric',
+              })
               : '25 Jan 2011'
           }}
         </span>
@@ -106,7 +106,7 @@ const props = defineProps({
             aria-hidden="true" />
           <a
             v-if="user?.twitter_username"
-            :href="`https://x.com{user.twitter_username}`"
+            :href="`https://x.com/${user.twitter_username}`"
             target="_blank"
             rel="noopener noreferrer"
             class="truncate text-neutral-500 hover:underline dark:text-white">
@@ -164,10 +164,6 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
-.links {
-  display: flex;
-  gap: 16px;
 }
 .icon-links {
   width: 20px;

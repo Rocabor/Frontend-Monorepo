@@ -24,11 +24,13 @@
   --shadow-shadow-theme: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
+:root {
+  --color-mode-icon: #4b6a9b;
+  --color-mode-icon-hover: #2b3442;
+}
+
 body {
-  justify-content: center;
   background-color: var(--color-neutral-100);
-  display: flex;
-  flex-direction: column;
   font-family: 'Space Mono', sans-serif;
   min-height: 100vh;
   color: var(--color-neutral-500);
@@ -37,6 +39,8 @@ body {
 .dark {
   --color-neutral-100: #141d2f;
   --color-icon: #ffffff;
+  --color-mode-icon: #90a4d4;
+  --color-mode-icon-hover: #ffffff;
 }
 
 *,

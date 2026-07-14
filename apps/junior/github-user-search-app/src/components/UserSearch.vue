@@ -43,11 +43,17 @@ const toggleTheme = (event) => {
 const applyTheme = () => {
   // si theme es 'dark', agrega la clase; si no, la quita
   document.documentElement.classList.toggle('dark', theme.value === 'dark');
+  localStorage.setItem('theme', theme.value);
 };
 
 onMounted(() => {
-  const prefiereDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  theme.value = prefiereDark ? 'dark' : 'light';
+  const guardado = localStorage.getItem('theme');
+  if (guardado === 'light' || guardado === 'dark') {
+    theme.value = guardado;
+  } else {
+    const prefiereDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    theme.value = prefiereDark ? 'dark' : 'light';
+  }
   applyTheme();
 });
 
@@ -60,9 +66,8 @@ const handleSearch = async (username) => {
     const response = await fetch(`https://api.github.com/users/${username}`);
     if (!response.ok) throw new Error('Usuario no encontrado');
     currentUser.value = await response.json();
-  } catch (err) {
+  } catch {
     error.value = true;
-    console.error(err);
   } finally {
     isLoading.value = false;
   }
@@ -70,11 +75,11 @@ const handleSearch = async (username) => {
 </script>
 
 <template>
-  <div class="gap-main-gap md:min-w-main-width mx-auto mt-8 flex w-[343px] flex-col md:mt-10 xl:mt-0">
+  <div class="gap-main-gap md:min-w-main-width mx-auto mt-8 flex w-85.75 flex-col md:mt-10 xl:mt-0">
     <AppHeader
       :theme="theme"
       @toggle-theme="toggleTheme" />
-    <SearchBar :has-error="error" @search="handleSearch" />
+    <SearchBar :has-error="error" :is-loading="isLoading" @search="handleSearch" />
     <ProfileSection
       :user="currentUser"
       :has-error="error" />
