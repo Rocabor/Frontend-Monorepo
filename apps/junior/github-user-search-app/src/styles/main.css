@@ -37,5 +37,22 @@ body {
 .dark {
   --color-neutral-100: #141d2f;
   --color-icon: #ffffff;
-  --color-neutral-500:#90a4d4;
+}
+
+*,
+*::before,
+*::after {
+  transition: background-color 0.45s ease, color 0.45s ease, border-color 0.45s ease;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
 }

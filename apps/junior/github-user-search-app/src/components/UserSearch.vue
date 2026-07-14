@@ -8,9 +8,35 @@ const currentUser = ref(null);
 const isLoading = ref(false);
 
 const theme = ref('light')
-const toggleTheme = () => {
-  theme.value = theme.value === 'light' ? 'dark' : 'light'
-  applyTheme()
+const toggleTheme = (event) => {
+  // Coordenadas del click para que el círculo salga del botón
+  const x = event?.clientX ?? window.innerWidth / 2
+  const y = event?.clientY ?? window.innerHeight / 2
+
+  const apply = () => {
+    theme.value = theme.value === 'light' ? 'dark' : 'light'
+    applyTheme()
+  }
+
+  // Fallback: navegadores sin View Transitions usan el fundido de color
+  if (!document.startViewTransition) return apply()
+
+  const transition = document.startViewTransition(apply)
+  transition.ready.then(() => {
+    document.documentElement.animate(
+      {
+        clipPath: [
+          `circle(0px at ${x}px ${y}px)`,
+          `circle(${Math.hypot(window.innerWidth, window.innerHeight)}px at ${x}px ${y}px)`,
+        ],
+      },
+      {
+        duration: 600,
+        easing: 'cubic-bezier(0.4, 0.0, 0.2, 1)',
+        pseudoElement: '::view-transition-new(root)',
+      },
+    )
+  })
 }
 
 const applyTheme = () => {

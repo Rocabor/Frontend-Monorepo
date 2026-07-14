@@ -1,11 +1,19 @@
 <script setup>
+import { ref } from 'vue'
 defineProps({
   theme: {
     type: String,
     default: 'light',
   },
 });
-defineEmits(['toggle-theme']);
+const emit = defineEmits(['toggle-theme']);
+
+const spinning = ref(false)
+const onToggle = (event) => {
+  spinning.value = true
+  emit('toggle-theme', event)
+  setTimeout(() => (spinning.value = false), 350)
+}
 </script>
 
 <template>
@@ -15,9 +23,11 @@ defineEmits(['toggle-theme']);
     <button
       type="button"
       class="group flex cursor-pointer items-center gap-3 active:scale-95"
-      @click="$emit('toggle-theme')">
-      <span class="text-[13px] text-neutral-500 dark:text-neutral-200 font-bold transition-colors duration-300 group-hover:text-neutral-700 dark:group-hover:text-neutral-0">LIGHT</span>
-      <span class="icon-mode icon-sun group-hover:bg-neutral-700! dark:group-hover:bg-neutral-0!" />
+      @click="onToggle">
+      <span class="text-[13px] text-neutral-500 dark:text-neutral-200 font-bold transition-colors duration-300 group-hover:text-neutral-700 dark:group-hover:text-neutral-0">{{ theme === 'dark' ? 'LIGHT' : 'DARK' }}</span>
+      <span
+        class="icon-mode group-hover:bg-neutral-700! dark:group-hover:bg-neutral-0! transition-all duration-300"
+        :class="[theme === 'dark' ? 'icon-sun' : 'icon-moon', { 'theme-spin': spinning }]" />
     </button>
   </header>
 </template>
@@ -41,6 +51,14 @@ defineEmits(['toggle-theme']);
 }
 .icon-moon {
   mask-image: url('../assets/images/icon-moon.svg');
+}
+
+@keyframes theme-spin {
+  from { transform: rotate(-90deg); }
+  to   { transform: rotate(0deg); }
+}
+.theme-spin {
+  animation: theme-spin 0.35s ease;
 }
 
 </style>
