@@ -6,22 +6,23 @@ import { ref, onMounted } from 'vue';
 
 const currentUser = ref(null);
 const isLoading = ref(false);
+const error = ref(false);
 
-const theme = ref('light')
+const theme = ref('light');
 const toggleTheme = (event) => {
   // Coordenadas del click para que el círculo salga del botón
-  const x = event?.clientX ?? window.innerWidth / 2
-  const y = event?.clientY ?? window.innerHeight / 2
+  const x = event?.clientX ?? window.innerWidth / 2;
+  const y = event?.clientY ?? window.innerHeight / 2;
 
   const apply = () => {
-    theme.value = theme.value === 'light' ? 'dark' : 'light'
-    applyTheme()
-  }
+    theme.value = theme.value === 'light' ? 'dark' : 'light';
+    applyTheme();
+  };
 
   // Fallback: navegadores sin View Transitions usan el fundido de color
-  if (!document.startViewTransition) return apply()
+  if (!document.startViewTransition) return apply();
 
-  const transition = document.startViewTransition(apply)
+  const transition = document.startViewTransition(apply);
   transition.ready.then(() => {
     document.documentElement.animate(
       {
@@ -35,31 +36,33 @@ const toggleTheme = (event) => {
         easing: 'cubic-bezier(0.4, 0.0, 0.2, 1)',
         pseudoElement: '::view-transition-new(root)',
       },
-    )
-  })
-}
+    );
+  });
+};
 
 const applyTheme = () => {
   // si theme es 'dark', agrega la clase; si no, la quita
-  document.documentElement.classList.toggle('dark', theme.value === 'dark')
-}
+  document.documentElement.classList.toggle('dark', theme.value === 'dark');
+};
 
 onMounted(() => {
-  const prefiereDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-  theme.value = prefiereDark ? 'dark' : 'light'
-  applyTheme() 
-})
+  const prefiereDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  theme.value = prefiereDark ? 'dark' : 'light';
+  applyTheme();
+});
 
 const handleSearch = async (username) => {
-  if (!username) return
-  isLoading.value = true
-  currentUser.value = null
+  if (!username) return;
+  isLoading.value = true;
+  currentUser.value = null;
+  error.value = false;
   try {
     const response = await fetch(`https://api.github.com/users/${username}`);
     if (!response.ok) throw new Error('Usuario no encontrado');
     currentUser.value = await response.json();
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    error.value = true;
+    console.error(err);
   } finally {
     isLoading.value = false;
   }
@@ -67,9 +70,13 @@ const handleSearch = async (username) => {
 </script>
 
 <template>
-  <div class="gap-main-gap md:mt-10 xl:mt-0 md:min-w-main-width mt-8 flex mx-auto w-[343px] flex-col ">
-    <AppHeader :theme="theme" @toggle-theme="toggleTheme" />
-    <SearchBar @search="handleSearch" />
-    <ProfileSection :user="currentUser" />
+  <div class="gap-main-gap md:min-w-main-width mx-auto mt-8 flex w-[343px] flex-col md:mt-10 xl:mt-0">
+    <AppHeader
+      :theme="theme"
+      @toggle-theme="toggleTheme" />
+    <SearchBar :has-error="error" @search="handleSearch" />
+    <ProfileSection
+      :user="currentUser"
+      :has-error="error" />
   </div>
 </template>

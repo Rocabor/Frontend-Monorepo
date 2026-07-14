@@ -6,11 +6,26 @@ const props = defineProps({
     type: Object,
     default: null, // Por defecto no hay usuario
   },
+  hasError: { type: Boolean, default: false }
 });
 </script>
 
 <template>
+  <!-- CASO 1: ERROR  -->
+  <div 
+    v-if="hasError" 
+    class="profile-padding flex flex-col items-center justify-center rounded-2xl bg-neutral-0 shadow-shadow-theme dark:bg-neutral-800"
+  >
+    <h2 class="text-[22px] leading-[1.4] font-bold text-neutral-700 dark:text-neutral-0">
+      No results found!
+    </h2>
+    <p class="mt-4 text-center text-[15px] leading-[1.5] text-neutral-300 dark:text-neutral-200">
+      We couldn’t find any GitHub users matching your search. Please double-check the username and try again.
+    </p>
+  </div>
+  <!-- CASO 2: PERFIL (siempre visible; usa placeholders si aún no hay user) -->
   <div
+    v-else
     class="profile-padding bg-neutral-0 shadow-shadow-theme flex flex-col gap-8 rounded-2xl md:grid md:grid-cols-[117px_1fr_1fr_1fr] md:grid-rows-[57px_1fr] md:gap-y-6 dark:bg-neutral-800">
     <div class="gap-profile flex md:col-span-4">
       <img
