@@ -41,7 +41,7 @@ defineProps({
   font-family: v-bind(fontFamily);
   font-size: clamp(0.75rem, calc(0.511rem + 1.018vw), 1.00rem);
   position: v-bind(position);
-  @apply inset-x-0 bottom-0 pt-4 pb-2 text-center xl:absolute;
+  @apply inset-x-0 bottom-0 pt-4 pb-2 text-center;
 }
 
 nav{
