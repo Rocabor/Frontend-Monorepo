@@ -11,9 +11,11 @@ let dpr = 1;
 let progress = 0;        // 0 = día, 1 = noche
 let targetDark = false;
 let lastTime = 0;
+let dim = 0;             // atenuación cuando una nube tapa el sol
 
 let stars = [];
 let clouds = [];
+let shootingStars = [];
 
 const lerp = (a, b, t) => a + (b - a) * t;
 
@@ -51,10 +53,9 @@ function resize() {
   canvas.style.width = width + 'px';
   canvas.style.height = height + 'px';
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  generateScene();
 }
 
-// Las posiciones se generan una sola vez por resize (no cada frame)
+// Las posiciones se generan una sola vez al montar (no en cada resize ni frame)
 function generateScene() {
   const starCount = Math.round((width * height) / 9000);
   stars = [];
@@ -165,18 +166,92 @@ function drawMoon() {
   ctx.restore();
 }
 
+function spawnShootingStar() {
+  const startX = Math.random() * width * 0.9;
+  const startY = Math.random() * height * 0.35;
+  const angle = ((30 + Math.random() * 45) * Math.PI) / 180;
+  const speed = 300 + Math.random() * 300;
+  const dir = Math.random() < 0.5 ? -1 : 1;
+  shootingStars.push({
+    x: startX,
+    y: startY,
+    vx: dir * Math.cos(angle) * speed,
+    vy: Math.sin(angle) * speed,
+    len: 80 + Math.random() * 80,
+    life: 0,
+    maxLife: 0.6 + Math.random() * 0.5,
+  });
+}
+
+function drawShootingStars() {
+  if (progress <= 0.05) return;
+  ctx.save();
+  ctx.lineCap = 'round';
+  for (const s of shootingStars) {
+    const t = s.life / s.maxLife;
+    const alpha = Math.sin(t * Math.PI) * progress; // aparece y se desvanece
+    if (alpha <= 0) continue;
+    const mag = Math.hypot(s.vx, s.vy);
+    const tailX = s.x - (s.vx / mag) * s.len;
+    const tailY = s.y - (s.vy / mag) * s.len;
+    const grad = ctx.createLinearGradient(s.x, s.y, tailX, tailY);
+    grad.addColorStop(0, `rgba(255, 255, 255, ${alpha})`);
+    grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(s.x, s.y);
+    ctx.lineTo(tailX, tailY);
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+
+function isSunCovered() {
+  const cx = width * 0.82;
+  const cy = height * 0.18;
+  for (const c of clouds) {
+    if (Math.abs(c.x - cx) < 75 * c.scale && Math.abs(c.y - cy) < 45 * c.scale) return true;
+  }
+  return false;
+}
+
 function frame(now) {
   const dt = Math.min((now - lastTime) / 1000, 0.05);
   lastTime = now;
   const target = targetDark ? 1 : 0;
   progress += (target - progress) * Math.min(dt * 3, 1);
 
+  // El sol queda detrás de las nubes: si una nube lo tapa, atenuamos un poco el cielo
+  const sunCovered = progress < 0.99 && isSunCovered();
+  const dimTarget = sunCovered ? 0.16 : 0;
+  dim += (dimTarget - dim) * Math.min(dt * 2, 1);
+
+  // Estrellas fugaces: solo de noche y de forma ocasional
+  if (progress > 0.5 && Math.random() < dt * 0.35) spawnShootingStar();
+  for (let i = shootingStars.length - 1; i >= 0; i--) {
+    const s = shootingStars[i];
+    s.x += s.vx * dt;
+    s.y += s.vy * dt;
+    s.life += dt;
+    if (s.life >= s.maxLife || s.x < -100 || s.x > width + 100 || s.y > height + 100) {
+      shootingStars.splice(i, 1);
+    }
+  }
+
   ctx.clearRect(0, 0, width, height);
   drawSky();
   drawStars(now);
-  drawClouds(dt);
+  drawShootingStars();
   drawSun(now);
   drawMoon();
+  drawClouds(dt);
+
+  // Oscurece sutilmente la escena cuando el sol está cubierto
+  if (dim > 0.002) {
+    ctx.fillStyle = `rgba(8, 12, 28, ${dim})`;
+    ctx.fillRect(0, 0, width, height);
+  }
 
   rafId = requestAnimationFrame(frame);
 }
@@ -197,6 +272,7 @@ onMounted(() => {
   const canvas = canvasRef.value;
   ctx = canvas.getContext('2d');
   resize();
+  generateScene();
   window.addEventListener('resize', resize);
   setupObserver();
   lastTime = performance.now();
