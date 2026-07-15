@@ -17,7 +17,6 @@ This is a solution to the [GitHub user search app challenge on Frontend Mentor](
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -34,93 +33,74 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://snipboard.io/dbYE2G.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+[![Static Badge](https://img.shields.io/badge/Live_Site-%23fff?style=flat&logo=githubpages&logoSize=auto&labelColor=%23000)](https://rocabor.github.io/Frontend-Monorepo/junior/github-user-search-app/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Vue 3](https://vuejs.org/) - Composition API with `<script setup>`
+- [Vite](https://vite.dev/) - build tool and dev server
+- [Tailwind CSS v4](https://tailwindcss.com/) - utility-first styling with `@theme` tokens and `@custom-variant dark`
+- Semantic HTML5 & ARIA (`sr-only` labels, `role="search"`)
+- Native View Transitions API for the theme switch (circular reveal)
+- Canvas 2D API for the animated day/night background
+- Mobile-first, responsive with `clamp()` for fluid spacing and typography
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This project was my deepest dive into Vue 3 + Vite and into bridging app state with the DOM and the Canvas API. A few things stood out:
 
-To see how you can add code snippets, see below:
+- **Component composition:** splitting the app into `UserSearch`, `AppHeader`, `SearchBar` and `ProfileSection`, communicating with `props` + `emit` instead of one giant component.
+- **Tailwind v4 theming:** defining design tokens in `@theme`, driving fluid responsiveness with `clamp()`, and handling dark mode through a `.dark` class via `@custom-variant dark (&:where(.dark, .dark *))`. I also learned the specificity trap: `dark:` utilities can lose to scoped styles, so I used CSS variables (e.g. `var(--color-icon)`) to keep themes consistent.
+- **View Transitions API:** animating the theme switch with a clip-path circle from the click point, with a graceful fallback to a color transition when the API is unavailable.
+- **Canvas animation:** a `requestAnimationFrame` loop drawing an interpolated day/night sky, a sun (with rotating rays) and moon, drifting clouds, twinkling stars and occasional shooting stars. Key lessons: scale the canvas with `devicePixelRatio`, generate the scene once (not on every `resize`, or mobile scroll resets the animation), and watch the `.dark` class with a `MutationObserver` to keep the canvas in sync with the toggle.
+- **Accessibility:** visible focus with `focus-visible` rings, using `focus-within` on the search form, and `:has(button:focus)` to avoid a double ring when the button is focused.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+// Syncing the canvas to the theme without lifting state
+const observer = new MutationObserver(() => {
+  targetDark = document.documentElement.classList.contains('dark');
+});
+observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+The frontend is in good shape, so the next step is expanding it into a full-stack project in a separate repository:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- **Backend proxy + cache:** move the GitHub API calls to a small Node server (Express/Fastify) that holds the token in an env var and caches responses to avoid GitHub's rate limits. The frontend would call `/api/users/:username` instead of `api.github.com` directly.
+- **Persistence:** add a database (Prisma + SQLite is a great junior-friendly start) to save search history and favorite users.
+- **TypeScript end-to-end:** bring the type safety I used on the frontend into the backend too.
+- **Polish:** more refined canvas scenes, better loading/empty states, and automated tests.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Vue 3 Documentation](https://vuejs.org/guide/introduction.html) - the Composition API and `<script setup>` basics.
+- [Tailwind CSS v4 Docs](https://tailwindcss.com/docs) - `@theme`, `@custom-variant` and the new engine.
+- [MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) - 2D drawing, `requestAnimationFrame` and `devicePixelRatio`.
+- [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API) - the circular theme reveal.
+- [Frontend Mentor](https://www.frontendmentor.io/) - the challenge itself and the community solutions.
+- [The Markdown Guide](https://www.markdownguide.org/) - for writing this README.
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+I used an AI coding assistant ([opencode](https://opencode.ai)) as a mentor throughout the project:
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
-
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+- **Tools:** opencode, used as a guided mentor rather than a code generator.
+- **How:** for debugging (e.g. the `dark:` specificity issue, the broken Twitter link, the mobile scroll resetting the canvas), for code review of each component, and for brainstorming approaches (sticky footer, canvas day/night design, focus management). I wrote the actual code myself based on the guidance.
+- **What worked well:** the Socratic, step-by-step guidance helped me understand the *why* behind each fix instead of just copying a solution. The review feedback (unused vars, dead CSS, broken links) caught real issues.
+- **What didn't:** occasionally I had to clarify when a suggestion was too close to a full solution, since the goal was learning. Also, pasting an image from the clipboard didn't work — describing the problem in text was more effective.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@Rocabor](https://www.frontendmentor.io/profile/Rocabor)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I'm grateful to Frontend Mentor for providing such well-designed challenges that allow me to practice real-world skills.
