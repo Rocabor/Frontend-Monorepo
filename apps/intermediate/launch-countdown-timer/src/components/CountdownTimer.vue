@@ -175,21 +175,8 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   min-height: 100dvh;
-  /* El diseño original usa dos fondos: las estrellas y las montañas abajo */
-  background:
-    url('../assets/images/pattern-hills.svg') no-repeat bottom right / 971px 150px,
-    url('../assets/images/bg-stars.svg') repeat center center,
-    linear-gradient(to bottom, #1e1e28, #251d2c);
   padding: 130px 24px 0;
   box-sizing: border-box;
-}
-@media screen and (min-width: 768px) {
-  .countdown-container {
-    background:
-      url('../assets/images/pattern-hills.svg') no-repeat bottom right / 100% 150px,
-      url('../assets/images/bg-stars.svg') repeat top,
-      linear-gradient(to bottom, #1e1e28, #251d2c);
-  }
 }
 
 /* Estilos de Configuración (Hamburguesa & Dropdown) */

@@ -1,4 +1,28 @@
-@import 'tailwindcss';
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+@import 'tailwindcss';
+
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100dvh;
+  background:
+    url('/src/assets/images/pattern-hills.svg') no-repeat bottom right / 971px 150px,
+    url('/src/assets/images/bg-stars.svg') repeat center center,
+    linear-gradient(to bottom, #1e1e28, #251d2c);
+  background-attachment: fixed;
+}
+
+@media screen and (min-width: 768px) {
+  html,
+  body,
+  #app {
+    background:
+      url('/src/assets/images/pattern-hills.svg') no-repeat bottom right / 100% 150px,
+      url('/src/assets/images/bg-stars.svg') repeat top,
+      linear-gradient(to bottom, #1e1e28, #251d2c);
+  }
+}
 
 
