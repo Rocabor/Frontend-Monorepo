@@ -23,13 +23,21 @@ export function baseConfig(options = {}) {
     dynamicBase += `${relativePath.replace(/\\/g, '/')}/`;
   }
 
+  // Calculamos la carpeta de salida dentro del dist raíz del monorepo
+  // para evitar la copia redundante de scripts/unify.mjs
+  let outDir = 'dist';
+  if (!process.env.VERCEL && projectPath.includes(`${sep}apps${sep}`)) {
+    const relativePath = relative(join(rootPath, 'apps'), projectPath);
+    outDir = join(rootPath, 'dist', relativePath.replace(/\\/g, '/'));
+  }
+
   return {
     // IMPORTANTE: Usamos dynamicBase si no se pasa una base manual
     base: options.base || dynamicBase,
     build: {
-      outDir: 'dist',
-      // se encarga de la limpieza cuando se ejecuta el build, carpetas "dist"
-      emptyOutDir: false,
+      outDir,
+      // cada app tiene su propia carpeta única en dist/, así que limpiamos sin riesgo
+      emptyOutDir: true,
     },
     plugins: [vue(), typeof tailwindcss === 'function' ? tailwindcss() : tailwindcss.default(), ...plugins],
   };

@@ -2,7 +2,7 @@
   "name": "turborepo",
   "private": true,
   "scripts": {
-    "build": "turbo run build && pnpm portal:build && node ./scripts/unify.mjs",
+    "build": "rimraf dist && turbo run build && pnpm portal:build",
     "portal:build": "vite build",
     "portal:dev": "vite",
     "dev": "turbo run dev",
@@ -21,6 +21,7 @@
     "globals": "^17.7.0",
     "prettier": "^3.9.5",
     "prettier-plugin-tailwindcss": "^0.8.1",
+    "rimraf": "^6.1.3",
     "tailwindcss": "^4.3.3",
     "turbo": "^2.10.5",
     "vite": "^8.1.5"
