@@ -24,6 +24,11 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: turbo-dist-v3-${{ hashFiles('pnpm-lock.yaml', 'turbo.json', 'packages/vite-config/index.mjs') }}
+
       - run: pnpm build
 
       - name: Verify dist output
