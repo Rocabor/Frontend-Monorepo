@@ -19,7 +19,8 @@ const activeCategory = ref('Newbie');
 const difficultyDetails = {
   Newbie: "The success foundation: Ultra-precise layout with semantic HTML5 and CSS3. Focused on visual detail and consistency.",
   Junior: "Real interactivity: Implementation of logic with JavaScript, DOM manipulation, and complex layouts using Flexbox and Grid.",
-  Intermediate: "Architectural challenges: Integration of external APIs, state management, high-complexity dynamic components."
+  Intermediate: "Architectural challenges: Integration of external APIs, state management, high-complexity dynamic components.",
+  Advanced: "Production-grade mastery: Monorepos, design systems, testing, performance optimization and full architecture ownership."
 };
 
 // 2. Función para cambiar de pestaña

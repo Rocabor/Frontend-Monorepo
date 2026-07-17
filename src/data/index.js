@@ -6,5 +6,6 @@ export const allProjects = {
   Newbie: newbieProjects,
   Junior: juniorProjects,
   Intermediate: intermediateProjects,
-  // Advanced: advancedProjects,
+  Advanced: [],
 };
+
