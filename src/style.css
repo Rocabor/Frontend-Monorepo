@@ -340,8 +340,7 @@ body {
 .footer-social:hover { color: var(--color-primary); border-color: var(--color-primary); background: rgba(142, 213, 255, 0.08); transform: translateY(-3px); }
 .footer-social-icon { display: flex; }
 .footer-social-icon svg { width: 26px; height: 26px; }
-.footer-bottom { max-width: 1280px; margin: 36px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; font-size: 0.85rem; color: var(--text-dim); font-family: 'Geist', monospace; }
-.footer-bottom span:last-child { color: var(--text-bright); }
+.footer-credit { font-family: 'Geist', monospace; font-size: 0.62rem; letter-spacing: 0.04em; color: var(--text-dim); text-align: center; margin-top: 2px; }
 
 /* --- MODAL --- */
 .modal-overlay {

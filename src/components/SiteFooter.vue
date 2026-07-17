@@ -57,11 +57,8 @@ const socials = [
             <span class="footer-social-icon" v-html="s.icon"></span>
           </a>
         </div>
+        <span class="footer-credit">© 2026 My Frontend Journey · Handcrafted with Vue, Vite and Turborepo</span>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 My Frontend Journey. Built for the modern web with premium standards.</span>
-      <span>Built with Vue · Vite · Turbo</span>
     </div>
   </footer>
 </template>
