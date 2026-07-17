@@ -33,15 +33,6 @@ jobs:
 
       - run: pnpm build
 
-      - name: Merge app dist folders into root dist
-        run: |
-          mkdir -p dist
-          find apps -type d -name dist | while read app_dist; do
-            rel_path=$(echo "$app_dist" | sed 's|^apps/||;s|/dist$||')
-            mkdir -p "dist/$rel_path"
-            cp -r "$app_dist"/* "dist/$rel_path/"
-          done
-
       - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3

@@ -5,7 +5,8 @@ export default defineConfig({
   ...baseConfig(),
   base: '/Frontend-Monorepo/',
   build: {
-    // el portal comparte el dist/ raíz con las apps, no debe vaciarlo
-    emptyOutDir: false,
+    // el portal usa una carpeta propia para no pisar el dist/ de las apps
+    outDir: 'dist-portal',
+    emptyOutDir: true,
   },
 });

@@ -28,6 +28,7 @@ coverage
 out/
 build
 dist
+dist-portal
 dist-ssr
 
 # Package manager lock files (except root)
