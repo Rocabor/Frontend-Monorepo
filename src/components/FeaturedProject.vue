@@ -13,23 +13,23 @@ const { getImageUrl } = useProjects();
     <div class="featured-img">
       <img :src="getImageUrl(project.image)" :alt="project.title" loading="lazy" />
       <div class="card-img-gradient"></div>
+      <span class="badge-featured featured-float">Featured</span>
     </div>
     <div class="featured-info">
       <div class="featured-tags">
-        <span class="badge-featured">Featured</span>
         <span v-for="tag in project.tags.slice(0, 2)" :key="tag" class="badge-tag">{{ tag }}</span>
       </div>
       <h3 class="featured-title">{{ project.title }}</h3>
       <p class="featured-desc">{{ project.description }}</p>
-      <div class="featured-actions">
-        <span class="featured-link">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-          Live Preview
+      <div class="card-footer-bottom">
+        <span class="explore-label">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>
+          EXPLORE DEMO
         </span>
-        <span class="featured-link">
+        <div class="card-footer-icons">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
-          Source Code
-        </span>
+        </div>
       </div>
     </div>
   </button>

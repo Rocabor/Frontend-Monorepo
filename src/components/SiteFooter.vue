@@ -55,10 +55,8 @@ const socials = [
             :aria-label="s.label"
           >
             <span class="footer-social-icon" v-html="s.icon"></span>
-            <span class="footer-social-label">{{ s.label }}</span>
           </a>
         </div>
-        <p class="footer-handle">frontendmentor.io/profile/Rocabor</p>
       </div>
     </div>
     <div class="footer-bottom">

@@ -37,8 +37,8 @@ const activeProjects = computed(() => {
   return sorted;
 });
 
-const featuredProject = computed(() => activeProjects.value.find((p) => p.isFeatured) || null);
-const regularProjects = computed(() => activeProjects.value.filter((p) => !p.isFeatured));
+const featuredProject = computed(() => activeProjects.value[0] || null);
+const regularProjects = computed(() => activeProjects.value.slice(1));
 
 const totalProjects = computed(() =>
   Object.values(allProjects).reduce((acc, arr) => acc + (arr?.length || 0), 0)

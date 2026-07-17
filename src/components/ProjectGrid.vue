@@ -25,21 +25,20 @@ const {
     </div>
 
     <transition name="grid" mode="out-in">
-      <div class="project-list" :key="activeCategory">
+      <div class="project-grid" :key="activeCategory">
         <FeaturedProject
           v-if="featuredProject"
           :project="featuredProject"
+          class="featured-in-grid"
           @open="emit('open', $event)"
         />
 
-        <div class="project-grid">
-          <ProjectCard
-            v-for="project in regularProjects"
-            :key="project.title"
-            :project="project"
-            @open="emit('open', $event)"
-          />
-        </div>
+        <ProjectCard
+          v-for="project in regularProjects"
+          :key="project.title"
+          :project="project"
+          @open="emit('open', $event)"
+        />
       </div>
     </transition>
   </section>
