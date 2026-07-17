@@ -1,29 +1,43 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap');
 
-/* --- VARIABLES --- */
+/* --- VARIABLES (de My Frontend Journey - AI Studio) --- */
 :root {
-  --color-bg: #1e293b;
-  --color-glass: rgba(51, 65, 85, 0.6);
-  --color-border: rgba(255, 255, 255, 0.15);
-  --text-bright: #f8fafc;
-  --text-dim: #cbd5e1;
+  --color-bg: #0f1418;
+  --color-surface-container-lowest: #0a0f12;
+  --color-surface-container-low: #171c20;
+  --color-surface-container: #1b2024;
+  --color-surface-container-high: #252b2e;
+  --color-glass: rgba(27, 32, 36, 0.4);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --text-bright: #dee3e8;
+  --text-dim: #bdc8d1;
   
   --diff-newbie: #38bdf8;
   --diff-junior: #34d399;
   --diff-inter: #fbbf24;
   --diff-advanced: #e67e22;
+  --color-primary: #8ed5ff;
 }
 
 /* --- BASE --- */
 body {
   background-color: var(--color-bg);
   background-image: 
-    radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.12) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.12) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(142, 213, 255, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.08) 0px, transparent 50%);
   background-attachment: fixed;
   color: var(--text-bright);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
   margin: 0;
+}
+
+.tech-gradient {
+  background: linear-gradient(90deg, #8ed5ff 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* --- HERO & INTRO --- */
@@ -57,9 +71,16 @@ body {
 
 .glass-card {
   background: var(--color-glass);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(142, 213, 255, 0.3);
+  box-shadow: 0 0 20px rgba(142, 213, 255, 0.08);
 }
 
 .intro-box { 
@@ -82,27 +103,58 @@ body {
 .cat-card { 
   flex: 1 1 300px; 
   max-width: 400px;
-  padding: 20px; 
+  padding: 24px; 
   background: var(--color-glass);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
-  border-radius: 20px;
+  border-left: 4px solid var(--diff-newbie);
+  border-radius: 16px;
   color: white;
   text-decoration: none; 
-  transition: 0.3s ease; 
+  transition: all 0.3s ease; 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   cursor: pointer;
 }
 
-.cat-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.4); }
-.cat-label { display: block; font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
-.cat-text { font-size: 0.8rem; color: var(--text-dim); line-height: 1.4; text-align: center; }
+.cat-card:hover { transform: translateY(-5px) scale(1.02); border-color: rgba(255,255,255,0.4); }
+.cat-ico {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+.cat-card.newbie .cat-ico { background: rgba(56,189,248,0.1); color: var(--diff-newbie); }
+.cat-card.junior .cat-ico { background: rgba(52,211,153,0.1); color: var(--diff-junior); }
+.cat-card.intermediate .cat-ico { background: rgba(251,191,36,0.1); color: var(--diff-inter); }
+.cat-card.advanced .cat-ico { background: rgba(230,126,34,0.1); color: var(--diff-advanced); }
 
-.cat-card.newbie { border-top: 4px solid var(--diff-newbie); }
-.cat-card.junior { border-top: 4px solid var(--diff-junior); }
-.cat-card.intermediate { border-top: 4px solid var(--diff-inter); }
-.cat-card.advanced { border-top: 4px solid var(--diff-advanced); }
+.cat-label { display: block; font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; font-family: 'Geist', sans-serif; }
+.cat-text { font-size: 0.8rem; color: var(--text-dim); line-height: 1.4; }
+
+.cat-count {
+  margin-top: auto;
+  padding-top: 16px;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  font-family: 'Geist', monospace;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.cat-card.newbie { border-left-color: var(--diff-newbie); }
+.cat-card.junior { border-left-color: var(--diff-junior); }
+.cat-card.intermediate { border-left-color: var(--diff-inter); }
+.cat-card.advanced { border-left-color: var(--diff-advanced); }
+.cat-card.newbie .cat-count span { color: var(--diff-newbie); }
+.cat-card.junior .cat-count span { color: var(--diff-junior); }
+.cat-card.intermediate .cat-count span { color: var(--diff-inter); }
+.cat-card.advanced .cat-count span { color: var(--diff-advanced); }
 
 /* --- SECCIONES DE PROYECTOS (FIX CENTRADO Y APILADO) --- */
 .main-content { 
