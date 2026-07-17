@@ -20,9 +20,14 @@ watch(activeCategory, () => { visibleCount.value = PAGE_SIZE; });
 
 const visibleProjects = computed(() => regularProjects.value.slice(0, visibleCount.value));
 const canLoadMore = computed(() => visibleCount.value < regularProjects.value.length);
+const canShowLess = computed(() => visibleCount.value > PAGE_SIZE);
 
-const loadMore = () => {
-  visibleCount.value = Math.min(visibleCount.value + PAGE_SIZE, regularProjects.value.length);
+const toggleProjects = () => {
+  if (canShowLess.value) {
+    visibleCount.value = PAGE_SIZE;
+  } else {
+    visibleCount.value = Math.min(visibleCount.value + PAGE_SIZE, regularProjects.value.length);
+  }
 };
 </script>
 
@@ -55,8 +60,10 @@ const loadMore = () => {
       </div>
     </transition>
 
-    <div v-if="canLoadMore" class="load-more-wrap">
-      <button class="load-more-btn" @click="loadMore">Load More Projects</button>
+    <div v-if="canLoadMore || canShowLess" class="load-more-wrap">
+      <button class="load-more-btn" @click="toggleProjects">
+        {{ canShowLess ? 'Show Less Projects' : 'Load More Projects' }}
+      </button>
     </div>
   </section>
 </template>

@@ -1,6 +1,5 @@
 <script setup>
 import { useProjects } from '../composables/useProjects';
-import { useLikes } from '../composables/useLikes';
 
 defineProps({
   project: { type: Object, required: true },
@@ -8,7 +7,6 @@ defineProps({
 
 const emit = defineEmits(['open']);
 const { getImageUrl } = useProjects();
-const { isLiked, toggleLike, likeCount } = useLikes();
 </script>
 
 <template>
@@ -16,15 +14,6 @@ const { isLiked, toggleLike, likeCount } = useLikes();
     <div class="card-img-container">
       <img :src="getImageUrl(project.image)" :alt="project.title" loading="lazy" />
       <div class="card-img-gradient"></div>
-      <button
-        class="like-btn"
-        :class="{ liked: isLiked(project.href) }"
-        :aria-label="isLiked(project.href) ? 'Quitar me gusta' : 'Me gusta'"
-        @click.stop="toggleLike(project.href)"
-      >
-        <svg viewBox="0 0 24 24" width="16" height="16" :fill="isLiked(project.href) ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-        <span class="like-count">{{ likeCount(project.href) }}</span>
-      </button>
       <div class="card-overlay">
         <div class="card-tags">
           <span v-for="tag in project.tags" :key="tag" class="card-tag">{{ tag }}</span>
