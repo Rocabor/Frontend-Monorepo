@@ -279,6 +279,7 @@ const socials = [
                 :href="s.url"
                 target="_blank"
                 class="footer-social"
+                :aria-label="s.label"
               >
                 <span class="footer-social-icon" v-html="s.icon"></span>
                 <span class="footer-social-label">{{ s.label }}</span>
@@ -317,12 +318,18 @@ const socials = [
                 :href="getLiveUrl(selectedProject.href)"
                 target="_blank"
                 class="modal-btn primary"
-              >Live Preview</a>
+              >
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Live Preview
+              </a>
               <a
                 :href="getSourceUrl(selectedProject)"
                 target="_blank"
                 class="modal-btn"
-              >Source Code</a>
+              >
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+                Source Code
+              </a>
             </div>
           </div>
         </div>
@@ -570,6 +577,35 @@ const socials = [
   border-radius: 2px;
 }
 
+/* --- SORT BUTTONS --- */
+.sort-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.sort-btn {
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-container);
+  color: var(--text-dim);
+  font-family: 'Geist', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.sort-btn:hover {
+  color: var(--text-bright);
+  border-color: var(--color-primary);
+  background: rgba(142, 213, 255, 0.1);
+}
+.sort-btn.active {
+  color: #04141b;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  border-color: transparent;
+}
+
 /* --- GRID DE PROYECTOS --- */
 .project-grid {
   display: grid;
@@ -754,13 +790,14 @@ const socials = [
 }
 .footer-socials {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 14px;
 }
 .footer-social {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   color: var(--text-dim);
   text-decoration: none;
   padding: 12px 16px;
@@ -772,13 +809,13 @@ const socials = [
   color: var(--color-primary);
   border-color: var(--color-primary);
   background: rgba(142, 213, 255, 0.08);
-  transform: translateX(4px);
+  transform: translateY(-3px);
 }
 .footer-social-icon { display: flex; }
 .footer-social-icon :deep(svg) { width: 22px; height: 22px; }
 .footer-social-label {
   font-family: 'Geist', sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 .footer-handle {
@@ -791,14 +828,15 @@ const socials = [
   max-width: 1280px;
   margin: 48px auto 0;
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-size: 0.7rem;
-  color: rgba(189, 200, 209, 0.4);
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
   font-family: 'Geist', monospace;
 }
+.footer-bottom span:last-child { color: var(--text-bright); }
 
 /* --- MODAL --- */
 .modal-overlay {
@@ -864,6 +902,10 @@ const socials = [
 .modal-btn {
   flex: 1;
   min-width: 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   text-align: center;
   padding: 12px 18px;
   border-radius: 10px;
@@ -874,11 +916,21 @@ const socials = [
   color: var(--text-bright);
   transition: all 0.2s ease;
 }
-.modal-btn:hover { border-color: var(--color-primary); }
+.modal-btn svg { flex-shrink: 0; }
+.modal-btn:hover {
+  border-color: var(--color-primary);
+  background: rgba(142, 213, 255, 0.08);
+  color: var(--color-primary);
+}
 .modal-btn.primary {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: #04141b;
   border: none;
+}
+.modal-btn.primary:hover {
+  color: #04141b;
+  filter: brightness(1.08);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
 }
 
 /* --- ANIMATIONS --- */
