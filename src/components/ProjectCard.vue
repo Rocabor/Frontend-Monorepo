@@ -8,7 +8,7 @@ defineProps({
 
 const emit = defineEmits(['open']);
 const { getImageUrl } = useProjects();
-const { isLiked, toggleLike } = useLikes();
+const { isLiked, toggleLike, likeCount } = useLikes();
 </script>
 
 <template>
