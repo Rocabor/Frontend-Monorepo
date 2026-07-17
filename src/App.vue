@@ -580,15 +580,16 @@ const socials = [
 /* --- SORT BUTTONS --- */
 .sort-buttons {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin-top: 20px;
+  justify-content: center;
 }
 .sort-btn {
   padding: 10px 22px;
   border-radius: 10px;
   border: 1px solid var(--color-border);
   background: var(--color-surface-container);
-  color: var(--text-dim);
+  color: var(--text-bright);
   font-family: 'Geist', sans-serif;
   font-size: 0.8rem;
   font-weight: 700;
@@ -596,9 +597,9 @@ const socials = [
   transition: all 0.2s ease;
 }
 .sort-btn:hover {
-  color: var(--text-bright);
-  border-color: var(--color-primary);
-  background: rgba(142, 213, 255, 0.1);
+  color: #04141b;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  border-color: transparent;
 }
 .sort-btn.active {
   color: #04141b;
@@ -735,39 +736,48 @@ const socials = [
 /* --- FOOTER --- */
 .site-footer {
   border-top: 1px solid var(--color-border);
-  padding: 64px 24px 32px;
+  padding: 40px 24px 28px;
   margin-top: 60px;
   background: var(--color-surface-container-lowest);
 }
 .footer-inner {
   max-width: 1280px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
 }
-@media (min-width: 900px) {
-  .footer-inner { grid-template-columns: 1.4fr 1fr; gap: 64px; }
+.footer-bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
-.footer-bio { display: flex; flex-direction: column; gap: 20px; }
 .footer-brand {
   font-family: 'Geist', sans-serif;
   font-weight: 800;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   letter-spacing: -0.02em;
 }
 .footer-desc {
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: var(--text-dim);
-  max-width: 520px;
+  max-width: 560px;
   margin: 0;
 }
-.footer-stats { display: flex; gap: 36px; flex-wrap: wrap; }
-.footer-stat { display: flex; flex-direction: column; gap: 2px; }
+.footer-stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-stat { display: flex; flex-direction: column; gap: 2px; align-items: center; }
 .stat-num {
   font-family: 'Geist', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 800;
   color: var(--color-primary);
   line-height: 1;
@@ -779,7 +789,12 @@ const socials = [
   color: var(--text-dim);
   font-weight: 600;
 }
-.footer-links { display: flex; flex-direction: column; gap: 18px; }
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
 .footer-links-title {
   font-family: 'Geist', sans-serif;
   font-size: 0.75rem;
@@ -792,6 +807,7 @@ const socials = [
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
 }
 .footer-social {
@@ -826,12 +842,14 @@ const socials = [
 }
 .footer-bottom {
   max-width: 1280px;
-  margin: 48px auto 0;
-  padding-top: 24px;
+  margin: 32px auto 0;
+  padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
   font-size: 0.85rem;
   color: var(--text-dim);
   font-family: 'Geist', monospace;
@@ -912,14 +930,15 @@ const socials = [
   text-decoration: none;
   font-weight: 700;
   font-size: 0.85rem;
-  border: 1px solid var(--color-border);
+  background: var(--color-surface-container-highest);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: var(--text-bright);
   transition: all 0.2s ease;
 }
 .modal-btn svg { flex-shrink: 0; }
 .modal-btn:hover {
   border-color: var(--color-primary);
-  background: rgba(142, 213, 255, 0.08);
+  background: rgba(142, 213, 255, 0.12);
   color: var(--color-primary);
 }
 .modal-btn.primary {
