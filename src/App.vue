@@ -46,6 +46,10 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
+const totalProjects = computed(() =>
+  Object.values(allProjects).reduce((acc, arr) => acc + (arr?.length || 0), 0)
+);
+
 // PROJECT DETAIL MODAL
 const selectedProject = ref(null);
 
@@ -242,23 +246,50 @@ const socials = [
       <!-- FOOTER BAR -->
       <footer class="site-footer">
         <div class="footer-inner">
-          <div class="footer-brand-col">
+          <div class="footer-bio">
             <span class="footer-brand tech-gradient">My Frontend Journey</span>
-            <p class="footer-copy">
-              © 2026 My Frontend Journey. Built for the modern web with premium standards.
+            <p class="footer-desc">
+              A professional monorepo documenting my evolution as a frontend developer through
+              Frontend Mentor challenges. From semantic HTML foundations to production-grade
+              architectures built with Vue, Vite and Turborepo — every project prioritizes
+              scalability, clean patterns and developer experience.
             </p>
+            <div class="footer-stats">
+              <div class="footer-stat">
+                <span class="stat-num">{{ totalProjects }}</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-num">4</span>
+                <span class="stat-label">Levels</span>
+              </div>
+              <div class="footer-stat">
+                <span class="stat-num">3</span>
+                <span class="stat-label">Stacks</span>
+              </div>
+            </div>
           </div>
 
-          <div class="footer-socials">
-            <a
-              v-for="s in socials"
-              :key="s.label"
-              :href="s.url"
-              target="_blank"
-              class="footer-social"
-              v-html="s.icon"
-            ></a>
+          <div class="footer-links">
+            <span class="footer-links-title">Connect</span>
+            <div class="footer-socials">
+              <a
+                v-for="s in socials"
+                :key="s.label"
+                :href="s.url"
+                target="_blank"
+                class="footer-social"
+              >
+                <span class="footer-social-icon" v-html="s.icon"></span>
+                <span class="footer-social-label">{{ s.label }}</span>
+              </a>
+            </div>
+            <p class="footer-handle">frontendmentor.io/profile/Rocabor</p>
           </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 My Frontend Journey. Built for the modern web with premium standards.</span>
+          <span>Built with Vue · Vite · Turbo</span>
         </div>
       </footer>
     </div>
@@ -668,47 +699,106 @@ const socials = [
 /* --- FOOTER --- */
 .site-footer {
   border-top: 1px solid var(--color-border);
-  padding: 40px 24px;
-  margin-top: 40px;
+  padding: 64px 24px 32px;
+  margin-top: 60px;
   background: var(--color-surface-container-lowest);
 }
 .footer-inner {
   max-width: 1280px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
 }
-@media (min-width: 768px) {
-  .footer-inner { flex-direction: row; justify-content: space-between; }
+@media (min-width: 900px) {
+  .footer-inner { grid-template-columns: 1.4fr 1fr; gap: 64px; }
 }
-.footer-brand-col { display: flex; flex-direction: column; gap: 4px; align-items: center; }
-@media (min-width: 768px) {
-  .footer-brand-col { align-items: flex-start; }
-}
+.footer-bio { display: flex; flex-direction: column; gap: 20px; }
 .footer-brand {
   font-family: 'Geist', sans-serif;
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
 }
-.footer-copy {
-  font-size: 0.6rem;
-  color: rgba(189, 200, 209, 0.4);
-  font-family: 'Geist', monospace;
+.footer-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+  max-width: 520px;
+  margin: 0;
+}
+.footer-stats { display: flex; gap: 36px; flex-wrap: wrap; }
+.footer-stat { display: flex; flex-direction: column; gap: 2px; }
+.stat-num {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+.footer-links { display: flex; flex-direction: column; gap: 18px; }
+.footer-links-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-bright);
 }
 .footer-socials {
   display: flex;
-  gap: 18px;
-  align-items: center;
+  flex-direction: column;
+  gap: 14px;
 }
 .footer-social {
-  color: var(--text-dim);
   display: flex;
   align-items: center;
-  transition: color 0.2s ease;
+  gap: 14px;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
 }
-.footer-social:hover { color: var(--color-primary); }
+.footer-social:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: rgba(142, 213, 255, 0.08);
+  transform: translateX(4px);
+}
+.footer-social-icon { display: flex; }
+.footer-social-icon :deep(svg) { width: 22px; height: 22px; }
+.footer-social-label {
+  font-family: 'Geist', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.footer-handle {
+  font-size: 0.7rem;
+  color: rgba(189, 200, 209, 0.45);
+  font-family: 'Geist', monospace;
+  margin: 0;
+}
+.footer-bottom {
+  max-width: 1280px;
+  margin: 48px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.7rem;
+  color: rgba(189, 200, 209, 0.4);
+  font-family: 'Geist', monospace;
+}
 
 /* --- MODAL --- */
 .modal-overlay {
