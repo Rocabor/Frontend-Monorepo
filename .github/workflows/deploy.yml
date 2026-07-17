@@ -27,16 +27,16 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: .turbo
-          key: turbo-${{ hashFiles('pnpm-lock.yaml', 'turbo.json', 'packages/vite-config/index.mjs') }}
+          key: turbo-v2-${{ hashFiles('pnpm-lock.yaml', 'turbo.json', 'packages/vite-config/index.mjs') }}
           restore-keys: |
-            turbo-
+            turbo-v2-
 
       - run: pnpm build
 
       - name: Verify dist output
         run: |
           test -f dist/index.html || (echo "Missing portal index.html" && exit 1)
-          test -d dist/junior/advice-generator-app || (echo "Missing sample app output" && exit 1)
+          test -d dist/junior/advice-generator-app || (echo "Missing sample app output" && ls -R dist && exit 1)
           echo "dist/ verified: $(find dist -name index.html | wc -l) index.html files"
 
       - uses: actions/configure-pages@v4
