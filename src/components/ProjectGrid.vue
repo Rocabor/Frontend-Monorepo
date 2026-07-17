@@ -19,8 +19,8 @@ const visibleCount = ref(PAGE_SIZE);
 watch(activeCategory, () => { visibleCount.value = PAGE_SIZE; });
 
 const visibleProjects = computed(() => regularProjects.value.slice(0, visibleCount.value));
+const canShowLess = computed(() => visibleCount.value >= regularProjects.value.length && regularProjects.value.length > PAGE_SIZE);
 const canLoadMore = computed(() => visibleCount.value < regularProjects.value.length);
-const canShowLess = computed(() => visibleCount.value > PAGE_SIZE);
 
 const toggleProjects = () => {
   if (canShowLess.value) {
