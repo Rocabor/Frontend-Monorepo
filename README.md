@@ -18,6 +18,7 @@
   - [🟢 Newbie Projects (23)](#-newbie-projects)
   - [🔵 Junior Projects (21)](#-junior-projects)
   - [🟡 Intermediate Projects (3)](#-intermediate-projects)
+  - [🟠 Advanced Projects (0)](#-advanced-projects)
 - [💻 Technologies](#-technologies)
 - [🤝 Connect](#-connect)
 
@@ -28,7 +29,7 @@
 This repository is a **monorepo** documenting my frontend development journey through [Frontend Mentor](https://www.frontendmentor.io/) challenges. Each project is independently built and showcases progressive skill development.
 
 ### ✨ Features
-- 📦 **47 completed challenges** across 3 difficulty levels
+- 📦 **47 completed challenges** across 4 difficulty levels
 - 🎨 **Responsive designs** with mobile-first approach
 - 🔗 **Live demos** for each project
 - 📚 **Organized codebase** by difficulty
@@ -98,7 +99,7 @@ Guidelines for exploring and running the projects:
 | :--- | :--- |
 | **Static HTML/CSS** | Open `index.html` directly in browser |
 | **Vanilla JS** |  Open `index.html` directly in browser |
-| **Vite + Tailwind** | `npm install` + `npm run dev` |
+| **Vite + Tailwind** | `pnpm install` + `pnpm run dev` |
 
 
 ### 📦 Build for Production (optional)
@@ -166,6 +167,21 @@ All projects have live demos, so you can see them running without any local setu
 | **State** | State management, Data flow, Complex user interactions |
 | **Performance** | Code optimization, Asset management, Efficient rendering |
 | **Architecture** | Component reusability, Code organization, Design patterns |
+
+</details>
+
+
+<details>
+<summary>🟠 <b>Advanced Level Mastery</b></summary>
+<br>
+
+
+| Category | Skills |
+| :--- | :--- |
+| **Frameworks** | Vue 3 Composition API, State management (Pinia), Routing |
+| **Architecture** | Monorepos, Design systems, Component libraries |
+| **Performance** | Lazy loading, Code splitting, Bundle optimization, Caching |
+| **Quality** | Testing, TypeScript, CI/CD, Accessibility (WCAG) |
 
 </details>
 
@@ -239,7 +255,7 @@ All projects have live demos, so you can see them running without any local setu
 
 ### 🟡 Intermediate Projects
 
-[![Intermediate](https://img.shields.io/badge/🟡%20INTERMEDIATE-1%20project-f1c40f?style=for-the-badge&labelColor=7d5d0e&color=f1c40f)](#-intermediate-projects-3)
+[![Intermediate](https://img.shields.io/badge/🟡%20INTERMEDIATE-3%20projects-f1c40f?style=for-the-badge&labelColor=7d5d0e&color=f1c40f)](#-intermediate-projects-3)
 
 | # | Project | Live Demo | Repository |
 |:---:|:---|:---:|:---:|
@@ -247,8 +263,19 @@ All projects have live demos, so you can see them running without any local setu
 | 02 | **Frontend quiz app** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/intermediate/frontend-quiz-app/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/intermediate/frontend-quiz-app) |
 | 03 | **Launch countdown timer** | [🔗 Live](https://rocabor.github.io/Frontend-Monorepo/intermediate/launch-countdown-timer/) | [📁 Code](https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/intermediate/launch-countdown-timer) |
 
-</div>
 
+---
+
+
+### 🟠 Advanced Projects
+
+[![Advanced](https://img.shields.io/badge/🟠%20ADVANCED-0%20projects-e67e22?style=for-the-badge&labelColor=7d4b1e&color=e67e22)](#-advanced-projects-0)
+
+| # | Project | Live Demo | Repository |
+|:---:|:---|:---:|:---:|
+| 01 | **Coming soon** | -- | -- |
+
+---
 
 
 
@@ -258,7 +285,7 @@ All projects have live demos, so you can see them running without any local setu
 
 ### Core Stack
 
-<img src="https://skillicons.dev/icons?i=html,css,js,tailwind,vite,vuejs" alt="Tech Stack" height="35" />
+<img src="https://skillicons.dev/icons?i=html,css,js,tailwind,vite,vuejs,pnpm,turborepo" alt="Tech Stack" height="35" />
 
 ### Tools & Workflow
 

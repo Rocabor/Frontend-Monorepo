@@ -2,11 +2,12 @@
   "name": "turborepo",
   "private": true,
   "scripts": {
-    "build": "rimraf dist && turbo run build && pnpm portal:build",
+    "build": "rimraf dist && turbo run build && pnpm portal:build && pnpm readme",
     "portal:build": "vite build",
     "portal:dev": "vite",
     "dev": "turbo run dev",
     "dev:all": "pnpm build && npx vite preview --port 4173",
+    "readme": "node ./scripts/update-readme.js",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",

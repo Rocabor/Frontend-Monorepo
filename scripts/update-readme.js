@@ -6,7 +6,7 @@ const README_PATH = path.join(ROOT, 'README.md');
 const APPS_PATH = path.join(ROOT, 'apps');
 
 function countProjects() {
-  const categories = ['newbie', 'junior', 'intermediate'];
+  const categories = ['newbie', 'junior', 'intermediate', 'advanced'];
   const counts = {};
 
   categories.forEach(cat => {
@@ -28,7 +28,7 @@ function updateReadme() {
   let content = fs.readFileSync(README_PATH, 'utf8');
   const counts = countProjects();
 
-  const total = counts.newbie + counts.junior + counts.intermediate;
+  const total = counts.newbie + counts.junior + counts.intermediate + counts.advanced;
 
   content = content.replace(
     /\d+_projects(?!\s+across)/,
@@ -56,18 +56,36 @@ function updateReadme() {
   );
 
   content = content.replace(
+    /Advanced Projects \((\d+)\)/,
+    `Advanced Projects (${counts.advanced})`
+  );
+
+
+  content = content.replace(
     /\d+ completed challenges/,
     `${total} completed challenges`
   );
 
+  const plural = (n) => (n === 1 ? 'project' : 'projects');
+
   content = content.replace(
-    /NEWBIE-(\d+)%20projects/,
-    `NEWBIE-${counts.newbie}%20projects`
+    /NEWBIE-\d+%20projects?/,
+    `NEWBIE-${counts.newbie}%20${plural(counts.newbie)}`
   );
 
   content = content.replace(
-    /JUNIOR-(\d+)%20projects/,
-    `JUNIOR-${counts.junior}%20projects`
+    /JUNIOR-\d+%20projects?/,
+    `JUNIOR-${counts.junior}%20${plural(counts.junior)}`
+  );
+
+  content = content.replace(
+    /INTERMEDIATE-\d+%20projects?/,
+    `INTERMEDIATE-${counts.intermediate}%20${plural(counts.intermediate)}`
+  );
+
+  content = content.replace(
+    /ADVANCED-\d+%20projects?/,
+    `ADVANCED-${counts.advanced}%20${plural(counts.advanced)}`
   );
 
   content = content.replace(
@@ -85,8 +103,18 @@ function updateReadme() {
     `#-intermediate-projects-${counts.intermediate})`
   );
 
+  content = content.replace(
+    /#-advanced-projects-\d+\)/,
+    `#-advanced-projects-${counts.advanced})`
+  );
+
+  content = content.replace(
+    /#-advanced-projects-\d+\)/,
+    `#-advanced-projects-${counts.advanced})`
+  );
+
   fs.writeFileSync(README_PATH, content);
-  console.log(`Updated: ${counts.newbie} Newbie, ${counts.junior} Junior, ${counts.intermediate} Intermediate = ${total} total`);
+  console.log(`Updated: ${counts.newbie} Newbie, ${counts.junior} Junior, ${counts.intermediate} Intermediate, ${counts.advanced} Advanced = ${total} total`);
 }
 
 updateReadme();
