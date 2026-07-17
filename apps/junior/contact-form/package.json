@@ -10,14 +10,15 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@iconify/tailwind4": "^1.0.0",
-    "@tailwindcss/vite": "^4.3.1",
-    "tailwindcss": "^4.3.1"
+    "@iconify/tailwind4": "^1.2.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@turborepo/vite-config": "workspace:*",
-    "prettier": "^3.8.4",
-    "prettier-plugin-tailwindcss": "^0.8.0",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "prettier": "^3.9.5",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "vite": "latest"
   }
 }

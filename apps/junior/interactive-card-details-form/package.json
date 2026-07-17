@@ -10,13 +10,13 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "vue": "^3.5.38"
+    "vue": "^3.5.40"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.1",
+    "@tailwindcss/vite": "^4.3.3",
     "@turborepo/vite-config": "workspace:*",
-    "@vitejs/plugin-vue": "^6.0.7",
-    "tailwindcss": "^4.3.1",
-    "vite": "^8.0.16"
+    "@vitejs/plugin-vue": "^6.0.8",
+    "tailwindcss": "^4.3.3",
+    "vite": "latest"
   }
 }
