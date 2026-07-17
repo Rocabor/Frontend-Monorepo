@@ -374,7 +374,10 @@ body {
 .modal-enter-from .modal-card { transform: scale(0.94); }
 
 /* --- RESPONSIVE --- */
-@media (min-width: 1100px) {
+@media (min-width: 1400px) {
+  .project-grid { grid-template-columns: repeat(5, 1fr); }
+}
+@media (min-width: 1100px) and (max-width: 1399px) {
   .project-grid { grid-template-columns: repeat(4, 1fr); }
   .featured-card { flex-direction: row; }
   .featured-img { width: 58%; height: auto; min-height: 320px; }

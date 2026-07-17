@@ -15,10 +15,10 @@ const categoryMeta = {
 };
 
 const difficultyDetails = {
-  Newbie: 'The success foundation: Ultra-precise layout with semantic HTML5 and CSS3. Focused on visual detail and consistency.',
-  Junior: 'Real interactivity: Implementation of logic with JavaScript, DOM manipulation, and complex layouts using Flexbox and Grid.',
-  Intermediate: 'Architectural challenges: Integration of external APIs, state management, high-complexity dynamic components.',
-  Advanced: 'Production-grade mastery: Monorepos, design systems, testing, performance optimization and full architecture ownership.',
+  Newbie: 'Perfect for beginners learning HTML and CSS basics.',
+  Junior: 'Introduces more complex layouts and basic JavaScript.',
+  Intermediate: 'Requires solid CSS skills and JavaScript functionality.',
+  Advanced: 'Advanced - Complex applications with state management and APIs.',
 };
 
 const getProjectUrl = (href) => href.replace('./apps/', './');

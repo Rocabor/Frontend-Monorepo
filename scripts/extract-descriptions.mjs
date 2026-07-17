@@ -33,12 +33,17 @@ const cleanText = (text) => {
 
 const extractDescription = (raw) => {
   const lines = raw.split('\n');
-  // Buscar seccion "The challenge" y tomar lista "Users should be able to"
-  const lower = lines.join('\n');
-  const challengeIdx = lines.findIndex((l) =>
-    /###\s*The challenge/i.test(l) || /##\s*The challenge/i.test(l)
-  );
 
+  // 1) Primer parrafo narrativo tras el titulo (frase "This is a solution to the...")
+  const titleIdx = lines.findIndex((l) => l.startsWith('# '));
+  const intro = lines
+    .slice(titleIdx + 1)
+    .map((l) => cleanText(l))
+    .find((l) => l && l.length > 30 && !l.startsWith('##') && !isNoiseLine(l));
+  if (intro) return capitalize(intro).slice(0, 220);
+
+  // 2) Fallback: bullets de "Users should be able to"
+  const challengeIdx = lines.findIndex((l) => /#+\s*The challenge/i.test(l));
   if (challengeIdx !== -1) {
     const slice = lines.slice(challengeIdx + 1, challengeIdx + 30);
     const usersLine = slice.findIndex((l) => /Users should be able to/i.test(l));
@@ -47,23 +52,16 @@ const extractDescription = (raw) => {
         .slice(usersLine + 1)
         .map((l) => cleanText(l.replace(/^[-*]\s*/, '')))
         .filter((l) => l && !isNoiseLine('- ' + l) && l.length > 3)
-        .slice(0, 2);
-      if (bullets.length) {
-        return bullets.join(' ').slice(0, 200);
-      }
+        .slice(0, 2)
+        .map(capitalize);
+      if (bullets.length) return bullets.join(' ').slice(0, 220);
     }
   }
 
-  // Fallback: primer parrafo real tras el titulo
-  const titleIdx = lines.findIndex((l) => l.startsWith('# '));
-  const para = lines
-    .slice(titleIdx + 1)
-    .map((l) => cleanText(l))
-    .filter((l) => l && !isNoiseLine(l) && l.length > 20 && !l.startsWith('##'));
-  if (para.length) return para[0].slice(0, 200);
-
   return '';
 };
+
+const capitalize = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 
 const descriptions = {};
 const cats = fs.readdirSync(appsDir, { withFileTypes: true }).filter((d) => d.isDirectory());
