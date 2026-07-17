@@ -1,4 +1,5 @@
 <script setup>
+import { ref, computed, watch } from 'vue';
 import { useProjects } from '../composables/useProjects';
 import FeaturedProject from './FeaturedProject.vue';
 import ProjectCard from './ProjectCard.vue';
@@ -11,6 +12,18 @@ const {
   featuredProject,
   regularProjects,
 } = useProjects();
+
+const PAGE_SIZE = 8;
+const visibleCount = ref(PAGE_SIZE);
+
+watch(activeCategory, () => { visibleCount.value = PAGE_SIZE; });
+
+const visibleProjects = computed(() => regularProjects.value.slice(0, visibleCount.value));
+const canLoadMore = computed(() => visibleCount.value < regularProjects.value.length);
+
+const loadMore = () => {
+  visibleCount.value = Math.min(visibleCount.value + PAGE_SIZE, regularProjects.value.length);
+};
 </script>
 
 <template>
@@ -34,12 +47,16 @@ const {
         />
 
         <ProjectCard
-          v-for="project in regularProjects"
+          v-for="project in visibleProjects"
           :key="project.title"
           :project="project"
           @open="emit('open', $event)"
         />
       </div>
     </transition>
+
+    <div v-if="canLoadMore" class="load-more-wrap">
+      <button class="load-more-btn" @click="loadMore">Load More Projects</button>
+    </div>
   </section>
 </template>
