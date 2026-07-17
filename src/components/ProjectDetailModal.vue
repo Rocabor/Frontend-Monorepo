@@ -1,11 +1,13 @@
 <script setup>
 import { useProjects } from '../composables/useProjects';
+import { useLikes } from '../composables/useLikes';
 
 const props = defineProps({
   project: { type: Object, required: true },
 });
 const emit = defineEmits(['close']);
 const { getImageUrl, getLiveUrl, getSourceUrl } = useProjects();
+const { isLiked, toggleLike } = useLikes();
 </script>
 
 <template>
@@ -51,7 +53,14 @@ const { getImageUrl, getLiveUrl, getSourceUrl } = useProjects();
           <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>
           STRICTLY ALIGNED TO STYLE MANDATES
         </span>
-        <span>EST. COGNITIVE LEVEL: SENIOR LOG</span>
+        <button
+          class="modal-like"
+          :class="{ liked: isLiked(props.project.href) }"
+          @click="toggleLike(props.project.href)"
+        >
+          <svg viewBox="0 0 24 24" width="14" height="14" :fill="isLiked(props.project.href) ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          {{ isLiked(props.project.href) ? 'Liked' : 'Like' }}
+        </button>
       </div>
     </div>
   </div>

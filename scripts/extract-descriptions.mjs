@@ -33,14 +33,23 @@ const cleanText = (text) => {
 
 const extractDescription = (raw) => {
   const lines = raw.split('\n');
+  const title = lines.find((l) => l.startsWith('# ')) || '';
+  const challengeName = title.replace(/^#\s*Frontend Mentor\s*-\s*/i, '').replace(/\s*solution$/i, '').trim();
 
-  // 1) Primer parrafo narrativo tras el titulo (frase "This is a solution to the...")
-  const titleIdx = lines.findIndex((l) => l.startsWith('# '));
-  const intro = lines
-    .slice(titleIdx + 1)
-    .map((l) => cleanText(l))
-    .find((l) => l && l.length > 30 && !l.startsWith('##') && !isNoiseLine(l));
-  if (intro) return capitalize(intro).slice(0, 220);
+  // 1) Bullets de "What I learned" (específicos por proyecto)
+  const learnedIdx = lines.findIndex((l) => /^##\s*What I learned/i.test(l));
+  if (learnedIdx !== -1) {
+    const bullets = lines
+      .slice(learnedIdx + 1, learnedIdx + 20)
+      .map((l) => cleanText(l.replace(/^[-*]\s*/, '')))
+      .filter((l) => l && !isNoiseLine('- ' + l) && l.length > 5)
+      .slice(0, 2)
+      .map(capitalize);
+    if (bullets.length) {
+      const base = challengeName ? `${challengeName}: ` : '';
+      return (base + bullets.join(' ')).slice(0, 240);
+    }
+  }
 
   // 2) Fallback: bullets de "Users should be able to"
   const challengeIdx = lines.findIndex((l) => /#+\s*The challenge/i.test(l));
@@ -54,11 +63,14 @@ const extractDescription = (raw) => {
         .filter((l) => l && !isNoiseLine('- ' + l) && l.length > 3)
         .slice(0, 2)
         .map(capitalize);
-      if (bullets.length) return bullets.join(' ').slice(0, 220);
+      if (bullets.length) {
+        const base = challengeName ? `${challengeName}: ` : '';
+        return (base + bullets.join(' ')).slice(0, 240);
+      }
     }
   }
 
-  return '';
+  return challengeName ? capitalize(challengeName) : '';
 };
 
 const capitalize = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
