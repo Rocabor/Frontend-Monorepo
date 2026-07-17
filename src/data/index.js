@@ -3,6 +3,15 @@ import { juniorProjects } from './junior';
 import { intermediateProjects } from './intermediate';
 import descriptions from './descriptions.json';
 
+const normalizeDescription = (entry) => {
+  if (!entry) return [];
+  if (Array.isArray(entry)) return entry;
+  if (typeof entry === 'string') return [entry];
+  if (Array.isArray(entry.bullets)) return entry.bullets;
+  if (entry.title) return [entry.title];
+  return [];
+};
+
 const withMeta = (projects) => {
   let markedFeatured = false;
   return projects.map((p) => {
@@ -10,8 +19,8 @@ const withMeta = (projects) => {
     markedFeatured = true;
     return {
       ...p,
-      description: descriptions[p.href]?.bullets || [],
-      descriptionTitle: descriptions[p.href]?.title || p.title,
+      description: normalizeDescription(descriptions[p.href]),
+      descriptionTitle: descriptions[p.href]?.title || '',
       tags: p.technologies || [],
       isFeatured,
     };

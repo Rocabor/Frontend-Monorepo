@@ -56,7 +56,7 @@ const { isLiked, toggleLike, likeCount } = useLikes();
       <div class="modal-footer-bar">
         <span class="modal-foot-left">
           <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>
-          STRICTLY ALIGNED TO STYLE MANDATES
+          PROJECT DETAILS
         </span>
         <button
           class="modal-like"
