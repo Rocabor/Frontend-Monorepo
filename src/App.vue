@@ -45,6 +45,51 @@ const activeProjects = computed(() => {
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
+// PROJECT DETAIL MODAL
+const selectedProject = ref(null);
+
+const openProject = (project) => {
+  selectedProject.value = project;
+};
+const closeProject = () => {
+  selectedProject.value = null;
+};
+
+// Derive live / source URLs from the project href (apps/<cat>/<slug>/)
+const getLiveUrl = (href) => baseUrl + href.replace('./apps/', './');
+const getSourceUrl = (project) => {
+  const match = project.href.match(/\.\/apps\/([^/]+)\/([^/]+)\//);
+  if (!match) return 'https://github.com/Rocabor/Frontend-Monorepo';
+  return `https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/${match[1]}/${match[2]}`;
+};
+
+// MONOREPO EXPLORER (static tree)
+const repoTree = [
+  {
+    name: 'apps',
+    type: 'dir',
+    children: [
+      { name: 'newbie', type: 'dir', badge: 'Newbie', count: allProjects.Newbie.length },
+      { name: 'junior', type: 'dir', badge: 'Junior', count: allProjects.Junior.length },
+      { name: 'intermediate', type: 'dir', badge: 'Intermediate', count: allProjects.Intermediate.length },
+      { name: 'advanced', type: 'dir', badge: 'Advanced', count: allProjects.Advanced.length },
+    ],
+  },
+  { name: 'packages', type: 'dir', badge: 'Shared tooling' },
+  { name: 'scripts', type: 'dir', badge: 'Automation' },
+  { name: 'README.md', type: 'file' },
+  { name: 'turbo.json', type: 'file' },
+  { name: 'pnpm-workspace.yaml', type: 'file' },
+];
+
+// SOCIAL LINKS
+const socials = [
+  { label: 'GitHub', url: 'https://github.com/Rocabor' },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/' },
+  { label: 'Twitter', url: 'https://twitter.com/' },
+  { label: 'FM Profile', url: 'https://www.frontendmentor.io/profile/Rocabor' },
+];
 </script>
 
 <template>
@@ -145,39 +190,72 @@ const scrollToTop = () => {
           </div>
         </div>
 
-        <div class="project-grid">
-          <a
-            v-for="project in activeProjects"
-            :key="project.title"
-            :href="getProjectUrl(project.href)"
-            class="glass-card project-card"
-            target="_blank"
-          >
-            <div class="card-img-container">
-              <img :src="getImageUrl(project.image)" :alt="project.title" loading="lazy" />
-              <div class="card-hover-overlay">
-                <span>View Project</span>
+        <transition name="grid" mode="out-in">
+          <div class="project-grid" :key="activeCategory">
+            <button
+              v-for="project in activeProjects"
+              :key="project.title"
+              class="glass-card project-card"
+              @click="openProject(project)"
+            >
+              <div class="card-img-container">
+                <img :src="getImageUrl(project.image)" :alt="project.title" loading="lazy" />
+                <div class="card-hover-overlay">
+                  <span>View Details</span>
+                </div>
               </div>
-            </div>
 
-            <div class="card-info">
-              <h3>{{ project.title }}</h3>
-              <div class="tech-stack">
-                <img
-                  v-for="tech in project.technologies"
-                  :key="tech"
-                  :src="`${baseUrl}icons/${tech}.png`"
-                  :alt="tech"
-                  class="tech-icon"
-                  loading="lazy"
-                />
+              <div class="card-info">
+                <h3>{{ project.title }}</h3>
+                <div class="tech-stack">
+                  <img
+                    v-for="tech in project.technologies"
+                    :key="tech"
+                    :src="`${baseUrl}icons/${tech}.png`"
+                    :alt="tech"
+                    class="tech-icon"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div :class="['card-footer-tag', activeCategory.toLowerCase()]">
-              {{ activeCategory }}
-            </div>
-          </a>
+              <div :class="['card-footer-tag', activeCategory.toLowerCase()]">
+                {{ activeCategory }}
+              </div>
+            </button>
+          </div>
+        </transition>
+      </section>
+
+      <!-- MONOREPO EXPLORER -->
+      <section class="explorer-section">
+        <div class="section-header">
+          <h2 class="explorer-title">Monorepo Explorer</h2>
+          <span class="count-badge">Workspace structure at a glance</span>
+        </div>
+        <div class="explorer-tree glass-card">
+          <div class="tree-branch">
+            <span class="tree-icon">📦</span>
+            <span class="tree-name">frontend-monorepo</span>
+          </div>
+          <ul class="tree-list">
+            <li v-for="(node, i) in repoTree" :key="i" class="tree-item">
+              <span class="tree-icon">{{ node.type === 'dir' ? '📁' : '📄' }}</span>
+              <span class="tree-name">{{ node.name }}</span>
+              <span v-if="node.badge" :class="['tree-badge', (node.badge || '').toString().toLowerCase()]">
+                {{ node.badge }}<template v-if="node.count !== undefined"> · {{ node.count }}</template>
+              </span>
+              <ul v-if="node.children" class="tree-list tree-children">
+                <li v-for="(child, j) in node.children" :key="j" class="tree-item">
+                  <span class="tree-icon">📁</span>
+                  <span class="tree-name">{{ child.name }}</span>
+                  <span :class="['tree-badge', (child.badge || '').toLowerCase()]">
+                    {{ child.badge }}<template v-if="child.count !== undefined"> · {{ child.count }}</template>
+                  </span>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -186,7 +264,56 @@ const scrollToTop = () => {
           ↑ Back to top
         </a>
       </div>
+
+      <footer class="site-footer">
+        <div class="footer-brand">My Frontend Journey</div>
+        <div class="footer-socials">
+          <a
+            v-for="s in socials"
+            :key="s.label"
+            :href="s.url"
+            target="_blank"
+            class="footer-social"
+          >{{ s.label }}</a>
+        </div>
+        <p class="footer-copy">© {{ new Date().getFullYear() }} Rocabor · Built with Vue, Vite & Turbo</p>
+      </footer>
     </div>
+
+    <!-- PROJECT DETAIL MODAL -->
+    <transition name="modal">
+      <div v-if="selectedProject" class="modal-overlay" @click.self="closeProject">
+        <div class="modal-card glass-card">
+          <button class="modal-close" @click="closeProject">×</button>
+          <div class="modal-img">
+            <img :src="getImageUrl(selectedProject.image)" :alt="selectedProject.title" />
+          </div>
+          <div class="modal-body">
+            <div class="modal-tags">
+              <span
+                v-for="tech in selectedProject.technologies"
+                :key="tech"
+                class="modal-tag"
+              >{{ tech }}</span>
+            </div>
+            <h2 class="modal-title">{{ selectedProject.title }}</h2>
+            <p class="modal-diff">{{ selectedProject.difficulty }}</p>
+            <div class="modal-actions">
+              <a
+                :href="getLiveUrl(selectedProject.href)"
+                target="_blank"
+                class="modal-btn primary"
+              >Live Preview</a>
+              <a
+                :href="getSourceUrl(selectedProject)"
+                target="_blank"
+                class="modal-btn"
+              >Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
   </main>
 </template>
 
@@ -507,10 +634,48 @@ const scrollToTop = () => {
 .card-footer-tag.advanced { background: var(--diff-advanced); color: #000; }
 
 /* --- FOOTER --- */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 48px 24px 64px;
+  text-align: center;
+  margin-top: 40px;
+}
+.footer-brand {
+  font-family: 'Geist', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+.footer-socials {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.footer-social {
+  padding: 10px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.footer-social:hover {
+  color: var(--text-bright);
+  border-color: var(--color-primary);
+  background: rgba(142, 213, 255, 0.08);
+}
+.footer-copy {
+  font-size: 0.7rem;
+  color: rgba(189, 200, 209, 0.4);
+}
 .footer-nav {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 0 0 2rem;
 }
 .back-to-top {
   color: inherit;
@@ -521,6 +686,138 @@ const scrollToTop = () => {
   border-radius: 8px;
 }
 .back-to-top:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* --- MONOREPO EXPLORER --- */
+.explorer-section { margin-bottom: 80px; }
+.explorer-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.explorer-tree {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  border-radius: 16px;
+  font-family: 'Geist', monospace;
+  font-size: 0.85rem;
+  text-align: left;
+}
+.tree-branch { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-weight: 700; }
+.tree-list { list-style: none; margin: 0; padding-left: 18px; }
+.tree-children { margin-top: 8px; }
+.tree-item { display: flex; align-items: center; gap: 10px; padding: 5px 0; }
+.tree-name { color: var(--text-bright); }
+.tree-badge {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #000;
+}
+.tree-badge.newbie { background: var(--diff-newbie); }
+.tree-badge.junior { background: var(--diff-junior); }
+.tree-badge.intermediate { background: var(--diff-inter); }
+.tree-badge.advanced { background: var(--diff-advanced); }
+
+/* --- MODAL --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(5, 8, 11, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-card {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--color-surface-container);
+}
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: rgba(15, 20, 24, 0.6);
+  color: var(--text-bright);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+.modal-close:hover { background: rgba(255, 255, 255, 0.1); }
+.modal-img { height: 280px; background: var(--color-surface-container-lowest); }
+.modal-img img { width: 100%; height: 100%; object-fit: cover; }
+.modal-body { padding: 28px 32px 32px; }
+.modal-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.modal-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(142, 213, 255, 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(142, 213, 255, 0.25);
+}
+.modal-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 4px;
+  text-transform: capitalize;
+}
+.modal-diff { color: var(--text-dim); font-size: 0.85rem; margin: 0 0 24px; }
+.modal-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.modal-btn {
+  flex: 1;
+  min-width: 160px;
+  text-align: center;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 1px solid var(--color-border);
+  color: var(--text-bright);
+  transition: all 0.2s ease;
+}
+.modal-btn:hover { border-color: var(--color-primary); }
+.modal-btn.primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #04141b;
+  border: none;
+}
+
+/* --- ANIMATIONS --- */
+.grid-enter-active,
+.grid-leave-active { transition: all 0.35s ease; }
+.grid-enter-from { opacity: 0; transform: translateY(16px); }
+.grid-leave-to { opacity: 0; transform: translateY(-16px); }
+
+.modal-enter-active,
+.modal-leave-active { transition: opacity 0.25s ease; }
+.modal-enter-from,
+.modal-leave-to { opacity: 0; }
+.modal-enter-active .modal-card { transition: transform 0.25s ease; }
+.modal-enter-from .modal-card { transform: scale(0.94); }
 
 .active-filter {
   border-color: rgba(255, 255, 255, 0.45) !important;
