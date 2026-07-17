@@ -11,6 +11,7 @@
   --diff-newbie: #38bdf8;
   --diff-junior: #34d399;
   --diff-inter: #fbbf24;
+  --diff-advanced: #e67e22;
 }
 
 /* --- BASE --- */
@@ -101,6 +102,7 @@ body {
 .cat-card.newbie { border-top: 4px solid var(--diff-newbie); }
 .cat-card.junior { border-top: 4px solid var(--diff-junior); }
 .cat-card.intermediate { border-top: 4px solid var(--diff-inter); }
+.cat-card.advanced { border-top: 4px solid var(--diff-advanced); }
 
 /* --- SECCIONES DE PROYECTOS (FIX CENTRADO Y APILADO) --- */
 .main-content { 
@@ -225,6 +227,7 @@ body {
 .card-footer-tag.newbie { background: var(--diff-newbie); color: #000; }
 .card-footer-tag.junior { background: var(--diff-junior); color: #000; }
 .card-footer-tag.intermediate { background: var(--diff-inter); color: #000; }
+.card-footer-tag.advanced { background: var(--diff-advanced); color: #000; }
 
 /* --- RESPONSIVE --- */
 @media (min-width: 1101px) {
