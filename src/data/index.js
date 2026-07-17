@@ -10,7 +10,8 @@ const withMeta = (projects) => {
     markedFeatured = true;
     return {
       ...p,
-      description: descriptions[p.href] || '',
+      description: descriptions[p.href]?.bullets || [],
+      descriptionTitle: descriptions[p.href]?.title || p.title,
       tags: p.technologies || [],
       isFeatured,
     };

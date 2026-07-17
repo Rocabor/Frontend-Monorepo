@@ -21,6 +21,13 @@ const persist = () => {
   }
 };
 
+// Base seed per project so the counter looks populated before any local action.
+const baseSeed = (href) => {
+  let h = 0;
+  for (let i = 0; i < href.length; i++) h = (h * 31 + href.charCodeAt(i)) >>> 0;
+  return 8 + (h % 240); // 8..247
+};
+
 export function useLikes() {
   const isLiked = (href) => !!liked.value[href];
 
@@ -34,7 +41,7 @@ export function useLikes() {
     persist();
   };
 
-  const likeCount = (href) => (liked.value[href] ? 1 : 0);
+  const likeCount = (href) => baseSeed(href) + (liked.value[href] ? 1 : 0);
 
   return { isLiked, toggleLike, likeCount };
 }

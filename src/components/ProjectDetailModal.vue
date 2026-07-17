@@ -7,7 +7,7 @@ const props = defineProps({
 });
 const emit = defineEmits(['close']);
 const { getImageUrl, getLiveUrl, getSourceUrl } = useProjects();
-const { isLiked, toggleLike } = useLikes();
+const { isLiked, toggleLike, likeCount } = useLikes();
 </script>
 
 <template>
@@ -34,7 +34,12 @@ const { isLiked, toggleLike } = useLikes();
         <div class="modal-tags">
           <span v-for="tag in project.tags" :key="tag" class="modal-tag">{{ tag }}</span>
         </div>
-        <p class="modal-desc">{{ project.description }}</p>
+        <ul class="modal-checklist">
+          <li v-for="(item, i) in project.description" :key="i">
+            <svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>{{ item }}</span>
+          </li>
+        </ul>
 
         <div class="modal-actions">
           <a :href="getLiveUrl(project.href)" target="_blank" class="modal-btn primary">
@@ -59,7 +64,7 @@ const { isLiked, toggleLike } = useLikes();
           @click="toggleLike(props.project.href)"
         >
           <svg viewBox="0 0 24 24" width="14" height="14" :fill="isLiked(props.project.href) ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-          {{ isLiked(props.project.href) ? 'Liked' : 'Like' }}
+          <span class="like-count">{{ likeCount(props.project.href) }}</span>
         </button>
       </div>
     </div>

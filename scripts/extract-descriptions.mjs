@@ -36,41 +36,39 @@ const extractDescription = (raw) => {
   const title = lines.find((l) => l.startsWith('# ')) || '';
   const challengeName = title.replace(/^#\s*Frontend Mentor\s*-\s*/i, '').replace(/\s*solution$/i, '').trim();
 
+  let bullets = [];
+
   // 1) Bullets de "What I learned" (específicos por proyecto)
   const learnedIdx = lines.findIndex((l) => /^##\s*What I learned/i.test(l));
   if (learnedIdx !== -1) {
-    const bullets = lines
+    bullets = lines
       .slice(learnedIdx + 1, learnedIdx + 20)
       .map((l) => cleanText(l.replace(/^[-*]\s*/, '')))
       .filter((l) => l && !isNoiseLine('- ' + l) && l.length > 5)
-      .slice(0, 2)
+      .slice(0, 3)
       .map(capitalize);
-    if (bullets.length) {
-      const base = challengeName ? `${challengeName}: ` : '';
-      return (base + bullets.join(' ')).slice(0, 240);
-    }
   }
 
   // 2) Fallback: bullets de "Users should be able to"
-  const challengeIdx = lines.findIndex((l) => /#+\s*The challenge/i.test(l));
-  if (challengeIdx !== -1) {
-    const slice = lines.slice(challengeIdx + 1, challengeIdx + 30);
-    const usersLine = slice.findIndex((l) => /Users should be able to/i.test(l));
-    if (usersLine !== -1) {
-      const bullets = slice
-        .slice(usersLine + 1)
-        .map((l) => cleanText(l.replace(/^[-*]\s*/, '')))
-        .filter((l) => l && !isNoiseLine('- ' + l) && l.length > 3)
-        .slice(0, 2)
-        .map(capitalize);
-      if (bullets.length) {
-        const base = challengeName ? `${challengeName}: ` : '';
-        return (base + bullets.join(' ')).slice(0, 240);
+  if (bullets.length === 0) {
+    const challengeIdx = lines.findIndex((l) => /#+\s*The challenge/i.test(l));
+    if (challengeIdx !== -1) {
+      const slice = lines.slice(challengeIdx + 1, challengeIdx + 30);
+      const usersLine = slice.findIndex((l) => /Users should be able to/i.test(l));
+      if (usersLine !== -1) {
+        bullets = slice
+          .slice(usersLine + 1)
+          .map((l) => cleanText(l.replace(/^[-*]\s*/, '')))
+          .filter((l) => l && !isNoiseLine('- ' + l) && l.length > 3)
+          .slice(0, 3)
+          .map(capitalize);
       }
     }
   }
 
-  return challengeName ? capitalize(challengeName) : '';
+  if (bullets.length === 0 && challengeName) bullets = [capitalize(challengeName)];
+
+  return { title: challengeName ? capitalize(challengeName) : '', bullets };
 };
 
 const capitalize = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);

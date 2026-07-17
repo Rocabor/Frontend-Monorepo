@@ -290,6 +290,11 @@ body {
   font-size: 0.8rem; line-height: 1.5; color: var(--text-dim); margin: 0;
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
+.card-checklist, .modal-checklist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.card-checklist { font-size: 0.78rem; }
+.card-checklist li, .modal-checklist li { display: flex; align-items: flex-start; gap: 8px; color: var(--text-dim); line-height: 1.45; }
+.check { color: var(--color-success, #4ade80); flex-shrink: 0; margin-top: 1px; }
+.like-count { font-family: 'Geist', monospace; font-size: 0.62rem; font-weight: 700; }
 .card-footer { margin-top: auto; padding: 16px 18px 18px; }
 .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
 .card-tag {
@@ -344,7 +349,7 @@ body {
   display: flex; align-items: center; justify-content: center; padding: 24px;
 }
 .modal-card {
-  position: relative; width: min(900px, 100%); max-height: 90vh; overflow-y: auto;
+  position: relative; width: min(640px, 100%); max-height: 86vh; overflow-y: auto;
   border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);
   background: var(--color-surface-container); box-shadow: 0 25px 50px rgba(0,0,0,0.5);
 }
@@ -364,16 +369,16 @@ body {
 .modal-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
 .modal-tag { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 6px; background: rgba(255,255,255,0.05); color: var(--text-dim); border: 1px solid rgba(255,255,255,0.05); }
 .modal-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-dim); margin: 0 0 24px; }
-.modal-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.modal-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .modal-btn {
-  flex: 1; min-width: 160px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  text-align: center; padding: 12px 18px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.85rem;
-  background: var(--color-surface-container-highest); border: 1px solid rgba(255,255,255,0.18); color: var(--text-bright); transition: all 0.2s ease;
+  flex: 1; min-width: 120px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  text-align: center; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.72rem;
+  background: transparent; border: 1px solid rgba(255,255,255,0.15); color: var(--text-bright); transition: all 0.2s ease;
 }
 .modal-btn svg { flex-shrink: 0; }
-.modal-btn:hover { border-color: var(--color-primary); background: rgba(142,213,255,0.12); color: var(--color-primary); }
-.modal-btn.primary { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: #04141b; border: none; }
-.modal-btn.primary:hover { color: #04141b; filter: brightness(1.08); background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); }
+.modal-btn:hover { border-color: var(--color-primary); background: transparent; color: var(--color-primary); }
+.modal-btn.primary { background: transparent; color: var(--text-bright); border: 1px solid rgba(255,255,255,0.15); }
+.modal-btn.primary:hover { color: var(--color-primary); border-color: var(--color-primary); background: transparent; }
 .modal-footer-bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background: var(--color-surface-container-high); border-top: 1px solid rgba(255,255,255,0.05); font-family: 'Geist', monospace; font-size: 0.6rem; letter-spacing: 0.05em; color: var(--text-dim); }
 
 .modal-like {
