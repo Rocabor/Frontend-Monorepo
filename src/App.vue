@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { allProjects } from './data/index';
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -64,31 +64,25 @@ const getSourceUrl = (project) => {
   return `https://github.com/Rocabor/Frontend-Monorepo/tree/main/apps/${match[1]}/${match[2]}`;
 };
 
-// MONOREPO EXPLORER (static tree)
-const repoTree = [
-  {
-    name: 'apps',
-    type: 'dir',
-    children: [
-      { name: 'newbie', type: 'dir', badge: 'Newbie', count: allProjects.Newbie.length },
-      { name: 'junior', type: 'dir', badge: 'Junior', count: allProjects.Junior.length },
-      { name: 'intermediate', type: 'dir', badge: 'Intermediate', count: allProjects.Intermediate.length },
-      { name: 'advanced', type: 'dir', badge: 'Advanced', count: allProjects.Advanced.length },
-    ],
-  },
-  { name: 'packages', type: 'dir', badge: 'Shared tooling' },
-  { name: 'scripts', type: 'dir', badge: 'Automation' },
-  { name: 'README.md', type: 'file' },
-  { name: 'turbo.json', type: 'file' },
-  { name: 'pnpm-workspace.yaml', type: 'file' },
-];
+// BACK TO TOP (dynamic visibility)
+const showTop = ref(false);
+const onScroll = () => {
+  showTop.value = window.scrollY > 400;
+};
+onMounted(() => window.addEventListener('scroll', onScroll));
+onUnmounted(() => window.removeEventListener('scroll', onScroll));
 
-// SOCIAL LINKS
+// SOCIAL LINKS (inline SVG icons)
+const ghIcon = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>';
+const liIcon = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.5 2h-17C2.7 2 2 2.7 2 3.5v17c0 .8.7 1.5 1.5 1.5h17c.8 0 1.5-.7 1.5-1.5v-17C22 2.7 21.3 2 20.5 2zM8 19H5V9h3v10zM6.5 7.7c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.8 1.7-1.7 1.7zM19 19h-3v-5.3c0-1.3-.5-2.1-1.6-2.1-.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8V19h-3V9h3v1.4c.4-.6 1.2-1.5 2.9-1.5 2.1 0 3.7 1.4 3.7 4.3V19z"/></svg>';
+const twIcon = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4 4 0 0 0-6.8 3.6A11.3 11.3 0 0 1 3.8 4.6a4 4 0 0 0 1.2 5.3c-.6 0-1.2-.2-1.8-.5a4 4 0 0 0 3.2 3.9c-.5.2-1.1.2-1.7.1a4 4 0 0 0 3.7 2.8A8 8 0 0 1 2 17.9a11.3 11.3 0 0 0 17.4-9.5c.8-.6 1.5-1.3 2-2.1z"/></svg>';
+const fmIcon = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2 1 7.5 12 13l9-5.5V15h2V7.5L12 2zM5 11.3V16c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-4.7l-7 4.3-7-4.3z"/></svg>';
+
 const socials = [
-  { label: 'GitHub', url: 'https://github.com/Rocabor' },
-  { label: 'LinkedIn', url: 'https://www.linkedin.com/' },
-  { label: 'Twitter', url: 'https://twitter.com/' },
-  { label: 'FM Profile', url: 'https://www.frontendmentor.io/profile/Rocabor' },
+  { label: 'GitHub', url: 'https://github.com/Rocabor', icon: ghIcon },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/', icon: liIcon },
+  { label: 'Twitter', url: 'https://twitter.com/', icon: twIcon },
+  { label: 'FM Profile', url: 'https://www.frontendmentor.io/profile/Rocabor', icon: fmIcon },
 ];
 </script>
 
@@ -200,13 +194,14 @@ const socials = [
             >
               <div class="card-img-container">
                 <img :src="getImageUrl(project.image)" :alt="project.title" loading="lazy" />
-                <div class="card-hover-overlay">
-                  <span>View Details</span>
-                </div>
+                <div class="card-img-gradient"></div>
               </div>
 
               <div class="card-info">
                 <h3>{{ project.title }}</h3>
+              </div>
+
+              <div class="card-footer">
                 <div class="tech-stack">
                   <img
                     v-for="tech in project.technologies"
@@ -217,66 +212,54 @@ const socials = [
                     loading="lazy"
                   />
                 </div>
-              </div>
-
-              <div :class="['card-footer-tag', activeCategory.toLowerCase()]">
-                {{ activeCategory }}
+                <div class="card-footer-bottom">
+                  <span class="explore-label">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>
+                    EXPLORE DEMO
+                  </span>
+                  <div class="card-footer-icons">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+                  </div>
+                </div>
               </div>
             </button>
           </div>
         </transition>
       </section>
 
-      <!-- MONOREPO EXPLORER -->
-      <section class="explorer-section">
-        <div class="section-header">
-          <h2 class="explorer-title">Monorepo Explorer</h2>
-          <span class="count-badge">Workspace structure at a glance</span>
-        </div>
-        <div class="explorer-tree glass-card">
-          <div class="tree-branch">
-            <span class="tree-icon">📦</span>
-            <span class="tree-name">frontend-monorepo</span>
-          </div>
-          <ul class="tree-list">
-            <li v-for="(node, i) in repoTree" :key="i" class="tree-item">
-              <span class="tree-icon">{{ node.type === 'dir' ? '📁' : '📄' }}</span>
-              <span class="tree-name">{{ node.name }}</span>
-              <span v-if="node.badge" :class="['tree-badge', (node.badge || '').toString().toLowerCase()]">
-                {{ node.badge }}<template v-if="node.count !== undefined"> · {{ node.count }}</template>
-              </span>
-              <ul v-if="node.children" class="tree-list tree-children">
-                <li v-for="(child, j) in node.children" :key="j" class="tree-item">
-                  <span class="tree-icon">📁</span>
-                  <span class="tree-name">{{ child.name }}</span>
-                  <span :class="['tree-badge', (child.badge || '').toLowerCase()]">
-                    {{ child.badge }}<template v-if="child.count !== undefined"> · {{ child.count }}</template>
-                  </span>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <!-- BACK TO TOP (dynamic) -->
+      <transition name="top">
+        <button v-if="showTop" class="back-to-top-fab" @click="scrollToTop" aria-label="Back to top">
+          <svg class="top-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5" />
+            <path d="M5 12l7-7 7 7" />
+          </svg>
+          <span class="top-label">TOP</span>
+        </button>
+      </transition>
 
-      <div class="footer-nav">
-        <a href="#" class="back-to-top" @click.prevent="scrollToTop">
-          ↑ Back to top
-        </a>
-      </div>
-
+      <!-- FOOTER BAR -->
       <footer class="site-footer">
-        <div class="footer-brand">My Frontend Journey</div>
-        <div class="footer-socials">
-          <a
-            v-for="s in socials"
-            :key="s.label"
-            :href="s.url"
-            target="_blank"
-            class="footer-social"
-          >{{ s.label }}</a>
+        <div class="footer-inner">
+          <div class="footer-brand-col">
+            <span class="footer-brand tech-gradient">My Frontend Journey</span>
+            <p class="footer-copy">
+              © 2026 My Frontend Journey. Built for the modern web with premium standards.
+            </p>
+          </div>
+
+          <div class="footer-socials">
+            <a
+              v-for="s in socials"
+              :key="s.label"
+              :href="s.url"
+              target="_blank"
+              class="footer-social"
+              v-html="s.icon"
+            ></a>
+          </div>
         </div>
-        <p class="footer-copy">© {{ new Date().getFullYear() }} Rocabor · Built with Vue, Vite & Turbo</p>
       </footer>
     </div>
 
@@ -578,152 +561,154 @@ const socials = [
 
 .card-img-container {
   position: relative;
-  height: 140px;
+  height: 176px;
+  overflow: hidden;
   background: var(--color-surface-container-lowest);
 }
-.card-img-container img { width: 100%; height: 100%; object-fit: cover; }
-
-.card-hover-overlay {
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.project-card:hover .card-img-container img { transform: scale(1.04); }
+.card-img-gradient {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: 0.3s ease;
-  font-weight: 800;
-  color: #fff;
-  font-size: 1rem;
-  z-index: 2;
-  backdrop-filter: blur(4px);
+  background: linear-gradient(to top, rgba(15, 20, 24, 0.55), transparent);
 }
-.project-card:hover .card-hover-overlay { opacity: 1; }
 
 .card-info {
-  padding: 20px 15px;
-  flex-grow: 1;
+  padding: 18px 18px 0;
+}
+.card-info h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: left;
+  color: var(--text-bright);
+  transition: color 0.2s ease;
+}
+.project-card:hover .card-info h3 { color: var(--color-primary); }
+
+.card-footer {
+  margin-top: auto;
+  padding: 16px 18px 18px;
+}
+.tech-stack {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-bottom: 14px;
+}
+.tech-icon { width: 20px; height: 20px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+
+.card-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 14px;
+}
+.explore-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Geist', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+}
+.card-footer-icons {
+  display: flex;
+  gap: 10px;
+  color: var(--text-dim);
+}
+.card-footer-icons svg { transition: color 0.2s ease; cursor: pointer; }
+.card-footer-icons svg:hover { color: var(--color-primary); }
+
+/* --- BACK TO TOP FAB --- */
+.back-to-top-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 50;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 2px;
+  padding: 14px;
+  border-radius: 999px;
+  background: rgba(15, 20, 24, 0.85);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(142, 213, 255, 0.3);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
-.card-info h3 {
-  font-size: 0.9rem;
+.back-to-top-fab:hover { transform: scale(1.1); }
+.top-arrow { animation: top-bounce 1.6s infinite; }
+.top-label {
+  font-family: 'Geist', monospace;
+  font-size: 0.55rem;
   font-weight: 700;
-  text-align: center;
-  color: var(--text-bright);
-  min-height: 2.8em;
-  display: flex;
-  align-items: center;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
 }
-.tech-stack { display: flex; gap: 12px; justify-content: center; }
-.tech-icon { width: 20px; height: 20px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-
-.card-footer-tag {
-  padding: 10px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
+.back-to-top-fab:hover .top-label { color: var(--color-primary); }
+@keyframes top-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
-.card-footer-tag.newbie { background: var(--diff-newbie); color: #000; }
-.card-footer-tag.junior { background: var(--diff-junior); color: #000; }
-.card-footer-tag.intermediate { background: var(--diff-inter); color: #000; }
-.card-footer-tag.advanced { background: var(--diff-advanced); color: #000; }
+.top-enter-active,
+.top-leave-active { transition: opacity 0.3s ease, transform 0.3s ease; }
+.top-enter-from,
+.top-leave-to { opacity: 0; transform: translateY(16px); }
 
 /* --- FOOTER --- */
 .site-footer {
   border-top: 1px solid var(--color-border);
-  padding: 48px 24px 64px;
-  text-align: center;
+  padding: 40px 24px;
   margin-top: 40px;
+  background: var(--color-surface-container-lowest);
+}
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .footer-inner { flex-direction: row; justify-content: space-between; }
+}
+.footer-brand-col { display: flex; flex-direction: column; gap: 4px; align-items: center; }
+@media (min-width: 768px) {
+  .footer-brand-col { align-items: flex-start; }
 }
 .footer-brand {
   font-family: 'Geist', sans-serif;
   font-weight: 800;
   font-size: 1.1rem;
-  margin-bottom: 20px;
+}
+.footer-copy {
+  font-size: 0.6rem;
+  color: rgba(189, 200, 209, 0.4);
+  font-family: 'Geist', monospace;
 }
 .footer-socials {
   display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
+  gap: 18px;
+  align-items: center;
 }
 .footer-social {
-  padding: 10px 18px;
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
   color: var(--text-dim);
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-.footer-social:hover {
-  color: var(--text-bright);
-  border-color: var(--color-primary);
-  background: rgba(142, 213, 255, 0.08);
-}
-.footer-copy {
-  font-size: 0.7rem;
-  color: rgba(189, 200, 209, 0.4);
-}
-.footer-nav {
   display: flex;
-  justify-content: center;
-  padding: 0 0 2rem;
+  align-items: center;
+  transition: color 0.2s ease;
 }
-.back-to-top {
-  color: inherit;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--color-border);
-  transition: all 0.2s ease;
-  border-radius: 8px;
-}
-.back-to-top:hover { background: rgba(255, 255, 255, 0.1); }
-
-/* --- MONOREPO EXPLORER --- */
-.explorer-section { margin-bottom: 80px; }
-.explorer-title {
-  font-family: 'Geist', sans-serif;
-  font-size: 2rem;
-  font-weight: 800;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin: 0;
-}
-.explorer-tree {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 28px 32px;
-  border-radius: 16px;
-  font-family: 'Geist', monospace;
-  font-size: 0.85rem;
-  text-align: left;
-}
-.tree-branch { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-weight: 700; }
-.tree-list { list-style: none; margin: 0; padding-left: 18px; }
-.tree-children { margin-top: 8px; }
-.tree-item { display: flex; align-items: center; gap: 10px; padding: 5px 0; }
-.tree-name { color: var(--text-bright); }
-.tree-badge {
-  font-size: 0.55rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 2px 8px;
-  border-radius: 999px;
-  color: #000;
-}
-.tree-badge.newbie { background: var(--diff-newbie); }
-.tree-badge.junior { background: var(--diff-junior); }
-.tree-badge.intermediate { background: var(--diff-inter); }
-.tree-badge.advanced { background: var(--diff-advanced); }
+.footer-social:hover { color: var(--color-primary); }
 
 /* --- MODAL --- */
 .modal-overlay {
