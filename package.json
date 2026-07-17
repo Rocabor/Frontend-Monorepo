@@ -11,7 +11,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "clean": "Get-ChildItem -Path '.' -Include 'node_modules' -Recurse -Directory | Remove-Item -Recurse -Force; pnpm store prune; pnpm install"
+    "clean": "pnpm -r exec rm -rf node_modules && pnpm store prune && pnpm install"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
