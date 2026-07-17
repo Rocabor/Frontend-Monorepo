@@ -18,6 +18,10 @@
   --diff-inter: #fbbf24;
   --diff-advanced: #e67e22;
   --color-primary: #8ed5ff;
+  --color-primary-dark: #38bdf8;
+  --color-secondary: #bdc2ff;
+  --color-tertiary: #ffc176;
+  --color-error: #ffb4ab;
 }
 
 /* --- BASE --- */

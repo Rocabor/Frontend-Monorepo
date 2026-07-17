@@ -42,6 +42,9 @@ const activeProjects = computed(() => {
   return sorted;
 });
 
+const featuredProject = computed(() => activeProjects.value.find((p) => p.isFeatured) || null);
+const regularProjects = computed(() => activeProjects.value.filter((p) => !p.isFeatured));
+
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
@@ -189,45 +192,72 @@ const socials = [
         </div>
 
         <transition name="grid" mode="out-in">
-          <div class="project-grid" :key="activeCategory">
+          <div class="project-list" :key="activeCategory">
+            <!-- FEATURED PROJECT -->
             <button
-              v-for="project in activeProjects"
-              :key="project.title"
-              class="glass-card project-card"
-              @click="openProject(project)"
+              v-if="featuredProject"
+              class="glass-card featured-card"
+              @click="openProject(featuredProject)"
             >
-              <div class="card-img-container">
-                <img :src="getImageUrl(project.image)" :alt="project.title" loading="lazy" />
+              <div class="featured-img">
+                <img :src="getImageUrl(featuredProject.image)" :alt="featuredProject.title" loading="lazy" />
                 <div class="card-img-gradient"></div>
               </div>
-
-              <div class="card-info">
-                <h3>{{ project.title }}</h3>
-              </div>
-
-              <div class="card-footer">
-                <div class="tech-stack">
-                  <img
-                    v-for="tech in project.technologies"
-                    :key="tech"
-                    :src="`${baseUrl}icons/${tech}.png`"
-                    :alt="tech"
-                    class="tech-icon"
-                    loading="lazy"
-                  />
+              <div class="featured-info">
+                <div class="featured-tags">
+                  <span class="badge-featured">Featured</span>
+                  <span v-for="tag in featuredProject.tags.slice(0, 2)" :key="tag" class="badge-tag">{{ tag }}</span>
                 </div>
-                <div class="card-footer-bottom">
-                  <span class="explore-label">
-                    <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>
-                    EXPLORE DEMO
+                <h3 class="featured-title">{{ featuredProject.title }}</h3>
+                <p class="featured-desc">{{ featuredProject.description }}</p>
+                <div class="featured-actions">
+                  <span class="featured-link">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Live Preview
                   </span>
-                  <div class="card-footer-icons">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+                  <span class="featured-link">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
-                  </div>
+                    Source Code
+                  </span>
                 </div>
               </div>
             </button>
+
+            <!-- REGULAR GRID -->
+            <div class="project-grid">
+              <button
+                v-for="project in regularProjects"
+                :key="project.title"
+                class="glass-card project-card"
+                @click="openProject(project)"
+              >
+                <div class="card-img-container">
+                  <img :src="getImageUrl(project.image)" :alt="project.title" loading="lazy" />
+                  <div class="card-img-gradient"></div>
+                </div>
+
+                <div class="card-body">
+                  <h3 class="card-title">{{ project.title }}</h3>
+                  <p class="card-desc">{{ project.description }}</p>
+                </div>
+
+                <div class="card-footer">
+                  <div class="card-tags">
+                    <span v-for="tag in project.tags" :key="tag" class="card-tag">{{ tag }}</span>
+                  </div>
+                  <div class="card-footer-bottom">
+                    <span class="explore-label">
+                      <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>
+                      EXPLORE DEMO
+                    </span>
+                    <div class="card-footer-icons">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </div>
           </div>
         </transition>
       </section>
@@ -299,20 +329,33 @@ const socials = [
     <transition name="modal">
       <div v-if="selectedProject" class="modal-overlay" @click.self="closeProject">
         <div class="modal-card glass-card">
-          <button class="modal-close" @click="closeProject">×</button>
-          <div class="modal-img">
-            <img :src="getImageUrl(selectedProject.image)" :alt="selectedProject.title" />
+          <div class="modal-header">
+            <div class="modal-header-left">
+              <span :class="['modal-cat-badge', selectedProject.difficulty.toLowerCase()]">
+                {{ selectedProject.difficulty }}
+              </span>
+              <h3 class="modal-heading">{{ selectedProject.title }}</h3>
+            </div>
+            <button class="modal-close" @click="closeProject" aria-label="Close">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
           </div>
+
           <div class="modal-body">
+            <div class="modal-img">
+              <img :src="getImageUrl(selectedProject.image)" :alt="selectedProject.title" />
+              <div class="card-img-gradient"></div>
+            </div>
+
             <div class="modal-tags">
               <span
-                v-for="tech in selectedProject.technologies"
-                :key="tech"
+                v-for="tag in selectedProject.tags"
+                :key="tag"
                 class="modal-tag"
-              >{{ tech }}</span>
+              >{{ tag }}</span>
             </div>
-            <h2 class="modal-title">{{ selectedProject.title }}</h2>
-            <p class="modal-diff">{{ selectedProject.difficulty }}</p>
+            <p class="modal-desc">{{ selectedProject.description }}</p>
+
             <div class="modal-actions">
               <a
                 :href="getLiveUrl(selectedProject.href)"
@@ -331,6 +374,14 @@ const socials = [
                 Source Code
               </a>
             </div>
+          </div>
+
+          <div class="modal-footer-bar">
+            <span class="modal-foot-left">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>
+              STRICTLY ALIGNED TO STYLE MANDATES
+            </span>
+            <span>EST. COGNITIVE LEVEL: SENIOR LOG</span>
           </div>
         </div>
       </div>
@@ -608,28 +659,110 @@ const socials = [
 }
 
 /* --- GRID DE PROYECTOS --- */
+.project-list { display: flex; flex-direction: column; gap: 24px; }
 .project-grid {
   display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
 }
+
+/* Featured card */
+.featured-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: left;
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  transition: border-color 0.3s ease;
+}
+.featured-card:hover { border-color: rgba(142, 213, 255, 0.3); }
+.featured-img {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background: var(--color-surface-container-lowest);
+}
+.featured-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.featured-card:hover .featured-img img { transform: scale(1.03); }
+.featured-info {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.featured-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.badge-featured {
+  font-size: 0.55rem;
+  font-family: 'Geist', monospace;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(142, 213, 255, 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(142, 213, 255, 0.2);
+}
+.badge-tag {
+  font-size: 0.55rem;
+  font-family: 'Geist', monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-dim);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.featured-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  margin: 0;
+}
+.featured-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin: 0;
+}
+.featured-actions { display: flex; gap: 18px; margin-top: 4px; }
+.featured-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  transition: color 0.2s ease;
+}
+.featured-link:hover { color: var(--color-primary); }
+
+/* Regular card */
 .project-card {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  text-decoration: none;
-  height: 100%;
+  text-align: left;
   background: var(--color-glass);
   border: 1px solid var(--color-border);
-  border-radius: 15px;
-  transition: transform 0.3s ease;
+  border-radius: 16px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
   position: relative;
 }
-.project-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.3); }
+.project-card:hover { transform: translateY(-6px); border-color: rgba(142, 213, 255, 0.3); }
 
 .card-img-container {
   position: relative;
-  height: 176px;
+  height: 180px;
   overflow: hidden;
   background: var(--color-surface-container-lowest);
 }
@@ -646,29 +779,46 @@ const socials = [
   background: linear-gradient(to top, rgba(15, 20, 24, 0.55), transparent);
 }
 
-.card-info {
+.card-body {
   padding: 18px 18px 0;
+  flex-grow: 1;
 }
-.card-info h3 {
+.card-title {
   font-size: 0.95rem;
   font-weight: 700;
   text-align: left;
   color: var(--text-bright);
+  margin: 0 0 8px;
   transition: color 0.2s ease;
 }
-.project-card:hover .card-info h3 { color: var(--color-primary); }
+.project-card:hover .card-title { color: var(--color-primary); }
+.card-desc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 .card-footer {
   margin-top: auto;
   padding: 16px 18px 18px;
 }
-.tech-stack {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-start;
-  margin-bottom: 14px;
+.card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.card-tag {
+  font-size: 0.55rem;
+  font-family: 'Geist', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-dim);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
-.tech-icon { width: 20px; height: 20px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
 
 .card-footer-bottom {
   display: flex;
@@ -694,6 +844,19 @@ const socials = [
 }
 .card-footer-icons svg { transition: color 0.2s ease; cursor: pointer; }
 .card-footer-icons svg:hover { color: var(--color-primary); }
+
+@media (min-width: 1100px) {
+  .project-grid { grid-template-columns: repeat(4, 1fr); }
+  .featured-card { flex-direction: row; }
+  .featured-img { width: 58%; height: auto; min-height: 320px; }
+  .featured-info { width: 42%; justify-content: center; }
+}
+@media (max-width: 900px) {
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .project-grid { grid-template-columns: 1fr; }
+}
 
 /* --- BACK TO TOP FAB --- */
 .back-to-top-fab {
@@ -861,7 +1024,7 @@ const socials = [
   position: fixed;
   inset: 0;
   z-index: 60;
-  background: rgba(5, 8, 11, 0.8);
+  background: rgba(7, 10, 13, 0.9);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -870,52 +1033,86 @@ const socials = [
 }
 .modal-card {
   position: relative;
-  width: min(720px, 100%);
+  width: min(900px, 100%);
   max-height: 90vh;
   overflow-y: auto;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background: var(--color-surface-container);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
-.modal-close {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--color-border);
-  background: rgba(15, 20, 24, 0.6);
-  color: var(--text-bright);
-  font-size: 1.4rem;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 2;
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: var(--color-surface-container-high);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-.modal-close:hover { background: rgba(255, 255, 255, 0.1); }
-.modal-img { height: 280px; background: var(--color-surface-container-lowest); }
-.modal-img img { width: 100%; height: 100%; object-fit: cover; }
-.modal-body { padding: 28px 32px 32px; }
-.modal-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-.modal-tag {
+.modal-header-left { display: flex; align-items: center; gap: 12px; }
+.modal-cat-badge {
+  font-family: 'Geist', monospace;
   font-size: 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(142, 213, 255, 0.1);
-  color: var(--color-primary);
-  border: 1px solid rgba(142, 213, 255, 0.25);
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
 }
-.modal-title {
+.modal-cat-badge.newbie { background: rgba(142, 213, 255, 0.1); color: var(--color-primary); border-color: rgba(142, 213, 255, 0.2); }
+.modal-cat-badge.junior { background: rgba(189, 194, 255, 0.1); color: var(--color-secondary); border-color: rgba(189, 194, 255, 0.2); }
+.modal-cat-badge.intermediate { background: rgba(255, 193, 118, 0.1); color: var(--color-tertiary); border-color: rgba(255, 193, 118, 0.2); }
+.modal-cat-badge.advanced { background: rgba(255, 180, 171, 0.1); color: var(--color-error); border-color: rgba(255, 180, 171, 0.2); }
+.modal-heading {
   font-family: 'Geist', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 800;
-  margin: 0 0 4px;
-  text-transform: capitalize;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin: 0;
 }
-.modal-diff { color: var(--text-dim); font-size: 0.85rem; margin: 0 0 24px; }
+.modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.modal-close:hover { background: rgba(255, 255, 255, 0.05); color: var(--text-bright); }
+.modal-body { padding: 24px; }
+.modal-img {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-surface-container-lowest);
+  margin-bottom: 20px;
+}
+.modal-img img { width: 100%; height: 100%; object-fit: cover; }
+.modal-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.modal-tag {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-dim);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.modal-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+  margin: 0 0 24px;
+}
 .modal-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 .modal-btn {
   flex: 1;
@@ -951,6 +1148,19 @@ const socials = [
   filter: brightness(1.08);
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
 }
+.modal-footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: var(--color-surface-container-high);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: 'Geist', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+}
+.modal-foot-left { display: inline-flex; align-items: center; gap: 6px; color: var(--color-tertiary); }
 
 /* --- ANIMATIONS --- */
 .grid-enter-active,

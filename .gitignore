@@ -56,3 +56,5 @@ Thumbs.db
 .opencode/node_modules/
 .opencode/*.json
 .opencode/*.lock
+design-extracted/
+my-frontend-journey.zip

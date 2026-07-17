@@ -2,8 +2,8 @@
   "name": "turborepo",
   "private": true,
   "scripts": {
-    "build": "rimraf dist dist-portal && turbo run build && pnpm portal:build && node ./scripts/merge-portal.mjs && pnpm readme",
-    "portal:build": "vite build",
+    "build": "rimraf dist dist-portal && node ./scripts/extract-descriptions.mjs && turbo run build && pnpm portal:build && node ./scripts/merge-portal.mjs && pnpm readme",
+    "portal:build": "node ./scripts/extract-descriptions.mjs && vite build",
     "portal:dev": "vite",
     "dev": "turbo run dev",
     "dev:all": "pnpm build && npx vite preview --port 4173",
