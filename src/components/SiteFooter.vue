@@ -66,18 +66,19 @@ onMounted(() => {
       </div>
 
       <!-- COLUMNA DERECHA -->
-      <div class="w-full max-w-[360px] mx-auto lg:mx-0">
+      <div class="w-full max-w-[420px] mx-auto lg:mx-0">
         <div class="w-full bg-[rgba(2,6,23,0.6)] border border-[rgba(30,41,59,0.9)] rounded-2xl p-6 shadow-[0_0_24px_rgba(6,182,212,0.18)] transition-all duration-300 hover:border-[rgba(56,189,248,0.6)] hover:shadow-[0_0_40px_rgba(56,189,248,0.35)] hover:-translate-y-1">
-          <span class="block font-display text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#e2e8f0] mb-4 text-center">Let's Collaborate</span>
-
-          <div class="grid grid-cols-3 gap-2 mb-4">
-            <div v-for="s in stats" :key="s.label" class="text-center rounded-lg bg-[rgba(15,23,42,0.5)] border border-[rgba(30,41,59,0.9)] py-2">
-              <p class="font-display text-lg font-extrabold text-primary m-0 leading-none">{{ s.value }}</p>
-              <p class="font-mono text-[0.55rem] uppercase tracking-wider text-[#94a3b8] mt-1 m-0">{{ s.label }}</p>
+          <p class="font-display text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#e2e8f0] text-center mb-3">Journey Stats</p>
+          <div class="grid grid-cols-3 gap-3 mb-5">
+            <div v-for="s in stats" :key="s.label" class="text-center rounded-xl bg-[rgba(15,23,42,0.5)] border border-[rgba(30,41,59,0.9)] py-3 px-2">
+              <p class="font-mono text-[0.55rem] uppercase tracking-wider text-[#94a3b8] m-0 mb-1">{{ s.label }}</p>
+              <p class="font-display text-xl font-extrabold text-primary m-0 leading-none">{{ s.value }}</p>
             </div>
           </div>
 
-          <div class="grid grid-cols-4 gap-3 mb-4">
+          <span class="block font-display text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#e2e8f0] mb-4 text-center">Let's Collaborate</span>
+
+          <div class="grid grid-cols-4 gap-3">
             <a href="https://github.com/rocabor" target="_blank" rel="noreferrer" title="GitHub Profile" class="flex items-center justify-center w-12 h-12 rounded-xl bg-[rgba(15,23,42,0.6)] border border-[rgba(30,41,59,0.9)] text-dim transition hover:text-[#22d3ee] hover:border-[#06b6d4] hover:bg-[rgba(8,47,73,0.2)] hover:scale-105">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="transition-transform duration-300 hover:scale-110"><path d="M0 0h24v24H0z" fill="none" /><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" /></svg>
             </a>

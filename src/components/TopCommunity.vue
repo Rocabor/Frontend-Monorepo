@@ -58,6 +58,6 @@ onMounted(() => {
       </template>
     </div>
 
-    <p v-else class="font-mono text-[0.7rem] text-[#cbd5e1] m-0">No likes yet. Be the first to give some ❤!</p>
+    <p v-else class="font-mono text-[0.7rem] text-[#cbd5e1] m-0 text-center">No likes yet. Be the first to give some ❤!</p>
   </section>
 </template>
