@@ -1,5 +1,5 @@
 <script setup>
-import { watch, computed } from 'vue';
+import { watch, computed, ref, onMounted, onBeforeUnmount } from 'vue';
 import { useProjects } from '../composables/useProjects';
 import { useLikes } from '../composables/useLikes';
 import { useViews } from '../composables/useViews';
@@ -54,11 +54,56 @@ const diffTagHover = {
   intermediate: 'hover:bg-inter',
   advanced: 'hover:bg-advanced',
 };
+
+const dialogRef = ref(null);
+const previouslyFocused = ref(null);
+
+const onKeydown = (e) => {
+  if (e.key === 'Escape') {
+    emit('close');
+  } else if (e.key === 'Tab') {
+    const focusables = dialogRef.value?.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusables || !focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+};
+
+onMounted(() => {
+  previouslyFocused.value = document.activeElement;
+  document.addEventListener('keydown', onKeydown);
+  document.body.style.overflow = 'hidden';
+  dialogRef.value?.focus();
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener('keydown', onKeydown);
+  document.body.style.overflow = '';
+  if (previouslyFocused.value && previouslyFocused.value.focus) {
+    previouslyFocused.value.focus();
+  }
+});
 </script>
 
 <template>
   <div class="fixed inset-0 z-60 bg-[rgba(7,10,13,0.9)] backdrop-blur-md flex items-center justify-center p-6" @click.self="emit('close')">
-    <div class="modal-card-scale relative w-full max-w-[640px] max-h-[86vh] overflow-y-auto rounded-2xl border border-white/10 bg-surface shadow-[0_25px_50px_rgba(0,0,0,0.5)]">
+    <div
+      ref="dialogRef"
+      role="dialog"
+      aria-modal="true"
+      :aria-label="project.title"
+      tabindex="-1"
+      class="modal-card-scale relative w-full max-w-[640px] max-h-[86vh] overflow-y-auto rounded-2xl border border-white/10 bg-surface shadow-[0_25px_50px_rgba(0,0,0,0.5)] outline-none"
+    >
       <div class="flex items-center justify-between p-4 bg-surface-high border-b border-white/5">
         <div class="flex items-center gap-3">
           <span :class="['font-mono text-[0.6rem] font-bold uppercase tracking-wider px-2.5 py-1 rounded border', diffBadge[diff]]">
@@ -100,7 +145,7 @@ const diffTagHover = {
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
             Source Code
           </a>
-          <button @click="shareProject" class="flex-1 min-w-[120px] inline-flex items-center justify-center gap-1.5 text-center px-3.5 py-2 rounded-lg no-underline font-semibold text-[0.72rem] bg-transparent border border-white/15 text-bright cursor-pointer transition hover:border-primary hover:bg-primary hover:text-[#04141b]">
+          <button @click="shareProject" aria-label="Share this project" class="flex-1 min-w-[120px] inline-flex items-center justify-center gap-1.5 text-center px-3.5 py-2 rounded-lg no-underline font-semibold text-[0.72rem] bg-transparent border border-white/15 text-bright cursor-pointer transition hover:border-primary hover:bg-primary hover:text-[#04141b]">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
             Share
           </button>
@@ -116,9 +161,11 @@ const diffTagHover = {
           <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
           {{ viewCount(project.href) }} views
         </span>
-        <button
+          <button
           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full cursor-pointer border border-white/30 bg-transparent text-white font-mono text-[0.6rem] uppercase tracking-wider transition"
           :class="{ '!opacity-100 !translate-y-0': isLiked(project.href) }"
+          :aria-label="isLiked(project.href) ? 'Remove like' : 'Like this project'"
+          :aria-pressed="isLiked(project.href)"
           @click="toggleLike(project.href)"
         >
           <svg viewBox="0 0 24 24" width="14" height="14" fill="#e1002d" stroke="#e1002d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
