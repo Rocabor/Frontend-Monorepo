@@ -24,6 +24,11 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - name: Inject Supabase env (build-time VITE_ vars)
+        run: |
+          echo "VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}" >> "$GITHUB_ENV"
+          echo "VITE_SUPABASE_ANON_KEY=${{ secrets.VITE_SUPABASE_ANON_KEY }}" >> "$GITHUB_ENV"
+
       - uses: actions/cache@v4
         with:
           path: .turbo
