@@ -29,11 +29,11 @@ onMounted(() => {
 
 <template>
   <section class="max-w-[1200px] mx-auto px-6 pt-4 pb-8 relative z-10">
-    <div class="flex flex-wrap items-center justify-center gap-3 mb-5 text-center">
+    <div class="flex flex-wrap items-center justify-center gap-3 mb-3 text-center">
       <span class="font-display text-lg font-bold tracking-tight text-white">🔥 Community Favorites</span>
       <span class="hidden sm:block h-px flex-1 min-w-[20px] bg-gradient-to-r from-[rgba(56,189,248,0.4)] to-transparent"></span>
-      <span class="font-mono text-[0.6rem] uppercase tracking-[0.15em] text-[#cbd5e1]">Top liked by visitors</span>
     </div>
+    <p class="font-mono text-[0.6rem] uppercase tracking-[0.15em] text-[#cbd5e1] m-0 mb-5 text-center">Top liked by visitors</p>
 
     <div v-if="topItems.length" class="flex flex-wrap justify-center gap-4">
       <template v-for="item in topItems" :key="item.project?.href || item.rank">
