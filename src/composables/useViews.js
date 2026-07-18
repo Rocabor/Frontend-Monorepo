@@ -11,6 +11,7 @@ const normalizeHref = (href) =>
     .replace(/\/+$/, '') + '/';
 
 const counts = ref({});
+const loading = ref(false);
 
 const fetchCount = async (rawHref) => {
   const href = normalizeHref(rawHref);
@@ -70,8 +71,45 @@ export function useViews() {
 
   const initViews = (rawHrefs = []) => {
     if (!supabaseAvailable || !supabase) return;
-    rawHrefs.forEach((h) => fetchCount(h));
+    loading.value = true;
+    Promise.all(rawHrefs.map((h) => fetchCount(h))).finally(() => {
+      loading.value = false;
+    });
   };
 
-  return { viewCount, trackView, initViews };
+  const topViewed = ref([]);
+
+  const fetchTopViewed = async (limit = 3) => {
+    if (!supabaseAvailable || !supabase) return [];
+    const { data, error } = await supabase
+      .from(TABLE)
+      .select('project_href, views_count')
+      .gt('views_count', 0)
+      .order('views_count', { ascending: false })
+      .limit(limit);
+    if (error) {
+      console.error('[useViews] fetchTopViewed error:', JSON.stringify(error, null, 2));
+      return [];
+    }
+    topViewed.value = (data || [])
+      .map((r) => ({ href: r.project_href, views: r.views_count }));
+    return topViewed.value;
+  };
+
+  const totalViews = ref(0);
+
+  const fetchTotalViews = async () => {
+    if (!supabaseAvailable || !supabase) return 0;
+    const { data, error } = await supabase
+      .from(TABLE)
+      .select('views_count');
+    if (error) {
+      console.error('[useViews] fetchTotalViews error:', JSON.stringify(error, null, 2));
+      return 0;
+    }
+    totalViews.value = (data || []).reduce((acc, r) => acc + (r.views_count || 0), 0);
+    return totalViews.value;
+  };
+
+  return { viewCount, trackView, initViews, fetchTopViewed, topViewed, fetchTotalViews, totalViews, loading };
 }

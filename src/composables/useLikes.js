@@ -1,5 +1,6 @@
 import { ref } from 'vue';
 import { supabase, supabaseAvailable } from '../supabase';
+import { useToast } from './useToast';
 
 const STORAGE_KEY = 'fmj-likes';
 const TABLE = 'project_likes';
@@ -61,6 +62,7 @@ const localLiked = ref(loadDayLiked());
 
 // conteos reales desde Supabase (cache reactiva)
 const counts = ref({});
+const loading = ref(false);
 
 const fetchCount = async (rawHref) => {
   const href = normalizeHref(rawHref);
@@ -79,6 +81,7 @@ const fetchCount = async (rawHref) => {
 };
 
 export function useLikes() {
+  const { push: pushToast } = useToast();
   const isLiked = (rawHref) => !!localLiked.value[normalizeHref(rawHref)];
 
   const toggleLike = async (rawHref) => {
@@ -95,6 +98,8 @@ export function useLikes() {
     // reflejo optimista del conteo
     if (counts.value[href] == null) counts.value[href] = 0;
     counts.value[href] = Math.max(0, counts.value[href] + (already ? -1 : 1));
+
+    pushToast(already ? 'Like removed' : '❤ Liked!', 'success');
 
     if (!supabaseAvailable || !supabase) return;
 
@@ -126,7 +131,10 @@ export function useLikes() {
 
   const initLikes = (rawHrefs = []) => {
     if (!supabaseAvailable || !supabase) return;
-    rawHrefs.forEach((h) => fetchCount(h));
+    loading.value = true;
+    Promise.all(rawHrefs.map((h) => fetchCount(h))).finally(() => {
+      loading.value = false;
+    });
   };
 
   const topLiked = ref([]);
@@ -148,5 +156,20 @@ export function useLikes() {
     return topLiked.value;
   };
 
-  return { isLiked, toggleLike, likeCount, topRank, initLikes, fetchTopLiked, topLiked, supabaseAvailable };
+  const totalLikes = ref(0);
+
+  const fetchTotalLikes = async () => {
+    if (!supabaseAvailable || !supabase) return 0;
+    const { data, error } = await supabase
+      .from(TABLE)
+      .select('likes_count');
+    if (error) {
+      console.error('[useLikes] fetchTotalLikes error:', JSON.stringify(error, null, 2));
+      return 0;
+    }
+    totalLikes.value = (data || []).reduce((acc, r) => acc + (r.likes_count || 0), 0);
+    return totalLikes.value;
+  };
+
+  return { isLiked, toggleLike, likeCount, topRank, initLikes, fetchTopLiked, topLiked, fetchTotalLikes, totalLikes, loading, supabaseAvailable };
 }

@@ -89,6 +89,18 @@ body {
   100% { background-position: 200% 50%; }
 }
 
+/* --- SKELETON SHIMMER --- */
+.skeleton-block {
+  display: inline-block;
+  background: linear-gradient(90deg, rgba(255,255,255,0.08) 25%, rgba(255,255,255,0.18) 37%, rgba(255,255,255,0.08) 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.2s ease-in-out infinite;
+}
+@keyframes skeleton-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
 /* --- PULSING LIVE DOT --- */
 .live-dot {
   width: 7px;

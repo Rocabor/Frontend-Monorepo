@@ -13,8 +13,8 @@ const props = defineProps({
 
 const emit = defineEmits(['open']);
 const { getImageUrl } = useProjects();
-const { isLiked, toggleLike, likeCount, topRank, initLikes } = useLikes();
-const { viewCount, initViews } = useViews();
+const { isLiked, toggleLike, likeCount, topRank, initLikes, loading: likesLoading } = useLikes();
+const { viewCount, initViews, loading: viewsLoading } = useViews();
 const { target, revealed } = useReveal();
 
 const rank = computed(() => topRank(props.project.href));
@@ -47,7 +47,8 @@ onMounted(() => {
         aria-label="Like"
       >
         <svg viewBox="0 0 24 24" width="14" height="14" fill="#e1002d" stroke="#e1002d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-        <span class="text-white">{{ likeCount(project.href) }}</span>
+        <span v-if="likesLoading" class="skeleton-block w-4 h-3 rounded"></span>
+        <span v-else class="text-white">{{ likeCount(project.href) }}</span>
       </button>
 
       <div class="absolute left-0 right-0 bottom-0 z-2 p-4 flex flex-col gap-3 bg-gradient-to-t from-[rgba(10,14,18,0.92)] via-[rgba(10,14,18,0.55)] to-transparent opacity-0 translate-y-3 transition group-hover:opacity-100 group-hover:translate-y-0">
@@ -65,7 +66,8 @@ onMounted(() => {
           </span>
           <span class="inline-flex items-center gap-1 font-mono text-[0.6rem] font-bold tracking-wider text-dim">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-            {{ viewCount(project.href) }}
+            <span v-if="viewsLoading" class="skeleton-block w-5 h-3 rounded"></span>
+            <span v-else>{{ viewCount(project.href) }}</span>
           </span>
           <div class="flex gap-2.5 text-dim">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-colors hover:text-primary cursor-pointer"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>

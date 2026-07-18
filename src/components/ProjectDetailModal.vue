@@ -3,6 +3,7 @@ import { watch, computed } from 'vue';
 import { useProjects } from '../composables/useProjects';
 import { useLikes } from '../composables/useLikes';
 import { useViews } from '../composables/useViews';
+import { useToast } from '../composables/useToast';
 
 const props = defineProps({
   project: { type: Object, required: true },
@@ -11,6 +12,22 @@ const emit = defineEmits(['close']);
 const { getImageUrl, getLiveUrl, getSourceUrl } = useProjects();
 const { isLiked, toggleLike, likeCount, initLikes } = useLikes();
 const { viewCount, trackView, initViews } = useViews();
+const { push: pushToast } = useToast();
+
+const shareProject = async () => {
+  const url = typeof window !== 'undefined' ? `${window.location.origin}${getLiveUrl(project.href)}` : getLiveUrl(project.href);
+  const text = `Check out "${project.title}" on My Frontend Journey`;
+  try {
+    if (navigator.share) {
+      await navigator.share({ title: project.title, text, url });
+      return;
+    }
+    await navigator.clipboard.writeText(url);
+    pushToast('Link copied to clipboard!', 'success');
+  } catch {
+    /* user cancelled or unsupported */
+  }
+};
 
 watch(
   () => props.project?.href,
@@ -83,6 +100,10 @@ const diffTagHover = {
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
             Source Code
           </a>
+          <button @click="shareProject" class="flex-1 min-w-[120px] inline-flex items-center justify-center gap-1.5 text-center px-3.5 py-2 rounded-lg no-underline font-semibold text-[0.72rem] bg-transparent border border-white/15 text-bright cursor-pointer transition hover:border-primary hover:bg-primary hover:text-[#04141b]">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
+            Share
+          </button>
         </div>
       </div>
 

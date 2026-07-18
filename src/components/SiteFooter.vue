@@ -1,5 +1,24 @@
 <script setup>
+import { onMounted, computed } from 'vue';
+import { useLikes } from '../composables/useLikes';
+import { useViews } from '../composables/useViews';
+import { useProjects } from '../composables/useProjects';
+
 const currentYear = new Date().getFullYear();
+const { fetchTotalLikes, totalLikes } = useLikes();
+const { fetchTotalViews, totalViews } = useViews();
+const { totalProjects } = useProjects();
+
+const stats = computed(() => [
+  { label: 'Projects', value: totalProjects.value },
+  { label: 'Likes', value: totalLikes.value },
+  { label: 'Views', value: totalViews.value },
+]);
+
+onMounted(() => {
+  fetchTotalLikes();
+  fetchTotalViews();
+});
 </script>
 
 <template>
@@ -50,6 +69,13 @@ const currentYear = new Date().getFullYear();
       <div class="w-full max-w-[360px] mx-auto lg:mx-0">
         <div class="w-full bg-[rgba(2,6,23,0.6)] border border-[rgba(30,41,59,0.9)] rounded-2xl p-6 shadow-[0_0_24px_rgba(6,182,212,0.18)] transition-all duration-300 hover:border-[rgba(56,189,248,0.6)] hover:shadow-[0_0_40px_rgba(56,189,248,0.35)] hover:-translate-y-1">
           <span class="block font-display text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#e2e8f0] mb-4 text-center">Let's Collaborate</span>
+
+          <div class="grid grid-cols-3 gap-2 mb-4">
+            <div v-for="s in stats" :key="s.label" class="text-center rounded-lg bg-[rgba(15,23,42,0.5)] border border-[rgba(30,41,59,0.9)] py-2">
+              <p class="font-display text-lg font-extrabold text-primary m-0 leading-none">{{ s.value }}</p>
+              <p class="font-mono text-[0.55rem] uppercase tracking-wider text-[#94a3b8] mt-1 m-0">{{ s.label }}</p>
+            </div>
+          </div>
 
           <div class="grid grid-cols-4 gap-3 mb-4">
             <a href="https://github.com/rocabor" target="_blank" rel="noreferrer" title="GitHub Profile" class="flex items-center justify-center w-12 h-12 rounded-xl bg-[rgba(15,23,42,0.6)] border border-[rgba(30,41,59,0.9)] text-dim transition hover:text-[#22d3ee] hover:border-[#06b6d4] hover:bg-[rgba(8,47,73,0.2)] hover:scale-105">

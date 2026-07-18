@@ -5,9 +5,11 @@ import SiteHeader from './components/SiteHeader.vue';
 import ProjectGrid from './components/ProjectGrid.vue';
 import SiteFooter from './components/SiteFooter.vue';
 import TopCommunity from './components/TopCommunity.vue';
+import TopViewed from './components/TopViewed.vue';
 import BackToTop from './components/BackToTop.vue';
 import ProjectDetailModal from './components/ProjectDetailModal.vue';
 import BackgroundCanvas from './components/BackgroundCanvas.vue';
+import ToastHost from './components/ToastHost.vue';
 
 useProjects();
 const selectedProject = ref(null);
@@ -27,6 +29,7 @@ const closeProject = () => { selectedProject.value = null; };
     <div class="relative z-10">
       <ProjectGrid @open="openProject" />
       <TopCommunity @open="openProject" />
+      <TopViewed @open="openProject" />
       <BackToTop />
       <SiteFooter />
     </div>
@@ -38,5 +41,7 @@ const closeProject = () => { selectedProject.value = null; };
         @close="closeProject"
       />
     </transition>
+
+    <ToastHost />
   </main>
 </template>
