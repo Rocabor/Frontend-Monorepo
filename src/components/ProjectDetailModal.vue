@@ -1,4 +1,5 @@
 <script setup>
+import { watch } from 'vue';
 import { useProjects } from '../composables/useProjects';
 import { useLikes } from '../composables/useLikes';
 
@@ -7,7 +8,13 @@ const props = defineProps({
 });
 const emit = defineEmits(['close']);
 const { getImageUrl, getLiveUrl, getSourceUrl } = useProjects();
-const { isLiked, toggleLike, likeCount } = useLikes();
+const { isLiked, toggleLike, likeCount, initLikes } = useLikes();
+
+watch(
+  () => props.project?.href,
+  (href) => { if (href) initLikes([href]); },
+  { immediate: true }
+);
 </script>
 
 <template>
@@ -32,7 +39,7 @@ const { isLiked, toggleLike, likeCount } = useLikes();
         </div>
 
         <div class="modal-tags">
-          <span v-for="tag in project.tags" :key="tag" class="modal-tag">{{ tag }}</span>
+          <span v-for="tag in project.tags" :key="tag" class="modal-tag" :class="['diff', project.difficulty.toLowerCase()]">{{ tag }}</span>
         </div>
         <ul class="modal-checklist">
           <li v-for="(item, i) in project.description" :key="i">

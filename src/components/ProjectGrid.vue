@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, watch } from 'vue';
 import { useProjects } from '../composables/useProjects';
+import { useLikes } from '../composables/useLikes';
 import FeaturedProject from './FeaturedProject.vue';
 import ProjectCard from './ProjectCard.vue';
 
@@ -12,8 +13,10 @@ const {
   featuredProject,
   regularProjects,
 } = useProjects();
+const { initLikes } = useLikes();
 
-const PAGE_SIZE = 8;
+const PAGE_SIZE = 6;
+const STEP = 8;
 const visibleCount = ref(PAGE_SIZE);
 
 watch(activeCategory, () => { visibleCount.value = PAGE_SIZE; });
@@ -22,11 +25,20 @@ const visibleProjects = computed(() => regularProjects.value.slice(0, visibleCou
 const canShowLess = computed(() => visibleCount.value >= regularProjects.value.length && regularProjects.value.length > PAGE_SIZE);
 const canLoadMore = computed(() => visibleCount.value < regularProjects.value.length);
 
+const loadCounts = () => {
+  const hrefs = [];
+  if (featuredProject.value) hrefs.push(featuredProject.value.href);
+  visibleProjects.value.forEach((p) => hrefs.push(p.href));
+  if (hrefs.length) initLikes(hrefs);
+};
+
+watch([visibleCount, activeCategory], loadCounts, { immediate: true });
+
 const toggleProjects = () => {
   if (canShowLess.value) {
     visibleCount.value = PAGE_SIZE;
   } else {
-    visibleCount.value = Math.min(visibleCount.value + PAGE_SIZE, regularProjects.value.length);
+    visibleCount.value = Math.min(visibleCount.value + STEP, regularProjects.value.length);
   }
 };
 </script>
@@ -42,15 +54,15 @@ const toggleProjects = () => {
       </div>
     </div>
 
-    <FeaturedProject
-      v-if="featuredProject"
-      :project="featuredProject"
-      class="featured-standalone"
-      @open="emit('open', $event)"
-    />
-
     <transition name="grid" mode="out-in">
       <div class="project-grid" :key="activeCategory">
+        <FeaturedProject
+          v-if="featuredProject"
+          :project="featuredProject"
+          class="featured-in-grid"
+          @open="emit('open', $event)"
+        />
+
         <ProjectCard
           v-for="project in visibleProjects"
           :key="project.title"

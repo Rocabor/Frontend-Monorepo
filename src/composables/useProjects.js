@@ -23,7 +23,10 @@ const difficultyDetails = {
 
 const getProjectUrl = (href) => href.replace('./apps/', './');
 const getImageUrl = (image) => baseUrl + image;
-const getLiveUrl = (href) => baseUrl + href.replace('./apps/', './');
+const getLiveUrl = (href) => {
+  const clean = href.replace(/^\.\/apps\//, '').replace(/^\.\//, '');
+  return baseUrl + clean;
+};
 const getSourceUrl = (project) => {
   const match = project.href.match(/\.\/apps\/([^/]+)\/([^/]+)\//);
   if (!match) return 'https://github.com/Rocabor/Frontend-Monorepo';

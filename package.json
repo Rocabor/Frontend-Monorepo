@@ -39,6 +39,7 @@
     "node": ">=24"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.110.7",
     "vue": "^3.5.40"
   }
 }
