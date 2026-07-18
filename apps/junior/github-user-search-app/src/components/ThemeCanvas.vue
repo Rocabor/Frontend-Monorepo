@@ -15,7 +15,7 @@ let dim = 0;             // atenuación cuando una nube tapa el sol
 
 let stars = [];
 let clouds = [];
-let shootingStars = [];
+const shootingStars = [];
 
 const lerp = (a, b, t) => a + (b - a) * t;
 

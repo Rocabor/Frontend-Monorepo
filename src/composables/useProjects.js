@@ -1,5 +1,7 @@
 import { ref, computed } from 'vue';
 import { allProjects } from '../data/index';
+import { useLikes } from './useLikes';
+import { useViews } from './useViews';
 
 const baseUrl = import.meta.env.BASE_URL;
 
@@ -21,6 +23,23 @@ const difficultyDetails = {
   Advanced: 'Advanced - Complex applications with state management and APIs.',
 };
 
+const flatProjects = Object.values(allProjects).flat();
+
+const { likeCount } = useLikes();
+const { viewCount } = useViews();
+
+const findProjectByHref = (rawHref) =>
+  flatProjects.find((p) => {
+    const norm = String(rawHref || '')
+      .replace(/^\.\/apps\//, '')
+      .replace(/^\.\//, '')
+      .replace(/\/+$/, '') + '/';
+    return String(p.href || '')
+      .replace(/^\.\/apps\//, '')
+      .replace(/^\.\//, '')
+      .replace(/\/+$/, '') + '/' === norm;
+  }) || null;
+
 const getProjectUrl = (href) => href.replace('./apps/', './');
 const getImageUrl = (image) => baseUrl + image;
 const getLiveUrl = (href) => {
@@ -35,13 +54,18 @@ const getSourceUrl = (project) => {
 
 const activeProjects = computed(() => {
   const projects = allProjects[activeCategory.value] || [];
-  const sorted = [...projects];
-  if (sortOrder.value === 'newest') sorted.reverse();
+  let sorted = [...projects];
+  if (sortOrder.value === 'votes') {
+    sorted = sorted.filter((p) => likeCount(p.href) > 0).sort((a, b) => likeCount(b.href) - likeCount(a.href));
+  } else if (sortOrder.value === 'views') {
+    sorted = sorted.filter((p) => viewCount(p.href) > 0).sort((a, b) => viewCount(b.href) - viewCount(a.href));
+  } else if (sortOrder.value === 'newest') {
+    sorted.reverse();
+  }
   return sorted;
 });
 
-const featuredProject = computed(() => activeProjects.value[0] || null);
-const regularProjects = computed(() => activeProjects.value.slice(1));
+const activeCount = computed(() => (allProjects[activeCategory.value] || []).length);
 
 const totalProjects = computed(() =>
   Object.values(allProjects).reduce((acc, arr) => acc + (arr?.length || 0), 0)
@@ -60,11 +84,11 @@ export function useProjects() {
     categoryMeta,
     difficultyDetails,
     activeProjects,
-    featuredProject,
-    regularProjects,
+    activeCount,
     totalProjects,
     selectCategory,
     getProjectUrl,
+    findProjectByHref,
     getImageUrl,
     getLiveUrl,
     getSourceUrl,

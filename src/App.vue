@@ -2,11 +2,12 @@
 import { ref } from 'vue';
 import { useProjects } from './composables/useProjects';
 import SiteHeader from './components/SiteHeader.vue';
-import HeroSection from './components/HeroSection.vue';
 import ProjectGrid from './components/ProjectGrid.vue';
 import SiteFooter from './components/SiteFooter.vue';
+import TopCommunity from './components/TopCommunity.vue';
 import BackToTop from './components/BackToTop.vue';
 import ProjectDetailModal from './components/ProjectDetailModal.vue';
+import BackgroundCanvas from './components/BackgroundCanvas.vue';
 
 useProjects();
 const selectedProject = ref(null);
@@ -15,15 +16,17 @@ const closeProject = () => { selectedProject.value = null; };
 </script>
 
 <template>
-  <main class="app-container">
-    <div class="bg-glow-1"></div>
-    <div class="bg-glow-2"></div>
+  <main class="relative z-1">
+    <BackgroundCanvas />
+    <div class="fixed inset-0 z-0 pointer-events-none bg-grid"></div>
+    <div class="fixed rounded-full blur-[120px] -top-6 -left-6 w-[400px] h-[400px] bg-[rgba(142,213,255,0.06)] pointer-events-none z-0"></div>
+    <div class="fixed rounded-full blur-[120px] -bottom-6 -right-6 w-[400px] h-[400px] bg-[rgba(56,189,248,0.06)] pointer-events-none z-0"></div>
 
     <SiteHeader />
-    <HeroSection />
 
-    <div class="main-content">
+    <div class="relative z-10">
       <ProjectGrid @open="openProject" />
+      <TopCommunity @open="openProject" />
       <BackToTop />
       <SiteFooter />
     </div>
