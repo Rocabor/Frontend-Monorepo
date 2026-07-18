@@ -29,36 +29,8 @@ const persistLocal = (map) => {
   }
 };
 
-// local "ya di like" map por día (1 like por navegador por día)
-const todayKey = () => {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-};
-
-const loadDayLiked = () => {
-  try {
-    const map = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-    return map[todayKey()] || {};
-  } catch {
-    return {};
-  }
-};
-
-const persistDayLiked = (dayMap) => {
-  try {
-    const all = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-    all[todayKey()] = dayMap;
-    // limpiar días viejos (mantener solo últimos 3)
-    const keys = Object.keys(all).sort().slice(-3);
-    const trimmed = {};
-    keys.forEach((k) => { trimmed[k] = all[k]; });
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed));
-  } catch {
-    /* ignore */
-  }
-};
-
-const localLiked = ref(loadDayLiked());
+// Espejo visual "este dispositivo dio like" (no bloqueante: el conteo vive en el servidor)
+const localLiked = ref(loadLocal());
 
 // conteos reales desde Supabase (cache reactiva)
 const counts = ref({});
@@ -88,12 +60,12 @@ export function useLikes() {
     const href = normalizeHref(rawHref);
     const already = !!localLiked.value[href];
 
-    // 1 like por navegador por día (evita inflación al refrescar)
+    // Espejo visual local (no bloquea; el conteo real está en el servidor)
     const next = { ...localLiked.value };
     if (already) delete next[href];
     else next[href] = true;
     localLiked.value = next;
-    persistDayLiked(next);
+    persistLocal(next);
 
     // reflejo optimista del conteo
     if (counts.value[href] == null) counts.value[href] = 0;

@@ -29,19 +29,6 @@ const fetchCount = async (rawHref) => {
   return counts.value[href];
 };
 
-const todayKey = () => {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-};
-
-const viewedToday = () => {
-  try {
-    return JSON.parse(localStorage.getItem('fmj-views-day') || '{}');
-  } catch {
-    return {};
-  }
-};
-
 export function useViews() {
   const viewCount = (rawHref) => counts.value[normalizeHref(rawHref)] ?? 0;
 
@@ -49,14 +36,7 @@ export function useViews() {
     const href = normalizeHref(rawHref);
     if (counts.value[href] == null) counts.value[href] = 0;
 
-    // 1 conteo por navegador por día (evita inflación al refrescar)
-    const day = todayKey();
-    const seen = viewedToday();
-    if (seen[day] && seen[day][href]) return;
-    seen[day] = seen[day] || {};
-    seen[day][href] = true;
-    try { localStorage.setItem('fmj-views-day', JSON.stringify(seen)); } catch {}
-
+    // El conteo vive en el servidor (sin dedupe local): cada apertura suma +1
     counts.value[href] += 1; // optimista
 
     if (!supabaseAvailable || !supabase) return;
