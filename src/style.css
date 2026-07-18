@@ -230,21 +230,21 @@ body {
 .project-list { display: flex; flex-direction: column; gap: 24px; }
 .project-grid { display: grid; gap: 24px; grid-template-columns: repeat(3, 1fr); }
 
-/* Featured card (tamaño de 2 cards, dentro del grid) */
-.featured-in-grid { grid-column: span 2; }
+/* Featured card (banner destacado, fuera del grid) */
+.featured-standalone { margin-bottom: 24px; }
 .featured-card {
   display: flex; flex-direction: row;
   overflow: hidden; text-align: left;
   background: var(--color-glass);
   border: 1px solid rgba(142, 213, 255, 0.25);
-  border-radius: 16px; transition: border-color 0.3s ease, transform 0.3s ease;
+  border-radius: 16px; transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; position: relative;
 }
-.featured-card:hover { border-color: rgba(142, 213, 255, 0.5); transform: translateY(-4px); }
-.featured-img { position: relative; width: 50%; min-height: 220px; overflow: hidden; background: var(--color-surface-container-lowest); }
+.featured-card:hover { border-color: rgba(142, 213, 255, 0.5); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(142, 213, 255, 0.35); }
+.featured-img { position: relative; width: 50%; min-height: 240px; overflow: hidden; background: var(--color-surface-container-lowest); }
 .featured-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; position: absolute; inset: 0; }
 .featured-card:hover .featured-img img { transform: scale(1.04); }
 .featured-float { position: absolute; top: 12px; left: 12px; z-index: 2; }
-.featured-info { width: 50%; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px; justify-content: center; }
+.featured-info { width: 50%; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; justify-content: center; }
 .featured-tags { display: flex; gap: 8px; flex-wrap: wrap; }
 .badge-featured {
   font-size: 0.55rem; font-family: 'Geist', monospace; font-weight: 700;
@@ -257,7 +257,6 @@ body {
   background: rgba(255, 255, 255, 0.05); color: var(--text-dim); border: 1px solid rgba(255, 255, 255, 0.05);
 }
 .featured-title { font-family: 'Geist', sans-serif; font-size: 1.25rem; font-weight: 800; color: var(--text-bright); margin: 0; }
-.featured-desc { font-size: 0.85rem; line-height: 1.5; color: var(--text-dim); margin: 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* Regular card */
 .project-card {
@@ -418,9 +417,8 @@ body {
 }
 @media (min-width: 1100px) and (max-width: 1399px) {
   .project-grid { grid-template-columns: repeat(4, 1fr); justify-content: center; }
-  .featured-card { flex-direction: row; }
   .featured-img { width: 58%; height: auto; min-height: 320px; }
-  .featured-info { width: 42%; justify-content: center; }
+  .featured-info { width: 42%; }
 }
 @media (max-width: 1100px) { .hero-grid { grid-template-columns: 1fr; } .category-nav { grid-template-columns: repeat(2, 1fr); } .project-grid { grid-template-columns: repeat(2, 1fr); justify-content: center; } }
 @media (max-width: 767px) { .header-nav { display: none; } .category-nav { grid-template-columns: 1fr; } .project-grid { grid-template-columns: 1fr; } .hero-title { text-align: center; } .hero-text { text-align: center; } }

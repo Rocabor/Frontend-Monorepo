@@ -17,7 +17,7 @@ const { getImageUrl } = useProjects();
     </div>
     <div class="featured-info">
       <div class="featured-tags">
-        <span v-for="tag in project.tags.slice(0, 2)" :key="tag" class="badge-tag">{{ tag }}</span>
+        <span v-for="tag in project.tags" :key="tag" class="badge-tag">{{ tag }}</span>
       </div>
       <h3 class="featured-title">{{ project.title }}</h3>
       <div class="card-footer-bottom">

@@ -21,7 +21,7 @@ const withMeta = (projects) => {
       ...p,
       description: normalizeDescription(descriptions[p.href]),
       descriptionTitle: descriptions[p.href]?.title || '',
-      tags: p.technologies || [],
+      tags: [...new Set(p.technologies || [])],
       isFeatured,
     };
   });

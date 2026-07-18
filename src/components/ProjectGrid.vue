@@ -42,15 +42,15 @@ const toggleProjects = () => {
       </div>
     </div>
 
+    <FeaturedProject
+      v-if="featuredProject"
+      :project="featuredProject"
+      class="featured-standalone"
+      @open="emit('open', $event)"
+    />
+
     <transition name="grid" mode="out-in">
       <div class="project-grid" :key="activeCategory">
-        <FeaturedProject
-          v-if="featuredProject"
-          :project="featuredProject"
-          class="featured-in-grid"
-          @open="emit('open', $event)"
-        />
-
         <ProjectCard
           v-for="project in visibleProjects"
           :key="project.title"
