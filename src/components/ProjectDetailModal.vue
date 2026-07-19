@@ -39,25 +39,29 @@ const copyToClipboard = (text) => {
 };
 
 const shareProject = async () => {
-  const url = getLiveUrl(project.href);
-  console.log('[share] clicked, url=', url);
-  const text = `Check out "${project.title}" on My Frontend Journey`;
-  // En móvil con share nativo, usarlo; en desktop, copiar directo.
-  const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-  if (isTouch && navigator.share) {
-    try {
-      await navigator.share({ title: project.title, text, url });
-      return;
-    } catch {
-      // cancelado o falló -> copiar igual
-    }
-  }
   try {
-    await copyToClipboard(url);
-    pushToast('Link copied to clipboard!', 'success');
-  } catch (e) {
-    console.error('[share] copy failed:', e);
-    window.prompt('Copy this link to share:', url);
+    const url = getLiveUrl(project.href);
+    console.log('[share] clicked, url=', url);
+    const text = `Check out "${project.title}" on My Frontend Journey`;
+    const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    if (isTouch && typeof navigator.share === 'function') {
+      try {
+        await navigator.share({ title: project.title, text, url });
+        return;
+      } catch {
+        // cancelado o falló -> copiar igual
+      }
+    }
+    try {
+      await copyToClipboard(url);
+      pushToast('Link copied to clipboard!', 'success');
+    } catch (e) {
+      console.error('[share] copy failed:', e);
+      window.prompt('Copy this link to share:', url);
+    }
+  } catch (err) {
+    console.error('[share] unhandled:', err);
+    pushToast('Could not share: ' + (err && err.message ? err.message : 'unknown error'), 'error');
   }
 };
 
