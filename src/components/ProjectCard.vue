@@ -42,7 +42,7 @@ onMounted(() => {
       <span v-if="rank >= 0" class="absolute bottom-2.5 left-2.5 z-10 font-mono text-[0.55rem] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-[rgba(251,191,36,0.12)] text-[#fbbf24] border border-[rgba(251,191,36,0.3)]">{{ rankLabel }}</span>
 
       <button
-        class="absolute top-2.5 right-2.5 z-10 inline-flex items-center gap-1.5 px-2 py-1 rounded-full cursor-pointer border border-white/30 bg-[rgba(10,14,18,0.55)] text-white font-mono text-[0.62rem] font-bold backdrop-blur-md opacity-0 -translate-y-1 transition group-hover:opacity-100 group-hover:translate-y-0"
+        class="absolute top-2.5 right-2.5 z-10 inline-flex items-center gap-1.5 px-2 py-1 rounded-full cursor-pointer border border-white/30 bg-[rgba(10,14,18,0.55)] text-white font-mono text-[0.62rem] font-bold backdrop-blur-md opacity-0 -translate-y-1 transition group-hover:opacity-100 group-hover:translate-y-0 max-sm:opacity-100 max-sm:translate-y-0"
         @click.stop="toggleLike(project.href)"
         aria-label="Like"
       >
@@ -51,7 +51,7 @@ onMounted(() => {
         <span v-else class="text-white">{{ likeCount(project.href) }}</span>
       </button>
 
-      <div class="absolute left-0 right-0 bottom-0 z-2 p-4 flex flex-col gap-3 bg-gradient-to-t from-[rgba(10,14,18,0.92)] via-[rgba(10,14,18,0.55)] to-transparent opacity-0 translate-y-3 transition group-hover:opacity-100 group-hover:translate-y-0">
+      <div class="absolute left-0 right-0 bottom-0 z-2 p-4 flex flex-col gap-3 bg-gradient-to-t from-[rgba(10,14,18,0.92)] via-[rgba(10,14,18,0.55)] to-transparent opacity-0 translate-y-3 transition group-hover:opacity-100 group-hover:translate-y-0 max-sm:opacity-100 max-sm:translate-y-0">
         <div class="flex flex-wrap gap-1.5">
           <span
             v-for="tag in project.tags"
