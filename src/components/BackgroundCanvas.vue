@@ -3,7 +3,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 
 const canvas = ref(null);
 let ctx, raf, particles, w, h, dpr;
-let mouse = { x: -9999, y: -9999 };
+const mouse = { x: -9999, y: -9999 };
 
 const COLORS = ['#8ed5ff', '#38bdf8', '#818cf8'];
 const COUNT_BASE = 70;
@@ -112,5 +112,5 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <canvas ref="canvas" class="fixed inset-0 -z-10 w-full h-full pointer-events-none"></canvas>
+  <canvas ref="canvas" class="fixed inset-0 -z-10 w-full h-full pointer-events-none" />
 </template>
