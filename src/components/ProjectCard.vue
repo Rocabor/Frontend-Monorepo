@@ -31,7 +31,7 @@ onMounted(() => {
     ref="target"
     type="button"
     :aria-label="`Open details for ${project.title}`"
-    class="group flex flex-col overflow-hidden text-left rounded-2xl bg-glass border border-line transition hover:-translate-y-1.5 hover:border-2 hover:border-primary hover:shadow-[0_12px_32px_rgba(142,213,255,0.35)] relative reveal w-full cursor-pointer"
+    class="group flex flex-col overflow-hidden text-left rounded-2xl bg-glass border border-line transition hover:-translate-y-1.5 hover:border-2 hover:border-primary hover:shadow-[0_12px_32px_rgba(142,213,255,0.35)] relative reveal w-full cursor-pointer active:scale-[0.98] focus-visible:scale-[0.98]"
     :class="{ 'w-full sm:w-[280px]': centered, 'is-visible': revealed }"
     @click="emit('open', project)"
   >
@@ -45,7 +45,7 @@ onMounted(() => {
 
       <button
         type="button"
-        class="absolute top-2.5 right-2.5 z-10 inline-flex items-center gap-1.5 px-2 py-1 rounded-full cursor-pointer border border-white/30 bg-[rgba(10,14,18,0.55)] text-white font-mono text-[0.62rem] font-bold backdrop-blur-md opacity-0 -translate-y-1 transition group-hover:opacity-100 group-hover:translate-y-0 max-sm:opacity-100 max-sm:translate-y-0"
+        class="absolute top-2.5 right-2.5 z-10 inline-flex items-center gap-1.5 px-2 py-1 rounded-full cursor-pointer border border-white/30 bg-[rgba(10,14,18,0.55)] text-white font-mono text-[0.62rem] font-bold backdrop-blur-md opacity-0 -translate-y-1 transition group-hover:opacity-100 group-hover:translate-y-0 max-sm:opacity-100 max-sm:translate-y-0 active:scale-90 focus-visible:scale-90 focus-visible:opacity-100"
         @click.stop="toggleLike(project.href)"
         :aria-label="isLiked(project.href) ? `Remove like from ${project.title}` : `Like ${project.title}`"
         :aria-pressed="isLiked(project.href)"

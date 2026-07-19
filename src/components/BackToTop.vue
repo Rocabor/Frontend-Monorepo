@@ -13,7 +13,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll));
   <transition name="top">
     <button
       v-if="showTop"
-      class="fixed bottom-7 right-7 z-50 flex flex-col items-center gap-0.5 px-3.5 py-3.5 rounded-full bg-[rgba(15,20,24,0.85)] backdrop-blur-md border border-[rgba(142,213,255,0.3)] text-primary cursor-pointer transition hover:scale-110"
+      class="fixed bottom-7 right-7 z-50 flex flex-col items-center gap-0.5 px-3.5 py-3.5 rounded-full bg-[rgba(15,20,24,0.85)] backdrop-blur-md border border-[rgba(142,213,255,0.3)] text-primary cursor-pointer transition hover:scale-110 active:scale-95 focus-visible:scale-95"
       @click="scrollToTop"
       aria-label="Back to top"
     >

@@ -154,7 +154,7 @@ onBeforeUnmount(() => {
           </h3>
         </div>
         <button
-          class="text-dim hover:text-bright flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent transition hover:bg-white/5"
+          class="text-dim hover:text-bright flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent transition hover:bg-white/5 active:scale-90 focus-visible:scale-90"
           aria-label="Close"
           @click="emit('close')">
           <svg
@@ -216,7 +216,7 @@ onBeforeUnmount(() => {
           <a
             :href="getLiveUrl(project.href)"
             target="_blank"
-            class="text-bright hover:border-primary hover:bg-primary inline-flex min-w-30 flex-1 items-center justify-center gap-1.5 rounded-lg border border-white/15 bg-transparent px-3.5 py-2 text-center text-[0.72rem] font-semibold no-underline transition hover:text-[#04141b]">
+            class="text-bright hover:border-primary hover:bg-primary inline-flex min-w-30 flex-1 items-center justify-center gap-1.5 rounded-lg border border-white/15 bg-transparent px-3.5 py-2 text-center text-[0.72rem] font-semibold no-underline transition hover:text-[#04141b] active:scale-95 focus-visible:scale-95">
             <svg
               viewBox="0 0 24 24"
               width="16"
@@ -229,7 +229,7 @@ onBeforeUnmount(() => {
           <a
             :href="getSourceUrl(project)"
             target="_blank"
-            class="text-bright hover:border-primary hover:bg-primary inline-flex min-w-30 flex-1 items-center justify-center gap-1.5 rounded-lg border border-white/15 bg-transparent px-3.5 py-2 text-center text-[0.72rem] font-semibold no-underline transition hover:text-[#04141b]">
+            class="text-bright hover:border-primary hover:bg-primary inline-flex min-w-30 flex-1 items-center justify-center gap-1.5 rounded-lg border border-white/15 bg-transparent px-3.5 py-2 text-center text-[0.72rem] font-semibold no-underline transition hover:text-[#04141b] active:scale-95 focus-visible:scale-95">
             <svg
               viewBox="0 0 24 24"
               width="16"
@@ -247,7 +247,7 @@ onBeforeUnmount(() => {
           <button
             type="button"
             aria-label="Share this project"
-            class="text-bright hover:border-primary hover:bg-primary inline-flex min-w-30 flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-white/15 bg-transparent px-3.5 py-2 text-center text-[0.72rem] font-semibold no-underline transition hover:text-[#04141b]"
+            class="text-bright hover:border-primary hover:bg-primary inline-flex min-w-30 flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-white/15 bg-transparent px-3.5 py-2 text-center text-[0.72rem] font-semibold no-underline transition hover:text-[#04141b] active:scale-95 focus-visible:scale-95"
             @click="shareProject">
             <svg
               class="pointer-events-none"
@@ -299,7 +299,7 @@ onBeforeUnmount(() => {
           {{ viewCount(project.href) }} views
         </span>
         <button
-          class="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-white/30 bg-transparent px-3 py-1.5 font-mono text-[0.6rem] tracking-wider text-white uppercase transition"
+          class="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-white/30 bg-transparent px-3 py-1.5 font-mono text-[0.6rem] tracking-wider text-white uppercase transition active:scale-90 focus-visible:scale-90"
           :class="{ 'translate-y-0! opacity-100!': isLiked(project.href) }"
           :aria-label="isLiked(project.href) ? 'Remove like' : 'Like this project'"
           :aria-pressed="isLiked(project.href)"

@@ -56,21 +56,21 @@ const toggleProjects = () => {
       <div class="flex flex-wrap gap-3 mt-5 justify-center">
         <button
           :class="[
-            'px-5 py-2.5 rounded-lg border text-sm font-display font-bold cursor-pointer transition-all',
+            'px-5 py-2.5 rounded-lg border text-sm font-display font-bold cursor-pointer transition-all active:scale-95 focus-visible:scale-95',
             sortOrder === 'newest' ? 'text-[#04141b] bg-gradient-to-br from-primary to-primary-dark border-transparent' : 'border-white/10 bg-surface text-bright hover:text-[#04141b] hover:bg-gradient-to-br hover:from-primary hover:to-primary-dark hover:border-transparent'
           ]"
           @click="sortOrder = 'newest'"
         >Newest</button>
         <button
           :class="[
-            'px-5 py-2.5 rounded-lg border text-sm font-display font-bold cursor-pointer transition-all',
+            'px-5 py-2.5 rounded-lg border text-sm font-display font-bold cursor-pointer transition-all active:scale-95 focus-visible:scale-95',
             sortOrder === 'oldest' ? 'text-[#04141b] bg-gradient-to-br from-primary to-primary-dark border-transparent' : 'border-white/10 bg-surface text-bright hover:text-[#04141b] hover:bg-gradient-to-br hover:from-primary hover:to-primary-dark hover:border-transparent'
           ]"
           @click="sortOrder = 'oldest'"
         >Oldest</button>
         <button
           :class="[
-            'px-5 py-2.5 rounded-lg border text-sm font-display font-bold cursor-pointer transition-all inline-flex items-center gap-1.5',
+            'px-5 py-2.5 rounded-lg border text-sm font-display font-bold cursor-pointer transition-all active:scale-95 focus-visible:scale-95 inline-flex items-center gap-1.5',
             sortOrder === 'votes' ? 'text-[#04141b] bg-gradient-to-br from-primary to-primary-dark border-transparent' : 'border-white/10 bg-surface text-bright hover:text-[#04141b] hover:bg-gradient-to-br hover:from-primary hover:to-primary-dark hover:border-transparent'
           ]"
           @click="sortOrder = 'votes'"
@@ -80,7 +80,7 @@ const toggleProjects = () => {
         </button>
         <button
           :class="[
-            'px-5 py-2.5 rounded-lg border text-sm font-display font-bold cursor-pointer transition-all inline-flex items-center gap-1.5',
+            'px-5 py-2.5 rounded-lg border text-sm font-display font-bold cursor-pointer transition-all active:scale-95 focus-visible:scale-95 inline-flex items-center gap-1.5',
             sortOrder === 'views' ? 'text-[#04141b] bg-gradient-to-br from-primary to-primary-dark border-transparent' : 'border-white/10 bg-surface text-bright hover:text-[#04141b] hover:bg-gradient-to-br hover:from-primary hover:to-primary-dark hover:border-transparent'
           ]"
           @click="sortOrder = 'views'"
@@ -109,7 +109,7 @@ const toggleProjects = () => {
 
     <div v-if="canLoadMore || canShowLess" class="flex justify-center mt-9">
       <button
-        class="px-7 py-3 rounded-lg cursor-pointer font-display text-sm font-bold tracking-wide text-[#04141b] bg-gradient-to-br from-primary to-primary-dark border-0 transition hover:brightness-110 hover:-translate-y-0.5"
+        class="px-7 py-3 rounded-lg cursor-pointer font-display text-sm font-bold tracking-wide text-[#04141b] bg-gradient-to-br from-primary to-primary-dark border-0 transition hover:brightness-110 hover:-translate-y-0.5 active:scale-95 active:translate-y-0 focus-visible:scale-95"
         @click="toggleProjects"
       >
         {{ canShowLess ? 'Show Less Projects' : 'Load More Projects' }}

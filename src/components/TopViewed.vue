@@ -39,7 +39,7 @@ onMounted(() => {
           type="button"
           :aria-label="`Open details for ${item.project.title}`"
           @click="emit('open', item.project)"
-          class="group flex items-center gap-3 text-left rounded-xl bg-[rgba(2,6,23,0.6)] border border-[rgba(30,41,59,0.9)] p-3 w-full sm:w-[280px] transition hover:border-[rgba(56,189,248,0.5)] hover:bg-[rgba(8,47,73,0.18)] hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(56,189,248,0.2)]"
+          class="group flex items-center gap-3 text-left rounded-xl bg-[rgba(2,6,23,0.6)] border border-[rgba(30,41,59,0.9)] p-3 w-full sm:w-[280px] transition hover:border-[rgba(56,189,248,0.5)] hover:bg-[rgba(8,47,73,0.18)] hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(56,189,248,0.2)] active:scale-[0.98] focus-visible:scale-[0.98]"
         >
           <span class="text-xl leading-none w-8 text-center text-[#818cf8] font-bold">{{ item.rank + 1 }}</span>
           <div class="relative w-14 h-14 rounded-lg overflow-hidden bg-surface-lowest shrink-0">

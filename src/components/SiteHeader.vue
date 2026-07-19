@@ -29,7 +29,7 @@ const onSelect = (cat) => {
           v-for="(meta, cat) in categoryMeta"
           :key="cat"
           :class="[
-            'bg-none border-0 cursor-pointer pb-0.5 font-display text-sm font-semibold tracking-wide transition-colors',
+            'bg-none border-0 cursor-pointer pb-0.5 font-display text-sm font-semibold tracking-wide transition-colors active:scale-95 focus-visible:scale-95',
             activeCategory === cat ? 'text-primary border-b-2 border-primary' : 'text-dim hover:text-bright'
           ]"
           @click="selectCategory(cat)"
@@ -39,7 +39,7 @@ const onSelect = (cat) => {
       </nav>
 
       <button
-        class="md:hidden flex items-center justify-center w-11 h-11 rounded-lg border border-white/10 text-bright cursor-pointer transition hover:border-primary hover:text-primary"
+        class="md:hidden flex items-center justify-center w-11 h-11 rounded-lg border border-white/10 text-bright cursor-pointer transition hover:border-primary hover:text-primary active:scale-95 focus-visible:scale-95"
         @click="menuOpen = !menuOpen"
         :aria-expanded="menuOpen"
         aria-label="Toggle categories menu"
@@ -57,7 +57,7 @@ const onSelect = (cat) => {
           v-for="(meta, cat) in categoryMeta"
           :key="cat"
           :class="[
-            'text-left py-3 font-display text-sm font-semibold tracking-wide border-b border-white/5 transition-colors',
+            'text-left py-3 font-display text-sm font-semibold tracking-wide border-b border-white/5 transition-colors active:scale-[0.98] focus-visible:scale-[0.98]',
             activeCategory === cat ? 'text-primary' : 'text-dim hover:text-bright'
           ]"
           @click="onSelect(cat)"
