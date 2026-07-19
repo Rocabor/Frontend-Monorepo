@@ -14,6 +14,28 @@ const { isLiked, toggleLike, likeCount, initLikes } = useLikes();
 const { viewCount, trackView, initViews } = useViews();
 const { push: pushToast } = useToast();
 
+const copyToClipboard = (text) => {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  }
+  return new Promise((resolve, reject) => {
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      const ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      ok ? resolve() : reject(new Error('execCommand failed'));
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 const shareProject = async () => {
   const url = getLiveUrl(project.href);
   const text = `Check out "${project.title}" on My Frontend Journey`;
@@ -23,24 +45,16 @@ const shareProject = async () => {
       return;
     }
   } catch {
-    // user cancelled native share -> fall through to clipboard
+    // usuario canceló el share nativo -> continuar con portapapeles
   }
   try {
-    if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(url);
-      pushToast('Link copied to clipboard!', 'success');
-      return;
-    }
+    await copyToClipboard(url);
+    pushToast('Link copied to clipboard!', 'success');
+    return;
   } catch {
-    /* clipboard blocked */
+    // sin portapapeles disponible
   }
-  // último recurso: abrir ventana de compartir / copiar manual
-  try {
-    window.open(url, '_blank', 'noopener');
-    pushToast('Opening project link…', 'success');
-  } catch {
-    window.prompt('Copy this link:', url);
-  }
+  window.prompt('Copy this link to share:', url);
 };
 
 watch(
