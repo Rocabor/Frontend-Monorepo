@@ -24,7 +24,7 @@ const onSelect = (cat) => {
     <div class="max-w-[1280px] mx-auto h-[88px] px-6 flex items-center justify-between">
       <span class="tech-gradient font-display font-extrabold text-xl tracking-tight">My Frontend Journey</span>
 
-      <nav class="hidden md:flex gap-9">
+      <nav class="hidden md:flex gap-9" aria-label="Project categories">
         <button
           v-for="(meta, cat) in categoryMeta"
           :key="cat"
@@ -52,7 +52,7 @@ const onSelect = (cat) => {
     <div class="header-border-glow bottom-0"></div>
 
     <transition name="top">
-      <nav v-if="menuOpen" class="md:hidden border-t border-white/5 bg-[rgba(10,14,18,0.95)] backdrop-blur-md px-6 py-3 flex flex-col">
+      <nav v-if="menuOpen" class="md:hidden border-t border-white/5 bg-[rgba(10,14,18,0.95)] backdrop-blur-md px-6 py-3 flex flex-col" aria-label="Project categories mobile">
         <button
           v-for="(meta, cat) in categoryMeta"
           :key="cat"

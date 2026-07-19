@@ -19,6 +19,7 @@ const closeProject = () => { selectedProject.value = null; };
 
 <template>
   <main class="relative z-1">
+    <h1 class="sr-only">My Frontend Journey — Frontend Mentor challenges portfolio</h1>
     <BackgroundCanvas />
     <div class="fixed inset-0 z-0 pointer-events-none bg-grid" />
     <div class="fixed rounded-full blur-[120px] -top-6 -left-6 w-100 h-100 bg-[rgba(142,213,255,0.06)] pointer-events-none z-0" />

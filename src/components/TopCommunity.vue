@@ -39,6 +39,8 @@ onMounted(() => {
       <template v-for="item in topItems" :key="item.project?.href || item.rank">
         <button
           v-if="item.project"
+          type="button"
+          :aria-label="`Open details for ${item.project.title}`"
           @click="emit('open', item.project)"
           class="group flex items-center gap-3 text-left rounded-xl bg-[rgba(2,6,23,0.6)] border border-[rgba(30,41,59,0.9)] p-3 w-full sm:w-[280px] transition hover:border-[rgba(56,189,248,0.5)] hover:bg-[rgba(8,47,73,0.18)] hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(56,189,248,0.2)]"
         >
