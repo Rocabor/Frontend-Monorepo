@@ -40,13 +40,13 @@ const copyToClipboard = (text) => {
 
 const shareProject = async () => {
   try {
-    const url = getLiveUrl(project.href);
+    const url = getLiveUrl(props.project.href);
     console.log('[share] clicked, url=', url);
-    const text = `Check out "${project.title}" on My Frontend Journey`;
+    const text = `Check out "${props.project.title}" on My Frontend Journey`;
     const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
     if (isTouch && typeof navigator.share === 'function') {
       try {
-        await navigator.share({ title: project.title, text, url });
+        await navigator.share({ title: props.project.title, text, url });
         return;
       } catch {
         // cancelado o falló -> copiar igual
