@@ -5,6 +5,11 @@ import { useViews } from './useViews';
 
 const baseUrl = import.meta.env.BASE_URL;
 
+// Origen de producción (GitHub Pages). Las sub-apps se sirven aquí,
+// por lo que Live Preview/Share apuntan siempre a esta URL para que
+// funcionen igual en móvil y desktop (incluido pnpm dev local).
+const pagesOrigin = 'https://rocabor.github.io/Frontend-Monorepo';
+
 // Singleton shared state (all components use the same instance)
 const activeCategory = ref('Newbie');
 const sortOrder = ref('newest');
@@ -44,7 +49,7 @@ const getProjectUrl = (href) => href.replace('./apps/', './');
 const getImageUrl = (image) => baseUrl + image;
 const getLiveUrl = (href) => {
   const clean = href.replace(/^\.\/apps\//, '').replace(/^\.\//, '');
-  return baseUrl + clean;
+  return `${pagesOrigin}/${clean}`;
 };
 const getSourceUrl = (project) => {
   const match = project.href.match(/\.\/apps\/([^/]+)\/([^/]+)\//);

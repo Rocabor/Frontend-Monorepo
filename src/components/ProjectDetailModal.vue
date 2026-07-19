@@ -15,17 +15,31 @@ const { viewCount, trackView, initViews } = useViews();
 const { push: pushToast } = useToast();
 
 const shareProject = async () => {
-  const url = typeof window !== 'undefined' ? `${window.location.origin}${getLiveUrl(project.href)}` : getLiveUrl(project.href);
+  const url = getLiveUrl(project.href);
   const text = `Check out "${project.title}" on My Frontend Journey`;
   try {
     if (navigator.share) {
       await navigator.share({ title: project.title, text, url });
       return;
     }
-    await navigator.clipboard.writeText(url);
-    pushToast('Link copied to clipboard!', 'success');
   } catch {
-    /* user cancelled or unsupported */
+    // user cancelled native share -> fall through to clipboard
+  }
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(url);
+      pushToast('Link copied to clipboard!', 'success');
+      return;
+    }
+  } catch {
+    /* clipboard blocked */
+  }
+  // último recurso: abrir ventana de compartir / copiar manual
+  try {
+    window.open(url, '_blank', 'noopener');
+    pushToast('Opening project link…', 'success');
+  } catch {
+    window.prompt('Copy this link:', url);
   }
 };
 
