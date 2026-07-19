@@ -23,6 +23,8 @@ const copyToClipboard = (text) => {
       const ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed';
+      ta.style.top = '0';
+      ta.style.left = '0';
       ta.style.opacity = '0';
       document.body.appendChild(ta);
       ta.focus();
@@ -38,23 +40,25 @@ const copyToClipboard = (text) => {
 
 const shareProject = async () => {
   const url = getLiveUrl(project.href);
+  console.log('[share] clicked, url=', url);
   const text = `Check out "${project.title}" on My Frontend Journey`;
-  try {
-    if (navigator.share) {
+  // En móvil con share nativo, usarlo; en desktop, copiar directo.
+  const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  if (isTouch && navigator.share) {
+    try {
       await navigator.share({ title: project.title, text, url });
       return;
+    } catch {
+      // cancelado o falló -> copiar igual
     }
-  } catch {
-    // usuario canceló el share nativo -> continuar con portapapeles
   }
   try {
     await copyToClipboard(url);
     pushToast('Link copied to clipboard!', 'success');
-    return;
-  } catch {
-    // sin portapapeles disponible
+  } catch (e) {
+    console.error('[share] copy failed:', e);
+    window.prompt('Copy this link to share:', url);
   }
-  window.prompt('Copy this link to share:', url);
 };
 
 watch(
@@ -173,8 +177,8 @@ onBeforeUnmount(() => {
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
             Source Code
           </a>
-          <button @click="shareProject" aria-label="Share this project" class="flex-1 min-w-[120px] inline-flex items-center justify-center gap-1.5 text-center px-3.5 py-2 rounded-lg no-underline font-semibold text-[0.72rem] bg-transparent border border-white/15 text-bright cursor-pointer transition hover:border-primary hover:bg-primary hover:text-[#04141b]">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
+          <button type="button" @click="shareProject" aria-label="Share this project" class="flex-1 min-w-[120px] inline-flex items-center justify-center gap-1.5 text-center px-3.5 py-2 rounded-lg no-underline font-semibold text-[0.72rem] bg-transparent border border-white/15 text-bright cursor-pointer transition hover:border-primary hover:bg-primary hover:text-[#04141b]">
+            <svg class="pointer-events-none" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
             Share
           </button>
         </div>
