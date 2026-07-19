@@ -16,15 +16,11 @@ const loading = ref(false);
 const fetchCount = async (rawHref) => {
   const href = normalizeHref(rawHref);
   if (!supabaseAvailable || !supabase) return null;
-  const { data, error } = await supabase
-    .from(TABLE)
-    .select('views_count')
-    .eq('project_href', href)
-    .maybeSingle();
+  const { data, error } = await supabase.from(TABLE).select('views_count').eq('project_href', href).maybeSingle();
   if (error) {
     console.error('[useViews] fetchCount error:', JSON.stringify(error, null, 2), 'href=', href);
   } else {
-    counts.value[href] = (data && typeof data.views_count === 'number') ? data.views_count : 0;
+    counts.value[href] = data && typeof data.views_count === 'number' ? data.views_count : 0;
   }
   return counts.value[href];
 };
@@ -34,7 +30,7 @@ export function useViews() {
 
   const trackView = async (rawHref) => {
     const href = normalizeHref(rawHref);
-    if (counts.value[href] == null) counts.value[href] = 0;
+    if (counts.value[href] === null || counts.value[href] === undefined) counts.value[href] = 0;
 
     // El conteo vive en el servidor (sin dedupe local): cada apertura suma +1
     counts.value[href] += 1; // optimista
@@ -71,8 +67,7 @@ export function useViews() {
       console.error('[useViews] fetchTopViewed error:', JSON.stringify(error, null, 2));
       return [];
     }
-    topViewed.value = (data || [])
-      .map((r) => ({ href: r.project_href, views: r.views_count }));
+    topViewed.value = (data || []).map((r) => ({ href: r.project_href, views: r.views_count }));
     return topViewed.value;
   };
 
@@ -80,9 +75,7 @@ export function useViews() {
 
   const fetchTotalViews = async () => {
     if (!supabaseAvailable || !supabase) return 0;
-    const { data, error } = await supabase
-      .from(TABLE)
-      .select('views_count');
+    const { data, error } = await supabase.from(TABLE).select('views_count');
     if (error) {
       console.error('[useViews] fetchTotalViews error:', JSON.stringify(error, null, 2));
       return 0;
